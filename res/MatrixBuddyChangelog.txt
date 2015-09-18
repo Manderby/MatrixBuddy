@@ -1,0 +1,36 @@
+Matrix Buddy Changelog
+
+
+planned things:
+
+determinant, condition number
+Keep key responder
+Make multiple windows
+Click on label to make it the result
+Storing Matrices and vectors and organizing them.
+
+
+Version 1
+---------
+
+Matrix Buddy is an application providing very simple matrix and vector
+computations. A lot of base operations are accessible by clicking the
+corresponding operator-button and entering values into the textfieds.
+
+All results are computed immediately.
+
+This is included in version 1:
+
+- 2D, 3D and 4D vectors, 2x2, 3x3 and 4x4 matrices.
+- Most common scalar operations, vector operations matrix operations.
+- Indication of result, error or warning.
+- Automatic changing of result matrix/vector depending on where values were
+  entered.
+- Code text field for copy and pasting whole vectors and matrices.
+  For Matlab, Mathematica, Maple and C in different orderings and dimensions.
+- Quick help lines and a help file
+- Settings: Quick Help, Labels, Tab ordering and code style
+- Remembering settings
+- Very simple UI
+- Nice logo
+

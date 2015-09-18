@@ -1,0 +1,25 @@
+Matrix Buddy is your everyday helper when dealing with basic linear algebra: Simple operations with vector and matrix for 2D, 3D and 4D vectors and 2x2, 3x3 and 4x4 matrices.
+
+All in one single, super-easy interface. Perfect for students and developers.
+
+Simple operations with vector and matrix for 2D, 3D and 4D vectors and 2x2, 3x3 and 4x4 matrices.
+
+Copy and paste serialized vectors and matrices as strings in various formats: C-style, Mathematica, Matlab and Maple.
+
+What you can compute:
+
+Note that many operations can be performed in two ways: Multiplying a matrix with a vector is one operation but when inverted, you are solving a linear equation system. A short help text on top of the operation tells you what you can do!
+
+- Multiplication, Solving linear equation systems.
+- Negation, addition and subtraction.
+- Dot product (scalar product), cross product, length (2-Norm).
+- Creating diagonal matrices, transposing and inverting.
+- Normalizing, orthogonalizing and mirroring of vectors.
+- Componentwise multiplication and division.
+- Scalar multiplication and division.
+
+You can customize the interface by clicking on the gear icon:
+- Set the tab order: Row-first or column-first
+- Display quick help
+- Display identifiers
+- Display code and choose the code style.

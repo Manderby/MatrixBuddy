@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9020CF4C1BA6E2E800E74965 /* MATApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF481BA6E2E800E74965 /* MATApplication.m */; };
+		9020CF4D1BA6E2E800E74965 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF491BA6E2E800E74965 /* main.m */; };
+		9020CF731BA733A500E74965 /* NAArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF4F1BA733A400E74965 /* NAArray.c */; };
+		9020CF741BA733A500E74965 /* NAByteArray.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF521BA733A400E74965 /* NAByteArray.c */; };
+		9020CF751BA733A500E74965 /* NADateTime.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF571BA733A400E74965 /* NADateTime.c */; };
+		9020CF761BA733A500E74965 /* NAFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF5A1BA733A400E74965 /* NAFile.c */; };
+		9020CF771BA733A500E74965 /* NAHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF5D1BA733A400E74965 /* NAHeap.c */; };
+		9020CF781BA733A500E74965 /* NAOctTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF641BA733A400E74965 /* NAOctTree.c */; };
+		9020CF791BA733A500E74965 /* NAQuadTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF671BA733A400E74965 /* NAQuadTree.c */; };
+		9020CF7A1BA733A500E74965 /* NARuntime.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF6A1BA733A500E74965 /* NARuntime.c */; };
+		9020CF7B1BA733A500E74965 /* NAString.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF6D1BA733A500E74965 /* NAString.c */; };
+		9020CF7C1BA733A500E74965 /* NASystem.c in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF6F1BA733A500E74965 /* NASystem.c */; };
+		9020CF831BA7D54100E74965 /* MATTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF821BA7D54100E74965 /* MATTextField.m */; };
+		9020CF861BA7D89400E74965 /* MATComputationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF851BA7D89400E74965 /* MATComputationView.m */; };
+		9020CF8D1BA7DC3100E74965 /* MATValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF8C1BA7DC3100E74965 /* MATValueView.m */; };
+		9020CF9F1BA8213100E74965 /* ManderimAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9020CF911BA8213100E74965 /* ManderimAboutWindow.xib */; };
+		9020CFA01BA8213100E74965 /* ManderimApplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9020CF931BA8213100E74965 /* ManderimApplication.strings */; };
+		9020CFA11BA8213100E74965 /* manderim.png in Resources */ = {isa = PBXBuildFile; fileRef = 9020CF971BA8213100E74965 /* manderim.png */; };
+		9020CFA31BA8213100E74965 /* ManderimAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF9B1BA8213100E74965 /* ManderimAboutWindowController.m */; };
+		9020CFA41BA8213100E74965 /* ManderimApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CF9D1BA8213100E74965 /* ManderimApplication.m */; };
+		9020CFAC1BA821E500E74965 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9020CFA81BA821E500E74965 /* Localizable.strings */; };
+		9020CFAD1BA821E500E74965 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9020CFAA1BA821E500E74965 /* MainMenu.xib */; };
+		9020CFB01BA823FA00E74965 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9020CFAE1BA823FA00E74965 /* InfoPlist.strings */; };
+		9020CFB31BA82F4100E74965 /* MATWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CFB21BA82F4100E74965 /* MATWindowController.m */; };
+		9020CFBA1BA838C700E74965 /* MATViewM44.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CFB91BA838C700E74965 /* MATViewM44.m */; };
+		9020CFBD1BA838F800E74965 /* MATViewV4.m in Sources */ = {isa = PBXBuildFile; fileRef = 9020CFBC1BA838F800E74965 /* MATViewV4.m */; };
+		9020CFBF1BA8561C00E74965 /* MatrixBuddyChangelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9020CFBE1BA8561C00E74965 /* MatrixBuddyChangelog.txt */; };
+		90BA032F1BA8A4A200A651E9 /* MatrixBuddy.icns in Resources */ = {isa = PBXBuildFile; fileRef = 90BA032E1BA8A4A200A651E9 /* MatrixBuddy.icns */; };
+		90BA03321BA96A7E00A651E9 /* help in Resources */ = {isa = PBXBuildFile; fileRef = 90BA03301BA96A7E00A651E9 /* help */; };
+		90BA03351BA96AC300A651E9 /* HelpViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03341BA96AC300A651E9 /* HelpViewer.m */; };
+		90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA03371BA96CAB00A651E9 /* WebKit.framework */; };
+		90BA033E1BA97DEA00A651E9 /* MATViewV3.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA033D1BA97DEA00A651E9 /* MATViewV3.m */; };
+		90BA03411BA97EA400A651E9 /* MATViewM33.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03401BA97EA400A651E9 /* MATViewM33.m */; };
+		90BA03441BA9A76400A651E9 /* MATMMulV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03431BA9A76400A651E9 /* MATMMulV.m */; };
+		90BA03471BA9A7CF00A651E9 /* MATViewV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03461BA9A7CF00A651E9 /* MATViewV2.m */; };
+		90BA034A1BA9A85F00A651E9 /* MATViewM22.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03491BA9A85F00A651E9 /* MATViewM22.m */; };
+		90BA034D1BA9AA6400A651E9 /* MATMMulM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA034C1BA9AA6400A651E9 /* MATMMulM.m */; };
+		90BA03501BA9B75000A651E9 /* MATMSubM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA034F1BA9B75000A651E9 /* MATMSubM.m */; };
+		90BA03531BA9BCA100A651E9 /* MATMAddM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03521BA9BCA100A651E9 /* MATMAddM.m */; };
+		90BA03561BA9BEB100A651E9 /* MATNegM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03551BA9BEB100A651E9 /* MATNegM.m */; };
+		90BA03591BA9C61100A651E9 /* MATViewS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03581BA9C61100A651E9 /* MATViewS.m */; };
+		90BA035C1BA9C78C00A651E9 /* MATMMulS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA035B1BA9C78C00A651E9 /* MATMMulS.m */; };
+		90BA035F1BA9DD3C00A651E9 /* MATMDivS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA035E1BA9DD3C00A651E9 /* MATMDivS.m */; };
+		90BA03621BA9EEFB00A651E9 /* MATMMulCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03611BA9EEFB00A651E9 /* MATMMulCompV.m */; };
+		90BA03651BA9F4FB00A651E9 /* MATMDivCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03641BA9F4FB00A651E9 /* MATMDivCompV.m */; };
+		90BA03681BAA134600A651E9 /* MATMMulCompM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03671BAA134600A651E9 /* MATMMulCompM.m */; };
+		90BA036B1BAA1C6900A651E9 /* MATMDivCompM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA036A1BAA1C6900A651E9 /* MATMDivCompM.m */; };
+		90BA036E1BAA219700A651E9 /* MATDiagS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA036D1BAA219700A651E9 /* MATDiagS.m */; };
+		90BA03711BAA247B00A651E9 /* MATDiagV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03701BAA247B00A651E9 /* MATDiagV.m */; };
+		90BA03741BAA284400A651E9 /* MATTransposeM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03731BAA284400A651E9 /* MATTransposeM.m */; };
+		90BA03771BAA2ADD00A651E9 /* MATInvertM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03761BAA2ADD00A651E9 /* MATInvertM.m */; };
+		90BA037A1BAAB86300A651E9 /* MATVMulS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03791BAAB86300A651E9 /* MATVMulS.m */; };
+		90BA037D1BAABB8F00A651E9 /* MATVDivS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA037C1BAABB8F00A651E9 /* MATVDivS.m */; };
+		90BA03801BAABEBE00A651E9 /* MATVDivCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA037F1BAABEBE00A651E9 /* MATVDivCompV.m */; };
+		90BA03831BAAC4B500A651E9 /* MATLengthV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03821BAAC4B500A651E9 /* MATLengthV.m */; };
+		90BA03861BAAD3C900A651E9 /* MATNegV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03851BAAD3C900A651E9 /* MATNegV.m */; };
+		90BA03891BAAD6AE00A651E9 /* MATVAddV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03881BAAD6AE00A651E9 /* MATVAddV.m */; };
+		90BA038C1BAAD97500A651E9 /* MATVSubV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA038B1BAAD97500A651E9 /* MATVSubV.m */; };
+		90BA038F1BAADC8800A651E9 /* MATVMulCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA038E1BAADC8800A651E9 /* MATVMulCompV.m */; };
+		90BA03921BAADFAF00A651E9 /* MATVDotV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03911BAADFAF00A651E9 /* MATVDotV.m */; };
+		90BA03951BAAE1C800A651E9 /* MATVCrossV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03941BAAE1C800A651E9 /* MATVCrossV.m */; };
+		90BA03981BAAE59000A651E9 /* MATNormalizeV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA03971BAAE59000A651E9 /* MATNormalizeV.m */; };
+		90BA039B1BAAE92600A651E9 /* MATOrthogonalizeV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA039A1BAAE92600A651E9 /* MATOrthogonalizeV.m */; };
+		90BA039E1BAAF29F00A651E9 /* MATMirrorV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BA039D1BAAF29F00A651E9 /* MATMirrorV.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9020CF151BA6E29000E74965 /* Matrix Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matrix Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9020CF451BA6E2E800E74965 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9020CF471BA6E2E800E74965 /* MATApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATApplication.h; sourceTree = "<group>"; };
+		9020CF481BA6E2E800E74965 /* MATApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATApplication.m; sourceTree = "<group>"; };
+		9020CF491BA6E2E800E74965 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9020CF4F1BA733A400E74965 /* NAArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAArray.c; sourceTree = "<group>"; };
+		9020CF501BA733A400E74965 /* NAArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAArray.h; sourceTree = "<group>"; };
+		9020CF511BA733A400E74965 /* NABinaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NABinaryData.h; sourceTree = "<group>"; };
+		9020CF521BA733A400E74965 /* NAByteArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAByteArray.c; sourceTree = "<group>"; };
+		9020CF531BA733A400E74965 /* NAByteArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAByteArray.h; sourceTree = "<group>"; };
+		9020CF541BA733A400E74965 /* NAByteMap2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAByteMap2D.h; sourceTree = "<group>"; };
+		9020CF551BA733A400E74965 /* NAComplex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAComplex.h; sourceTree = "<group>"; };
+		9020CF561BA733A400E74965 /* NACoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoord.h; sourceTree = "<group>"; };
+		9020CF571BA733A400E74965 /* NADateTime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NADateTime.c; sourceTree = "<group>"; };
+		9020CF581BA733A400E74965 /* NADateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADateTime.h; sourceTree = "<group>"; };
+		9020CF591BA733A400E74965 /* NAEndianness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAEndianness.h; sourceTree = "<group>"; };
+		9020CF5A1BA733A400E74965 /* NAFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAFile.c; sourceTree = "<group>"; };
+		9020CF5B1BA733A400E74965 /* NAFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAFile.h; sourceTree = "<group>"; };
+		9020CF5C1BA733A400E74965 /* NAGrowingSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAGrowingSpace.h; sourceTree = "<group>"; };
+		9020CF5D1BA733A400E74965 /* NAHeap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAHeap.c; sourceTree = "<group>"; };
+		9020CF5E1BA733A400E74965 /* NAHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAHeap.h; sourceTree = "<group>"; };
+		9020CF5F1BA733A400E74965 /* NAList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAList.h; sourceTree = "<group>"; };
+		9020CF601BA733A400E74965 /* NAMap2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMap2D.h; sourceTree = "<group>"; };
+		9020CF611BA733A400E74965 /* NAMathConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMathConstants.h; sourceTree = "<group>"; };
+		9020CF621BA733A400E74965 /* NAMathOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMathOperators.h; sourceTree = "<group>"; };
+		9020CF631BA733A400E74965 /* NAMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMemory.h; sourceTree = "<group>"; };
+		9020CF641BA733A400E74965 /* NAOctTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAOctTree.c; sourceTree = "<group>"; };
+		9020CF651BA733A400E74965 /* NAOctTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAOctTree.h; sourceTree = "<group>"; };
+		9020CF661BA733A400E74965 /* NAPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPool.h; sourceTree = "<group>"; };
+		9020CF671BA733A400E74965 /* NAQuadTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAQuadTree.c; sourceTree = "<group>"; };
+		9020CF681BA733A400E74965 /* NAQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAQuadTree.h; sourceTree = "<group>"; };
+		9020CF691BA733A500E74965 /* NARandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NARandom.h; sourceTree = "<group>"; };
+		9020CF6A1BA733A500E74965 /* NARuntime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NARuntime.c; sourceTree = "<group>"; };
+		9020CF6B1BA733A500E74965 /* NARuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NARuntime.h; sourceTree = "<group>"; };
+		9020CF6C1BA733A500E74965 /* NAStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAStack.h; sourceTree = "<group>"; };
+		9020CF6D1BA733A500E74965 /* NAString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAString.c; sourceTree = "<group>"; };
+		9020CF6E1BA733A500E74965 /* NAString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAString.h; sourceTree = "<group>"; };
+		9020CF6F1BA733A500E74965 /* NASystem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NASystem.c; sourceTree = "<group>"; };
+		9020CF701BA733A500E74965 /* NASystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NASystem.h; sourceTree = "<group>"; };
+		9020CF711BA733A500E74965 /* NAURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAURL.h; sourceTree = "<group>"; };
+		9020CF721BA733A500E74965 /* NAVectorAlgebra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVectorAlgebra.h; sourceTree = "<group>"; };
+		9020CF801BA7826600E74965 /* MATCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATCommon.h; sourceTree = "<group>"; };
+		9020CF811BA7D54100E74965 /* MATTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATTextField.h; sourceTree = "<group>"; };
+		9020CF821BA7D54100E74965 /* MATTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATTextField.m; sourceTree = "<group>"; };
+		9020CF841BA7D89400E74965 /* MATComputationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATComputationView.h; sourceTree = "<group>"; };
+		9020CF851BA7D89400E74965 /* MATComputationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATComputationView.m; sourceTree = "<group>"; };
+		9020CF8B1BA7DC3100E74965 /* MATValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATValueView.h; sourceTree = "<group>"; };
+		9020CF8C1BA7DC3100E74965 /* MATValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATValueView.m; sourceTree = "<group>"; };
+		9020CF921BA8213100E74965 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/ManderimAboutWindow.xib; sourceTree = "<group>"; };
+		9020CF941BA8213100E74965 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ManderimApplication.strings; sourceTree = "<group>"; };
+		9020CF951BA8213100E74965 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ManderimAboutWindow.xib; sourceTree = "<group>"; };
+		9020CF961BA8213100E74965 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ManderimApplication.strings; sourceTree = "<group>"; };
+		9020CF971BA8213100E74965 /* manderim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manderim.png; sourceTree = "<group>"; };
+		9020CF981BA8213100E74965 /* ManderimLogos.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = ManderimLogos.psd; sourceTree = "<group>"; };
+		9020CF9A1BA8213100E74965 /* ManderimAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderimAboutWindowController.h; sourceTree = "<group>"; };
+		9020CF9B1BA8213100E74965 /* ManderimAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManderimAboutWindowController.m; sourceTree = "<group>"; };
+		9020CF9C1BA8213100E74965 /* ManderimApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderimApplication.h; sourceTree = "<group>"; };
+		9020CF9D1BA8213100E74965 /* ManderimApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManderimApplication.m; sourceTree = "<group>"; };
+		9020CFA91BA821E500E74965 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9020CFAB1BA821E500E74965 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9020CFAF1BA823FA00E74965 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9020CFB11BA82F4100E74965 /* MATWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATWindowController.h; sourceTree = "<group>"; };
+		9020CFB21BA82F4100E74965 /* MATWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATWindowController.m; sourceTree = "<group>"; };
+		9020CFB81BA838C700E74965 /* MATViewM44.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewM44.h; sourceTree = "<group>"; };
+		9020CFB91BA838C700E74965 /* MATViewM44.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewM44.m; sourceTree = "<group>"; };
+		9020CFBB1BA838F800E74965 /* MATViewV4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewV4.h; sourceTree = "<group>"; };
+		9020CFBC1BA838F800E74965 /* MATViewV4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewV4.m; sourceTree = "<group>"; };
+		9020CFBE1BA8561C00E74965 /* MatrixBuddyChangelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MatrixBuddyChangelog.txt; sourceTree = "<group>"; };
+		905C9F301BAB0AA800522B09 /* Matrix Buddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Matrix Buddy.entitlements"; sourceTree = "<group>"; };
+		90BA032E1BA8A4A200A651E9 /* MatrixBuddy.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MatrixBuddy.icns; sourceTree = "<group>"; };
+		90BA03311BA96A7E00A651E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en; path = en.lproj/help; sourceTree = "<group>"; };
+		90BA03331BA96AC300A651E9 /* HelpViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewer.h; sourceTree = "<group>"; };
+		90BA03341BA96AC300A651E9 /* HelpViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewer.m; sourceTree = "<group>"; };
+		90BA03371BA96CAB00A651E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		90BA033C1BA97DEA00A651E9 /* MATViewV3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewV3.h; sourceTree = "<group>"; };
+		90BA033D1BA97DEA00A651E9 /* MATViewV3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewV3.m; sourceTree = "<group>"; };
+		90BA033F1BA97EA400A651E9 /* MATViewM33.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewM33.h; sourceTree = "<group>"; };
+		90BA03401BA97EA400A651E9 /* MATViewM33.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewM33.m; sourceTree = "<group>"; };
+		90BA03421BA9A76400A651E9 /* MATMMulV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulV.h; sourceTree = "<group>"; };
+		90BA03431BA9A76400A651E9 /* MATMMulV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulV.m; sourceTree = "<group>"; };
+		90BA03451BA9A7CF00A651E9 /* MATViewV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewV2.h; sourceTree = "<group>"; };
+		90BA03461BA9A7CF00A651E9 /* MATViewV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewV2.m; sourceTree = "<group>"; };
+		90BA03481BA9A85F00A651E9 /* MATViewM22.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewM22.h; sourceTree = "<group>"; };
+		90BA03491BA9A85F00A651E9 /* MATViewM22.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewM22.m; sourceTree = "<group>"; };
+		90BA034B1BA9AA6400A651E9 /* MATMMulM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulM.h; sourceTree = "<group>"; };
+		90BA034C1BA9AA6400A651E9 /* MATMMulM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulM.m; sourceTree = "<group>"; };
+		90BA034E1BA9B75000A651E9 /* MATMSubM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMSubM.h; sourceTree = "<group>"; };
+		90BA034F1BA9B75000A651E9 /* MATMSubM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMSubM.m; sourceTree = "<group>"; };
+		90BA03511BA9BCA100A651E9 /* MATMAddM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMAddM.h; sourceTree = "<group>"; };
+		90BA03521BA9BCA100A651E9 /* MATMAddM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMAddM.m; sourceTree = "<group>"; };
+		90BA03541BA9BEB100A651E9 /* MATNegM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATNegM.h; sourceTree = "<group>"; };
+		90BA03551BA9BEB100A651E9 /* MATNegM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATNegM.m; sourceTree = "<group>"; };
+		90BA03571BA9C61100A651E9 /* MATViewS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewS.h; sourceTree = "<group>"; };
+		90BA03581BA9C61100A651E9 /* MATViewS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewS.m; sourceTree = "<group>"; };
+		90BA035A1BA9C78C00A651E9 /* MATMMulS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulS.h; sourceTree = "<group>"; };
+		90BA035B1BA9C78C00A651E9 /* MATMMulS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulS.m; sourceTree = "<group>"; };
+		90BA035D1BA9DD3C00A651E9 /* MATMDivS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMDivS.h; sourceTree = "<group>"; };
+		90BA035E1BA9DD3C00A651E9 /* MATMDivS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMDivS.m; sourceTree = "<group>"; };
+		90BA03601BA9EEFB00A651E9 /* MATMMulCompV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulCompV.h; sourceTree = "<group>"; };
+		90BA03611BA9EEFB00A651E9 /* MATMMulCompV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulCompV.m; sourceTree = "<group>"; };
+		90BA03631BA9F4FB00A651E9 /* MATMDivCompV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMDivCompV.h; sourceTree = "<group>"; };
+		90BA03641BA9F4FB00A651E9 /* MATMDivCompV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMDivCompV.m; sourceTree = "<group>"; };
+		90BA03661BAA134600A651E9 /* MATMMulCompM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulCompM.h; sourceTree = "<group>"; };
+		90BA03671BAA134600A651E9 /* MATMMulCompM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulCompM.m; sourceTree = "<group>"; };
+		90BA03691BAA1C6900A651E9 /* MATMDivCompM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMDivCompM.h; sourceTree = "<group>"; };
+		90BA036A1BAA1C6900A651E9 /* MATMDivCompM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMDivCompM.m; sourceTree = "<group>"; };
+		90BA036C1BAA219700A651E9 /* MATDiagS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATDiagS.h; sourceTree = "<group>"; };
+		90BA036D1BAA219700A651E9 /* MATDiagS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATDiagS.m; sourceTree = "<group>"; };
+		90BA036F1BAA247B00A651E9 /* MATDiagV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATDiagV.h; sourceTree = "<group>"; };
+		90BA03701BAA247B00A651E9 /* MATDiagV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATDiagV.m; sourceTree = "<group>"; };
+		90BA03721BAA284400A651E9 /* MATTransposeM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATTransposeM.h; sourceTree = "<group>"; };
+		90BA03731BAA284400A651E9 /* MATTransposeM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATTransposeM.m; sourceTree = "<group>"; };
+		90BA03751BAA2ADD00A651E9 /* MATInvertM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATInvertM.h; sourceTree = "<group>"; };
+		90BA03761BAA2ADD00A651E9 /* MATInvertM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATInvertM.m; sourceTree = "<group>"; };
+		90BA03781BAAB86300A651E9 /* MATVMulS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVMulS.h; sourceTree = "<group>"; };
+		90BA03791BAAB86300A651E9 /* MATVMulS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVMulS.m; sourceTree = "<group>"; };
+		90BA037B1BAABB8F00A651E9 /* MATVDivS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVDivS.h; sourceTree = "<group>"; };
+		90BA037C1BAABB8F00A651E9 /* MATVDivS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVDivS.m; sourceTree = "<group>"; };
+		90BA037E1BAABEBE00A651E9 /* MATVDivCompV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVDivCompV.h; sourceTree = "<group>"; };
+		90BA037F1BAABEBE00A651E9 /* MATVDivCompV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVDivCompV.m; sourceTree = "<group>"; };
+		90BA03811BAAC4B500A651E9 /* MATLengthV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATLengthV.h; sourceTree = "<group>"; };
+		90BA03821BAAC4B500A651E9 /* MATLengthV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATLengthV.m; sourceTree = "<group>"; };
+		90BA03841BAAD3C900A651E9 /* MATNegV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATNegV.h; sourceTree = "<group>"; };
+		90BA03851BAAD3C900A651E9 /* MATNegV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATNegV.m; sourceTree = "<group>"; };
+		90BA03871BAAD6AE00A651E9 /* MATVAddV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVAddV.h; sourceTree = "<group>"; };
+		90BA03881BAAD6AE00A651E9 /* MATVAddV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVAddV.m; sourceTree = "<group>"; };
+		90BA038A1BAAD97500A651E9 /* MATVSubV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVSubV.h; sourceTree = "<group>"; };
+		90BA038B1BAAD97500A651E9 /* MATVSubV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVSubV.m; sourceTree = "<group>"; };
+		90BA038D1BAADC8800A651E9 /* MATVMulCompV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVMulCompV.h; sourceTree = "<group>"; };
+		90BA038E1BAADC8800A651E9 /* MATVMulCompV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVMulCompV.m; sourceTree = "<group>"; };
+		90BA03901BAADFAF00A651E9 /* MATVDotV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVDotV.h; sourceTree = "<group>"; };
+		90BA03911BAADFAF00A651E9 /* MATVDotV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVDotV.m; sourceTree = "<group>"; };
+		90BA03931BAAE1C800A651E9 /* MATVCrossV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVCrossV.h; sourceTree = "<group>"; };
+		90BA03941BAAE1C800A651E9 /* MATVCrossV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVCrossV.m; sourceTree = "<group>"; };
+		90BA03961BAAE59000A651E9 /* MATNormalizeV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATNormalizeV.h; sourceTree = "<group>"; };
+		90BA03971BAAE59000A651E9 /* MATNormalizeV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATNormalizeV.m; sourceTree = "<group>"; };
+		90BA03991BAAE92600A651E9 /* MATOrthogonalizeV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATOrthogonalizeV.h; sourceTree = "<group>"; };
+		90BA039A1BAAE92600A651E9 /* MATOrthogonalizeV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATOrthogonalizeV.m; sourceTree = "<group>"; };
+		90BA039C1BAAF29F00A651E9 /* MATMirrorV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMirrorV.h; sourceTree = "<group>"; };
+		90BA039D1BAAF29F00A651E9 /* MATMirrorV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMirrorV.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9020CF121BA6E29000E74965 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9020CF0A1BA6E26300E74965 = {
+			isa = PBXGroup;
+			children = (
+				905C9F301BAB0AA800522B09 /* Matrix Buddy.entitlements */,
+				90BA03361BA96C8700A651E9 /* Frameworks */,
+				9020CF8E1BA8213100E74965 /* ManderimApplication */,
+				9020CF4E1BA733A400E74965 /* NALib */,
+				9020CF461BA6E2E800E74965 /* src */,
+				9020CF421BA6E2E700E74965 /* res */,
+				9020CF161BA6E29000E74965 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9020CF161BA6E29000E74965 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9020CF151BA6E29000E74965 /* Matrix Buddy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9020CF421BA6E2E700E74965 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				90BA03301BA96A7E00A651E9 /* help */,
+				9020CFAE1BA823FA00E74965 /* InfoPlist.strings */,
+				9020CFA81BA821E500E74965 /* Localizable.strings */,
+				9020CFAA1BA821E500E74965 /* MainMenu.xib */,
+				9020CF451BA6E2E800E74965 /* Info.plist */,
+				9020CFBE1BA8561C00E74965 /* MatrixBuddyChangelog.txt */,
+				90BA032E1BA8A4A200A651E9 /* MatrixBuddy.icns */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		9020CF461BA6E2E800E74965 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9020CF801BA7826600E74965 /* MATCommon.h */,
+				9020CF491BA6E2E800E74965 /* main.m */,
+				9020CF471BA6E2E800E74965 /* MATApplication.h */,
+				9020CF481BA6E2E800E74965 /* MATApplication.m */,
+				90BA03331BA96AC300A651E9 /* HelpViewer.h */,
+				90BA03341BA96AC300A651E9 /* HelpViewer.m */,
+				9020CFB11BA82F4100E74965 /* MATWindowController.h */,
+				9020CFB21BA82F4100E74965 /* MATWindowController.m */,
+				9020CF841BA7D89400E74965 /* MATComputationView.h */,
+				9020CF851BA7D89400E74965 /* MATComputationView.m */,
+				9020CF871BA7DA8D00E74965 /* ComputationControllers */,
+				9020CF8B1BA7DC3100E74965 /* MATValueView.h */,
+				9020CF8C1BA7DC3100E74965 /* MATValueView.m */,
+				9020CF811BA7D54100E74965 /* MATTextField.h */,
+				9020CF821BA7D54100E74965 /* MATTextField.m */,
+				9020CFB71BA838C700E74965 /* Views */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		9020CF4E1BA733A400E74965 /* NALib */ = {
+			isa = PBXGroup;
+			children = (
+				9020CF4F1BA733A400E74965 /* NAArray.c */,
+				9020CF501BA733A400E74965 /* NAArray.h */,
+				9020CF511BA733A400E74965 /* NABinaryData.h */,
+				9020CF521BA733A400E74965 /* NAByteArray.c */,
+				9020CF531BA733A400E74965 /* NAByteArray.h */,
+				9020CF541BA733A400E74965 /* NAByteMap2D.h */,
+				9020CF551BA733A400E74965 /* NAComplex.h */,
+				9020CF561BA733A400E74965 /* NACoord.h */,
+				9020CF571BA733A400E74965 /* NADateTime.c */,
+				9020CF581BA733A400E74965 /* NADateTime.h */,
+				9020CF591BA733A400E74965 /* NAEndianness.h */,
+				9020CF5A1BA733A400E74965 /* NAFile.c */,
+				9020CF5B1BA733A400E74965 /* NAFile.h */,
+				9020CF5C1BA733A400E74965 /* NAGrowingSpace.h */,
+				9020CF5D1BA733A400E74965 /* NAHeap.c */,
+				9020CF5E1BA733A400E74965 /* NAHeap.h */,
+				9020CF5F1BA733A400E74965 /* NAList.h */,
+				9020CF601BA733A400E74965 /* NAMap2D.h */,
+				9020CF611BA733A400E74965 /* NAMathConstants.h */,
+				9020CF621BA733A400E74965 /* NAMathOperators.h */,
+				9020CF631BA733A400E74965 /* NAMemory.h */,
+				9020CF641BA733A400E74965 /* NAOctTree.c */,
+				9020CF651BA733A400E74965 /* NAOctTree.h */,
+				9020CF661BA733A400E74965 /* NAPool.h */,
+				9020CF671BA733A400E74965 /* NAQuadTree.c */,
+				9020CF681BA733A400E74965 /* NAQuadTree.h */,
+				9020CF691BA733A500E74965 /* NARandom.h */,
+				9020CF6A1BA733A500E74965 /* NARuntime.c */,
+				9020CF6B1BA733A500E74965 /* NARuntime.h */,
+				9020CF6C1BA733A500E74965 /* NAStack.h */,
+				9020CF6D1BA733A500E74965 /* NAString.c */,
+				9020CF6E1BA733A500E74965 /* NAString.h */,
+				9020CF6F1BA733A500E74965 /* NASystem.c */,
+				9020CF701BA733A500E74965 /* NASystem.h */,
+				9020CF711BA733A500E74965 /* NAURL.h */,
+				9020CF721BA733A500E74965 /* NAVectorAlgebra.h */,
+			);
+			name = NALib;
+			path = ../NALib/NALib;
+			sourceTree = "<group>";
+		};
+		9020CF871BA7DA8D00E74965 /* ComputationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				90BA036C1BAA219700A651E9 /* MATDiagS.h */,
+				90BA036D1BAA219700A651E9 /* MATDiagS.m */,
+				90BA036F1BAA247B00A651E9 /* MATDiagV.h */,
+				90BA03701BAA247B00A651E9 /* MATDiagV.m */,
+				90BA03751BAA2ADD00A651E9 /* MATInvertM.h */,
+				90BA03761BAA2ADD00A651E9 /* MATInvertM.m */,
+				90BA03811BAAC4B500A651E9 /* MATLengthV.h */,
+				90BA03821BAAC4B500A651E9 /* MATLengthV.m */,
+				90BA03511BA9BCA100A651E9 /* MATMAddM.h */,
+				90BA03521BA9BCA100A651E9 /* MATMAddM.m */,
+				90BA03691BAA1C6900A651E9 /* MATMDivCompM.h */,
+				90BA036A1BAA1C6900A651E9 /* MATMDivCompM.m */,
+				90BA03631BA9F4FB00A651E9 /* MATMDivCompV.h */,
+				90BA03641BA9F4FB00A651E9 /* MATMDivCompV.m */,
+				90BA035D1BA9DD3C00A651E9 /* MATMDivS.h */,
+				90BA035E1BA9DD3C00A651E9 /* MATMDivS.m */,
+				90BA039C1BAAF29F00A651E9 /* MATMirrorV.h */,
+				90BA039D1BAAF29F00A651E9 /* MATMirrorV.m */,
+				90BA03661BAA134600A651E9 /* MATMMulCompM.h */,
+				90BA03671BAA134600A651E9 /* MATMMulCompM.m */,
+				90BA03601BA9EEFB00A651E9 /* MATMMulCompV.h */,
+				90BA03611BA9EEFB00A651E9 /* MATMMulCompV.m */,
+				90BA03421BA9A76400A651E9 /* MATMMulV.h */,
+				90BA03431BA9A76400A651E9 /* MATMMulV.m */,
+				90BA034B1BA9AA6400A651E9 /* MATMMulM.h */,
+				90BA034C1BA9AA6400A651E9 /* MATMMulM.m */,
+				90BA035A1BA9C78C00A651E9 /* MATMMulS.h */,
+				90BA035B1BA9C78C00A651E9 /* MATMMulS.m */,
+				90BA034E1BA9B75000A651E9 /* MATMSubM.h */,
+				90BA034F1BA9B75000A651E9 /* MATMSubM.m */,
+				90BA03541BA9BEB100A651E9 /* MATNegM.h */,
+				90BA03551BA9BEB100A651E9 /* MATNegM.m */,
+				90BA03841BAAD3C900A651E9 /* MATNegV.h */,
+				90BA03851BAAD3C900A651E9 /* MATNegV.m */,
+				90BA03961BAAE59000A651E9 /* MATNormalizeV.h */,
+				90BA03971BAAE59000A651E9 /* MATNormalizeV.m */,
+				90BA03991BAAE92600A651E9 /* MATOrthogonalizeV.h */,
+				90BA039A1BAAE92600A651E9 /* MATOrthogonalizeV.m */,
+				90BA03721BAA284400A651E9 /* MATTransposeM.h */,
+				90BA03731BAA284400A651E9 /* MATTransposeM.m */,
+				90BA03871BAAD6AE00A651E9 /* MATVAddV.h */,
+				90BA03881BAAD6AE00A651E9 /* MATVAddV.m */,
+				90BA03931BAAE1C800A651E9 /* MATVCrossV.h */,
+				90BA03941BAAE1C800A651E9 /* MATVCrossV.m */,
+				90BA037E1BAABEBE00A651E9 /* MATVDivCompV.h */,
+				90BA037F1BAABEBE00A651E9 /* MATVDivCompV.m */,
+				90BA037B1BAABB8F00A651E9 /* MATVDivS.h */,
+				90BA037C1BAABB8F00A651E9 /* MATVDivS.m */,
+				90BA03901BAADFAF00A651E9 /* MATVDotV.h */,
+				90BA03911BAADFAF00A651E9 /* MATVDotV.m */,
+				90BA038D1BAADC8800A651E9 /* MATVMulCompV.h */,
+				90BA038E1BAADC8800A651E9 /* MATVMulCompV.m */,
+				90BA03781BAAB86300A651E9 /* MATVMulS.h */,
+				90BA03791BAAB86300A651E9 /* MATVMulS.m */,
+				90BA038A1BAAD97500A651E9 /* MATVSubV.h */,
+				90BA038B1BAAD97500A651E9 /* MATVSubV.m */,
+			);
+			path = ComputationControllers;
+			sourceTree = "<group>";
+		};
+		9020CF8E1BA8213100E74965 /* ManderimApplication */ = {
+			isa = PBXGroup;
+			children = (
+				9020CF901BA8213100E74965 /* res */,
+				9020CF991BA8213100E74965 /* src */,
+			);
+			name = ManderimApplication;
+			path = ../ManderimApplication;
+			sourceTree = "<group>";
+		};
+		9020CF901BA8213100E74965 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				9020CF911BA8213100E74965 /* ManderimAboutWindow.xib */,
+				9020CF931BA8213100E74965 /* ManderimApplication.strings */,
+				9020CF971BA8213100E74965 /* manderim.png */,
+				9020CF981BA8213100E74965 /* ManderimLogos.psd */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		9020CF991BA8213100E74965 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9020CF9A1BA8213100E74965 /* ManderimAboutWindowController.h */,
+				9020CF9B1BA8213100E74965 /* ManderimAboutWindowController.m */,
+				9020CF9C1BA8213100E74965 /* ManderimApplication.h */,
+				9020CF9D1BA8213100E74965 /* ManderimApplication.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		9020CFB71BA838C700E74965 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				90BA03451BA9A7CF00A651E9 /* MATViewV2.h */,
+				90BA03461BA9A7CF00A651E9 /* MATViewV2.m */,
+				90BA033C1BA97DEA00A651E9 /* MATViewV3.h */,
+				90BA033D1BA97DEA00A651E9 /* MATViewV3.m */,
+				9020CFBB1BA838F800E74965 /* MATViewV4.h */,
+				9020CFBC1BA838F800E74965 /* MATViewV4.m */,
+				90BA03571BA9C61100A651E9 /* MATViewS.h */,
+				90BA03581BA9C61100A651E9 /* MATViewS.m */,
+				90BA03481BA9A85F00A651E9 /* MATViewM22.h */,
+				90BA03491BA9A85F00A651E9 /* MATViewM22.m */,
+				90BA033F1BA97EA400A651E9 /* MATViewM33.h */,
+				90BA03401BA97EA400A651E9 /* MATViewM33.m */,
+				9020CFB81BA838C700E74965 /* MATViewM44.h */,
+				9020CFB91BA838C700E74965 /* MATViewM44.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90BA03361BA96C8700A651E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90BA03371BA96CAB00A651E9 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9020CF141BA6E29000E74965 /* Matrix Buddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9020CF341BA6E29100E74965 /* Build configuration list for PBXNativeTarget "Matrix Buddy" */;
+			buildPhases = (
+				9020CF111BA6E29000E74965 /* Sources */,
+				9020CF121BA6E29000E74965 /* Frameworks */,
+				9020CF131BA6E29000E74965 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Matrix Buddy";
+			productName = "Matrix Buddy";
+			productReference = 9020CF151BA6E29000E74965 /* Matrix Buddy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9020CF0B1BA6E26300E74965 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					9020CF141BA6E29000E74965 = {
+						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 9020CF0E1BA6E26300E74965 /* Build configuration list for PBXProject "MatrixBuddy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+			);
+			mainGroup = 9020CF0A1BA6E26300E74965;
+			productRefGroup = 9020CF161BA6E29000E74965 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9020CF141BA6E29000E74965 /* Matrix Buddy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9020CF131BA6E29000E74965 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BA032F1BA8A4A200A651E9 /* MatrixBuddy.icns in Resources */,
+				9020CFAC1BA821E500E74965 /* Localizable.strings in Resources */,
+				9020CFB01BA823FA00E74965 /* InfoPlist.strings in Resources */,
+				9020CFA01BA8213100E74965 /* ManderimApplication.strings in Resources */,
+				9020CFBF1BA8561C00E74965 /* MatrixBuddyChangelog.txt in Resources */,
+				90BA03321BA96A7E00A651E9 /* help in Resources */,
+				9020CF9F1BA8213100E74965 /* ManderimAboutWindow.xib in Resources */,
+				9020CFA11BA8213100E74965 /* manderim.png in Resources */,
+				9020CFAD1BA821E500E74965 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9020CF111BA6E29000E74965 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9020CFA31BA8213100E74965 /* ManderimAboutWindowController.m in Sources */,
+				90BA036B1BAA1C6900A651E9 /* MATMDivCompM.m in Sources */,
+				90BA03861BAAD3C900A651E9 /* MATNegV.m in Sources */,
+				9020CF741BA733A500E74965 /* NAByteArray.c in Sources */,
+				90BA03681BAA134600A651E9 /* MATMMulCompM.m in Sources */,
+				90BA03801BAABEBE00A651E9 /* MATVDivCompV.m in Sources */,
+				90BA03951BAAE1C800A651E9 /* MATVCrossV.m in Sources */,
+				90BA03441BA9A76400A651E9 /* MATMMulV.m in Sources */,
+				9020CFA41BA8213100E74965 /* ManderimApplication.m in Sources */,
+				90BA03771BAA2ADD00A651E9 /* MATInvertM.m in Sources */,
+				9020CF781BA733A500E74965 /* NAOctTree.c in Sources */,
+				90BA03891BAAD6AE00A651E9 /* MATVAddV.m in Sources */,
+				90BA038F1BAADC8800A651E9 /* MATVMulCompV.m in Sources */,
+				9020CFBD1BA838F800E74965 /* MATViewV4.m in Sources */,
+				9020CFBA1BA838C700E74965 /* MATViewM44.m in Sources */,
+				90BA03501BA9B75000A651E9 /* MATMSubM.m in Sources */,
+				9020CF831BA7D54100E74965 /* MATTextField.m in Sources */,
+				90BA03621BA9EEFB00A651E9 /* MATMMulCompV.m in Sources */,
+				90BA03831BAAC4B500A651E9 /* MATLengthV.m in Sources */,
+				90BA03351BA96AC300A651E9 /* HelpViewer.m in Sources */,
+				90BA037D1BAABB8F00A651E9 /* MATVDivS.m in Sources */,
+				90BA03921BAADFAF00A651E9 /* MATVDotV.m in Sources */,
+				90BA034D1BA9AA6400A651E9 /* MATMMulM.m in Sources */,
+				90BA039B1BAAE92600A651E9 /* MATOrthogonalizeV.m in Sources */,
+				9020CF731BA733A500E74965 /* NAArray.c in Sources */,
+				9020CF4D1BA6E2E800E74965 /* main.m in Sources */,
+				9020CF8D1BA7DC3100E74965 /* MATValueView.m in Sources */,
+				90BA03471BA9A7CF00A651E9 /* MATViewV2.m in Sources */,
+				90BA03591BA9C61100A651E9 /* MATViewS.m in Sources */,
+				9020CF7B1BA733A500E74965 /* NAString.c in Sources */,
+				9020CF791BA733A500E74965 /* NAQuadTree.c in Sources */,
+				90BA03561BA9BEB100A651E9 /* MATNegM.m in Sources */,
+				9020CF4C1BA6E2E800E74965 /* MATApplication.m in Sources */,
+				90BA038C1BAAD97500A651E9 /* MATVSubV.m in Sources */,
+				90BA037A1BAAB86300A651E9 /* MATVMulS.m in Sources */,
+				90BA036E1BAA219700A651E9 /* MATDiagS.m in Sources */,
+				9020CF7C1BA733A500E74965 /* NASystem.c in Sources */,
+				90BA035C1BA9C78C00A651E9 /* MATMMulS.m in Sources */,
+				90BA03531BA9BCA100A651E9 /* MATMAddM.m in Sources */,
+				9020CF761BA733A500E74965 /* NAFile.c in Sources */,
+				9020CFB31BA82F4100E74965 /* MATWindowController.m in Sources */,
+				9020CF7A1BA733A500E74965 /* NARuntime.c in Sources */,
+				9020CF861BA7D89400E74965 /* MATComputationView.m in Sources */,
+				90BA03711BAA247B00A651E9 /* MATDiagV.m in Sources */,
+				90BA03741BAA284400A651E9 /* MATTransposeM.m in Sources */,
+				9020CF771BA733A500E74965 /* NAHeap.c in Sources */,
+				90BA035F1BA9DD3C00A651E9 /* MATMDivS.m in Sources */,
+				9020CF751BA733A500E74965 /* NADateTime.c in Sources */,
+				90BA034A1BA9A85F00A651E9 /* MATViewM22.m in Sources */,
+				90BA033E1BA97DEA00A651E9 /* MATViewV3.m in Sources */,
+				90BA03651BA9F4FB00A651E9 /* MATMDivCompV.m in Sources */,
+				90BA03411BA97EA400A651E9 /* MATViewM33.m in Sources */,
+				90BA039E1BAAF29F00A651E9 /* MATMirrorV.m in Sources */,
+				90BA03981BAAE59000A651E9 /* MATNormalizeV.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9020CF911BA8213100E74965 /* ManderimAboutWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9020CF921BA8213100E74965 /* de */,
+				9020CF951BA8213100E74965 /* en */,
+			);
+			name = ManderimAboutWindow.xib;
+			sourceTree = "<group>";
+		};
+		9020CF931BA8213100E74965 /* ManderimApplication.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9020CF941BA8213100E74965 /* de */,
+				9020CF961BA8213100E74965 /* en */,
+			);
+			name = ManderimApplication.strings;
+			sourceTree = "<group>";
+		};
+		9020CFA81BA821E500E74965 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9020CFA91BA821E500E74965 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		9020CFAA1BA821E500E74965 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9020CFAB1BA821E500E74965 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		9020CFAE1BA823FA00E74965 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9020CFAF1BA823FA00E74965 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		90BA03301BA96A7E00A651E9 /* help */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90BA03311BA96A7E00A651E9 /* en */,
+			);
+			name = help;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9020CF0F1BA6E26300E74965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		9020CF101BA6E26300E74965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		9020CF301BA6E29100E74965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Matrix Buddy.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = res/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9020CF311BA6E29100E74965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Matrix Buddy.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = res/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9020CF0E1BA6E26300E74965 /* Build configuration list for PBXProject "MatrixBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9020CF0F1BA6E26300E74965 /* Debug */,
+				9020CF101BA6E26300E74965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9020CF341BA6E29100E74965 /* Build configuration list for PBXNativeTarget "Matrix Buddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9020CF301BA6E29100E74965 /* Debug */,
+				9020CF311BA6E29100E74965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9020CF0B1BA6E26300E74965 /* Project object */;
+}
