@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="6751"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -471,7 +471,9 @@
                     <webView id="beb-hx-fnm">
                         <rect key="frame" x="0.0" y="0.0" width="553" height="312"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                            <nil key="identifier"/>
+                        </webPreferences>
                     </webView>
                 </subviews>
             </view>
@@ -515,8 +517,8 @@
             </subviews>
             <connections>
                 <outlet property="A" destination="w7u-o5-0pv" id="Nvm-gB-ADp"/>
-                <outlet property="b" destination="Ay2-h3-GqP" id="5US-2L-NQ0"/>
-                <outlet property="x" destination="vpV-ou-QQE" id="KXv-Vg-HRb"/>
+                <outlet property="b" destination="vpV-ou-QQE" id="ucc-FD-5zu"/>
+                <outlet property="x" destination="Ay2-h3-GqP" id="ExI-10-QZr"/>
             </connections>
             <point key="canvasLocation" x="358.5" y="540.5"/>
         </customView>
@@ -557,8 +559,8 @@
             </subviews>
             <connections>
                 <outlet property="A" destination="cfX-e5-z73" id="XwG-Vb-kIC"/>
-                <outlet property="b" destination="SQ5-ds-KPA" id="Ibm-zH-IJ7"/>
-                <outlet property="x" destination="1pu-km-ItN" id="M1C-el-goL"/>
+                <outlet property="b" destination="1pu-km-ItN" id="nwh-Ob-HB7"/>
+                <outlet property="x" destination="SQ5-ds-KPA" id="Ab7-Bx-ltm"/>
             </connections>
             <point key="canvasLocation" x="509.5" y="610.5"/>
         </customView>
@@ -599,8 +601,8 @@
             </subviews>
             <connections>
                 <outlet property="A" destination="E4i-Ay-kRB" id="rpM-1J-uoC"/>
-                <outlet property="b" destination="13T-9C-btd" id="SR7-tU-7nJ"/>
-                <outlet property="x" destination="iF8-tn-yYJ" id="IS1-AE-UNL"/>
+                <outlet property="b" destination="iF8-tn-yYJ" id="fjX-Gv-VDN"/>
+                <outlet property="x" destination="13T-9C-btd" id="9Ed-b5-aQx"/>
             </connections>
             <point key="canvasLocation" x="280.5" y="589.5"/>
         </customView>

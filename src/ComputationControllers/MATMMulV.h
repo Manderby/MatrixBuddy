@@ -14,8 +14,8 @@
 @interface MATMulM22V2 : MATComputationView{
   NABool computeforward;
   IBOutlet MATViewM22*   A;
-  IBOutlet MATViewV2*    b;
   IBOutlet MATViewV2*    x;
+  IBOutlet MATViewV2*    b;
 }
 
 - (void)valueChanged:(id)sender;
@@ -26,8 +26,8 @@
 @interface MATMulM33V3 : MATComputationView{
   NABool computeforward;
   IBOutlet MATViewM33*   A;
-  IBOutlet MATViewV3*    b;
   IBOutlet MATViewV3*    x;
+  IBOutlet MATViewV3*    b;
 }
 
 - (void)valueChanged:(id)sender;
@@ -38,8 +38,8 @@
 @interface MATMulM44V4 : MATComputationView{
   NABool computeforward;
   IBOutlet MATViewM44*   A;
-  IBOutlet MATViewV4*    b;
   IBOutlet MATViewV4*    x;
+  IBOutlet MATViewV4*    b;
 }
 
 - (void)valueChanged:(id)sender;

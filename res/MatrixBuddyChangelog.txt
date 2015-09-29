@@ -8,6 +8,18 @@ Keep key responder
 Make multiple windows
 Click on label to make it the result
 Storing Matrices and vectors and organizing them.
+Fill in default values
+Remember last computation after programm restart
+Multiply and Divide matrix and vector row-wise
+Invert more operations
+
+
+
+Version 1.0.1
+-------------
+
+- Corrected some help lines
+- Corrected Labels of multiplication of matrix with vector
 
 
 Version 1
