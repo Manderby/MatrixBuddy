@@ -15,6 +15,9 @@ Invert more operations
 
 
 
+
+- About window is available again under Snow Leopard and Lion
+
 Version 1.0.1
 -------------
 

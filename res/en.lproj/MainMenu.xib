@@ -380,7 +380,7 @@
                                     <menuItem isSeparatorItem="YES" id="OJ7-It-g6q"/>
                                     <menuItem title="Help" id="1Js-dk-hXd">
                                         <connections>
-                                            <action selector="showHelpWindow:" target="Voe-Tx-rLC" id="fhc-Y2-ymf"/>
+                                            <action selector="showHelp:" target="Voe-Tx-rLC" id="VE5-UX-PkW"/>
                                         </connections>
                                     </menuItem>
                                 </items>
@@ -608,7 +608,8 @@
         </customView>
         <customObject id="Voe-Tx-rLC" customClass="MATApplication">
             <connections>
-                <outlet property="helpviewer" destination="0P8-vD-jS3" id="5Sb-bd-524"/>
+                <outlet property="aboutMenuItem" destination="5kV-Vb-QxS" id="BAd-f6-IqI"/>
+                <outlet property="helpMenuItem" destination="FKE-Sm-Kum" id="n9b-Rl-MsJ"/>
                 <outlet property="windowController" destination="l5U-vZ-NRL" id="OIN-qa-4XJ"/>
             </connections>
         </customObject>
@@ -728,7 +729,6 @@
                 <outlet property="orthogonalizeV4" destination="b95-dV-sPn" id="Hbh-O6-xaZ"/>
                 <outlet property="placeholder" destination="f1r-9p-aLR" id="Hxe-2S-X2H"/>
                 <outlet property="rowFirstTabOrderItem" destination="o4z-QJ-S5n" id="rup-To-XTY"/>
-                <outlet property="showHelpItem" destination="vhM-fV-AsZ" id="MTx-3K-pG2"/>
                 <outlet property="showIdentifiersItem" destination="lMg-f6-4xn" id="WC4-4C-6sd"/>
                 <outlet property="subM22M22" destination="bh1-0q-fdp" id="G9g-MM-sq9"/>
                 <outlet property="subM33M33" destination="B3f-oU-OeF" id="XV3-61-533"/>
@@ -785,12 +785,6 @@
             <point key="canvasLocation" x="362.5" y="227.5"/>
         </customView>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <customObject id="0P8-vD-jS3" customClass="HelpViewer">
-            <connections>
-                <outlet property="webview" destination="beb-hx-fnm" id="X4K-kM-Kqf"/>
-                <outlet property="window" destination="mOC-N1-0ke" id="IZQ-b5-YUh"/>
-            </connections>
-        </customObject>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="Matrix Buddy" id="1Xt-HY-uBw">
@@ -1430,11 +1424,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                         <items>
-                            <menuItem title="Matrix Buddy Help" keyEquivalent="?" id="FKE-Sm-Kum">
-                                <connections>
-                                    <action selector="showHelpWindow:" target="Voe-Tx-rLC" id="3JH-7z-Yxp"/>
-                                </connections>
-                            </menuItem>
+                            <menuItem title="Matrix Buddy Help" keyEquivalent="?" id="FKE-Sm-Kum"/>
                         </items>
                     </menu>
                 </menuItem>
