@@ -14,6 +14,12 @@
 @implementation MATMulCompM22V2
 
 - (void)awakeFromNib{
+  NAMat22d initA;
+  naFillM22dWithDiag(initA, 1);
+  [A setValues:initA];
+  NAVec2d initv;
+  naFillV2d(initv, 1, 1);
+  [v setValues:initv];
 }
 
 
@@ -55,6 +61,12 @@
 @implementation MATMulCompM33V3
 
 - (void)awakeFromNib{
+  NAMat33d initA;
+  naFillM33dWithDiag(initA, 1);
+  [A setValues:initA];
+  NAVec3d initv;
+  naFillV3d(initv, 1, 1, 1);
+  [v setValues:initv];
 }
 
 
@@ -96,6 +108,12 @@
 @implementation MATMulCompM44V4
 
 - (void)awakeFromNib{
+  NAMat44d initA;
+  naFillM44dWithDiag(initA, 1);
+  [A setValues:initA];
+  NAVec4d initv;
+  naFillV4d(initv, 1, 1, 1, 1);
+  [v setValues:initv];
 }
 
 

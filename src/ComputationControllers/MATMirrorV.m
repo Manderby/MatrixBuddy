@@ -11,6 +11,12 @@
 @implementation MATMirrorV2
 
 - (void)awakeFromNib{
+  NAVec2d inita;
+  naFillV2d(inita, 0, 0);
+  [a setValues:inita];
+  NAVec2d initn;
+  naFillV2d(initn, 1, 0);
+  [n setValues:initn];
 }
 
 
@@ -58,6 +64,12 @@
 @implementation MATMirrorV3
 
 - (void)awakeFromNib{
+  NAVec3d inita;
+  naFillV3d(inita, 0, 0, 0);
+  [a setValues:inita];
+  NAVec3d initn;
+  naFillV3d(initn, 1, 0, 0);
+  [n setValues:initn];
 }
 
 
@@ -105,6 +117,12 @@
 @implementation MATMirrorV4
 
 - (void)awakeFromNib{
+  NAVec4d inita;
+  naFillV4d(inita, 0, 0, 0, 0);
+  [a setValues:inita];
+  NAVec4d initn;
+  naFillV4d(initn, 1, 0, 0, 0);
+  [n setValues:initn];
 }
 
 

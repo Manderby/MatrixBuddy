@@ -11,6 +11,12 @@
 
 - (void)awakeFromNib{
   computeforward = NA_TRUE;
+  NAMat22d initA;
+  naFillM22dWithDiag(initA, 0);
+  [A setValues:initA];
+  NAMat22d initB;
+  naFillM22dWithDiag(initB, 0);
+  [B setValues:initB];
 }
 
 
@@ -68,6 +74,12 @@
 
 - (void)awakeFromNib{
   computeforward = NA_TRUE;
+  NAMat33d initA;
+  naFillM33dWithDiag(initA, 0);
+  [A setValues:initA];
+  NAMat33d initB;
+  naFillM33dWithDiag(initB, 0);
+  [B setValues:initB];
 }
 
 
@@ -125,6 +137,12 @@
 
 - (void)awakeFromNib{
   computeforward = NA_TRUE;
+  NAMat44d initA;
+  naFillM44dWithDiag(initA, 0);
+  [A setValues:initA];
+  NAMat44d initB;
+  naFillM44dWithDiag(initB, 0);
+  [B setValues:initB];
 }
 
 

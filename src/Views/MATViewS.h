@@ -11,7 +11,7 @@
 - (void)update;
 
 - (double*)values;
-- (void)setValues:(NAVec4d)newvalues;
+- (void)setValues:(double*)newvalues;
 - (void)valueChanged:(MATTextField*)sender;
 
 @end

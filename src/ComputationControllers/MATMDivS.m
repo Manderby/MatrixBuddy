@@ -11,6 +11,11 @@
 @implementation MATDivM22S
 
 - (void)awakeFromNib{
+  NAMat22d initA;
+  naFillM22dWithDiag(initA, 1);
+  [A setValues:initA];
+  double inits = 1.;
+  [s setValues:&inits];
 }
 
 
@@ -69,6 +74,11 @@
 @implementation MATDivM33S
 
 - (void)awakeFromNib{
+  NAMat33d initA;
+  naFillM33dWithDiag(initA, 1);
+  [A setValues:initA];
+  double inits = 1.;
+  [s setValues:&inits];
 }
 
 
@@ -127,6 +137,11 @@
 @implementation MATDivM44S
 
 - (void)awakeFromNib{
+  NAMat44d initA;
+  naFillM44dWithDiag(initA, 1);
+  [A setValues:initA];
+  double inits = 1.;
+  [s setValues:&inits];
 }
 
 

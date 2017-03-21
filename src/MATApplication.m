@@ -1,6 +1,5 @@
 
 #import "MATApplication.h"
-#import "HelpViewer.h"
 
 
 @implementation MATApplication
@@ -17,6 +16,9 @@
 
   [super applicationDidFinishLaunching:notification];
 
+  NSURL* url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html" subdirectory:@"help"];
+  [self setHelpDocument:url];
+
   [windowController prepareFirstView];
 }
 
@@ -24,11 +26,6 @@
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication{
   NA_UNUSED(theApplication);
   return YES;
-}
-
-- (IBAction) showHelpWindow:(id)sender{
-  NA_UNUSED(sender);
-  [helpviewer show];
 }
 
 

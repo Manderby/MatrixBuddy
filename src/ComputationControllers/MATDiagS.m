@@ -11,6 +11,8 @@
 @implementation MATDiagSM22
 
 - (void)awakeFromNib{
+  double inits = 1.;
+  [s setValues:&inits];
 }
 
 
@@ -51,6 +53,8 @@
 @implementation MATDiagSM33
 
 - (void)awakeFromNib{
+  double inits = 1.;
+  [s setValues:&inits];
 }
 
 
@@ -91,6 +95,8 @@
 @implementation MATDiagSM44
 
 - (void)awakeFromNib{
+  double inits = 1.;
+  [s setValues:&inits];
 }
 
 

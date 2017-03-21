@@ -8,11 +8,17 @@ Keep key responder
 Make multiple windows
 Click on label to make it the result
 Storing Matrices and vectors and organizing them.
-Fill in default values
 Remember last computation after programm restart
 Multiply and Divide matrix and vector row-wise
 Invert more operations
+Display numbers more natural
 
+
+
+
+- Scalars, Vectors and Matrices have better default values now.
+- Fixed Quick Help line bug.
+- About window is available again under Snow Leopard and Lion
 
 
 Version 1.0.1

@@ -27,9 +27,10 @@
   [textfield setTarget:self];
   [self addSubview:textfield];
   
-  value = 1.;
-  
-  [self update];
+// The value will be set by the awakeFromNib method of the computation using
+// setValues
+// value = 1.;  
+//  [self update];
 }
 
 

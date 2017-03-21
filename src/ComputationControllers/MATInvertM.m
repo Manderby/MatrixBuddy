@@ -14,6 +14,9 @@
 
 - (void)awakeFromNib{
   computeforward = NA_TRUE;
+  NAMat22d initA;
+  naFillM22dWithDiag(initA, 1);
+  [A setValues:initA];
 }
 
 
@@ -68,34 +71,34 @@
 
   if(computeforward){
     NAMat22d result;
-    double det = naDeterminantM22d([A values]);
+    double det = naDetM22d([A values]);
     if(det == 0.){
       [A setStatus:MAT_STATUS_MATRIX_DETERMINANT_ZERO];
       naFillM22dWithDiag(result, 0.);
       [B setValues:result];
     }else if(naAlmostZero(det)){
       [A setStatus:MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO];
-      naInvertM22d(result, [A values]);
+      naInvM22d(result, [A values]);
       [B setValues:result];
     }else{
       [A setStatus:MAT_STATUS_NORMAL];
-      naInvertM22d(result, [A values]);
+      naInvM22d(result, [A values]);
       [B setValues:result];
     }
   }else{
     NAMat22d result;
-    double det = naDeterminantM22d([B values]);
+    double det = naDetM22d([B values]);
     if(det == 0.){
       [B setStatus:MAT_STATUS_MATRIX_DETERMINANT_ZERO];
       naFillM22dWithDiag(result, 0.);
       [A setValues:result];
     }else if(naAlmostZero(det)){
       [B setStatus:MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO];
-      naInvertM22d(result, [B values]);
+      naInvM22d(result, [B values]);
       [A setValues:result];
     }else{
       [B setStatus:MAT_STATUS_NORMAL];
-      naInvertM22d(result, [B values]);
+      naInvM22d(result, [B values]);
       [A setValues:result];
     }
   }
@@ -113,6 +116,9 @@
 
 - (void)awakeFromNib{
   computeforward = NA_TRUE;
+  NAMat33d initA;
+  naFillM33dWithDiag(initA, 1);
+  [A setValues:initA];
 }
 
 
@@ -166,34 +172,34 @@
 
   if(computeforward){
     NAMat33d result;
-    double det = naDeterminantM33d([A values]);
+    double det = naDetM33d([A values]);
     if(det == 0.){
       [A setStatus:MAT_STATUS_MATRIX_DETERMINANT_ZERO];
       naFillM33dWithDiag(result, 0.);
       [B setValues:result];
     }else if(naAlmostZero(det)){
       [A setStatus:MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO];
-      naInvertM33d(result, [A values]);
+      naInvM33d(result, [A values]);
       [B setValues:result];
     }else{
       [A setStatus:MAT_STATUS_NORMAL];
-      naInvertM33d(result, [A values]);
+      naInvM33d(result, [A values]);
       [B setValues:result];
     }
   }else{
     NAMat33d result;
-    double det = naDeterminantM33d([B values]);
+    double det = naDetM33d([B values]);
     if(det == 0.){
       [B setStatus:MAT_STATUS_MATRIX_DETERMINANT_ZERO];
       naFillM33dWithDiag(result, 0.);
       [A setValues:result];
     }else if(naAlmostZero(det)){
       [B setStatus:MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO];
-      naInvertM33d(result, [B values]);
+      naInvM33d(result, [B values]);
       [A setValues:result];
     }else{
       [B setStatus:MAT_STATUS_NORMAL];
-      naInvertM33d(result, [B values]);
+      naInvM33d(result, [B values]);
       [A setValues:result];
     }
   }
@@ -211,6 +217,9 @@
 
 - (void)awakeFromNib{
   computeforward = NA_TRUE;
+  NAMat44d initA;
+  naFillM44dWithDiag(initA, 1);
+  [A setValues:initA];
 }
 
 
@@ -264,34 +273,34 @@
 
   if(computeforward){
     NAMat44d result;
-    double det = naDeterminantM44d([A values]);
+    double det = naDetM44d([A values]);
     if(det == 0.){
       [A setStatus:MAT_STATUS_MATRIX_DETERMINANT_ZERO];
       naFillM44dWithDiag(result, 0.);
       [B setValues:result];
     }else if(naAlmostZero(det)){
       [A setStatus:MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO];
-      naInvertM44d(result, [A values]);
+      naInvM44d(result, [A values]);
       [B setValues:result];
     }else{
       [A setStatus:MAT_STATUS_NORMAL];
-      naInvertM44d(result, [A values]);
+      naInvM44d(result, [A values]);
       [B setValues:result];
     }
   }else{
     NAMat44d result;
-    double det = naDeterminantM44d([B values]);
+    double det = naDetM44d([B values]);
     if(det == 0.){
       [B setStatus:MAT_STATUS_MATRIX_DETERMINANT_ZERO];
       naFillM44dWithDiag(result, 0.);
       [A setValues:result];
     }else if(naAlmostZero(det)){
       [B setStatus:MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO];
-      naInvertM44d(result, [B values]);
+      naInvM44d(result, [B values]);
       [A setValues:result];
     }else{
       [B setStatus:MAT_STATUS_NORMAL];
-      naInvertM44d(result, [B values]);
+      naInvM44d(result, [B values]);
       [A setValues:result];
     }
   }

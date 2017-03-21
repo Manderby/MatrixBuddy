@@ -11,6 +11,9 @@
 @implementation MATNormalizeV2
 
 - (void)awakeFromNib{
+  NAVec2d inita;
+  naFillV2d(inita, 1, 0);
+  [a setValues:inita];
 }
 
 
@@ -60,6 +63,9 @@
 @implementation MATNormalizeV3
 
 - (void)awakeFromNib{
+  NAVec3d inita;
+  naFillV3d(inita, 1, 0, 0);
+  [a setValues:inita];
 }
 
 
@@ -109,6 +115,9 @@
 @implementation MATNormalizeV4
 
 - (void)awakeFromNib{
+  NAVec4d inita;
+  naFillV4d(inita, 1, 0, 0, 0);
+  [a setValues:inita];
 }
 
 

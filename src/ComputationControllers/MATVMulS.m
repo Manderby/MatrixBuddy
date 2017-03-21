@@ -11,6 +11,11 @@
 @implementation MATMulV2S
 
 - (void)awakeFromNib{
+  NAVec2d inita;
+  naFillV2d(inita, 0, 0);
+  [a setValues:inita];
+  double inits = 1.;
+  [s setValues:&inits];
 }
 
 
@@ -54,6 +59,11 @@
 @implementation MATMulV3S
 
 - (void)awakeFromNib{
+  NAVec3d inita;
+  naFillV3d(inita, 0, 0, 0);
+  [a setValues:inita];
+  double inits = 1.;
+  [s setValues:&inits];
 }
 
 
@@ -97,6 +107,11 @@
 @implementation MATMulV4S
 
 - (void)awakeFromNib{
+  NAVec4d inita;
+  naFillV4d(inita, 0, 0, 0, 0);
+  [a setValues:inita];
+  double inits = 1.;
+  [s setValues:&inits];
 }
 
 

@@ -31,8 +31,10 @@
     }
   }
   
-  naFillM33dWithDiag(values, 1.);
-  [self update];
+// The value will be set by the awakeFromNib method of the computation using
+// setValues
+//  naFillM33dWithDiag(values, 1.);
+//  [self update];
 }
 
 

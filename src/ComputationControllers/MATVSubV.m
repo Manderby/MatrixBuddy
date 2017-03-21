@@ -11,6 +11,12 @@
 
 - (void)awakeFromNib{
   computeforward = NA_TRUE;
+  NAVec2d inita;
+  naFillV2d(inita, 0, 0);
+  [a setValues:inita];
+  NAVec2d initb;
+  naFillV2d(initb, 0, 0);
+  [b setValues:initb];
 }
 
 
@@ -68,6 +74,12 @@
 
 - (void)awakeFromNib{
   computeforward = NA_TRUE;
+  NAVec3d inita;
+  naFillV3d(inita, 0, 0, 0);
+  [a setValues:inita];
+  NAVec3d initb;
+  naFillV3d(initb, 0, 0, 0);
+  [b setValues:initb];
 }
 
 
@@ -125,6 +137,12 @@
 
 - (void)awakeFromNib{
   computeforward = NA_TRUE;
+  NAVec4d inita;
+  naFillV4d(inita, 0, 0, 0, 0);
+  [a setValues:inita];
+  NAVec4d initb;
+  naFillV4d(initb, 0, 0, 0, 0);
+  [b setValues:initb];
 }
 
 

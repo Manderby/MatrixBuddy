@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="6751"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -20,7 +21,7 @@
             <value key="minSize" type="size" width="991" height="336"/>
             <value key="maxSize" type="size" width="991" height="336"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="-5" width="991" height="336"/>
+                <rect key="frame" x="0.0" y="0.0" width="991" height="336"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" id="h6k-Pl-DFb">
@@ -276,12 +277,9 @@
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="XwY-XP-iHS"/>
                         </connections>
                     </button>
-                    <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="V47-ng-Bey">
+                    <box verticalHuggingPriority="750" boxType="separator" id="V47-ng-Bey">
                         <rect key="frame" x="12" y="245" width="967" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
                     </box>
                     <segmentedControl verticalHuggingPriority="750" id="DuE-0X-KgV">
                         <rect key="frame" x="436" y="276" width="118" height="25"/>
@@ -380,7 +378,7 @@
                                     <menuItem isSeparatorItem="YES" id="OJ7-It-g6q"/>
                                     <menuItem title="Help" id="1Js-dk-hXd">
                                         <connections>
-                                            <action selector="showHelpWindow:" target="Voe-Tx-rLC" id="fhc-Y2-ymf"/>
+                                            <action selector="showHelp:" target="Voe-Tx-rLC" id="VE5-UX-PkW"/>
                                         </connections>
                                     </menuItem>
                                 </items>
@@ -457,7 +455,7 @@
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="280.5" y="-32"/>
+            <point key="canvasLocation" x="137" y="-125"/>
         </window>
         <window title="Matrix Buddy Help" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="mOC-N1-0ke">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -608,7 +606,8 @@
         </customView>
         <customObject id="Voe-Tx-rLC" customClass="MATApplication">
             <connections>
-                <outlet property="helpviewer" destination="0P8-vD-jS3" id="5Sb-bd-524"/>
+                <outlet property="aboutMenuItem" destination="5kV-Vb-QxS" id="BAd-f6-IqI"/>
+                <outlet property="helpMenuItem" destination="FKE-Sm-Kum" id="n9b-Rl-MsJ"/>
                 <outlet property="windowController" destination="l5U-vZ-NRL" id="OIN-qa-4XJ"/>
             </connections>
         </customObject>
@@ -728,7 +727,7 @@
                 <outlet property="orthogonalizeV4" destination="b95-dV-sPn" id="Hbh-O6-xaZ"/>
                 <outlet property="placeholder" destination="f1r-9p-aLR" id="Hxe-2S-X2H"/>
                 <outlet property="rowFirstTabOrderItem" destination="o4z-QJ-S5n" id="rup-To-XTY"/>
-                <outlet property="showHelpItem" destination="vhM-fV-AsZ" id="MTx-3K-pG2"/>
+                <outlet property="showHelpItem" destination="vhM-fV-AsZ" id="eYm-NJ-cTt"/>
                 <outlet property="showIdentifiersItem" destination="lMg-f6-4xn" id="WC4-4C-6sd"/>
                 <outlet property="subM22M22" destination="bh1-0q-fdp" id="G9g-MM-sq9"/>
                 <outlet property="subM33M33" destination="B3f-oU-OeF" id="XV3-61-533"/>
@@ -785,12 +784,6 @@
             <point key="canvasLocation" x="362.5" y="227.5"/>
         </customView>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <customObject id="0P8-vD-jS3" customClass="HelpViewer">
-            <connections>
-                <outlet property="webview" destination="beb-hx-fnm" id="X4K-kM-Kqf"/>
-                <outlet property="window" destination="mOC-N1-0ke" id="IZQ-b5-YUh"/>
-            </connections>
-        </customObject>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="Matrix Buddy" id="1Xt-HY-uBw">
@@ -1430,11 +1423,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                         <items>
-                            <menuItem title="Matrix Buddy Help" keyEquivalent="?" id="FKE-Sm-Kum">
-                                <connections>
-                                    <action selector="showHelpWindow:" target="Voe-Tx-rLC" id="3JH-7z-Yxp"/>
-                                </connections>
-                            </menuItem>
+                            <menuItem title="Matrix Buddy Help" keyEquivalent="?" id="FKE-Sm-Kum"/>
                         </items>
                     </menu>
                 </menuItem>
@@ -4383,6 +4372,6 @@
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSAddTemplate" width="11" height="11"/>
     </resources>
 </document>

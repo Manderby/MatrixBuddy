@@ -9,6 +9,12 @@
 @implementation MATCrossV3V3
 
 - (void)awakeFromNib{
+  NAVec3d inita;
+  naFillV3d(inita, 0, 0, 0);
+  [a setValues:inita];
+  NAVec3d initb;
+  naFillV3d(initb, 0, 0, 0);
+  [b setValues:initb];
 }
 
 

@@ -11,6 +11,9 @@
 @implementation MATLengthV2
 
 - (void)awakeFromNib{
+  NAVec2d initv;
+  naFillV2d(initv, 1, 1);
+  [v setValues:initv];
 }
 
 
@@ -50,6 +53,9 @@
 @implementation MATLengthV3
 
 - (void)awakeFromNib{
+  NAVec3d initv;
+  naFillV3d(initv, 1, 1, 1);
+  [v setValues:initv];
 }
 
 
@@ -89,6 +95,9 @@
 @implementation MATLengthV4
 
 - (void)awakeFromNib{
+  NAVec4d initv;
+  naFillV4d(initv, 1, 1, 1, 1);
+  [v setValues:initv];
 }
 
 

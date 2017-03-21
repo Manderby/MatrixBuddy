@@ -31,9 +31,10 @@
     }
   }
   
-  naFillV3d(values, 0., 0., 0.);
-  
-  [self update];
+// The value will be set by the awakeFromNib method of the computation using
+// setValues
+//  naFillV3d(values, 0., 0., 0.);  
+//  [self update];
 }
 
 
