@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
@@ -376,6 +376,19 @@
                                         </connections>
                                     </menuItem>
                                     <menuItem isSeparatorItem="YES" id="OJ7-It-g6q"/>
+                                    <menuItem title="Accuracy: Natural" id="AOl-jf-KW7">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="Nr5-EO-EGB"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="Accuracy: float" id="6im-P3-q4K">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="jpy-UG-r0y"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem isSeparatorItem="YES" id="D9f-r5-dS8"/>
                                     <menuItem title="Help" id="1Js-dk-hXd">
                                         <connections>
                                             <action selector="showHelp:" target="Voe-Tx-rLC" id="VE5-UX-PkW"/>
@@ -738,6 +751,8 @@
                 <outlet property="transposeM22" destination="qmq-5u-kMd" id="BmZ-hr-lGA"/>
                 <outlet property="transposeM33" destination="fHH-RJ-Grh" id="F3J-MB-n4p"/>
                 <outlet property="transposeM44" destination="xOY-Hs-pkk" id="gRh-xe-ZbE"/>
+                <outlet property="valueAccuracyFloatItem" destination="6im-P3-q4K" id="dER-8U-3HD"/>
+                <outlet property="valueAccuracyNaturalItem" destination="AOl-jf-KW7" id="aRJ-fV-bwd"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="Utv-LE-3yb"/>
             </connections>
         </customObject>

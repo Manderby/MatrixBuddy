@@ -2,6 +2,24 @@
 #import "MATApplication.h"
 
 
+
+NSString* formatValue(float value){
+  MATValueAccuracy valueAccuracy = [(MATApplication*)NSApp valueAccuracy];
+  if(valueAccuracy == MAT_VALUE_ACCURACY_NATURAL){
+    for(int digit = 0; digit < 6; digit++){
+      float testvalue = value * naPow(10, digit);
+      if(naRoundf(testvalue) == testvalue){
+        NSString* formatstring = [NSString stringWithFormat:@"%%.%df", digit];
+        return [NSString stringWithFormat:formatstring, value];
+      }
+    }
+  }
+  return [NSString stringWithFormat:@"%f", value];
+}
+
+
+
+
 @implementation MATApplication
 
 - (id)init{
@@ -41,6 +59,9 @@
 }
 - (MATCodeStyle)codeStyle{
   return [windowController codeStyle];
+}
+- (MATValueAccuracy)valueAccuracy{
+  return [windowController valueAccuracy];
 }
 
 

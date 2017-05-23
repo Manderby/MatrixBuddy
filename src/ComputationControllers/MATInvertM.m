@@ -32,17 +32,19 @@
   NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
   [paragraphStyle setAlignment:NSCenterTextAlignment];
   
-  NSDictionary *baseAttributes = @{
-      NSFontAttributeName : [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:NSItalicFontMask weight:0 size:24.],
-      NSParagraphStyleAttributeName : paragraphStyle
-      };
+  NSDictionary *baseAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+      [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:NSItalicFontMask weight:0 size:24.], NSFontAttributeName,
+      paragraphStyle, NSParagraphStyleAttributeName,
+      nil
+      ];
   NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"A" attributes:baseAttributes];
   
-  NSDictionary *exponentAttributes = @{
-      NSFontAttributeName : [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:0 weight:0 size:14.],
-      NSParagraphStyleAttributeName : paragraphStyle,
-      NSBaselineOffsetAttributeName : @(8)
-      };
+  NSDictionary *exponentAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+      [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:0 weight:0 size:14.], NSFontAttributeName,
+      paragraphStyle, NSParagraphStyleAttributeName,
+      [NSNumber numberWithInt:8], NSBaselineOffsetAttributeName,
+      nil
+      ];
   NSAttributedString *exponentAttributedString = [[NSAttributedString alloc] initWithString:@"-1" attributes:exponentAttributes];
   [attributedString appendAttributedString:exponentAttributedString];
 
@@ -133,17 +135,17 @@
   NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
   [paragraphStyle setAlignment:NSCenterTextAlignment];
   
-  NSDictionary *baseAttributes = @{
-      NSFontAttributeName : [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:NSItalicFontMask weight:0 size:24.],
-      NSParagraphStyleAttributeName : paragraphStyle
-      };
+  NSDictionary *baseAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+      [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:NSItalicFontMask weight:0 size:24.], NSFontAttributeName,
+      paragraphStyle, NSParagraphStyleAttributeName,
+      nil];
   NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"A" attributes:baseAttributes];
   
-  NSDictionary *exponentAttributes = @{
-      NSFontAttributeName : [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:0 weight:0 size:14.],
-      NSParagraphStyleAttributeName : paragraphStyle,
-      NSBaselineOffsetAttributeName : @(8)
-      };
+  NSDictionary *exponentAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+      [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:0 weight:0 size:14.], NSFontAttributeName,
+      paragraphStyle, NSParagraphStyleAttributeName,
+      [NSNumber numberWithInt:8], NSBaselineOffsetAttributeName,
+      nil];
   NSAttributedString *exponentAttributedString = [[NSAttributedString alloc] initWithString:@"-1" attributes:exponentAttributes];
   [attributedString appendAttributedString:exponentAttributedString];
 
@@ -234,17 +236,17 @@
   NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
   [paragraphStyle setAlignment:NSCenterTextAlignment];
   
-  NSDictionary *baseAttributes = @{
-      NSFontAttributeName : [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:NSItalicFontMask weight:0 size:24.],
-      NSParagraphStyleAttributeName : paragraphStyle
-      };
+  NSDictionary *baseAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+      [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:NSItalicFontMask weight:0 size:24.], NSFontAttributeName,
+      paragraphStyle, NSParagraphStyleAttributeName,
+      nil];
   NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"A" attributes:baseAttributes];
   
-  NSDictionary *exponentAttributes = @{
-      NSFontAttributeName : [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:0 weight:0 size:14.],
-      NSParagraphStyleAttributeName : paragraphStyle,
-      NSBaselineOffsetAttributeName : @(8)
-      };
+  NSDictionary *exponentAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+      [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:0 weight:0 size:14.], NSFontAttributeName,
+      paragraphStyle, NSParagraphStyleAttributeName,
+      [NSNumber numberWithInt:8], NSBaselineOffsetAttributeName,
+      nil];
   NSAttributedString *exponentAttributedString = [[NSAttributedString alloc] initWithString:@"-1" attributes:exponentAttributes];
   [attributedString appendAttributedString:exponentAttributedString];
 

@@ -61,7 +61,6 @@
 		90CE46B91E8B0FC7001EB1B1 /* NASystem.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CE467C1E8B0FC7001EB1B1 /* NASystem.c */; };
 		90CE46BA1E8B0FC7001EB1B1 /* NAMoney.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CE46891E8B0FC7001EB1B1 /* NAMoney.c */; };
 		90CE46BB1E8B0FC7001EB1B1 /* NABuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CE469A1E8B0FC7001EB1B1 /* NABuffer.c */; };
-		90CE46BC1E8B0FC7001EB1B1 /* NAFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CE469C1E8B0FC7001EB1B1 /* NAFile.c */; };
 		90CE46BD1E8B0FC7001EB1B1 /* NAHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CE469D1E8B0FC7001EB1B1 /* NAHeap.c */; };
 		90CE46BE1E8B0FC7001EB1B1 /* NAList.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CE469F1E8B0FC7001EB1B1 /* NAList.c */; };
 		90CE46BF1E8B0FC7001EB1B1 /* NAOctTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CE46A11E8B0FC7001EB1B1 /* NAOctTree.c */; };
@@ -221,7 +220,6 @@
 		90CE46991E8B0FC7001EB1B1 /* NAArrayII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAArrayII.h; sourceTree = "<group>"; };
 		90CE469A1E8B0FC7001EB1B1 /* NABuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NABuffer.c; sourceTree = "<group>"; };
 		90CE469B1E8B0FC7001EB1B1 /* NACircularBufferII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACircularBufferII.h; sourceTree = "<group>"; };
-		90CE469C1E8B0FC7001EB1B1 /* NAFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAFile.c; sourceTree = "<group>"; };
 		90CE469D1E8B0FC7001EB1B1 /* NAHeap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAHeap.c; sourceTree = "<group>"; };
 		90CE469E1E8B0FC7001EB1B1 /* NAHeapII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAHeapII.h; sourceTree = "<group>"; };
 		90CE469F1E8B0FC7001EB1B1 /* NAList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAList.c; sourceTree = "<group>"; };
@@ -500,7 +498,6 @@
 				90CE46991E8B0FC7001EB1B1 /* NAArrayII.h */,
 				90CE469A1E8B0FC7001EB1B1 /* NABuffer.c */,
 				90CE469B1E8B0FC7001EB1B1 /* NACircularBufferII.h */,
-				90CE469C1E8B0FC7001EB1B1 /* NAFile.c */,
 				90CE469D1E8B0FC7001EB1B1 /* NAHeap.c */,
 				90CE469E1E8B0FC7001EB1B1 /* NAHeapII.h */,
 				90CE469F1E8B0FC7001EB1B1 /* NAList.c */,
@@ -703,7 +700,6 @@
 				90CE46BF1E8B0FC7001EB1B1 /* NAOctTree.c in Sources */,
 				90BA03411BA97EA400A651E9 /* MATViewM33.m in Sources */,
 				90CE46C61E8B0FC7001EB1B1 /* NAUICoreAPI.c in Sources */,
-				90CE46BC1E8B0FC7001EB1B1 /* NAFile.c in Sources */,
 				90D0A2E51D892A0800C79080 /* ManderimApplication.m in Sources */,
 				90BA039E1BAAF29F00A651E9 /* MATMirrorV.m in Sources */,
 				90CE46C01E8B0FC7001EB1B1 /* NAQuadTree.c in Sources */,

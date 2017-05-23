@@ -41,6 +41,7 @@
 #define MAT_DEFAULT_SHOW_IDENTIFIERS @"showIdentifiers"
 #define MAT_DEFAULT_TAB_ORDER_ROW_FIRST @"useRowFirstTabOrder"
 #define MAT_DEFAULT_CODE_STYLE @"codeStyle"
+#define MAT_DEFAULT_VALUE_ACCURACY @"valueAccuracy"
 
 
 @implementation MATWindowController
@@ -70,6 +71,11 @@
   int codeStyleDefault = (int)[userdefaults integerForKey:MAT_DEFAULT_CODE_STYLE];
   if(codeStyleDefault == -1){codeStyle = MAT_CODE_STYLE_NONE;}
   else if(codeStyleDefault > 0){codeStyle = (MATCodeStyle)codeStyleDefault;}
+  else{codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;}
+
+  int valueAccuracyDefault = (int)[userdefaults integerForKey:MAT_DEFAULT_VALUE_ACCURACY];
+  if(valueAccuracyDefault == -1){valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;}
+  else if(valueAccuracyDefault > 0){valueAccuracy = (MATValueAccuracy)valueAccuracyDefault;}
   else{codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;}
   
   buttons[MAT_COMPUTATION_VMULS]          = buttonVMulS;
@@ -290,6 +296,13 @@
   case MAT_CODE_STYLE_MATLAB: [codeMatlabItem setState:NSOnState]; break;
   case MAT_CODE_STYLE_MAPLE: [codeMapleItem setState:NSOnState]; break;
   }
+  
+  [valueAccuracyNaturalItem setState:NSOffState];
+  [valueAccuracyFloatItem setState:NSOffState];
+  switch(valueAccuracy){
+  case MAT_VALUE_ACCURACY_NATURAL: [valueAccuracyNaturalItem setState:NSOnState]; break;
+  case MAT_VALUE_ACCURACY_FLOAT: [valueAccuracyFloatItem setState:NSOnState]; break;
+  }
 
   NSRect frame = [computationView frame];
   [computationView removeFromSuperview];
@@ -317,6 +330,9 @@
 }
 - (MATCodeStyle)codeStyle{
   return codeStyle;
+}
+- (MATValueAccuracy)valueAccuracy{
+  return valueAccuracy;
 }
 
 
@@ -379,6 +395,12 @@
   }else if(sender == codeMapleItem){
     codeStyle = MAT_CODE_STYLE_MAPLE;
     [userdefaults setInteger:codeStyle forKey:MAT_DEFAULT_CODE_STYLE];
+  }else if(sender == valueAccuracyNaturalItem){
+    valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;
+    [userdefaults setInteger:valueAccuracy forKey:MAT_DEFAULT_VALUE_ACCURACY];
+  }else if(sender == valueAccuracyFloatItem){
+    valueAccuracy = MAT_VALUE_ACCURACY_FLOAT;
+    [userdefaults setInteger:valueAccuracy forKey:MAT_DEFAULT_VALUE_ACCURACY];
   }else{}
   [self update];
 }

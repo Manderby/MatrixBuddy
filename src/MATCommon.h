@@ -70,6 +70,12 @@ typedef enum{
 
 
 typedef enum{
+  MAT_VALUE_ACCURACY_NATURAL = 0,
+  MAT_VALUE_ACCURACY_FLOAT,
+} MATValueAccuracy;
+
+
+typedef enum{
   MAT_DIMENSIONS_2 = 0,
   MAT_DIMENSIONS_3,
   MAT_DIMENSIONS_4,
@@ -113,6 +119,10 @@ typedef enum{
   
   MAT_COMPUTATION_COUNT
 } MATComputation;
+
+
+
+
 
 
 #endif

@@ -11,14 +11,19 @@ Storing Matrices and vectors and organizing them.
 Remember last computation after programm restart
 Multiply and Divide matrix and vector row-wise
 Invert more operations
-Display numbers more natural
 
 
 
 
+Version 1.1
+-------------
+
+- Values are displayed with better readable decimals.
+- Value accuracy can be set in the settings.
 - Scalars, Vectors and Matrices have better default values now.
 - Fixed Quick Help line bug.
 - About window is available again under Snow Leopard and Lion
+- Help window shows correct help again.
 
 
 Version 1.0.1

@@ -6,129 +6,145 @@
   <meta name="viewport" content="width=768"/>
   <meta name="author" content="Tobias Stamm"/>
   <link rel="stylesheet" type="text/css" href="css.css"/>
-  <title>Bit Fiddle</title>
+  <title>Matrix Buddy</title>
 </head>
 <body>
 
-<h1>Bit Fiddle</h1>
+<h1>Matrix Buddy</h1>
 
 <article>
 <header>
 <h2>What does this application do?</h2>
 </header>
-<ul>
-<li>Convert arbitrarily large decimal, hexadecimal or binary numbers or ASCII characters.</li>
-<li>Compute the 1's complement or the 2's complement.</li>
-<li>Alter the byte order of the input to convert between Little and Big Endian.</li>
-<li>View a simple ASCII table with additional information for each character.</li>
-</ul>
+<p>Vector algebra in 2D, 3D and 4D. Matrix and Vector. Basic operations.</p>
 </article>
 
 
 
 <article>
 <header>
-<h2>User-Interface elements of the main window</h2>
+<h2>Quick reference</h2>
 </header>
-<p>The main window exists in two forms: An expanded window and a Mini-Version. You can switch between the two by clicking on the Mini-Button or by choosing the appropriate menu command.</p>
+<p><b>Top of the window</b>: You can see many buttons each denoting a different kind of matrix or vector operation. Click on one of the buttons and the desired operation becomes active. They are explained in detail further below in the <a href="#vectorops">vector operations</a> and <a href="#matrixops">matrix operations</a> section.</p>
 
-<p>The window is divided into the input fields above, the output fields in the middle and the settings-selection at the bottom.</p>
-<p>The input and output fields are arranged as a table whereas the columns depict the different number bases. The rows depict the different byte sizes: 8, 16, 32, 64 and n bytes. With n bytes, the number automatically uses as many bytes as are required to store the input value as an unsigned number.</p>
+<p><b>Dimension chooser</b>: Select the number of dimensions (2D, 3D, 4D) with the control on top in the middle.</p>
 
-<p>When entering values, only specific digits are allowed. All non-allowed digits will be ignored (also the negativ sign, see further below).</p>
-<ul>
-<li><b>Dec</b>: Decimal number. The natural numbers we humans compute with. Digits: 0123456789</li>
-<li><b>Hex</b>: Hexadecimal number. numbers with base 16, often seen in computer programs. Digits: 0123456789abcdef as well as ABCDEF</li>
-<li><b>Bin</b>: Binary numbers. Every digit has just two values: 0 and 1. Additionally, you can enter the digits oO, iI and L.</li>
-<li><b>Asc</b>: ASCII-Characters. The numbers are interpreted as a series of 8-Bit-Characters and are displayed as 7-Bit-ASCII with a leading 0. Any ASCII character can be used. Numbers which do not correspond to a valid 7-Bit-ASCII-Character will be displayed as a question mark ?.</li>
-</ul>
+<p><b>Gear icon (in the middle on the top)</b>: All kinds of <a href="#settings">settings</a>.</p>
 
-<p>In the expanded window, there are a few settings which can be made and which can also be found in the application menu:</p>
-<ul>
-<li><b>Little ↔︎ Big</b>: Exchange of the input bytes to convert between Little- and Big-Endianness. Carful: Only use this if you know what you are doing.</li>
-<li><b>Unsigned</b>: The input is expected to be unsigned and will be converted directly to all output fields.</li>
-<li><b>1's complement</b>: The input is expected to be unsigned, gets converted with the 1's complement and will be displayed in the output fields.</li>
-<li><b>2's complement</b>: The input is expected to be unsigned, gets converted with the 2's complement and will be displayed in the output fields.</li>
-<li><b>ASCII</b>: Displays a separate window with a simple ASCII-Table with additional information for each character.</li>
-<li><b>Menu Preferences</b>: The display of the ASCII window at program startup can be suppressed.</li>
-</ul>
+<p><b>Bottom of the window</b>: This is where the operation is performed. Enter the matrix or vector values in the textfields. Results will be computed immediately and are indicated by a <span style="color:green">green</span> color.</p>
 
 </article>
 
 
-<article>
+
+<article id="settings">
 <header>
-<h2>User-Interface elements of the ASCII window</h2>
+<h2>Settings</h2>
 </header>
-<p>The window is divided into the ASCII characters above and the display options below.</p>
-<p>Hover with the mouse over the characters to see additional information displayed in the lower section of the window.</p>
-<ul>
-<li><b>Escape</b>: Escape-Codes. In programming languages with the C-Syntax, certain ASCII characters can only be accessed by using so called escape codes. Instead of the official ISO codes, these escape sequences are displayed.</li>
-<li><b>Code</b>: ISO-Codes. The first 32 characters are displayed with the official ISO code.</li>
-<li><b>Hex</b>: Hexadecimal numbering of the characters.</li>
-<li><b>Dec</b>: Decimal numbering of the characters.</li>
-</ul>
-
+<p><b>Quick Help Line</b>: Displays or hides a one-line help denoting what the currently selected operation does.</p>
+<p><b>Identifiers</b>: Displays or hides the identifiers above a matrix or vector. Note: <span style="color:red">errors</span> and <span style="color:orange">warnings</span> will still be displayed, even if this is turned off.</p>
+<p><b>Tab order</b>: Defines how you advance through a matrix with the tab key.</p>
+<p><b>Code style</b>: Displays or hides the code text field below a matrix or vector. You can choose between different <a href="#codestyle">code styles</a>.</p>
+<p><b>Value Accuracy</b>: Defines how the values are displayed. You can choose between different <a href="#valueaccuracy">value accuracies</a>.</p>
+<p><b>Help</b>: Displays this help.</p>
 </article>
 
 
-
-<article>
+<article id="codestyle">
 <header>
-<h2>Preferences</h2>
+<h2>Code Style</h2>
 </header>
-<p>At application startup:</p>
-<ul>
-<li><b>Hide ASCII-Window</b>: The window with the ASCII-data will be hidden upon application start.</li>
-<li><b>Set conversion to defaults</b>: The conversion will be set to unsigned without Endianness-conversion at application startup.</li>
-</ul>
+<p>There does not exist a standard method on how a matrix or a vector shall be copied and pasted between applications. The easiest way is to encode the matrix in a string. When enabling a specific code style in the <a href="#settings">Settings</a>, you can copy and paste a matrix or vector from and to different applications.</p>
+<p>There are different code styles which you can choose from:</p>
+<table>
+<tr><td>No code</td><td></td><td>Hides the code textfield</td></tr>
+<tr><td>C row first 1D</td><td><code>{1, 2, 3, 4}</code></td><td></td></tr>
+<tr><td>C row first 2D</td><td><code>{{1, 2}, {3, 4}}</code></td><td></td></tr>
+<tr><td>C column first 1D</td><td><code>{1, 3, 2, 4}</code></td><td></td></tr>
+<tr><td>C column first 2D</td><td><code>{{1, 3}, {2, 4}}</code></td><td></td></tr>
+<tr><td>Mathematica</td><td><code>{{1, 2}, {3, 4}}</code></td><td>always row first</td></tr>
+<tr><td>Matlab</td><td><code>[1 2; 3 4]</code></td><td>always row first</td></tr>
+<tr><td>Maple</td><td><code>[[1, 2], [3, 4]]</code></td><td>always row first</td></tr>
+</table>
+<p><b>Important</b>: The code styles are only for outputting. When you paste code from - for example - Matlab into Matrix Buddy, no special construction operators are allowed!</p>
 
-<p>Keep Windows in Foreground:</p>
-<ul>
-<li><b>Extended Version</b>: The extended conversion window will be kept in the foreground at all times.</li>
-<li><b>Mini-Version</b>: The Mini-Version will be kept in the foreground at all times.</li>
-</ul>
+<p>When you paste code into the code textfield, Matrix Buddy tries to find all values in the given string as a strictly sequential list and fills all remaining values with 0 if not found. Pasted code starting with a curly bracket <code>{</code> will always be interpreted as C style code and hence will be interpreted column first if you have selected one of the column first options. In any other case, the pasted values will be interpreted row first.</p>
+
+<p>Note that support for storing a matrix or a vector internally in a list is planned but not implemented yet. For now, just use a plain text editor to store your matrix or vector data.</p>
 </article>
 
 
-
-<article>
+<article id="valueaccuracy">
 <header>
-<h2>Why isn't my 2's complement negative?</h2>
+<h2>Value Accuracy</h2>
 </header>
-<p>There is often confusion between what exactly the 2's complement is. Many people think, that in a computer, the 2's complement is the same as a negative number. This is not really the truth.</p>
-<p>We humans compute with the decimal system and the digits 0 to 9. To mark a number as negative, we use an additional sign: The negative-Sign. A computer though has only two digits available and has no additional sign digit. Therefore, a computer somehow has to encode an integer number such that both positive as well as negative numbers can be stored. The method which is used nowadays is the storing of negative numbers by converting the absolute number of the value with the 2's complement.</p>
-<p>The 2's complement therefore always depicts a conversion of an absolute value, stored as a binary sequence. How the sequence will in the end be interpreted, meaning if it actually has a sign or not, is impossible to say just by looking at the value. For the computation of the 2's complement, this is irrelevant, it just converts any binary sequence it gets.</p>
-
-<p>The many possibilities of interpreting a binary value, to convert it, clip it or enlarge it or in general present it to a user are manyfold an confusing. If all the possibilities would have been implemented in the application, the user interface of Bit Fiddle would have become very complicated. The developer has decided to only display the most important possibilities. The application will therefore convert values always the same way with the following scheme:</p>
-
-<p><b>The exact sequence of conversion</b></p>
-
-<ul>
-<li>First, the input (Dec, Hex, Bin oder Asc) is converted to an internal format, consisting of single bits. Here indeed, only the digits listed above will be captured, everything else will be ignored. A negative decimal number therefore will always be read as its absolute value. The number of bits in the internal format corresponds precisely to the number of bits required to store the unsigned value in a multiple of 8 bits.</li>
-<li>Then, if the <q>Little ↔︎ Big</q>-Option is active, the bytes of the internal format will be switched.</li>
-<li>Then, the conversion takes place, speaking <q>Unsigned</q> (Which does nothing), <q>1's complement</q> or <q>2's complement</q>.</li>
-<li>After that, ther RESULTING bits will be packaged into the output sizes.
-  <ul>
-    <li>If the internal format has more space than is required for the output, the higher-order bits will be clipped. For examle, the value 0b00110011 10101010 in the internal format will be come 0b10101010 when converting to an 8-Bit-Value. This corresponds to the usual integer-convertion-mechanism of may programming languages.</li>
-    <li>If the internal format has less space than is required for the output, the value will be expanded ARITHMETICALLY. This means, that the internal value will be interpreded as a SIGNED value. For example, the value 0b10101010 in the internal format will be converted to 0b11111111 10101010 when converting to a 16-Bit-Value. This has been solved in this fashion because the non-arithmetic conversion (speaking filling up the value with zeros) is trivial and therefore can be omitted. It is expected that a user immediately sees that the conversion has been done arithmetically.</li>
-  </ul>
-</li>
-<li>Then, the output sizes will be converted to the different bases. Here, the values will be presented again to the user as decimal, hexadecimal, binary and ASCII values.
-  <ul>
-    <li>Decimal numbers will be displayed in groups of 3 with the digits 0 to 9 with a space in between. In case the conversion was done with the 1's complement, no output will be generated for the decimal numbers. In case (and really just in case) of converting with the 2's complement, the output will be interpreted and displayed as a signed decimal value.</li>
-    <li>Hexadecimal numbers will be dispalyed in pairs of hexadecimal digits with a space in between. The letter-digits will be displayed lower-case.</li>
-    <li>Binary numbers will be displayed in groups of 8 with the binary digits 0 and 1 and with a space in between.</li>
-    <li>ASCII-Strings will be displayed as sequences of 7-Bit-ASCII-Characters, whereas the eight bit will be set to 0. Single bytes which do not correspond to a valid ASCII-Character will be displayed as question marks ?.</li>
-  </ul>
-</li>
-</ul>
-
-<p>This conversion covers all non-trivial conversions of integer numbers.</p>
-
-<p>As the input is always expected as unsigned, it is for example not possible to enter a signed hexadecimal value and expect it to be converted to a signed decimal value. For those being interested in such a conversion and interpretation, you can simply convert the number with the 2's complement and add a minus sign in front of the decimal number.</p>
+<p>You can choose how the computed numbers are displayed. Internally, everything is computed using float accuracy but for most scenarios, a more natural display of decimal digits is appropriate.</p>
+<table>
+<tr><td>Natural</td><td><code>0</code></td><td><code>12.34</code></td></tr>
+<tr><td>Float</td><td><code>0.000000</code></td><td><code>12.340000</code></td></tr>
+</table>
 </article>
 
 
+
+<article id="vectorops">
+<header>
+<h2>Vector operations</h2>
+</header>
+
+
+<p><b>v×s</b>: Scalar multiplication of a vector. a × s = b. Scales all components of a with the factor s.</p>
+<p><b>v÷s</b>: Scalar division of a vector. a ÷ s = b. Divides all components of a by s. An <span style="color:red">error</span> or <span style="color:orange">warning</span> will be emitted if s is zero or close to zero.</p>
+<p><b>v⊙v</b>: Componentwise multiplication of a vector with another vector. a ⊙ b = c. Also known as <q>elementwise multiplication</q>. Multiplies all components of a by the corresponding component of b.</p>
+<p><b>v⊘v</b>: Componentwise division of a vector with another vector. a ⊘ b = c. Also known as <q>elementwise division</q>. Divides all components of a by the corresponding component of b. An <span style="color:red">error</span> or <span style="color:orange">warning</span> will be emitted if any of the components of b is zero or close to zero.</p>
+
+<p>&nbsp;</p>
+
+<p><b>−v</b>: Negation of a vector. v ⟷ -v. You can fill in either side to compute the other vector.</p>
+<p><b>v+v</b>: Addition of a vector to another vector. a + b = c. You can either choose to fill in a and b which computes c or you can choose to fill in a and c which solves the equation resulting in b.</p>
+<p><b>v−v</b>: Subtraction of a vector from another vector. a − b = c. You can either choose to fill in a and b which computes c or you can choose to fill in a and c which solves the equation resulting in b.</p>
+<p><b>v·v</b>: Computes the dot product of two vectors. a · b = s. Also known as the <q>scalar product</q>.</p>
+<p><b>v×v</b>: Computes the cross product of two vectors. a × b = c. Only defined for 3D vectors.</p>
+<p><b>|v|</b>: Computes the euclidian length of a vector. v ⟶ |v|. Also known as <q>2-Norm</q>.</p>
+
+<p>&nbsp;</p>
+
+<p><b>Normalize</b>: Normalizes the given vector. a ⟶ b. The b vector will have length 1. An <span style="color:red">error</span> or <span style="color:orange">warning</span> will be emitted if a had an initial length of zero or close to zero.</p>
+<p><b>Orthogonalize</b>: Makes a orthogonal to b. a ⊥ b ⟶ c. The c vector will be orthogonal to b. An <span style="color:red">error</span> or <span style="color:orange">warning</span> will be emitted if a or b had an initial length of zero or close to zero as well as if a was colinear to b or close to colinear. Orthogonalization is performed using the Gram-Schmidt method.</p>
+<p><b>Mirror</b>: Mirrors the vector a along a surface with normal n. a ↥ n ⟶ b. A <span style="color:orange">warning</span> will be emitted if the lenght of n is unequal 1.</p>
+
+</article>
+
+
+
+<article id="matrixops">
+<header>
+<h2>Matrix operations</h2>
+</header>
+
+
+<p><b>M×s</b>: Scalar multiplication of a matrix. A × s = B. Scales all components of A with the factor s. This is the same as multiplying matrix A with a diagonal matrix having s in all diagonal components.</p>
+<p><b>M÷s</b>: Scalar division of a matrix. A ÷ s = B. Divides all components of A by s. An <span style="color:red">error</span> or <span style="color:orange">warning</span> will be emitted if s is zero or close to zero.</p>
+<p><b>M⊙v</b>: Componentwise multiplication of a matrix with a vector. A ⊙ v = B. Also known as <q>elementwise multiplication</q>. Multiplies all column vectors of A by the corresponding component of v. This is the same as multiplying matrix A with a diagonal matrix constructed out of v.</p>
+<p><b>M⊘v</b>: Componentwise division of a matrix with a vector. A ⊘ v = B. Also known as <q>elementwise division</q>. Divides all column vectors of A by the corresponding component of v. This is the same as multiplying matrix A with a diagonal matrix constructed out of the inverse values of v. An <span style="color:red">error</span> or <span style="color:orange">warning</span> will be emitted if any of the components of v is zero or close to zero.</p>
+<p><b>M⊙M</b>: Componentwise multiplication of a matrix. A ⊙ B = C. Also known as <q>elementwise multiplication</q> or <q>Hadamard product</q>. Multiplies all components of A by the corresponding component of B.</p>
+<p><b>M⊘M</b>: Componentwise division of a matrix. A ⊘ B = C. Also known as <q>elementwise division</q>. Divides all components of A by the corresponding component of B. An <span style="color:red">error</span> or <span style="color:orange">warning</span> will be emitted if any of the components of B is zero or close to zero.</p>
+
+<p>&nbsp;</p>
+
+<p><b>−M</b>: Negation of a matrix. A ⟷ -A. You can fill in either side to compute the other matrix.</p>
+<p><b>M+M</b>: Addition of a matrix to another matrix. A + B = C. You can either choose to fill in A and B which computes C or you can choose to fill in A and C which solves the equation resulting in B.</p>
+<p><b>M−M</b>: Subtraction of a matrix from another matrix. A − B = C. You can either choose to fill in A and B which computes C or you can choose to fill in A and C which solves the equation resulting in B.</p>
+<p><b>M×v</b>: Multiplication of a matrix with a vector. A × b = x. You can either choose to fill in A and b which computes x or you can choose to fill in A and x which solves a linear equation system resulting in the b vector. If the matrix A can not be inverted, it will be indicated by an <span style="color:red">error</span> or <span style="color:orange">warning</span>.</p>
+<p><b>M×M</b>: Multiplication of a matrix with a matrix. A × B = C. You can either choose to fill in A and B which computes C or you can choose to fill in A and C which solves the equation resulting in B. If the matrix A can not be inverted, it will be indicated by an <span style="color:red">error</span> or <span style="color:orange">warning</span>.</p>
+
+<p>&nbsp;</p>
+
+<p><b>Diag(s)</b>: Create a diagonal matrix out of a scalar. s ⟶ A. Fill in s to compute A.</p>
+<p><b>Diag(v)</b>: Create a diagonal matrix out of a vector. v ⟶ A. Fill in v to compute A.</p>
+<p><b>Transpose</b>: Creates a transposed matrix. A ⟷ Transpose(A). You can fill in either side to compute the other matrix.</p>
+<p><b>Invert</b>: Creates the inverse of a matrix. A ⟷ Invert(A). You can fill in either side to compute the other matrix. If the input matric can not be inverted, it will be indicated by an <span style="color:red">error</span> or <span style="color:orange">warning</span></p>
+
+</article>
 
 </body></html>

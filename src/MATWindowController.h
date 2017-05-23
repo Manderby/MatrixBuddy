@@ -105,11 +105,14 @@
   IBOutlet NSMenuItem* codeMathematicaItem;
   IBOutlet NSMenuItem* codeMatlabItem;
   IBOutlet NSMenuItem* codeMapleItem;
+  IBOutlet NSMenuItem* valueAccuracyNaturalItem;
+  IBOutlet NSMenuItem* valueAccuracyFloatItem;
   
   NABool showHelp;
   NABool showIdentifiers;
   NABool hasRowFirstTabOrder;
   MATCodeStyle codeStyle;
+  MATValueAccuracy valueAccuracy;
   
   IBOutlet NSSegmentedControl* dimensionChooser;
   IBOutlet NSTextField* helpLine;
@@ -253,6 +256,7 @@
 - (NABool)hasShowIdentifiers;
 - (NABool)hasRowFirstTabOrder;
 - (MATCodeStyle)codeStyle;
+- (MATValueAccuracy)valueAccuracy;
 - (IBAction)switchComputation:(id)sender;
 - (IBAction)changeSetting:(id)sender;
 - (IBAction)changeDimensions:(id)sender;

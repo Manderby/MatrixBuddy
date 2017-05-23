@@ -50,7 +50,7 @@
 
 - (void)update{
   [super update];
-  [textfield setStringValue:[NSString stringWithFormat:@"%f", value]];
+  [textfield setStringValue:[NSString stringWithFormat:@"%@", formatValue(value)]];
   [textfield setNextKeyView:textfield];
   
   [codeText setHidden:YES];
@@ -77,7 +77,7 @@
     for(int x=0; x<1; x++){
       if(sender == textfield){
         if(newvalue == value){
-          [textfield setStringValue:[NSString stringWithFormat:@"%f", value]];
+          [textfield setStringValue:[NSString stringWithFormat:@"%@", formatValue(value)]];
         }else{
           value = newvalue;
           [(MATComputationView*)[self superview] valueChanged:self];

@@ -55,7 +55,7 @@
   [super update];
   for(int y=0; y<3; y++){
     for(int x=0; x<3; x++){
-      [textfields[y*3+x] setStringValue:[NSString stringWithFormat:@"%f", values[x*3+y]]];
+      [textfields[y*3+x] setStringValue:[NSString stringWithFormat:@"%@", formatValue(values[x*3+y])]];
       if([(MATApplication*)NSApp hasRowFirstTabOrder]){
         [textfields[y*3+x] setNextKeyView:textfields[(y*3+x + 1) % 9]];
       }else{
@@ -74,25 +74,25 @@
   [codeText setHidden:NO];
   switch([(MATApplication*)NSApp codeStyle]){
   case MAT_CODE_STYLE_C_ROW_FIRST_1D:
-    [codeText setStringValue:[NSString stringWithFormat:@"{%f, %f, %f, %f, %f, %f, %f, %f, %f}", values[0], values[3], values[6], values[1], values[4], values[7], values[2], values[5], values[8]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"{%@, %@, %@, %@, %@, %@, %@, %@, %@}", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_C_ROW_FIRST_2D:
-    [codeText setStringValue:[NSString stringWithFormat:@"{{%f, %f, %f}, {%f, %f, %f}, {%f, %f, %f}}", values[0], values[3], values[6], values[1], values[4], values[7], values[2], values[5], values[8]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"{{%@, %@, %@}, {%@, %@, %@}, {%@, %@, %@}}", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_C_COLUMN_FIRST_1D:
-    [codeText setStringValue:[NSString stringWithFormat:@"{%f, %f, %f, %f, %f, %f, %f, %f, %f}", values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"{%@, %@, %@, %@, %@, %@, %@, %@, %@}", formatValue(values[0]), formatValue(values[1]), formatValue(values[2]), formatValue(values[3]), formatValue(values[4]), formatValue(values[5]), formatValue(values[6]), formatValue(values[7]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_C_COLUMN_FIRST_2D:
-    [codeText setStringValue:[NSString stringWithFormat:@"{{%f, %f, %f}, {%f, %f, %f}, {%f, %f, %f}}", values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"{{%@, %@, %@}, {%@, %@, %@}, {%@, %@, %@}}", formatValue(values[0]), formatValue(values[1]), formatValue(values[2]), formatValue(values[3]), formatValue(values[4]), formatValue(values[5]), formatValue(values[6]), formatValue(values[7]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_MATHEMATICA:
-    [codeText setStringValue:[NSString stringWithFormat:@"{{%f, %f, %f}, {%f, %f, %f}, {%f, %f, %f}}", values[0], values[3], values[6], values[1], values[4], values[7], values[2], values[5], values[8]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"{{%@, %@, %@}, {%@, %@, %@}, {%@, %@, %@}}", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_MATLAB:
-    [codeText setStringValue:[NSString stringWithFormat:@"[%f %f %f; %f %f %f; %f %f %f]", values[0], values[3], values[6], values[1], values[4], values[7], values[2], values[5], values[8]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"[%@ %@ %@; %@ %@ %@; %@ %@ %@])", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_MAPLE:
-    [codeText setStringValue:[NSString stringWithFormat:@"[[%f, %f, %f], [%f, %f, %f], [%f, %f, %f]]", values[0], values[3], values[6], values[1], values[4], values[7], values[2], values[5], values[8]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"[[%@, %@, %@]), [%@, %@, %@]), [%@, %@, %@])]", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_NONE:
     [codeText setHidden:YES];
@@ -118,7 +118,7 @@
     for(int x=0; x<3; x++){
       if(sender == textfields[y*3+x]){
         if(newvalue == values[x*3+y]){
-          [textfields[y*3+x] setStringValue:[NSString stringWithFormat:@"%f", values[x*3+y]]];
+          [textfields[y*3+x] setStringValue:[NSString stringWithFormat:@"%@", formatValue(values[x*3+y])]];
           return;
         }else{
           values[x*3+y] = newvalue;

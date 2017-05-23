@@ -8,7 +8,7 @@
 
 -(id)initWithFrame:(NSRect)frameRect{
   self = [super initWithFrame:frameRect];
-  [[self cell] setAlignment:NSLeftTextAlignment];
+  [[self cell] setAlignment:NSRightTextAlignment];
   [[self cell] setSendsActionOnEndEditing:YES];
   [[self cell] setLineBreakMode:NSLineBreakByClipping];
   [[self cell] setScrollable:YES];

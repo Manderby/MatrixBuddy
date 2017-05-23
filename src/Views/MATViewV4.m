@@ -56,7 +56,7 @@
   [super update];
   for(int y=0; y<4; y++){
     for(int x=0; x<1; x++){
-      [textfields[y*1+x] setStringValue:[NSString stringWithFormat:@"%f", values[x*1+y]]];
+      [textfields[y*1+x] setStringValue:[NSString stringWithFormat:@"%@", formatValue(values[x*1+y])]];
       [textfields[y*1+x] setNextKeyView:textfields[(y*1+x + 1) % 4]];
     }
   }
@@ -67,16 +67,16 @@
   case MAT_CODE_STYLE_C_ROW_FIRST_2D:
   case MAT_CODE_STYLE_C_COLUMN_FIRST_1D:
   case MAT_CODE_STYLE_C_COLUMN_FIRST_2D:
-    [codeText setStringValue:[NSString stringWithFormat:@"{%f, %f, %f, %f}", values[0], values[1], values[2], values[3]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"{%@, %@, %@, %@}", formatValue(values[0]), formatValue(values[1]), formatValue(values[2]), formatValue(values[3])]];
     break;
   case MAT_CODE_STYLE_MATHEMATICA:
-    [codeText setStringValue:[NSString stringWithFormat:@"{%f, %f, %f, %f}", values[0], values[1], values[2], values[3]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"{%@, %@, %@, %@}", formatValue(values[0]), formatValue(values[1]), formatValue(values[2]), formatValue(values[3])]];
     break;
   case MAT_CODE_STYLE_MATLAB:
-    [codeText setStringValue:[NSString stringWithFormat:@"[%f %f %f %f]", values[0], values[1], values[2], values[3]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"[%@ %@ %@ %@]", formatValue(values[0]), formatValue(values[1]), formatValue(values[2]), formatValue(values[3])]];
     break;
   case MAT_CODE_STYLE_MAPLE:
-    [codeText setStringValue:[NSString stringWithFormat:@"[%f, %f, %f, %f]", values[0], values[1], values[2], values[3]]];
+    [codeText setStringValue:[NSString stringWithFormat:@"[%@, %@, %@, %@]", formatValue(values[0]), formatValue(values[1]), formatValue(values[2]), formatValue(values[3])]];
     break;
   case MAT_CODE_STYLE_NONE:
     [codeText setHidden:YES];
@@ -105,7 +105,7 @@
     for(int x=0; x<1; x++){
       if(sender == textfields[y*1+x]){
         if(newvalue == values[x*1+y]){
-          [textfields[y*1+x] setStringValue:[NSString stringWithFormat:@"%f", values[x*1+y]]];
+          [textfields[y*1+x] setStringValue:[NSString stringWithFormat:@"%@", formatValue(values[x*1+y])]];
         }else{
           values[x*1+y] = newvalue;
           [(MATComputationView*)[self superview] valueChanged:self];
