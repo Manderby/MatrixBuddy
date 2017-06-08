@@ -3,7 +3,7 @@ Matrix Buddy Changelog
 
 planned things:
 
-determinant, condition number
+determinant, condition number, distance to point
 Keep key responder
 Make multiple windows
 Click on label to make it the result
