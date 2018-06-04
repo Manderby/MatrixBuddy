@@ -1,7 +1,7 @@
 
 
 #include "MATCommon.h"
-#include "ManderimApplication.h"
+#include "MandApplication.h"
 #include "MATWindowController.h"
 
 
@@ -11,7 +11,7 @@ NSString* formatValue(float value);
 
 
 
-@interface MATApplication : ManderimApplication{
+@interface MATApplication : MandApplication{
   IBOutlet MATWindowController* windowController;
 }
 
