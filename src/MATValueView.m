@@ -114,7 +114,7 @@
   if(color != MAT_COLOR_NORMAL){
     // Fill in background Color
     NSColor* nscolor = [(MATApplication*)NSApp color:color];
-    NSColor* backcolor = [NSColor colorWithCalibratedRed:[nscolor redComponent] green:[nscolor greenComponent] blue:[nscolor blueComponent] alpha:0.1];
+    NSColor* backcolor = [NSColor colorWithCalibratedRed:[nscolor redComponent] green:[nscolor greenComponent] blue:[nscolor blueComponent] alpha:0.15];
     
     NSRect rect;
     rect.origin.x = 0;

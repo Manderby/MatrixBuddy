@@ -1,0 +1,958 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA03371BA96CAB00A651E9 /* WebKit.framework */; };
+		90BAF7712175AB32001665BF /* MandApplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF75C2175AB32001665BF /* MandApplication.strings */; };
+		90BAF7722175AB32001665BF /* MandAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF75F2175AB32001665BF /* MandAboutWindow.xib */; };
+		90BAF7732175AB32001665BF /* manderc.png in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7602175AB32001665BF /* manderc.png */; };
+		90BAF7742175AB32001665BF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7612175AB32001665BF /* .gitignore */; };
+		90BAF7752175AB32001665BF /* MandCocoaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7692175AB32001665BF /* MandCocoaHelper.m */; };
+		90BAF7762175AB32001665BF /* MandAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF76A2175AB32001665BF /* MandAboutWindowController.m */; };
+		90BAF7772175AB32001665BF /* MandHelpWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF76B2175AB32001665BF /* MandHelpWindowController.m */; };
+		90BAF7782175AB32001665BF /* MandTranslation.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF76C2175AB32001665BF /* MandTranslation.c */; };
+		90BAF7792175AB32001665BF /* MandEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF76D2175AB32001665BF /* MandEnvironment.m */; };
+		90BAF77A2175AB32001665BF /* MandMenuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF76E2175AB32001665BF /* MandMenuHelper.m */; };
+		90BAF77B2175AB32001665BF /* MandApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7702175AB32001665BF /* MandApplication.m */; };
+		90BAF7D92175AB3B001665BF /* NATree.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF78F2175AB3B001665BF /* NATree.c */; };
+		90BAF7DA2175AB3B001665BF /* NACocoaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7912175AB3B001665BF /* NACocoaHelper.m */; };
+		90BAF7DB2175AB3B001665BF /* NAQuadTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7962175AB3B001665BF /* NAQuadTree.c */; };
+		90BAF7DC2175AB3B001665BF /* NABuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7992175AB3B001665BF /* NABuffer.c */; };
+		90BAF7DD2175AB3B001665BF /* NAString.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF79A2175AB3B001665BF /* NAString.c */; };
+		90BAF7DE2175AB3B001665BF /* NAList.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF79B2175AB3B001665BF /* NAList.c */; };
+		90BAF7DF2175AB3B001665BF /* NAOctTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF79D2175AB3B001665BF /* NAOctTree.c */; };
+		90BAF7E02175AB3B001665BF /* NAHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF79E2175AB3B001665BF /* NAHeap.c */; };
+		90BAF7E12175AB3B001665BF /* NADebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7A12175AB3B001665BF /* NADebug.c */; };
+		90BAF7E22175AB3B001665BF /* NAPNG.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7B12175AB3B001665BF /* NAPNG.c */; };
+		90BAF7E32175AB3B001665BF /* NAUI.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7B22175AB3B001665BF /* NAUI.c */; };
+		90BAF7E42175AB3B001665BF /* NAUIWINAPI.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7B32175AB3B001665BF /* NAUIWINAPI.c */; };
+		90BAF7E52175AB3B001665BF /* NAUICocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7B42175AB3B001665BF /* NAUICocoa.m */; };
+		90BAF7E62175AB3B001665BF /* NAUICoreAPI.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7B52175AB3B001665BF /* NAUICoreAPI.c */; };
+		90BAF7E72175AB3B001665BF /* NADeflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7B72175AB3B001665BF /* NADeflate.c */; };
+		90BAF7E82175AB3B001665BF /* NAFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7C22175AB3B001665BF /* NAFile.c */; };
+		90BAF7E92175AB3B001665BF /* NABinaryData.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7C32175AB3B001665BF /* NABinaryData.c */; };
+		90BAF7EA2175AB3B001665BF /* NADateTime.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7C42175AB3B001665BF /* NADateTime.c */; };
+		90BAF7EB2175AB3B001665BF /* NAMemory.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7CB2175AB3B001665BF /* NAMemory.c */; };
+		90BAF7EC2175AB3B001665BF /* NAMoney.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF7D02175AB3B001665BF /* NAMoney.c */; };
+		90BAF7FA2175AB4A001665BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7EE2175AB4A001665BF /* Localizable.strings */; };
+		90BAF7FB2175AB4A001665BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7F02175AB4A001665BF /* InfoPlist.strings */; };
+		90BAF7FC2175AB4A001665BF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7F22175AB4A001665BF /* MainMenu.xib */; };
+		90BAF7FD2175AB4A001665BF /* MatrixBuddyChangelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7F52175AB4A001665BF /* MatrixBuddyChangelog.txt */; };
+		90BAF7FE2175AB4A001665BF /* MatrixBuddy.icns in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7F62175AB4A001665BF /* MatrixBuddy.icns */; };
+		90BAF8582175AB51001665BF /* MATApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8032175AB51001665BF /* MATApplication.m */; };
+		90BAF8592175AB51001665BF /* MATValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8042175AB51001665BF /* MATValueView.m */; };
+		90BAF85A2175AB51001665BF /* MATComputationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8052175AB51001665BF /* MATComputationView.m */; };
+		90BAF85B2175AB51001665BF /* MATWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8062175AB51001665BF /* MATWindowController.m */; };
+		90BAF85C2175AB51001665BF /* MATTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8082175AB51001665BF /* MATTextField.m */; };
+		90BAF85D2175AB51001665BF /* MATMDivCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF80A2175AB51001665BF /* MATMDivCompV.m */; };
+		90BAF85E2175AB51001665BF /* MATVCrossV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF80B2175AB51001665BF /* MATVCrossV.m */; };
+		90BAF85F2175AB51001665BF /* MATVAddV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF80E2175AB51001665BF /* MATVAddV.m */; };
+		90BAF8602175AB51001665BF /* MATInvertM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF80F2175AB51001665BF /* MATInvertM.m */; };
+		90BAF8612175AB51001665BF /* MATDiagS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8112175AB51001665BF /* MATDiagS.m */; };
+		90BAF8622175AB51001665BF /* MATMAddM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8152175AB51001665BF /* MATMAddM.m */; };
+		90BAF8632175AB51001665BF /* MATNormalizeV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8172175AB51001665BF /* MATNormalizeV.m */; };
+		90BAF8642175AB51001665BF /* MATVMulCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8192175AB51001665BF /* MATVMulCompV.m */; };
+		90BAF8652175AB51001665BF /* MATVMulS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF81C2175AB51001665BF /* MATVMulS.m */; };
+		90BAF8662175AB51001665BF /* MATOrthogonalizeV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF81D2175AB51001665BF /* MATOrthogonalizeV.m */; };
+		90BAF8672175AB51001665BF /* MATMMulS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF81E2175AB51001665BF /* MATMMulS.m */; };
+		90BAF8682175AB51001665BF /* MATMDivCompM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF81F2175AB51001665BF /* MATMDivCompM.m */; };
+		90BAF8692175AB51001665BF /* MATMMulCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8262175AB51001665BF /* MATMMulCompV.m */; };
+		90BAF86A2175AB51001665BF /* MATMMulV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8272175AB51001665BF /* MATMMulV.m */; };
+		90BAF86B2175AB51001665BF /* MATVSubV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF82A2175AB51001665BF /* MATVSubV.m */; };
+		90BAF86C2175AB51001665BF /* MATMirrorV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF82B2175AB51001665BF /* MATMirrorV.m */; };
+		90BAF86D2175AB51001665BF /* MATNegV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF82E2175AB51001665BF /* MATNegV.m */; };
+		90BAF86E2175AB51001665BF /* MATVDotV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8332175AB51001665BF /* MATVDotV.m */; };
+		90BAF86F2175AB51001665BF /* MATMSubM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8342175AB51001665BF /* MATMSubM.m */; };
+		90BAF8702175AB51001665BF /* MATLengthV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8362175AB51001665BF /* MATLengthV.m */; };
+		90BAF8712175AB51001665BF /* MATNegM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8382175AB51001665BF /* MATNegM.m */; };
+		90BAF8722175AB51001665BF /* MATVDivCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8392175AB51001665BF /* MATVDivCompV.m */; };
+		90BAF8732175AB51001665BF /* MATMMulM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF83B2175AB51001665BF /* MATMMulM.m */; };
+		90BAF8742175AB51001665BF /* MATMMulCompM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF83C2175AB51001665BF /* MATMMulCompM.m */; };
+		90BAF8752175AB51001665BF /* MATTransposeM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF83D2175AB51001665BF /* MATTransposeM.m */; };
+		90BAF8762175AB51001665BF /* MATMDivS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF83E2175AB51001665BF /* MATMDivS.m */; };
+		90BAF8772175AB51001665BF /* MATDiagV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF83F2175AB51001665BF /* MATDiagV.m */; };
+		90BAF8782175AB51001665BF /* MATVDivS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8402175AB51001665BF /* MATVDivS.m */; };
+		90BAF8792175AB51001665BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8432175AB51001665BF /* main.m */; };
+		90BAF87A2175AB51001665BF /* MATViewS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8492175AB51001665BF /* MATViewS.m */; };
+		90BAF87B2175AB51001665BF /* MATViewV4.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF84B2175AB51001665BF /* MATViewV4.m */; };
+		90BAF87C2175AB51001665BF /* MATViewV3.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF84E2175AB51001665BF /* MATViewV3.m */; };
+		90BAF87D2175AB51001665BF /* MATViewM33.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF84F2175AB51001665BF /* MATViewM33.m */; };
+		90BAF87E2175AB51001665BF /* MATViewM22.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8502175AB51001665BF /* MATViewM22.m */; };
+		90BAF87F2175AB51001665BF /* MATViewV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8522175AB51001665BF /* MATViewV2.m */; };
+		90BAF8802175AB51001665BF /* MATViewM44.m in Sources */ = {isa = PBXBuildFile; fileRef = 90BAF8552175AB51001665BF /* MATViewM44.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9020CF151BA6E29000E74965 /* Matrix Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matrix Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90BA03371BA96CAB00A651E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		90BAF75D2175AB32001665BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MandApplication.strings; sourceTree = "<group>"; };
+		90BAF75E2175AB32001665BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MandApplication.strings; sourceTree = "<group>"; };
+		90BAF75F2175AB32001665BF /* MandAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MandAboutWindow.xib; sourceTree = "<group>"; };
+		90BAF7602175AB32001665BF /* manderc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manderc.png; sourceTree = "<group>"; };
+		90BAF7612175AB32001665BF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		90BAF7632175AB32001665BF /* MandAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandAboutWindowController.h; sourceTree = "<group>"; };
+		90BAF7642175AB32001665BF /* MandHelpWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandHelpWindowController.h; sourceTree = "<group>"; };
+		90BAF7652175AB32001665BF /* MandMenuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandMenuHelper.h; sourceTree = "<group>"; };
+		90BAF7662175AB32001665BF /* MandEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandEnvironment.h; sourceTree = "<group>"; };
+		90BAF7672175AB32001665BF /* MandTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandTranslation.h; sourceTree = "<group>"; };
+		90BAF7682175AB32001665BF /* MandApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandApplication.h; sourceTree = "<group>"; };
+		90BAF7692175AB32001665BF /* MandCocoaHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MandCocoaHelper.m; sourceTree = "<group>"; };
+		90BAF76A2175AB32001665BF /* MandAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MandAboutWindowController.m; sourceTree = "<group>"; };
+		90BAF76B2175AB32001665BF /* MandHelpWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MandHelpWindowController.m; sourceTree = "<group>"; };
+		90BAF76C2175AB32001665BF /* MandTranslation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MandTranslation.c; sourceTree = "<group>"; };
+		90BAF76D2175AB32001665BF /* MandEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MandEnvironment.m; sourceTree = "<group>"; };
+		90BAF76E2175AB32001665BF /* MandMenuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MandMenuHelper.m; sourceTree = "<group>"; };
+		90BAF76F2175AB32001665BF /* MandCocoaHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandCocoaHelper.h; sourceTree = "<group>"; };
+		90BAF7702175AB32001665BF /* MandApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MandApplication.m; sourceTree = "<group>"; };
+		90BAF77D2175AB3B001665BF /* NAMathConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMathConstants.h; sourceTree = "<group>"; };
+		90BAF77E2175AB3B001665BF /* NAMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMemory.h; sourceTree = "<group>"; };
+		90BAF77F2175AB3B001665BF /* NAQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAQuadTree.h; sourceTree = "<group>"; };
+		90BAF7802175AB3B001665BF /* NAComplex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAComplex.h; sourceTree = "<group>"; };
+		90BAF7812175AB3B001665BF /* NAConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAConfiguration.h; sourceTree = "<group>"; };
+		90BAF7822175AB3B001665BF /* NABase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NABase.h; sourceTree = "<group>"; };
+		90BAF7832175AB3B001665BF /* NABuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NABuffer.h; sourceTree = "<group>"; };
+		90BAF7842175AB3B001665BF /* NAArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAArray.h; sourceTree = "<group>"; };
+		90BAF7852175AB3B001665BF /* NAThreading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAThreading.h; sourceTree = "<group>"; };
+		90BAF7862175AB3B001665BF /* NAStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAStack.h; sourceTree = "<group>"; };
+		90BAF7872175AB3B001665BF /* NAOctTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAOctTree.h; sourceTree = "<group>"; };
+		90BAF7882175AB3B001665BF /* NADeflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADeflate.h; sourceTree = "<group>"; };
+		90BAF7892175AB3B001665BF /* NAList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAList.h; sourceTree = "<group>"; };
+		90BAF78A2175AB3B001665BF /* NAString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAString.h; sourceTree = "<group>"; };
+		90BAF78B2175AB3B001665BF /* NARandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NARandom.h; sourceTree = "<group>"; };
+		90BAF78D2175AB3B001665BF /* NABufferII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NABufferII.h; sourceTree = "<group>"; };
+		90BAF78E2175AB3B001665BF /* NAStringII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAStringII.h; sourceTree = "<group>"; };
+		90BAF78F2175AB3B001665BF /* NATree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NATree.c; sourceTree = "<group>"; };
+		90BAF7902175AB3B001665BF /* NAStackII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAStackII.h; sourceTree = "<group>"; };
+		90BAF7912175AB3B001665BF /* NACocoaHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NACocoaHelper.m; sourceTree = "<group>"; };
+		90BAF7922175AB3B001665BF /* NAOctTreeII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAOctTreeII.h; sourceTree = "<group>"; };
+		90BAF7932175AB3B001665BF /* NAQuadTreeII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAQuadTreeII.h; sourceTree = "<group>"; };
+		90BAF7942175AB3B001665BF /* NACircularBufferII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACircularBufferII.h; sourceTree = "<group>"; };
+		90BAF7952175AB3B001665BF /* NAHeapII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAHeapII.h; sourceTree = "<group>"; };
+		90BAF7962175AB3B001665BF /* NAQuadTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAQuadTree.c; sourceTree = "<group>"; };
+		90BAF7972175AB3B001665BF /* NAPoolII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPoolII.h; sourceTree = "<group>"; };
+		90BAF7982175AB3B001665BF /* NAListII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAListII.h; sourceTree = "<group>"; };
+		90BAF7992175AB3B001665BF /* NABuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NABuffer.c; sourceTree = "<group>"; };
+		90BAF79A2175AB3B001665BF /* NAString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAString.c; sourceTree = "<group>"; };
+		90BAF79B2175AB3B001665BF /* NAList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAList.c; sourceTree = "<group>"; };
+		90BAF79C2175AB3B001665BF /* NAArrayII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAArrayII.h; sourceTree = "<group>"; };
+		90BAF79D2175AB3B001665BF /* NAOctTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAOctTree.c; sourceTree = "<group>"; };
+		90BAF79E2175AB3B001665BF /* NAHeap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAHeap.c; sourceTree = "<group>"; };
+		90BAF7A02175AB3B001665BF /* NAInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAInteger.h; sourceTree = "<group>"; };
+		90BAF7A12175AB3B001665BF /* NADebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NADebug.c; sourceTree = "<group>"; };
+		90BAF7A22175AB3B001665BF /* NANumerics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NANumerics.h; sourceTree = "<group>"; };
+		90BAF7A32175AB3B001665BF /* NAFloatingPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAFloatingPoint.h; sourceTree = "<group>"; };
+		90BAF7A42175AB3B001665BF /* NAInt64II.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAInt64II.h; sourceTree = "<group>"; };
+		90BAF7A52175AB3B001665BF /* NAChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAChar.h; sourceTree = "<group>"; };
+		90BAF7A62175AB3B001665BF /* NAEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAEnvironment.h; sourceTree = "<group>"; };
+		90BAF7A72175AB3B001665BF /* NADebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADebug.h; sourceTree = "<group>"; };
+		90BAF7A82175AB3B001665BF /* NALanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NALanguage.h; sourceTree = "<group>"; };
+		90BAF7A92175AB3B001665BF /* NAInt64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAInt64.h; sourceTree = "<group>"; };
+		90BAF7AA2175AB3B001665BF /* NANumericsII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NANumericsII.h; sourceTree = "<group>"; };
+		90BAF7AB2175AB3B001665BF /* NAFloatingPointII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAFloatingPointII.h; sourceTree = "<group>"; };
+		90BAF7AC2175AB3B001665BF /* NACompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACompiler.h; sourceTree = "<group>"; };
+		90BAF7AD2175AB3B001665BF /* NAURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAURL.h; sourceTree = "<group>"; };
+		90BAF7AE2175AB3B001665BF /* NAHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAHeap.h; sourceTree = "<group>"; };
+		90BAF7B02175AB3B001665BF /* NAUICoreAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAUICoreAPI.h; sourceTree = "<group>"; };
+		90BAF7B12175AB3B001665BF /* NAPNG.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAPNG.c; sourceTree = "<group>"; };
+		90BAF7B22175AB3B001665BF /* NAUI.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAUI.c; sourceTree = "<group>"; };
+		90BAF7B32175AB3B001665BF /* NAUIWINAPI.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAUIWINAPI.c; sourceTree = "<group>"; };
+		90BAF7B42175AB3B001665BF /* NAUICocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAUICocoa.m; sourceTree = "<group>"; };
+		90BAF7B52175AB3B001665BF /* NAUICoreAPI.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAUICoreAPI.c; sourceTree = "<group>"; };
+		90BAF7B62175AB3B001665BF /* NAUIWINAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAUIWINAPI.h; sourceTree = "<group>"; };
+		90BAF7B72175AB3B001665BF /* NADeflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NADeflate.c; sourceTree = "<group>"; };
+		90BAF7B82175AB3B001665BF /* NAUICocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAUICocoa.h; sourceTree = "<group>"; };
+		90BAF7B92175AB3B001665BF /* NAPNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPNG.h; sourceTree = "<group>"; };
+		90BAF7BA2175AB3B001665BF /* NAFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAFile.h; sourceTree = "<group>"; };
+		90BAF7BB2175AB3B001665BF /* NAMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMoney.h; sourceTree = "<group>"; };
+		90BAF7BC2175AB3B001665BF /* NAVectorAlgebra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVectorAlgebra.h; sourceTree = "<group>"; };
+		90BAF7BD2175AB3B001665BF /* NAMathOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMathOperators.h; sourceTree = "<group>"; };
+		90BAF7BE2175AB3B001665BF /* NADateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADateTime.h; sourceTree = "<group>"; };
+		90BAF7BF2175AB3B001665BF /* NABinaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NABinaryData.h; sourceTree = "<group>"; };
+		90BAF7C02175AB3B001665BF /* NAUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAUI.h; sourceTree = "<group>"; };
+		90BAF7C22175AB3B001665BF /* NAFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAFile.c; sourceTree = "<group>"; };
+		90BAF7C32175AB3B001665BF /* NABinaryData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NABinaryData.c; sourceTree = "<group>"; };
+		90BAF7C42175AB3B001665BF /* NADateTime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NADateTime.c; sourceTree = "<group>"; };
+		90BAF7C52175AB3B001665BF /* NABinaryDataII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NABinaryDataII.h; sourceTree = "<group>"; };
+		90BAF7C62175AB3B001665BF /* NADateTimeII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADateTimeII.h; sourceTree = "<group>"; };
+		90BAF7C72175AB3B001665BF /* NAThreadingII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAThreadingII.h; sourceTree = "<group>"; };
+		90BAF7C82175AB3B001665BF /* NAMemoryII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMemoryII.h; sourceTree = "<group>"; };
+		90BAF7C92175AB3B001665BF /* NAURLII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAURLII.h; sourceTree = "<group>"; };
+		90BAF7CA2175AB3B001665BF /* NAFileII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAFileII.h; sourceTree = "<group>"; };
+		90BAF7CB2175AB3B001665BF /* NAMemory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAMemory.c; sourceTree = "<group>"; };
+		90BAF7CC2175AB3B001665BF /* NAValueHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAValueHelper.h; sourceTree = "<group>"; };
+		90BAF7CD2175AB3B001665BF /* NATree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATree.h; sourceTree = "<group>"; };
+		90BAF7CE2175AB3B001665BF /* NACircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACircularBuffer.h; sourceTree = "<group>"; };
+		90BAF7D02175AB3B001665BF /* NAMoney.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAMoney.c; sourceTree = "<group>"; };
+		90BAF7D12175AB3B001665BF /* NAMoneyII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMoneyII.h; sourceTree = "<group>"; };
+		90BAF7D22175AB3B001665BF /* NARandomII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NARandomII.h; sourceTree = "<group>"; };
+		90BAF7D32175AB3B001665BF /* NAComplexII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAComplexII.h; sourceTree = "<group>"; };
+		90BAF7D42175AB3B001665BF /* NAVectorAlgebraII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVectorAlgebraII.h; sourceTree = "<group>"; };
+		90BAF7D52175AB3B001665BF /* NACoordII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoordII.h; sourceTree = "<group>"; };
+		90BAF7D62175AB3B001665BF /* NAMathOperatorsII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMathOperatorsII.h; sourceTree = "<group>"; };
+		90BAF7D72175AB3B001665BF /* NACoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoord.h; sourceTree = "<group>"; };
+		90BAF7D82175AB3B001665BF /* NAPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPool.h; sourceTree = "<group>"; };
+		90BAF7EF2175AB4A001665BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		90BAF7F12175AB4A001665BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90BAF7F32175AB4A001665BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		90BAF7F42175AB4A001665BF /* Matrix Buddy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Matrix Buddy.entitlements"; sourceTree = "<group>"; };
+		90BAF7F52175AB4A001665BF /* MatrixBuddyChangelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MatrixBuddyChangelog.txt; sourceTree = "<group>"; };
+		90BAF7F62175AB4A001665BF /* MatrixBuddy.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MatrixBuddy.icns; sourceTree = "<group>"; };
+		90BAF7F72175AB4A001665BF /* MatrixBuddyLogo.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = MatrixBuddyLogo.psd; sourceTree = "<group>"; };
+		90BAF7F82175AB4A001665BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90BAF7F92175AB4A001665BF /* MatrixBuddy.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = MatrixBuddy.iconset; sourceTree = "<group>"; };
+		90BAF8032175AB51001665BF /* MATApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATApplication.m; sourceTree = "<group>"; };
+		90BAF8042175AB51001665BF /* MATValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATValueView.m; sourceTree = "<group>"; };
+		90BAF8052175AB51001665BF /* MATComputationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATComputationView.m; sourceTree = "<group>"; };
+		90BAF8062175AB51001665BF /* MATWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATWindowController.m; sourceTree = "<group>"; };
+		90BAF8072175AB51001665BF /* MATCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATCommon.h; sourceTree = "<group>"; };
+		90BAF8082175AB51001665BF /* MATTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATTextField.m; sourceTree = "<group>"; };
+		90BAF80A2175AB51001665BF /* MATMDivCompV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMDivCompV.m; sourceTree = "<group>"; };
+		90BAF80B2175AB51001665BF /* MATVCrossV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVCrossV.m; sourceTree = "<group>"; };
+		90BAF80C2175AB51001665BF /* MATMMulV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulV.h; sourceTree = "<group>"; };
+		90BAF80D2175AB51001665BF /* MATMMulCompV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulCompV.h; sourceTree = "<group>"; };
+		90BAF80E2175AB51001665BF /* MATVAddV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVAddV.m; sourceTree = "<group>"; };
+		90BAF80F2175AB51001665BF /* MATInvertM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATInvertM.m; sourceTree = "<group>"; };
+		90BAF8102175AB51001665BF /* MATNegV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATNegV.h; sourceTree = "<group>"; };
+		90BAF8112175AB51001665BF /* MATDiagS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATDiagS.m; sourceTree = "<group>"; };
+		90BAF8122175AB51001665BF /* MATMirrorV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMirrorV.h; sourceTree = "<group>"; };
+		90BAF8132175AB51001665BF /* MATVSubV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVSubV.h; sourceTree = "<group>"; };
+		90BAF8142175AB51001665BF /* MATVDivCompV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVDivCompV.h; sourceTree = "<group>"; };
+		90BAF8152175AB51001665BF /* MATMAddM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMAddM.m; sourceTree = "<group>"; };
+		90BAF8162175AB51001665BF /* MATNegM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATNegM.h; sourceTree = "<group>"; };
+		90BAF8172175AB51001665BF /* MATNormalizeV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATNormalizeV.m; sourceTree = "<group>"; };
+		90BAF8182175AB51001665BF /* MATLengthV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATLengthV.h; sourceTree = "<group>"; };
+		90BAF8192175AB51001665BF /* MATVMulCompV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVMulCompV.m; sourceTree = "<group>"; };
+		90BAF81A2175AB51001665BF /* MATVDotV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVDotV.h; sourceTree = "<group>"; };
+		90BAF81B2175AB51001665BF /* MATMSubM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMSubM.h; sourceTree = "<group>"; };
+		90BAF81C2175AB51001665BF /* MATVMulS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVMulS.m; sourceTree = "<group>"; };
+		90BAF81D2175AB51001665BF /* MATOrthogonalizeV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATOrthogonalizeV.m; sourceTree = "<group>"; };
+		90BAF81E2175AB51001665BF /* MATMMulS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulS.m; sourceTree = "<group>"; };
+		90BAF81F2175AB51001665BF /* MATMDivCompM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMDivCompM.m; sourceTree = "<group>"; };
+		90BAF8202175AB51001665BF /* MATDiagV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATDiagV.h; sourceTree = "<group>"; };
+		90BAF8212175AB51001665BF /* MATVDivS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVDivS.h; sourceTree = "<group>"; };
+		90BAF8222175AB51001665BF /* MATMDivS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMDivS.h; sourceTree = "<group>"; };
+		90BAF8232175AB51001665BF /* MATTransposeM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATTransposeM.h; sourceTree = "<group>"; };
+		90BAF8242175AB51001665BF /* MATMMulCompM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulCompM.h; sourceTree = "<group>"; };
+		90BAF8252175AB51001665BF /* MATMMulM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulM.h; sourceTree = "<group>"; };
+		90BAF8262175AB51001665BF /* MATMMulCompV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulCompV.m; sourceTree = "<group>"; };
+		90BAF8272175AB51001665BF /* MATMMulV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulV.m; sourceTree = "<group>"; };
+		90BAF8282175AB51001665BF /* MATVCrossV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVCrossV.h; sourceTree = "<group>"; };
+		90BAF8292175AB51001665BF /* MATMDivCompV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMDivCompV.h; sourceTree = "<group>"; };
+		90BAF82A2175AB51001665BF /* MATVSubV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVSubV.m; sourceTree = "<group>"; };
+		90BAF82B2175AB51001665BF /* MATMirrorV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMirrorV.m; sourceTree = "<group>"; };
+		90BAF82C2175AB51001665BF /* MATDiagS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATDiagS.h; sourceTree = "<group>"; };
+		90BAF82D2175AB51001665BF /* MATInvertM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATInvertM.h; sourceTree = "<group>"; };
+		90BAF82E2175AB51001665BF /* MATNegV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATNegV.m; sourceTree = "<group>"; };
+		90BAF82F2175AB51001665BF /* MATVAddV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVAddV.h; sourceTree = "<group>"; };
+		90BAF8302175AB51001665BF /* MATOrthogonalizeV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATOrthogonalizeV.h; sourceTree = "<group>"; };
+		90BAF8312175AB51001665BF /* MATMMulS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMMulS.h; sourceTree = "<group>"; };
+		90BAF8322175AB51001665BF /* MATVMulS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVMulS.h; sourceTree = "<group>"; };
+		90BAF8332175AB51001665BF /* MATVDotV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVDotV.m; sourceTree = "<group>"; };
+		90BAF8342175AB51001665BF /* MATMSubM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMSubM.m; sourceTree = "<group>"; };
+		90BAF8352175AB51001665BF /* MATVMulCompV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVMulCompV.h; sourceTree = "<group>"; };
+		90BAF8362175AB51001665BF /* MATLengthV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATLengthV.m; sourceTree = "<group>"; };
+		90BAF8372175AB51001665BF /* MATNormalizeV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATNormalizeV.h; sourceTree = "<group>"; };
+		90BAF8382175AB51001665BF /* MATNegM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATNegM.m; sourceTree = "<group>"; };
+		90BAF8392175AB51001665BF /* MATVDivCompV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVDivCompV.m; sourceTree = "<group>"; };
+		90BAF83A2175AB51001665BF /* MATMAddM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMAddM.h; sourceTree = "<group>"; };
+		90BAF83B2175AB51001665BF /* MATMMulM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulM.m; sourceTree = "<group>"; };
+		90BAF83C2175AB51001665BF /* MATMMulCompM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulCompM.m; sourceTree = "<group>"; };
+		90BAF83D2175AB51001665BF /* MATTransposeM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATTransposeM.m; sourceTree = "<group>"; };
+		90BAF83E2175AB51001665BF /* MATMDivS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMDivS.m; sourceTree = "<group>"; };
+		90BAF83F2175AB51001665BF /* MATDiagV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATDiagV.m; sourceTree = "<group>"; };
+		90BAF8402175AB51001665BF /* MATVDivS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVDivS.m; sourceTree = "<group>"; };
+		90BAF8412175AB51001665BF /* MATMDivCompM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMDivCompM.h; sourceTree = "<group>"; };
+		90BAF8422175AB51001665BF /* MATApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATApplication.h; sourceTree = "<group>"; };
+		90BAF8432175AB51001665BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		90BAF8442175AB51001665BF /* MATComputationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATComputationView.h; sourceTree = "<group>"; };
+		90BAF8452175AB51001665BF /* MATValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATValueView.h; sourceTree = "<group>"; };
+		90BAF8462175AB51001665BF /* MATWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATWindowController.h; sourceTree = "<group>"; };
+		90BAF8472175AB51001665BF /* MandConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandConfiguration.h; sourceTree = "<group>"; };
+		90BAF8492175AB51001665BF /* MATViewS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewS.m; sourceTree = "<group>"; };
+		90BAF84A2175AB51001665BF /* MATViewV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewV2.h; sourceTree = "<group>"; };
+		90BAF84B2175AB51001665BF /* MATViewV4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewV4.m; sourceTree = "<group>"; };
+		90BAF84C2175AB51001665BF /* MATViewM22.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewM22.h; sourceTree = "<group>"; };
+		90BAF84D2175AB51001665BF /* MATViewM44.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewM44.h; sourceTree = "<group>"; };
+		90BAF84E2175AB51001665BF /* MATViewV3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewV3.m; sourceTree = "<group>"; };
+		90BAF84F2175AB51001665BF /* MATViewM33.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewM33.m; sourceTree = "<group>"; };
+		90BAF8502175AB51001665BF /* MATViewM22.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewM22.m; sourceTree = "<group>"; };
+		90BAF8512175AB51001665BF /* MATViewV4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewV4.h; sourceTree = "<group>"; };
+		90BAF8522175AB51001665BF /* MATViewV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewV2.m; sourceTree = "<group>"; };
+		90BAF8532175AB51001665BF /* MATViewS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewS.h; sourceTree = "<group>"; };
+		90BAF8542175AB51001665BF /* MATViewV3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewV3.h; sourceTree = "<group>"; };
+		90BAF8552175AB51001665BF /* MATViewM44.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewM44.m; sourceTree = "<group>"; };
+		90BAF8562175AB51001665BF /* MATViewM33.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewM33.h; sourceTree = "<group>"; };
+		90BAF8572175AB51001665BF /* MATTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATTextField.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9020CF121BA6E29000E74965 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9020CF0A1BA6E26300E74965 = {
+			isa = PBXGroup;
+			children = (
+				90BAF75A2175AB32001665BF /* MandApplication */,
+				90BAF77C2175AB3B001665BF /* NALib */,
+				90BAF7ED2175AB4A001665BF /* res */,
+				90BAF8022175AB51001665BF /* src */,
+				90BA03361BA96C8700A651E9 /* Frameworks */,
+				9020CF161BA6E29000E74965 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9020CF161BA6E29000E74965 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9020CF151BA6E29000E74965 /* Matrix Buddy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90BA03361BA96C8700A651E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90BA03371BA96CAB00A651E9 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90BAF75A2175AB32001665BF /* MandApplication */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF75B2175AB32001665BF /* res */,
+				90BAF7612175AB32001665BF /* .gitignore */,
+				90BAF7622175AB32001665BF /* src */,
+			);
+			name = MandApplication;
+			path = ../../../MandApplication;
+			sourceTree = "<group>";
+		};
+		90BAF75B2175AB32001665BF /* res */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF75C2175AB32001665BF /* MandApplication.strings */,
+				90BAF75F2175AB32001665BF /* MandAboutWindow.xib */,
+				90BAF7602175AB32001665BF /* manderc.png */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		90BAF7622175AB32001665BF /* src */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF7632175AB32001665BF /* MandAboutWindowController.h */,
+				90BAF7642175AB32001665BF /* MandHelpWindowController.h */,
+				90BAF7652175AB32001665BF /* MandMenuHelper.h */,
+				90BAF7662175AB32001665BF /* MandEnvironment.h */,
+				90BAF7672175AB32001665BF /* MandTranslation.h */,
+				90BAF7682175AB32001665BF /* MandApplication.h */,
+				90BAF7692175AB32001665BF /* MandCocoaHelper.m */,
+				90BAF76A2175AB32001665BF /* MandAboutWindowController.m */,
+				90BAF76B2175AB32001665BF /* MandHelpWindowController.m */,
+				90BAF76C2175AB32001665BF /* MandTranslation.c */,
+				90BAF76D2175AB32001665BF /* MandEnvironment.m */,
+				90BAF76E2175AB32001665BF /* MandMenuHelper.m */,
+				90BAF76F2175AB32001665BF /* MandCocoaHelper.h */,
+				90BAF7702175AB32001665BF /* MandApplication.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		90BAF77C2175AB3B001665BF /* NALib */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF77D2175AB3B001665BF /* NAMathConstants.h */,
+				90BAF77E2175AB3B001665BF /* NAMemory.h */,
+				90BAF77F2175AB3B001665BF /* NAQuadTree.h */,
+				90BAF7802175AB3B001665BF /* NAComplex.h */,
+				90BAF7812175AB3B001665BF /* NAConfiguration.h */,
+				90BAF7822175AB3B001665BF /* NABase.h */,
+				90BAF7832175AB3B001665BF /* NABuffer.h */,
+				90BAF7842175AB3B001665BF /* NAArray.h */,
+				90BAF7852175AB3B001665BF /* NAThreading.h */,
+				90BAF7862175AB3B001665BF /* NAStack.h */,
+				90BAF7872175AB3B001665BF /* NAOctTree.h */,
+				90BAF7882175AB3B001665BF /* NADeflate.h */,
+				90BAF7892175AB3B001665BF /* NAList.h */,
+				90BAF78A2175AB3B001665BF /* NAString.h */,
+				90BAF78B2175AB3B001665BF /* NARandom.h */,
+				90BAF78C2175AB3B001665BF /* NAStruct */,
+				90BAF79F2175AB3B001665BF /* NABase */,
+				90BAF7AD2175AB3B001665BF /* NAURL.h */,
+				90BAF7AE2175AB3B001665BF /* NAHeap.h */,
+				90BAF7AF2175AB3B001665BF /* NAVisual */,
+				90BAF7B92175AB3B001665BF /* NAPNG.h */,
+				90BAF7BA2175AB3B001665BF /* NAFile.h */,
+				90BAF7BB2175AB3B001665BF /* NAMoney.h */,
+				90BAF7BC2175AB3B001665BF /* NAVectorAlgebra.h */,
+				90BAF7BD2175AB3B001665BF /* NAMathOperators.h */,
+				90BAF7BE2175AB3B001665BF /* NADateTime.h */,
+				90BAF7BF2175AB3B001665BF /* NABinaryData.h */,
+				90BAF7C02175AB3B001665BF /* NAUI.h */,
+				90BAF7C12175AB3B001665BF /* NACore */,
+				90BAF7CD2175AB3B001665BF /* NATree.h */,
+				90BAF7CE2175AB3B001665BF /* NACircularBuffer.h */,
+				90BAF7CF2175AB3B001665BF /* NAMath */,
+				90BAF7D72175AB3B001665BF /* NACoord.h */,
+				90BAF7D82175AB3B001665BF /* NAPool.h */,
+			);
+			name = NALib;
+			path = ../../../NALib/src/NALib;
+			sourceTree = "<group>";
+		};
+		90BAF78C2175AB3B001665BF /* NAStruct */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF78D2175AB3B001665BF /* NABufferII.h */,
+				90BAF78E2175AB3B001665BF /* NAStringII.h */,
+				90BAF78F2175AB3B001665BF /* NATree.c */,
+				90BAF7902175AB3B001665BF /* NAStackII.h */,
+				90BAF7912175AB3B001665BF /* NACocoaHelper.m */,
+				90BAF7922175AB3B001665BF /* NAOctTreeII.h */,
+				90BAF7932175AB3B001665BF /* NAQuadTreeII.h */,
+				90BAF7942175AB3B001665BF /* NACircularBufferII.h */,
+				90BAF7952175AB3B001665BF /* NAHeapII.h */,
+				90BAF7962175AB3B001665BF /* NAQuadTree.c */,
+				90BAF7972175AB3B001665BF /* NAPoolII.h */,
+				90BAF7982175AB3B001665BF /* NAListII.h */,
+				90BAF7992175AB3B001665BF /* NABuffer.c */,
+				90BAF79A2175AB3B001665BF /* NAString.c */,
+				90BAF79B2175AB3B001665BF /* NAList.c */,
+				90BAF79C2175AB3B001665BF /* NAArrayII.h */,
+				90BAF79D2175AB3B001665BF /* NAOctTree.c */,
+				90BAF79E2175AB3B001665BF /* NAHeap.c */,
+			);
+			path = NAStruct;
+			sourceTree = "<group>";
+		};
+		90BAF79F2175AB3B001665BF /* NABase */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF7A02175AB3B001665BF /* NAInteger.h */,
+				90BAF7A12175AB3B001665BF /* NADebug.c */,
+				90BAF7A22175AB3B001665BF /* NANumerics.h */,
+				90BAF7A32175AB3B001665BF /* NAFloatingPoint.h */,
+				90BAF7A42175AB3B001665BF /* NAInt64II.h */,
+				90BAF7A52175AB3B001665BF /* NAChar.h */,
+				90BAF7A62175AB3B001665BF /* NAEnvironment.h */,
+				90BAF7A72175AB3B001665BF /* NADebug.h */,
+				90BAF7A82175AB3B001665BF /* NALanguage.h */,
+				90BAF7A92175AB3B001665BF /* NAInt64.h */,
+				90BAF7AA2175AB3B001665BF /* NANumericsII.h */,
+				90BAF7AB2175AB3B001665BF /* NAFloatingPointII.h */,
+				90BAF7AC2175AB3B001665BF /* NACompiler.h */,
+			);
+			path = NABase;
+			sourceTree = "<group>";
+		};
+		90BAF7AF2175AB3B001665BF /* NAVisual */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF7B02175AB3B001665BF /* NAUICoreAPI.h */,
+				90BAF7B12175AB3B001665BF /* NAPNG.c */,
+				90BAF7B22175AB3B001665BF /* NAUI.c */,
+				90BAF7B32175AB3B001665BF /* NAUIWINAPI.c */,
+				90BAF7B42175AB3B001665BF /* NAUICocoa.m */,
+				90BAF7B52175AB3B001665BF /* NAUICoreAPI.c */,
+				90BAF7B62175AB3B001665BF /* NAUIWINAPI.h */,
+				90BAF7B72175AB3B001665BF /* NADeflate.c */,
+				90BAF7B82175AB3B001665BF /* NAUICocoa.h */,
+			);
+			path = NAVisual;
+			sourceTree = "<group>";
+		};
+		90BAF7C12175AB3B001665BF /* NACore */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF7C22175AB3B001665BF /* NAFile.c */,
+				90BAF7C32175AB3B001665BF /* NABinaryData.c */,
+				90BAF7C42175AB3B001665BF /* NADateTime.c */,
+				90BAF7C52175AB3B001665BF /* NABinaryDataII.h */,
+				90BAF7C62175AB3B001665BF /* NADateTimeII.h */,
+				90BAF7C72175AB3B001665BF /* NAThreadingII.h */,
+				90BAF7C82175AB3B001665BF /* NAMemoryII.h */,
+				90BAF7C92175AB3B001665BF /* NAURLII.h */,
+				90BAF7CA2175AB3B001665BF /* NAFileII.h */,
+				90BAF7CB2175AB3B001665BF /* NAMemory.c */,
+				90BAF7CC2175AB3B001665BF /* NAValueHelper.h */,
+			);
+			path = NACore;
+			sourceTree = "<group>";
+		};
+		90BAF7CF2175AB3B001665BF /* NAMath */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF7D02175AB3B001665BF /* NAMoney.c */,
+				90BAF7D12175AB3B001665BF /* NAMoneyII.h */,
+				90BAF7D22175AB3B001665BF /* NARandomII.h */,
+				90BAF7D32175AB3B001665BF /* NAComplexII.h */,
+				90BAF7D42175AB3B001665BF /* NAVectorAlgebraII.h */,
+				90BAF7D52175AB3B001665BF /* NACoordII.h */,
+				90BAF7D62175AB3B001665BF /* NAMathOperatorsII.h */,
+			);
+			path = NAMath;
+			sourceTree = "<group>";
+		};
+		90BAF7ED2175AB4A001665BF /* res */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF7EE2175AB4A001665BF /* Localizable.strings */,
+				90BAF7F02175AB4A001665BF /* InfoPlist.strings */,
+				90BAF7F22175AB4A001665BF /* MainMenu.xib */,
+				90BAF7F42175AB4A001665BF /* Matrix Buddy.entitlements */,
+				90BAF7F52175AB4A001665BF /* MatrixBuddyChangelog.txt */,
+				90BAF7F62175AB4A001665BF /* MatrixBuddy.icns */,
+				90BAF7F72175AB4A001665BF /* MatrixBuddyLogo.psd */,
+				90BAF7F82175AB4A001665BF /* Info.plist */,
+				90BAF7F92175AB4A001665BF /* MatrixBuddy.iconset */,
+			);
+			name = res;
+			path = ../../res;
+			sourceTree = "<group>";
+		};
+		90BAF8022175AB51001665BF /* src */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF8032175AB51001665BF /* MATApplication.m */,
+				90BAF8042175AB51001665BF /* MATValueView.m */,
+				90BAF8052175AB51001665BF /* MATComputationView.m */,
+				90BAF8062175AB51001665BF /* MATWindowController.m */,
+				90BAF8072175AB51001665BF /* MATCommon.h */,
+				90BAF8082175AB51001665BF /* MATTextField.m */,
+				90BAF8092175AB51001665BF /* ComputationControllers */,
+				90BAF8422175AB51001665BF /* MATApplication.h */,
+				90BAF8432175AB51001665BF /* main.m */,
+				90BAF8442175AB51001665BF /* MATComputationView.h */,
+				90BAF8452175AB51001665BF /* MATValueView.h */,
+				90BAF8462175AB51001665BF /* MATWindowController.h */,
+				90BAF8472175AB51001665BF /* MandConfiguration.h */,
+				90BAF8482175AB51001665BF /* Views */,
+				90BAF8572175AB51001665BF /* MATTextField.h */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		90BAF8092175AB51001665BF /* ComputationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF80A2175AB51001665BF /* MATMDivCompV.m */,
+				90BAF80B2175AB51001665BF /* MATVCrossV.m */,
+				90BAF80C2175AB51001665BF /* MATMMulV.h */,
+				90BAF80D2175AB51001665BF /* MATMMulCompV.h */,
+				90BAF80E2175AB51001665BF /* MATVAddV.m */,
+				90BAF80F2175AB51001665BF /* MATInvertM.m */,
+				90BAF8102175AB51001665BF /* MATNegV.h */,
+				90BAF8112175AB51001665BF /* MATDiagS.m */,
+				90BAF8122175AB51001665BF /* MATMirrorV.h */,
+				90BAF8132175AB51001665BF /* MATVSubV.h */,
+				90BAF8142175AB51001665BF /* MATVDivCompV.h */,
+				90BAF8152175AB51001665BF /* MATMAddM.m */,
+				90BAF8162175AB51001665BF /* MATNegM.h */,
+				90BAF8172175AB51001665BF /* MATNormalizeV.m */,
+				90BAF8182175AB51001665BF /* MATLengthV.h */,
+				90BAF8192175AB51001665BF /* MATVMulCompV.m */,
+				90BAF81A2175AB51001665BF /* MATVDotV.h */,
+				90BAF81B2175AB51001665BF /* MATMSubM.h */,
+				90BAF81C2175AB51001665BF /* MATVMulS.m */,
+				90BAF81D2175AB51001665BF /* MATOrthogonalizeV.m */,
+				90BAF81E2175AB51001665BF /* MATMMulS.m */,
+				90BAF81F2175AB51001665BF /* MATMDivCompM.m */,
+				90BAF8202175AB51001665BF /* MATDiagV.h */,
+				90BAF8212175AB51001665BF /* MATVDivS.h */,
+				90BAF8222175AB51001665BF /* MATMDivS.h */,
+				90BAF8232175AB51001665BF /* MATTransposeM.h */,
+				90BAF8242175AB51001665BF /* MATMMulCompM.h */,
+				90BAF8252175AB51001665BF /* MATMMulM.h */,
+				90BAF8262175AB51001665BF /* MATMMulCompV.m */,
+				90BAF8272175AB51001665BF /* MATMMulV.m */,
+				90BAF8282175AB51001665BF /* MATVCrossV.h */,
+				90BAF8292175AB51001665BF /* MATMDivCompV.h */,
+				90BAF82A2175AB51001665BF /* MATVSubV.m */,
+				90BAF82B2175AB51001665BF /* MATMirrorV.m */,
+				90BAF82C2175AB51001665BF /* MATDiagS.h */,
+				90BAF82D2175AB51001665BF /* MATInvertM.h */,
+				90BAF82E2175AB51001665BF /* MATNegV.m */,
+				90BAF82F2175AB51001665BF /* MATVAddV.h */,
+				90BAF8302175AB51001665BF /* MATOrthogonalizeV.h */,
+				90BAF8312175AB51001665BF /* MATMMulS.h */,
+				90BAF8322175AB51001665BF /* MATVMulS.h */,
+				90BAF8332175AB51001665BF /* MATVDotV.m */,
+				90BAF8342175AB51001665BF /* MATMSubM.m */,
+				90BAF8352175AB51001665BF /* MATVMulCompV.h */,
+				90BAF8362175AB51001665BF /* MATLengthV.m */,
+				90BAF8372175AB51001665BF /* MATNormalizeV.h */,
+				90BAF8382175AB51001665BF /* MATNegM.m */,
+				90BAF8392175AB51001665BF /* MATVDivCompV.m */,
+				90BAF83A2175AB51001665BF /* MATMAddM.h */,
+				90BAF83B2175AB51001665BF /* MATMMulM.m */,
+				90BAF83C2175AB51001665BF /* MATMMulCompM.m */,
+				90BAF83D2175AB51001665BF /* MATTransposeM.m */,
+				90BAF83E2175AB51001665BF /* MATMDivS.m */,
+				90BAF83F2175AB51001665BF /* MATDiagV.m */,
+				90BAF8402175AB51001665BF /* MATVDivS.m */,
+				90BAF8412175AB51001665BF /* MATMDivCompM.h */,
+			);
+			path = ComputationControllers;
+			sourceTree = "<group>";
+		};
+		90BAF8482175AB51001665BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				90BAF8492175AB51001665BF /* MATViewS.m */,
+				90BAF84A2175AB51001665BF /* MATViewV2.h */,
+				90BAF84B2175AB51001665BF /* MATViewV4.m */,
+				90BAF84C2175AB51001665BF /* MATViewM22.h */,
+				90BAF84D2175AB51001665BF /* MATViewM44.h */,
+				90BAF84E2175AB51001665BF /* MATViewV3.m */,
+				90BAF84F2175AB51001665BF /* MATViewM33.m */,
+				90BAF8502175AB51001665BF /* MATViewM22.m */,
+				90BAF8512175AB51001665BF /* MATViewV4.h */,
+				90BAF8522175AB51001665BF /* MATViewV2.m */,
+				90BAF8532175AB51001665BF /* MATViewS.h */,
+				90BAF8542175AB51001665BF /* MATViewV3.h */,
+				90BAF8552175AB51001665BF /* MATViewM44.m */,
+				90BAF8562175AB51001665BF /* MATViewM33.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9020CF141BA6E29000E74965 /* Matrix Buddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9020CF341BA6E29100E74965 /* Build configuration list for PBXNativeTarget "Matrix Buddy" */;
+			buildPhases = (
+				9020CF111BA6E29000E74965 /* Sources */,
+				9020CF121BA6E29000E74965 /* Frameworks */,
+				9020CF131BA6E29000E74965 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Matrix Buddy";
+			productName = "Matrix Buddy";
+			productReference = 9020CF151BA6E29000E74965 /* Matrix Buddy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9020CF0B1BA6E26300E74965 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					9020CF141BA6E29000E74965 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = YH3QFD54JB;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 9020CF0E1BA6E26300E74965 /* Build configuration list for PBXProject "MatrixBuddy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+			);
+			mainGroup = 9020CF0A1BA6E26300E74965;
+			productRefGroup = 9020CF161BA6E29000E74965 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9020CF141BA6E29000E74965 /* Matrix Buddy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9020CF131BA6E29000E74965 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BAF7FA2175AB4A001665BF /* Localizable.strings in Resources */,
+				90BAF7FB2175AB4A001665BF /* InfoPlist.strings in Resources */,
+				90BAF7712175AB32001665BF /* MandApplication.strings in Resources */,
+				90BAF7FD2175AB4A001665BF /* MatrixBuddyChangelog.txt in Resources */,
+				90BAF7742175AB32001665BF /* .gitignore in Resources */,
+				90BAF7732175AB32001665BF /* manderc.png in Resources */,
+				90BAF7FC2175AB4A001665BF /* MainMenu.xib in Resources */,
+				90BAF7FE2175AB4A001665BF /* MatrixBuddy.icns in Resources */,
+				90BAF7722175AB32001665BF /* MandAboutWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9020CF111BA6E29000E74965 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90BAF85F2175AB51001665BF /* MATVAddV.m in Sources */,
+				90BAF8652175AB51001665BF /* MATVMulS.m in Sources */,
+				90BAF86F2175AB51001665BF /* MATMSubM.m in Sources */,
+				90BAF87F2175AB51001665BF /* MATViewV2.m in Sources */,
+				90BAF7EC2175AB3B001665BF /* NAMoney.c in Sources */,
+				90BAF7E62175AB3B001665BF /* NAUICoreAPI.c in Sources */,
+				90BAF7EA2175AB3B001665BF /* NADateTime.c in Sources */,
+				90BAF7E42175AB3B001665BF /* NAUIWINAPI.c in Sources */,
+				90BAF7DE2175AB3B001665BF /* NAList.c in Sources */,
+				90BAF8622175AB51001665BF /* MATMAddM.m in Sources */,
+				90BAF8602175AB51001665BF /* MATInvertM.m in Sources */,
+				90BAF8732175AB51001665BF /* MATMMulM.m in Sources */,
+				90BAF7EB2175AB3B001665BF /* NAMemory.c in Sources */,
+				90BAF8802175AB51001665BF /* MATViewM44.m in Sources */,
+				90BAF86C2175AB51001665BF /* MATMirrorV.m in Sources */,
+				90BAF8672175AB51001665BF /* MATMMulS.m in Sources */,
+				90BAF8712175AB51001665BF /* MATNegM.m in Sources */,
+				90BAF87A2175AB51001665BF /* MATViewS.m in Sources */,
+				90BAF8792175AB51001665BF /* main.m in Sources */,
+				90BAF7DF2175AB3B001665BF /* NAOctTree.c in Sources */,
+				90BAF8752175AB51001665BF /* MATTransposeM.m in Sources */,
+				90BAF7E32175AB3B001665BF /* NAUI.c in Sources */,
+				90BAF7DD2175AB3B001665BF /* NAString.c in Sources */,
+				90BAF8742175AB51001665BF /* MATMMulCompM.m in Sources */,
+				90BAF8612175AB51001665BF /* MATDiagS.m in Sources */,
+				90BAF8682175AB51001665BF /* MATMDivCompM.m in Sources */,
+				90BAF7E92175AB3B001665BF /* NABinaryData.c in Sources */,
+				90BAF87D2175AB51001665BF /* MATViewM33.m in Sources */,
+				90BAF8592175AB51001665BF /* MATValueView.m in Sources */,
+				90BAF85A2175AB51001665BF /* MATComputationView.m in Sources */,
+				90BAF87B2175AB51001665BF /* MATViewV4.m in Sources */,
+				90BAF8702175AB51001665BF /* MATLengthV.m in Sources */,
+				90BAF86E2175AB51001665BF /* MATVDotV.m in Sources */,
+				90BAF7752175AB32001665BF /* MandCocoaHelper.m in Sources */,
+				90BAF86A2175AB51001665BF /* MATMMulV.m in Sources */,
+				90BAF8692175AB51001665BF /* MATMMulCompV.m in Sources */,
+				90BAF7E72175AB3B001665BF /* NADeflate.c in Sources */,
+				90BAF86B2175AB51001665BF /* MATVSubV.m in Sources */,
+				90BAF7DB2175AB3B001665BF /* NAQuadTree.c in Sources */,
+				90BAF8582175AB51001665BF /* MATApplication.m in Sources */,
+				90BAF8642175AB51001665BF /* MATVMulCompV.m in Sources */,
+				90BAF7D92175AB3B001665BF /* NATree.c in Sources */,
+				90BAF8722175AB51001665BF /* MATVDivCompV.m in Sources */,
+				90BAF77A2175AB32001665BF /* MandMenuHelper.m in Sources */,
+				90BAF7E82175AB3B001665BF /* NAFile.c in Sources */,
+				90BAF77B2175AB32001665BF /* MandApplication.m in Sources */,
+				90BAF85C2175AB51001665BF /* MATTextField.m in Sources */,
+				90BAF87E2175AB51001665BF /* MATViewM22.m in Sources */,
+				90BAF87C2175AB51001665BF /* MATViewV3.m in Sources */,
+				90BAF85B2175AB51001665BF /* MATWindowController.m in Sources */,
+				90BAF86D2175AB51001665BF /* MATNegV.m in Sources */,
+				90BAF7782175AB32001665BF /* MandTranslation.c in Sources */,
+				90BAF85E2175AB51001665BF /* MATVCrossV.m in Sources */,
+				90BAF7E12175AB3B001665BF /* NADebug.c in Sources */,
+				90BAF8762175AB51001665BF /* MATMDivS.m in Sources */,
+				90BAF7772175AB32001665BF /* MandHelpWindowController.m in Sources */,
+				90BAF7762175AB32001665BF /* MandAboutWindowController.m in Sources */,
+				90BAF7DA2175AB3B001665BF /* NACocoaHelper.m in Sources */,
+				90BAF7DC2175AB3B001665BF /* NABuffer.c in Sources */,
+				90BAF7E52175AB3B001665BF /* NAUICocoa.m in Sources */,
+				90BAF7E02175AB3B001665BF /* NAHeap.c in Sources */,
+				90BAF7E22175AB3B001665BF /* NAPNG.c in Sources */,
+				90BAF7792175AB32001665BF /* MandEnvironment.m in Sources */,
+				90BAF8782175AB51001665BF /* MATVDivS.m in Sources */,
+				90BAF85D2175AB51001665BF /* MATMDivCompV.m in Sources */,
+				90BAF8632175AB51001665BF /* MATNormalizeV.m in Sources */,
+				90BAF8662175AB51001665BF /* MATOrthogonalizeV.m in Sources */,
+				90BAF8772175AB51001665BF /* MATDiagV.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		90BAF75C2175AB32001665BF /* MandApplication.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90BAF75D2175AB32001665BF /* de */,
+				90BAF75E2175AB32001665BF /* en */,
+			);
+			name = MandApplication.strings;
+			sourceTree = "<group>";
+		};
+		90BAF7EE2175AB4A001665BF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90BAF7EF2175AB4A001665BF /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		90BAF7F02175AB4A001665BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90BAF7F12175AB4A001665BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		90BAF7F22175AB4A001665BF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90BAF7F32175AB4A001665BF /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9020CF0F1BA6E26300E74965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		9020CF101BA6E26300E74965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		9020CF301BA6E29100E74965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "../../res/Matrix Buddy.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = YH3QFD54JB;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ../../res/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9020CF311BA6E29100E74965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "../../res/Matrix Buddy.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = YH3QFD54JB;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ../../res/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9020CF0E1BA6E26300E74965 /* Build configuration list for PBXProject "MatrixBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9020CF0F1BA6E26300E74965 /* Debug */,
+				9020CF101BA6E26300E74965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9020CF341BA6E29100E74965 /* Build configuration list for PBXNativeTarget "Matrix Buddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9020CF301BA6E29100E74965 /* Debug */,
+				9020CF311BA6E29100E74965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9020CF0B1BA6E26300E74965 /* Project object */;
+}

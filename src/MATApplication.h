@@ -15,6 +15,8 @@ NSString* formatValue(float value);
   IBOutlet MATWindowController* windowController;
 }
 
+- (IBAction)openOnlineHelp:(NSMenuItem*)sender;
+
 - (NABool)hasShowHelp;
 - (NABool)hasShowIdentifier;
 - (NABool)hasRowFirstTabOrder;

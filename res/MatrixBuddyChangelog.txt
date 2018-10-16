@@ -14,6 +14,11 @@ Invert more operations
 
 
 
+Version 1.1.1
+-------------
+
+- Added dark mode
+- Moved help online
 
 Version 1.1
 -------------

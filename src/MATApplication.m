@@ -25,6 +25,7 @@ NSString* formatValue(float value){
 - (id)init{
   self = [super init];
   [self setDelegate:self];
+  naStartRuntime();
   return self;
 }
 
@@ -38,12 +39,46 @@ NSString* formatValue(float value){
   [self setHelpDocument:url];
 
   [windowController prepareFirstView];
+
+  NSString* versionstring = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+  NAString* lastrunversion = mandNewUserDefaultString("lastrunningversion");
+  if(![versionstring isEqualToString:[NSString stringWithUTF8String:naGetStringUTF8Pointer(lastrunversion)]]){
+    NAString* curversionstring = naNewStringWithFormat("%s", [versionstring UTF8String]);
+    mandSetUserDefaultString(curversionstring, "lastrunningversion");
+    naDelete(curversionstring);
+    
+    NSAlert* alert = [[NSAlert alloc] init];
+    alert.alertStyle = NSInformationalAlertStyle;
+    alert.messageText = [NSString stringWithFormat:@"Welcome to Version %@", versionstring];
+    alert.informativeText = @"Enjoy the new dark mode on the latest macOS!";
+    [alert runModal];
+    [alert release];
+  }
+  naDelete(lastrunversion);
+}
+
+
+- (void)applicationWillTerminate:(NSNotification*)notification{
+  NA_UNUSED(notification);
+  
+  naStopRuntime();
 }
 
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication{
   NA_UNUSED(theApplication);
   return YES;
+}
+
+
+- (IBAction)openOnlineHelp:(NSMenuItem*)sender{
+  NA_UNUSED(sender);
+  NSString* language = [[NSLocale currentLocale] languageCode];
+  if([language isEqualToString:@"de"]){
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://manderc.com/apps/matrixbuddy/help/index.php"]];
+  }else{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://manderc.com/apps/matrixbuddy/help/index_en.php"]];
+  }
 }
 
 
@@ -139,7 +174,7 @@ NSString* formatValue(float value){
 - (NSColor*)color:(MATColor)colornum{
   NSColor* color;
   switch(colornum){
-  case MAT_COLOR_NORMAL:  color = [NSColor colorWithCalibratedRed:0. green:0. blue:0. alpha:1.]; break;
+  case MAT_COLOR_NORMAL:  color = [NSColor controlTextColor]; break;
   case MAT_COLOR_ERROR:   color = [NSColor colorWithCalibratedRed:1. green:0. blue:0. alpha:1.]; break;
   case MAT_COLOR_WARNING: color = [NSColor colorWithCalibratedRed:.7 green:.5 blue:0. alpha:1.]; break;
   case MAT_COLOR_RESULT:  color = [NSColor colorWithCalibratedRed:0. green:.6 blue:0. alpha:1.]; break;
