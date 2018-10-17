@@ -355,19 +355,19 @@
 			isa = PBXGroup;
 			children = (
 				90BAF7632175AB32001665BF /* MandAboutWindowController.h */,
-				90BAF7642175AB32001665BF /* MandHelpWindowController.h */,
-				90BAF7652175AB32001665BF /* MandMenuHelper.h */,
-				90BAF7662175AB32001665BF /* MandEnvironment.h */,
-				90BAF7672175AB32001665BF /* MandTranslation.h */,
-				90BAF7682175AB32001665BF /* MandApplication.h */,
-				90BAF7692175AB32001665BF /* MandCocoaHelper.m */,
 				90BAF76A2175AB32001665BF /* MandAboutWindowController.m */,
-				90BAF76B2175AB32001665BF /* MandHelpWindowController.m */,
-				90BAF76C2175AB32001665BF /* MandTranslation.c */,
-				90BAF76D2175AB32001665BF /* MandEnvironment.m */,
-				90BAF76E2175AB32001665BF /* MandMenuHelper.m */,
-				90BAF76F2175AB32001665BF /* MandCocoaHelper.h */,
+				90BAF7682175AB32001665BF /* MandApplication.h */,
 				90BAF7702175AB32001665BF /* MandApplication.m */,
+				90BAF76F2175AB32001665BF /* MandCocoaHelper.h */,
+				90BAF7692175AB32001665BF /* MandCocoaHelper.m */,
+				90BAF7662175AB32001665BF /* MandEnvironment.h */,
+				90BAF76D2175AB32001665BF /* MandEnvironment.m */,
+				90BAF7642175AB32001665BF /* MandHelpWindowController.h */,
+				90BAF76B2175AB32001665BF /* MandHelpWindowController.m */,
+				90BAF7652175AB32001665BF /* MandMenuHelper.h */,
+				90BAF76E2175AB32001665BF /* MandMenuHelper.m */,
+				90BAF76C2175AB32001665BF /* MandTranslation.c */,
+				90BAF7672175AB32001665BF /* MandTranslation.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -527,21 +527,21 @@
 		90BAF8022175AB51001665BF /* src */ = {
 			isa = PBXGroup;
 			children = (
-				90BAF8032175AB51001665BF /* MATApplication.m */,
-				90BAF8042175AB51001665BF /* MATValueView.m */,
-				90BAF8052175AB51001665BF /* MATComputationView.m */,
-				90BAF8062175AB51001665BF /* MATWindowController.m */,
-				90BAF8072175AB51001665BF /* MATCommon.h */,
-				90BAF8082175AB51001665BF /* MATTextField.m */,
 				90BAF8092175AB51001665BF /* ComputationControllers */,
-				90BAF8422175AB51001665BF /* MATApplication.h */,
 				90BAF8432175AB51001665BF /* main.m */,
-				90BAF8442175AB51001665BF /* MATComputationView.h */,
-				90BAF8452175AB51001665BF /* MATValueView.h */,
-				90BAF8462175AB51001665BF /* MATWindowController.h */,
 				90BAF8472175AB51001665BF /* MandConfiguration.h */,
-				90BAF8482175AB51001665BF /* Views */,
+				90BAF8422175AB51001665BF /* MATApplication.h */,
+				90BAF8032175AB51001665BF /* MATApplication.m */,
+				90BAF8072175AB51001665BF /* MATCommon.h */,
+				90BAF8442175AB51001665BF /* MATComputationView.h */,
+				90BAF8052175AB51001665BF /* MATComputationView.m */,
 				90BAF8572175AB51001665BF /* MATTextField.h */,
+				90BAF8082175AB51001665BF /* MATTextField.m */,
+				90BAF8452175AB51001665BF /* MATValueView.h */,
+				90BAF8042175AB51001665BF /* MATValueView.m */,
+				90BAF8462175AB51001665BF /* MATWindowController.h */,
+				90BAF8062175AB51001665BF /* MATWindowController.m */,
+				90BAF8482175AB51001665BF /* Views */,
 			);
 			name = src;
 			path = ../../src;

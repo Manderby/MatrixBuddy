@@ -35,8 +35,8 @@ NSString* formatValue(float value){
 
   [super applicationDidFinishLaunching:notification];
 
-  NSURL* url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html" subdirectory:@"help"];
-  [self setHelpDocument:url];
+//  NSURL* url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html" subdirectory:@"help"];
+//  [self setHelpDocument:url];
 
   [windowController prepareFirstView];
 
