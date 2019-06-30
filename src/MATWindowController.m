@@ -36,6 +36,7 @@
 #import "MATTransposeM.h"
 #import "MATInvertM.h"
 
+#include "MatrixBuddyTranslations.h"
 
 #define MAT_DEFAULT_SHOW_HELP @"showHelp"
 #define MAT_DEFAULT_SHOW_IDENTIFIERS @"showIdentifiers"
@@ -220,39 +221,39 @@
     [helpLine setHidden:NO];
     NSString* helpstring;
     switch(computation){
-      case MAT_COMPUTATION_VMULS:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpVMulS"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_VDIVS:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpVDivS"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_VMULCOMPV:       helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpVMulCompV"      value:nil table:nil]; break;
-      case MAT_COMPUTATION_VDIVCOMPV:       helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpVDivCompV"      value:nil table:nil]; break;
+      case MAT_COMPUTATION_VMULS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVMulS)]; break;
+      case MAT_COMPUTATION_VDIVS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVDivS)]; break;
+      case MAT_COMPUTATION_VMULCOMPV:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVMulCompV)]; break;
+      case MAT_COMPUTATION_VDIVCOMPV:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVDivCompV)]; break;
 
-      case MAT_COMPUTATION_NEGV:            helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpNegV"           value:nil table:nil]; break;
-      case MAT_COMPUTATION_VADDV:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpVAddV"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_VSUBV:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpVSubV"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_VDOTV:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpVDotV"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_VCROSSV:         helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpVCrossV"        value:nil table:nil]; break;
-      case MAT_COMPUTATION_LENGTHV:         helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpLengthV"        value:nil table:nil]; break;
+      case MAT_COMPUTATION_NEGV:            helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpNegV)]; break;
+      case MAT_COMPUTATION_VADDV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVAddV)]; break;
+      case MAT_COMPUTATION_VSUBV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVSubV)]; break;
+      case MAT_COMPUTATION_VDOTV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVDotV)]; break;
+      case MAT_COMPUTATION_VCROSSV:         helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVCrossV)]; break;
+      case MAT_COMPUTATION_LENGTHV:         helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpLengthV)]; break;
 
-      case MAT_COMPUTATION_NORMALIZEV:      helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpNormalizeV"     value:nil table:nil]; break;
-      case MAT_COMPUTATION_ORTHOGONALIZEV:  helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpOrthogonalizeV" value:nil table:nil]; break;
-      case MAT_COMPUTATION_MIRRORV:         helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMirrorV"        value:nil table:nil]; break;
+      case MAT_COMPUTATION_NORMALIZEV:      helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpNormalizeV)]; break;
+      case MAT_COMPUTATION_ORTHOGONALIZEV:  helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpOrthogonalizeV)]; break;
+      case MAT_COMPUTATION_MIRRORV:         helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMirrorV)]; break;
 
-      case MAT_COMPUTATION_MMULS:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMMulS"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_MDIVS:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMDivS"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_MMULCOMPV:       helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMMulCompV"      value:nil table:nil]; break;
-      case MAT_COMPUTATION_MDIVCOMPV:       helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMDivCompV"      value:nil table:nil]; break;
-      case MAT_COMPUTATION_MMULCOMPM:       helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMMulCompM"      value:nil table:nil]; break;
-      case MAT_COMPUTATION_MDIVCOMPM:       helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMDivCompM"      value:nil table:nil]; break;
+      case MAT_COMPUTATION_MMULS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulS)]; break;
+      case MAT_COMPUTATION_MDIVS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMDivS)]; break;
+      case MAT_COMPUTATION_MMULCOMPV:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulCompV)]; break;
+      case MAT_COMPUTATION_MDIVCOMPV:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMDivCompV)]; break;
+      case MAT_COMPUTATION_MMULCOMPM:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulCompM)]; break;
+      case MAT_COMPUTATION_MDIVCOMPM:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMDivCompM)]; break;
       
-      case MAT_COMPUTATION_NEGM:            helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpNegM"           value:nil table:nil]; break;
-      case MAT_COMPUTATION_MADDM:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMAddM"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_MSUBM:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMSubM"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_MMULV:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMMulV"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_MMULM:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpMMulM"          value:nil table:nil]; break;
+      case MAT_COMPUTATION_NEGM:            helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpNegM)]; break;
+      case MAT_COMPUTATION_MADDM:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMAddM)]; break;
+      case MAT_COMPUTATION_MSUBM:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMSubM)]; break;
+      case MAT_COMPUTATION_MMULV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulV)]; break;
+      case MAT_COMPUTATION_MMULM:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulM)]; break;
 
-      case MAT_COMPUTATION_DIAGS:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpDiagS"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_DIAGV:           helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpDiagV"          value:nil table:nil]; break;
-      case MAT_COMPUTATION_TRANSPOSEM:      helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpTransposeM"     value:nil table:nil]; break;
-      case MAT_COMPUTATION_INVERTM:         helpstring  = [[NSBundle mainBundle] localizedStringForKey:@"MATHelpInvertM"        value:nil table:nil]; break;
+      case MAT_COMPUTATION_DIAGS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpDiagS)]; break;
+      case MAT_COMPUTATION_DIAGV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpDiagV)]; break;
+      case MAT_COMPUTATION_TRANSPOSEM:      helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpTransposeM)]; break;
+      case MAT_COMPUTATION_INVERTM:         helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpInvertM)]; break;
     default:
       helpstring = @"";
     }

@@ -13,10 +13,12 @@ NSString* formatValue(float value);
 
 @interface MATApplication : ManderApp{
   IBOutlet MATWindowController* windowController;
+  NAInt translatorGroup;
 }
 
 - (IBAction)openOnlineHelp:(NSMenuItem*)sender;
 
+- (NAInt)getTranslatorGroup;
 - (NABool)hasShowHelp;
 - (NABool)hasShowIdentifier;
 - (NABool)hasRowFirstTabOrder;

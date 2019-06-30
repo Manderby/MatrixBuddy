@@ -1,6 +1,6 @@
 
 #import "MATApplication.h"
-
+#include "MatrixBuddyTranslations.h"
 
 
 NSString* formatValue(float value){
@@ -26,6 +26,7 @@ NSString* formatValue(float value){
   self = [super init];
   [self setDelegate:self];
   naStartRuntime();
+  naStartTranslator();
   return self;
 }
 
@@ -33,7 +34,19 @@ NSString* formatValue(float value){
 - (void)applicationDidFinishLaunching:(NSNotification *)notification{
   NA_UNUSED(notification);
 
-  [super applicationDidFinishLaunching:notification];
+  translatorGroup = naRegisterTranslatorGroup();
+  #include "MatrixBuddyStrings_eng.h"
+
+  // Set the translator languages.
+  NAInt lang = (NAInt)[[NSLocale preferredLanguages] count] - 1;
+  while(lang >= 0){
+    NSString* language = [[NSLocale preferredLanguages] objectAtIndex:(NSUInteger)lang];
+    NALanguageCode3 langcode = naGetLanguageCode([language UTF8String]);
+    naSetTranslatorLanguagePreference(langcode);
+    lang--;
+  }
+
+  [self setApplicationDescription:naTranslate(translatorGroup, MatrixBuddyApplicationDescription)];
 
 //  NSURL* url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html" subdirectory:@"help"];
 //  [self setHelpDocument:url];
@@ -61,6 +74,7 @@ NSString* formatValue(float value){
 - (void)applicationWillTerminate:(NSNotification*)notification{
   NA_UNUSED(notification);
   
+  naStopTranslator();
   naStopRuntime();
 }
 
@@ -82,6 +96,9 @@ NSString* formatValue(float value){
 }
 
 
+- (NAInt)getTranslatorGroup{
+  return translatorGroup;
+}
 
 - (NABool)hasShowHelp{
   return [windowController hasShowHelp];
@@ -113,55 +130,55 @@ NSString* formatValue(float value){
     color = MAT_COLOR_RESULT;
     break;
   case MAT_STATUS_MATRIX_DETERMINANT_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorMatrixDeterminantZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorMatrixDeterminantZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorMatrixDeterminantAlmostZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorMatrixDeterminantAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_VECTOR_COMPONENT_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorVectorComponentZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorVectorComponentZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorVectorComponentAlmostZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorVectorComponentAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_MATRIX_COMPONENT_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorMatrixComponentZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorMatrixComponentZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_MATRIX_COMPONENT_ALMOST_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorMatrixComponentAlmostZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorMatrixComponentAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_SCALAR_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorScalarZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorScalarZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_SCALAR_ALMOST_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorScalarAlmostZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorScalarAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_VECTOR_LENGTH_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorVectorLengthZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorVectorLengthZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_VECTOR_LENGTH_ALMOST_ZERO:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorVectorLengthAlmostZero" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorVectorLengthAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_VECTORS_COLINEAR:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorVectorsColinear" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorVectorsCollinear)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_VECTORS_ALMOST_COLINEAR:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorVectorsAlmostColinear" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorVectorsAlmostCollinear)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_VECTOR_LENGTH_UNEQUAL_ONE:
-    errorstring = [[NSBundle mainBundle] localizedStringForKey:@"MATErrorVectorLengthUnequalOne" value:nil table:nil];
+    errorstring = [NSString stringWithUTF8String:MAT_TRANSLATE(MATErrorVectorLengthUnequalOne)];
     color = MAT_COLOR_WARNING;
     break;
   }
