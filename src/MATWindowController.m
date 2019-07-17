@@ -37,12 +37,8 @@
 #import "MATInvertM.h"
 
 #include "MatrixBuddyTranslations.h"
+#include "MatrixBuddyPreferences.h"
 
-#define MAT_DEFAULT_SHOW_HELP @"showHelp"
-#define MAT_DEFAULT_SHOW_IDENTIFIERS @"showIdentifiers"
-#define MAT_DEFAULT_TAB_ORDER_ROW_FIRST @"useRowFirstTabOrder"
-#define MAT_DEFAULT_CODE_STYLE @"codeStyle"
-#define MAT_DEFAULT_VALUE_ACCURACY @"valueAccuracy"
 
 
 @implementation MATWindowController
@@ -52,33 +48,12 @@
 
   computationView = placeholder;
 
-  NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
+  showHelp = naGetPreferencesBool(MATPrefShowHelp);
+  showIdentifiers = naGetPreferencesBool(MATPrefShowIdentifiers);
+  hasRowFirstTabOrder = naGetPreferencesBool(MATPrefUseRowFirstTabOrder);
+  codeStyle = (MATCodeStyle)naGetPreferencesEnum(MATPrefCodeStyle);
+  valueAccuracy = (MATValueAccuracy)naGetPreferencesEnum(MATPrefValueAccuracy);
 
-  int showHelpDefault = (int)[userdefaults integerForKey:MAT_DEFAULT_SHOW_HELP];
-  if(showHelpDefault == -1){showHelp = NA_FALSE;}
-  else if(showHelpDefault == 1){showHelp = NA_TRUE;}
-  else{showHelp = NA_TRUE;}
-
-  int showIdentifiersDefault = (int)[userdefaults integerForKey:MAT_DEFAULT_SHOW_IDENTIFIERS];
-  if(showIdentifiersDefault == -1){showIdentifiers = NA_FALSE;}
-  else if(showIdentifiersDefault == 1){showIdentifiers = NA_TRUE;}
-  else{showIdentifiers = NA_TRUE;}
-
-  int hasRowFirstTabOrderDefault = (int)[userdefaults integerForKey:MAT_DEFAULT_TAB_ORDER_ROW_FIRST];
-  if(hasRowFirstTabOrderDefault == -1){hasRowFirstTabOrder = NA_FALSE;}
-  else if(hasRowFirstTabOrderDefault == 1){hasRowFirstTabOrder = NA_TRUE;}
-  else{hasRowFirstTabOrder = NA_TRUE;}
-
-  int codeStyleDefault = (int)[userdefaults integerForKey:MAT_DEFAULT_CODE_STYLE];
-  if(codeStyleDefault == -1){codeStyle = MAT_CODE_STYLE_NONE;}
-  else if(codeStyleDefault > 0){codeStyle = (MATCodeStyle)codeStyleDefault;}
-  else{codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;}
-
-  int valueAccuracyDefault = (int)[userdefaults integerForKey:MAT_DEFAULT_VALUE_ACCURACY];
-  if(valueAccuracyDefault == -1){valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;}
-  else if(valueAccuracyDefault > 0){valueAccuracy = (MATValueAccuracy)valueAccuracyDefault;}
-  else{codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;}
-  
   buttons[MAT_COMPUTATION_VMULS]          = buttonVMulS;
   buttons[MAT_COMPUTATION_VDIVS]          = buttonVDivS;
   buttons[MAT_COMPUTATION_VMULCOMPV]      = buttonVMulCompV;
@@ -358,50 +333,48 @@
 - (IBAction)changeSetting:(id)sender{
   NA_UNUSED(sender);
 
-  NSUserDefaults* userdefaults = [NSUserDefaults standardUserDefaults];
-
   if(sender == showHelpItem){
     showHelp = !showHelp;
-    [userdefaults setInteger:(showHelp?1:-1) forKey:MAT_DEFAULT_SHOW_HELP];
+    naSetPreferencesBool(MATPrefShowHelp, showHelp);
   }else if(sender == showIdentifiersItem){
     showIdentifiers = !showIdentifiers;
-    [userdefaults setInteger:(showIdentifiers?1:-1) forKey:MAT_DEFAULT_SHOW_IDENTIFIERS];
+    naSetPreferencesBool(MATPrefShowIdentifiers, showIdentifiers);
   }else if(sender == rowFirstTabOrderItem){
     hasRowFirstTabOrder = NA_TRUE;
-    [userdefaults setInteger:1 forKey:MAT_DEFAULT_TAB_ORDER_ROW_FIRST];
+    naSetPreferencesBool(MATPrefUseRowFirstTabOrder, hasRowFirstTabOrder);
   }else if(sender == columnFirstTabOrderItem){
     hasRowFirstTabOrder = NA_FALSE;
-    [userdefaults setInteger:-1 forKey:MAT_DEFAULT_TAB_ORDER_ROW_FIRST];
+    naSetPreferencesBool(MATPrefUseRowFirstTabOrder, hasRowFirstTabOrder);
   }else if(sender == codeNoneItem){
     codeStyle = MAT_CODE_STYLE_NONE;
-    [userdefaults setInteger:-1 forKey:MAT_DEFAULT_CODE_STYLE];
+    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
   }else if(sender == codeCRowFirstItem1D){
     codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;
-    [userdefaults setInteger:codeStyle forKey:MAT_DEFAULT_CODE_STYLE];
+    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
   }else if(sender == codeCRowFirstItem2D){
     codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_2D;
-    [userdefaults setInteger:codeStyle forKey:MAT_DEFAULT_CODE_STYLE];
+    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
   }else if(sender == codeCColumnFirstItem1D){
     codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_1D;
-    [userdefaults setInteger:codeStyle forKey:MAT_DEFAULT_CODE_STYLE];
+    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
   }else if(sender == codeCColumnFirstItem2D){
     codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_2D;
-    [userdefaults setInteger:codeStyle forKey:MAT_DEFAULT_CODE_STYLE];
+    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
   }else if(sender == codeMathematicaItem){
     codeStyle = MAT_CODE_STYLE_MATHEMATICA;
-    [userdefaults setInteger:codeStyle forKey:MAT_DEFAULT_CODE_STYLE];
+    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
   }else if(sender == codeMatlabItem){
     codeStyle = MAT_CODE_STYLE_MATLAB;
-    [userdefaults setInteger:codeStyle forKey:MAT_DEFAULT_CODE_STYLE];
+    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
   }else if(sender == codeMapleItem){
     codeStyle = MAT_CODE_STYLE_MAPLE;
-    [userdefaults setInteger:codeStyle forKey:MAT_DEFAULT_CODE_STYLE];
+    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
   }else if(sender == valueAccuracyNaturalItem){
     valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;
-    [userdefaults setInteger:valueAccuracy forKey:MAT_DEFAULT_VALUE_ACCURACY];
+    naSetPreferencesEnum(MATPrefValueAccuracy, valueAccuracy);
   }else if(sender == valueAccuracyFloatItem){
     valueAccuracy = MAT_VALUE_ACCURACY_FLOAT;
-    [userdefaults setInteger:valueAccuracy forKey:MAT_DEFAULT_VALUE_ACCURACY];
+    naSetPreferencesEnum(MATPrefValueAccuracy, valueAccuracy);
   }else{}
   [self update];
 }

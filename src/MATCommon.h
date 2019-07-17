@@ -30,6 +30,9 @@
 #include "MATTextField.h"
 
 
+NAInt translatorGroup;
+
+
 typedef enum{
   MAT_STATUS_RESULT,
   MAT_STATUS_NORMAL,

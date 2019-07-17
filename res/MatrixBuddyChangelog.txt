@@ -13,6 +13,7 @@ Multiply and Divide matrix and vector row-wise
 Invert more operations
 
 
+- Reprogrammed the user iterface.
 - Corrected a small typo. Collinear instead of Colinear.
 
 Version 1.1.1

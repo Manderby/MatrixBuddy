@@ -5,6 +5,7 @@
 NA_LOC_LANG("eng");
 
 NA_LOC(MatrixBuddyApplicationDescription, "Compute vector algebra thingies. Matrix and Vector, you know. That kind of stuff");
+NA_LOC(MatrixBuddyNewVersionDescription, "The user interface has been completely rewritten");
 
 NA_LOC(MATHelpVMulS,          "Multiplies a vector by a scalar. Fill in a and s to compute b.");
 NA_LOC(MATHelpVDivS,          "Divides a vector by a scalar. Fill in a and s to compute b.");

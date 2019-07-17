@@ -25,8 +25,6 @@ NSString* formatValue(float value){
 - (id)init{
   self = [super init];
   [self setDelegate:self];
-  naStartRuntime();
-  naStartTranslator();
   return self;
 }
 
@@ -53,21 +51,7 @@ NSString* formatValue(float value){
 
   [windowController prepareFirstView];
 
-  NSString* versionstring = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-  NAString* lastrunversion = mandNewUserDefaultString("lastrunningversion");
-  if(![versionstring isEqualToString:[NSString stringWithUTF8String:naGetStringUTF8Pointer(lastrunversion)]]){
-    NAString* curversionstring = naNewStringWithFormat("%s", [versionstring UTF8String]);
-    mandSetUserDefaultString(curversionstring, "lastrunningversion");
-    naDelete(curversionstring);
-    
-    NSAlert* alert = [[NSAlert alloc] init];
-    alert.alertStyle = NSInformationalAlertStyle;
-    alert.messageText = [NSString stringWithFormat:@"Welcome to Version %@", versionstring];
-    alert.informativeText = @"Enjoy the new dark mode on the latest macOS!";
-    [alert runModal];
-    [alert release];
-  }
-  naDelete(lastrunversion);
+  [self alertNewVersion:MatrixBuddyNewVersionDescription translatorGroup:translatorGroup];
 }
 
 
