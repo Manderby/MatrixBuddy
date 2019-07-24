@@ -48,11 +48,11 @@
 
   computationView = placeholder;
 
-  showHelp = naGetPreferencesBool(MATPrefShowHelp);
-  showIdentifiers = naGetPreferencesBool(MATPrefShowIdentifiers);
-  hasRowFirstTabOrder = naGetPreferencesBool(MATPrefUseRowFirstTabOrder);
-  codeStyle = (MATCodeStyle)naGetPreferencesEnum(MATPrefCodeStyle);
-  valueAccuracy = (MATValueAccuracy)naGetPreferencesEnum(MATPrefValueAccuracy);
+  showHelp = naGetPreferencesBool(MATPrefs[ShowHelp]);
+  showIdentifiers = naGetPreferencesBool(MATPrefs[ShowIdentifiers]);
+  hasRowFirstTabOrder = naGetPreferencesBool(MATPrefs[UseRowFirstTabOrder]);
+  codeStyle = (MATCodeStyle)naGetPreferencesEnum(MATPrefs[CodeStyle]);
+  valueAccuracy = (MATValueAccuracy)naGetPreferencesEnum(MATPrefs[ValueAccuracy]);
 
   buttons[MAT_COMPUTATION_VMULS]          = buttonVMulS;
   buttons[MAT_COMPUTATION_VDIVS]          = buttonVDivS;
@@ -196,39 +196,39 @@
     [helpLine setHidden:NO];
     NSString* helpstring;
     switch(computation){
-      case MAT_COMPUTATION_VMULS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVMulS)]; break;
-      case MAT_COMPUTATION_VDIVS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVDivS)]; break;
-      case MAT_COMPUTATION_VMULCOMPV:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVMulCompV)]; break;
-      case MAT_COMPUTATION_VDIVCOMPV:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVDivCompV)]; break;
+      case MAT_COMPUTATION_VMULS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVMulS)]; break;
+      case MAT_COMPUTATION_VDIVS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDivS)]; break;
+      case MAT_COMPUTATION_VMULCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVMulCompV)]; break;
+      case MAT_COMPUTATION_VDIVCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDivCompV)]; break;
 
-      case MAT_COMPUTATION_NEGV:            helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpNegV)]; break;
-      case MAT_COMPUTATION_VADDV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVAddV)]; break;
-      case MAT_COMPUTATION_VSUBV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVSubV)]; break;
-      case MAT_COMPUTATION_VDOTV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVDotV)]; break;
-      case MAT_COMPUTATION_VCROSSV:         helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpVCrossV)]; break;
-      case MAT_COMPUTATION_LENGTHV:         helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpLengthV)]; break;
+      case MAT_COMPUTATION_NEGV:            helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpNegV)]; break;
+      case MAT_COMPUTATION_VADDV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVAddV)]; break;
+      case MAT_COMPUTATION_VSUBV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVSubV)]; break;
+      case MAT_COMPUTATION_VDOTV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDotV)]; break;
+      case MAT_COMPUTATION_VCROSSV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVCrossV)]; break;
+      case MAT_COMPUTATION_LENGTHV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpLengthV)]; break;
 
-      case MAT_COMPUTATION_NORMALIZEV:      helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpNormalizeV)]; break;
-      case MAT_COMPUTATION_ORTHOGONALIZEV:  helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpOrthogonalizeV)]; break;
-      case MAT_COMPUTATION_MIRRORV:         helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMirrorV)]; break;
+      case MAT_COMPUTATION_NORMALIZEV:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpNormalizeV)]; break;
+      case MAT_COMPUTATION_ORTHOGONALIZEV:  helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpOrthogonalizeV)]; break;
+      case MAT_COMPUTATION_MIRRORV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMirrorV)]; break;
 
-      case MAT_COMPUTATION_MMULS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulS)]; break;
-      case MAT_COMPUTATION_MDIVS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMDivS)]; break;
-      case MAT_COMPUTATION_MMULCOMPV:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulCompV)]; break;
-      case MAT_COMPUTATION_MDIVCOMPV:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMDivCompV)]; break;
-      case MAT_COMPUTATION_MMULCOMPM:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulCompM)]; break;
-      case MAT_COMPUTATION_MDIVCOMPM:       helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMDivCompM)]; break;
+      case MAT_COMPUTATION_MMULS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulS)]; break;
+      case MAT_COMPUTATION_MDIVS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDivS)]; break;
+      case MAT_COMPUTATION_MMULCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulCompV)]; break;
+      case MAT_COMPUTATION_MDIVCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDivCompV)]; break;
+      case MAT_COMPUTATION_MMULCOMPM:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulCompM)]; break;
+      case MAT_COMPUTATION_MDIVCOMPM:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDivCompM)]; break;
       
-      case MAT_COMPUTATION_NEGM:            helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpNegM)]; break;
-      case MAT_COMPUTATION_MADDM:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMAddM)]; break;
-      case MAT_COMPUTATION_MSUBM:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMSubM)]; break;
-      case MAT_COMPUTATION_MMULV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulV)]; break;
-      case MAT_COMPUTATION_MMULM:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpMMulM)]; break;
+      case MAT_COMPUTATION_NEGM:            helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpNegM)]; break;
+      case MAT_COMPUTATION_MADDM:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMAddM)]; break;
+      case MAT_COMPUTATION_MSUBM:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMSubM)]; break;
+      case MAT_COMPUTATION_MMULV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulV)]; break;
+      case MAT_COMPUTATION_MMULM:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulM)]; break;
 
-      case MAT_COMPUTATION_DIAGS:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpDiagS)]; break;
-      case MAT_COMPUTATION_DIAGV:           helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpDiagV)]; break;
-      case MAT_COMPUTATION_TRANSPOSEM:      helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpTransposeM)]; break;
-      case MAT_COMPUTATION_INVERTM:         helpstring  = [NSString stringWithUTF8String:MAT_TRANSLATE(MATHelpInvertM)]; break;
+      case MAT_COMPUTATION_DIAGS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpDiagS)]; break;
+      case MAT_COMPUTATION_DIAGV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpDiagV)]; break;
+      case MAT_COMPUTATION_TRANSPOSEM:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpTransposeM)]; break;
+      case MAT_COMPUTATION_INVERTM:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpInvertM)]; break;
     default:
       helpstring = @"";
     }
@@ -335,46 +335,46 @@
 
   if(sender == showHelpItem){
     showHelp = !showHelp;
-    naSetPreferencesBool(MATPrefShowHelp, showHelp);
+    naSetPreferencesBool(MATPrefs[ShowHelp], showHelp);
   }else if(sender == showIdentifiersItem){
     showIdentifiers = !showIdentifiers;
-    naSetPreferencesBool(MATPrefShowIdentifiers, showIdentifiers);
+    naSetPreferencesBool(MATPrefs[ShowIdentifiers], showIdentifiers);
   }else if(sender == rowFirstTabOrderItem){
     hasRowFirstTabOrder = NA_TRUE;
-    naSetPreferencesBool(MATPrefUseRowFirstTabOrder, hasRowFirstTabOrder);
+    naSetPreferencesBool(MATPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
   }else if(sender == columnFirstTabOrderItem){
     hasRowFirstTabOrder = NA_FALSE;
-    naSetPreferencesBool(MATPrefUseRowFirstTabOrder, hasRowFirstTabOrder);
+    naSetPreferencesBool(MATPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
   }else if(sender == codeNoneItem){
     codeStyle = MAT_CODE_STYLE_NONE;
-    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
+    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
   }else if(sender == codeCRowFirstItem1D){
     codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;
-    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
+    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
   }else if(sender == codeCRowFirstItem2D){
     codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_2D;
-    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
+    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
   }else if(sender == codeCColumnFirstItem1D){
     codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_1D;
-    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
+    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
   }else if(sender == codeCColumnFirstItem2D){
     codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_2D;
-    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
+    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
   }else if(sender == codeMathematicaItem){
     codeStyle = MAT_CODE_STYLE_MATHEMATICA;
-    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
+    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
   }else if(sender == codeMatlabItem){
     codeStyle = MAT_CODE_STYLE_MATLAB;
-    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
+    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
   }else if(sender == codeMapleItem){
     codeStyle = MAT_CODE_STYLE_MAPLE;
-    naSetPreferencesEnum(MATPrefCodeStyle, codeStyle);
+    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
   }else if(sender == valueAccuracyNaturalItem){
     valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;
-    naSetPreferencesEnum(MATPrefValueAccuracy, valueAccuracy);
+    naSetPreferencesEnum(MATPrefs[ValueAccuracy], valueAccuracy);
   }else if(sender == valueAccuracyFloatItem){
     valueAccuracy = MAT_VALUE_ACCURACY_FLOAT;
-    naSetPreferencesEnum(MATPrefValueAccuracy, valueAccuracy);
+    naSetPreferencesEnum(MATPrefs[ValueAccuracy], valueAccuracy);
   }else{}
   [self update];
 }

@@ -3,8 +3,6 @@
 #include "MATApplication.h"
 
 
-NAInt translatorGroup;
-
 const char* MATPrefShowHelp = "showHelp";
 const char* MATPrefShowIdentifiers = "showIdentifiers";
 const char* MATPrefUseRowFirstTabOrder = "useRowFirstTabOrder";

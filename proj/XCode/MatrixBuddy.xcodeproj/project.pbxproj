@@ -49,6 +49,8 @@
 		90035EB622DFDD1300128540 /* NARuntime.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035E7322DFDD1200128540 /* NARuntime.c */; };
 		90035EB722DFDD1300128540 /* NABinaryData.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035E7622DFDD1200128540 /* NABinaryData.c */; };
 		90035EB822DFDD1300128540 /* NAMoney.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035E7D22DFDD1200128540 /* NAMoney.c */; };
+		90035EC522E6E39500128540 /* MatrixBuddyTranslations.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035EC422E6E39400128540 /* MatrixBuddyTranslations.c */; };
+		90035EC722E6E4EE00128540 /* MatrixBuddyPreferences.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035EC622E6E4EE00128540 /* MatrixBuddyPreferences.c */; };
 		90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA03371BA96CAB00A651E9 /* WebKit.framework */; };
 		90BAF7FB2175AB4A001665BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7F02175AB4A001665BF /* InfoPlist.strings */; };
 		90BAF7FC2175AB4A001665BF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7F22175AB4A001665BF /* MainMenu.xib */; };
@@ -255,6 +257,9 @@
 		90035E9422DFDD1300128540 /* NACoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoord.h; sourceTree = "<group>"; };
 		90035E9522DFDD1300128540 /* NAPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPool.h; sourceTree = "<group>"; };
 		90035EB922DFDE3200128540 /* MatrixBuddyPreferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyPreferences.h; sourceTree = "<group>"; };
+		90035EC422E6E39400128540 /* MatrixBuddyTranslations.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MatrixBuddyTranslations.c; sourceTree = "<group>"; };
+		90035EC622E6E4EE00128540 /* MatrixBuddyPreferences.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MatrixBuddyPreferences.c; sourceTree = "<group>"; };
+		90035EC822E7A18B00128540 /* MATTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATTypes.h; sourceTree = "<group>"; };
 		9020CF151BA6E29000E74965 /* Matrix Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matrix Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		907C76EE22C7EE620020820A /* MatrixBuddyTranslations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyTranslations.h; sourceTree = "<group>"; };
 		907C77C322C7EFBA0020820A /* MatrixBuddyStrings_eng.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyStrings_eng.h; sourceTree = "<group>"; };
@@ -687,7 +692,9 @@
 		90BAF8022175AB51001665BF /* src */ = {
 			isa = PBXGroup;
 			children = (
+				90035EC422E6E39400128540 /* MatrixBuddyTranslations.c */,
 				907C76EE22C7EE620020820A /* MatrixBuddyTranslations.h */,
+				90035EC622E6E4EE00128540 /* MatrixBuddyPreferences.c */,
 				90035EB922DFDE3200128540 /* MatrixBuddyPreferences.h */,
 				90BAF8092175AB51001665BF /* ComputationControllers */,
 				90BAF8432175AB51001665BF /* main.m */,
@@ -698,6 +705,7 @@
 				90BAF8052175AB51001665BF /* MATComputationView.m */,
 				90BAF8572175AB51001665BF /* MATTextField.h */,
 				90BAF8082175AB51001665BF /* MATTextField.m */,
+				90035EC822E7A18B00128540 /* MATTypes.h */,
 				90BAF8452175AB51001665BF /* MATValueView.h */,
 				90BAF8042175AB51001665BF /* MATValueView.m */,
 				90BAF8462175AB51001665BF /* MATWindowController.h */,
@@ -879,6 +887,7 @@
 				90035EB822DFDD1300128540 /* NAMoney.c in Sources */,
 				90035EB222DFDD1300128540 /* NADeflate.c in Sources */,
 				90035EB322DFDD1300128540 /* NAFile.c in Sources */,
+				90035EC722E6E4EE00128540 /* MatrixBuddyPreferences.c in Sources */,
 				90035E9722DFDD1300128540 /* NABufferManipulation.c in Sources */,
 				90BAF8652175AB51001665BF /* MATVMulS.m in Sources */,
 				90BAF86F2175AB51001665BF /* MATMSubM.m in Sources */,
@@ -914,6 +923,7 @@
 				90035EAE22DFDD1300128540 /* NACocoaHelper.m in Sources */,
 				90BAF8592175AB51001665BF /* MATValueView.m in Sources */,
 				90035E9B22DFDD1300128540 /* NABufferWrite.c in Sources */,
+				90035EC522E6E39500128540 /* MatrixBuddyTranslations.c in Sources */,
 				90BAF85A2175AB51001665BF /* MATComputationView.m in Sources */,
 				90035EA722DFDD1300128540 /* NAString.c in Sources */,
 				90035EA822DFDD1300128540 /* NAList.c in Sources */,

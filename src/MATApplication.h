@@ -17,7 +17,6 @@ NSString* formatValue(float value);
 
 - (IBAction)openOnlineHelp:(NSMenuItem*)sender;
 
-- (NAInt)getTranslatorGroup;
 - (NABool)hasShowHelp;
 - (NABool)hasShowIdentifier;
 - (NABool)hasRowFirstTabOrder;

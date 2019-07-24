@@ -1,8 +1,5 @@
 
 #include "NATranslator.h"
-#include "MATApplication.h"
-
-#define MAT_TRANSLATE(id) naTranslate([(MATApplication*)NSApp getTranslatorGroup], id)
 
 enum{
   MatrixBuddyApplicationDescription,
@@ -52,3 +49,7 @@ enum{
   MATErrorVectorLengthUnequalOne,
 
 };
+
+const NAUTF8Char* matTranslate(NAInt id);
+
+void initTranslations();
