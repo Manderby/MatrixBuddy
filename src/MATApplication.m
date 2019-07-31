@@ -31,17 +31,7 @@ NSString* formatValue(float value){
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification{
   NA_UNUSED(notification);
-
-  initTranslations();
-  naResetApplicationPreferredTranslatorLanguages();
-  [self setApplicationDescription:matTranslate(MatrixBuddyApplicationDescription)];
-
-//  NSURL* url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html" subdirectory:@"help"];
-//  [self setHelpDocument:url];
-
   [windowController prepareFirstView];
-
-  [self alertNewVersion:matTranslate(MatrixBuddyNewVersionDescription)];
 }
 
 

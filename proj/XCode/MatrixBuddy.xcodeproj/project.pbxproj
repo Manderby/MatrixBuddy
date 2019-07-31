@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		90035DF722DFDD0A00128540 /* manderc.png in Resources */ = {isa = PBXBuildFile; fileRef = 90035DE822DFDD0A00128540 /* manderc.png */; };
 		90035DF822DFDD0A00128540 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 90035DE922DFDD0A00128540 /* .gitignore */; };
-		90035DF922DFDD0A00128540 /* AboutWindow.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035DEE22DFDD0A00128540 /* AboutWindow.c */; };
-		90035DFA22DFDD0A00128540 /* MandCocoaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 90035DEF22DFDD0A00128540 /* MandCocoaHelper.m */; };
-		90035DFB22DFDD0A00128540 /* ManderApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 90035DF022DFDD0A00128540 /* ManderApp.m */; };
-		90035DFC22DFDD0A00128540 /* MandEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 90035DF322DFDD0A00128540 /* MandEnvironment.m */; };
-		90035DFD22DFDD0A00128540 /* MandMenuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 90035DF422DFDD0A00128540 /* MandMenuHelper.m */; };
 		90035E9622DFDD1300128540 /* NAHeap.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035E1122DFDD1200128540 /* NAHeap.c */; };
 		90035E9722DFDD1300128540 /* NABufferManipulation.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035E1522DFDD1200128540 /* NABufferManipulation.c */; };
 		90035E9822DFDD1300128540 /* NABufferPart.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035E1622DFDD1200128540 /* NABufferPart.c */; };
@@ -51,6 +46,10 @@
 		90035EB822DFDD1300128540 /* NAMoney.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035E7D22DFDD1200128540 /* NAMoney.c */; };
 		90035EC522E6E39500128540 /* MatrixBuddyTranslations.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035EC422E6E39400128540 /* MatrixBuddyTranslations.c */; };
 		90035EC722E6E4EE00128540 /* MatrixBuddyPreferences.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035EC622E6E4EE00128540 /* MatrixBuddyPreferences.c */; };
+		90035F0A22F01E3200128540 /* ManderAppPreferences.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035F0122F01E3200128540 /* ManderAppPreferences.c */; };
+		90035F0B22F01E3200128540 /* ManderAppAbout.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035F0222F01E3200128540 /* ManderAppAbout.c */; };
+		90035F0C22F01E3200128540 /* ManderAppTranslations.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035F0322F01E3200128540 /* ManderAppTranslations.c */; };
+		90035F0E22F01E3200128540 /* ManderApp.c in Sources */ = {isa = PBXBuildFile; fileRef = 90035F0522F01E3200128540 /* ManderApp.c */; };
 		90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA03371BA96CAB00A651E9 /* WebKit.framework */; };
 		90BAF7FB2175AB4A001665BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7F02175AB4A001665BF /* InfoPlist.strings */; };
 		90BAF7FC2175AB4A001665BF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90BAF7F22175AB4A001665BF /* MainMenu.xib */; };
@@ -104,18 +103,6 @@
 		90035DE722DFDD0A00128540 /* ManderApp_eng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderApp_eng.h; sourceTree = "<group>"; };
 		90035DE822DFDD0A00128540 /* manderc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manderc.png; sourceTree = "<group>"; };
 		90035DE922DFDD0A00128540 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		90035DEB22DFDD0A00128540 /* ManderApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderApp.h; sourceTree = "<group>"; };
-		90035DEC22DFDD0A00128540 /* MandMenuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandMenuHelper.h; sourceTree = "<group>"; };
-		90035DED22DFDD0A00128540 /* MandEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandEnvironment.h; sourceTree = "<group>"; };
-		90035DEE22DFDD0A00128540 /* AboutWindow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AboutWindow.c; sourceTree = "<group>"; };
-		90035DEF22DFDD0A00128540 /* MandCocoaHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MandCocoaHelper.m; sourceTree = "<group>"; };
-		90035DF022DFDD0A00128540 /* ManderApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManderApp.m; sourceTree = "<group>"; };
-		90035DF122DFDD0A00128540 /* ManderAppPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderAppPreferences.h; sourceTree = "<group>"; };
-		90035DF222DFDD0A00128540 /* AboutWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindow.h; sourceTree = "<group>"; };
-		90035DF322DFDD0A00128540 /* MandEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MandEnvironment.m; sourceTree = "<group>"; };
-		90035DF422DFDD0A00128540 /* MandMenuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MandMenuHelper.m; sourceTree = "<group>"; };
-		90035DF522DFDD0A00128540 /* MandCocoaHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandCocoaHelper.h; sourceTree = "<group>"; };
-		90035DF622DFDD0A00128540 /* ManderAppTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderAppTranslations.h; sourceTree = "<group>"; };
 		90035DFF22DFDD1200128540 /* NAMathConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMathConstants.h; sourceTree = "<group>"; };
 		90035E0022DFDD1200128540 /* NAMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMemory.h; sourceTree = "<group>"; };
 		90035E0122DFDD1200128540 /* NAComplex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAComplex.h; sourceTree = "<group>"; };
@@ -260,6 +247,14 @@
 		90035EC422E6E39400128540 /* MatrixBuddyTranslations.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MatrixBuddyTranslations.c; sourceTree = "<group>"; };
 		90035EC622E6E4EE00128540 /* MatrixBuddyPreferences.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MatrixBuddyPreferences.c; sourceTree = "<group>"; };
 		90035EC822E7A18B00128540 /* MATTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATTypes.h; sourceTree = "<group>"; };
+		90035F0022F01E3200128540 /* ManderApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderApp.h; sourceTree = "<group>"; };
+		90035F0122F01E3200128540 /* ManderAppPreferences.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ManderAppPreferences.c; sourceTree = "<group>"; };
+		90035F0222F01E3200128540 /* ManderAppAbout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ManderAppAbout.c; sourceTree = "<group>"; };
+		90035F0322F01E3200128540 /* ManderAppTranslations.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ManderAppTranslations.c; sourceTree = "<group>"; };
+		90035F0522F01E3200128540 /* ManderApp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ManderApp.c; sourceTree = "<group>"; };
+		90035F0622F01E3200128540 /* ManderAppPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderAppPreferences.h; sourceTree = "<group>"; };
+		90035F0822F01E3200128540 /* ManderAppAbout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderAppAbout.h; sourceTree = "<group>"; };
+		90035F0922F01E3200128540 /* ManderAppTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderAppTranslations.h; sourceTree = "<group>"; };
 		9020CF151BA6E29000E74965 /* Matrix Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matrix Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		907C76EE22C7EE620020820A /* MatrixBuddyTranslations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyTranslations.h; sourceTree = "<group>"; };
 		907C77C322C7EFBA0020820A /* MatrixBuddyStrings_eng.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyStrings_eng.h; sourceTree = "<group>"; };
@@ -373,7 +368,6 @@
 			children = (
 				90035DE522DFDD0A00128540 /* res */,
 				90035DE922DFDD0A00128540 /* .gitignore */,
-				90035DEA22DFDD0A00128540 /* src */,
 			);
 			name = ManderApp;
 			path = ../../../ManderApp;
@@ -387,25 +381,6 @@
 				90035DE822DFDD0A00128540 /* manderc.png */,
 			);
 			path = res;
-			sourceTree = "<group>";
-		};
-		90035DEA22DFDD0A00128540 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				90035DEB22DFDD0A00128540 /* ManderApp.h */,
-				90035DEC22DFDD0A00128540 /* MandMenuHelper.h */,
-				90035DED22DFDD0A00128540 /* MandEnvironment.h */,
-				90035DEE22DFDD0A00128540 /* AboutWindow.c */,
-				90035DEF22DFDD0A00128540 /* MandCocoaHelper.m */,
-				90035DF022DFDD0A00128540 /* ManderApp.m */,
-				90035DF122DFDD0A00128540 /* ManderAppPreferences.h */,
-				90035DF222DFDD0A00128540 /* AboutWindow.h */,
-				90035DF322DFDD0A00128540 /* MandEnvironment.m */,
-				90035DF422DFDD0A00128540 /* MandMenuHelper.m */,
-				90035DF522DFDD0A00128540 /* MandCocoaHelper.h */,
-				90035DF622DFDD0A00128540 /* ManderAppTranslations.h */,
-			);
-			path = src;
 			sourceTree = "<group>";
 		};
 		90035DFE22DFDD1200128540 /* NALib */ = {
@@ -644,10 +619,27 @@
 			path = NAVectorAlgebra;
 			sourceTree = "<group>";
 		};
+		90035EFF22F01E3200128540 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				90035F0022F01E3200128540 /* ManderApp.h */,
+				90035F0122F01E3200128540 /* ManderAppPreferences.c */,
+				90035F0222F01E3200128540 /* ManderAppAbout.c */,
+				90035F0322F01E3200128540 /* ManderAppTranslations.c */,
+				90035F0522F01E3200128540 /* ManderApp.c */,
+				90035F0622F01E3200128540 /* ManderAppPreferences.h */,
+				90035F0822F01E3200128540 /* ManderAppAbout.h */,
+				90035F0922F01E3200128540 /* ManderAppTranslations.h */,
+			);
+			name = src;
+			path = ../../../ManderApp/src;
+			sourceTree = "<group>";
+		};
 		9020CF0A1BA6E26300E74965 = {
 			isa = PBXGroup;
 			children = (
 				90035DE422DFDD0A00128540 /* ManderApp */,
+				90035EFF22F01E3200128540 /* src */,
 				90035DFE22DFDD1200128540 /* NALib */,
 				90BAF7ED2175AB4A001665BF /* res */,
 				90BAF8022175AB51001665BF /* src */,
@@ -883,6 +875,7 @@
 			files = (
 				90035EA122DFDD1300128540 /* NATreeIteration.c in Sources */,
 				90035EA022DFDD1300128540 /* NATree.c in Sources */,
+				90035F0A22F01E3200128540 /* ManderAppPreferences.c in Sources */,
 				90BAF85F2175AB51001665BF /* MATVAddV.m in Sources */,
 				90035EB822DFDD1300128540 /* NAMoney.c in Sources */,
 				90035EB222DFDD1300128540 /* NADeflate.c in Sources */,
@@ -896,7 +889,6 @@
 				90035EA222DFDD1300128540 /* NATreeBin.c in Sources */,
 				90BAF8602175AB51001665BF /* MATInvertM.m in Sources */,
 				90BAF8732175AB51001665BF /* MATMMulM.m in Sources */,
-				90035DFA22DFDD0A00128540 /* MandCocoaHelper.m in Sources */,
 				90035EB422DFDD1300128540 /* NADateTime.c in Sources */,
 				90BAF8802175AB51001665BF /* MATViewM44.m in Sources */,
 				90035E9D22DFDD1300128540 /* NABuffer.c in Sources */,
@@ -904,7 +896,6 @@
 				90BAF86C2175AB51001665BF /* MATMirrorV.m in Sources */,
 				90BAF8672175AB51001665BF /* MATMMulS.m in Sources */,
 				90BAF8712175AB51001665BF /* MATNegM.m in Sources */,
-				90035DF922DFDD0A00128540 /* AboutWindow.c in Sources */,
 				90035E9622DFDD1300128540 /* NAHeap.c in Sources */,
 				90BAF87A2175AB51001665BF /* MATViewS.m in Sources */,
 				90035EB522DFDD1300128540 /* NAURL.c in Sources */,
@@ -919,11 +910,11 @@
 				90035EA422DFDD1300128540 /* NATreeQuad.c in Sources */,
 				90BAF8682175AB51001665BF /* MATMDivCompM.m in Sources */,
 				90BAF87D2175AB51001665BF /* MATViewM33.m in Sources */,
-				90035DFD22DFDD0A00128540 /* MandMenuHelper.m in Sources */,
 				90035EAE22DFDD1300128540 /* NACocoaHelper.m in Sources */,
 				90BAF8592175AB51001665BF /* MATValueView.m in Sources */,
 				90035E9B22DFDD1300128540 /* NABufferWrite.c in Sources */,
 				90035EC522E6E39500128540 /* MatrixBuddyTranslations.c in Sources */,
+				90035F0E22F01E3200128540 /* ManderApp.c in Sources */,
 				90BAF85A2175AB51001665BF /* MATComputationView.m in Sources */,
 				90035EA722DFDD1300128540 /* NAString.c in Sources */,
 				90035EA822DFDD1300128540 /* NAList.c in Sources */,
@@ -937,7 +928,7 @@
 				90BAF86A2175AB51001665BF /* MATMMulV.m in Sources */,
 				90BAF8692175AB51001665BF /* MATMMulCompV.m in Sources */,
 				90BAF86B2175AB51001665BF /* MATVSubV.m in Sources */,
-				90035DFC22DFDD0A00128540 /* MandEnvironment.m in Sources */,
+				90035F0C22F01E3200128540 /* ManderAppTranslations.c in Sources */,
 				90035EAF22DFDD1300128540 /* NAUICocoa.m in Sources */,
 				90035EB122DFDD1300128540 /* NAUICore.c in Sources */,
 				90035E9A22DFDD1300128540 /* NABufferIteration.c in Sources */,
@@ -952,12 +943,12 @@
 				90BAF87E2175AB51001665BF /* MATViewM22.m in Sources */,
 				90BAF87C2175AB51001665BF /* MATViewV3.m in Sources */,
 				90BAF85B2175AB51001665BF /* MATWindowController.m in Sources */,
+				90035F0B22F01E3200128540 /* ManderAppAbout.c in Sources */,
 				90BAF86D2175AB51001665BF /* MATNegV.m in Sources */,
 				90035EA622DFDD1300128540 /* NATreeAVL.c in Sources */,
 				90BAF85E2175AB51001665BF /* MATVCrossV.m in Sources */,
 				90BAF8762175AB51001665BF /* MATMDivS.m in Sources */,
 				90035EAB22DFDD1300128540 /* NAPNG.c in Sources */,
-				90035DFB22DFDD0A00128540 /* ManderApp.m in Sources */,
 				90035EAA22DFDD1300128540 /* NAPreferencesCocoa.m in Sources */,
 				90BAF8782175AB51001665BF /* MATVDivS.m in Sources */,
 				90BAF85D2175AB51001665BF /* MATMDivCompV.m in Sources */,

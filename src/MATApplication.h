@@ -11,7 +11,7 @@ NSString* formatValue(float value);
 
 
 
-@interface MATApplication : ManderApp{
+@interface MATApplication : NSApplication <NSApplicationDelegate>{
   IBOutlet MATWindowController* windowController;
 }
 
