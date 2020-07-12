@@ -16,17 +16,17 @@ const char* MATPrefValueAccuracy = "valueAccuracy";
 
 void prestartup(void* arg){
   NA_UNUSED(arg);
-  mandPrestartupManderApp();
+  mandInitManderApp();
   initTranslations();
   initPreferences();
 }
 
 void poststartup(void* arg){
   NA_UNUSED(arg);
-  mandPoststartupManderApp();
+  mandCreateUI();
   [NSBundle loadNibNamed:@"MainMenu" owner:NSApp];
   
-  mandSetAboutWindowDescription(matTranslate(MatrixBuddyApplicationDescription));
+  mandSetAboutDescriptionAndHelpURL(matTranslate(MatrixBuddyApplicationDescription), matTranslate(MatrixBuddyApplicationHelpURL));
   mandAlertNewVersion(matTranslate(MatrixBuddyNewVersionDescription));
 }
 

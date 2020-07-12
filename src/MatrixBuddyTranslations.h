@@ -3,6 +3,7 @@
 
 enum{
   MatrixBuddyApplicationDescription,
+  MatrixBuddyApplicationHelpURL,
   MatrixBuddyNewVersionDescription,
 
   MATHelpVMulS,
