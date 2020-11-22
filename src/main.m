@@ -24,7 +24,7 @@ void prestartup(void* arg){
 void poststartup(void* arg){
   NA_UNUSED(arg);
   mandCreateUI();
-  [NSBundle loadNibNamed:@"MainMenu" owner:NSApp];
+  naLoadNib("MainMenu");
   
   mandSetAboutDescriptionAndHelpURL(matTranslate(MatrixBuddyApplicationDescription), matTranslate(MatrixBuddyApplicationHelpURL));
   mandAlertNewVersion(matTranslate(MatrixBuddyNewVersionDescription));

@@ -13,6 +13,10 @@ Multiply and Divide matrix and vector row-wise
 Invert more operations
 
 
+Version 1.1.2
+-------------
+
+- Create Universal Binary for Apple Silicon
 - Reprogrammed the user iterface.
 - Corrected a small typo. Collinear instead of Colinear.
 
