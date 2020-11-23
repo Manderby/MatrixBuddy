@@ -1,6 +1,7 @@
 
 #import "MATApplication.h"
 #include "MatrixBuddyTranslations.h"
+#include "ManderAppAbout.h"
 
 
 NSString* formatValue(float value){
@@ -49,15 +50,17 @@ NSString* formatValue(float value){
 }
 
 
-- (IBAction)openOnlineHelp:(NSMenuItem*)sender{
+
+- (IBAction)openAbout:(NSMenuItem*)sender{
   NA_UNUSED(sender);
-  NSString* language = [[NSLocale currentLocale] languageCode];
-  if([language isEqualToString:@"de"]){
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://manderc.com/apps/matrixbuddy/help/index.php"]];
-  }else{
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://manderc.com/apps/matrixbuddy/help/index_en.php"]];
-  }
+  mandShowAboutController();
 }
+
+- (IBAction)openHelp:(NSMenuItem*)sender{
+  NA_UNUSED(sender);
+  naOpenURLInBrowser(matTranslate(MatrixBuddyApplicationHelpURL));
+}
+
 
 
 - (NABool)hasShowHelp{

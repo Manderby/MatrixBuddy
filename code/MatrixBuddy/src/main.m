@@ -13,9 +13,17 @@ const char* MATPrefUseRowFirstTabOrder = "useRowFirstTabOrder";
 const char* MATPrefCodeStyle = "codeStyle";
 const char* MATPrefValueAccuracy = "valueAccuracy";
 
+#define MAT_WINDOW_TAG_ABOUT 1
 
 void prestartup(void* arg){
   NA_UNUSED(arg);
+  
+//  naSetApplicationName("Matrix Buddy");
+//  //naSetApplicationCompanyName("ASuppaCombbany");
+//  naSetApplicationVersionString("1.1.1");
+//  naSetApplicationBuildString("1.1.4");
+//  naSetApplicationIconPath("icon.png");
+
   mandInitManderApp();
   initTranslations();
   initPreferences();
@@ -24,6 +32,8 @@ void prestartup(void* arg){
 void poststartup(void* arg){
   NA_UNUSED(arg);
   mandCreateUI();
+  mandSetAboutWindowStorageTag(MAT_WINDOW_TAG_ABOUT);
+
   naLoadNib("MainMenu");
   
   mandSetAboutDescriptionAndHelpURL(matTranslate(MatrixBuddyApplicationDescription), matTranslate(MatrixBuddyApplicationHelpURL));
@@ -36,5 +46,7 @@ int main(int argc, char *argv[]){
   naStartRuntime();
   [MATApplication sharedApplication];
   naStartApplication(prestartup, poststartup, NA_NULL);
+  naStopRuntime();
   return 0;
 }
+

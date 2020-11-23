@@ -15,7 +15,8 @@ NSString* formatValue(float value);
   IBOutlet MATWindowController* windowController;
 }
 
-- (IBAction)openOnlineHelp:(NSMenuItem*)sender;
+- (IBAction)openAbout:(NSMenuItem*)sender;
+- (IBAction)openHelp:(NSMenuItem*)sender;
 
 - (NABool)hasShowHelp;
 - (NABool)hasShowIdentifier;

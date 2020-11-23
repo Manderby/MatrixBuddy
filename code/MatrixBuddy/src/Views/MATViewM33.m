@@ -89,10 +89,10 @@
     [codeText setStringValue:[NSString stringWithFormat:@"{{%@, %@, %@}, {%@, %@, %@}, {%@, %@, %@}}", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_MATLAB:
-    [codeText setStringValue:[NSString stringWithFormat:@"[%@ %@ %@; %@ %@ %@; %@ %@ %@])", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
+    [codeText setStringValue:[NSString stringWithFormat:@"[%@ %@ %@; %@ %@ %@; %@ %@ %@]", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_MAPLE:
-    [codeText setStringValue:[NSString stringWithFormat:@"[[%@, %@, %@]), [%@, %@, %@]), [%@, %@, %@])]", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
+    [codeText setStringValue:[NSString stringWithFormat:@"[[%@, %@, %@], [%@, %@, %@], [%@, %@, %@]]", formatValue(values[0]), formatValue(values[3]), formatValue(values[6]), formatValue(values[1]), formatValue(values[4]), formatValue(values[7]), formatValue(values[2]), formatValue(values[5]), formatValue(values[8])]];
     break;
   case MAT_CODE_STYLE_NONE:
     [codeText setHidden:YES];

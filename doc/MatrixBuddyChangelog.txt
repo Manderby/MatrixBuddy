@@ -1,22 +1,24 @@
 Matrix Buddy Changelog
 
 
-planned things:
-
-determinant, condition number, distance to point
-Keep key responder
-Make multiple windows
-Click on label to make it the result
-Storing Matrices and vectors and organizing them.
-Remember last computation after programm restart
-Multiply and Divide matrix and vector row-wise
-Invert more operations
+Planned things:
+- determinant, condition number, distance to point
+- Keep key responder
+- Make multiple windows
+- Click on label to make it the result
+- Storing Matrices and vectors and organizing them.
+- Remember last computation after programm restart
+- Multiply and Divide matrix and vector row-wise
+- Invert more operations
 
 
 Version 1.1.2
 -------------
 
 - Create Universal Binary for Apple Silicon
+- Corrected a parantheses error in the encoding
+- Simplified english help lines.
+- Added German translation.
 - Reprogrammed the user iterface.
 - Corrected a small typo. Collinear instead of Colinear.
 
