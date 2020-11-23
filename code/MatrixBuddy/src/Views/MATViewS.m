@@ -50,10 +50,8 @@
 
 - (void)update{
   [super update];
-  [textfield setStringValue:[NSString stringWithFormat:@"%@", formatValue(value)]];
+  [textfield setStringValue:[self getString]];
   [textfield setNextKeyView:textfield];
-  
-  [codeText setHidden:YES];
 }
 
 
@@ -89,6 +87,39 @@
 }
 
 
+
+- (NSString*)getString{
+  return [NSString stringWithFormat:@"%@", formatValue(value)];
+}
+
+
+
+- (void)setString:(NSString*)string{
+  const char* codestr = [string UTF8String];
+
+  char* newendptr;
+  double newValue = 0.;
+  NAVec2d newvalues;
+  int curvalue = 0;
+  while(1){
+    if(curvalue == 1){break;}
+    if(*codestr == '\0'){break;}
+    newvalues[curvalue] = strtod(codestr, &newendptr);
+
+    if(newendptr == codestr){
+      // No conversion found.
+      codestr++;
+    }else{
+      codestr = newendptr;
+      curvalue++;
+    }
+  }
+  
+  if(value != newValue){
+    value = newValue;
+    [(MATComputationView*)[self superview] valueChanged:self];
+  }
+}
 
 
 

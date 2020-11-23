@@ -38,6 +38,7 @@
   [A update];
   [v update];
   [B update];
+  [B setPasteEnabled:NA_FALSE];
 }
 
 
@@ -85,6 +86,7 @@
   [A update];
   [v update];
   [B update];
+  [B setPasteEnabled:NA_FALSE];
 }
 
 
@@ -132,6 +134,7 @@
   [A update];
   [v update];
   [B update];
+  [B setPasteEnabled:NA_FALSE];
 }
 
 

@@ -15,290 +15,372 @@
         <window title="Matrix Buddy" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="991" height="336"/>
+            <rect key="contentRect" x="233" y="278" width="991" height="357"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
-            <value key="minSize" type="size" width="991" height="336"/>
-            <value key="maxSize" type="size" width="991" height="336"/>
+            <value key="minSize" type="size" width="991" height="357"/>
+            <value key="maxSize" type="size" width="991" height="357"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="991" height="336"/>
+                <rect key="frame" x="0.0" y="0.0" width="991" height="357"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h6k-Pl-DFb">
-                        <rect key="frame" x="863" y="281" width="50" height="19"/>
+                        <rect key="frame" x="696" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M×v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jPf-Ii-VBw">
+                        <buttonCell key="cell" type="push" title="M×v" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jPf-Ii-VBw">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="eaK-Ln-kuC"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LOn-64-2gK">
-                        <rect key="frame" x="631" y="307" width="50" height="19"/>
+                        <rect key="frame" x="522" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M×s" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LNJ-4k-3N1">
+                        <buttonCell key="cell" type="push" title="M×s" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LNJ-4k-3N1">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="Tyj-Gp-onX"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6fE-iV-u3H">
-                        <rect key="frame" x="689" y="307" width="50" height="19"/>
+                        <rect key="frame" x="580" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M÷s" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XO8-qA-LMY">
+                        <buttonCell key="cell" type="push" title="M÷s" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XO8-qA-LMY">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="XbF-dJ-eW0"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dBb-iC-cgb">
-                        <rect key="frame" x="863" y="307" width="50" height="19"/>
+                        <rect key="frame" x="754" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M⊙M" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MST-br-TYr">
+                        <buttonCell key="cell" type="push" title="M⊙M" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MST-br-TYr">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="1Jv-PG-m2j"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Neh-CN-PW9">
-                        <rect key="frame" x="921" y="307" width="50" height="19"/>
+                        <rect key="frame" x="812" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M⊘M" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UgJ-Mi-ymN">
+                        <buttonCell key="cell" type="push" title="M⊙M" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UgJ-Mi-ymN">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="ns7-xJ-GFv"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xf-8K-n8E">
-                        <rect key="frame" x="921" y="281" width="50" height="19"/>
+                        <rect key="frame" x="754" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M×M" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3Gl-h0-XKC">
+                        <buttonCell key="cell" type="push" title="M×M" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3Gl-h0-XKC">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="QgA-ko-oWW"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pp3-ky-QKt">
-                        <rect key="frame" x="805" y="281" width="50" height="19"/>
+                        <rect key="frame" x="638" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M−M" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dMa-So-ibi">
+                        <buttonCell key="cell" type="push" title="M−M" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dMa-So-ibi">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="Man-SX-dLi"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ktj-Sp-LvB">
-                        <rect key="frame" x="747" y="281" width="50" height="19"/>
+                        <rect key="frame" x="580" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M+M" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mWW-EX-THB">
+                        <buttonCell key="cell" type="push" title="M+M" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mWW-EX-THB">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="wob-w6-0LS"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4tb-Ek-Y7n">
-                        <rect key="frame" x="689" y="281" width="50" height="19"/>
+                        <rect key="frame" x="522" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="−M" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s6W-8N-9tL">
+                        <buttonCell key="cell" type="push" title="−M" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s6W-8N-9tL">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="KLp-he-6H4"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-v7-uMZ">
-                        <rect key="frame" x="20" y="281" width="50" height="19"/>
+                        <rect key="frame" x="118" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="−v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lzd-Nq-qqz">
+                        <buttonCell key="cell" type="push" title="−v" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lzd-Nq-qqz">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="7HE-ct-ESc"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C0m-0T-4oW">
-                        <rect key="frame" x="20" y="307" width="50" height="19"/>
+                        <rect key="frame" x="118" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="v×s" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7PB-O1-fz0">
+                        <buttonCell key="cell" type="push" title="v×s" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7PB-O1-fz0">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="g58-Na-0RV"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zx5-bI-Hoa">
-                        <rect key="frame" x="78" y="281" width="50" height="19"/>
+                        <rect key="frame" x="176" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="v+v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uGD-U0-Jik">
+                        <buttonCell key="cell" type="push" title="v+v" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uGD-U0-Jik">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="8Fc-YJ-33e"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oAY-pf-pXA">
-                        <rect key="frame" x="136" y="281" width="50" height="19"/>
+                        <rect key="frame" x="234" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="v−v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5ud-3D-c6z">
+                        <buttonCell key="cell" type="push" title="v−v" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5ud-3D-c6z">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="ttd-vi-KKP"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="evZ-WM-FAj">
-                        <rect key="frame" x="194" y="281" width="50" height="19"/>
+                        <rect key="frame" x="292" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="v·v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aqC-Ml-4Hr">
+                        <buttonCell key="cell" type="push" title="v·v" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aqC-Ml-4Hr">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="ZSP-ub-hBt"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmR-bM-33I">
-                        <rect key="frame" x="252" y="281" width="50" height="19"/>
+                        <rect key="frame" x="350" y="276" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="v×v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EgQ-xp-eze">
+                        <buttonCell key="cell" type="push" title="v×v" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EgQ-xp-eze">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="4K7-XU-UdI"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3m-a3-zBW">
-                        <rect key="frame" x="78" y="307" width="50" height="19"/>
+                        <rect key="frame" x="176" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="v÷s" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="U38-Tv-JS5">
+                        <buttonCell key="cell" type="push" title="v÷s" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="U38-Tv-JS5">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="kXp-4y-6Pv"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebi-Dh-gf8">
-                        <rect key="frame" x="194" y="307" width="50" height="19"/>
+                        <rect key="frame" x="292" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="v⊘v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6OS-LD-ihz">
+                        <buttonCell key="cell" type="push" title="v⊘v" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6OS-LD-ihz">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="VPi-cF-1PH"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qhd-Rd-72P">
-                        <rect key="frame" x="136" y="307" width="50" height="19"/>
+                        <rect key="frame" x="234" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="v⊙v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="H2Q-3i-Vif">
+                        <buttonCell key="cell" type="push" title="v⊙v" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="H2Q-3i-Vif">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="35m-gK-aNw"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqd-lD-z2x">
-                        <rect key="frame" x="747" y="307" width="50" height="19"/>
+                        <rect key="frame" x="638" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M⊙v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="S2S-TY-eYO">
+                        <buttonCell key="cell" type="push" title="M÷s" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="S2S-TY-eYO">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="Yza-7L-LQB"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9lC-lK-rp3">
-                        <rect key="frame" x="805" y="307" width="50" height="19"/>
+                        <rect key="frame" x="696" y="308" width="60" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="M⊘v" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G6d-gp-bec">
+                        <buttonCell key="cell" type="push" title="M⊘v" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G6d-gp-bec">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="1qx-MI-CRj"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jyN-Gf-Wit">
-                        <rect key="frame" x="20" y="255" width="78" height="19"/>
+                        <rect key="frame" x="118" y="244" width="118" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="Normalize" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nQY-Xq-e0n">
+                        <buttonCell key="cell" type="push" title="Normalize" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nQY-Xq-e0n">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="vD2-8i-OF2"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-TA-DBF">
-                        <rect key="frame" x="106" y="255" width="103" height="19"/>
+                        <rect key="frame" x="234" y="244" width="147" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="Orthogonalize" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z2I-xN-4D5">
+                        <buttonCell key="cell" type="push" title="Orthogonalize" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Z2I-xN-4D5">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="sD0-4V-nI1"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYT-MJ-8nV">
-                        <rect key="frame" x="217" y="255" width="54" height="19"/>
+                        <rect key="frame" x="379" y="244" width="89" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="Mirror" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UvV-uM-AhS">
+                        <buttonCell key="cell" type="push" title="Mirror" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UvV-uM-AhS">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="XwY-XP-iHS"/>
                         </connections>
                     </button>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="V47-ng-Bey">
-                        <rect key="frame" x="12" y="245" width="967" height="5"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8r9-bc-tc4">
+                        <rect key="frame" x="18" y="225" width="955" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    </box>
-                    <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DuE-0X-KgV">
-                        <rect key="frame" x="447" y="275" width="96" height="24"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Multiplication of Matrix with Vector. Filling in x will compute result. Filling in b will solve linear equation system." id="OvO-WO-slB">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1r-9p-aLR" customClass="MATComputationView">
+                        <rect key="frame" x="0.0" y="20" width="991" height="197"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillProportionally" style="texturedRounded" trackingMode="selectOne" id="NvO-La-mtD">
+                    </customView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ry-At-xD0">
+                        <rect key="frame" x="609" y="244" width="89" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Diag(v)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aMe-2D-U5x">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                             <font key="font" metaFont="system"/>
-                            <segments>
-                                <segment label="2D"/>
-                                <segment label="3D" selected="YES" tag="1"/>
-                                <segment label="4D" tag="4"/>
-                            </segments>
-                        </segmentedCell>
+                        </buttonCell>
                         <connections>
-                            <action selector="changeDimensions:" target="l5U-vZ-NRL" id="rk3-nE-vv3"/>
+                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="fss-La-s7h"/>
                         </connections>
-                    </segmentedControl>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0j-ar-xP6">
-                        <rect key="frame" x="478" y="304" width="35" height="26"/>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJk-Kc-xde">
+                        <rect key="frame" x="812" y="244" width="118" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="noArrow" preferredEdge="maxX" id="eqL-fk-kGX">
+                        <buttonCell key="cell" type="push" title="Invert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X8J-9v-VNZ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="tyd-42-fTb"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fDh-3O-VAj">
+                        <rect key="frame" x="696" y="244" width="118" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Transpose" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QMs-dE-vaR">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="kVA-yW-Fgd"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjL-aq-LbI">
+                        <rect key="frame" x="522" y="244" width="89" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Diag(s)" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ftk-Eh-81x">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="CSJ-TR-GgE"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-7B-qOm">
+                        <rect key="frame" x="408" y="276" width="60" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="|v|" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="upz-i8-xTA">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="il3-b4-Evf"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IKg-FC-o8Q">
+                        <rect key="frame" x="18" y="317" width="44" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="radio" title="2D" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="MBS-SA-QF6">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeDimensions:" target="l5U-vZ-NRL" id="9sd-mc-KZd"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rKv-Ag-tsh">
+                        <rect key="frame" x="18" y="285" width="44" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="radio" title="3D" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="tco-Oi-Blq">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeDimensions:" target="l5U-vZ-NRL" id="B4h-Dj-DJM"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mmq-bn-F7C">
+                        <rect key="frame" x="18" y="253" width="44" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="radio" title="4D" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="bv4-28-oLc">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeDimensions:" target="l5U-vZ-NRL" id="K5F-Vf-6bZ"/>
+                        </connections>
+                    </button>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0j-ar-xP6">
+                        <rect key="frame" x="954" y="311" width="25" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="noArrow" preferredEdge="minX" id="eqL-fk-kGX">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                             <font key="font" metaFont="systemBold" size="12"/>
                             <menu key="menu" id="CJR-77-9Fq">
@@ -397,77 +479,9 @@
                             </menu>
                         </popUpButtonCell>
                     </popUpButton>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8r9-bc-tc4">
-                        <rect key="frame" x="18" y="225" width="955" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Multiplication of Matrix with Vector. Filling in x will compute result. Filling in b will solve linear equation system." id="OvO-WO-slB">
-                            <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1r-9p-aLR" customClass="MATComputationView">
-                        <rect key="frame" x="0.0" y="20" width="991" height="197"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    </customView>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ry-At-xD0">
-                        <rect key="frame" x="761" y="255" width="59" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="Diag(v)" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aMe-2D-U5x">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="fss-La-s7h"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJk-Kc-xde">
-                        <rect key="frame" x="916" y="255" width="55" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="Invert" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X8J-9v-VNZ">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="tyd-42-fTb"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fDh-3O-VAj">
-                        <rect key="frame" x="828" y="255" width="80" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="Transpose" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QMs-dE-vaR">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="kVA-yW-Fgd"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjL-aq-LbI">
-                        <rect key="frame" x="694" y="255" width="59" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="Diag(s)" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ftk-Eh-81x">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="CSJ-TR-GgE"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-7B-qOm">
-                        <rect key="frame" x="310" y="281" width="50" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="|v|" bezelStyle="recessed" image="NSAddTemplate" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="upz-i8-xTA">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="switchComputation:" target="l5U-vZ-NRL" id="il3-b4-Evf"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="136.5" y="-125"/>
+            <point key="canvasLocation" x="217.5" y="-270.5"/>
         </window>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Doc-Dj-Hm5" userLabel="MulM4V4" customClass="MATMulM44V4">
@@ -653,7 +667,9 @@
                 <outlet property="diagV2M22" destination="enU-sn-ylx" id="ts4-9A-8AS"/>
                 <outlet property="diagV3M33" destination="iax-Yp-Ipl" id="mpq-U3-254"/>
                 <outlet property="diagV4M44" destination="QML-PT-Gpo" id="dvv-mm-bGN"/>
-                <outlet property="dimensionChooser" destination="DuE-0X-KgV" id="jJ8-ZS-pKW"/>
+                <outlet property="dimension2Radio" destination="IKg-FC-o8Q" id="g6G-Ow-Uo1"/>
+                <outlet property="dimension3Radio" destination="rKv-Ag-tsh" id="k0e-eA-v6s"/>
+                <outlet property="dimension4Radio" destination="Mmq-bn-F7C" id="OVV-UO-1QV"/>
                 <outlet property="divCompM22M22" destination="fZp-Fd-edl" id="3eK-yp-Rky"/>
                 <outlet property="divCompM22V2" destination="3bN-FJ-EFF" id="6mk-tU-WAw"/>
                 <outlet property="divCompM33M33" destination="Wgr-gg-nzg" id="qck-r7-m06"/>
@@ -4342,7 +4358,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="NSAddTemplate" width="15" height="13"/>
         <image name="gearshape.fill" catalog="system" width="16" height="16"/>
     </resources>
 </document>

@@ -60,28 +60,6 @@
       [textfields[y*1+x] setNextKeyView:textfields[(y*1+x + 1) % 2]];
     }
   }
-  
-  [codeText setHidden:NO];
-  switch([(MATApplication*)NSApp codeStyle]){
-  case MAT_CODE_STYLE_C_ROW_FIRST_1D:
-  case MAT_CODE_STYLE_C_ROW_FIRST_2D:
-  case MAT_CODE_STYLE_C_COLUMN_FIRST_1D:
-  case MAT_CODE_STYLE_C_COLUMN_FIRST_2D:
-    [codeText setStringValue:[NSString stringWithFormat:@"{%@, %@}", formatValue(values[0]), formatValue(values[1])]];
-    break;
-  case MAT_CODE_STYLE_MATHEMATICA:
-    [codeText setStringValue:[NSString stringWithFormat:@"{%@, %@}", formatValue(values[0]), formatValue(values[1])]];
-    break;
-  case MAT_CODE_STYLE_MATLAB:
-    [codeText setStringValue:[NSString stringWithFormat:@"[%@ %@]", formatValue(values[0]), formatValue(values[1])]];
-    break;
-  case MAT_CODE_STYLE_MAPLE:
-    [codeText setStringValue:[NSString stringWithFormat:@"[%@, %@]", formatValue(values[0]), formatValue(values[1])]];
-    break;
-  case MAT_CODE_STYLE_NONE:
-    [codeText setHidden:YES];
-    break;
-  }
 }
 
 
@@ -118,8 +96,34 @@
 
 
 
-- (void)codeChanged:(NSTextField*)sender{
-  const char* codestr = [[sender stringValue] UTF8String];
+- (NSString*)getString{
+  switch([(MATApplication*)NSApp codeStyle]){
+  case MAT_CODE_STYLE_C_ROW_FIRST_1D:
+  case MAT_CODE_STYLE_C_ROW_FIRST_2D:
+  case MAT_CODE_STYLE_C_COLUMN_FIRST_1D:
+  case MAT_CODE_STYLE_C_COLUMN_FIRST_2D:
+    return [NSString stringWithFormat:@"{%@, %@}", formatValue(values[0]), formatValue(values[1])];
+    break;
+  case MAT_CODE_STYLE_MATHEMATICA:
+    return [NSString stringWithFormat:@"{%@, %@}", formatValue(values[0]), formatValue(values[1])];
+    break;
+  case MAT_CODE_STYLE_MATLAB:
+    return [NSString stringWithFormat:@"[%@ %@]", formatValue(values[0]), formatValue(values[1])];
+    break;
+  case MAT_CODE_STYLE_MAPLE:
+    return [NSString stringWithFormat:@"[%@, %@]", formatValue(values[0]), formatValue(values[1])];
+    break;
+  case MAT_CODE_STYLE_NONE:
+    return @"";
+    break;
+  }
+}
+
+
+
+- (void)setString:(NSString*)string{
+  const char* codestr = [string UTF8String];
+
   char* newendptr;
   NAVec2d newvalues;
   naFillV2d(newvalues, 0., 0.);

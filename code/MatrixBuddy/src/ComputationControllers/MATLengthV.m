@@ -31,6 +31,7 @@
   [l setLabel:@"|v|"];
   [v update];
   [l update];
+  [l setPasteEnabled:NA_FALSE];
 }
 
 
@@ -73,6 +74,7 @@
   [l setLabel:@"|v|"];
   [v update];
   [l update];
+  [l setPasteEnabled:NA_FALSE];
 }
 
 
@@ -115,6 +117,7 @@
   [l setLabel:@"|v|"];
   [v update];
   [l update];
+  [l setPasteEnabled:NA_FALSE];
 }
 
 

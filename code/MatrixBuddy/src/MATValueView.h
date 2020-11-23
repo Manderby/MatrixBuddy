@@ -8,7 +8,8 @@
   MATColor color;
   NSTextField* errorText;
   NSTextField* labelText;
-  NSTextField* codeText;
+  NSButton* copyButton;
+  NSButton* pasteButton;
 }
 
 - (NSView*)firstResponder;
@@ -16,7 +17,14 @@
 
 - (void)update;
 
+- (NSString*)getString;
+- (void)setString:(NSString*)string;
+
+- (void)copy:(NSResponder*) sender;
+- (void)paste:(NSResponder*) sender;
+
 - (void)setStatus:(MATStatus)newstatus;
+- (void)setPasteEnabled:(NABool)pasteEnabled;
 - (void)setLabel:(NSString*)newlabel;
 - (void)setAttributedLabel:(NSAttributedString*)newlabel;
 

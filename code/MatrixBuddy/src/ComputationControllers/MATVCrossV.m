@@ -36,6 +36,7 @@
   [a update];
   [b update];
   [c update];
+  [c setPasteEnabled:NA_FALSE];
 }
 
 

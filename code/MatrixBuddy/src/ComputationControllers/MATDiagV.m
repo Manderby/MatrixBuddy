@@ -33,6 +33,7 @@
   [A setLabel:@"A"];
   [v update];
   [A update];
+  [A setPasteEnabled:NA_FALSE];
 }
 
 
@@ -76,6 +77,7 @@
   [A setLabel:@"A"];
   [v update];
   [A update];
+  [A setPasteEnabled:NA_FALSE];
 }
 
 
@@ -119,6 +121,7 @@
   [A setLabel:@"A"];
   [v update];
   [A update];
+  [A setPasteEnabled:NA_FALSE];
 }
 
 

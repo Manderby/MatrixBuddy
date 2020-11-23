@@ -8,6 +8,35 @@ NA_LOC(MatrixBuddyApplicationDescription, "Simple linear algebra. Matrix and Vec
 NA_LOC(MatrixBuddyApplicationHelpURL, "http://manderc.com/apps/matrixbuddy/help/index_en.php");
 NA_LOC(MatrixBuddyNewVersionDescription, "Matrix Buddy is now running universally on both Intel and Apple Silicon. Added German translation.");
 
+NA_LOC(MATButtonVMulS,          "v×s");
+NA_LOC(MATButtonVDivS,          "v÷s");
+NA_LOC(MATButtonVMulCompV,      "v⊙v");
+NA_LOC(MATButtonVDivCompV,      "v⊘v");
+NA_LOC(MATButtonNegV,           "−v");
+NA_LOC(MATButtonVAddV,          "v+v");
+NA_LOC(MATButtonVSubV,          "v−v");
+NA_LOC(MATButtonVDotV,          "v·v");
+NA_LOC(MATButtonVCrossV,        "v×v");
+NA_LOC(MATButtonLengthV,        "|v|");
+NA_LOC(MATButtonNormalizeV,     "Normalize");
+NA_LOC(MATButtonOrthogonalizeV, "Orthogonalize");
+NA_LOC(MATButtonMirrorV,        "Mirror");
+NA_LOC(MATButtonMMulS,          "M×s");
+NA_LOC(MATButtonMDivS,          "M÷s");
+NA_LOC(MATButtonMMulCompV,      "M÷s");
+NA_LOC(MATButtonMDivCompV,      "M⊘v");
+NA_LOC(MATButtonMMulCompM,      "M⊙M");
+NA_LOC(MATButtonMDivCompM,      "M⊘M");
+NA_LOC(MATButtonNegM,           "−M");
+NA_LOC(MATButtonMAddM,          "M+M");
+NA_LOC(MATButtonMSubM,          "M−M");
+NA_LOC(MATButtonMMulV,          "M×v");
+NA_LOC(MATButtonMMulM,          "M×M");
+NA_LOC(MATButtonDiagS,          "Diag(s)");
+NA_LOC(MATButtonDiagV,          "Diag(v)");
+NA_LOC(MATButtonTransposeM,     "Transpose");
+NA_LOC(MATButtonInvertM,        "Invert");
+
 NA_LOC(MATHelpVMulS,          "Multiplies a vector by a scalar.");
 NA_LOC(MATHelpVDivS,          "Divides a vector by a scalar.");
 NA_LOC(MATHelpVMulCompV,      "Multiplies the components of a vector by the components of another vector.");

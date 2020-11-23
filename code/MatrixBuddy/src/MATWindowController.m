@@ -187,6 +187,41 @@
 
 - (void)prepareFirstView{
   [self switchComputation:buttonMMulv];
+  
+  [buttons[MAT_COMPUTATION_VMULS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMulS)]];
+  [buttons[MAT_COMPUTATION_VDIVS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDivS)]];
+  [buttons[MAT_COMPUTATION_VMULCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMulCompV)]];
+  [buttons[MAT_COMPUTATION_VDIVCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDivCompV)]];
+     
+  [buttons[MAT_COMPUTATION_NEGV]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonNegV)]];
+  [buttons[MAT_COMPUTATION_VADDV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVAddV)]];
+  [buttons[MAT_COMPUTATION_VSUBV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVSubV)]];
+  [buttons[MAT_COMPUTATION_VDOTV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDotV)]];
+  [buttons[MAT_COMPUTATION_VCROSSV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVCrossV)]];
+  [buttons[MAT_COMPUTATION_LENGTHV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonLengthV)]];
+
+  [buttons[MAT_COMPUTATION_NORMALIZEV]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonNormalizeV)]];
+  [buttons[MAT_COMPUTATION_ORTHOGONALIZEV] setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonOrthogonalizeV)]];
+  [buttons[MAT_COMPUTATION_MIRRORV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMirrorV)]];
+
+  [buttons[MAT_COMPUTATION_MMULS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulS)]];
+  [buttons[MAT_COMPUTATION_MDIVS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDivS)]];
+  [buttons[MAT_COMPUTATION_MMULCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulCompV)]];
+  [buttons[MAT_COMPUTATION_MDIVCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDivCompV)]];
+  [buttons[MAT_COMPUTATION_MMULCOMPM]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulCompM)]];
+  [buttons[MAT_COMPUTATION_MDIVCOMPM]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDivCompM)]];
+
+  [buttons[MAT_COMPUTATION_NEGM]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonNegM)]];
+  [buttons[MAT_COMPUTATION_MADDM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMAddM)]];
+  [buttons[MAT_COMPUTATION_MSUBM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMSubM)]];
+  [buttons[MAT_COMPUTATION_MMULV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulV)]];
+  [buttons[MAT_COMPUTATION_MMULM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulM)]];
+
+  [buttons[MAT_COMPUTATION_DIAGS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonDiagS)]];
+  [buttons[MAT_COMPUTATION_DIAGV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonDiagV)]];
+  [buttons[MAT_COMPUTATION_TRANSPOSEM]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonTransposeM)]];
+  [buttons[MAT_COMPUTATION_INVERTM]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonInvertM)]];
+
 }
 
 
@@ -241,7 +276,9 @@
     [buttons[m] setState:NSOffState];
   }
   [buttons[computation] setState:NSOnState];
-  [dimensionChooser setSelectedSegment:dimensions];
+  [dimension2Radio setState:dimensions == MAT_DIMENSIONS_2 ? NSOnState : NSOffState];
+  [dimension3Radio setState:dimensions == MAT_DIMENSIONS_3 ? NSOnState : NSOffState];
+  [dimension4Radio setState:dimensions == MAT_DIMENSIONS_4 ? NSOnState : NSOffState];
 
   [showHelpItem setState:(showHelp?NSOnState:NSOffState)];
   [showIdentifiersItem setState:(showIdentifiers?NSOnState:NSOffState)];
@@ -382,7 +419,9 @@
 
 - (IBAction)changeDimensions:(id)sender{
   NA_UNUSED(sender);
-  dimensions = (MATDimensions)[dimensionChooser selectedSegment];
+  if(sender == dimension2Radio){dimensions = MAT_DIMENSIONS_2;}
+  if(sender == dimension3Radio){dimensions = MAT_DIMENSIONS_3;}
+  if(sender == dimension4Radio){dimensions = MAT_DIMENSIONS_4;}
   [self update];
 }
 

@@ -40,23 +40,34 @@
   [labelText setAlignment:NSCenterTextAlignment];
   [self addSubview:labelText];
 
-  rect.size.width = [self bounds].size.width - 30;
+  rect.size.width = 24;
   rect.size.height = MAT_TEXTFIELD_HEIGHT;
-  rect.origin.x = 15;
+  rect.origin.x = [self bounds].size.width / 2 - 30;
   rect.origin.y = MAT_VALUE_BORDER;
-  codeText = [[NSTextField alloc] initWithFrame:rect];
-  [codeText setStringValue:@""];
-  NSFont* codefont = [[NSFontManager sharedFontManager] fontWithFamily:@"Menlo" traits:0 weight:0 size:11.];
-  [codeText setFont:codefont];
-  [codeText setDrawsBackground:NO];
-  [codeText setAlignment:NSNaturalTextAlignment];
-  [[codeText cell] setLineBreakMode:NSLineBreakByClipping];
-  [[codeText cell] setScrollable:YES];
-  [[codeText cell] setSendsActionOnEndEditing:YES];
-  [codeText setAction:@selector(codeChanged:)];
-  [codeText setTarget:self];
-  [self addSubview:codeText];
+  copyButton = [[NSButton alloc] initWithFrame:rect];
+  [copyButton setTitle:@"C"];
+  [copyButton setImage:[NSImage imageNamed:@"doc_on_doc"]];
+  [copyButton setBezelStyle:NSBezelStyleRecessed];
+  [copyButton setButtonType:NSButtonTypeMomentaryPushIn];
+  [copyButton setShowsBorderOnlyWhileMouseInside:YES];
+  [copyButton setTarget:self];
+  [copyButton setAction:@selector(copy:)];
+  [self addSubview:copyButton];
 
+  rect.size.width = 24;
+  rect.size.height = MAT_TEXTFIELD_HEIGHT;
+  rect.origin.x = [self bounds].size.width / 2 + 6;
+  rect.origin.y = MAT_VALUE_BORDER;
+  pasteButton = [[NSButton alloc] initWithFrame:rect];
+  [pasteButton setTitle:@"P"];
+  [pasteButton setImage:[NSImage imageNamed:@"doc_on_doc"]];
+  [pasteButton setBezelStyle:NSBezelStyleRecessed];
+  [pasteButton setButtonType:NSButtonTypeMomentaryPushIn];
+  [pasteButton setShowsBorderOnlyWhileMouseInside:YES];
+  [pasteButton setTarget:self];
+  [pasteButton setAction:@selector(paste:)];
+  [self addSubview:pasteButton];
+  
 }
 
 
@@ -64,7 +75,6 @@
 - (void)dealloc{
   [errorText release];
   [labelText release];
-  [codeText release];
   [super dealloc];
 }
 
@@ -104,6 +114,37 @@
   [labelText setTextColor:[(MATApplication*)NSApp color:color]];
   
   [self setNeedsDisplay:YES];
+}
+
+
+
+- (NSString*)getString{
+  return @"";
+}
+
+- (void)setString:(NSString*)string{
+  NA_UNUSED(string);
+}
+
+
+- (void)copy:(NSResponder*) sender{
+  NA_UNUSED(sender);
+  NSPasteboard* pasteboard = [NSPasteboard generalPasteboard];
+  [pasteboard clearContents];
+  [pasteboard writeObjects:[NSArray arrayWithObject:[self getString]]];
+}
+
+
+
+- (void)paste:(NSResponder*) sender{
+  NA_UNUSED(sender);
+  NSPasteboard* pasteboard = [NSPasteboard generalPasteboard];
+  NSArray *classes = [[NSArray alloc] initWithObjects:[NSString class], nil];
+  NSDictionary *options = [NSDictionary dictionary];
+  NSArray *copiedItems = [pasteboard readObjectsForClasses:classes options:options];
+  if ([copiedItems count]) {
+    [self setString: [copiedItems objectAtIndex:0]];
+  }
 }
 
 
@@ -160,6 +201,13 @@
 - (void)setStatus:(MATStatus)newstatus{
   status = newstatus;
 }
+
+
+
+- (void)setPasteEnabled:(NABool)pasteEnabled{
+  [pasteButton setEnabled:pasteEnabled];
+}
+
 
 
 

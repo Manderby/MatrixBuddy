@@ -114,13 +114,16 @@
   MATCodeStyle codeStyle;
   MATValueAccuracy valueAccuracy;
   
-  IBOutlet NSSegmentedControl* dimensionChooser;
   IBOutlet NSTextField* helpLine;
 
   MATComputationView* computationView;
   MATComputation computation;
   MATDimensions dimensions;
   
+  IBOutlet NSButton* dimension2Radio;
+  IBOutlet NSButton* dimension3Radio;
+  IBOutlet NSButton* dimension4Radio;
+
   IBOutlet NSButton* buttonVMulS;
   IBOutlet NSButton* buttonVDivS;
   IBOutlet NSButton* buttonVMulCompV;

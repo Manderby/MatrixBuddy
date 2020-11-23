@@ -28,6 +28,7 @@
   [b setLabel:@"b"];
   [a update];
   [b update];
+  [b setPasteEnabled:NA_FALSE];
 }
 
 
@@ -80,6 +81,7 @@
   [b setLabel:@"b"];
   [a update];
   [b update];
+  [b setPasteEnabled:NA_FALSE];
 }
 
 
@@ -132,6 +134,7 @@
   [b setLabel:@"b"];
   [a update];
   [b update];
+  [b setPasteEnabled:NA_FALSE];
 }
 
 
