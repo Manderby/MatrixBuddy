@@ -20,6 +20,7 @@ NSString* formatValue(float value);
 
 - (NABool)hasShowHelp;
 - (NABool)hasShowIdentifier;
+- (NABool)hasShowCopyPaste;
 - (NABool)hasRowFirstTabOrder;
 - (MATCodeStyle)codeStyle;
 - (MATValueAccuracy)valueAccuracy;

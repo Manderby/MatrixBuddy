@@ -8,6 +8,22 @@ NA_LOC(MatrixBuddyApplicationDescription, "Einfache lineare Algebra. Matrix und 
 NA_LOC(MatrixBuddyApplicationHelpURL, "http://manderc.com/apps/matrixbuddy/help/index.php");
 NA_LOC(MatrixBuddyNewVersionDescription, "Matrix Buddy läuft jetzt universal auf Intel und Apple Silicon. Deutsche Übersetzung hinzugefügt.");
 
+NA_LOC(MATMenuItemShowHelp,               "Schnellhilfe");
+NA_LOC(MATMenuItemShowIdentifiers,        "Bezeichner");
+NA_LOC(MATMenuItemRowFirstTabOrder,       "Tabulator: Zeilenorientiert");
+NA_LOC(MATMenuItemColumnFirstTabOrder,    "Tabulator: Spaltenorientiert");
+NA_LOC(MATMenuItemShowCopyPaste,          "Kopieren & Einfügen");
+NA_LOC(MATMenuItemCodeCRowFirstItem1D,    "    C Zeilenorientiert 1D");
+NA_LOC(MATMenuItemCodeCRowFirstItem2D,    "    C Zeilenorientiert 2D");
+NA_LOC(MATMenuItemCodeCColumnFirstItem1D, "    C Spaltenorientiert 1D");
+NA_LOC(MATMenuItemCodeCColumnFirstItem2D, "    C Spaltenorientiert 2D");
+NA_LOC(MATMenuItemCodeMathematica,        "    Mathematica");
+NA_LOC(MATMenuItemCodeMatlab,             "    Matlab");
+NA_LOC(MATMenuItemCodeMaple,              "    Maple");
+NA_LOC(MATMenuItemValueAccuracyNatural,   "Genauigkeit: Natürlich");
+NA_LOC(MATMenuItemValueAccuracyFloat,     "Genauigkeit: float");
+NA_LOC(MATMenuItemHelp,                   "Online Hilfe");
+
 NA_LOC(MATButtonVMulS,          "v×s");
 NA_LOC(MATButtonVDivS,          "v÷s");
 NA_LOC(MATButtonVMulCompV,      "v⊙v");

@@ -96,6 +96,8 @@
 		90233B9E256ADE3700E383A6 /* NAUIWINAPI.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233B4D256ADE3700E383A6 /* NAUIWINAPI.c */; };
 		90233B9F256ADE3700E383A6 /* NAUIImage.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233B5F256ADE3700E383A6 /* NAUIImage.c */; };
 		9038ECC0256AE05300A95A36 /* MatrixBuddyChangelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECBF256AE05300A95A36 /* MatrixBuddyChangelog.txt */; };
+		9038ECEC256DA07300A95A36 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEB256DA07300A95A36 /* copy.png */; };
+		9038ECF0256DA48000A95A36 /* paste.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEF256DA48000A95A36 /* paste.png */; };
 		90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA03371BA96CAB00A651E9 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -391,6 +393,8 @@
 		90233B7A256ADE3700E383A6 /* NAValueHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAValueHelper.h; sourceTree = "<group>"; };
 		9038ECBF256AE05300A95A36 /* MatrixBuddyChangelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MatrixBuddyChangelog.txt; sourceTree = "<group>"; };
 		9038ECC3256AE1E200A95A36 /* MatrixBuddyStrings_deu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyStrings_deu.h; sourceTree = "<group>"; };
+		9038ECEB256DA07300A95A36 /* copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy.png; sourceTree = "<group>"; };
+		9038ECEF256DA48000A95A36 /* paste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paste.png; sourceTree = "<group>"; };
 		90BA03371BA96CAB00A651E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -430,9 +434,11 @@
 		90233A03256ADE1D00E383A6 /* res */ = {
 			isa = PBXGroup;
 			children = (
-				90233A04256ADE1D00E383A6 /* MatrixBuddyStrings_eng.h */,
-				9038ECC3256AE1E200A95A36 /* MatrixBuddyStrings_deu.h */,
+				9038ECEF256DA48000A95A36 /* paste.png */,
+				9038ECEB256DA07300A95A36 /* copy.png */,
 				90233A05256ADE1D00E383A6 /* mac */,
+				9038ECC3256AE1E200A95A36 /* MatrixBuddyStrings_deu.h */,
+				90233A04256ADE1D00E383A6 /* MatrixBuddyStrings_eng.h */,
 			);
 			name = res;
 			path = ../code/MatrixBuddy/res;
@@ -609,44 +615,44 @@
 		90233AAE256ADE3700E383A6 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				90233AAF256ADE3700E383A6 /* NAMathConstants.h */,
-				90233AB0256ADE3700E383A6 /* NAMemory.h */,
-				90233AB1256ADE3700E383A6 /* NAComplex.h */,
-				90233AB2256ADE3700E383A6 /* NABase.h */,
-				90233AB3256ADE3700E383A6 /* NABuffer.h */,
 				90233AB4256ADE3700E383A6 /* NAArray.h */,
-				90233AB5256ADE3700E383A6 /* NAThreading.h */,
-				90233AB6256ADE3700E383A6 /* NAStack.h */,
-				90233AB7256ADE3700E383A6 /* NADeflate.h */,
-				90233AB8256ADE3700E383A6 /* NAList.h */,
-				90233AB9256ADE3700E383A6 /* NABabyImage.h */,
-				90233ABA256ADE3700E383A6 /* NAString.h */,
-				90233ABB256ADE3700E383A6 /* NARandom.h */,
-				90233ABC256ADE3700E383A6 /* NAPreferences.h */,
-				90233ABD256ADE3700E383A6 /* NAStruct */,
-				90233AED256ADE3700E383A6 /* NABase */,
-				90233B05256ADE3700E383A6 /* NAURL.h */,
-				90233B06256ADE3700E383A6 /* NAHeap.h */,
-				90233B07256ADE3700E383A6 /* NAVisual */,
-				90233B0C256ADE3700E383A6 /* NAPNG.h */,
-				90233B0D256ADE3700E383A6 /* NAFile.h */,
-				90233B0E256ADE3700E383A6 /* NAVectorAlgebra.h */,
-				90233B0F256ADE3700E383A6 /* NAMathOperators.h */,
-				90233B10256ADE3700E383A6 /* NADateTime.h */,
-				90233B11256ADE3700E383A6 /* NABinaryData.h */,
-				90233B12256ADE3700E383A6 /* NAUI.h */,
-				90233B13256ADE3700E383A6 /* NACore */,
-				90233B2D256ADE3700E383A6 /* NAKey.h */,
-				90233B2E256ADE3700E383A6 /* NATree.h */,
-				90233B2F256ADE3700E383A6 /* NACircularBuffer.h */,
-				90233B30256ADE3700E383A6 /* NAEnvironment */,
 				90233B60256ADE3700E383A6 /* NABabyColor.h */,
-				90233B61256ADE3700E383A6 /* NATesting.h */,
-				90233B62256ADE3700E383A6 /* NAMath */,
-				90233B77256ADE3700E383A6 /* NATranslator.h */,
+				90233AB9256ADE3700E383A6 /* NABabyImage.h */,
+				90233AED256ADE3700E383A6 /* NABase */,
+				90233AB2256ADE3700E383A6 /* NABase.h */,
+				90233B11256ADE3700E383A6 /* NABinaryData.h */,
+				90233AB3256ADE3700E383A6 /* NABuffer.h */,
+				90233B2F256ADE3700E383A6 /* NACircularBuffer.h */,
+				90233AB1256ADE3700E383A6 /* NAComplex.h */,
 				90233B78256ADE3700E383A6 /* NACoord.h */,
+				90233B13256ADE3700E383A6 /* NACore */,
+				90233B10256ADE3700E383A6 /* NADateTime.h */,
+				90233AB7256ADE3700E383A6 /* NADeflate.h */,
+				90233B30256ADE3700E383A6 /* NAEnvironment */,
+				90233B0D256ADE3700E383A6 /* NAFile.h */,
+				90233B06256ADE3700E383A6 /* NAHeap.h */,
+				90233B2D256ADE3700E383A6 /* NAKey.h */,
+				90233AB8256ADE3700E383A6 /* NAList.h */,
+				90233B62256ADE3700E383A6 /* NAMath */,
+				90233AAF256ADE3700E383A6 /* NAMathConstants.h */,
+				90233B0F256ADE3700E383A6 /* NAMathOperators.h */,
+				90233AB0256ADE3700E383A6 /* NAMemory.h */,
+				90233B0C256ADE3700E383A6 /* NAPNG.h */,
 				90233B79256ADE3700E383A6 /* NAPool.h */,
+				90233ABC256ADE3700E383A6 /* NAPreferences.h */,
+				90233ABB256ADE3700E383A6 /* NARandom.h */,
+				90233AB6256ADE3700E383A6 /* NAStack.h */,
+				90233ABA256ADE3700E383A6 /* NAString.h */,
+				90233ABD256ADE3700E383A6 /* NAStruct */,
+				90233B61256ADE3700E383A6 /* NATesting.h */,
+				90233AB5256ADE3700E383A6 /* NAThreading.h */,
+				90233B77256ADE3700E383A6 /* NATranslator.h */,
+				90233B2E256ADE3700E383A6 /* NATree.h */,
+				90233B12256ADE3700E383A6 /* NAUI.h */,
+				90233B05256ADE3700E383A6 /* NAURL.h */,
 				90233B7A256ADE3700E383A6 /* NAValueHelper.h */,
+				90233B0E256ADE3700E383A6 /* NAVectorAlgebra.h */,
+				90233B07256ADE3700E383A6 /* NAVisual */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -729,29 +735,29 @@
 		90233AED256ADE3700E383A6 /* NABase */ = {
 			isa = PBXGroup;
 			children = (
+				90233AF7256ADE3700E383A6 /* NAChar.h */,
+				90233B02256ADE3700E383A6 /* NACompiler.h */,
+				90233AF1256ADE3700E383A6 /* NAConfiguration.h */,
+				90233AF8256ADE3700E383A6 /* NADebugging.c */,
+				90233B03256ADE3700E383A6 /* NADebugging.h */,
+				90233AF4256ADE3700E383A6 /* NADebuggingII.h */,
+				90233AFD256ADE3700E383A6 /* NAEncoding.h */,
+				90233AF9256ADE3700E383A6 /* NAEnvironment.h */,
+				90233AF5256ADE3700E383A6 /* NAFloatingPoint.h */,
+				90233B00256ADE3700E383A6 /* NAFloatingPointII.h */,
+				90233AFC256ADE3700E383A6 /* NAInt64.h */,
+				90233AF6256ADE3700E383A6 /* NAInt64II.h */,
+				90233AF2256ADE3700E383A6 /* NAInt128.h */,
+				90233AFF256ADE3700E383A6 /* NAInt128II.h */,
+				90233B01256ADE3700E383A6 /* NAInt256.h */,
 				90233AEE256ADE3700E383A6 /* NAInt256II.h */,
 				90233AEF256ADE3700E383A6 /* NAInteger.h */,
-				90233AF0256ADE3700E383A6 /* NAMacros.h */,
-				90233AF1256ADE3700E383A6 /* NAConfiguration.h */,
-				90233AF2256ADE3700E383A6 /* NAInt128.h */,
-				90233AF3256ADE3700E383A6 /* NANumerics.h */,
-				90233AF4256ADE3700E383A6 /* NADebuggingII.h */,
-				90233AF5256ADE3700E383A6 /* NAFloatingPoint.h */,
-				90233AF6256ADE3700E383A6 /* NAInt64II.h */,
-				90233AF7256ADE3700E383A6 /* NAChar.h */,
-				90233AF8256ADE3700E383A6 /* NADebugging.c */,
-				90233AF9256ADE3700E383A6 /* NAEnvironment.h */,
-				90233AFA256ADE3700E383A6 /* NAMacros.c */,
 				90233AFB256ADE3700E383A6 /* NALanguage.h */,
-				90233AFC256ADE3700E383A6 /* NAInt64.h */,
-				90233AFD256ADE3700E383A6 /* NAEncoding.h */,
-				90233AFE256ADE3700E383A6 /* NANumericsII.h */,
-				90233AFF256ADE3700E383A6 /* NAInt128II.h */,
-				90233B00256ADE3700E383A6 /* NAFloatingPointII.h */,
-				90233B01256ADE3700E383A6 /* NAInt256.h */,
-				90233B02256ADE3700E383A6 /* NACompiler.h */,
-				90233B03256ADE3700E383A6 /* NADebugging.h */,
+				90233AFA256ADE3700E383A6 /* NAMacros.c */,
+				90233AF0256ADE3700E383A6 /* NAMacros.h */,
 				90233B04256ADE3700E383A6 /* NAMacrosII.h */,
+				90233AF3256ADE3700E383A6 /* NANumerics.h */,
+				90233AFE256ADE3700E383A6 /* NANumericsII.h */,
 			);
 			path = NABase;
 			sourceTree = "<group>";
@@ -1047,6 +1053,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				90233AA6256ADE2D00E383A6 /* ManderApp.vcxproj in Resources */,
+				9038ECF0256DA48000A95A36 /* paste.png in Resources */,
+				9038ECEC256DA07300A95A36 /* copy.png in Resources */,
 				9038ECC0256AE05300A95A36 /* MatrixBuddyChangelog.txt in Resources */,
 				90233B7B256ADE3700E383A6 /* NALib.vcxproj in Resources */,
 				90233A10256ADE1D00E383A6 /* MatrixBuddy.icns in Resources */,

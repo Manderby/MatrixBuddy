@@ -113,9 +113,6 @@
   case MAT_CODE_STYLE_MAPLE:
     return [NSString stringWithFormat:@"[%@, %@]", formatValue(values[0]), formatValue(values[1])];
     break;
-  case MAT_CODE_STYLE_NONE:
-    return @"";
-    break;
   }
 }
 

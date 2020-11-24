@@ -93,11 +93,14 @@
 
 
 @interface MATWindowController : NSWindowController{
+  IBOutlet NSButton* gearButton;
+
+  IBOutlet NSMenuItem* gearItem;
   IBOutlet NSMenuItem* showHelpItem;
   IBOutlet NSMenuItem* showIdentifiersItem;
+  IBOutlet NSMenuItem* showCopyPasteItem;
   IBOutlet NSMenuItem* rowFirstTabOrderItem;
   IBOutlet NSMenuItem* columnFirstTabOrderItem;
-  IBOutlet NSMenuItem* codeNoneItem;
   IBOutlet NSMenuItem* codeCRowFirstItem1D;
   IBOutlet NSMenuItem* codeCRowFirstItem2D;
   IBOutlet NSMenuItem* codeCColumnFirstItem1D;
@@ -107,9 +110,11 @@
   IBOutlet NSMenuItem* codeMapleItem;
   IBOutlet NSMenuItem* valueAccuracyNaturalItem;
   IBOutlet NSMenuItem* valueAccuracyFloatItem;
+  IBOutlet NSMenuItem* helpItem;
   
   NABool showHelp;
   NABool showIdentifiers;
+  NABool showCopyPaste;
   NABool hasRowFirstTabOrder;
   MATCodeStyle codeStyle;
   MATValueAccuracy valueAccuracy;
@@ -257,6 +262,7 @@
 - (void)update;
 - (NABool)hasShowHelp;
 - (NABool)hasShowIdentifiers;
+- (NABool)hasShowCopyPaste;
 - (NABool)hasRowFirstTabOrder;
 - (MATCodeStyle)codeStyle;
 - (MATValueAccuracy)valueAccuracy;

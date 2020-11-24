@@ -1,4 +1,6 @@
 
+#import "MATApplication.h"
+
 #import "MATWindowController.h"
 #import "MATComputationView.h"
 
@@ -50,9 +52,54 @@
 
   showHelp = naGetPreferencesBool(MATPrefs[ShowHelp]);
   showIdentifiers = naGetPreferencesBool(MATPrefs[ShowIdentifiers]);
+  showCopyPaste = naGetPreferencesBool(MATPrefs[ShowCopyPaste]);
   hasRowFirstTabOrder = naGetPreferencesBool(MATPrefs[UseRowFirstTabOrder]);
   codeStyle = (MATCodeStyle)naGetPreferencesEnum(MATPrefs[CodeStyle]);
   valueAccuracy = (MATValueAccuracy)naGetPreferencesEnum(MATPrefs[ValueAccuracy]);
+  
+  gearItem = [[NSMenuItem alloc] initWithTitle:@"M" action:@selector(changeSetting:) keyEquivalent:@""];
+  [gearItem setImage:[NSImage imageNamed:NSImageNameSmartBadgeTemplate]];
+  
+  showHelpItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemShowHelp)] action:@selector(changeSetting:) keyEquivalent:@""];
+  showIdentifiersItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemShowIdentifiers)] action:@selector(changeSetting:) keyEquivalent:@""];
+  showCopyPasteItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemShowCopyPaste)] action:@selector(changeSetting:) keyEquivalent:@""];
+  rowFirstTabOrderItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemRowFirstTabOrder)] action:@selector(changeSetting:) keyEquivalent:@""];
+  columnFirstTabOrderItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemColumnFirstTabOrder)] action:@selector(changeSetting:) keyEquivalent:@""];
+  codeCRowFirstItem1D = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemCodeCRowFirstItem1D)] action:@selector(changeSetting:) keyEquivalent:@""];
+  codeCRowFirstItem2D = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemCodeCRowFirstItem2D)] action:@selector(changeSetting:) keyEquivalent:@""];
+  codeCColumnFirstItem1D = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemCodeCColumnFirstItem1D)] action:@selector(changeSetting:) keyEquivalent:@""];
+  codeCColumnFirstItem2D = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemCodeCColumnFirstItem2D)] action:@selector(changeSetting:) keyEquivalent:@""];
+  codeMathematicaItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemCodeMathematica)] action:@selector(changeSetting:) keyEquivalent:@""];
+  codeMatlabItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemCodeMatlab)] action:@selector(changeSetting:) keyEquivalent:@""];
+  codeMapleItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemCodeMaple)] action:@selector(changeSetting:) keyEquivalent:@""];
+  valueAccuracyNaturalItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemValueAccuracyNatural)] action:@selector(changeSetting:) keyEquivalent:@""];
+  valueAccuracyFloatItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemValueAccuracyFloat)] action:@selector(changeSetting:) keyEquivalent:@""];
+  helpItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemHelp)] action:@selector(openHelp:) keyEquivalent:@""];
+  [helpItem setTarget:NSApp];
+
+  NSMenu* gearMenu = [[NSMenu alloc] init];
+  [gearMenu addItem:gearItem];
+  [gearMenu addItem:showHelpItem];
+  [gearMenu addItem:showIdentifiersItem];
+  [gearMenu addItem:[NSMenuItem separatorItem]];
+  [gearMenu addItem:showCopyPasteItem];
+  [gearMenu addItem:codeCRowFirstItem1D];
+  [gearMenu addItem:codeCRowFirstItem2D];
+  [gearMenu addItem:codeCColumnFirstItem1D];
+  [gearMenu addItem:codeCColumnFirstItem2D];
+  [gearMenu addItem:codeMathematicaItem];
+  [gearMenu addItem:codeMatlabItem];
+  [gearMenu addItem:codeMapleItem];
+  [gearMenu addItem:[NSMenuItem separatorItem]];
+  [gearMenu addItem:rowFirstTabOrderItem];
+  [gearMenu addItem:columnFirstTabOrderItem];
+  [gearMenu addItem:[NSMenuItem separatorItem]];
+  [gearMenu addItem:valueAccuracyNaturalItem];
+  [gearMenu addItem:valueAccuracyFloatItem];
+  [gearMenu addItem:[NSMenuItem separatorItem]];
+  [gearMenu addItem:helpItem];
+  
+  [gearButton setMenu:gearMenu];
 
   buttons[MAT_COMPUTATION_VMULS]          = buttonVMulS;
   buttons[MAT_COMPUTATION_VDIVS]          = buttonVDivS;
@@ -180,7 +227,6 @@
 
   computation = MAT_COMPUTATION_MMULV;
   dimensions = MAT_DIMENSIONS_3;
-  
 }
 
 
@@ -282,6 +328,7 @@
 
   [showHelpItem setState:(showHelp?NSOnState:NSOffState)];
   [showIdentifiersItem setState:(showIdentifiers?NSOnState:NSOffState)];
+  [showCopyPasteItem setState:(showCopyPaste?NSOnState:NSOffState)];
 
   if(hasRowFirstTabOrder){
     [rowFirstTabOrderItem setState:NSOnState];
@@ -291,7 +338,6 @@
     [columnFirstTabOrderItem setState:NSOnState];
   }
   
-  [codeNoneItem setState:NSOffState];
   [codeCRowFirstItem1D setState:NSOffState];
   [codeCRowFirstItem2D setState:NSOffState];
   [codeCColumnFirstItem1D setState:NSOffState];
@@ -300,7 +346,6 @@
   [codeMatlabItem setState:NSOffState];
   [codeMapleItem setState:NSOffState];
   switch(codeStyle){
-  case MAT_CODE_STYLE_NONE: [codeNoneItem setState:NSOnState]; break;
   case MAT_CODE_STYLE_C_ROW_FIRST_1D: [codeCRowFirstItem1D setState:NSOnState]; break;
   case MAT_CODE_STYLE_C_ROW_FIRST_2D: [codeCRowFirstItem2D setState:NSOnState]; break;
   case MAT_CODE_STYLE_C_COLUMN_FIRST_1D: [codeCColumnFirstItem1D setState:NSOnState]; break;
@@ -310,6 +355,14 @@
   case MAT_CODE_STYLE_MAPLE: [codeMapleItem setState:NSOnState]; break;
   }
   
+  [codeCRowFirstItem1D setAction:showCopyPaste ? @selector(changeSetting:) : nil];
+  [codeCRowFirstItem2D setAction:showCopyPaste ? @selector(changeSetting:) : nil];
+  [codeCColumnFirstItem1D setAction:showCopyPaste ? @selector(changeSetting:) : nil];
+  [codeCColumnFirstItem2D setAction:showCopyPaste ? @selector(changeSetting:) : nil];
+  [codeMathematicaItem setAction:showCopyPaste ? @selector(changeSetting:) : nil];
+  [codeMatlabItem setAction:showCopyPaste ? @selector(changeSetting:) : nil];
+  [codeMapleItem setAction:showCopyPaste ? @selector(changeSetting:) : nil];
+
   [valueAccuracyNaturalItem setState:NSOffState];
   [valueAccuracyFloatItem setState:NSOffState];
   switch(valueAccuracy){
@@ -337,6 +390,9 @@
 }
 - (NABool)hasShowIdentifiers{
   return showIdentifiers;
+}
+- (NABool)hasShowCopyPaste{
+  return showCopyPaste;
 }
 - (NABool)hasRowFirstTabOrder{
   return hasRowFirstTabOrder;
@@ -376,15 +432,15 @@
   }else if(sender == showIdentifiersItem){
     showIdentifiers = !showIdentifiers;
     naSetPreferencesBool(MATPrefs[ShowIdentifiers], showIdentifiers);
+  }else if(sender == showCopyPasteItem){
+    showCopyPaste = !showCopyPaste;
+    naSetPreferencesBool(MATPrefs[ShowCopyPaste], showCopyPaste);
   }else if(sender == rowFirstTabOrderItem){
     hasRowFirstTabOrder = NA_TRUE;
     naSetPreferencesBool(MATPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
   }else if(sender == columnFirstTabOrderItem){
     hasRowFirstTabOrder = NA_FALSE;
     naSetPreferencesBool(MATPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
-  }else if(sender == codeNoneItem){
-    codeStyle = MAT_CODE_STYLE_NONE;
-    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
   }else if(sender == codeCRowFirstItem1D){
     codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;
     naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);

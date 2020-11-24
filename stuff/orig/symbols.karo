@@ -1,0 +1,208 @@
+HUESLIPAPIERASCU
+Version 4
+
+Section Settings
+Chunksize 16
+RightHandedCoordSys 1
+RasterAspect Square
+GridType Rectangles
+End Section
+
+Section Symbols
+Symbol 0
+Name "Big Dot"
+Ascii O
+Large 1
+InvertBlack 0
+Code "Circle 0 0 7 0 0 0 no fg\n"
+End Symbol
+Symbol 1
+Name "Small Dot"
+Ascii o
+Large 0
+InvertBlack 0
+Code "Circle 0 0 4.5 0 0 0 no fg\n"
+End Symbol
+Symbol 2
+Name "Tiny Dot"
+Ascii .
+Large 0
+InvertBlack 0
+Code "Circle 0 0 2 0 0 0 no fg\n"
+End Symbol
+Symbol 3
+Name "Small Landscape Rectangle"
+Ascii x
+Large 0
+InvertBlack 0
+Code "Rect 2.598076 4.5 -2.598076 -4.5 0 no fg\n"
+End Symbol
+Symbol 4
+Name "Big Landscape Rectangle"
+Ascii X
+Large 1
+InvertBlack 0
+Code "Rect 5.196152 9 -5.196152 -9 0 no fg\n"
+End Symbol
+Symbol 5
+Name "Big Circle"
+Ascii O
+Large 1
+InvertBlack 1
+Code "Circle 0 0 6.5 0 0 1 0 fg\n"
+End Symbol
+Symbol 6
+Name "Small Circle"
+Ascii o
+Large 0
+InvertBlack 1
+Code "Circle 0 0 4 0 0 1 0 fg\n"
+End Symbol
+Symbol 7
+Name "Tiny Circle"
+Ascii .
+Large 0
+InvertBlack 1
+Code "Circle 0 0 1.5 0 0 1 0 fg\n"
+End Symbol
+Symbol 8
+Name "Small Square"
+Ascii x
+Large 0
+InvertBlack 0
+Code "Rect 4.5 4.5 -4.5 -4.5 0 no fg\n"
+End Symbol
+Symbol 9
+Name "Big Square"
+Ascii X
+Large 1
+InvertBlack 0
+Code "Rect 9 9 -9 -9 0 no fg\n"
+End Symbol
+Symbol 10
+Name "Big Circle with Cross"
+Ascii X
+Large 1
+InvertBlack 1
+Code "Circle 0 0 6.5 0 0 1 0 fg\nLine -7.5 -7.5 7.5 7.5 1 0\nLine 7.5 -7.5 -7.5 7.5 1 0\n"
+End Symbol
+Symbol 11
+Name "Small Circle with Cross"
+Ascii x
+Large 0
+InvertBlack 1
+Code "Circle 0 0 4 0 0 1 0 fg\nLine -6 -6 6 6 1 0\nLine 6 -6 -6 6 1 0\n"
+End Symbol
+Symbol 12
+Name "Cross"
+Ascii x
+Large 0
+InvertBlack 0
+Code "Line -4.5 -4.5 4.5 4.5 1 fg\nLine 4.5 -4.5 -4.5 4.5 1 fg\n"
+End Symbol
+Symbol 13
+Name "Small Portrait Rectangle"
+Ascii x
+Large 0
+InvertBlack 0
+Code "Rect 7.794229 4.5 -7.794229 -4.5 0 no fg\n"
+End Symbol
+Symbol 14
+Name "Big Portrait Rectangle"
+Ascii X
+Large 1
+InvertBlack 0
+Code "Rect 15.588457 9 -15.588457 -9 0 no fg\n"
+End Symbol
+Symbol 15
+Name "Big Box with Cross"
+Ascii X
+Large 1
+InvertBlack 1
+Code "Rect 9 9 -9 -9 1 0 fg\nLine -9 -9 9 9 1 0\nLine 9 -9 -9 9 1 0\n"
+End Symbol
+Symbol 16
+Name "Small Box with Cross"
+Ascii x
+Large 0
+InvertBlack 1
+Code "Rect 4.5 4.5 -4.5 -4.5 1 0 fg\nLine -4.5 -4.5 4.5 4.5 1 0\nLine 4.5 -4.5 -4.5 4.5 1 0\n"
+End Symbol
+Symbol 17
+Name "Small Box with Dot"
+Ascii x
+Large 0
+InvertBlack 1
+Code "Rect 4.5 4.5 -4.5 -4.5 1 0 fg\nCircle 0 0 2 0 0 0 no 0\n"
+End Symbol
+Symbol 18
+Name "Small Box"
+Ascii o
+Large 0
+InvertBlack 1
+Code "Rect 4.5 4.5 -4.5 -4.5 1 0 fg\n"
+End Symbol
+Symbol 19
+Name "Big Box"
+Ascii O
+Large 1
+InvertBlack 1
+Code "Rect 9 9 -9 -9 1 0 fg\n"
+End Symbol
+Symbol 20
+Name "Smiling Face"
+Ascii 5
+Large 1
+InvertBlack 0
+Code "Circle 0 0 9 0 0 1 0 14\nCircle -4 3 2 0 0 0 no 0\nCircle 4 3 2 0 0 0 no 0\nCircle 0 0 5 -160 -20 2 0 no\n"
+End Symbol
+Symbol 21
+Name "Happy face"
+Ascii 4
+Large 1
+InvertBlack 0
+Code "Circle 0 0 9 0 0 1 0 13\nCircle -4 3 2 0 0 0 no 0\nCircle 4 3 2 0 0 0 no 0\nCircle 0 6 10 -120 -60 2 0 no\n"
+End Symbol
+Symbol 22
+Name "Neutral Face"
+Ascii 3
+Large 1
+InvertBlack 0
+Code "Circle 0 0 9 0 0 1 0 12\nCircle -4 3 2 0 0 0 no 0\nCircle 4 3 2 0 0 0 no 0\nLine -5 -2 5 -2 2 0\n"
+End Symbol
+Symbol 23
+Name "Unhappy face"
+Ascii 2
+Large 1
+InvertBlack 0
+Code "Circle 0 0 9 0 0 1 0 11\nCircle -4 3 2 0 0 0 no 0\nCircle 4 3 2 0 0 0 no 0\nCircle 0 -12 10 60 120 2 0 no\n"
+End Symbol
+Symbol 24
+Name "Frowning face"
+Ascii 1
+Large 1
+InvertBlack 0
+Code "Circle 0 0 9 0 0 1 0 10\nCircle -4 3 2 0 0 0 no 0\nCircle 4 3 2 0 0 0 no 0\nCircle 0 -6 5 20 160 2 0 no\n"
+End Symbol
+Symbol 25
+Name ""
+Ascii X
+Large 0
+InvertBlack 0
+Code "Line -6.5 -3.5 -6.5 7.5 1 fg\nLine 2.5 7.5 -6.5 7.5 1 fg\nLine -6.5 -3.5 -4.5 -3.5 1 fg\nLine 2.5 7.5 2.5 6.5 1 fg\nLine -2.5 -6.5 -2.5 4.5 1 fg\nLine -2.5 -6.5 6.5 -6.5 1 fg\nLine -2.5 4.5 6.5 4.5 1 fg\nLine 6.5 4.5 6.5 -6.5 1 fg\n"
+End Symbol
+Symbol 26
+Name ""
+Ascii X
+Large 0
+InvertBlack 0
+Code "Line -6.5 3.5 -6.5 7.5 1 fg\nCircle -2 3.5 4.5 180 270 1 fg no\nLine -2 -1 2 -1 1 fg\nTriangle 1 1.5 1 -3.5 4 -1 1 fg fg\n\nLine -2.5 -6.5 -2.5 4.5 1 fg\nLine -2.5 -6.5 6.5 -6.5 1 fg\nLine -2.5 4.5 6.5 4.5 1 fg\nLine 6.5 4.5 6.5 -6.5 1 fg\n"
+End Symbol
+End Section
+
+Section Layer
+Chunk -16.000000 0.000000
+Data AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Color AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+End Chunk
+End Section

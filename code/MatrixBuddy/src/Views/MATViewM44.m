@@ -125,9 +125,6 @@
   case MAT_CODE_STYLE_MAPLE:
     return [NSString stringWithFormat:@"[[%@, %@, %@, %@], [%@, %@, %@, %@], [%@, %@, %@, %@], [%@, %@, %@, %@]]", formatValue(values[0]), formatValue(values[4]), formatValue(values[8]), formatValue(values[12]), formatValue(values[1]), formatValue(values[5]), formatValue(values[9]), formatValue(values[13]), formatValue(values[2]), formatValue(values[6]), formatValue(values[10]), formatValue(values[14]), formatValue(values[3]), formatValue(values[7]), formatValue(values[11]), formatValue(values[15])];
     break;
-  case MAT_CODE_STYLE_NONE:
-    return @"";
-    break;
   }
 }
 

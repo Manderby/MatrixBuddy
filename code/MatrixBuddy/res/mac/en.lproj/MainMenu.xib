@@ -688,6 +688,7 @@
                 <outlet property="dotV2V2" destination="qO5-v0-Bom" id="B9N-iV-Wds"/>
                 <outlet property="dotV3V3" destination="pGw-29-vXY" id="gs1-si-oxR"/>
                 <outlet property="dotV4V4" destination="CdE-gR-h6n" id="DAh-On-AGE"/>
+                <outlet property="gearButton" destination="B0j-ar-xP6" id="VG6-1q-T0q"/>
                 <outlet property="helpLine" destination="8r9-bc-tc4" id="9MB-EX-7ep"/>
                 <outlet property="invertM22" destination="DgD-58-swH" id="xO2-nO-bPV"/>
                 <outlet property="invertM33" destination="rGg-M6-gaa" id="73C-Y6-exI"/>

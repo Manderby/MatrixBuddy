@@ -4,6 +4,7 @@
 enum{
   ShowHelp,
   ShowIdentifiers,
+  ShowCopyPaste,
   UseRowFirstTabOrder,
   CodeStyle,
   ValueAccuracy,

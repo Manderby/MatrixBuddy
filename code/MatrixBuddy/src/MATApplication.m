@@ -69,6 +69,9 @@ NSString* formatValue(float value){
 - (NABool)hasShowIdentifier{
   return [windowController hasShowIdentifiers];
 }
+- (NABool)hasShowCopyPaste{
+  return [windowController hasShowCopyPaste];
+}
 - (NABool)hasRowFirstTabOrder{
   return [windowController hasRowFirstTabOrder];
 }

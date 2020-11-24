@@ -2,6 +2,10 @@
 #import "MATValueView.h"
 #import "MATApplication.h"
 
+#include "NAUI.h"
+#include "NAUIImage.h"
+void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
+#include "NABabyImage.h"
 
 @implementation MATValueView
 
@@ -40,32 +44,44 @@
   [labelText setAlignment:NSCenterTextAlignment];
   [self addSubview:labelText];
 
-  rect.size.width = 24;
+  rect.size.width = 44;
   rect.size.height = MAT_TEXTFIELD_HEIGHT;
-  rect.origin.x = [self bounds].size.width / 2 - 30;
+  rect.origin.x = [self bounds].size.width / 2 - 44;
   rect.origin.y = MAT_VALUE_BORDER;
   copyButton = [[NSButton alloc] initWithFrame:rect];
   [copyButton setTitle:@"C"];
   [copyButton setImage:[NSImage imageNamed:@"doc_on_doc"]];
-  [copyButton setBezelStyle:NSBezelStyleRecessed];
+  [copyButton setBezelStyle:NSBezelStyleRounded];
   [copyButton setButtonType:NSButtonTypeMomentaryPushIn];
-  [copyButton setShowsBorderOnlyWhileMouseInside:YES];
   [copyButton setTarget:self];
   [copyButton setAction:@selector(copy:)];
+  [copyButton setShowsBorderOnlyWhileMouseInside:YES];
+
+  NAString* copyImagePath = naNewApplicationResourcePath(NA_NULL, "copy", "png");
+  NABabyImage* mainCopyImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(copyImagePath));
+  NAUIImage* copyImage = naNewUIImage(mainCopyImage, NA_NULL, NA_UIIMAGE_RESOLUTION_2x, NA_BLEND_BLACK_GREEN);
+  naTellNSButtonSetUIImage(copyButton, copyImage);
+  
   [self addSubview:copyButton];
 
-  rect.size.width = 24;
+  rect.size.width = 44;
   rect.size.height = MAT_TEXTFIELD_HEIGHT;
-  rect.origin.x = [self bounds].size.width / 2 + 6;
+  rect.origin.x = [self bounds].size.width / 2 + 0;
   rect.origin.y = MAT_VALUE_BORDER;
   pasteButton = [[NSButton alloc] initWithFrame:rect];
   [pasteButton setTitle:@"P"];
   [pasteButton setImage:[NSImage imageNamed:@"doc_on_doc"]];
-  [pasteButton setBezelStyle:NSBezelStyleRecessed];
+  [pasteButton setBezelStyle:NSBezelStyleRounded];
   [pasteButton setButtonType:NSButtonTypeMomentaryPushIn];
-  [pasteButton setShowsBorderOnlyWhileMouseInside:YES];
   [pasteButton setTarget:self];
   [pasteButton setAction:@selector(paste:)];
+  [pasteButton setShowsBorderOnlyWhileMouseInside:YES];
+
+  NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
+  NABabyImage* mainPasteImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(pasteImagePath));
+  NAUIImage* pasteImage = naNewUIImage(mainPasteImage, NA_NULL, NA_UIIMAGE_RESOLUTION_2x, NA_BLEND_BLACK_GREEN);
+  naTellNSButtonSetUIImage(pasteButton, pasteImage);
+
   [self addSubview:pasteButton];
   
 }
@@ -93,6 +109,14 @@
     [labelText setHidden:NO];
   }else{
     [labelText setHidden:YES];
+  }
+
+  if([(MATApplication*)NSApp hasShowCopyPaste]){
+    [copyButton setHidden:NO];
+    [pasteButton setHidden:NO];
+  }else{
+    [copyButton setHidden:YES];
+    [pasteButton setHidden:YES];
   }
 
   switch(status){
