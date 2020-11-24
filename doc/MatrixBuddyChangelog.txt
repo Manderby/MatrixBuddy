@@ -12,14 +12,15 @@ Planned things:
 - Invert more operations
 
 
-Version 1.1.2
+Version 1.2
 -------------
 
 - Create Universal Binary for Apple Silicon
+- Added copy and paste buttons
 - Corrected a parantheses error in the encoding
 - Simplified english help lines.
 - Added German translation.
-- Reprogrammed the user iterface.
+- Redesigned the user iterface.
 - Corrected a small typo. Collinear instead of Colinear.
 
 Version 1.1.1

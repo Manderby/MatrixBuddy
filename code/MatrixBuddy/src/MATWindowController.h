@@ -110,6 +110,7 @@
   IBOutlet NSMenuItem* codeMapleItem;
   IBOutlet NSMenuItem* valueAccuracyNaturalItem;
   IBOutlet NSMenuItem* valueAccuracyFloatItem;
+  IBOutlet NSMenuItem* aboutItem;
   IBOutlet NSMenuItem* helpItem;
   
   NABool showHelp;

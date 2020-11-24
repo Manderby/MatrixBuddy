@@ -6,7 +6,7 @@ NA_LOC_LANG("eng");
 
 NA_LOC(MatrixBuddyApplicationDescription, "Simple linear algebra. Matrix and Vector.");
 NA_LOC(MatrixBuddyApplicationHelpURL, "http://manderc.com/apps/matrixbuddy/help/index_en.php");
-NA_LOC(MatrixBuddyNewVersionDescription, "Matrix Buddy is now running universally on both Intel and Apple Silicon. Added German translation.");
+NA_LOC(MatrixBuddyNewVersionDescription, "Matrix Buddy is now running universally on both Intel and Apple Silicon.\n\nRedesigned User Interface\nAdded Copy and Paste buttons\nAdded German translation");
 
 NA_LOC(MATMenuItemShowHelp,               "Quick Help Line");
 NA_LOC(MATMenuItemShowIdentifiers,        "Identifiers");
@@ -22,6 +22,7 @@ NA_LOC(MATMenuItemCodeMatlab,             "    Matlab");
 NA_LOC(MATMenuItemCodeMaple,              "    Maple");
 NA_LOC(MATMenuItemValueAccuracyNatural,   "Accuracy: Natural");
 NA_LOC(MATMenuItemValueAccuracyFloat,     "Accuracy: float");
+NA_LOC(MATMenuItemAbout,                  "About Matrix Buddy");
 NA_LOC(MATMenuItemHelp,                   "Online Help");
 
 NA_LOC(MATButtonVMulS,          "v×s");
@@ -39,7 +40,7 @@ NA_LOC(MATButtonOrthogonalizeV, "Orthogonalize");
 NA_LOC(MATButtonMirrorV,        "Mirror");
 NA_LOC(MATButtonMMulS,          "M×s");
 NA_LOC(MATButtonMDivS,          "M÷s");
-NA_LOC(MATButtonMMulCompV,      "M÷s");
+NA_LOC(MATButtonMMulCompV,      "M⊙v");
 NA_LOC(MATButtonMDivCompV,      "M⊘v");
 NA_LOC(MATButtonMMulCompM,      "M⊙M");
 NA_LOC(MATButtonMDivCompM,      "M⊘M");

@@ -20,6 +20,7 @@ enum{
   MATMenuItemCodeMaple,
   MATMenuItemValueAccuracyNatural,
   MATMenuItemValueAccuracyFloat,
+  MATMenuItemAbout,
   MATMenuItemHelp,
 
   MATButtonVMulS,

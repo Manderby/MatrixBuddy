@@ -74,6 +74,9 @@
   codeMapleItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemCodeMaple)] action:@selector(changeSetting:) keyEquivalent:@""];
   valueAccuracyNaturalItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemValueAccuracyNatural)] action:@selector(changeSetting:) keyEquivalent:@""];
   valueAccuracyFloatItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemValueAccuracyFloat)] action:@selector(changeSetting:) keyEquivalent:@""];
+  
+  aboutItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemAbout)] action:@selector(openAbout:) keyEquivalent:@""];
+  [helpItem setTarget:NSApp];
   helpItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithUTF8String:matTranslate(MATMenuItemHelp)] action:@selector(openHelp:) keyEquivalent:@""];
   [helpItem setTarget:NSApp];
 
@@ -97,9 +100,12 @@
   [gearMenu addItem:valueAccuracyNaturalItem];
   [gearMenu addItem:valueAccuracyFloatItem];
   [gearMenu addItem:[NSMenuItem separatorItem]];
+  [gearMenu addItem:aboutItem];
   [gearMenu addItem:helpItem];
   
   [gearButton setMenu:gearMenu];
+  NA_COCOA_RELEASE(gearMenu);
+
 
   buttons[MAT_COMPUTATION_VMULS]          = buttonVMulS;
   buttons[MAT_COMPUTATION_VDIVS]          = buttonVDivS;

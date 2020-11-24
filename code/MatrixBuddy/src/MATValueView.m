@@ -169,6 +169,7 @@ void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
   if ([copiedItems count]) {
     [self setString: [copiedItems objectAtIndex:0]];
   }
+  NA_COCOA_RELEASE(classes);
 }
 
 
