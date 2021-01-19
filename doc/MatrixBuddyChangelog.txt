@@ -15,12 +15,12 @@ Planned things:
 Version 1.2
 -------------
 
-- Create Universal Binary for Apple Silicon
+- Created Universal Binary for Apple Silicon
 - Added copy and paste buttons
+- Redesigned the user iterface.
 - Corrected a parantheses error in the encoding
 - Simplified english help lines.
 - Added German translation.
-- Redesigned the user iterface.
 - Corrected a small typo. Collinear instead of Colinear.
 
 Version 1.1.1
