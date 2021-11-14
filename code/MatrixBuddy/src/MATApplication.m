@@ -7,7 +7,7 @@
 NSString* formatValue(float value){
   MATValueAccuracy valueAccuracy = [(MATApplication*)NSApp valueAccuracy];
   if(valueAccuracy == MAT_VALUE_ACCURACY_NATURAL){
-    for(int digit = 0; digit < 6; digit++){
+    for(int digit = 0; digit < 10; digit++){
       float testvalue = value * naPow(10, digit);
       if(naRoundf(testvalue) == testvalue){
         NSString* formatstring = [NSString stringWithFormat:@"%%.%df", digit];

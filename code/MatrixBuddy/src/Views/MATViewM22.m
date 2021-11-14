@@ -141,7 +141,7 @@
   while((*codestr != '\0') && (*codestr <= ' ')){codestr++;}
   if(*codestr == '{'){
     mightbeCcode = NA_TRUE;
-    codestr++;
+//    codestr++;
   }
 
   char* newendptr;
@@ -150,6 +150,7 @@
   int curvalue = 0;
   while(1){
     if(curvalue == 4){break;}
+    while(*codestr && *codestr != '.' && (*codestr < '0' || *codestr > '9')){codestr++;}
     if(*codestr == '\0'){break;}
     newvalues[curvalue] = strtod(codestr, &newendptr);
 
