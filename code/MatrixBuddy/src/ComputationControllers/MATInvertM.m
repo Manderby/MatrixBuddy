@@ -9,6 +9,7 @@
 #import "MATViewM33.h"
 #import "MATViewM44.h"
 
+#include "NAUICocoaLegacy.h"
 
 @implementation MATInvertM22
 
@@ -30,7 +31,7 @@
 - (void)update{
 
   NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-  [paragraphStyle setAlignment:NSCenterTextAlignment];
+  [paragraphStyle setAlignment:NATextAlignmentCenter];
   
   NSDictionary *baseAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
       [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:NSItalicFontMask weight:0 size:24.], NSFontAttributeName,
@@ -133,7 +134,7 @@
 
 - (void)update{
   NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-  [paragraphStyle setAlignment:NSCenterTextAlignment];
+  [paragraphStyle setAlignment:NATextAlignmentCenter];
   
   NSDictionary *baseAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
       [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:NSItalicFontMask weight:0 size:24.], NSFontAttributeName,
@@ -234,7 +235,7 @@
 
 - (void)update{
   NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-  [paragraphStyle setAlignment:NSCenterTextAlignment];
+  [paragraphStyle setAlignment:NATextAlignmentCenter];
   
   NSDictionary *baseAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
       [[NSFontManager sharedFontManager] fontWithFamily:@"Times New Roman" traits:NSItalicFontMask weight:0 size:24.], NSFontAttributeName,

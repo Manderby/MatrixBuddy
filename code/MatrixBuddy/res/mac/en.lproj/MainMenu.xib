@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21208.1" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21208.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MATApplication">
-            <connections>
-                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
-            </connections>
-        </customObject>
+        <customObject id="-2" userLabel="File's Owner" customClass="MATApplication"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <window title="Matrix Buddy" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="233" y="278" width="991" height="357"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
             <value key="minSize" type="size" width="991" height="357"/>
             <value key="maxSize" type="size" width="991" height="357"/>
             <view key="contentView" id="EiT-Mj-1SZ">
@@ -483,7 +478,7 @@
             </view>
             <point key="canvasLocation" x="217.5" y="-270.5"/>
         </window>
-        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="-3" userLabel="Application" customClass="MATApplication"/>
         <customView id="Doc-Dj-Hm5" userLabel="MulM4V4" customClass="MATMulM44V4">
             <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -610,11 +605,6 @@
             </connections>
             <point key="canvasLocation" x="280.5" y="589.5"/>
         </customView>
-        <customObject id="Voe-Tx-rLC" customClass="MATApplication">
-            <connections>
-                <outlet property="windowController" destination="l5U-vZ-NRL" id="OIN-qa-4XJ"/>
-            </connections>
-        </customObject>
         <customObject id="l5U-vZ-NRL" customClass="MATWindowController">
             <connections>
                 <outlet property="addM22M22" destination="cHf-Ic-5lp" id="KgX-xX-IB0"/>

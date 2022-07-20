@@ -3,7 +3,7 @@
 #include "MATApplication.h"
 #include "MatrixBuddyTranslations.h"
 #include "MatrixBuddyPreferences.h"
-#include "NAUI.h"
+#include "NAApp.h"
 #include "ManderAppAbout.h"
 
 
@@ -34,8 +34,6 @@ void poststartup(void* arg){
   mandCreateUI();
   mandSetAboutWindowStorageTag(MAT_WINDOW_TAG_ABOUT);
 
-  naLoadNib("MainMenu");
-  
   mandSetAboutDescriptionAndHelpURL(matTranslate(MatrixBuddyApplicationDescription), matTranslate(MatrixBuddyApplicationHelpURL));
   mandAlertNewVersion(matTranslate(MatrixBuddyNewVersionDescription));
 }

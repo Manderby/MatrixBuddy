@@ -27,5 +27,7 @@ NSString* formatValue(float value);
 - (NSString*)statusString:(MATStatus)statusnum retColor:(MATColor*)retcolor;
 - (NSColor*)color:(MATColor)colornum;
 
+- (void)applicationWillFinishLaunching:(NSNotification *)notification;
+
 @end
 

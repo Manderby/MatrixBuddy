@@ -41,6 +41,7 @@
 #include "MatrixBuddyTranslations.h"
 #include "MatrixBuddyPreferences.h"
 
+#include "NAUICocoaLegacy.h"
 
 
 @implementation MATWindowController
@@ -325,40 +326,40 @@
   }
 
   for(MATComputation m=0; m<MAT_COMPUTATION_COUNT; m++){
-    [buttons[m] setState:NSOffState];
+    [buttons[m] setState:NAStateOff];
   }
-  [buttons[computation] setState:NSOnState];
-  [dimension2Radio setState:dimensions == MAT_DIMENSIONS_2 ? NSOnState : NSOffState];
-  [dimension3Radio setState:dimensions == MAT_DIMENSIONS_3 ? NSOnState : NSOffState];
-  [dimension4Radio setState:dimensions == MAT_DIMENSIONS_4 ? NSOnState : NSOffState];
+  [buttons[computation] setState:NAStateOn];
+  [dimension2Radio setState:dimensions == MAT_DIMENSIONS_2 ? NAStateOn : NAStateOff];
+  [dimension3Radio setState:dimensions == MAT_DIMENSIONS_3 ? NAStateOn : NAStateOff];
+  [dimension4Radio setState:dimensions == MAT_DIMENSIONS_4 ? NAStateOn : NAStateOff];
 
-  [showHelpItem setState:(showHelp?NSOnState:NSOffState)];
-  [showIdentifiersItem setState:(showIdentifiers?NSOnState:NSOffState)];
-  [showCopyPasteItem setState:(showCopyPaste?NSOnState:NSOffState)];
+  [showHelpItem setState:(showHelp?NAStateOn:NAStateOff)];
+  [showIdentifiersItem setState:(showIdentifiers?NAStateOn:NAStateOff)];
+  [showCopyPasteItem setState:(showCopyPaste?NAStateOn:NAStateOff)];
 
   if(hasRowFirstTabOrder){
-    [rowFirstTabOrderItem setState:NSOnState];
-    [columnFirstTabOrderItem setState:NSOffState];
+    [rowFirstTabOrderItem setState:NAStateOn];
+    [columnFirstTabOrderItem setState:NAStateOff];
   }else{
-    [rowFirstTabOrderItem setState:NSOffState];
-    [columnFirstTabOrderItem setState:NSOnState];
+    [rowFirstTabOrderItem setState:NAStateOff];
+    [columnFirstTabOrderItem setState:NAStateOn];
   }
   
-  [codeCRowFirstItem1D setState:NSOffState];
-  [codeCRowFirstItem2D setState:NSOffState];
-  [codeCColumnFirstItem1D setState:NSOffState];
-  [codeCColumnFirstItem2D setState:NSOffState];
-  [codeMathematicaItem setState:NSOffState];
-  [codeMatlabItem setState:NSOffState];
-  [codeMapleItem setState:NSOffState];
+  [codeCRowFirstItem1D setState:NAStateOff];
+  [codeCRowFirstItem2D setState:NAStateOff];
+  [codeCColumnFirstItem1D setState:NAStateOff];
+  [codeCColumnFirstItem2D setState:NAStateOff];
+  [codeMathematicaItem setState:NAStateOff];
+  [codeMatlabItem setState:NAStateOff];
+  [codeMapleItem setState:NAStateOff];
   switch(codeStyle){
-  case MAT_CODE_STYLE_C_ROW_FIRST_1D: [codeCRowFirstItem1D setState:NSOnState]; break;
-  case MAT_CODE_STYLE_C_ROW_FIRST_2D: [codeCRowFirstItem2D setState:NSOnState]; break;
-  case MAT_CODE_STYLE_C_COLUMN_FIRST_1D: [codeCColumnFirstItem1D setState:NSOnState]; break;
-  case MAT_CODE_STYLE_C_COLUMN_FIRST_2D: [codeCColumnFirstItem2D setState:NSOnState]; break;
-  case MAT_CODE_STYLE_MATHEMATICA: [codeMathematicaItem setState:NSOnState]; break;
-  case MAT_CODE_STYLE_MATLAB: [codeMatlabItem setState:NSOnState]; break;
-  case MAT_CODE_STYLE_MAPLE: [codeMapleItem setState:NSOnState]; break;
+  case MAT_CODE_STYLE_C_ROW_FIRST_1D: [codeCRowFirstItem1D setState:NAStateOn]; break;
+  case MAT_CODE_STYLE_C_ROW_FIRST_2D: [codeCRowFirstItem2D setState:NAStateOn]; break;
+  case MAT_CODE_STYLE_C_COLUMN_FIRST_1D: [codeCColumnFirstItem1D setState:NAStateOn]; break;
+  case MAT_CODE_STYLE_C_COLUMN_FIRST_2D: [codeCColumnFirstItem2D setState:NAStateOn]; break;
+  case MAT_CODE_STYLE_MATHEMATICA: [codeMathematicaItem setState:NAStateOn]; break;
+  case MAT_CODE_STYLE_MATLAB: [codeMatlabItem setState:NAStateOn]; break;
+  case MAT_CODE_STYLE_MAPLE: [codeMapleItem setState:NAStateOn]; break;
   }
   
   [codeCRowFirstItem1D setAction:showCopyPaste ? @selector(changeSetting:) : nil];
@@ -369,11 +370,11 @@
   [codeMatlabItem setAction:showCopyPaste ? @selector(changeSetting:) : nil];
   [codeMapleItem setAction:showCopyPaste ? @selector(changeSetting:) : nil];
 
-  [valueAccuracyNaturalItem setState:NSOffState];
-  [valueAccuracyFloatItem setState:NSOffState];
+  [valueAccuracyNaturalItem setState:NAStateOff];
+  [valueAccuracyFloatItem setState:NAStateOff];
   switch(valueAccuracy){
-  case MAT_VALUE_ACCURACY_NATURAL: [valueAccuracyNaturalItem setState:NSOnState]; break;
-  case MAT_VALUE_ACCURACY_FLOAT: [valueAccuracyFloatItem setState:NSOnState]; break;
+  case MAT_VALUE_ACCURACY_NATURAL: [valueAccuracyNaturalItem setState:NAStateOn]; break;
+  case MAT_VALUE_ACCURACY_FLOAT: [valueAccuracyFloatItem setState:NAStateOn]; break;
   }
 
   NSRect frame = [computationView frame];
@@ -414,7 +415,7 @@
 
 
 - (IBAction)switchComputation:(id)sender{
-  [buttons[computation] setState:NSOffState];
+  [buttons[computation] setState:NAStateOff];
 
   for(MATComputation m=0; m<MAT_COMPUTATION_COUNT; m++){
     if(sender == buttons[m]){
@@ -423,7 +424,7 @@
     }
   }
   
-  [buttons[computation] setState:NSOnState];
+  [buttons[computation] setState:NAStateOn];
 
   [self update];
 }

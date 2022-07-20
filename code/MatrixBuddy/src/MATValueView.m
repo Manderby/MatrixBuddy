@@ -2,9 +2,12 @@
 #import "MATValueView.h"
 #import "MATApplication.h"
 
-#include "NAUI.h"
-#include "NAUIImage.h"
+#include "NAApp.h"
+
+#include "NAUICocoaLegacy.h"
+
 void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
+
 #include "NABabyImage.h"
 
 @implementation MATValueView
@@ -25,7 +28,7 @@ void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
   [errorText setEditable:NO];
   [errorText setBordered:NO];
   [errorText setDrawsBackground:NO];
-  [errorText setAlignment:NSCenterTextAlignment];
+  [errorText setAlignment:NATextAlignmentCenter];
   [[errorText cell] setLineBreakMode:NSLineBreakByClipping];
   [[errorText cell] setScrollable:YES];
   [self addSubview:errorText];
@@ -41,7 +44,7 @@ void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
   [labelText setEditable:NO];
   [labelText setBordered:NO];
   [labelText setDrawsBackground:NO];
-  [labelText setAlignment:NSCenterTextAlignment];
+  [labelText setAlignment:NATextAlignmentCenter];
   [self addSubview:labelText];
 
   rect.size.width = 44;
@@ -59,8 +62,9 @@ void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
 
   NAString* copyImagePath = naNewApplicationResourcePath(NA_NULL, "copy", "png");
   NABabyImage* mainCopyImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(copyImagePath));
-  NAUIImage* copyImage = naNewUIImage(mainCopyImage, NA_NULL, NA_UIIMAGE_RESOLUTION_2x, NA_BLEND_BLACK_GREEN);
-  naTellNSButtonSetUIImage(copyButton, copyImage);
+  NAUIImage* copyImage = naCreateUIImage(mainCopyImage, NA_NULL, NA_UIIMAGE_RESOLUTION_2x, NA_BLEND_BLACK_GREEN);
+//  naTellNSButtonSetUIImage(copyButton, copyImage);
+  naRelease(copyImage);
   
   [self addSubview:copyButton];
 
@@ -79,9 +83,10 @@ void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
 
   NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
   NABabyImage* mainPasteImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(pasteImagePath));
-  NAUIImage* pasteImage = naNewUIImage(mainPasteImage, NA_NULL, NA_UIIMAGE_RESOLUTION_2x, NA_BLEND_BLACK_GREEN);
-  naTellNSButtonSetUIImage(pasteButton, pasteImage);
-
+  NAUIImage* pasteImage = naCreateUIImage(mainPasteImage, NA_NULL, NA_UIIMAGE_RESOLUTION_2x, NA_BLEND_BLACK_GREEN);
+//  naTellNSButtonSetUIImage(pasteButton, pasteImage);
+  naRelease(pasteImage);
+  
   [self addSubview:pasteButton];
   
 }

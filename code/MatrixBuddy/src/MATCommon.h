@@ -2,9 +2,10 @@
 #ifndef MatrixBuddy_MATCommon_h
 #define MatrixBuddy_MATCommon_h
 
-
 #import <Cocoa/Cocoa.h>
+
 #include "NAVectorAlgebra.h"
+
 
 #define MAT_TEXTFIELD_WIDTH 65
 #define MAT_TEXTFIELD_HEIGHT 22

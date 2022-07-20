@@ -166,4 +166,11 @@ NSString* formatValue(float value){
 }
 
 
+
+- (void)applicationWillFinishLaunching:(NSNotification *)notification
+{
+  naLoadNib("MainMenu");
+}
+
+
 @end

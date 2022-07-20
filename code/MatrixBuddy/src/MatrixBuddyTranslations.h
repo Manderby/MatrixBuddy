@@ -99,4 +99,4 @@ enum{
 
 const NAUTF8Char* matTranslate(NAInt id);
 
-void initTranslations();
+void initTranslations(void);
