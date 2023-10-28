@@ -1,0 +1,79 @@
+Matrix Buddy Changelog
+
+
+Planned things:
+- determinant, condition number, distance to point
+- Keep key responder
+- Make multiple windows
+- Click on label to make it the result
+- Storing Matrices and vectors and organizing them.
+- Remember last computation after programm restart
+- Multiply and Divide matrix and vector row-wise
+- Invert more operations
+
+
+Version 1.2.2
+-------------
+- Fix copy and paste not working on latest macOS
+- Closing application when window closes.
+
+
+Version 1.2.1
+-------------
+- Update to latest macOS
+
+
+Version 1.2
+-------------
+- Created Universal Binary for Apple Silicon
+- Added copy and paste buttons
+- Redesigned the user iterface.
+- Corrected a parantheses error in the encoding
+- Simplified english help lines.
+- Added German translation.
+- Corrected a small typo. Collinear instead of Colinear.
+
+Version 1.1.1
+-------------
+- Added dark mode
+- Moved help online
+
+Version 1.1
+-------------
+- Values are displayed with better readable decimals.
+- Value accuracy can be set in the settings.
+- Scalars, Vectors and Matrices have better default values now.
+- Fixed Quick Help line bug.
+- About window is available again under Snow Leopard and Lion
+- Help window shows correct help again.
+
+
+Version 1.0.1
+-------------
+- Corrected some help lines
+- Corrected Labels of multiplication of matrix with vector
+
+
+Version 1
+---------
+Matrix Buddy is an application providing very simple matrix and vector
+computations. A lot of base operations are accessible by clicking the
+corresponding operator-button and entering values into the textfieds.
+
+All results are computed immediately.
+
+This is included in version 1:
+
+- 2D, 3D and 4D vectors, 2x2, 3x3 and 4x4 matrices.
+- Most common scalar operations, vector operations matrix operations.
+- Indication of result, error or warning.
+- Automatic changing of result matrix/vector depending on where values were
+  entered.
+- Code text field for copy and pasting whole vectors and matrices.
+  For Matlab, Mathematica, Maple and C in different orderings and dimensions.
+- Quick help lines and a help file
+- Settings: Quick Help, Labels, Tab ordering and code style
+- Remembering settings
+- Very simple UI
+- Nice logo
+

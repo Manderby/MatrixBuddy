@@ -372,6 +372,10 @@
 		90108B6C2887BB40002BF5C4 /* NAVectorAlgebra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVectorAlgebra.h; sourceTree = "<group>"; };
 		90108B6D2887BB40002BF5C4 /* NAMathOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMathOperators.h; sourceTree = "<group>"; };
 		90108B6E2887BB40002BF5C4 /* NACoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoord.h; sourceTree = "<group>"; };
+		9019C9112AED1706003855CD /* Matrix Buddy.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Matrix Buddy.app"; sourceTree = "<group>"; };
+		9019C9132AED1706003855CD /* Matrix Buddy.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Matrix Buddy.app"; sourceTree = "<group>"; };
+		9019C91F2AED17EA003855CD /* Matrix Buddy.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Matrix Buddy.app"; sourceTree = "<group>"; };
+		9019C9212AED17EA003855CD /* Matrix Buddy.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Matrix Buddy.app"; sourceTree = "<group>"; };
 		9020CF151BA6E29000E74965 /* Matrix Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matrix Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90233A04256ADE1D00E383A6 /* MatrixBuddyStrings_eng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyStrings_eng.h; sourceTree = "<group>"; };
 		90233A07256ADE1D00E383A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -959,15 +963,68 @@
 			path = NAVectorAlgebra;
 			sourceTree = "<group>";
 		};
+		9019C90F2AED1706003855CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9019C9102AED1706003855CD /* Release */,
+				9019C9122AED1706003855CD /* Debug */,
+			);
+			name = Products;
+			path = "../../../../Library/Developer/Xcode/DerivedData/MatrixBuddyXCode-dhviuezexiufhjckpfkfwtibwoyb/Build/Products";
+			sourceTree = "<group>";
+		};
+		9019C9102AED1706003855CD /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				9019C9112AED1706003855CD /* Matrix Buddy.app */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		9019C9122AED1706003855CD /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				9019C9132AED1706003855CD /* Matrix Buddy.app */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		9019C91D2AED17EA003855CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9019C91E2AED17EA003855CD /* Release */,
+				9019C9202AED17EA003855CD /* Debug */,
+			);
+			name = Products;
+			path = "../../../../Library/Developer/Xcode/DerivedData/MatrixBuddyXCode-dhviuezexiufhjckpfkfwtibwoyb/Build/Products";
+			sourceTree = "<group>";
+		};
+		9019C91E2AED17EA003855CD /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				9019C91F2AED17EA003855CD /* Matrix Buddy.app */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		9019C9202AED17EA003855CD /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				9019C9212AED17EA003855CD /* Matrix Buddy.app */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		9020CF0A1BA6E26300E74965 = {
 			isa = PBXGroup;
 			children = (
-				90108A5D2887BB40002BF5C4 /* NALib */,
-				90233A98256ADE2D00E383A6 /* ManderApp */,
 				9038ECBE256AE05300A95A36 /* doc */,
+				90BA03361BA96C8700A651E9 /* Frameworks */,
+				90233A98256ADE2D00E383A6 /* ManderApp */,
+				90108A5D2887BB40002BF5C4 /* NALib */,
 				90233A03256ADE1D00E383A6 /* res */,
 				90233A12256ADE2200E383A6 /* src */,
-				90BA03361BA96C8700A651E9 /* Frameworks */,
+				9019C91D2AED17EA003855CD /* Products */,
 				9020CF161BA6E29000E74965 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1163,6 +1220,7 @@
 		90BA03361BA96C8700A651E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9019C90F2AED1706003855CD /* Products */,
 				90BA03371BA96CAB00A651E9 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -1194,7 +1252,7 @@
 		9020CF0B1BA6E26300E74965 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					9020CF141BA6E29000E74965 = {
 						CreatedOnToolsVersion = 6.1.1;
