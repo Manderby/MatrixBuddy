@@ -2,6 +2,7 @@
 #include "MATCommon.h"
 #import "MATComputationView.h"
 
+#include "MATViewSASDF.h"
 
 @class MATViewS;
 @class MATViewM22;
@@ -27,6 +28,8 @@
   IBOutlet MATViewM33* A;
   IBOutlet MATViewS* s;
   IBOutlet MATViewM33* B;
+
+  MATViewSASDF* viewS;
 }
 
 - (void)valueChanged:(id)sender;

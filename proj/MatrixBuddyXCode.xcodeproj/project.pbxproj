@@ -122,6 +122,8 @@
 		9038ECEC256DA07300A95A36 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEB256DA07300A95A36 /* copy.png */; };
 		9038ECF0256DA48000A95A36 /* paste.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEF256DA48000A95A36 /* paste.png */; };
 		90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA03371BA96CAB00A651E9 /* WebKit.framework */; };
+		90C573312AED3522003BCA8B /* MATValueViewASDF.c in Sources */ = {isa = PBXBuildFile; fileRef = 90C573302AED3522003BCA8B /* MATValueViewASDF.c */; };
+		90C573342AED39D8003BCA8B /* MATViewSASDF.c in Sources */ = {isa = PBXBuildFile; fileRef = 90C573332AED39D8003BCA8B /* MATViewSASDF.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -486,6 +488,11 @@
 		9038ECEB256DA07300A95A36 /* copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy.png; sourceTree = "<group>"; };
 		9038ECEF256DA48000A95A36 /* paste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paste.png; sourceTree = "<group>"; };
 		90BA03371BA96CAB00A651E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		90C5732F2AED3522003BCA8B /* MATValueViewASDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATValueViewASDF.h; sourceTree = "<group>"; };
+		90C573302AED3522003BCA8B /* MATValueViewASDF.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATValueViewASDF.c; sourceTree = "<group>"; };
+		90C573322AED39D8003BCA8B /* MATViewSASDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewSASDF.h; sourceTree = "<group>"; };
+		90C573332AED39D8003BCA8B /* MATViewSASDF.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATViewSASDF.c; sourceTree = "<group>"; };
+		90C573352AED3EB3003BCA8B /* MATCommonC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATCommonC.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1070,6 +1077,7 @@
 				90233A55256ADE2300E383A6 /* MATApplication.h */,
 				90233A13256ADE2200E383A6 /* MATApplication.m */,
 				90233A18256ADE2200E383A6 /* MATCommon.h */,
+				90C573352AED3EB3003BCA8B /* MATCommonC.h */,
 				90233A57256ADE2300E383A6 /* MATComputationView.h */,
 				90233A16256ADE2200E383A6 /* MATComputationView.m */,
 				90233A5A256ADE2300E383A6 /* MatrixBuddyPreferences.c */,
@@ -1081,6 +1089,8 @@
 				90233A54256ADE2300E383A6 /* MATTypes.h */,
 				90233A59256ADE2300E383A6 /* MATValueView.h */,
 				90233A14256ADE2200E383A6 /* MATValueView.m */,
+				90C5732F2AED3522003BCA8B /* MATValueViewASDF.h */,
+				90C573302AED3522003BCA8B /* MATValueViewASDF.c */,
 				90233A5B256ADE2300E383A6 /* MATWindowController.h */,
 				90233A17256ADE2200E383A6 /* MATWindowController.m */,
 				90233A5C256ADE2300E383A6 /* Views */,
@@ -1163,6 +1173,8 @@
 				90233A69256ADE2300E383A6 /* MATViewM44.m */,
 				90233A67256ADE2300E383A6 /* MATViewS.h */,
 				90233A5D256ADE2300E383A6 /* MATViewS.m */,
+				90C573332AED39D8003BCA8B /* MATViewSASDF.c */,
+				90C573322AED39D8003BCA8B /* MATViewSASDF.h */,
 				90233A5E256ADE2300E383A6 /* MATViewV2.h */,
 				90233A66256ADE2300E383A6 /* MATViewV2.m */,
 				90233A68256ADE2300E383A6 /* MATViewV3.h */,
@@ -1321,6 +1333,7 @@
 				90108B942887BB40002BF5C4 /* NAMenuItem.c in Sources */,
 				90233A71256ADE2300E383A6 /* MATMDivCompV.m in Sources */,
 				90108BA52887BB40002BF5C4 /* NAPNG.c in Sources */,
+				90C573342AED39D8003BCA8B /* MATViewSASDF.c in Sources */,
 				90108B702887BB40002BF5C4 /* NAHeap.c in Sources */,
 				90108B7B2887BB40002BF5C4 /* NATree.c in Sources */,
 				90108B7C2887BB40002BF5C4 /* NATreeIteration.c in Sources */,
@@ -1362,6 +1375,7 @@
 				90233A88256ADE2300E383A6 /* MATMMulCompM.m in Sources */,
 				90108B7D2887BB40002BF5C4 /* NATreeBin.c in Sources */,
 				90108B8F2887BB40002BF5C4 /* NAFont.c in Sources */,
+				90C573312AED3522003BCA8B /* MATValueViewASDF.c in Sources */,
 				90233A8B256ADE2300E383A6 /* MATDiagV.m in Sources */,
 				90108B7F2887BB40002BF5C4 /* NATreeQuad.c in Sources */,
 				90108B792887BB40002BF5C4 /* NABufferSource.c in Sources */,

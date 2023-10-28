@@ -56,6 +56,12 @@
 
 
 
+void mulM33SValueChanged(void* con, void* view){
+  NA_UNUSED(con);
+  NA_UNUSED(view);
+  [(MATMulM33S*)con valueChanged: view];
+}
+
 
 
 @implementation MATMulM33S
@@ -66,6 +72,9 @@
   [A setValues:initA];
   double inits = 1.;
   [s setValues:&inits];
+
+  viewS = matAllocViewS(mulM33SValueChanged, self);
+  [self addSubview:naGetUIElementNativePtrConst(matGetValueViewSpace(viewS))];
 }
 
 
@@ -95,8 +104,12 @@
 - (void)valueChanged:(id)sender{
   NA_UNUSED(sender);
 
+  double myTestValue = matGetValueViewValues(viewS)[0];
+  NA_UNUSED(myTestValue);
+
   NAMat33d result;
-  naMulCompM33d(result, [A values], *[s values]);
+  naMulCompM33d(result, [A values], myTestValue);
+//  naMulCompM33d(result, [A values], *[s values]);
   [B setValues:result];
   
   [self update];

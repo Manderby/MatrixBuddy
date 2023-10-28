@@ -239,7 +239,8 @@
 
 
 - (void)prepareFirstView{
-  [self switchComputation:buttonMMulv];
+  //[self switchComputation:buttonMMulv];
+  [self switchComputation:buttonMMulS];
   
   [buttons[MAT_COMPUTATION_VMULS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMulS)]];
   [buttons[MAT_COMPUTATION_VDIVS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDivS)]];

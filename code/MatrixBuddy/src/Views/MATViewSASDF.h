@@ -1,0 +1,10 @@
+
+#include "../MATValueViewASDF.h"
+#include "MATCommonC.h"
+
+typedef struct MATViewSASDF MATViewSASDF;
+
+MATViewSASDF* matAllocViewS(MATValueChangedHandler handler, void* con);
+void matDeallocViewS(MATViewSASDF* view);
+
+void mat_UpdateViewS(MATViewSASDF* view);
