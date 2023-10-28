@@ -2,7 +2,7 @@
 #include "MATViewSASDF.h"
 
 struct MATViewSASDF{
-  MATValueViewASDF valueView;
+  MATInputMatrix matrix;
 
   MATValueChangedHandler handler;
   void* superCon;
@@ -20,7 +20,7 @@ NABool mat_ViewSChanged(NAReaction reaction){
   naDelete(text);
   
   if(reaction.uiElement == con->textFieldS){
-    mat_SetValueViewValue(con, 0, value);
+    mat_SetInputMatrixValue(con, 0, value);
   }
   
   con->handler(con->superCon, con);
@@ -31,14 +31,15 @@ NABool mat_ViewSChanged(NAReaction reaction){
 
 MATViewSASDF* matAllocViewS(MATValueChangedHandler handler, void* superCon){
   MATViewSASDF* view = naAlloc(MATViewSASDF);
-  mat_InitValueView(&view->valueView, 1);
+
+  mat_InitInputMatrix(&view->matrix, "s\u207b\u00b9\u1d40", 1);
 
   view->handler = handler;
   view->superCon = superCon;
   
   NASpace* space = matGetValueViewSpace(view);
   view->textFieldS = naNewTextField(MAT_TEXTFIELD_WIDTH);
-  naAddSpaceChild(space, view->textFieldS, naMakePos(10, 10));
+  naAddSpaceChild(space, view->textFieldS, naMakePos(10, 30));
   
   naAddUIReaction(view->textFieldS, NA_UI_COMMAND_EDITED, mat_ViewSChanged, view);
 
@@ -48,13 +49,13 @@ MATViewSASDF* matAllocViewS(MATValueChangedHandler handler, void* superCon){
 
 
 void matDeallocViewS(MATViewSASDF* view){
-  mat_ClearValueView(&view->valueView);
+  mat_ClearInputMatrix(&view->matrix);
   naFree(view->textFieldS);
 }
 
 
 
 void mat_UpdateViewS(MATViewSASDF* view){
-  mat_UpdateValueView(&view->valueView);
+  mat_UpdateInputMatrix(&view->matrix);
 }
 
