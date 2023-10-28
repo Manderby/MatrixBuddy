@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -655,7 +656,6 @@
                 <outlet property="codeMapleItem" destination="WKK-Vt-EzL" id="g0h-R9-NsS"/>
                 <outlet property="codeMathematicaItem" destination="3JN-SY-s7H" id="ZHG-kp-CdO"/>
                 <outlet property="codeMatlabItem" destination="djR-Xt-sQS" id="uxT-24-ohr"/>
-                <outlet property="codeNoneItem" destination="dvN-ML-siQ" id="9yE-QG-l8F"/>
                 <outlet property="columnFirstTabOrderItem" destination="mKq-ef-LYS" id="SRK-PS-HGR"/>
                 <outlet property="crossV3V3" destination="q3L-eB-HDl" id="pLX-Ve-FdB"/>
                 <outlet property="diagSM22" destination="GYc-fg-ON2" id="qzD-8C-bLC"/>

@@ -2,6 +2,7 @@
 #import "MATApplication.h"
 #include "MatrixBuddyTranslations.h"
 #include "ManderAppAbout.h"
+#include "MATCommonC.h"
 
 
 NSString* formatValue(float value){
@@ -20,19 +21,55 @@ NSString* formatValue(float value){
 
 
 
+void matPrepareFirstView(){
+  [(MATApplication*)NSApp prepareFirstView];
+}
+
+NAFont* matGetMathFont(){
+  return ((MATApplication*)NSApp)->mathFont;
+}
+NAUIImage* matGetCopyImage(){
+  return ((MATApplication*)NSApp)->copyImage;
+}
+NAUIImage* matGetPasteImage(){
+  return ((MATApplication*)NSApp)->pasteImage;
+}
+
+
 
 @implementation MATApplication
 
 - (id)init{
   self = [super init];
   [self setDelegate:self];
+  
+  mathFont = naCreateFontWithPreset(NA_FONT_KIND_MATH, NA_FONT_SIZE_HUGE);
+  
+  NAString* copyImagePath = naNewApplicationResourcePath(NA_NULL, "copy", "png");
+  NABabyImage* mainCopyImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(copyImagePath));
+  copyImage = naCreateUIImage(mainCopyImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
+
+  NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
+  NABabyImage* mainPasteImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(pasteImagePath));
+  pasteImage = naCreateUIImage(mainPasteImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
+
   return self;
 }
 
 
+- (void)dealloc{
+  naRelease(mathFont);
+  naRelease(copyImage);
+  naRelease(pasteImage);
+  [super dealloc];
+}
+
+- (void)prepareFirstView{
+  [windowController prepareFirstView];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)notification{
   NA_UNUSED(notification);
-  [windowController prepareFirstView];
 }
 
 
@@ -169,7 +206,7 @@ NSString* formatValue(float value){
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification
 {
-  naLoadNib("MainMenu");
+//  naLoadNib("MainMenu", NA_NULL);
 }
 
 

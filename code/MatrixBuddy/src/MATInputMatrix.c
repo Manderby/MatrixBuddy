@@ -3,31 +3,43 @@
 #include "MATCommonC.h"
 
 
+NABool mat_PressCopy(NAReaction reaction){
+
+  return NA_TRUE;
+}
+
+NABool mat_PressPaste(NAReaction reaction){
+
+  return NA_TRUE;
+}
+
+
+
 void mat_InitInputMatrix(
   MATInputMatrix* matrix,
-  const NAUTF8Char* labelText,
-  size_t valueCount)
+  const NAUTF8Char* labelText)
 {
-  matrix->values = naMalloc(valueCount * sizeof(double));
-
   matrix->space = naNewSpace(naMakeSize(100, 100));
-  
-  NAFont* font = naCreateFontWithPreset(NA_FONT_KIND_MATH, NA_FONT_SIZE_HUGE);
-  
+   
   matrix->label = naNewLabel(labelText, MAT_TEXTFIELD_WIDTH);
-  naSetLabelFont(matrix->label, font);
+  naSetLabelFont(matrix->label, matGetMathFont());
   naSetLabelTextAlignment(matrix->label, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelHeight(matrix->label, 40);
   naAddSpaceChild(matrix->space, matrix->label, naMakePos(10, 50));
     
-  naRelease(font);
-  
+  matrix->copyButton = naNewImagePushButton(matGetCopyImage(), naMakeSize(30, 20));
+  naAddUIReaction(matrix->copyButton, NA_UI_COMMAND_PRESSED, mat_PressCopy, matrix);
+  naAddSpaceChild(matrix->space, matrix->copyButton, naMakePos(10, 10));
+
+  matrix->pasteButton = naNewImagePushButton(matGetPasteImage(), naMakeSize(30, 20));
+  naAddUIReaction(matrix->pasteButton, NA_UI_COMMAND_PRESSED, mat_PressPaste, matrix);
+  naAddSpaceChild(matrix->space, matrix->pasteButton, naMakePos(50, 10));
 }
 
 
 
 void mat_ClearInputMatrix(MATInputMatrix* matrix){
-  naFree(matrix->values);
+  NA_UNUSED(matrix);
 }
 
 
@@ -43,16 +55,5 @@ NASpace* matGetValueViewSpace(void* object){
   return matrix->space;
 }
 
-
-
-const double* matGetInputMatrixValues(const void* object){
-  MATInputMatrix* matrix = (MATInputMatrix*)object;
-  return matrix->values;
-}
-
-void mat_SetInputMatrixValue(const void* object, size_t index, double value){
-  MATInputMatrix* matrix = (MATInputMatrix*)object;
-  matrix->values[index] = value;
-}
 
 

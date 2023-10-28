@@ -63,7 +63,7 @@ void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
 
   NAString* copyImagePath = naNewApplicationResourcePath(NA_NULL, "copy", "png");
   NABabyImage* mainCopyImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(copyImagePath));
-  NAUIImage* copyImage = naCreateUIImage(mainCopyImage, NA_NULL, NA_UIIMAGE_RESOLUTION_2x, NA_BLEND_BLACK_GREEN);
+  NAUIImage* copyImage = naCreateUIImage(mainCopyImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
   //naTellNSButtonSetUIImage(copyButton, copyImage);
   naRelease(copyImage);
   
@@ -85,7 +85,7 @@ void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
 
   NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
   NABabyImage* mainPasteImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(pasteImagePath));
-  NAUIImage* pasteImage = naCreateUIImage(mainPasteImage, NA_NULL, NA_UIIMAGE_RESOLUTION_2x, NA_BLEND_BLACK_GREEN);
+  NAUIImage* pasteImage = naCreateUIImage(mainPasteImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
   //naTellNSButtonSetUIImage(pasteButton, pasteImage);
   naRelease(pasteImage);
   

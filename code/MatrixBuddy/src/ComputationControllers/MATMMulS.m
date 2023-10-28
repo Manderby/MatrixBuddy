@@ -104,7 +104,7 @@ void mulM33SValueChanged(void* con, void* view){
 - (void)valueChanged:(id)sender{
   NA_UNUSED(sender);
 
-  double myTestValue = matGetInputMatrixValues(viewS)[0];
+  double myTestValue = matGetViewSValues(viewS)[0];
   NA_UNUSED(myTestValue);
 
   NAMat33d result;

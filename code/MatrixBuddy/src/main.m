@@ -31,8 +31,12 @@ void prestartup(void* arg){
 
 void poststartup(void* arg){
   NA_UNUSED(arg);
+  
   mandCreateUI();
   mandSetAboutWindowStorageTag(MAT_WINDOW_TAG_ABOUT);
+
+  naLoadNib("MainMenu", NA_NULL);
+  matPrepareFirstView();
 
   mandSetAboutDescriptionAndHelpURL(matTranslate(MatrixBuddyApplicationDescription), matTranslate(MatrixBuddyApplicationHelpURL));
   mandAlertNewVersion(matTranslate(MatrixBuddyNewVersionDescription));
@@ -43,7 +47,7 @@ int main(int argc, char *argv[]){
   NA_UNUSED(argv);
   naStartRuntime();
   [MATApplication sharedApplication];
-  naStartApplication(prestartup, poststartup, NA_NULL);
+  naStartApplication(prestartup, poststartup, NA_NULL, NA_NULL);
   naStopRuntime();
   return 0;
 }

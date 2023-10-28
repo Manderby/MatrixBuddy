@@ -1,4 +1,6 @@
 
+#include "NAApp/NAApp.h"
+
 #define MAT_TEXTFIELD_WIDTH 65
 #define MAT_TEXTFIELD_HEIGHT 22
 #define MAT_TEXTFIELD_SPACE_H 5
@@ -22,3 +24,7 @@
 
 
 typedef void(*MATValueChangedHandler)(void*, void*);
+
+NAFont* matGetMathFont(void);
+NAUIImage* matGetCopyImage(void);
+NAUIImage* matGetPasteImage(void);

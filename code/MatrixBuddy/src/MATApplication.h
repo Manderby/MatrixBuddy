@@ -3,17 +3,26 @@
 #include "MATCommon.h"
 #include "ManderApp.h"
 #include "MATWindowController.h"
-
+#include "NAApp/NAApp.h"
 
 
 NSString* formatValue(float value);
 
 
+void matPrepareFirstView(void);
+
 
 
 @interface MATApplication : NSApplication <NSApplicationDelegate>{
   IBOutlet MATWindowController* windowController;
+  
+@public
+  NAFont* mathFont;
+  NAUIImage* copyImage;
+  NAUIImage* pasteImage;
 }
+
+- (void)prepareFirstView;
 
 - (IBAction)openAbout:(NSMenuItem*)sender;
 - (IBAction)openHelp:(NSMenuItem*)sender;
