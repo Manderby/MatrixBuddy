@@ -476,6 +476,9 @@
                     </button>
                 </subviews>
             </view>
+            <connections>
+                <outlet property="delegate" destination="l5U-vZ-NRL" id="JHM-04-eMA"/>
+            </connections>
             <point key="canvasLocation" x="217.5" y="-270.5"/>
         </window>
         <customObject id="-3" userLabel="Application" customClass="MATApplication">

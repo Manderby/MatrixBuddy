@@ -92,7 +92,7 @@
 @class MATInvertM44;
 
 
-@interface MATWindowController : NSWindowController{
+@interface MATWindowController : NSWindowController<NSWindowDelegate>{
   IBOutlet NSButton* gearButton;
 
   IBOutlet NSMenuItem* gearItem;

@@ -12,9 +12,19 @@ Planned things:
 - Invert more operations
 
 
+Version 1.2.2
+-------------
+- Fix copy and paste not working on latest macOS
+- Closing application when window closes.
+
+
+Version 1.2.1
+-------------
+- Update to latest macOS
+
+
 Version 1.2
 -------------
-
 - Created Universal Binary for Apple Silicon
 - Added copy and paste buttons
 - Redesigned the user iterface.
@@ -25,13 +35,11 @@ Version 1.2
 
 Version 1.1.1
 -------------
-
 - Added dark mode
 - Moved help online
 
 Version 1.1
 -------------
-
 - Values are displayed with better readable decimals.
 - Value accuracy can be set in the settings.
 - Scalars, Vectors and Matrices have better default values now.
@@ -42,14 +50,12 @@ Version 1.1
 
 Version 1.0.1
 -------------
-
 - Corrected some help lines
 - Corrected Labels of multiplication of matrix with vector
 
 
 Version 1
 ---------
-
 Matrix Buddy is an application providing very simple matrix and vector
 computations. A lot of base operations are accessible by clicking the
 corresponding operator-button and entering values into the textfieds.

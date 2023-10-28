@@ -413,6 +413,12 @@
 
 
 
+- (BOOL)windowShouldClose:(id)sender{
+  exit(0);  // Close application when window closes.
+  return YES;
+}
+
+
 
 - (IBAction)switchComputation:(id)sender{
   [buttons[computation] setState:NAStateOff];
