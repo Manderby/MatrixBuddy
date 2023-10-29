@@ -95,23 +95,23 @@
 
 
 - (void)setString:(NSString*)string{
-  const char* codestr = [string UTF8String];
+  const char* codeStr = [string UTF8String];
 
-  char* newendptr;
+  char* newEndPtr;
   double newValue = 0.;
   NAVec2d newvalues;
-  int curvalue = 0;
+  int curValue = 0;
   while(1){
-    if(curvalue == 1){break;}
-    if(*codestr == '\0'){break;}
-    newvalues[curvalue] = strtod(codestr, &newendptr);
+    if(curValue == 1){break;}
+    if(*codeStr == '\0'){break;}
+    newvalues[curValue] = strtod(codeStr, &newEndPtr);
 
-    if(newendptr == codestr){
+    if(newEndPtr == codeStr){
       // No conversion found.
-      codestr++;
+      codeStr++;
     }else{
-      codestr = newendptr;
-      curvalue++;
+      codeStr = newEndPtr;
+      curValue++;
     }
   }
   

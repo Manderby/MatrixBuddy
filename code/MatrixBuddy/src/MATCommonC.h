@@ -25,6 +25,12 @@
 
 typedef void(*MATValueChangedHandler)(void*, void*);
 
+NAString* matNewStringWithFormatValue(float value);
+
 NAFont* matGetMathFont(void);
 NAUIImage* matGetCopyImage(void);
 NAUIImage* matGetPasteImage(void);
+
+void matPutStringToPasteboard(const NAString* string);
+NAString* matNewStringFromPasteboard(void);
+void matSetTextFieldCellProperties(NATextField* textField);

@@ -303,7 +303,6 @@
 		9038ECEC256DA07300A95A36 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEB256DA07300A95A36 /* copy.png */; };
 		9038ECF0256DA48000A95A36 /* paste.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEF256DA48000A95A36 /* paste.png */; };
 		90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA03371BA96CAB00A651E9 /* WebKit.framework */; };
-		90C573312AED3522003BCA8B /* MATInputMatrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 90C573302AED3522003BCA8B /* MATInputMatrix.c */; };
 		90C573342AED39D8003BCA8B /* MATViewSASDF.c in Sources */ = {isa = PBXBuildFile; fileRef = 90C573332AED39D8003BCA8B /* MATViewSASDF.c */; };
 /* End PBXBuildFile section */
 
@@ -675,8 +674,6 @@
 		9038ECEB256DA07300A95A36 /* copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy.png; sourceTree = "<group>"; };
 		9038ECEF256DA48000A95A36 /* paste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paste.png; sourceTree = "<group>"; };
 		90BA03371BA96CAB00A651E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		90C5732F2AED3522003BCA8B /* MATInputMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATInputMatrix.h; sourceTree = "<group>"; };
-		90C573302AED3522003BCA8B /* MATInputMatrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATInputMatrix.c; sourceTree = "<group>"; };
 		90C573322AED39D8003BCA8B /* MATViewSASDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewSASDF.h; sourceTree = "<group>"; };
 		90C573332AED39D8003BCA8B /* MATViewSASDF.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATViewSASDF.c; sourceTree = "<group>"; };
 		90C573352AED3EB3003BCA8B /* MATCommonC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATCommonC.h; sourceTree = "<group>"; };
@@ -823,8 +820,6 @@
 				90233A54256ADE2300E383A6 /* MATTypes.h */,
 				90233A59256ADE2300E383A6 /* MATValueView.h */,
 				90233A14256ADE2200E383A6 /* MATValueView.m */,
-				90C5732F2AED3522003BCA8B /* MATInputMatrix.h */,
-				90C573302AED3522003BCA8B /* MATInputMatrix.c */,
 				90233A5B256ADE2300E383A6 /* MATWindowController.h */,
 				90233A17256ADE2200E383A6 /* MATWindowController.m */,
 				90233A5C256ADE2300E383A6 /* Views */,
@@ -1730,7 +1725,6 @@
 				90233A83256ADE2300E383A6 /* MATMSubM.m in Sources */,
 				90233A75256ADE2300E383A6 /* MATDiagS.m in Sources */,
 				90233A88256ADE2300E383A6 /* MATMMulCompM.m in Sources */,
-				90C573312AED3522003BCA8B /* MATInputMatrix.c in Sources */,
 				90233A8B256ADE2300E383A6 /* MATDiagV.m in Sources */,
 				90233A82256ADE2300E383A6 /* MATVDotV.m in Sources */,
 				90233A92256ADE2300E383A6 /* MATViewV3.m in Sources */,

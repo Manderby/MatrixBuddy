@@ -131,33 +131,33 @@
 
 
 - (void)setString:(NSString*)string{
-  const char* codestr = [string UTF8String];
+  const char* codeStr = [string UTF8String];
 
   // Strip the first whitespaces and find out if there is a curly bracket. If
   // so, we assume, this is a C code string and will treat the ordering
   // according to the setting.
   NABool mightbeCcode = NA_FALSE;
-  while((*codestr != '\0') && (*codestr <= ' ')){codestr++;}
-  if(*codestr == '{'){
+  while((*codeStr != '\0') && (*codeStr <= ' ')){codeStr++;}
+  if(*codeStr == '{'){
     mightbeCcode = NA_TRUE;
-    codestr++;
+    codeStr++;
   }
 
-  char* newendptr;
+  char* newEndPtr;
   NAMat44d newvalues;
   naFillM44dWithDiag(newvalues, 0.);
-  int curvalue = 0;
+  int curValue = 0;
   while(1){
-    if(curvalue == 16){break;}
-    if(*codestr == '\0'){break;}
-    newvalues[curvalue] = strtod(codestr, &newendptr);
+    if(curValue == 16){break;}
+    if(*codeStr == '\0'){break;}
+    newvalues[curValue] = strtod(codeStr, &newEndPtr);
 
-    if(newendptr == codestr){
+    if(newEndPtr == codeStr){
       // No conversion found.
-      codestr++;
+      codeStr++;
     }else{
-      codestr = newendptr;
-      curvalue++;
+      codeStr = newEndPtr;
+      curValue++;
     }
   }
   

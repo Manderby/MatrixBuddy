@@ -1,13 +1,15 @@
 
-#include "../MATInputMatrix.h"
 #include "MATCommonC.h"
 
 typedef struct MATViewSASDF MATViewSASDF;
 
-MATViewSASDF* matAllocViewS(MATValueChangedHandler handler, void* con);
+MATViewSASDF* matAllocViewS(
+  MATValueChangedHandler handler,
+  void* con,
+  const double* initValues);
 void matDeallocViewS(MATViewSASDF* view);
 
-void mat_UpdateViewS(MATViewSASDF* view);
+void matUpdateViewS(MATViewSASDF* view);
 
-// Value methods
 const double* matGetViewSValues(const MATViewSASDF* view);
+const NASpace* matGetViewSSpace(const MATViewSASDF* view);

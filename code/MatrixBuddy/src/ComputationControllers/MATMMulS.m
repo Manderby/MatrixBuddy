@@ -73,8 +73,9 @@ void mulM33SValueChanged(void* con, void* view){
   double inits = 1.;
   [s setValues:&inits];
 
-  viewS = matAllocViewS(mulM33SValueChanged, self);
-  [self addSubview:naGetUIElementNativePtrConst(matGetValueViewSpace(viewS))];
+  double initS[] = {1.};
+  viewS = matAllocViewS(mulM33SValueChanged, self, initS);
+  [self addSubview:naGetUIElementNativePtrConst(matGetViewSSpace(viewS))];
 }
 
 
@@ -97,6 +98,8 @@ void mulM33SValueChanged(void* con, void* view){
   [s update];
   [B update];
   [B setPasteEnabled:NA_FALSE];
+  
+  matUpdateViewS(viewS);
 }
 
 
