@@ -4,9 +4,13 @@
 //
 NA_LOC_LANG("eng");
 
-NA_LOC(MatrixBuddyApplicationDescription, "Simple linear algebra. Matrix and Vector.");
-NA_LOC(MatrixBuddyApplicationHelpURL, "http://manderc.com/apps/matrixbuddy/help/index_en.php");
-NA_LOC(MatrixBuddyNewVersionDescription, "Matrix Buddy is now running universally on both Intel and Apple Silicon.\n\nRedesigned User Interface\nAdded Copy and Paste buttons\nAdded German translation");
+NA_LOC(MATAbout,          "About %s");
+NA_LOC(MATDone,           "Done");
+NA_LOC(MATVersionBuild,   "Version %s (Build %s)");
+NA_LOC(MATOnlineHelp,     "Online Help");
+NA_LOC(MATApplicationDescription, "Simple linear algebra. Matrix and Vector.");
+NA_LOC(MATApplicationHelpURL, "http://manderc.com/apps/matrixbuddy/help/index_en.php");
+NA_LOC(MATNewVersionDescription, "Matrix Buddy is now running universally on both Intel and Apple Silicon.\n\nRedesigned User Interface\nAdded Copy and Paste buttons\nAdded German translation");
 
 NA_LOC(MATMenuItemShowHelp,               "Quick Help Line");
 NA_LOC(MATMenuItemShowIdentifiers,        "Identifiers");

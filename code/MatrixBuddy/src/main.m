@@ -1,10 +1,9 @@
 
 #include "MATCommon.h"
 #include "MATApplication.h"
-#include "MatrixBuddyTranslations.h"
-#include "MatrixBuddyPreferences.h"
+#include "MATTranslations.h"
+#include "MATPreferences.h"
 #include "NAApp.h"
-#include "ManderAppAbout.h"
 
 
 const char* MATPrefShowHelp = "showHelp";
@@ -13,7 +12,6 @@ const char* MATPrefUseRowFirstTabOrder = "useRowFirstTabOrder";
 const char* MATPrefCodeStyle = "codeStyle";
 const char* MATPrefValueAccuracy = "valueAccuracy";
 
-#define MAT_WINDOW_TAG_ABOUT 1
 
 void prestartup(void* arg){
   NA_UNUSED(arg);
@@ -24,7 +22,6 @@ void prestartup(void* arg){
 //  naSetApplicationBuildString("1.1.4");
 //  naSetApplicationIconPath("icon.png");
 
-  mandInitManderApp();
   initTranslations();
   initPreferences();
 }
@@ -32,14 +29,10 @@ void prestartup(void* arg){
 void poststartup(void* arg){
   NA_UNUSED(arg);
   
-  mandCreateUI();
-  mandSetAboutWindowStorageTag(MAT_WINDOW_TAG_ABOUT);
-
   naLoadNib("MainMenu", NA_NULL);
   matPrepareFirstView();
 
-  mandSetAboutDescriptionAndHelpURL(matTranslate(MatrixBuddyApplicationDescription), matTranslate(MatrixBuddyApplicationHelpURL));
-  mandAlertNewVersion(matTranslate(MatrixBuddyNewVersionDescription));
+  //mandAlertNewVersion(matTranslate(MATNewVersionDescription));
 }
 
 int main(int argc, char *argv[]){

@@ -1,9 +1,9 @@
 
 
 #include "MATCommon.h"
-#include "ManderApp.h"
 #include "MATWindowController.h"
 #include "NAApp/NAApp.h"
+#include "MATAboutController.h"
 
 
 NSString* formatValue(float value);
@@ -20,6 +20,7 @@ void matPrepareFirstView(void);
   NAFont* mathFont;
   NAUIImage* copyImage;
   NAUIImage* pasteImage;
+  MATAboutController* aboutController;
 }
 
 - (void)prepareFirstView;

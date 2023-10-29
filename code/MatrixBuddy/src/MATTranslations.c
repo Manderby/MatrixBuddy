@@ -1,5 +1,5 @@
 
-#include "MatrixBuddyTranslations.h"
+#include "MATTranslations.h"
 
 NAInt translatorGroup;
 

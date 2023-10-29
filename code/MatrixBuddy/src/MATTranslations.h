@@ -2,9 +2,13 @@
 #include "NATranslator.h"
 
 enum{
-  MatrixBuddyApplicationDescription,
-  MatrixBuddyApplicationHelpURL,
-  MatrixBuddyNewVersionDescription,
+  MATAbout,
+  MATDone,
+  MATVersionBuild,
+  MATOnlineHelp,
+  MATApplicationDescription,
+  MATApplicationHelpURL,
+  MATNewVersionDescription,
 
   MATMenuItemShowHelp,
   MATMenuItemShowIdentifiers,

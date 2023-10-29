@@ -1,5 +1,5 @@
 
-#include "MatrixBuddyPreferences.h"
+#include "MATPreferences.h"
 #include "MATTypes.h"
 
 const char* MATPrefs[MATPrefCount] = {

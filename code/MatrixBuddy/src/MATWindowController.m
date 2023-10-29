@@ -38,8 +38,8 @@
 #import "MATTransposeM.h"
 #import "MATInvertM.h"
 
-#include "MatrixBuddyTranslations.h"
-#include "MatrixBuddyPreferences.h"
+#include "MATTranslations.h"
+#include "MATPreferences.h"
 
 #include "NAUICocoaLegacy.h"
 

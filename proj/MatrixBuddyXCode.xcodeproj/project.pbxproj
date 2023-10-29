@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90182B6E2AEE877700E37219 /* MATAboutController.c in Sources */ = {isa = PBXBuildFile; fileRef = 90182B6C2AEE877700E37219 /* MATAboutController.c */; };
 		90233A0D256ADE1D00E383A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90233A06256ADE1D00E383A6 /* InfoPlist.strings */; };
 		90233A0E256ADE1D00E383A6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90233A08256ADE1D00E383A6 /* MainMenu.xib */; };
 		90233A10256ADE1D00E383A6 /* MatrixBuddy.icns in Resources */ = {isa = PBXBuildFile; fileRef = 90233A0C256ADE1D00E383A6 /* MatrixBuddy.icns */; };
@@ -44,8 +45,8 @@
 		90233A8B256ADE2300E383A6 /* MATDiagV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A51256ADE2300E383A6 /* MATDiagV.m */; };
 		90233A8C256ADE2300E383A6 /* MATVDivS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A52256ADE2300E383A6 /* MATVDivS.m */; };
 		90233A8D256ADE2300E383A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A56256ADE2300E383A6 /* main.m */; };
-		90233A8E256ADE2300E383A6 /* MatrixBuddyTranslations.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A58256ADE2300E383A6 /* MatrixBuddyTranslations.c */; };
-		90233A8F256ADE2300E383A6 /* MatrixBuddyPreferences.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A5A256ADE2300E383A6 /* MatrixBuddyPreferences.c */; };
+		90233A8E256ADE2300E383A6 /* MATTranslations.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A58256ADE2300E383A6 /* MATTranslations.c */; };
+		90233A8F256ADE2300E383A6 /* MATPreferences.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A5A256ADE2300E383A6 /* MATPreferences.c */; };
 		90233A90256ADE2300E383A6 /* MATViewS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A5D256ADE2300E383A6 /* MATViewS.m */; };
 		90233A91256ADE2300E383A6 /* MATViewV4.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A5F256ADE2300E383A6 /* MATViewV4.m */; };
 		90233A92256ADE2300E383A6 /* MATViewV3.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A62256ADE2300E383A6 /* MATViewV3.m */; };
@@ -297,17 +298,6 @@
 		902C12B92AEDAA5A0069382F /* NAVectorAlgebra.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C11C52AEDAA5A0069382F /* NAVectorAlgebra.h */; };
 		902C12BA2AEDAA5A0069382F /* NAMathOperators.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C11C62AEDAA5A0069382F /* NAMathOperators.h */; };
 		902C12BB2AEDAA5A0069382F /* NACoord.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C11C72AEDAA5A0069382F /* NACoord.h */; };
-		902C12D42AEDAB740069382F /* ManderApp_deu.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C12C92AEDAB740069382F /* ManderApp_deu.h */; };
-		902C12D52AEDAB740069382F /* ManderApp_eng.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C12CA2AEDAB740069382F /* ManderApp_eng.h */; };
-		902C12D62AEDAB740069382F /* ManderApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C12CC2AEDAB740069382F /* ManderApp.h */; };
-		902C12D72AEDAB740069382F /* ManderAppPreferences.c in Sources */ = {isa = PBXBuildFile; fileRef = 902C12CD2AEDAB740069382F /* ManderAppPreferences.c */; };
-		902C12D82AEDAB740069382F /* ManderAppAbout.c in Sources */ = {isa = PBXBuildFile; fileRef = 902C12CE2AEDAB740069382F /* ManderAppAbout.c */; };
-		902C12D92AEDAB740069382F /* ManderAppTranslations.c in Sources */ = {isa = PBXBuildFile; fileRef = 902C12CF2AEDAB740069382F /* ManderAppTranslations.c */; };
-		902C12DA2AEDAB740069382F /* ManderApp.c in Sources */ = {isa = PBXBuildFile; fileRef = 902C12D02AEDAB740069382F /* ManderApp.c */; };
-		902C12DB2AEDAB740069382F /* ManderAppPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C12D12AEDAB740069382F /* ManderAppPreferences.h */; };
-		902C12DC2AEDAB740069382F /* ManderAppAbout.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C12D22AEDAB740069382F /* ManderAppAbout.h */; };
-		902C12DD2AEDAB740069382F /* ManderAppTranslations.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C12D32AEDAB740069382F /* ManderAppTranslations.h */; };
-		902C12E02AEDAC0C0069382F /* libManderApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 902C12C22AEDAB670069382F /* libManderApp.a */; };
 		902C12E12AEDAC0C0069382F /* libNALib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 902C10AE2AEDAA370069382F /* libNALib.a */; };
 		9038ECC0256AE05300A95A36 /* MatrixBuddyChangelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECBF256AE05300A95A36 /* MatrixBuddyChangelog.txt */; };
 		9038ECEC256DA07300A95A36 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEB256DA07300A95A36 /* copy.png */; };
@@ -325,16 +315,11 @@
 			remoteGlobalIDString = 902C10AD2AEDAA370069382F;
 			remoteInfo = NALib;
 		};
-		902C12DE2AEDAB800069382F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9020CF0B1BA6E26300E74965 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 902C12C12AEDAB670069382F;
-			remoteInfo = ManderApp;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90182B6C2AEE877700E37219 /* MATAboutController.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATAboutController.c; sourceTree = "<group>"; };
+		90182B6D2AEE877700E37219 /* MATAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATAboutController.h; sourceTree = "<group>"; };
 		9019C9112AED1706003855CD /* Matrix Buddy.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Matrix Buddy.app"; sourceTree = "<group>"; };
 		9019C9132AED1706003855CD /* Matrix Buddy.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Matrix Buddy.app"; sourceTree = "<group>"; };
 		9019C91F2AED17EA003855CD /* Matrix Buddy.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Matrix Buddy.app"; sourceTree = "<group>"; };
@@ -348,11 +333,11 @@
 		90233A0C256ADE1D00E383A6 /* MatrixBuddy.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MatrixBuddy.icns; sourceTree = "<group>"; };
 		90233A13256ADE2200E383A6 /* MATApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATApplication.m; sourceTree = "<group>"; };
 		90233A14256ADE2200E383A6 /* MATValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATValueView.m; sourceTree = "<group>"; };
-		90233A15256ADE2200E383A6 /* MatrixBuddyTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyTranslations.h; sourceTree = "<group>"; };
+		90233A15256ADE2200E383A6 /* MATTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATTranslations.h; sourceTree = "<group>"; };
 		90233A16256ADE2200E383A6 /* MATComputationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATComputationView.m; sourceTree = "<group>"; };
 		90233A17256ADE2200E383A6 /* MATWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATWindowController.m; sourceTree = "<group>"; };
 		90233A18256ADE2200E383A6 /* MATCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATCommon.h; sourceTree = "<group>"; };
-		90233A19256ADE2200E383A6 /* MatrixBuddyPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyPreferences.h; sourceTree = "<group>"; };
+		90233A19256ADE2200E383A6 /* MATPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATPreferences.h; sourceTree = "<group>"; };
 		90233A1A256ADE2200E383A6 /* MATTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATTextField.m; sourceTree = "<group>"; };
 		90233A1C256ADE2200E383A6 /* MATMDivCompV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMDivCompV.m; sourceTree = "<group>"; };
 		90233A1D256ADE2200E383A6 /* MATVCrossV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVCrossV.m; sourceTree = "<group>"; };
@@ -414,9 +399,9 @@
 		90233A55256ADE2300E383A6 /* MATApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATApplication.h; sourceTree = "<group>"; };
 		90233A56256ADE2300E383A6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		90233A57256ADE2300E383A6 /* MATComputationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATComputationView.h; sourceTree = "<group>"; };
-		90233A58256ADE2300E383A6 /* MatrixBuddyTranslations.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MatrixBuddyTranslations.c; sourceTree = "<group>"; };
+		90233A58256ADE2300E383A6 /* MATTranslations.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATTranslations.c; sourceTree = "<group>"; };
 		90233A59256ADE2300E383A6 /* MATValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATValueView.h; sourceTree = "<group>"; };
-		90233A5A256ADE2300E383A6 /* MatrixBuddyPreferences.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MatrixBuddyPreferences.c; sourceTree = "<group>"; };
+		90233A5A256ADE2300E383A6 /* MATPreferences.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATPreferences.c; sourceTree = "<group>"; };
 		90233A5B256ADE2300E383A6 /* MATWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATWindowController.h; sourceTree = "<group>"; };
 		90233A5D256ADE2300E383A6 /* MATViewS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATViewS.m; sourceTree = "<group>"; };
 		90233A5E256ADE2300E383A6 /* MATViewV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewV2.h; sourceTree = "<group>"; };
@@ -685,18 +670,6 @@
 		902C11C52AEDAA5A0069382F /* NAVectorAlgebra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVectorAlgebra.h; sourceTree = "<group>"; };
 		902C11C62AEDAA5A0069382F /* NAMathOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMathOperators.h; sourceTree = "<group>"; };
 		902C11C72AEDAA5A0069382F /* NACoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoord.h; sourceTree = "<group>"; };
-		902C12C22AEDAB670069382F /* libManderApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libManderApp.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		902C12C72AEDAB740069382F /* ManderApp.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ManderApp.vcxproj; sourceTree = "<group>"; };
-		902C12C92AEDAB740069382F /* ManderApp_deu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderApp_deu.h; sourceTree = "<group>"; };
-		902C12CA2AEDAB740069382F /* ManderApp_eng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderApp_eng.h; sourceTree = "<group>"; };
-		902C12CC2AEDAB740069382F /* ManderApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderApp.h; sourceTree = "<group>"; };
-		902C12CD2AEDAB740069382F /* ManderAppPreferences.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ManderAppPreferences.c; sourceTree = "<group>"; };
-		902C12CE2AEDAB740069382F /* ManderAppAbout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ManderAppAbout.c; sourceTree = "<group>"; };
-		902C12CF2AEDAB740069382F /* ManderAppTranslations.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ManderAppTranslations.c; sourceTree = "<group>"; };
-		902C12D02AEDAB740069382F /* ManderApp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ManderApp.c; sourceTree = "<group>"; };
-		902C12D12AEDAB740069382F /* ManderAppPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderAppPreferences.h; sourceTree = "<group>"; };
-		902C12D22AEDAB740069382F /* ManderAppAbout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderAppAbout.h; sourceTree = "<group>"; };
-		902C12D32AEDAB740069382F /* ManderAppTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManderAppTranslations.h; sourceTree = "<group>"; };
 		9038ECBF256AE05300A95A36 /* MatrixBuddyChangelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MatrixBuddyChangelog.txt; sourceTree = "<group>"; };
 		9038ECC3256AE1E200A95A36 /* MatrixBuddyStrings_deu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyStrings_deu.h; sourceTree = "<group>"; };
 		9038ECEB256DA07300A95A36 /* copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy.png; sourceTree = "<group>"; };
@@ -714,20 +687,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				902C12E02AEDAC0C0069382F /* libManderApp.a in Frameworks */,
 				902C12E12AEDAC0C0069382F /* libNALib.a in Frameworks */,
 				90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		902C10AC2AEDAA370069382F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		902C12C02AEDAB670069382F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -795,7 +760,6 @@
 				9038ECBE256AE05300A95A36 /* doc */,
 				90BA03361BA96C8700A651E9 /* Frameworks */,
 				902C10B22AEDAA590069382F /* NALib */,
-				902C12C62AEDAB740069382F /* ManderApp */,
 				90233A03256ADE1D00E383A6 /* res */,
 				90233A12256ADE2200E383A6 /* src */,
 				9019C91D2AED17EA003855CD /* Products */,
@@ -808,7 +772,6 @@
 			children = (
 				9020CF151BA6E29000E74965 /* Matrix Buddy.app */,
 				902C10AE2AEDAA370069382F /* libNALib.a */,
-				902C12C22AEDAB670069382F /* libManderApp.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -843,16 +806,18 @@
 			children = (
 				90233A1B256ADE2200E383A6 /* ComputationControllers */,
 				90233A56256ADE2300E383A6 /* main.m */,
+				90182B6C2AEE877700E37219 /* MATAboutController.c */,
+				90182B6D2AEE877700E37219 /* MATAboutController.h */,
 				90233A55256ADE2300E383A6 /* MATApplication.h */,
 				90233A13256ADE2200E383A6 /* MATApplication.m */,
 				90233A18256ADE2200E383A6 /* MATCommon.h */,
 				90C573352AED3EB3003BCA8B /* MATCommonC.h */,
 				90233A57256ADE2300E383A6 /* MATComputationView.h */,
 				90233A16256ADE2200E383A6 /* MATComputationView.m */,
-				90233A5A256ADE2300E383A6 /* MatrixBuddyPreferences.c */,
-				90233A19256ADE2200E383A6 /* MatrixBuddyPreferences.h */,
-				90233A58256ADE2300E383A6 /* MatrixBuddyTranslations.c */,
-				90233A15256ADE2200E383A6 /* MatrixBuddyTranslations.h */,
+				90233A5A256ADE2300E383A6 /* MATPreferences.c */,
+				90233A19256ADE2200E383A6 /* MATPreferences.h */,
+				90233A58256ADE2300E383A6 /* MATTranslations.c */,
+				90233A15256ADE2200E383A6 /* MATTranslations.h */,
 				90233A6B256ADE2300E383A6 /* MATTextField.h */,
 				90233A1A256ADE2200E383A6 /* MATTextField.m */,
 				90233A54256ADE2300E383A6 /* MATTypes.h */,
@@ -1421,41 +1386,6 @@
 			path = NAVectorAlgebra;
 			sourceTree = "<group>";
 		};
-		902C12C62AEDAB740069382F /* ManderApp */ = {
-			isa = PBXGroup;
-			children = (
-				902C12C72AEDAB740069382F /* ManderApp.vcxproj */,
-				902C12C82AEDAB740069382F /* res */,
-				902C12CB2AEDAB740069382F /* src */,
-			);
-			name = ManderApp;
-			path = ../lib/ManderApp/code/ManderApp;
-			sourceTree = "<group>";
-		};
-		902C12C82AEDAB740069382F /* res */ = {
-			isa = PBXGroup;
-			children = (
-				902C12C92AEDAB740069382F /* ManderApp_deu.h */,
-				902C12CA2AEDAB740069382F /* ManderApp_eng.h */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		902C12CB2AEDAB740069382F /* src */ = {
-			isa = PBXGroup;
-			children = (
-				902C12CC2AEDAB740069382F /* ManderApp.h */,
-				902C12CD2AEDAB740069382F /* ManderAppPreferences.c */,
-				902C12CE2AEDAB740069382F /* ManderAppAbout.c */,
-				902C12CF2AEDAB740069382F /* ManderAppTranslations.c */,
-				902C12D02AEDAB740069382F /* ManderApp.c */,
-				902C12D12AEDAB740069382F /* ManderAppPreferences.h */,
-				902C12D22AEDAB740069382F /* ManderAppAbout.h */,
-				902C12D32AEDAB740069382F /* ManderAppTranslations.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		9038ECBE256AE05300A95A36 /* doc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1670,19 +1600,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		902C12BE2AEDAB670069382F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				902C12D52AEDAB740069382F /* ManderApp_eng.h in Headers */,
-				902C12D62AEDAB740069382F /* ManderApp.h in Headers */,
-				902C12DB2AEDAB740069382F /* ManderAppPreferences.h in Headers */,
-				902C12DD2AEDAB740069382F /* ManderAppTranslations.h in Headers */,
-				902C12DC2AEDAB740069382F /* ManderAppAbout.h in Headers */,
-				902C12D42AEDAB740069382F /* ManderApp_deu.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -1697,7 +1614,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				902C12DF2AEDAB800069382F /* PBXTargetDependency */,
 				902C12BD2AEDAA690069382F /* PBXTargetDependency */,
 			);
 			name = "Matrix Buddy";
@@ -1720,23 +1636,6 @@
 			name = NALib;
 			productName = NALib;
 			productReference = 902C10AE2AEDAA370069382F /* libNALib.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		902C12C12AEDAB670069382F /* ManderApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 902C12C32AEDAB670069382F /* Build configuration list for PBXNativeTarget "ManderApp" */;
-			buildPhases = (
-				902C12BE2AEDAB670069382F /* Headers */,
-				902C12BF2AEDAB670069382F /* Sources */,
-				902C12C02AEDAB670069382F /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ManderApp;
-			productName = ManderApp;
-			productReference = 902C12C22AEDAB670069382F /* libManderApp.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -1762,11 +1661,6 @@
 						DevelopmentTeam = YH3QFD54JB;
 						ProvisioningStyle = Automatic;
 					};
-					902C12C12AEDAB670069382F = {
-						CreatedOnToolsVersion = 14.1;
-						DevelopmentTeam = YH3QFD54JB;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 9020CF0E1BA6E26300E74965 /* Build configuration list for PBXProject "MatrixBuddyXCode" */;
@@ -1785,7 +1679,6 @@
 			targets = (
 				9020CF141BA6E29000E74965 /* Matrix Buddy */,
 				902C10AD2AEDAA370069382F /* NALib */,
-				902C12C12AEDAB670069382F /* ManderApp */,
 			);
 		};
 /* End PBXProject section */
@@ -1823,6 +1716,7 @@
 				90233A87256ADE2300E383A6 /* MATMMulM.m in Sources */,
 				90233A7F256ADE2300E383A6 /* MATVSubV.m in Sources */,
 				90233A76256ADE2300E383A6 /* MATMAddM.m in Sources */,
+				90182B6E2AEE877700E37219 /* MATAboutController.c in Sources */,
 				90233A7B256ADE2300E383A6 /* MATMMulS.m in Sources */,
 				90233A8D256ADE2300E383A6 /* main.m in Sources */,
 				90233A84256ADE2300E383A6 /* MATLengthV.m in Sources */,
@@ -1830,7 +1724,7 @@
 				90233A95256ADE2300E383A6 /* MATViewV2.m in Sources */,
 				90233A93256ADE2300E383A6 /* MATViewM33.m in Sources */,
 				90233A8A256ADE2300E383A6 /* MATMDivS.m in Sources */,
-				90233A8E256ADE2300E383A6 /* MatrixBuddyTranslations.c in Sources */,
+				90233A8E256ADE2300E383A6 /* MATTranslations.c in Sources */,
 				90233A91256ADE2300E383A6 /* MATViewV4.m in Sources */,
 				90233A73256ADE2300E383A6 /* MATVAddV.m in Sources */,
 				90233A83256ADE2300E383A6 /* MATMSubM.m in Sources */,
@@ -1852,7 +1746,7 @@
 				90233A80256ADE2300E383A6 /* MATMirrorV.m in Sources */,
 				90233A94256ADE2300E383A6 /* MATViewM22.m in Sources */,
 				90233A79256ADE2300E383A6 /* MATVMulS.m in Sources */,
-				90233A8F256ADE2300E383A6 /* MatrixBuddyPreferences.c in Sources */,
+				90233A8F256ADE2300E383A6 /* MATPreferences.c in Sources */,
 				90233A78256ADE2300E383A6 /* MATVMulCompV.m in Sources */,
 				90233A6E256ADE2300E383A6 /* MATComputationView.m in Sources */,
 				90233A77256ADE2300E383A6 /* MATNormalizeV.m in Sources */,
@@ -1924,17 +1818,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		902C12BF2AEDAB670069382F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				902C12DA2AEDAB740069382F /* ManderApp.c in Sources */,
-				902C12D92AEDAB740069382F /* ManderAppTranslations.c in Sources */,
-				902C12D82AEDAB740069382F /* ManderAppAbout.c in Sources */,
-				902C12D72AEDAB740069382F /* ManderAppPreferences.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1942,11 +1825,6 @@
 			isa = PBXTargetDependency;
 			target = 902C10AD2AEDAA370069382F /* NALib */;
 			targetProxy = 902C12BC2AEDAA690069382F /* PBXContainerItemProxy */;
-		};
-		902C12DF2AEDAB800069382F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 902C12C12AEDAB670069382F /* ManderApp */;
-			targetProxy = 902C12DE2AEDAB800069382F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2208,72 +2086,6 @@
 			};
 			name = Release;
 		};
-		902C12C42AEDAB670069382F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = YH3QFD54JB;
-				EXECUTABLE_PREFIX = lib;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		902C12C52AEDAB670069382F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = YH3QFD54JB;
-				ENABLE_NS_ASSERTIONS = NO;
-				EXECUTABLE_PREFIX = lib;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2300,15 +2112,6 @@
 			buildConfigurations = (
 				902C10B02AEDAA370069382F /* Debug */,
 				902C10B12AEDAA370069382F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		902C12C32AEDAB670069382F /* Build configuration list for PBXNativeTarget "ManderApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				902C12C42AEDAB670069382F /* Debug */,
-				902C12C52AEDAB670069382F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

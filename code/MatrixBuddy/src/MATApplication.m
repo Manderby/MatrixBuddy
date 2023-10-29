@@ -1,7 +1,6 @@
 
 #import "MATApplication.h"
-#include "MatrixBuddyTranslations.h"
-#include "ManderAppAbout.h"
+#include "MATTranslations.h"
 #include "MATCommonC.h"
 
 
@@ -52,7 +51,7 @@ NAUIImage* matGetPasteImage(){
   NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
   NABabyImage* mainPasteImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(pasteImagePath));
   pasteImage = naCreateUIImage(mainPasteImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
-
+  
   return self;
 }
 
@@ -65,6 +64,7 @@ NAUIImage* matGetPasteImage(){
 }
 
 - (void)prepareFirstView{
+  aboutController = matAllocAboutController();
   [windowController prepareFirstView];
 }
 
@@ -90,12 +90,12 @@ NAUIImage* matGetPasteImage(){
 
 - (IBAction)openAbout:(NSMenuItem*)sender{
   NA_UNUSED(sender);
-  mandShowAboutController();
+  matShowAboutController(aboutController);
 }
 
 - (IBAction)openHelp:(NSMenuItem*)sender{
   NA_UNUSED(sender);
-  naOpenURLInBrowser(matTranslate(MatrixBuddyApplicationHelpURL));
+  naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
 }
 
 
