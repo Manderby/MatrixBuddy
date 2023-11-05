@@ -1,5 +1,6 @@
 
 #include "NAApp/NAApp.h"
+#include "MATTypes.h"
 
 #define MAT_TEXTFIELD_WIDTH 65
 #define MAT_TEXTFIELD_HEIGHT 22
@@ -34,3 +35,7 @@ NAUIImage* matGetPasteImage(void);
 void matPutStringToPasteboard(const NAString* string);
 NAString* matNewStringFromPasteboard(void);
 void matSetTextFieldCellProperties(NATextField* textField);
+
+const NAUTF8Char* matGetUTF8StringWithStatus(MATStatus status);
+MATColor matGetColorWithStatus(MATStatus status);
+void matFillBabyColor(NABabyColor* babyColor, MATColor color);

@@ -19,6 +19,7 @@ NSString* formatValue(float value){
 }
 
 
+
 NAString* matNewStringWithFormatValue(float value){
   MATValueAccuracy valueAccuracy = [(MATApplication*)NSApp valueAccuracy];
   if(valueAccuracy == MAT_VALUE_ACCURACY_NATURAL){
@@ -33,19 +34,29 @@ NAString* matNewStringWithFormatValue(float value){
   return naNewStringWithFormat("%f", value);
 }
 
+
+
 void matPrepareFirstView(){
   [(MATApplication*)NSApp prepareFirstView];
 }
 
+
+
 NAFont* matGetMathFont(){
   return ((MATApplication*)NSApp)->mathFont;
 }
+
+
 NAUIImage* matGetCopyImage(){
   return ((MATApplication*)NSApp)->copyImage;
 }
+
+
 NAUIImage* matGetPasteImage(){
   return ((MATApplication*)NSApp)->pasteImage;
 }
+
+
 
 void matPutStringToPasteboard(const NAString* string){
   NSPasteboard* pasteboard = [NSPasteboard generalPasteboard];
@@ -54,6 +65,8 @@ void matPutStringToPasteboard(const NAString* string){
     [NSArray arrayWithObject:
       [NSString stringWithUTF8String:naGetStringUTF8Pointer(string)]]];
 }
+
+
 
 NAString* matNewStringFromPasteboard(){
   NAString* string = NA_NULL;
@@ -71,6 +84,8 @@ NAString* matNewStringFromPasteboard(){
   return string;
 }
 
+
+
 void matSetTextFieldCellProperties(NATextField* textField){
   NSTextField* nsTextField = (NSTextField*)naGetUIElementNativePtr(textField);
   [[nsTextField cell] setAlignment:NSTextAlignmentRight];
@@ -78,6 +93,67 @@ void matSetTextFieldCellProperties(NATextField* textField){
   [[nsTextField cell] setLineBreakMode:NSLineBreakByClipping];
   [[nsTextField cell] setScrollable:YES];
 }
+
+
+
+const NAUTF8Char* matGetUTF8StringWithStatus(MATStatus status){
+  static MATTranslation errorStringTranslations[] = {
+    MATDummyTranslation,      // MAT_STATUS_NORMAL results in ""
+    MATDummyTranslation,      // MAT_STATUS_RESULT results in ""
+    MATErrorMatrixDeterminantZero,
+    MATErrorMatrixDeterminantAlmostZero,
+    MATErrorVectorComponentZero,
+    MATErrorVectorComponentAlmostZero,
+    MATErrorMatrixComponentZero,
+    MATErrorMatrixComponentAlmostZero,
+    MATErrorScalarZero,
+    MATErrorScalarAlmostZero,
+    MATErrorVectorLengthZero,
+    MATErrorVectorLengthAlmostZero,
+    MATErrorVectorsCollinear,
+    MATErrorVectorsAlmostCollinear,
+    MATErrorVectorLengthUnequalOne
+  };
+  
+  return matTranslate(errorStringTranslations[status]);
+}
+
+
+
+MATColor matGetColorWithStatus(MATStatus status){
+  static MATColor statusColors[] = {
+    [MAT_STATUS_NORMAL]                         = MAT_COLOR_NORMAL,
+    [MAT_STATUS_RESULT]                         = MAT_COLOR_RESULT,
+    [MAT_STATUS_MATRIX_DETERMINANT_ZERO]        = MAT_COLOR_ERROR,
+    [MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO] = MAT_COLOR_WARNING,
+    [MAT_STATUS_VECTOR_COMPONENT_ZERO]          = MAT_COLOR_ERROR,
+    [MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO]   = MAT_COLOR_WARNING,
+    [MAT_STATUS_MATRIX_COMPONENT_ZERO]          = MAT_COLOR_ERROR,
+    [MAT_STATUS_MATRIX_COMPONENT_ALMOST_ZERO]   = MAT_COLOR_WARNING,
+    [MAT_STATUS_SCALAR_ZERO]                    = MAT_COLOR_ERROR,
+    [MAT_STATUS_SCALAR_ALMOST_ZERO]             = MAT_COLOR_WARNING,
+    [MAT_STATUS_VECTOR_LENGTH_ZERO]             = MAT_COLOR_ERROR,
+    [MAT_STATUS_VECTOR_LENGTH_ALMOST_ZERO]      = MAT_COLOR_WARNING,
+    [MAT_STATUS_VECTORS_COLINEAR]               = MAT_COLOR_ERROR,
+    [MAT_STATUS_VECTORS_ALMOST_COLINEAR]        = MAT_COLOR_WARNING,
+    [MAT_STATUS_VECTOR_LENGTH_UNEQUAL_ONE]      = MAT_COLOR_WARNING,
+  };
+  
+  return statusColors[status];
+}
+
+
+
+void matFillBabyColor(NABabyColor* babyColor, MATColor color){
+  static const NABabyColor matColors[] = {
+    [MAT_COLOR_NORMAL]  = {0., 0., 0., 0.,},
+    [MAT_COLOR_RESULT]  = {0., 6., 0., 1.,},
+    [MAT_COLOR_ERROR]   = {1., 0., 0., 1.,},
+    [MAT_COLOR_WARNING] = {.7, .5, 0., 1.,},
+  };
+  naCopyn(*babyColor, &matColors[color], sizeof(NABabyColor));
+}
+
 
 
 
@@ -166,72 +242,72 @@ void matSetTextFieldCellProperties(NATextField* textField){
 
 
 - (NSString*)statusString:(MATStatus)statusnum retColor:(MATColor*)retcolor{
-  NSString* errorstring;
+  NSString* errorString;
   MATColor color;
   switch(statusnum){
   case MAT_STATUS_NORMAL:
-    errorstring = @"";
+    errorString = @"";
     color = MAT_COLOR_NORMAL;
     break;
   case MAT_STATUS_RESULT:
-    errorstring = @"";
+    errorString = @"";
     color = MAT_COLOR_RESULT;
     break;
   case MAT_STATUS_MATRIX_DETERMINANT_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorMatrixDeterminantZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorMatrixDeterminantZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorMatrixDeterminantAlmostZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorMatrixDeterminantAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_VECTOR_COMPONENT_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorVectorComponentZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorVectorComponentZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorVectorComponentAlmostZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorVectorComponentAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_MATRIX_COMPONENT_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorMatrixComponentZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorMatrixComponentZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_MATRIX_COMPONENT_ALMOST_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorMatrixComponentAlmostZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorMatrixComponentAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_SCALAR_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorScalarZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorScalarZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_SCALAR_ALMOST_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorScalarAlmostZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorScalarAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_VECTOR_LENGTH_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorVectorLengthZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorVectorLengthZero)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_VECTOR_LENGTH_ALMOST_ZERO:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorVectorLengthAlmostZero)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorVectorLengthAlmostZero)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_VECTORS_COLINEAR:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorVectorsCollinear)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorVectorsCollinear)];
     color = MAT_COLOR_ERROR;
     break;
   case MAT_STATUS_VECTORS_ALMOST_COLINEAR:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorVectorsAlmostCollinear)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorVectorsAlmostCollinear)];
     color = MAT_COLOR_WARNING;
     break;
   case MAT_STATUS_VECTOR_LENGTH_UNEQUAL_ONE:
-    errorstring = [NSString stringWithUTF8String:matTranslate(MATErrorVectorLengthUnequalOne)];
+    errorString = [NSString stringWithUTF8String:matTranslate(MATErrorVectorLengthUnequalOne)];
     color = MAT_COLOR_WARNING;
     break;
   }
   if(retcolor){*retcolor = color;}
-  return errorstring;
+  return errorString;
 }
 
 

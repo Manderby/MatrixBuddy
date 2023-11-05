@@ -27,7 +27,7 @@ typedef enum{
   MAT_COLOR_RESULT,
   MAT_COLOR_ERROR,
   MAT_COLOR_WARNING,
-}MATColor;
+} MATColor;
 
 
 #define MAT_CODE_STYLE_LEGACY_NONE 0

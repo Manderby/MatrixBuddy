@@ -1,7 +1,9 @@
 
 #include "NATranslator.h"
 
-enum{
+typedef enum{
+  MATDummyTranslation,
+
   MATAbout,
   MATDone,
   MATVersionBuild,
@@ -99,7 +101,7 @@ enum{
   MATErrorVectorsAlmostCollinear,
   MATErrorVectorLengthUnequalOne,
 
-};
+} MATTranslation;
 
 const NAUTF8Char* matTranslate(NAInt id);
 

@@ -9,6 +9,8 @@ MATViewSASDF* matAllocViewS(
   const double* initValues);
 void matDeallocViewS(MATViewSASDF* view);
 
+void matSetViewSStatus(MATViewSASDF* view, MATStatus status);
+
 void matUpdateViewS(MATViewSASDF* view);
 
 const double* matGetViewSValues(const MATViewSASDF* view);

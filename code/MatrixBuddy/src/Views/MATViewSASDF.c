@@ -4,8 +4,10 @@
 struct MATViewSASDF{
   MATValueChangedHandler handler;
   void* superCon;
+  MATStatus status;
   
   NASpace* space;
+  NALabel* errorLabel;
   NALabel* label;
   NAButton* copyButton;
   NAButton* pasteButton;
@@ -86,9 +88,14 @@ MATViewSASDF* matAllocViewS(
 
   con->handler = handler;
   con->superCon = superCon;
+  con->status = MAT_STATUS_NORMAL;
 
-  con->space = naNewSpace(naMakeSize(100, 100));
+  con->space = naNewSpace(naMakeSize(100, 150));
    
+  con->errorLabel = naNewLabel("Error", 100);
+  naSetLabelTextAlignment(con->errorLabel, NA_TEXT_ALIGNMENT_CENTER);
+  naAddSpaceChild(con->space, con->errorLabel, naMakePos(10, 100));
+
   con->label = naNewLabel("s\u207b\u00b9\u1d40", MAT_TEXTFIELD_WIDTH);
   naSetLabelFont(con->label, matGetMathFont());
   naSetLabelTextAlignment(con->label, NA_TEXT_ALIGNMENT_CENTER);
@@ -124,15 +131,45 @@ void matDeallocViewS(MATViewSASDF* con){
 
 
 
+void matSetViewSStatus(MATViewSASDF* view, MATStatus status){
+  view->status = status;
+}
+
+
+
 void matUpdateViewS(MATViewSASDF* con){
   NAString* valueString = matNewStringWithFormatValue(con->values[0]);
   naSetTextFieldText(con->textFieldS, naGetStringUTF8Pointer(valueString));
+  
+  MATColor matColor = matGetColorWithStatus(con->status);
+  NABool isNormal = matColor == MAT_COLOR_NORMAL;
+  
+  naSetLabelVisible(con->label, isNormal);
+  naSetLabelVisible(con->errorLabel, !isNormal);
+
+  if(isNormal){
+    naSetLabelTextColor(con->label, NA_NULL);
+    naSetLabelTextColor(con->errorLabel, NA_NULL);
+    naSetSpaceBackgroundColor(con->space, NA_NULL);
+  }else{
+    NABabyColor color;
+    matFillBabyColor(&color, matColor);
+    naSetLabelTextColor(con->label, &color);
+    naSetLabelTextColor(con->errorLabel, &color);
+    color[3] *= .15;
+    naSetSpaceBackgroundColor(con->space, &color);
+  }
+
   naDelete(valueString);
 }
+
+
 
 const double* matGetViewSValues(const MATViewSASDF* con){
   return con->values;
 }
+
+
 
 const NASpace* matGetViewSSpace(const MATViewSASDF* con){
   return con->space;
