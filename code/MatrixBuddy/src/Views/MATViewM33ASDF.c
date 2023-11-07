@@ -27,6 +27,7 @@ NABool mat_ViewM33Changed(NAReaction reaction){
   double value = atof(naGetStringUTF8Pointer(text));
   naDelete(text);
   
+  
   for(size_t i = 0; i < con->dimensions[0] * con->dimensions[1]; ++i){
     if(reaction.uiElement == con->textFields[i]){
       con->values[i] = value;
@@ -99,17 +100,21 @@ MATViewM33ASDF* matAllocViewM33(
   con->superCon = superCon;
   con->status = MAT_STATUS_NORMAL;
 
-  con->space = naNewSpace(naMakeSize(300, 350));
-   
-  con->errorLabel = naNewLabel("Error", 100);
-  naSetLabelTextAlignment(con->errorLabel, NA_TEXT_ALIGNMENT_CENTER);
-  naAddSpaceChild(con->space, con->errorLabel, naMakePos(10, 100));
+  NASize viewSize = {
+    con->dimensions[0] * MAT_TEXTFIELD_WIDTHASDF + (con->dimensions[0] - 1) * MAT_TEXTFIELD_SPACE_HASDF + 2 * MAT_MATRIX_MARGINASDF,
+    350};
 
-  con->label = naNewLabel("s\u207b\u00b9\u1d40", MAT_TEXTFIELD_WIDTH);
+  con->space = naNewSpace(viewSize);
+   
+  con->errorLabel = naNewLabel("Error", viewSize.width);
+  naSetLabelTextAlignment(con->errorLabel, NA_TEXT_ALIGNMENT_CENTER);
+  naAddSpaceChild(con->space, con->errorLabel, naMakePos(0, 100));
+
+  con->label = naNewLabel("s\u207b\u00b9\u1d40", viewSize.width);
   naSetLabelFont(con->label, matGetMathFont());
   naSetLabelTextAlignment(con->label, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelHeight(con->label, 40);
-  naAddSpaceChild(con->space, con->label, naMakePos(10, 50));
+  naAddSpaceChild(con->space, con->label, naMakePos(0, 50));
     
   con->copyButton = naNewImagePushButton(matGetCopyImage(), naMakeSize(19, 19));
   naAddUIReaction(con->copyButton, NA_UI_COMMAND_PRESSED, mat_ViewM33PressCopy, con);
@@ -124,15 +129,17 @@ MATViewM33ASDF* matAllocViewM33(
   for(size_t x = 0; x < con->dimensions[0]; ++x){
     for(size_t y = 0; y < con->dimensions[1]; ++y){
       size_t index = x * con->dimensions[1] + y;
-      con->textFields[index] = naNewTextField(MAT_TEXTFIELD_WIDTH);
+      con->textFields[index] = naNewTextField(MAT_TEXTFIELD_WIDTHASDF);
       matSetTextFieldCellProperties(con->textFields[index]);
       naAddSpaceChild(
         con->space,
         con->textFields[index],
-        naMakePos(10 + x * 70, 30 + 60 - y * 30));
+        naMakePos(
+          MAT_MATRIX_MARGINASDF + x * (MAT_TEXTFIELD_WIDTHASDF + MAT_TEXTFIELD_SPACE_HASDF),
+          30 + 60 - y * 30));
       naAddUIReaction(
         con->textFields[index],
-        NA_UI_COMMAND_EDITED,
+        NA_UI_COMMAND_EDIT_FINISHED,
         mat_ViewM33Changed,
         con);
     }
@@ -172,9 +179,10 @@ void matUpdateViewM33(MATViewM33ASDF* con){
   
   MATColor matColor = matGetColorWithStatus(con->status);
   NABool isNormal = matColor == MAT_COLOR_NORMAL;
+  NABool isError = !(isNormal || matColor == MAT_COLOR_RESULT);
   
-  naSetLabelVisible(con->label, isNormal);
-  naSetLabelVisible(con->errorLabel, !isNormal);
+  naSetLabelVisible(con->label, !isError);
+  naSetLabelVisible(con->errorLabel, isError);
 
   if(isNormal){
     naSetLabelTextColor(con->label, NA_NULL);

@@ -99,6 +99,10 @@ void mulM33SValueChanged(void* con, void* view){
 
   mulSignLabel = naNewLabel("\u00d7", 20);
   equalSignLabel = naNewLabel("=", 20);
+
+  matUpdateViewM33(viewA);
+  matUpdateViewM33(viewS);
+  matUpdateViewM33(viewB);
 }
 
 
@@ -117,8 +121,8 @@ void mulM33SValueChanged(void* con, void* view){
   
 //  [B setPasteEnabled:NA_FALSE];
   
-  matUpdateViewM33(viewA);
-  matUpdateViewM33(viewS);
+//  matUpdateViewM33(viewA);
+//  matUpdateViewM33(viewS);
   matUpdateViewM33(viewB);
 }
 
