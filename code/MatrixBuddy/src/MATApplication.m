@@ -331,4 +331,9 @@ void matFillBabyColor(NABabyColor* babyColor, MATColor color){
 }
 
 
+- (MATWindowController*)getWindowController{
+  return windowController;
+}
+
+
 @end

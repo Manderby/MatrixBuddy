@@ -39,5 +39,7 @@ void matPrepareFirstView(void);
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification;
 
+- (MATWindowController*)getWindowController;
+
 @end
 

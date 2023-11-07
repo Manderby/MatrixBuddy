@@ -1,5 +1,6 @@
 
 #import "MATApplication.h"
+#import "MATCommonC.h"
 
 #import "MATWindowController.h"
 #import "MATComputationView.h"
@@ -44,7 +45,16 @@
 #include "NAUICocoaLegacy.h"
 
 
+
+MATDimensions matGetDimensions(){
+  MATWindowController* controller = [(MATApplication*)NSApp getWindowController];
+  return [controller getDimensions];
+}
+
 @implementation MATWindowController
+
+
+
 
 
 - (void)awakeFromNib{
@@ -493,6 +503,10 @@
   if(sender == dimension3Radio){dimensions = MAT_DIMENSIONS_3;}
   if(sender == dimension4Radio){dimensions = MAT_DIMENSIONS_4;}
   [self update];
+}
+
+- (MATDimensions)getDimensions{
+  return dimensions;
 }
 
 

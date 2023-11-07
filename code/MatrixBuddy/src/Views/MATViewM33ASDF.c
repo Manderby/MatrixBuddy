@@ -100,6 +100,7 @@ MATViewM33ASDF* matAllocViewM33(
   con->superCon = superCon;
   con->status = MAT_STATUS_NORMAL;
 
+  MATDimensions dimensions = matGetDimensions();
   NASize viewSize = {
     con->dimensions[0] * MAT_TEXTFIELD_WIDTHASDF + (con->dimensions[0] - 1) * MAT_TEXTFIELD_SPACE_HASDF + 2 * MAT_MATRIX_MARGINASDF,
     350};
