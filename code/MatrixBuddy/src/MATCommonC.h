@@ -3,8 +3,20 @@
 #include "MATTypes.h"
 
 #define MAT_TEXTFIELD_WIDTHASDF 70
+#define MAT_TEXTFIELD_HEIGHT 22
 #define MAT_TEXTFIELD_SPACE_HASDF 5
-#define MAT_MATRIX_MARGINASDF 10
+#define MAT_TEXTFIELD_SPACE_VASDF 5
+#define MAT_TEXTFIELD_SPACE_VASDF 5
+#define MAT_VIEW_MARGIN_V 10
+#define MAT_MATRIX_MARGIN_RIGHT 7
+#define MAT_MATRIX_MARGIN_TOP 9
+#define MAT_MATRIX_MARGIN_LEFT 7
+#define MAT_MATRIX_MARGIN_BOTTOM 4
+#define MAT_MATRIX_DISTANCE_VTOP 2
+#define MAT_MATRIX_DISTANCE_VBOTTOM 10
+#define MAT_MATRIX_LABEL_HEIGHT 29
+#define MAT_COPYPASTE_BUTTON_SIZE 19
+#define MAT_COPYPASTE_BUTTON_DISTANCE 30
 
 #define MAT_TEXTFIELD_WIDTH 65
 #define MAT_TEXTFIELD_HEIGHT 22
@@ -45,4 +57,5 @@ MATColor matGetColorWithStatus(MATStatus status);
 void matFillBabyColor(NABabyColor* babyColor, MATColor color);
 
 
-MATDimensions matGetDimensions(void);
+size_t matGetDimensionsInteger(MATDimensions dimensions);
+MATDimensions matGetControllerDimensions(void* con);

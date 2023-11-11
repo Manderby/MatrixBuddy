@@ -8,6 +8,11 @@
 #import "MATViewM44.h"
 
 
+MATDimensions matGetControllerDimensions(void* con){
+  NA_UNUSED(con);
+  return MAT_DIMENSIONS_3;
+}
+
 @implementation MATMulM22S
 
 - (void)awakeFromNib{
