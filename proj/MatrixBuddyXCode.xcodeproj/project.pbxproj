@@ -303,7 +303,7 @@
 		9038ECEC256DA07300A95A36 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEB256DA07300A95A36 /* copy.png */; };
 		9038ECF0256DA48000A95A36 /* paste.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEF256DA48000A95A36 /* paste.png */; };
 		90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA03371BA96CAB00A651E9 /* WebKit.framework */; };
-		90CB77042AFAB6F800EC8B82 /* MATViewM33ASDF.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CB77032AFAB6F800EC8B82 /* MATViewM33ASDF.c */; };
+		90CB77042AFAB6F800EC8B82 /* MATView.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CB77032AFAB6F800EC8B82 /* MATView.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -675,8 +675,8 @@
 		9038ECEF256DA48000A95A36 /* paste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paste.png; sourceTree = "<group>"; };
 		90BA03371BA96CAB00A651E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		90C573352AED3EB3003BCA8B /* MATCommonC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATCommonC.h; sourceTree = "<group>"; };
-		90CB77022AFAB6F800EC8B82 /* MATViewM33ASDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATViewM33ASDF.h; sourceTree = "<group>"; };
-		90CB77032AFAB6F800EC8B82 /* MATViewM33ASDF.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATViewM33ASDF.c; sourceTree = "<group>"; };
+		90CB77022AFAB6F800EC8B82 /* MATView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATView.h; sourceTree = "<group>"; };
+		90CB77032AFAB6F800EC8B82 /* MATView.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATView.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -898,8 +898,8 @@
 				90233A64256ADE2300E383A6 /* MATViewM22.m */,
 				90233A6A256ADE2300E383A6 /* MATViewM33.h */,
 				90233A63256ADE2300E383A6 /* MATViewM33.m */,
-				90CB77032AFAB6F800EC8B82 /* MATViewM33ASDF.c */,
-				90CB77022AFAB6F800EC8B82 /* MATViewM33ASDF.h */,
+				90CB77032AFAB6F800EC8B82 /* MATView.c */,
+				90CB77022AFAB6F800EC8B82 /* MATView.h */,
 				90233A61256ADE2300E383A6 /* MATViewM44.h */,
 				90233A69256ADE2300E383A6 /* MATViewM44.m */,
 				90233A67256ADE2300E383A6 /* MATViewS.h */,
@@ -1741,7 +1741,7 @@
 				90233A79256ADE2300E383A6 /* MATVMulS.m in Sources */,
 				90233A8F256ADE2300E383A6 /* MATPreferences.c in Sources */,
 				90233A78256ADE2300E383A6 /* MATVMulCompV.m in Sources */,
-				90CB77042AFAB6F800EC8B82 /* MATViewM33ASDF.c in Sources */,
+				90CB77042AFAB6F800EC8B82 /* MATView.c in Sources */,
 				90233A6E256ADE2300E383A6 /* MATComputationView.m in Sources */,
 				90233A77256ADE2300E383A6 /* MATNormalizeV.m in Sources */,
 			);

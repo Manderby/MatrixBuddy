@@ -67,21 +67,15 @@ void mulM33SValueChanged(void* con, void* view){
 @implementation MATMulM33S
 
 - (void)awakeFromNib{
-//  NAMat33d initA;
-//  naFillM33dWithDiag(initA, 1);
-//  [A setValues:initA];
-//  double inits = 1.;
-//  [s setValues:&inits];
-
   NAMat33d initM33;
   naFillM33dWithDiag(initM33, 1);
   double initS[] = {1.};
-  viewA = matAllocViewM33(mulM33SValueChanged, self, 3, 3, initM33);
-  viewS = matAllocViewM33(mulM33SValueChanged, self, 1, 1, initS);
-  viewB = matAllocViewM33(mulM33SValueChanged, self, 3, 3, initM33);
-  NSView* nsViewA = naGetUIElementNativePtrConst(matGetViewM33Space(viewA));
-  NSView* nsViewS = naGetUIElementNativePtrConst(matGetViewM33Space(viewS));
-  NSView* nsViewB = naGetUIElementNativePtrConst(matGetViewM33Space(viewB));
+  viewA = matAllocView("A", 3, 3, mulM33SValueChanged, self, initM33);
+  viewS = matAllocView("s", 1, 1, mulM33SValueChanged, self, initS);
+  viewB = matAllocView("B", 3, 3, mulM33SValueChanged, self, initM33);
+  NSView* nsViewA = naGetUIElementNativePtrConst(matGetViewSpace(viewA));
+  NSView* nsViewS = naGetUIElementNativePtrConst(matGetViewSpace(viewS));
+  NSView* nsViewB = naGetUIElementNativePtrConst(matGetViewSpace(viewB));
 
   NSRect frame;
   frame = [nsViewA frame];
@@ -100,9 +94,9 @@ void mulM33SValueChanged(void* con, void* view){
   mulSignLabel = naNewLabel("\u00d7", 20);
   equalSignLabel = naNewLabel("=", 20);
 
-  matUpdateViewM33(viewA);
-  matUpdateViewM33(viewS);
-  matUpdateViewM33(viewB);
+  matUpdateView(viewA);
+  matUpdateView(viewS);
+  matUpdateView(viewB);
 }
 
 
@@ -115,15 +109,13 @@ void mulM33SValueChanged(void* con, void* view){
 
 
 - (void)update{
-  matSetViewM33Status(viewA, MAT_STATUS_NORMAL);
-  matSetViewM33Status(viewS, MAT_STATUS_NORMAL);
-  matSetViewM33Status(viewB, MAT_STATUS_RESULT);
+  matSetViewStatus(viewA, MAT_STATUS_NORMAL);
+  matSetViewStatus(viewS, MAT_STATUS_NORMAL);
+  matSetViewStatus(viewB, MAT_STATUS_RESULT);
   
 //  [B setPasteEnabled:NA_FALSE];
   
-//  matUpdateViewM33(viewA);
-//  matUpdateViewM33(viewS);
-  matUpdateViewM33(viewB);
+  matUpdateView(viewB);
 }
 
 
@@ -131,14 +123,12 @@ void mulM33SValueChanged(void* con, void* view){
 - (void)valueChanged:(id)sender{
   NA_UNUSED(sender);
 
-  const double* valuesA = matGetViewM33Values(viewA);
-  const double* valuesS = matGetViewM33Values(viewS);
-
+  const double* valuesA = matGetViewValues(viewA);
+  const double* valuesS = matGetViewValues(viewS);
   NAMat33d result;
+
   naMulCompM33d(result, valuesA, *valuesS);
-//  naMulCompM33d(result, [A values], *[s values]);
-//  [B setValues:result];
-  matSetViewM33Values(viewB, result);
+  matSetViewValues(viewB, result);
   
   [self update];
 }

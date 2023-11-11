@@ -2,7 +2,7 @@
 #include "MATCommon.h"
 #import "MATComputationView.h"
 
-#include "MATViewM33ASDF.h"
+#include "MATView.h"
 
 @class MATViewS;
 @class MATViewM22;
@@ -25,11 +25,11 @@
 
 
 @interface MATMulM33S : MATComputationView{
-  MATViewM33ASDF* viewA;
+  MATView* viewA;
   NALabel* mulSignLabel;
-  MATViewM33ASDF* viewS;
+  MATView* viewS;
   NALabel* equalSignLabel;
-  MATViewM33ASDF* viewB;
+  MATView* viewB;
 }
 
 - (void)valueChanged:(id)sender;

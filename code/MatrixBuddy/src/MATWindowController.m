@@ -53,10 +53,6 @@ MATDimensions matGetDimensions(){
 
 @implementation MATWindowController
 
-
-
-
-
 - (void)awakeFromNib{
 
   computationView = placeholder;
