@@ -2,6 +2,7 @@
 #include "MATView.h"
 #include "NAMath/NAVectorAlgebra.h"
 #include "MATBaseController.h"
+#include "NAStruct/NABuffer.h"
 
 struct MATView{
   void* con;
@@ -47,12 +48,192 @@ NABool mat_ViewChanged(NAReaction reaction){
 
 
 
+// Returns a temporary (automatically freed) utf8 string pointer.
+NAUTF8Char* matFormatValue(float value){
+  MATValueAccuracy valueAccuracy = matGetValueAccuracy();
+  if(valueAccuracy == MAT_VALUE_ACCURACY_NATURAL){
+    for(int digit = 0; digit < 10; digit++){
+      float testValue = value * naExp10(digit);
+      if(naRoundf(testValue) == testValue){
+        NAUTF8Char* formatString = naAllocSprintf(NA_TRUE, "%%.%df", digit);
+        return naAllocSprintf(NA_TRUE, formatString, value);
+      }
+    }
+  }
+  return naAllocSprintf(NA_TRUE, "%f", value);
+}
+
+
+
 NABool mat_ViewPressCopy(NAReaction reaction){
   MATView* view = (MATView*)reaction.controller;
 
-  NAString* valueString = matNewStringWithFormatValue(view->values[0]);
-  matPutStringToPasteboard(valueString);
-  naDelete(valueString);
+  NABuffer* stringBuffer = naCreateBuffer(NA_FALSE);
+  NABufferIterator bufferIt = naMakeBufferModifier(stringBuffer);
+  
+  if(view->dimensions[0] == 1 && view->dimensions[1] == 1){
+    naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[0]));
+  }else if(view->dimensions[0] == 1){
+    switch(matGetCodeStyle()){
+    case MAT_CODE_STYLE_C_ROW_FIRST_1D:
+    case MAT_CODE_STYLE_C_ROW_FIRST_2D:
+    case MAT_CODE_STYLE_C_COLUMN_FIRST_1D:
+    case MAT_CODE_STYLE_C_COLUMN_FIRST_2D:
+      naWriteBufferStringWithFormat(&bufferIt, "{");
+      for(size_t y = 0; y < view->dimensions[1]; ++y){
+        if(y > 0)
+          naWriteBufferStringWithFormat(&bufferIt, ", ");
+        naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[y]));
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "}");
+      break;
+    case MAT_CODE_STYLE_MATHEMATICA:
+      naWriteBufferStringWithFormat(&bufferIt, "{");
+      for(size_t y = 0; y < view->dimensions[1]; ++y){
+        if(y > 0)
+          naWriteBufferStringWithFormat(&bufferIt, ", ");
+        naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[y]));
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "}");
+      break;
+    case MAT_CODE_STYLE_MATLAB:
+      naWriteBufferStringWithFormat(&bufferIt, "[");
+      for(size_t y = 0; y < view->dimensions[1]; ++y){
+        if(y > 0)
+          naWriteBufferStringWithFormat(&bufferIt, " ");
+        naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[y]));
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "]");
+      break;
+    case MAT_CODE_STYLE_MAPLE:
+      naWriteBufferStringWithFormat(&bufferIt, "[");
+      for(size_t y = 0; y < view->dimensions[1]; ++y){
+        if(y > 0)
+          naWriteBufferStringWithFormat(&bufferIt, ", ");
+        naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[y]));
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "]");
+      break;
+    }
+  }else{
+    switch(matGetCodeStyle()){
+    case MAT_CODE_STYLE_C_ROW_FIRST_1D:
+      naWriteBufferStringWithFormat(&bufferIt, "{");
+      for(size_t y = 0; y < view->dimensions[1]; ++y){
+        if(y > 0)
+          naWriteBufferStringWithFormat(&bufferIt, ", ");
+        for(size_t x = 0; x < view->dimensions[0]; ++x){
+          size_t index = x * view->dimensions[1] + y;
+          if(x > 0)
+            naWriteBufferStringWithFormat(&bufferIt, ", ");
+          naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[index]));
+        }
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "}");
+      break;
+    case MAT_CODE_STYLE_C_ROW_FIRST_2D:
+      naWriteBufferStringWithFormat(&bufferIt, "{");
+      for(size_t y = 0; y < view->dimensions[1]; ++y){
+        if(y > 0)
+          naWriteBufferStringWithFormat(&bufferIt, ", ");
+        naWriteBufferStringWithFormat(&bufferIt, "{");
+        for(size_t x = 0; x < view->dimensions[0]; ++x){
+          size_t index = x * view->dimensions[1] + y;
+          if(x > 0)
+            naWriteBufferStringWithFormat(&bufferIt, ", ");
+          naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[index]));
+        }
+        naWriteBufferStringWithFormat(&bufferIt, "}");
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "}");
+      break;
+    case MAT_CODE_STYLE_C_COLUMN_FIRST_1D:
+      naWriteBufferStringWithFormat(&bufferIt, "{");
+      for(size_t x = 0; x < view->dimensions[0]; ++x){
+        if(x > 0)
+          naWriteBufferStringWithFormat(&bufferIt, ", ");
+        for(size_t y = 0; y < view->dimensions[1]; ++y){
+          size_t index = x * view->dimensions[1] + y;
+          if(y > 0)
+            naWriteBufferStringWithFormat(&bufferIt, ", ");
+          naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[index]));
+        }
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "}");
+      break;
+    case MAT_CODE_STYLE_C_COLUMN_FIRST_2D:
+      naWriteBufferStringWithFormat(&bufferIt, "{");
+      for(size_t x = 0; x < view->dimensions[0]; ++x){
+        if(x > 0)
+          naWriteBufferStringWithFormat(&bufferIt, ", ");
+        naWriteBufferStringWithFormat(&bufferIt, "{");
+        for(size_t y = 0; y < view->dimensions[1]; ++y){
+          size_t index = x * view->dimensions[1] + y;
+          if(y > 0)
+            naWriteBufferStringWithFormat(&bufferIt, ", ");
+          naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[index]));
+        }
+        naWriteBufferStringWithFormat(&bufferIt, "}");
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "}");
+      break;
+    case MAT_CODE_STYLE_MATHEMATICA:
+      naWriteBufferStringWithFormat(&bufferIt, "{");
+      for(size_t y = 0; y < view->dimensions[1]; ++y){
+        if(y > 0)
+          naWriteBufferStringWithFormat(&bufferIt, ", ");
+        naWriteBufferStringWithFormat(&bufferIt, "{");
+        for(size_t x = 0; x < view->dimensions[0]; ++x){
+          size_t index = x * view->dimensions[1] + y;
+          if(x > 0)
+            naWriteBufferStringWithFormat(&bufferIt, ", ");
+          naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[index]));
+        }
+        naWriteBufferStringWithFormat(&bufferIt, "}");
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "}");
+      break;
+    case MAT_CODE_STYLE_MATLAB:
+      naWriteBufferStringWithFormat(&bufferIt, "[");
+      for(size_t y = 0; y < view->dimensions[1]; ++y){
+        if(y > 0)
+          naWriteBufferStringWithFormat(&bufferIt, "; ");
+        for(size_t x = 0; x < view->dimensions[0]; ++x){
+          size_t index = x * view->dimensions[1] + y;
+          if(x > 0)
+            naWriteBufferStringWithFormat(&bufferIt, " ");
+          naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[index]));
+        }
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "]");
+      break;
+    case MAT_CODE_STYLE_MAPLE:
+      naWriteBufferStringWithFormat(&bufferIt, "[");
+      for(size_t y = 0; y < view->dimensions[1]; ++y){
+        if(y > 0)
+          naWriteBufferStringWithFormat(&bufferIt, ", ");
+        naWriteBufferStringWithFormat(&bufferIt, "[");
+        for(size_t x = 0; x < view->dimensions[0]; ++x){
+          size_t index = x * view->dimensions[1] + y;
+          if(x > 0)
+            naWriteBufferStringWithFormat(&bufferIt, ", ");
+          naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[index]));
+        }
+        naWriteBufferStringWithFormat(&bufferIt, "]");
+      }
+      naWriteBufferStringWithFormat(&bufferIt, "]");
+      break;
+    }
+  }
+
+  NAString* pasteBoardString = naNewStringWithBufferExtraction(
+    stringBuffer,
+    naGetBufferRange(stringBuffer));
+  matPutStringToPasteboard(pasteBoardString);
+  naDelete(pasteBoardString);
+  
+  naClearBufferIterator(&bufferIt);
+  naRelease(stringBuffer);
   
   return NA_TRUE;
 }
@@ -82,6 +263,7 @@ NABool mat_ViewPressPaste(NAReaction reaction){
     }
   }
 
+  matUpdateView(view);
   matUpdateControllerValues(view->con, view);
   naDelete(string);
 
@@ -198,9 +380,8 @@ void matUpdateView(MATView* view){
   for(size_t x = 0; x < view->dimensions[0]; ++x){
     for(size_t y = 0; y < view->dimensions[1]; ++y){
       size_t index = x * view->dimensions[1] + y;
-      NAString* valueString = matNewStringWithFormatValue(view->values[index]);
-      naSetTextFieldText(view->textFields[index], naGetStringUTF8Pointer(valueString));
-      naDelete(valueString);
+      NAUTF8Char* valueString = matFormatValue(view->values[index]);
+      naSetTextFieldText(view->textFields[index], valueString);
     }
   }
   

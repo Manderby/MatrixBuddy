@@ -10,28 +10,12 @@ NSString* formatValue(float value){
     for(int digit = 0; digit < 10; digit++){
       float testValue = value * naPow(10, digit);
       if(naRoundf(testValue) == testValue){
-        NSString* formatstring = [NSString stringWithFormat:@"%%.%df", digit];
-        return [NSString stringWithFormat:formatstring, value];
+        NSString* formatString = [NSString stringWithFormat:@"%%.%df", digit];
+        return [NSString stringWithFormat:formatString, value];
       }
     }
   }
   return [NSString stringWithFormat:@"%f", value];
-}
-
-
-
-NAString* matNewStringWithFormatValue(float value){
-  MATValueAccuracy valueAccuracy = [(MATApplication*)NSApp valueAccuracy];
-  if(valueAccuracy == MAT_VALUE_ACCURACY_NATURAL){
-    for(int digit = 0; digit < 10; digit++){
-      float testValue = value * naPow(10, digit);
-      if(naRoundf(testValue) == testValue){
-        NAUTF8Char* formatString = naAllocSprintf(NA_TRUE, "%%.%df", digit);
-        return naNewStringWithFormat(formatString, value);
-      }
-    }
-  }
-  return naNewStringWithFormat("%f", value);
 }
 
 
@@ -159,6 +143,19 @@ void matFillBabyColor(NABabyColor* babyColor, MATColor color){
 NABool matHasRowFirstOrder(){
   return [(MATApplication*)NSApp hasRowFirstTabOrder];
 }
+
+
+
+MATCodeStyle matGetCodeStyle(){
+  return [(MATApplication*)NSApp codeStyle];
+}
+
+
+
+MATValueAccuracy matGetValueAccuracy(){
+  return [(MATApplication*)NSApp valueAccuracy];
+}
+
 
 
 

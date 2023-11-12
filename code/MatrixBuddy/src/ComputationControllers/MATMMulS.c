@@ -87,7 +87,7 @@ MATBaseController* matAllocMulMSController(size_t dimensions){
 
   double initS[] = {1.};
   con->viewS = matAllocView("s", 1, 1, con, initS);
-  con->viewA = matAllocView("A", dimensions, dimensions, con, initM);
+  con->viewA = matAllocView("A", 1, dimensions, con, initM);
   con->viewB = matAllocView("B", dimensions, dimensions, con, initM);
 
   NASpace* spaceA = matGetViewSpace(con->viewA);

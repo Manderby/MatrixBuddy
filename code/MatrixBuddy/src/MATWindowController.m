@@ -416,10 +416,6 @@
     [computationView valueChanged:self];
     [computationView update];
   }
-
-  // note: when uncommented, the focus changes always. even when just switching
-  // the tab order.
-//  [[self window] makeFirstResponder:[computationView firstResponder]];
 }
 
 
