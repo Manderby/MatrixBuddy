@@ -5,7 +5,8 @@
 void matInitBaseController(
   MATBaseController* con,
   size_t dimensions,
-  MATValueChangedHandler updateValues,
+  MATValueChangedHandler valuesChanged,
+  MATUpdateHandler update,
   MATUpdateTabOrderHandler updateTabOrder)
 {
   con->dimensions = dimensions;
@@ -14,7 +15,8 @@ void matInitBaseController(
   double viewHeight = 197;
   con->space = naNewSpace(naMakeSize(viewWidth, viewHeight));
   
-  con->updateValues = updateValues;
+  con->valuesChanged = valuesChanged;
+  con->update = update;
   con->updateTabOrder = updateTabOrder;
 }
 
@@ -32,8 +34,14 @@ NASpace* naGetControllerSpace(MATBaseController* con){
 
 
 
-void matUpdateControllerValues(MATBaseController* con, MATView* view){
-  con->updateValues(con, view);
+void matNotifyControllerValuesChanged(MATBaseController* con, MATView* view){
+  con->valuesChanged(con, view);
+}
+
+
+
+void matUpdateController(MATBaseController* con, NABool justResult){
+  con->update(con, justResult);
 }
 
 

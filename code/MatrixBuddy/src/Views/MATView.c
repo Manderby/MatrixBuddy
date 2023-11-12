@@ -42,7 +42,7 @@ NABool mat_ViewChanged(NAReaction reaction){
     }
   }
   
-  matUpdateControllerValues(view->con, view);
+  matNotifyControllerValuesChanged(view->con, view);
   return NA_TRUE;
 }
 
@@ -293,7 +293,7 @@ NABool mat_ViewPressPaste(NAReaction reaction){
   
   matSetViewValues(view, newValues);
   matUpdateView(view);
-  matUpdateControllerValues(view->con, view);
+  matNotifyControllerValuesChanged(view->con, view);
 
   naDelete(string);
   naFree(newValues);
@@ -420,8 +420,11 @@ void matUpdateView(MATView* view){
   NABool isNormal = matColor == MAT_COLOR_NORMAL;
   NABool isError = !(isNormal || matColor == MAT_COLOR_RESULT);
 
-  naSetLabelVisible(view->label, !isError);
+  naSetLabelVisible(view->label, !isError && matHasShowIdentifier());
   naSetLabelVisible(view->errorLabel, isError);
+
+  naSetButtonVisible(view->copyButton, matHasShowCopyPaste());
+  naSetButtonVisible(view->pasteButton, matHasShowCopyPaste());
 
   if(isNormal){
     naSetLabelTextColor(view->label, NA_NULL);

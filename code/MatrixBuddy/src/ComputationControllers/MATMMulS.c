@@ -42,7 +42,7 @@ void mulMSValueChanged(MATBaseController* controller, MATView* view){
     break;
   }
 
-  naUpdateMulMSController(con);
+  naUpdateMulMSController(&con->base, NA_TRUE);
 }
 
 
@@ -63,6 +63,7 @@ MATBaseController* matAllocMulMSController(size_t dimensions){
     &con->base,
     dimensions,
     mulMSValueChanged,
+    naUpdateMulMSController,
     updateMulMSControllerTabOrder);
   
   NAMat22d initM22;
@@ -118,9 +119,7 @@ MATBaseController* matAllocMulMSController(size_t dimensions){
   naSetLabelHeight(con->equalSignLabel, MAT_MATRIX_LABEL_HEIGHT);
   naAddSpaceChild(con->base.space, con->equalSignLabel, naMakePos(marginLeft + sizeA.width + sizeS.width + MAT_SIGN_WIDTH, signMarginBottom));
   
-  matUpdateView(con->viewA);
-  matUpdateView(con->viewS);
-  naUpdateMulMSController(con);
+  naUpdateMulMSController(&con->base, NA_FALSE);
 
   return &con->base;
 }
@@ -140,13 +139,18 @@ void matDeallocMulMSController(MATBaseController* controller){
 
 
 
-void naUpdateMulMSController(MATMulMSController* con){
+void naUpdateMulMSController(MATBaseController* controller, NABool justResult){
+  MATMulMSController* con = (MATMulMSController*)controller;
   matSetViewStatus(con->viewA, MAT_STATUS_NORMAL);
   matSetViewStatus(con->viewS, MAT_STATUS_NORMAL);
   matSetViewStatus(con->viewB, MAT_STATUS_RESULT);
 
   matSetViewPasteEnabled(con->viewB, NA_FALSE);
 
+  if(!justResult){
+    matUpdateView(con->viewA);
+    matUpdateView(con->viewS);
+  }
   matUpdateView(con->viewB);
 }
 

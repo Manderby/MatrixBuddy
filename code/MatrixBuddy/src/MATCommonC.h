@@ -47,6 +47,7 @@ typedef struct MATBaseController MATBaseController;
 typedef struct MATView MATView;
 
 typedef void(*MATValueChangedHandler)(MATBaseController* controller, MATView* view);
+typedef void(*MATUpdateHandler)(MATBaseController* controller, NABool justResult);
 typedef void (*MATUpdateTabOrderHandler)(MATBaseController* controller);
 
 NAFont* matGetMathFont(void);
@@ -64,3 +65,5 @@ void matFillBabyColor(NABabyColor* babyColor, MATColor color);
 NABool matHasRowFirstOrder(void);
 MATCodeStyle matGetCodeStyle(void);
 MATValueAccuracy matGetValueAccuracy(void);
+NABool matHasShowIdentifier(void);
+NABool matHasShowCopyPaste(void);

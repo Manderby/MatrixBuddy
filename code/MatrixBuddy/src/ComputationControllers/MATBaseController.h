@@ -9,21 +9,25 @@
 struct MATBaseController{
   NASpace* space;
   size_t dimensions;
-  MATValueChangedHandler updateValues;
+  MATValueChangedHandler valuesChanged;
+  MATUpdateHandler update;
   MATUpdateTabOrderHandler updateTabOrder;
 };
 
 void matInitBaseController(
   MATBaseController* con,
   size_t dimensions,
-  MATValueChangedHandler updateValues,
+  MATValueChangedHandler valuesChanged,
+  MATUpdateHandler update,
   MATUpdateTabOrderHandler updateTabOrder);
 
 NASpace* naGetControllerSpace(MATBaseController* con);
 
 size_t matGetControllerDimensions(MATBaseController* con);
 
-void matUpdateControllerValues(MATBaseController* con, MATView* view);
+void matNotifyControllerValuesChanged(MATBaseController* con, MATView* view);
+
+void matUpdateController(MATBaseController* con, NABool justResult);
 
 void matUpdateControllerTabOrder(MATBaseController* con);
 

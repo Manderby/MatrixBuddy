@@ -476,6 +476,8 @@
   }else if(sender == showIdentifiersItem){
     showIdentifiers = !showIdentifiers;
     naSetPreferencesBool(MATPrefs[ShowIdentifiers], showIdentifiers);
+    if(computationController)
+      matUpdateController(computationController, NA_FALSE);
   }else if(sender == showCopyPasteItem){
     showCopyPaste = !showCopyPaste;
     naSetPreferencesBool(MATPrefs[ShowCopyPaste], showCopyPaste);
@@ -513,9 +515,13 @@
   }else if(sender == valueAccuracyNaturalItem){
     valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;
     naSetPreferencesEnum(MATPrefs[ValueAccuracy], valueAccuracy);
+    if(computationController)
+      matUpdateController(computationController, NA_FALSE);
   }else if(sender == valueAccuracyFloatItem){
     valueAccuracy = MAT_VALUE_ACCURACY_FLOAT;
     naSetPreferencesEnum(MATPrefs[ValueAccuracy], valueAccuracy);
+    if(computationController)
+      matUpdateController(computationController, NA_FALSE);
   }else{}
   [self update];
 }

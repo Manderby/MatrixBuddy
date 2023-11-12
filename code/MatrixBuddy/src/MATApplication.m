@@ -158,6 +158,18 @@ MATValueAccuracy matGetValueAccuracy(){
 
 
 
+NABool matHasShowIdentifier(){
+  return [(MATApplication*)NSApp hasShowIdentifier];
+}
+
+
+
+NABool matHasShowCopyPaste(){
+  return [(MATApplication*)NSApp hasShowCopyPaste];
+}
+
+
+
 
 @implementation MATApplication
 
