@@ -20,3 +20,5 @@ void matSetViewValues(MATView* view, const double* values);
 NASpace* matGetViewSpace(const MATView* view);
 
 void matUpdateViewTabOrder(MATView* view);
+
+void matSetViewPasteEnabled(MATView* view, NABool enabled);

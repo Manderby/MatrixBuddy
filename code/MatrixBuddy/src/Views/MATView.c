@@ -250,9 +250,12 @@ void matUpdateViewTabOrder(MATView* view){
 }
 
 
+
 const double* matGetViewValues(const MATView* view){
   return view->values;
 }
+
+
 
 void matSetViewValues(MATView* view, const double* values){
   size_t valuesByteSize = matGetViewElementCount(view) * sizeof(double);
@@ -261,7 +264,12 @@ void matSetViewValues(MATView* view, const double* values){
 
 
 
-
 NASpace* matGetViewSpace(const MATView* view){
   return view->space;
+}
+
+
+
+void matSetViewPasteEnabled(MATView* view, NABool enabled){
+  naSetButtonEnabled(view->pasteButton, enabled);
 }

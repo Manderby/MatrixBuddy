@@ -68,27 +68,27 @@ MATBaseController* matAllocMulMSController(size_t dimensions){
   NAMat22d initM22;
   NAMat33d initM33;
   NAMat44d initM44;
+  double* initM = NA_NULL;
 
   switch(con->base.dimensions){
   case 2:
     naFillM22dWithDiag(initM22, 1);
-    con->viewA = matAllocView("A", dimensions, dimensions, con, initM22);
-    con->viewB = matAllocView("B", dimensions, dimensions, con, initM22);
+    initM = initM22;
     break;
   case 3:
     naFillM33dWithDiag(initM33, 1);
-    con->viewA = matAllocView("A", dimensions, dimensions, con, initM33);
-    con->viewB = matAllocView("B", dimensions, dimensions, con, initM33);
+    initM = initM33;
     break;
   case 4:
     naFillM44dWithDiag(initM44, 1);
-    con->viewA = matAllocView("A", dimensions, dimensions, con, initM44);
-    con->viewB = matAllocView("B", dimensions, dimensions, con, initM44);
+    initM = initM44;
     break;
   }
 
   double initS[] = {1.};
   con->viewS = matAllocView("s", 1, 1, con, initS);
+  con->viewA = matAllocView("A", dimensions, dimensions, con, initM);
+  con->viewB = matAllocView("B", dimensions, dimensions, con, initM);
 
   NASpace* spaceA = matGetViewSpace(con->viewA);
   NASpace* spaceS = matGetViewSpace(con->viewS);
@@ -106,13 +106,13 @@ MATBaseController* matAllocMulMSController(size_t dimensions){
   naAddSpaceChild(con->base.space, spaceS, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, marginBottom));
   naAddSpaceChild(con->base.space, spaceB, naMakePos(marginLeft + sizeA.width + sizeS.width + 2 * MAT_SIGN_WIDTH, marginBottom));
 
-  con->mulSignLabel = naNewLabel("\u00d7", MAT_SIGN_WIDTH);
+  con->mulSignLabel = naNewLabel(MA_MULTIPLICATION_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->mulSignLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelFont(con->mulSignLabel, matGetMathFont());
   naSetLabelHeight(con->mulSignLabel, MAT_MATRIX_LABEL_HEIGHT);
   naAddSpaceChild(con->base.space, con->mulSignLabel, naMakePos(marginLeft + sizeA.width, signMarginBottom));
 
-  con->equalSignLabel = naNewLabel("=", MAT_SIGN_WIDTH);
+  con->equalSignLabel = naNewLabel(MA_EQUAL_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->equalSignLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelFont(con->equalSignLabel, matGetMathFont());
   naSetLabelHeight(con->equalSignLabel, MAT_MATRIX_LABEL_HEIGHT);
@@ -132,34 +132,8 @@ void naUpdateMulMSController(MATMulMSController* con){
   matSetViewStatus(con->viewS, MAT_STATUS_NORMAL);
   matSetViewStatus(con->viewB, MAT_STATUS_RESULT);
 
+  matSetViewPasteEnabled(con->viewB, NA_FALSE);
+
   matUpdateView(con->viewB);
 }
-
-
-
-//@implementation MATMulM33S
-//
-//- (void)awakeFromNib{
-//}
-//
-//
-//
-//- (NSView*)firstResponder{
-////  return [A firstResponder];
-//  return nil;
-//}
-//
-//
-//
-//- (void)update{
-////  [B setPasteEnabled:NA_FALSE];
-//}
-//
-//
-//
-//- (void)valueChanged:(id)sender{
-//}
-//
-//@end
-
 
