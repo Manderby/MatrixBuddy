@@ -1,209 +1,3 @@
-
-
-#import "MATMDivS.h"
-#import "MATApplication.h"
-
-#import "MATViewS.h"
-#import "MATViewM22.h"
-#import "MATViewM33.h"
-#import "MATViewM44.h"
-
-
-@implementation MATDivM22S
-
-- (void)awakeFromNib{
-  NAMat22d initA;
-  naFillM22dWithDiag(initA, 1);
-  [A setValues:initA];
-  double inits = 1.;
-  [s setValues:&inits];
-}
-
-
-
-- (NSView*)firstResponder{
-  return [A firstResponder];
-}
-
-
-
-- (void)update{
-  [A setStatus:MAT_STATUS_NORMAL];
-  [B setStatus:MAT_STATUS_RESULT];
-
-  [A setLabel:@"A"];
-  [s setLabel:@"s"];
-  [B setLabel:@"B"];
-  [A update];
-  [s update];
-  [B update];
-  [B setPasteEnabled:NA_FALSE];
-}
-
-
-
-- (void)valueChanged:(id)sender{
-  NA_UNUSED(sender);
-
-  double invvalue = *[s values];
-  
-  if(invvalue == 0){
-    [s setStatus:MAT_STATUS_SCALAR_ZERO];
-    NAMat22d result;
-    naFillM22dWithDiag(result, 0.);
-    [B setValues:result];
-  }else if(naAlmostZero(invvalue)){
-    [s setStatus:MAT_STATUS_SCALAR_ALMOST_ZERO];
-    NAMat22d result;
-    naMulCompM22d(result, [A values], naInv(invvalue));
-    [B setValues:result];
-  }else{
-    [s setStatus:MAT_STATUS_NORMAL];
-    NAMat22d result;
-    naMulCompM22d(result, [A values], naInv(invvalue));
-    [B setValues:result];
-  }
-  
-  [self update];
-}
-
-@end
-
-
-
-
-
-@implementation MATDivM33S
-
-- (void)awakeFromNib{
-  NAMat33d initA;
-  naFillM33dWithDiag(initA, 1);
-  [A setValues:initA];
-  double inits = 1.;
-  [s setValues:&inits];
-}
-
-
-
-- (NSView*)firstResponder{
-  return [A firstResponder];
-}
-
-
-
-- (void)update{
-  [A setStatus:MAT_STATUS_NORMAL];
-  [B setStatus:MAT_STATUS_RESULT];
-
-  [A setLabel:@"A"];
-  [s setLabel:@"s"];
-  [B setLabel:@"B"];
-  [A update];
-  [s update];
-  [B update];
-  [B setPasteEnabled:NA_FALSE];
-}
-
-
-
-- (void)valueChanged:(id)sender{
-  NA_UNUSED(sender);
-
-  double invvalue = *[s values];
-
-  if(invvalue == 0){
-    [s setStatus:MAT_STATUS_SCALAR_ZERO];
-    NAMat33d result;
-    naFillM33dWithDiag(result, 0.);
-    [B setValues:result];
-  }else if(naAlmostZero(invvalue)){
-    [s setStatus:MAT_STATUS_SCALAR_ALMOST_ZERO];
-    NAMat33d result;
-    naMulCompM33d(result, [A values], naInv(invvalue));
-    [B setValues:result];
-  }else{
-    [s setStatus:MAT_STATUS_NORMAL];
-    NAMat33d result;
-    naMulCompM33d(result, [A values], naInv(invvalue));
-    [B setValues:result];
-  }
-  
-  [self update];
-}
-
-@end
-
-
-
-
-
-@implementation MATDivM44S
-
-- (void)awakeFromNib{
-  NAMat44d initA;
-  naFillM44dWithDiag(initA, 1);
-  [A setValues:initA];
-  double inits = 1.;
-  [s setValues:&inits];
-}
-
-
-
-- (NSView*)firstResponder{
-  return [A firstResponder];
-}
-
-
-
-- (void)update{
-  [A setStatus:MAT_STATUS_NORMAL];
-  [B setStatus:MAT_STATUS_RESULT];
-
-  [A setLabel:@"A"];
-  [s setLabel:@"s"];
-  [B setLabel:@"B"];
-  [A update];
-  [s update];
-  [B update];
-  [B setPasteEnabled:NA_FALSE];
-}
-
-
-
-- (void)valueChanged:(id)sender{
-  NA_UNUSED(sender);
-
-  double invvalue = *[s values];
-
-  if(invvalue == 0){
-    [s setStatus:MAT_STATUS_SCALAR_ZERO];
-    NAMat44d result;
-    naFillM44dWithDiag(result, 0.);
-    [B setValues:result];
-  }else if(naAlmostZero(invvalue)){
-    [s setStatus:MAT_STATUS_SCALAR_ALMOST_ZERO];
-    NAMat44d result;
-    naMulCompM44d(result, [A values], naInv(invvalue));
-    [B setValues:result];
-  }else{
-    [s setStatus:MAT_STATUS_NORMAL];
-    NAMat44d result;
-    naMulCompM44d(result, [A values], naInv(invvalue));
-    [B setValues:result];
-  }
-  
-  [self update];
-}
-
-@end
-
-
-
-
-
-
-
-
 #include "MATMDivS.h"
 #include "MATTranslations.h"
 #include "NAMath/NAVectorAlgebra.h"
@@ -217,8 +11,6 @@ struct MATMDivSController{
   NALabel* equalSignLabel;
   MATView* viewB;
 };
-
-
 
 
 
@@ -286,30 +78,28 @@ MATBaseController* matAllocMDivSController(size_t dimensions){
     matUpdateMDivSController,
     matUpdateMDivSControllerTabOrder);
   
-  NAMat22d initM22;
-  NAMat33d initM33;
-  NAMat44d initM44;
-  double* initM = NA_NULL;
+  size_t matrixElementCount = dimensions * dimensions;
+  double* initMatrix = naMalloc(matrixElementCount * sizeof(double));
+  naZeron(initMatrix, matrixElementCount * sizeof(double));
+  double initScalar[] = {1.};
 
   switch(con->base.dimensions){
   case 2:
-    naFillM22dWithDiag(initM22, 1);
-    initM = initM22;
+    naFillM22dWithDiag(initMatrix, 1);
     break;
   case 3:
-    naFillM33dWithDiag(initM33, 1);
-    initM = initM33;
+    naFillM33dWithDiag(initMatrix, 1);
     break;
   case 4:
-    naFillM44dWithDiag(initM44, 1);
-    initM = initM44;
+    naFillM44dWithDiag(initMatrix, 1);
     break;
   }
 
-  double initS[] = {1.};
-  con->viewA = matAllocView("A", dimensions, dimensions, con, initM);
-  con->viewS = matAllocView("s", 1, 1, con, initS);
-  con->viewB = matAllocView("B", dimensions, dimensions, con, initM);
+  con->viewA = matAllocView("A", dimensions, dimensions, con, initMatrix);
+  con->viewS = matAllocView("s", 1, 1, con, initScalar);
+  con->viewB = matAllocView("B", dimensions, dimensions, con, initMatrix);
+
+  naFree(initMatrix);
 
   NASpace* spaceA = matGetViewSpace(con->viewA);
   NASpace* spaceS = matGetViewSpace(con->viewS);
@@ -355,8 +145,5 @@ void matDeallocMDivSController(MATBaseController* controller){
   NA_UNUSED(con);
   naFree(controller);
 }
-
-
-
 
 

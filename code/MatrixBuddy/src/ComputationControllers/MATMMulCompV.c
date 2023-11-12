@@ -1,101 +1,106 @@
-
-#include "MATMMulS.h"
+#include "MATMMulCompV.h"
 #include "MATTranslations.h"
 #include "NAMath/NAVectorAlgebra.h"
 
 
-struct MATMMulSController{
+struct MATMMulCompVController{
   MATBaseController base;
   MATView* viewA;
   NALabel* mulSignLabel;
-  MATView* viewS;
+  MATView* viewV;
   NALabel* equalSignLabel;
   MATView* viewB;
 };
 
 
 
-void matMMulSValueChanged(MATBaseController* controller, MATView* view){
+void matMMulCompVValueChanged(MATBaseController* controller, MATView* view){
   NA_UNUSED(view);
-  MATMMulSController* con = (MATMMulSController*)controller;
+  MATMMulCompVController* con = (MATMMulCompVController*)controller;
 
   const double* valuesA = matGetViewValues(con->viewA);
-  const double* valuesS = matGetViewValues(con->viewS);
+  const double* valuesV = matGetViewValues(con->viewV);
 
   size_t elementCount = matGetViewElementCount(con->viewB);
   double* result = naMalloc(elementCount * sizeof(double));
   naZeron(result, elementCount * sizeof(double));
 
   switch(con->base.dimensions){
-  case 2: naMulCompM22d(result, valuesA, *valuesS); break;
-  case 3: naMulCompM33d(result, valuesA, *valuesS); break;
-  case 4: naMulCompM44d(result, valuesA, *valuesS); break;
+  case 2: naMulCompM22dV2d(result, valuesA, valuesV); break;
+  case 3: naMulCompM33dV3d(result, valuesA, valuesV); break;
+  case 4: naMulCompM44dV4d(result, valuesA, valuesV); break;
   }
   
   matSetViewValues(con->viewB, result);
-  matUpdateMMulSController(&con->base);
+  matUpdateMMulCompVController(&con->base);
   naFree(result);
 }
 
 
 
-void matUpdateMMulSController(MATBaseController* controller){
-  MATMMulSController* con = (MATMMulSController*)controller;
+void matUpdateMMulCompVController(MATBaseController* controller){
+  MATMMulCompVController* con = (MATMMulCompVController*)controller;
 
   matSetViewPasteEnabled(con->viewB, NA_FALSE);
 
   matUpdateView(con->viewA);
-  matUpdateView(con->viewS);
+  matUpdateView(con->viewV);
   matUpdateView(con->viewB);
 }
 
 
 
-void matUpdateMMulSControllerTabOrder(MATBaseController* controller){
-  MATMMulSController* con = (MATMMulSController*)controller;
+void matUpdateMMulCompVControllerTabOrder(MATBaseController* controller){
+  MATMMulCompVController* con = (MATMMulCompVController*)controller;
   matUpdateViewTabOrder(con->viewA);
-  matUpdateViewTabOrder(con->viewS);
+  matUpdateViewTabOrder(con->viewV);
   matUpdateViewTabOrder(con->viewB);
 }
 
 
 
-MATBaseController* matAllocMMulSController(size_t dimensions){
-  MATMMulSController* con = naAlloc(MATMMulSController);
+MATBaseController* matAllocMMulCompVController(size_t dimensions){
+  MATMMulCompVController* con = naAlloc(MATMMulCompVController);
   
   matInitBaseController(
     &con->base,
     dimensions,
-    MATHelpMMulS,
-    matMMulSValueChanged,
-    matUpdateMMulSController,
-    matUpdateMMulSControllerTabOrder);
+    MATHelpMMulCompV,
+    matMMulCompVValueChanged,
+    matUpdateMMulCompVController,
+    matUpdateMMulCompVControllerTabOrder);
   
   size_t matrixElementCount = dimensions * dimensions;
+  size_t vectorElementCount = dimensions;
   double* initMatrix = naMalloc(matrixElementCount * sizeof(double));
   naZeron(initMatrix, matrixElementCount * sizeof(double));
-  double initScalar[] = {1.};
+  double* initVector = naMalloc(vectorElementCount * sizeof(double));
+  naZeron(initVector, vectorElementCount * sizeof(double));
 
   switch(con->base.dimensions){
   case 2:
     naFillM22dWithDiag(initMatrix, 1);
+    naFillV2d(initVector, 1., 1.);
     break;
   case 3:
     naFillM33dWithDiag(initMatrix, 1);
+    naFillV3d(initVector, 1., 1., 1.);
     break;
   case 4:
     naFillM44dWithDiag(initMatrix, 1);
+    naFillV4d(initVector, 1., 1., 1., 1.);
     break;
   }
 
   con->viewA = matAllocView("A", dimensions, dimensions, con, initMatrix);
-  con->viewS = matAllocView("s", 1, 1, con, initScalar);
+  con->viewV = matAllocView("v", 1, dimensions, con, initVector);
   con->viewB = matAllocView("B", dimensions, dimensions, con, initMatrix);
 
   naFree(initMatrix);
+  naFree(initVector);
 
   NASpace* spaceA = matGetViewSpace(con->viewA);
-  NASpace* spaceS = matGetViewSpace(con->viewS);
+  NASpace* spaceS = matGetViewSpace(con->viewV);
   NASpace* spaceB = matGetViewSpace(con->viewB);
   NASize sizeA = naGetUIElementRect(spaceA).size;
   NASize sizeS = naGetUIElementRect(spaceS).size;
@@ -110,7 +115,7 @@ MATBaseController* matAllocMMulSController(size_t dimensions){
   naAddSpaceChild(con->base.space, spaceS, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, marginBottom));
   naAddSpaceChild(con->base.space, spaceB, naMakePos(marginLeft + sizeA.width + sizeS.width + 2 * MAT_SIGN_WIDTH, marginBottom));
 
-  con->mulSignLabel = naNewLabel(MA_MULTIPLICATION_SIGN, MAT_SIGN_WIDTH);
+  con->mulSignLabel = naNewLabel(MA_MULTIPLICATION_CIRCLE_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->mulSignLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelFont(con->mulSignLabel, matGetMathFont());
   naSetLabelHeight(con->mulSignLabel, MAT_MATRIX_LABEL_HEIGHT);
@@ -123,18 +128,18 @@ MATBaseController* matAllocMMulSController(size_t dimensions){
   naAddSpaceChild(con->base.space, con->equalSignLabel, naMakePos(marginLeft + sizeA.width + sizeS.width + MAT_SIGN_WIDTH, signMarginBottom));
 
   matSetViewStatus(con->viewA, MAT_STATUS_NORMAL);
-  matSetViewStatus(con->viewS, MAT_STATUS_NORMAL);
+  matSetViewStatus(con->viewV, MAT_STATUS_NORMAL);
   matSetViewStatus(con->viewB, MAT_STATUS_RESULT);
 
-  matUpdateMMulSController(&con->base);
+  matUpdateMMulCompVController(&con->base);
 
   return &con->base;
 }
 
 
 
-void matDeallocMMulSController(MATBaseController* controller){
-  MATMMulSController* con = (MATMMulSController*)controller;
+void matDeallocMMulCompVController(MATBaseController* controller){
+  MATMMulCompVController* con = (MATMMulCompVController*)controller;
   NA_UNUSED(con);
   naFree(controller);
 }

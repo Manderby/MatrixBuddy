@@ -44,6 +44,8 @@
 #define MA_EQUAL_SIGN "="
 #define MA_MULTIPLICATION_SIGN "\u00d7"
 #define MA_DIVISION_SIGN "\u00f7"
+#define MA_MULTIPLICATION_CIRCLE_SIGN "\u2299"
+
 
 typedef struct MATBaseController MATBaseController;
 typedef struct MATView MATView;

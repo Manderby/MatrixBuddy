@@ -694,11 +694,8 @@
                 <outlet property="mirrorV3" destination="fuC-XL-Pg8" id="9t5-1T-cDh"/>
                 <outlet property="mirrorV4" destination="3uR-F9-5s4" id="nox-Ge-09Y"/>
                 <outlet property="mulCompM22M22" destination="pbp-ed-ksI" id="G9K-Vh-t1C"/>
-                <outlet property="mulCompM22V2" destination="VUw-1e-nSD" id="8ff-Sq-D6G"/>
                 <outlet property="mulCompM33M33" destination="F3Z-WZ-DNm" id="2L5-yd-rGO"/>
-                <outlet property="mulCompM33V3" destination="ZEk-Fm-JAe" id="54B-wa-6Jj"/>
                 <outlet property="mulCompM44M44" destination="Vp5-za-uUR" id="2no-1V-etD"/>
-                <outlet property="mulCompM44V4" destination="fCu-Bm-Lfz" id="awl-gs-2TD"/>
                 <outlet property="mulCompV2V2" destination="IyX-6j-J4d" id="wym-wY-RmK"/>
                 <outlet property="mulCompV3V3" destination="P1G-ZK-z7t" id="PE5-Lk-Xgp"/>
                 <outlet property="mulCompV4V4" destination="2fd-cu-9Pf" id="itD-xF-bk7"/>
@@ -1827,132 +1824,6 @@
                 <outlet property="B" destination="12d-0Y-e2h" id="tKY-Rl-3Xm"/>
             </connections>
             <point key="canvasLocation" x="229.5" y="87.5"/>
-        </customView>
-        <customView id="fCu-Bm-Lfz" userLabel="MulCompM4V4" customClass="MATMulCompM44V4">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aR3-y3-dT8" customClass="MATViewM44">
-                    <rect key="frame" x="125" y="0.0" width="285" height="197"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RRC-KZ-xso" customClass="MATViewM44">
-                    <rect key="frame" x="581" y="0.0" width="285" height="197"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4z-qo-NIM" customClass="MATViewV4">
-                    <rect key="frame" x="458" y="0.0" width="75" height="197"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atp-We-OJg">
-                    <rect key="frame" x="539" y="85" width="36" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="=" id="QeM-bb-L4X">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yyb-UR-CQz">
-                    <rect key="frame" x="416" y="85" width="36" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⊙" id="lcD-91-Zap">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="A" destination="aR3-y3-dT8" id="Llo-z4-fyI"/>
-                <outlet property="B" destination="RRC-KZ-xso" id="AC6-2P-8Bs"/>
-                <outlet property="v" destination="j4z-qo-NIM" id="E0p-SN-LEo"/>
-            </connections>
-            <point key="canvasLocation" x="329.5" y="424.5"/>
-        </customView>
-        <customView id="ZEk-Fm-JAe" userLabel="MulCompM3V3" customClass="MATMulCompM33V3">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lHj-SS-Alu">
-                    <rect key="frame" x="539" y="85" width="36" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="=" id="Y9b-hf-XMb">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oy9-yY-OCg" customClass="MATViewM33">
-                    <rect key="frame" x="195" y="13" width="215" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="62n-ug-nap" customClass="MATViewM33">
-                    <rect key="frame" x="581" y="13" width="215" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTY-XY-7xu" customClass="MATViewV3">
-                    <rect key="frame" x="458" y="13" width="75" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2PT-OV-uPm">
-                    <rect key="frame" x="416" y="85" width="36" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⊙" id="JLf-9m-OoP">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="A" destination="oy9-yY-OCg" id="QW1-SE-gtP"/>
-                <outlet property="B" destination="62n-ug-nap" id="b2M-aa-FOE"/>
-                <outlet property="v" destination="jTY-XY-7xu" id="wPl-vM-Boa"/>
-            </connections>
-            <point key="canvasLocation" x="509.5" y="610.5"/>
-        </customView>
-        <customView id="VUw-1e-nSD" userLabel="MulCompM2V2" customClass="MATMulCompM22V2">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GcE-Cr-tBX">
-                    <rect key="frame" x="539" y="85" width="36" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="=" id="SNX-YH-36O">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgW-aP-Kjh" customClass="MATViewM22">
-                    <rect key="frame" x="265" y="27" width="145" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ghz-9B-DLP" customClass="MATViewM22">
-                    <rect key="frame" x="581" y="27" width="145" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D56-9r-uNX" customClass="MATViewV2">
-                    <rect key="frame" x="458" y="27" width="75" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-Go-7dL">
-                    <rect key="frame" x="416" y="85" width="36" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⊙" id="Ct2-Bs-d8L">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="A" destination="jgW-aP-Kjh" id="0f0-Zf-laA"/>
-                <outlet property="B" destination="Ghz-9B-DLP" id="y6P-C0-NKS"/>
-                <outlet property="v" destination="D56-9r-uNX" id="d2p-0n-hCh"/>
-            </connections>
-            <point key="canvasLocation" x="310.5" y="225.5"/>
         </customView>
         <customView id="h7l-7c-v2j" userLabel="DivCompM3V3" customClass="MATDivCompM33V3">
             <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>

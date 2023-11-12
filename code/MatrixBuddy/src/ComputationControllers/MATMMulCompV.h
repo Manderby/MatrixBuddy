@@ -1,43 +1,12 @@
-
-#include "MATCommon.h"
-#import "MATComputationView.h"
-
-
-@class MATViewV2;
-@class MATViewV3;
-@class MATViewV4;
-@class MATViewM22;
-@class MATViewM33;
-@class MATViewM44;
-
-
-@interface MATMulCompM22V2 : MATComputationView{
-  IBOutlet MATViewM22*   A;
-  IBOutlet MATViewV2*    v;
-  IBOutlet MATViewM22*   B;
-}
-
-- (void)valueChanged:(id)sender;
-@end
+#include "MATView.h"
+#include "MATBaseController.h"
 
 
 
-@interface MATMulCompM33V3 : MATComputationView{
-  IBOutlet MATViewM33*   A;
-  IBOutlet MATViewV3*    v;
-  IBOutlet MATViewM33*   B;
-}
+typedef struct MATMMulCompVController MATMMulCompVController;
 
-- (void)valueChanged:(id)sender;
-@end
+MATBaseController* matAllocMMulCompVController(size_t dimensions);
+void matDeallocMMulCompVController(MATBaseController* con);
 
+void matUpdateMMulCompVController(MATBaseController* controller);
 
-
-@interface MATMulCompM44V4 : MATComputationView{
-  IBOutlet MATViewM44*   A;
-  IBOutlet MATViewV4*    v;
-  IBOutlet MATViewM44*   B;
-}
-
-- (void)valueChanged:(id)sender;
-@end
