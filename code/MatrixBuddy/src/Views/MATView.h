@@ -20,4 +20,4 @@ void matUpdateView(MATView* view);
 const double* matGetViewValues(const MATView* view);
 void matSetViewValues(MATView* view, const double* values);
 
-const NASpace* matGetViewSpace(const MATView* view);
+NASpace* matGetViewSpace(const MATView* view);

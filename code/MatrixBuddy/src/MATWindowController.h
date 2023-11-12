@@ -44,6 +44,7 @@
 @class MATMirrorV4;
 
 @class MATMulM22S;
+typedef struct MATMulM33SController MATMulM33SController;
 @class MATMulM33S;
 @class MATMulM44S;
 @class MATDivM22S;
@@ -90,6 +91,7 @@
 @class MATInvertM22;
 @class MATInvertM33;
 @class MATInvertM44;
+
 
 
 @interface MATWindowController : NSWindowController<NSWindowDelegate>{
@@ -210,6 +212,7 @@
 
   IBOutlet MATMulM22S*          mulM22S;
   IBOutlet MATMulM33S*          mulM33S;
+  MATMulM33SController* matM33SController;
   IBOutlet MATMulM44S*          mulM44S;
   IBOutlet MATDivM22S*          divM22S;
   IBOutlet MATDivM33S*          divM33S;

@@ -215,7 +215,7 @@ void matUpdateView(MATView* view){
     matFillBabyColor(&color, matColor);
     naSetLabelTextColor(view->label, &color);
     naSetLabelTextColor(view->errorLabel, &color);
-    color[3] *= .15;
+    color[3] *= .1;
     naSetSpaceBackgroundColor(view->matrixSpace, &color);
   }
 }
@@ -234,6 +234,6 @@ void matSetViewValues(MATView* view, const double* values){
 
 
 
-const NASpace* matGetViewSpace(const MATView* view){
+NASpace* matGetViewSpace(const MATView* view){
   return view->space;
 }

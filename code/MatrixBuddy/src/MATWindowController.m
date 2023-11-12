@@ -187,6 +187,7 @@
 
   views[MAT_COMPUTATION_MMULS * 3 + 0]          = mulM22S;
   views[MAT_COMPUTATION_MMULS * 3 + 1]          = mulM33S;
+  matM33SController = matAllocMulM33SController();
   views[MAT_COMPUTATION_MMULS * 3 + 2]          = mulM44S;
   views[MAT_COMPUTATION_MDIVS * 3 + 0]          = divM22S;
   views[MAT_COMPUTATION_MDIVS * 3 + 1]          = divM33S;
@@ -381,11 +382,20 @@
 
   NSRect frame = [computationView frame];
   [computationView removeFromSuperview];
-  computationView = views[computation * 3 + dimensions];
-  [computationView setFrame:frame];
-  [[[self window] contentView] addSubview:computationView];
-  [computationView valueChanged:self];
-  [computationView update];
+  if(computation * 3 + dimensions == MAT_COMPUTATION_MMULS * 3 + 1){
+    computationView = placeholder;
+    const NASpace* computationSpace = naGetMulM33SSpace(matM33SController);
+    NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
+    [nativeView setFrame:frame];
+    [[[self window] contentView] addSubview:nativeView];
+    naUpdateMulM33SController(matM33SController);
+  }else{
+    computationView = views[computation * 3 + dimensions];
+    [computationView setFrame:frame];
+    [[[self window] contentView] addSubview:computationView];
+    [computationView valueChanged:self];
+    [computationView update];
+  }
 
   // note: when uncommented, the focus changes always. even when just switching
   // the tab order.

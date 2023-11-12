@@ -61,10 +61,82 @@ MATDimensions matGetControllerDimensions(void* con){
 
 
 
-void mulM33SValueChanged(void* con, void* view){
-  NA_UNUSED(con);
+
+
+
+struct MATMulM33SController{
+  NASpace* space;
+  MATView* viewA;
+  NALabel* mulSignLabel;
+  MATView* viewS;
+  NALabel* equalSignLabel;
+  MATView* viewB;
+};
+
+void mulM33SValueChanged(void* controller, void* view){
   NA_UNUSED(view);
-  [(MATMulM33S*)con valueChanged: view];
+  MATMulM33SController* con = (MATMulM33SController*)controller;
+
+  const double* valuesA = matGetViewValues(con->viewA);
+  const double* valuesS = matGetViewValues(con->viewS);
+  NAMat33d result;
+
+  naMulCompM33d(result, valuesA, *valuesS);
+  matSetViewValues(con->viewB, result);
+
+  naUpdateMulM33SController(con);
+}
+
+MATMulM33SController* matAllocMulM33SController(){
+  MATMulM33SController* con = naAlloc(MATMulM33SController);
+  
+  con->space = naNewSpace(naMakeSize(700, 200));
+  
+  NAMat33d initM33;
+  naFillM33dWithDiag(initM33, 1);
+  double initS[] = {1.};
+  con->viewA = matAllocView("A", 3, 3, mulM33SValueChanged, con, initM33);
+  con->viewS = matAllocView("s", 1, 1, mulM33SValueChanged, con, initS);
+  con->viewB = matAllocView("B", 3, 3, mulM33SValueChanged, con, initM33);
+  NASpace* spaceA = matGetViewSpace(con->viewA);
+  NASpace* spaceS = matGetViewSpace(con->viewS);
+  NASpace* spaceB = matGetViewSpace(con->viewB);
+  double marginLeft = 150;
+  NASize sizeA = naGetUIElementRect(spaceA).size;
+  NASize sizeS = naGetUIElementRect(spaceS).size;
+  naAddSpaceChild(con->space, spaceA, naMakePos(marginLeft, 0));
+  naAddSpaceChild(con->space, spaceS, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, 0));
+  naAddSpaceChild(con->space, spaceB, naMakePos(marginLeft + sizeA.width + sizeS.width + 2 * MAT_SIGN_WIDTH, 0));
+
+  con->mulSignLabel = naNewLabel("\u00d7", MAT_SIGN_WIDTH);
+  naSetLabelTextAlignment(con->mulSignLabel, NA_TEXT_ALIGNMENT_CENTER);
+  naSetLabelFont(con->mulSignLabel, matGetMathFont());
+  naSetLabelHeight(con->mulSignLabel, MAT_MATRIX_LABEL_HEIGHT);
+  naAddSpaceChild(con->space, con->mulSignLabel, naMakePos(marginLeft + sizeA.width, 70));
+
+  con->equalSignLabel = naNewLabel("=", MAT_SIGN_WIDTH);
+  naSetLabelTextAlignment(con->equalSignLabel, NA_TEXT_ALIGNMENT_CENTER);
+  naSetLabelFont(con->equalSignLabel, matGetMathFont());
+  naSetLabelHeight(con->equalSignLabel, MAT_MATRIX_LABEL_HEIGHT);
+  naAddSpaceChild(con->space, con->equalSignLabel, naMakePos(marginLeft + sizeA.width + sizeS.width + MAT_SIGN_WIDTH, 70));
+  
+  matUpdateView(con->viewA);
+  matUpdateView(con->viewS);
+  matUpdateView(con->viewB);
+
+  return con;
+}
+
+NASpace* naGetMulM33SSpace(MATMulM33SController* con){
+  return con->space;
+}
+
+void naUpdateMulM33SController(MATMulM33SController* con){
+  matSetViewStatus(con->viewA, MAT_STATUS_NORMAL);
+  matSetViewStatus(con->viewS, MAT_STATUS_NORMAL);
+  matSetViewStatus(con->viewB, MAT_STATUS_RESULT);
+
+  matUpdateView(con->viewB);
 }
 
 
@@ -72,36 +144,6 @@ void mulM33SValueChanged(void* con, void* view){
 @implementation MATMulM33S
 
 - (void)awakeFromNib{
-  NAMat33d initM33;
-  naFillM33dWithDiag(initM33, 1);
-  double initS[] = {1.};
-  viewA = matAllocView("A", 3, 3, mulM33SValueChanged, self, initM33);
-  viewS = matAllocView("s", 1, 1, mulM33SValueChanged, self, initS);
-  viewB = matAllocView("B", 3, 3, mulM33SValueChanged, self, initM33);
-  NSView* nsViewA = naGetUIElementNativePtrConst(matGetViewSpace(viewA));
-  NSView* nsViewS = naGetUIElementNativePtrConst(matGetViewSpace(viewS));
-  NSView* nsViewB = naGetUIElementNativePtrConst(matGetViewSpace(viewB));
-
-  NSRect frame;
-  frame = [nsViewA frame];
-  frame.origin.x = 0;
-  [nsViewA setFrame:frame];
-  [self addSubview:nsViewA];
-  frame = [nsViewS frame];
-  frame.origin.x = 300;
-  [nsViewS setFrame:frame];
-  [self addSubview:nsViewS];
-  frame = [nsViewB frame];
-  frame.origin.x = 400;
-  [nsViewB setFrame:frame];
-  [self addSubview:nsViewB];
-
-  mulSignLabel = naNewLabel("\u00d7", 20);
-  equalSignLabel = naNewLabel("=", 20);
-
-  matUpdateView(viewA);
-  matUpdateView(viewS);
-  matUpdateView(viewB);
 }
 
 
@@ -114,28 +156,12 @@ void mulM33SValueChanged(void* con, void* view){
 
 
 - (void)update{
-  matSetViewStatus(viewA, MAT_STATUS_NORMAL);
-  matSetViewStatus(viewS, MAT_STATUS_NORMAL);
-  matSetViewStatus(viewB, MAT_STATUS_RESULT);
-  
 //  [B setPasteEnabled:NA_FALSE];
-  
-  matUpdateView(viewB);
 }
 
 
 
 - (void)valueChanged:(id)sender{
-  NA_UNUSED(sender);
-
-  const double* valuesA = matGetViewValues(viewA);
-  const double* valuesS = matGetViewValues(viewS);
-  NAMat33d result;
-
-  naMulCompM33d(result, valuesA, *valuesS);
-  matSetViewValues(viewB, result);
-  
-  [self update];
 }
 
 @end

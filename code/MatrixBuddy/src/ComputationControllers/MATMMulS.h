@@ -23,6 +23,11 @@
 
 
 
+typedef struct MATMulM33SController MATMulM33SController;
+MATMulM33SController* matAllocMulM33SController(void);
+NASpace* naGetMulM33SSpace(MATMulM33SController* con);
+void naUpdateMulM33SController(MATMulM33SController* con);
+
 
 @interface MATMulM33S : MATComputationView{
   MATView* viewA;
