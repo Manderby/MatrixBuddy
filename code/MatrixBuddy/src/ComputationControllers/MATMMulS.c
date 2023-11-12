@@ -1,5 +1,6 @@
 
 #include "MATMMulS.h"
+#include "MATTranslations.h"
 #include "NAMath/NAVectorAlgebra.h"
 
 
@@ -62,6 +63,7 @@ MATBaseController* matAllocMulMSController(size_t dimensions){
   matInitBaseController(
     &con->base,
     dimensions,
+    MATHelpMMulS,
     mulMSValueChanged,
     naUpdateMulMSController,
     updateMulMSControllerTabOrder);

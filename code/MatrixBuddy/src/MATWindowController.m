@@ -473,6 +473,8 @@
   if(sender == showHelpItem){
     showHelp = !showHelp;
     naSetPreferencesBool(MATPrefs[ShowHelp], showHelp);
+    if(computationController)
+      matUpdateController(computationController, NA_TRUE);
   }else if(sender == showIdentifiersItem){
     showIdentifiers = !showIdentifiers;
     naSetPreferencesBool(MATPrefs[ShowIdentifiers], showIdentifiers);

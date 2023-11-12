@@ -18,6 +18,7 @@ void matPrepareFirstView(void);
   
 @public
   NAFont* mathFont;
+  NAFont* helpLineFont;
   NAUIImage* copyImage;
   NAUIImage* pasteImage;
   MATAboutController* aboutController;

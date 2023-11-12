@@ -5,6 +5,7 @@
 void matInitBaseController(
   MATBaseController* con,
   size_t dimensions,
+  MATTranslation helpLineId,
   MATValueChangedHandler valuesChanged,
   MATUpdateHandler update,
   MATUpdateTabOrderHandler updateTabOrder)
@@ -14,6 +15,13 @@ void matInitBaseController(
   double viewWidth = 991;
   double viewHeight = 197;
   con->space = naNewSpace(naMakeSize(viewWidth, viewHeight));
+  con->helpLine = naNewLabel(matTranslate(helpLineId), viewWidth);
+  naSetLabelTextAlignment(con->helpLine, NA_TEXT_ALIGNMENT_CENTER);
+  naSetLabelFont(con->helpLine, matGetHelpLineFont());
+  naAddSpaceChild(
+    con->space,
+    con->helpLine,
+    naMakePos(0, viewHeight - naGetUIElementRect(con->helpLine).size.height - 3));
   
   con->valuesChanged = valuesChanged;
   con->update = update;
@@ -41,6 +49,8 @@ void matNotifyControllerValuesChanged(MATBaseController* con, MATView* view){
 
 
 void matUpdateController(MATBaseController* con, NABool justResult){
+  naSetLabelVisible(con->helpLine, matHasShowHelp());
+
   con->update(con, justResult);
 }
 

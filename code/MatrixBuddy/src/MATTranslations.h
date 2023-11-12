@@ -1,4 +1,7 @@
 
+#ifndef MAT_TRANSLATIONS_INCLUDED
+#define MAT_TRANSLATIONS_INCLUDED
+
 #include "NATranslator.h"
 
 typedef enum{
@@ -106,3 +109,5 @@ typedef enum{
 const NAUTF8Char* matTranslate(NAInt id);
 
 void initTranslations(void);
+
+#endif // MAT_TRANSLATIONS_INCLUDED

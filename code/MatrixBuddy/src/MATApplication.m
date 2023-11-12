@@ -31,6 +31,13 @@ NAFont* matGetMathFont(){
 }
 
 
+
+NAFont* matGetHelpLineFont(){
+  return ((MATApplication*)NSApp)->helpLineFont;
+}
+
+
+
 NAUIImage* matGetCopyImage(){
   return ((MATApplication*)NSApp)->copyImage;
 }
@@ -170,6 +177,12 @@ NABool matHasShowCopyPaste(){
 
 
 
+NABool matHasShowHelp(){
+  return [(MATApplication*)NSApp hasShowHelp];
+}
+
+
+
 
 @implementation MATApplication
 
@@ -178,6 +191,7 @@ NABool matHasShowCopyPaste(){
   [self setDelegate:self];
   
   mathFont = naCreateFontWithPreset(NA_FONT_KIND_MATH, NA_FONT_SIZE_HUGE);
+  helpLineFont = naCreateFontWithPreset(NA_FONT_KIND_SYSTEM, NA_FONT_SIZE_SMALL);
   
   NAString* copyImagePath = naNewApplicationResourcePath(NA_NULL, "copy", "png");
   NABabyImage* mainCopyImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(copyImagePath));
@@ -205,6 +219,7 @@ NABool matHasShowCopyPaste(){
   NA_UNUSED(notification);
   
   naRelease(mathFont);
+  naRelease(helpLineFont);
   naRelease(copyImage);
   naRelease(pasteImage);
 

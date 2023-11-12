@@ -51,6 +51,7 @@ typedef void(*MATUpdateHandler)(MATBaseController* controller, NABool justResult
 typedef void (*MATUpdateTabOrderHandler)(MATBaseController* controller);
 
 NAFont* matGetMathFont(void);
+NAFont* matGetHelpLineFont(void);
 NAUIImage* matGetCopyImage(void);
 NAUIImage* matGetPasteImage(void);
 
@@ -67,3 +68,4 @@ MATCodeStyle matGetCodeStyle(void);
 MATValueAccuracy matGetValueAccuracy(void);
 NABool matHasShowIdentifier(void);
 NABool matHasShowCopyPaste(void);
+NABool matHasShowHelp(void);
