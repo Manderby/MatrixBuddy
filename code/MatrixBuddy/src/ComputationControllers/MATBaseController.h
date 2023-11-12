@@ -29,7 +29,7 @@ size_t matGetControllerDimensions(MATBaseController* con);
 
 void matNotifyControllerValuesChanged(MATBaseController* con, MATView* view);
 
-void matUpdateController(MATBaseController* con, NABool justResult);
+void matUpdateController(MATBaseController* con);
 
 void matUpdateControllerTabOrder(MATBaseController* con);
 

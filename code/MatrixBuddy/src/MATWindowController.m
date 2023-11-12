@@ -188,12 +188,12 @@
   views[MAT_COMPUTATION_MIRRORV * 3 + 1]        = mirrorV3;
   views[MAT_COMPUTATION_MIRRORV * 3 + 2]        = mirrorV4;
 
-  matM22SController = matAllocMulMSController(2);
-  matM33SController = matAllocMulMSController(3);
-  matM44SController = matAllocMulMSController(4);
-  views[MAT_COMPUTATION_MDIVS * 3 + 0]          = divM22S;
-  views[MAT_COMPUTATION_MDIVS * 3 + 1]          = divM33S;
-  views[MAT_COMPUTATION_MDIVS * 3 + 2]          = divM44S;
+  controllers[MAT_COMPUTATION_MMULS * 3 + 0] = matAllocMMulSController(2);
+  controllers[MAT_COMPUTATION_MMULS * 3 + 1] = matAllocMMulSController(3);
+  controllers[MAT_COMPUTATION_MMULS * 3 + 2] = matAllocMMulSController(4);
+  controllers[MAT_COMPUTATION_MDIVS * 3 + 0] = matAllocMDivSController(2);
+  controllers[MAT_COMPUTATION_MDIVS * 3 + 1] = matAllocMDivSController(3);
+  controllers[MAT_COMPUTATION_MDIVS * 3 + 2] = matAllocMDivSController(4);
   views[MAT_COMPUTATION_MMULCOMPV * 3 + 0]      = mulCompM22V2;
   views[MAT_COMPUTATION_MMULCOMPV * 3 + 1]      = mulCompM33V3;
   views[MAT_COMPUTATION_MMULCOMPV * 3 + 2]      = mulCompM44V4;
@@ -241,9 +241,12 @@
 }
 
 - (void)cleanCStructures{
-  matDeallocMulMSController(matM22SController);
-  matDeallocMulMSController(matM33SController);
-  matDeallocMulMSController(matM44SController);
+  matDeallocMMulSController(controllers[MAT_COMPUTATION_MMULS * 3 + 0]);
+  matDeallocMMulSController(controllers[MAT_COMPUTATION_MMULS * 3 + 1]);
+  matDeallocMMulSController(controllers[MAT_COMPUTATION_MMULS * 3 + 2]);
+  matDeallocMDivSController(controllers[MAT_COMPUTATION_MDIVS * 3 + 0]);
+  matDeallocMDivSController(controllers[MAT_COMPUTATION_MDIVS * 3 + 1]);
+  matDeallocMDivSController(controllers[MAT_COMPUTATION_MDIVS * 3 + 2]);
 }
 
 
@@ -401,12 +404,8 @@
   computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation == MAT_COMPUTATION_MMULS){
-    switch(dimensions){
-    case 2: computationController = matM22SController; break;
-    case 3: computationController = matM33SController; break;
-    case 4: computationController = matM44SController; break;
-    }
+  if(computation == MAT_COMPUTATION_MMULS || computation == MAT_COMPUTATION_MDIVS){
+    computationController = controllers[computation * 3 + (dimensions - 2)];
     const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
     matUpdateControllerTabOrder(computationController);
@@ -474,12 +473,12 @@
     showHelp = !showHelp;
     naSetPreferencesBool(MATPrefs[ShowHelp], showHelp);
     if(computationController)
-      matUpdateController(computationController, NA_TRUE);
+      matUpdateController(computationController);
   }else if(sender == showIdentifiersItem){
     showIdentifiers = !showIdentifiers;
     naSetPreferencesBool(MATPrefs[ShowIdentifiers], showIdentifiers);
     if(computationController)
-      matUpdateController(computationController, NA_FALSE);
+      matUpdateController(computationController);
   }else if(sender == showCopyPasteItem){
     showCopyPaste = !showCopyPaste;
     naSetPreferencesBool(MATPrefs[ShowCopyPaste], showCopyPaste);
@@ -518,12 +517,12 @@
     valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;
     naSetPreferencesEnum(MATPrefs[ValueAccuracy], valueAccuracy);
     if(computationController)
-      matUpdateController(computationController, NA_FALSE);
+      matUpdateController(computationController);
   }else if(sender == valueAccuracyFloatItem){
     valueAccuracy = MAT_VALUE_ACCURACY_FLOAT;
     naSetPreferencesEnum(MATPrefs[ValueAccuracy], valueAccuracy);
     if(computationController)
-      matUpdateController(computationController, NA_FALSE);
+      matUpdateController(computationController);
   }else{}
   [self update];
 }

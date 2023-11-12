@@ -331,7 +331,7 @@ MATView* matAllocView(
 
   view->space = naNewSpace(viewSize);
    
-  view->errorLabel = naNewLabel("Error", viewSize.width);
+  view->errorLabel = naNewLabel("", viewSize.width);
   naSetLabelTextAlignment(view->errorLabel, NA_TEXT_ALIGNMENT_CENTER);
   naAddSpaceChild(view->space, view->errorLabel, naMakePos(0, viewSize.height - MAT_MATRIX_LABEL_HEIGHT - MAT_VIEW_MARGIN_V));
 
@@ -408,6 +408,9 @@ void matSetViewStatus(MATView* view, MATStatus status){
 
 
 void matUpdateView(MATView* view){
+
+  naSetLabelText(view->errorLabel, matGetUTF8StringWithStatus(view->status));
+
   for(size_t x = 0; x < view->dimensions[0]; ++x){
     for(size_t y = 0; y < view->dimensions[1]; ++y){
       size_t index = x * view->dimensions[1] + y;

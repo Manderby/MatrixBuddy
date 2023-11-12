@@ -22,3 +22,5 @@ NASpace* matGetViewSpace(const MATView* view);
 void matUpdateViewTabOrder(MATView* view);
 
 void matSetViewPasteEnabled(MATView* view, NABool enabled);
+
+size_t matGetViewElementCount(const MATView* view);

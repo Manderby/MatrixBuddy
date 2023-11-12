@@ -44,13 +44,8 @@
 @class MATMirrorV3;
 @class MATMirrorV4;
 
-@class MATMulM22S;
-typedef struct MATMulMSController MATMulMSController;
-@class MATMulM33S;
-@class MATMulM44S;
-@class MATDivM22S;
-@class MATDivM33S;
-@class MATDivM44S;
+typedef struct MATMMulSController MATMMulSController;
+typedef struct MATMDivSController MATMDivSController;
 @class MATMulCompM22V2;
 @class MATMulCompM33V3;
 @class MATMulCompM44V4;
@@ -212,12 +207,6 @@ typedef struct MATMulMSController MATMulMSController;
   IBOutlet MATMirrorV3*         mirrorV3;
   IBOutlet MATMirrorV4*         mirrorV4;
 
-  MATBaseController* matM22SController;
-  MATBaseController* matM33SController;
-  MATBaseController* matM44SController;
-  IBOutlet MATDivM22S*          divM22S;
-  IBOutlet MATDivM33S*          divM33S;
-  IBOutlet MATDivM44S*          divM44S;
   IBOutlet MATMulCompM22V2*     mulCompM22V2;
   IBOutlet MATMulCompM33V3*     mulCompM33V3;
   IBOutlet MATMulCompM44V4*     mulCompM44V4;
@@ -261,6 +250,7 @@ typedef struct MATMulMSController MATMulMSController;
   IBOutlet MATInvertM44*        invertM44;
 
   MATComputationView* views[MAT_COMPUTATION_COUNT * 3];
+  MATBaseController* controllers[MAT_COMPUTATION_COUNT * 3];
 }
 
 - (void)prepareFirstView;

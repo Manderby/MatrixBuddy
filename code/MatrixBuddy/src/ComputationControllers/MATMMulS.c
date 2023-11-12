@@ -4,7 +4,7 @@
 #include "NAMath/NAVectorAlgebra.h"
 
 
-struct MATMulMSController{
+struct MATMMulSController{
   MATBaseController base;
   MATView* viewA;
   NALabel* mulSignLabel;
@@ -17,39 +17,44 @@ struct MATMulMSController{
 
 
 
-void mulMSValueChanged(MATBaseController* controller, MATView* view){
+void matMMulSValueChanged(MATBaseController* controller, MATView* view){
   NA_UNUSED(view);
-  MATMulMSController* con = (MATMulMSController*)controller;
+  MATMMulSController* con = (MATMMulSController*)controller;
 
   const double* valuesA = matGetViewValues(con->viewA);
   const double* valuesS = matGetViewValues(con->viewS);
 
-  NAMat22d result2;
-  NAMat33d result3;
-  NAMat44d result4;
+  size_t elementCount = matGetViewElementCount(con->viewB);
+  double* result = naMalloc(elementCount * sizeof(double));
+  naZeron(result, elementCount * sizeof(double));
 
   switch(con->base.dimensions){
-  case 2:
-    naMulCompM22d(result2, valuesA, *valuesS);
-    matSetViewValues(con->viewB, result2);
-    break;
-  case 3:
-    naMulCompM33d(result3, valuesA, *valuesS);
-    matSetViewValues(con->viewB, result3);
-    break;
-  case 4:
-    naMulCompM44d(result4, valuesA, *valuesS);
-    matSetViewValues(con->viewB, result4);
-    break;
+  case 2: naMulCompM22d(result, valuesA, *valuesS); break;
+  case 3: naMulCompM33d(result, valuesA, *valuesS); break;
+  case 4: naMulCompM44d(result, valuesA, *valuesS); break;
   }
-
-  naUpdateMulMSController(&con->base, NA_TRUE);
+  
+  matSetViewValues(con->viewB, result);
+  matUpdateMMulSController(&con->base);
+  naFree(result);
 }
 
 
 
-void updateMulMSControllerTabOrder(MATBaseController* controller){
-  MATMulMSController* con = (MATMulMSController*)controller;
+void matUpdateMMulSController(MATBaseController* controller){
+  MATMMulSController* con = (MATMMulSController*)controller;
+
+  matSetViewPasteEnabled(con->viewB, NA_FALSE);
+
+  matUpdateView(con->viewA);
+  matUpdateView(con->viewS);
+  matUpdateView(con->viewB);
+}
+
+
+
+void matUpdateMMulSControllerTabOrder(MATBaseController* controller){
+  MATMMulSController* con = (MATMMulSController*)controller;
   matUpdateViewTabOrder(con->viewA);
   matUpdateViewTabOrder(con->viewS);
   matUpdateViewTabOrder(con->viewB);
@@ -57,16 +62,16 @@ void updateMulMSControllerTabOrder(MATBaseController* controller){
 
 
 
-MATBaseController* matAllocMulMSController(size_t dimensions){
-  MATMulMSController* con = naAlloc(MATMulMSController);
+MATBaseController* matAllocMMulSController(size_t dimensions){
+  MATMMulSController* con = naAlloc(MATMMulSController);
   
   matInitBaseController(
     &con->base,
     dimensions,
     MATHelpMMulS,
-    mulMSValueChanged,
-    naUpdateMulMSController,
-    updateMulMSControllerTabOrder);
+    matMMulSValueChanged,
+    matUpdateMMulSController,
+    matUpdateMMulSControllerTabOrder);
   
   NAMat22d initM22;
   NAMat33d initM33;
@@ -89,8 +94,8 @@ MATBaseController* matAllocMulMSController(size_t dimensions){
   }
 
   double initS[] = {1.};
-  con->viewS = matAllocView("s", 1, 1, con, initS);
   con->viewA = matAllocView("A", dimensions, dimensions, con, initM);
+  con->viewS = matAllocView("s", 1, 1, con, initS);
   con->viewB = matAllocView("B", dimensions, dimensions, con, initM);
 
   NASpace* spaceA = matGetViewSpace(con->viewA);
@@ -120,39 +125,23 @@ MATBaseController* matAllocMulMSController(size_t dimensions){
   naSetLabelFont(con->equalSignLabel, matGetMathFont());
   naSetLabelHeight(con->equalSignLabel, MAT_MATRIX_LABEL_HEIGHT);
   naAddSpaceChild(con->base.space, con->equalSignLabel, naMakePos(marginLeft + sizeA.width + sizeS.width + MAT_SIGN_WIDTH, signMarginBottom));
-  
-  naUpdateMulMSController(&con->base, NA_FALSE);
+
+  matSetViewStatus(con->viewA, MAT_STATUS_NORMAL);
+  matSetViewStatus(con->viewS, MAT_STATUS_NORMAL);
+  matSetViewStatus(con->viewB, MAT_STATUS_RESULT);
+
+  matUpdateMMulSController(&con->base);
 
   return &con->base;
 }
 
 
 
-void matDeallocMulMSController(MATBaseController* controller){
-  MATMulMSController* con = (MATMulMSController*)controller;
+void matDeallocMMulSController(MATBaseController* controller){
+  MATMMulSController* con = (MATMMulSController*)controller;
   NA_UNUSED(con);
-//  naDelete(con->viewA);
-//  naDelete(con->viewS);
-//  naDelete(con->viewB);
-//  naDelete(con->equalSignLabel);
-//  naDelete(con->mulSignLabel);
   naFree(controller);
 }
 
 
-
-void naUpdateMulMSController(MATBaseController* controller, NABool justResult){
-  MATMulMSController* con = (MATMulMSController*)controller;
-  matSetViewStatus(con->viewA, MAT_STATUS_NORMAL);
-  matSetViewStatus(con->viewS, MAT_STATUS_NORMAL);
-  matSetViewStatus(con->viewB, MAT_STATUS_RESULT);
-
-  matSetViewPasteEnabled(con->viewB, NA_FALSE);
-
-  if(!justResult){
-    matUpdateView(con->viewA);
-    matUpdateView(con->viewS);
-  }
-  matUpdateView(con->viewB);
-}
 

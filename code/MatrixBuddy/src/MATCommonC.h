@@ -18,6 +18,7 @@
 #define MAT_COPYPASTE_BUTTON_SIZE 19
 #define MAT_COPYPASTE_BUTTON_DISTANCE 20
 #define MAT_SIGN_WIDTH 60
+#define MAT_LABEL_SHIFT_Y -3
 
 #define MAT_TEXTFIELD_WIDTH 65
 #define MAT_TEXTFIELD_HEIGHT 22
@@ -42,12 +43,13 @@
 
 #define MA_EQUAL_SIGN "="
 #define MA_MULTIPLICATION_SIGN "\u00d7"
+#define MA_DIVISION_SIGN "\u00f7"
 
 typedef struct MATBaseController MATBaseController;
 typedef struct MATView MATView;
 
 typedef void(*MATValueChangedHandler)(MATBaseController* controller, MATView* view);
-typedef void(*MATUpdateHandler)(MATBaseController* controller, NABool justResult);
+typedef void(*MATUpdateHandler)(MATBaseController* controller);
 typedef void (*MATUpdateTabOrderHandler)(MATBaseController* controller);
 
 NAFont* matGetMathFont(void);

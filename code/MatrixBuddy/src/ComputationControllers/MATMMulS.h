@@ -4,10 +4,10 @@
 
 
 
-typedef struct MATMulMSController MATMulMSController;
+typedef struct MATMMulSController MATMMulSController;
 
-MATBaseController* matAllocMulMSController(size_t dimensions);
-void matDeallocMulMSController(MATBaseController* con);
+MATBaseController* matAllocMMulSController(size_t dimensions);
+void matDeallocMMulSController(MATBaseController* con);
 
-void naUpdateMulMSController(MATBaseController* controller, NABool justResult);
+void matUpdateMMulSController(MATBaseController* controller);
 

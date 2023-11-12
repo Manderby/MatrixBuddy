@@ -21,7 +21,7 @@ void matInitBaseController(
   naAddSpaceChild(
     con->space,
     con->helpLine,
-    naMakePos(0, viewHeight - naGetUIElementRect(con->helpLine).size.height - 3));
+    naMakePos(0, viewHeight - naGetUIElementRect(con->helpLine).size.height + MAT_LABEL_SHIFT_Y));
   
   con->valuesChanged = valuesChanged;
   con->update = update;
@@ -48,10 +48,10 @@ void matNotifyControllerValuesChanged(MATBaseController* con, MATView* view){
 
 
 
-void matUpdateController(MATBaseController* con, NABool justResult){
+void matUpdateController(MATBaseController* con){
   naSetLabelVisible(con->helpLine, matHasShowHelp());
 
-  con->update(con, justResult);
+  con->update(con);
 }
 
 

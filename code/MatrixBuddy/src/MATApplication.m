@@ -138,9 +138,9 @@ MATColor matGetColorWithStatus(MATStatus status){
 void matFillBabyColor(NABabyColor* babyColor, MATColor color){
   static const NABabyColor matColors[] = {
     [MAT_COLOR_NORMAL]  = {0., 0., 0., 0.,},
-    [MAT_COLOR_RESULT]  = {0., 6., 0., 1.,},
-    [MAT_COLOR_ERROR]   = {1., 0., 0., 1.,},
-    [MAT_COLOR_WARNING] = {.7, .5, 0., 1.,},
+    [MAT_COLOR_RESULT]  = {0., .4, .025, 1.,},
+    [MAT_COLOR_ERROR]   = {.7, .025, 0., 1.,},
+    [MAT_COLOR_WARNING] = {.4, .25, 0., 1.,},
   };
   naCopyn(*babyColor, &matColors[color], sizeof(NABabyColor));
 }
