@@ -246,26 +246,57 @@ NABool mat_ViewPressPaste(NAReaction reaction){
   NAString* string = matNewStringFromPasteboard();
   const char* codeStr = naGetStringUTF8Pointer(string);
 
-  char* newEndPtr;
-  int index = 0;
+  // Strip the first whitespaces and find out if there is a curly bracket. If
+  // so, we assume, this is a C code string and will treat the ordering
+  // according to the setting.
+  NABool mightBeCEncoding = NA_FALSE;
+  while(*codeStr && (*codeStr <= ' ')){codeStr++;}
+  if(*codeStr == '{'){
+    mightBeCEncoding = NA_TRUE;
+    codeStr++;
+  }
+
+  size_t elementCount = matGetViewElementCount(view);
+  double* newValues = naMalloc(elementCount * sizeof(double));
+  naZeron(newValues, elementCount * sizeof(double));
   
+  char* newEndPtr;
+  int curValue = 0;
   while(1){
-    if(index == 1){break;}
+    if(curValue == elementCount){break;}
     if(*codeStr == '\0'){break;}
-    view->values[index] = strtod(codeStr, &newEndPtr);
+    newValues[curValue] = strtod(codeStr, &newEndPtr);
 
     if(newEndPtr == codeStr){
       // No conversion found.
       codeStr++;
     }else{
       codeStr = newEndPtr;
-      index++;
+      curValue++;
     }
   }
-
+  
+  if(view->dimensions[0] == view->dimensions[1] && view->dimensions[0] != 1){
+    MATCodeStyle codeStyle = matGetCodeStyle();
+    if(mightBeCEncoding && ((codeStyle == MAT_CODE_STYLE_C_COLUMN_FIRST_1D) || (codeStyle == MAT_CODE_STYLE_C_COLUMN_FIRST_2D))){
+      // The values are expected colum first. And as NALib matrices are stored
+      // column first, we do nothing.
+    }else{
+      // We transform the values to column first ordering.
+      switch(view->dimensions[1]){
+        case 2: naTransposeM22dS(newValues); break;
+        case 3: naTransposeM33dS(newValues); break;
+        case 4: naTransposeM44dS(newValues); break;
+      }
+    }
+  }
+  
+  matSetViewValues(view, newValues);
   matUpdateView(view);
   matUpdateControllerValues(view->con, view);
+
   naDelete(string);
+  naFree(newValues);
 
   return NA_TRUE;
 }

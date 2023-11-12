@@ -137,10 +137,10 @@
   // Strip the first whitespaces and find out if there is a curly bracket. If
   // so, we assume, this is a C code string and will treat the ordering
   // according to the setting.
-  NABool mightbeCcode = NA_FALSE;
+  NABool mightBeCEncoding = NA_FALSE;
   while((*codeStr != '\0') && (*codeStr <= ' ')){codeStr++;}
   if(*codeStr == '{'){
-    mightbeCcode = NA_TRUE;
+    mightBeCEncoding = NA_TRUE;
 //    codeStr++;
   }
 
@@ -164,7 +164,7 @@
   }
   
   MATCodeStyle codeStyle = [(MATApplication*)NSApp codeStyle];
-  if(mightbeCcode && ((codeStyle == MAT_CODE_STYLE_C_COLUMN_FIRST_1D) || (codeStyle == MAT_CODE_STYLE_C_COLUMN_FIRST_2D))){
+  if(mightBeCEncoding && ((codeStyle == MAT_CODE_STYLE_C_COLUMN_FIRST_1D) || (codeStyle == MAT_CODE_STYLE_C_COLUMN_FIRST_2D))){
     // The values are expected colum first. And as NALib matrices are stored
     // column first, we do nothing.
   }else{
