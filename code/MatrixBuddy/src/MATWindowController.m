@@ -185,10 +185,12 @@
   views[MAT_COMPUTATION_MIRRORV * 3 + 1]        = mirrorV3;
   views[MAT_COMPUTATION_MIRRORV * 3 + 2]        = mirrorV4;
 
-  views[MAT_COMPUTATION_MMULS * 3 + 0]          = mulM22S;
-  views[MAT_COMPUTATION_MMULS * 3 + 1]          = mulM33S;
-  matM33SController = matAllocMulM33SController();
-  views[MAT_COMPUTATION_MMULS * 3 + 2]          = mulM44S;
+  matM22SController = matAllocMulM33SController(2);
+  matM33SController = matAllocMulM33SController(3);
+  matM44SController = matAllocMulM33SController(4);
+//  views[MAT_COMPUTATION_MMULS * 3 + 0]          = mulM22S;
+//  views[MAT_COMPUTATION_MMULS * 3 + 1]          = mulM33S;
+//  views[MAT_COMPUTATION_MMULS * 3 + 2]          = mulM44S;
   views[MAT_COMPUTATION_MDIVS * 3 + 0]          = divM22S;
   views[MAT_COMPUTATION_MDIVS * 3 + 1]          = divM33S;
   views[MAT_COMPUTATION_MDIVS * 3 + 2]          = divM44S;
@@ -235,7 +237,7 @@
   views[MAT_COMPUTATION_INVERTM * 3 + 2]        = invertM44;
 
   computation = MAT_COMPUTATION_MMULV;
-  dimensions = MAT_DIMENSIONS_3;
+  dimensions = 3;
 }
 
 
@@ -332,9 +334,9 @@
     [buttons[m] setState:NAStateOff];
   }
   [buttons[computation] setState:NAStateOn];
-  [dimension2Radio setState:dimensions == MAT_DIMENSIONS_2 ? NAStateOn : NAStateOff];
-  [dimension3Radio setState:dimensions == MAT_DIMENSIONS_3 ? NAStateOn : NAStateOff];
-  [dimension4Radio setState:dimensions == MAT_DIMENSIONS_4 ? NAStateOn : NAStateOff];
+  [dimension2Radio setState:dimensions == 2 ? NAStateOn : NAStateOff];
+  [dimension3Radio setState:dimensions == 3 ? NAStateOn : NAStateOff];
+  [dimension4Radio setState:dimensions == 4 ? NAStateOn : NAStateOff];
 
   [showHelpItem setState:(showHelp?NAStateOn:NAStateOff)];
   [showIdentifiersItem setState:(showIdentifiers?NAStateOn:NAStateOff)];
@@ -382,15 +384,26 @@
 
   NSRect frame = [computationView frame];
   [computationView removeFromSuperview];
-  if(computation * 3 + dimensions == MAT_COMPUTATION_MMULS * 3 + 1){
-    computationView = placeholder;
-    const NASpace* computationSpace = naGetMulM33SSpace(matM33SController);
+//  [naGetUIElementNativePtrConst(matM22SController) removeFromSuperview];
+//  [naGetUIElementNativePtrConst(matM33SController) removeFromSuperview];
+//  [naGetUIElementNativePtrConst(matM44SController) removeFromSuperview];
+  
+  
+  if(computation == MAT_COMPUTATION_MMULS){
+    MATMulM33SController* controller;
+    switch(dimensions){
+    case 2: controller = matM22SController; break;
+    case 3: controller = matM33SController; break;
+    case 4: controller = matM44SController; break;
+    }
+    const NASpace* computationSpace = naGetMulM33SSpace(controller);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
+    computationView = nativeView;
     [nativeView setFrame:frame];
     [[[self window] contentView] addSubview:nativeView];
-    naUpdateMulM33SController(matM33SController);
+    naUpdateMulM33SController(controller);
   }else{
-    computationView = views[computation * 3 + dimensions];
+    computationView = views[computation * 3 + (dimensions - 2)];
     [computationView setFrame:frame];
     [[[self window] contentView] addSubview:computationView];
     [computationView valueChanged:self];
@@ -500,9 +513,9 @@
 
 - (IBAction)changeDimensions:(id)sender{
   NA_UNUSED(sender);
-  if(sender == dimension2Radio){dimensions = MAT_DIMENSIONS_2;}
-  if(sender == dimension3Radio){dimensions = MAT_DIMENSIONS_3;}
-  if(sender == dimension4Radio){dimensions = MAT_DIMENSIONS_4;}
+  if(sender == dimension2Radio){dimensions = 2;}
+  if(sender == dimension3Radio){dimensions = 3;}
+  if(sender == dimension4Radio){dimensions = 4;}
   [self update];
 }
 

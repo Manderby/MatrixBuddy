@@ -26,7 +26,7 @@
 		90233A78256ADE2300E383A6 /* MATVMulCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A2B256ADE2200E383A6 /* MATVMulCompV.m */; };
 		90233A79256ADE2300E383A6 /* MATVMulS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A2E256ADE2200E383A6 /* MATVMulS.m */; };
 		90233A7A256ADE2300E383A6 /* MATOrthogonalizeV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A2F256ADE2200E383A6 /* MATOrthogonalizeV.m */; };
-		90233A7B256ADE2300E383A6 /* MATMMulS.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A30256ADE2200E383A6 /* MATMMulS.m */; };
+		90233A7B256ADE2300E383A6 /* MATMMulS.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A30256ADE2200E383A6 /* MATMMulS.c */; };
 		90233A7C256ADE2300E383A6 /* MATMDivCompM.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A31256ADE2200E383A6 /* MATMDivCompM.m */; };
 		90233A7D256ADE2300E383A6 /* MATMMulCompV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A38256ADE2200E383A6 /* MATMMulCompV.m */; };
 		90233A7E256ADE2300E383A6 /* MATMMulV.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A39256ADE2200E383A6 /* MATMMulV.m */; };
@@ -358,7 +358,7 @@
 		90233A2D256ADE2200E383A6 /* MATMSubM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATMSubM.h; sourceTree = "<group>"; };
 		90233A2E256ADE2200E383A6 /* MATVMulS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATVMulS.m; sourceTree = "<group>"; };
 		90233A2F256ADE2200E383A6 /* MATOrthogonalizeV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATOrthogonalizeV.m; sourceTree = "<group>"; };
-		90233A30256ADE2200E383A6 /* MATMMulS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMMulS.m; sourceTree = "<group>"; };
+		90233A30256ADE2200E383A6 /* MATMMulS.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATMMulS.c; sourceTree = "<group>"; };
 		90233A31256ADE2200E383A6 /* MATMDivCompM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATMDivCompM.m; sourceTree = "<group>"; };
 		90233A32256ADE2200E383A6 /* MATDiagV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATDiagV.h; sourceTree = "<group>"; };
 		90233A33256ADE2200E383A6 /* MATVDivS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATVDivS.h; sourceTree = "<group>"; };
@@ -856,7 +856,7 @@
 				90233A37256ADE2200E383A6 /* MATMMulM.h */,
 				90233A4D256ADE2300E383A6 /* MATMMulM.m */,
 				90233A43256ADE2300E383A6 /* MATMMulS.h */,
-				90233A30256ADE2200E383A6 /* MATMMulS.m */,
+				90233A30256ADE2200E383A6 /* MATMMulS.c */,
 				90233A1E256ADE2200E383A6 /* MATMMulV.h */,
 				90233A39256ADE2200E383A6 /* MATMMulV.m */,
 				90233A2D256ADE2200E383A6 /* MATMSubM.h */,
@@ -1711,7 +1711,7 @@
 				90233A7F256ADE2300E383A6 /* MATVSubV.m in Sources */,
 				90233A76256ADE2300E383A6 /* MATMAddM.m in Sources */,
 				90182B6E2AEE877700E37219 /* MATAboutController.c in Sources */,
-				90233A7B256ADE2300E383A6 /* MATMMulS.m in Sources */,
+				90233A7B256ADE2300E383A6 /* MATMMulS.c in Sources */,
 				90233A8D256ADE2300E383A6 /* main.m in Sources */,
 				90233A84256ADE2300E383A6 /* MATLengthV.m in Sources */,
 				90233A7A256ADE2300E383A6 /* MATOrthogonalizeV.m in Sources */,

@@ -126,7 +126,7 @@ typedef struct MATMulM33SController MATMulM33SController;
 
   MATComputationView* computationView;
   MATComputation computation;
-  MATDimensions dimensions;
+  size_t dimensions;
   
   IBOutlet NSButton* dimension2Radio;
   IBOutlet NSButton* dimension3Radio;
@@ -210,10 +210,9 @@ typedef struct MATMulM33SController MATMulM33SController;
   IBOutlet MATMirrorV3*         mirrorV3;
   IBOutlet MATMirrorV4*         mirrorV4;
 
-  IBOutlet MATMulM22S*          mulM22S;
-  IBOutlet MATMulM33S*          mulM33S;
+  MATMulM33SController* matM22SController;
   MATMulM33SController* matM33SController;
-  IBOutlet MATMulM44S*          mulM44S;
+  MATMulM33SController* matM44SController;
   IBOutlet MATDivM22S*          divM22S;
   IBOutlet MATDivM33S*          divM33S;
   IBOutlet MATDivM44S*          divM44S;

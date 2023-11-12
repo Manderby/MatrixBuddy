@@ -156,17 +156,6 @@ void matFillBabyColor(NABabyColor* babyColor, MATColor color){
 
 
 
-size_t matGetDimensionsInteger(MATDimensions dimensions){
-  switch(dimensions){
-  case MAT_DIMENSIONS_2: return 2;
-  case MAT_DIMENSIONS_3: return 3;
-  case MAT_DIMENSIONS_4: return 4;
-  default: return 0;
-  }
-}
-
-
-
 @implementation MATApplication
 
 - (id)init{

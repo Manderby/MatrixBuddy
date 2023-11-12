@@ -58,5 +58,4 @@ MATColor matGetColorWithStatus(MATStatus status);
 void matFillBabyColor(NABabyColor* babyColor, MATColor color);
 
 
-size_t matGetDimensionsInteger(MATDimensions dimensions);
-MATDimensions matGetControllerDimensions(void* con);
+size_t matGetControllerDimensions(void* con);

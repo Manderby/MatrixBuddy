@@ -49,13 +49,6 @@ typedef enum{
 
 
 typedef enum{
-  MAT_DIMENSIONS_2 = 0,
-  MAT_DIMENSIONS_3,
-  MAT_DIMENSIONS_4,
-} MATDimensions;
-
-
-typedef enum{
   MAT_COMPUTATION_VMULS,
   MAT_COMPUTATION_VDIVS,
   MAT_COMPUTATION_VMULCOMPV,

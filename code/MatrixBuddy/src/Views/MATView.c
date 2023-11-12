@@ -102,7 +102,7 @@ MATView* matAllocView(
   view->con = con;
   view->status = MAT_STATUS_NORMAL;
 
-  size_t maxDimensions = matGetDimensionsInteger(matGetControllerDimensions(view->con));
+  size_t maxDimensions = matGetControllerDimensions(view->con);
   double maxMatrixHeight = maxDimensions * MAT_TEXTFIELD_HEIGHT + (maxDimensions - 1) * MAT_TEXTFIELD_SPACE_VASDF;
 
   double matrixSize[2] = {
