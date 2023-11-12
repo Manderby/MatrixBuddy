@@ -94,10 +94,10 @@ NA_LOC(MATHelpInvertM,        "Inverts a matrix. You may fill in either side.");
 
 NA_LOC(MATErrorMatrixDeterminantZero,       "Can't invert");
 NA_LOC(MATErrorMatrixDeterminantAlmostZero, "Determinant almost 0");
-NA_LOC(MATErrorVectorComponentZero,         "Can't divide");
-NA_LOC(MATErrorVectorComponentAlmostZero,   "Component almost 0");
-NA_LOC(MATErrorMatrixComponentZero,         "Can't divide");
-NA_LOC(MATErrorMatrixComponentAlmostZero,   "Component almost 0");
+NA_LOC(MATErrorVectorComponentZero,         "Div 0");
+NA_LOC(MATErrorVectorComponentAlmostZero,   "Almost 0");
+NA_LOC(MATErrorMatrixComponentZero,         "Div 0");
+NA_LOC(MATErrorMatrixComponentAlmostZero,   "Almost 0");
 NA_LOC(MATErrorScalarZero,                  "Div 0");
 NA_LOC(MATErrorScalarAlmostZero,            "Almost 0");
 NA_LOC(MATErrorVectorLengthZero,            "Length 0");

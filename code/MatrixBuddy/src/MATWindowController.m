@@ -197,9 +197,9 @@
   controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 0] = matAllocMMulCompVController(2);
   controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 1] = matAllocMMulCompVController(3);
   controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 2] = matAllocMMulCompVController(4);
-  views[MAT_COMPUTATION_MDIVCOMPV * 3 + 0]      = divCompM22V2;
-  views[MAT_COMPUTATION_MDIVCOMPV * 3 + 1]      = divCompM33V3;
-  views[MAT_COMPUTATION_MDIVCOMPV * 3 + 2]      = divCompM44V4;
+  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 0] = matAllocMDivCompVController(2);
+  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 1] = matAllocMDivCompVController(3);
+  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 2] = matAllocMDivCompVController(4);
   views[MAT_COMPUTATION_MMULCOMPM * 3 + 0]      = mulCompM22M22;
   views[MAT_COMPUTATION_MMULCOMPM * 3 + 1]      = mulCompM33M33;
   views[MAT_COMPUTATION_MMULCOMPM * 3 + 2]      = mulCompM44M44;
@@ -404,7 +404,7 @@
   computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation >= MAT_COMPUTATION_MMULS && computation <= MAT_COMPUTATION_MMULCOMPV){
+  if(computation >= MAT_COMPUTATION_MMULS && computation <= MAT_COMPUTATION_MDIVCOMPV){
     computationController = controllers[computation * 3 + (dimensions - 2)];
     const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);

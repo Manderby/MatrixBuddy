@@ -23,7 +23,7 @@
 - (void)copy:(NSResponder*) sender;
 - (void)paste:(NSResponder*) sender;
 
-- (void)setStatus:(MATStatus)newstatus;
+- (void)setStatus:(MATStatus)newStatus;
 - (void)setPasteEnabled:(NABool)pasteEnabled;
 - (void)setLabel:(NSString*)newlabel;
 - (void)setAttributedLabel:(NSAttributedString*)newlabel;

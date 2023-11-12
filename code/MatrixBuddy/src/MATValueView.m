@@ -230,8 +230,8 @@ void naTellNSButtonSetUIImage(void* nsButton, const NAUIImage* uiImage);
 
 
 
-- (void)setStatus:(MATStatus)newstatus{
-  status = newstatus;
+- (void)setStatus:(MATStatus)newStatus{
+  status = newStatus;
 }
 
 

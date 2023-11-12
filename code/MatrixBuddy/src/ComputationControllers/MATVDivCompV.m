@@ -42,20 +42,20 @@
 - (void)valueChanged:(id)sender{
   NA_UNUSED(sender);
 
-  MATStatus newstatus = MAT_STATUS_NORMAL;
+  MATStatus newStatus = MAT_STATUS_NORMAL;
   double* divvalues = [b values];
   for(int i=0; i<2; i++){
     if(divvalues[i] == 0.){
-      newstatus = MAT_STATUS_VECTOR_COMPONENT_ZERO;
-    }else if((newstatus != MAT_STATUS_VECTOR_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
-      newstatus = MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO;
+      newStatus = MAT_STATUS_VECTOR_COMPONENT_ZERO;
+    }else if((newStatus != MAT_STATUS_VECTOR_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
+      newStatus = MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO;
     }else{
       // everything ok.
     }
   }
-  [b setStatus:newstatus];
+  [b setStatus:newStatus];
   
-  if(newstatus == MAT_STATUS_VECTOR_COMPONENT_ZERO){
+  if(newStatus == MAT_STATUS_VECTOR_COMPONENT_ZERO){
     NAVec2d result;
     naFillV2d(result, 0., 0.);
     [c setValues:result];
@@ -108,20 +108,20 @@
 - (void)valueChanged:(id)sender{
   NA_UNUSED(sender);
 
-  MATStatus newstatus = MAT_STATUS_NORMAL;
+  MATStatus newStatus = MAT_STATUS_NORMAL;
   double* divvalues = [b values];
   for(int i=0; i<3; i++){
     if(divvalues[i] == 0.){
-      newstatus = MAT_STATUS_VECTOR_COMPONENT_ZERO;
-    }else if((newstatus != MAT_STATUS_VECTOR_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
-      newstatus = MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO;
+      newStatus = MAT_STATUS_VECTOR_COMPONENT_ZERO;
+    }else if((newStatus != MAT_STATUS_VECTOR_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
+      newStatus = MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO;
     }else{
       // everything ok.
     }
   }
-  [b setStatus:newstatus];
+  [b setStatus:newStatus];
   
-  if(newstatus == MAT_STATUS_VECTOR_COMPONENT_ZERO){
+  if(newStatus == MAT_STATUS_VECTOR_COMPONENT_ZERO){
     NAVec3d result;
     naFillV3d(result, 0., 0., 0.);
     [c setValues:result];
@@ -174,20 +174,20 @@
 - (void)valueChanged:(id)sender{
   NA_UNUSED(sender);
 
-  MATStatus newstatus = MAT_STATUS_NORMAL;
+  MATStatus newStatus = MAT_STATUS_NORMAL;
   double* divvalues = [b values];
   for(int i=0; i<4; i++){
     if(divvalues[i] == 0.){
-      newstatus = MAT_STATUS_VECTOR_COMPONENT_ZERO;
-    }else if((newstatus != MAT_STATUS_VECTOR_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
-      newstatus = MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO;
+      newStatus = MAT_STATUS_VECTOR_COMPONENT_ZERO;
+    }else if((newStatus != MAT_STATUS_VECTOR_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
+      newStatus = MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO;
     }else{
       // everything ok.
     }
   }
-  [b setStatus:newstatus];
+  [b setStatus:newStatus];
   
-  if(newstatus == MAT_STATUS_VECTOR_COMPONENT_ZERO){
+  if(newStatus == MAT_STATUS_VECTOR_COMPONENT_ZERO){
     NAVec4d result;
     naFillV4d(result, 0., 0., 0., 0.);
     [c setValues:result];

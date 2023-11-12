@@ -207,12 +207,6 @@ typedef struct MATMDivSController MATMDivSController;
   IBOutlet MATMirrorV3*         mirrorV3;
   IBOutlet MATMirrorV4*         mirrorV4;
 
-  IBOutlet MATMulCompM22V2*     mulCompM22V2;
-  IBOutlet MATMulCompM33V3*     mulCompM33V3;
-  IBOutlet MATMulCompM44V4*     mulCompM44V4;
-  IBOutlet MATDivCompM22V2*     divCompM22V2;
-  IBOutlet MATDivCompM33V3*     divCompM33V3;
-  IBOutlet MATDivCompM44V4*     divCompM44V4;
   IBOutlet MATMulCompM22M22*    mulCompM22M22;
   IBOutlet MATMulCompM33M33*    mulCompM33M33;
   IBOutlet MATMulCompM44M44*    mulCompM44M44;

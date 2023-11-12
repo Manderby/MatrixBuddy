@@ -94,10 +94,10 @@ NA_LOC(MATHelpInvertM,        "Invertiert eine Matrix. Es können beide Seiten a
 
 NA_LOC(MATErrorMatrixDeterminantZero,       "Nicht invertierbar");
 NA_LOC(MATErrorMatrixDeterminantAlmostZero, "Determinante beinahe 0");
-NA_LOC(MATErrorVectorComponentZero,         "Nicht dividierbar");
-NA_LOC(MATErrorVectorComponentAlmostZero,   "Komponente beinahe 0");
-NA_LOC(MATErrorMatrixComponentZero,         "Nicht dividierbar");
-NA_LOC(MATErrorMatrixComponentAlmostZero,   "Komponente beinahe 0");
+NA_LOC(MATErrorVectorComponentZero,         "Div 0");
+NA_LOC(MATErrorVectorComponentAlmostZero,   "Beinahe 0");
+NA_LOC(MATErrorMatrixComponentZero,         "Div 0");
+NA_LOC(MATErrorMatrixComponentAlmostZero,   "Beinahe 0");
 NA_LOC(MATErrorScalarZero,                  "Div 0");
 NA_LOC(MATErrorScalarAlmostZero,            "Beinahe 0");
 NA_LOC(MATErrorVectorLengthZero,            "Länge 0");

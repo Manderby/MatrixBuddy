@@ -45,20 +45,20 @@
 - (void)valueChanged:(id)sender{
   NA_UNUSED(sender);
 
-  MATStatus newstatus = MAT_STATUS_NORMAL;
+  MATStatus newStatus = MAT_STATUS_NORMAL;
   double* divvalues = [B values];
   for(int i=0; i<4; i++){
     if(divvalues[i] == 0.){
-      newstatus = MAT_STATUS_MATRIX_COMPONENT_ZERO;
-    }else if((newstatus != MAT_STATUS_MATRIX_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
-      newstatus = MAT_STATUS_MATRIX_COMPONENT_ALMOST_ZERO;
+      newStatus = MAT_STATUS_MATRIX_COMPONENT_ZERO;
+    }else if((newStatus != MAT_STATUS_MATRIX_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
+      newStatus = MAT_STATUS_MATRIX_COMPONENT_ALMOST_ZERO;
     }else{
       // everything ok.
     }
   }
-  [B setStatus:newstatus];
+  [B setStatus:newStatus];
   
-  if(newstatus == MAT_STATUS_MATRIX_COMPONENT_ZERO){
+  if(newStatus == MAT_STATUS_MATRIX_COMPONENT_ZERO){
     NAMat22d result;
     naFillM22dWithDiag(result, 0.);
     [C setValues:result];
@@ -111,20 +111,20 @@
 - (void)valueChanged:(id)sender{
   NA_UNUSED(sender);
 
-  MATStatus newstatus = MAT_STATUS_NORMAL;
+  MATStatus newStatus = MAT_STATUS_NORMAL;
   double* divvalues = [B values];
   for(int i=0; i<9; i++){
     if(divvalues[i] == 0.){
-      newstatus = MAT_STATUS_MATRIX_COMPONENT_ZERO;
-    }else if((newstatus != MAT_STATUS_MATRIX_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
-      newstatus = MAT_STATUS_MATRIX_COMPONENT_ALMOST_ZERO;
+      newStatus = MAT_STATUS_MATRIX_COMPONENT_ZERO;
+    }else if((newStatus != MAT_STATUS_MATRIX_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
+      newStatus = MAT_STATUS_MATRIX_COMPONENT_ALMOST_ZERO;
     }else{
       // everything ok.
     }
   }
-  [B setStatus:newstatus];
+  [B setStatus:newStatus];
   
-  if(newstatus == MAT_STATUS_MATRIX_COMPONENT_ZERO){
+  if(newStatus == MAT_STATUS_MATRIX_COMPONENT_ZERO){
     NAMat33d result;
     naFillM33dWithDiag(result, 0.);
     [C setValues:result];
@@ -177,20 +177,20 @@
 - (void)valueChanged:(id)sender{
   NA_UNUSED(sender);
 
-  MATStatus newstatus = MAT_STATUS_NORMAL;
+  MATStatus newStatus = MAT_STATUS_NORMAL;
   double* divvalues = [B values];
   for(int i=0; i<16; i++){
     if(divvalues[i] == 0.){
-      newstatus = MAT_STATUS_MATRIX_COMPONENT_ZERO;
-    }else if((newstatus != MAT_STATUS_MATRIX_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
-      newstatus = MAT_STATUS_MATRIX_COMPONENT_ALMOST_ZERO;
+      newStatus = MAT_STATUS_MATRIX_COMPONENT_ZERO;
+    }else if((newStatus != MAT_STATUS_MATRIX_COMPONENT_ZERO) && naAlmostZero(divvalues[i])){
+      newStatus = MAT_STATUS_MATRIX_COMPONENT_ALMOST_ZERO;
     }else{
       // everything ok.
     }
   }
-  [B setStatus:newstatus];
+  [B setStatus:newStatus];
   
-  if(newstatus == MAT_STATUS_MATRIX_COMPONENT_ZERO){
+  if(newStatus == MAT_STATUS_MATRIX_COMPONENT_ZERO){
     NAMat44d result;
     naFillM44dWithDiag(result, 0.);
     [C setValues:result];
