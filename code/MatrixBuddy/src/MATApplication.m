@@ -179,13 +179,6 @@ MATValueAccuracy matGetValueAccuracy(){
 }
 
 
-- (void)dealloc{
-  naRelease(mathFont);
-  naRelease(copyImage);
-  naRelease(pasteImage);
-  [super dealloc];
-}
-
 - (void)prepareFirstView{
   aboutController = matAllocAboutController();
   [windowController prepareFirstView];
@@ -199,6 +192,12 @@ MATValueAccuracy matGetValueAccuracy(){
 - (void)applicationWillTerminate:(NSNotification*)notification{
   NA_UNUSED(notification);
   
+  naRelease(mathFont);
+  naRelease(copyImage);
+  naRelease(pasteImage);
+
+  [windowController cleanCStructures];
+
   naStopTranslator();
   naStopRuntime();
 }

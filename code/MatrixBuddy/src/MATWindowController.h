@@ -274,6 +274,7 @@ typedef struct MATMulMSController MATMulMSController;
 - (IBAction)switchComputation:(id)sender;
 - (IBAction)changeSetting:(id)sender;
 - (IBAction)changeDimensions:(id)sender;
+- (void)cleanCStructures;
 
 @end
 

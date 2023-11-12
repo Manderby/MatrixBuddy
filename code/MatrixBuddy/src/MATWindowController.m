@@ -191,9 +191,6 @@
   matM22SController = matAllocMulMSController(2);
   matM33SController = matAllocMulMSController(3);
   matM44SController = matAllocMulMSController(4);
-//  views[MAT_COMPUTATION_MMULS * 3 + 0]          = mulM22S;
-//  views[MAT_COMPUTATION_MMULS * 3 + 1]          = mulM33S;
-//  views[MAT_COMPUTATION_MMULS * 3 + 2]          = mulM44S;
   views[MAT_COMPUTATION_MDIVS * 3 + 0]          = divM22S;
   views[MAT_COMPUTATION_MDIVS * 3 + 1]          = divM33S;
   views[MAT_COMPUTATION_MDIVS * 3 + 2]          = divM44S;
@@ -241,6 +238,12 @@
 
   computation = MAT_COMPUTATION_MMULV;
   dimensions = 3;
+}
+
+- (void)cleanCStructures{
+  matDeallocMulMSController(matM22SController);
+  matDeallocMulMSController(matM33SController);
+  matDeallocMulMSController(matM44SController);
 }
 
 

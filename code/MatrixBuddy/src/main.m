@@ -13,7 +13,7 @@ const char* MATPrefCodeStyle = "codeStyle";
 const char* MATPrefValueAccuracy = "valueAccuracy";
 
 
-void prestartup(void* arg){
+void preStartup(void* arg){
   NA_UNUSED(arg);
   
 //  naSetApplicationName("Matrix Buddy");
@@ -26,7 +26,7 @@ void prestartup(void* arg){
   initPreferences();
 }
 
-void poststartup(void* arg){
+void postStartup(void* arg){
   NA_UNUSED(arg);
   
   naLoadNib("MainMenu", NA_NULL);
@@ -35,12 +35,16 @@ void poststartup(void* arg){
   //mandAlertNewVersion(matTranslate(MATNewVersionDescription));
 }
 
+void stopApplication(void* arg){
+  NA_UNUSED(arg);
+}
+
 int main(int argc, char *argv[]){
   NA_UNUSED(argc);
   NA_UNUSED(argv);
   naStartRuntime();
   [MATApplication sharedApplication];
-  naStartApplication(prestartup, poststartup, NA_NULL, NA_NULL);
+  naStartApplication(preStartup, postStartup, stopApplication, NA_NULL);
   naStopRuntime();
   return 0;
 }

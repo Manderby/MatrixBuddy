@@ -127,6 +127,19 @@ MATBaseController* matAllocMulMSController(size_t dimensions){
 
 
 
+void matDeallocMulMSController(MATBaseController* controller){
+  MATMulMSController* con = (MATMulMSController*)controller;
+  NA_UNUSED(con);
+//  naDelete(con->viewA);
+//  naDelete(con->viewS);
+//  naDelete(con->viewB);
+//  naDelete(con->equalSignLabel);
+//  naDelete(con->mulSignLabel);
+  naFree(controller);
+}
+
+
+
 void naUpdateMulMSController(MATMulMSController* con){
   matSetViewStatus(con->viewA, MAT_STATUS_NORMAL);
   matSetViewStatus(con->viewS, MAT_STATUS_NORMAL);
