@@ -302,6 +302,7 @@
 		9038ECC0256AE05300A95A36 /* MatrixBuddyChangelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECBF256AE05300A95A36 /* MatrixBuddyChangelog.txt */; };
 		9038ECEC256DA07300A95A36 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEB256DA07300A95A36 /* copy.png */; };
 		9038ECF0256DA48000A95A36 /* paste.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEF256DA48000A95A36 /* paste.png */; };
+		909E2B212B00E41B0076A06E /* MATBaseController.c in Sources */ = {isa = PBXBuildFile; fileRef = 909E2B1F2B00E41B0076A06E /* MATBaseController.c */; };
 		90BA03381BA96CAB00A651E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BA03371BA96CAB00A651E9 /* WebKit.framework */; };
 		90CB77042AFAB6F800EC8B82 /* MATView.c in Sources */ = {isa = PBXBuildFile; fileRef = 90CB77032AFAB6F800EC8B82 /* MATView.c */; };
 /* End PBXBuildFile section */
@@ -673,6 +674,8 @@
 		9038ECC3256AE1E200A95A36 /* MatrixBuddyStrings_deu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyStrings_deu.h; sourceTree = "<group>"; };
 		9038ECEB256DA07300A95A36 /* copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy.png; sourceTree = "<group>"; };
 		9038ECEF256DA48000A95A36 /* paste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paste.png; sourceTree = "<group>"; };
+		909E2B1F2B00E41B0076A06E /* MATBaseController.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATBaseController.c; sourceTree = "<group>"; };
+		909E2B202B00E41B0076A06E /* MATBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATBaseController.h; sourceTree = "<group>"; };
 		90BA03371BA96CAB00A651E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		90C573352AED3EB3003BCA8B /* MATCommonC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MATCommonC.h; sourceTree = "<group>"; };
 		90CB77022AFAB6F800EC8B82 /* MATView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATView.h; sourceTree = "<group>"; };
@@ -831,6 +834,8 @@
 		90233A1B256ADE2200E383A6 /* ComputationControllers */ = {
 			isa = PBXGroup;
 			children = (
+				909E2B1F2B00E41B0076A06E /* MATBaseController.c */,
+				909E2B202B00E41B0076A06E /* MATBaseController.h */,
 				90233A3E256ADE2200E383A6 /* MATDiagS.h */,
 				90233A23256ADE2200E383A6 /* MATDiagS.m */,
 				90233A32256ADE2200E383A6 /* MATDiagV.h */,
@@ -1730,6 +1735,7 @@
 				90233A6F256ADE2300E383A6 /* MATWindowController.m in Sources */,
 				90233A7D256ADE2300E383A6 /* MATMMulCompV.m in Sources */,
 				90233A90256ADE2300E383A6 /* MATViewS.m in Sources */,
+				909E2B212B00E41B0076A06E /* MATBaseController.c in Sources */,
 				90233A7E256ADE2300E383A6 /* MATMMulV.m in Sources */,
 				90233A74256ADE2300E383A6 /* MATInvertM.m in Sources */,
 				90233A89256ADE2300E383A6 /* MATTransposeM.m in Sources */,

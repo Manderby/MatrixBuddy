@@ -1,5 +1,6 @@
 
 #include "MATCommon.h"
+#include "MATBaseController.h"
 
 @class MATComputationView;
 
@@ -44,7 +45,7 @@
 @class MATMirrorV4;
 
 @class MATMulM22S;
-typedef struct MATMulM33SController MATMulM33SController;
+typedef struct MATMulMSController MATMulMSController;
 @class MATMulM33S;
 @class MATMulM44S;
 @class MATDivM22S;
@@ -125,6 +126,7 @@ typedef struct MATMulM33SController MATMulM33SController;
   IBOutlet NSTextField* helpLine;
 
   MATComputationView* computationView;
+  MATBaseController* computationController;
   MATComputation computation;
   size_t dimensions;
   
@@ -210,9 +212,9 @@ typedef struct MATMulM33SController MATMulM33SController;
   IBOutlet MATMirrorV3*         mirrorV3;
   IBOutlet MATMirrorV4*         mirrorV4;
 
-  MATMulM33SController* matM22SController;
-  MATMulM33SController* matM33SController;
-  MATMulM33SController* matM44SController;
+  MATBaseController* matM22SController;
+  MATBaseController* matM33SController;
+  MATBaseController* matM44SController;
   IBOutlet MATDivM22S*          divM22S;
   IBOutlet MATDivM33S*          divM33S;
   IBOutlet MATDivM44S*          divM44S;

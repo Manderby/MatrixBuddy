@@ -1,9 +1,9 @@
 
 #include "MATView.h"
 #include "NAMath/NAVectorAlgebra.h"
+#include "MATBaseController.h"
 
 struct MATView{
-  MATValueChangedHandler handler;
   void* con;
   MATStatus status;
   
@@ -21,6 +21,12 @@ struct MATView{
 
 
 
+size_t matGetViewElementCount(const MATView* view){
+  return view->dimensions[0] * view->dimensions[1];
+}
+
+
+
 NABool mat_ViewChanged(NAReaction reaction){
   MATView* view = (MATView*)reaction.controller;
 
@@ -29,13 +35,13 @@ NABool mat_ViewChanged(NAReaction reaction){
   naDelete(text);
   
   
-  for(size_t i = 0; i < view->dimensions[0] * view->dimensions[1]; ++i){
+  for(size_t i = 0; i < matGetViewElementCount(view); ++i){
     if(reaction.uiElement == view->textFields[i]){
       view->values[i] = value;
     }
   }
   
-  view->handler(view->con, view);
+  matUpdateControllerValues(view->con, view);
   return NA_TRUE;
 }
 
@@ -76,7 +82,7 @@ NABool mat_ViewPressPaste(NAReaction reaction){
     }
   }
 
-  view->handler(view->con, view);
+  matUpdateControllerValues(view->con, view);
   naDelete(string);
 
   return NA_TRUE;
@@ -84,12 +90,10 @@ NABool mat_ViewPressPaste(NAReaction reaction){
 
 
 
-
 MATView* matAllocView(
   const NAUTF8Char* label,
   NAInt dimensionX,
   NAInt dimensionY,
-  MATValueChangedHandler handler,
   void* con,
   const double* initValues)
 {
@@ -98,7 +102,6 @@ MATView* matAllocView(
   view->dimensions[0] = dimensionX;
   view->dimensions[1] = dimensionY;
 
-  view->handler = handler;
   view->con = con;
   view->status = MAT_STATUS_NORMAL;
 
@@ -130,7 +133,7 @@ MATView* matAllocView(
     matrixSize[0] + MAT_MATRIX_MARGIN_LEFT + MAT_MATRIX_MARGIN_RIGHT,
     matrixSize[1] + MAT_MATRIX_MARGIN_TOP + MAT_MATRIX_MARGIN_BOTTOM));
   
-  size_t textFieldsByteSize = view->dimensions[0] * view->dimensions[1] * sizeof(NATextField*);
+  size_t textFieldsByteSize = matGetViewElementCount(view)* sizeof(NATextField*);
   view->textFields = naMalloc(textFieldsByteSize);
   for(size_t x = 0; x < view->dimensions[0]; ++x){
     for(size_t y = 0; y < view->dimensions[1]; ++y){
@@ -167,9 +170,11 @@ MATView* matAllocView(
   naAddSpaceChild(view->space, view->pasteButton, naMakePos(buttonsCenterMarginLeft + MAT_COPYPASTE_BUTTON_SIZE + MAT_COPYPASTE_BUTTON_DISTANCE, MAT_VIEW_MARGIN_V));
 
   // business values:
-  size_t valuesByteSize = view->dimensions[0] * view->dimensions[1] * sizeof(double);
+  size_t valuesByteSize = matGetViewElementCount(view) * sizeof(double);
   view->values = naMalloc(valuesByteSize);
   naCopyn(view->values, initValues, valuesByteSize);
+
+  matUpdateViewTabOrder(view);
 
   return view;
 }
@@ -221,13 +226,36 @@ void matUpdateView(MATView* view){
 }
 
 
+void matUpdateViewTabOrder(MATView* view){
+  size_t elementCount = matGetViewElementCount(view);
+  for(size_t x = 0; x < view->dimensions[0]; ++x){
+    for(size_t y = 0; y < view->dimensions[1]; ++y){
+      size_t index = x * view->dimensions[1] + y;
+      size_t nextIndex;
+      
+      if(matHasRowFirstOrder()){
+        if(index == elementCount - 1){
+          nextIndex = 0;
+        }else{
+          nextIndex = index + view->dimensions[0];
+          if(index / view->dimensions[1] == view->dimensions[1] - 1)
+            nextIndex += 1;
+        }
+      }else{
+        nextIndex = index + 1;
+      }
+      naSetUIElementNextTabElement(view->textFields[index], view->textFields[nextIndex % elementCount]);
+    }
+  }
+}
+
 
 const double* matGetViewValues(const MATView* view){
   return view->values;
 }
 
 void matSetViewValues(MATView* view, const double* values){
-  size_t valuesByteSize = view->dimensions[0] * view->dimensions[1] * sizeof(double);
+  size_t valuesByteSize = matGetViewElementCount(view) * sizeof(double);
   naCopyn(view->values, values, valuesByteSize);
 }
 

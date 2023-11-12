@@ -1,13 +1,12 @@
 
 #include "MATView.h"
+#include "MATBaseController.h"
 
 
 
-typedef struct MATMulM33SController MATMulM33SController;
+typedef struct MATMulMSController MATMulMSController;
 
-MATMulM33SController* matAllocMulM33SController(size_t dimensions);
+MATBaseController* matAllocMulMSController(size_t dimensions);
 
-NASpace* naGetMulM33SSpace(MATMulM33SController* con);
-
-void naUpdateMulM33SController(MATMulM33SController* con);
+void naUpdateMulMSController(MATMulMSController* con);
 

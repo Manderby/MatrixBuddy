@@ -156,6 +156,12 @@ void matFillBabyColor(NABabyColor* babyColor, MATColor color){
 
 
 
+NABool matHasRowFirstOrder(){
+  return [(MATApplication*)NSApp hasRowFirstTabOrder];
+}
+
+
+
 @implementation MATApplication
 
 - (id)init{

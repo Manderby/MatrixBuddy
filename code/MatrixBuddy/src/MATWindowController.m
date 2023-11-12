@@ -5,6 +5,8 @@
 #import "MATWindowController.h"
 #import "MATComputationView.h"
 
+#include "MATBaseController.h"
+
 #import "MATVMulS.h"
 #import "MATVDivS.h"
 #import "MATVMulCompV.h"
@@ -51,6 +53,7 @@
 - (void)awakeFromNib{
 
   computationView = placeholder;
+  computationController = NA_NULL;
 
   showHelp = naGetPreferencesBool(MATPrefs[ShowHelp]);
   showIdentifiers = naGetPreferencesBool(MATPrefs[ShowIdentifiers]);
@@ -185,9 +188,9 @@
   views[MAT_COMPUTATION_MIRRORV * 3 + 1]        = mirrorV3;
   views[MAT_COMPUTATION_MIRRORV * 3 + 2]        = mirrorV4;
 
-  matM22SController = matAllocMulM33SController(2);
-  matM33SController = matAllocMulM33SController(3);
-  matM44SController = matAllocMulM33SController(4);
+  matM22SController = matAllocMulMSController(2);
+  matM33SController = matAllocMulMSController(3);
+  matM44SController = matAllocMulMSController(4);
 //  views[MAT_COMPUTATION_MMULS * 3 + 0]          = mulM22S;
 //  views[MAT_COMPUTATION_MMULS * 3 + 1]          = mulM33S;
 //  views[MAT_COMPUTATION_MMULS * 3 + 2]          = mulM44S;
@@ -382,26 +385,30 @@
   case MAT_VALUE_ACCURACY_FLOAT: [valueAccuracyFloatItem setState:NAStateOn]; break;
   }
 
-  NSRect frame = [computationView frame];
-  [computationView removeFromSuperview];
-//  [naGetUIElementNativePtrConst(matM22SController) removeFromSuperview];
-//  [naGetUIElementNativePtrConst(matM33SController) removeFromSuperview];
-//  [naGetUIElementNativePtrConst(matM44SController) removeFromSuperview];
+  NSRect frame;
+  if(computationView){
+    frame = [computationView frame];
+    [computationView removeFromSuperview];
+  }else{
+    NSView* nsView = naGetUIElementNativePtr(naGetControllerSpace(computationController));
+    frame = [nsView frame];
+    [nsView removeFromSuperview];
+  }
   
+  computationView = NA_NULL;
+  computationController = NA_NULL;
   
   if(computation == MAT_COMPUTATION_MMULS){
-    MATMulM33SController* controller;
     switch(dimensions){
-    case 2: controller = matM22SController; break;
-    case 3: controller = matM33SController; break;
-    case 4: controller = matM44SController; break;
+    case 2: computationController = matM22SController; break;
+    case 3: computationController = matM33SController; break;
+    case 4: computationController = matM44SController; break;
     }
-    const NASpace* computationSpace = naGetMulM33SSpace(controller);
+    const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
-    computationView = nativeView;
+    matUpdateControllerTabOrder(computationController);
     [nativeView setFrame:frame];
     [[[self window] contentView] addSubview:nativeView];
-    naUpdateMulM33SController(controller);
   }else{
     computationView = views[computation * 3 + (dimensions - 2)];
     [computationView setFrame:frame];
@@ -473,9 +480,13 @@
   }else if(sender == showCopyPasteItem){
     showCopyPaste = !showCopyPaste;
     naSetPreferencesBool(MATPrefs[ShowCopyPaste], showCopyPaste);
+    if(computationController)
+      matUpdateControllerTabOrder(computationController);
   }else if(sender == rowFirstTabOrderItem){
     hasRowFirstTabOrder = NA_TRUE;
     naSetPreferencesBool(MATPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
+    if(computationController)
+      matUpdateControllerTabOrder(computationController);
   }else if(sender == columnFirstTabOrderItem){
     hasRowFirstTabOrder = NA_FALSE;
     naSetPreferencesBool(MATPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);

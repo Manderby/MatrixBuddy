@@ -40,8 +40,11 @@
 #define MAT_VIEW_HEIGHT_3 (3 * MAT_TEXTFIELD_HEIGHT + 2 * MAT_TEXTFIELD_SPACE_V + MAT_VIEW_SURROUNDING_ELEMENTS_HEIGHT + 2 * MAT_VALUE_BORDER)
 #define MAT_VIEW_HEIGHT_4 (4 * MAT_TEXTFIELD_HEIGHT + 3 * MAT_TEXTFIELD_SPACE_V + MAT_VIEW_SURROUNDING_ELEMENTS_HEIGHT + 2 * MAT_VALUE_BORDER)
 
+typedef struct MATBaseController MATBaseController;
+typedef struct MATView MATView;
 
-typedef void(*MATValueChangedHandler)(void*, void*);
+typedef void(*MATValueChangedHandler)(MATBaseController* controller, MATView* view);
+typedef void (*MATUpdateTabOrderHandler)(MATBaseController* controller);
 
 NAString* matNewStringWithFormatValue(float value);
 
@@ -57,5 +60,4 @@ const NAUTF8Char* matGetUTF8StringWithStatus(MATStatus status);
 MATColor matGetColorWithStatus(MATStatus status);
 void matFillBabyColor(NABabyColor* babyColor, MATColor color);
 
-
-size_t matGetControllerDimensions(void* con);
+NABool matHasRowFirstOrder(void);
