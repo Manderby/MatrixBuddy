@@ -111,7 +111,7 @@ MATBaseController* matAllocMDivSController(size_t dimensions){
   
   double marginLeft = naRound((viewSize.width - (sizeA.width + MAT_SIGN_WIDTH + sizeS.width + MAT_SIGN_WIDTH + sizeB.width)) / 2.);
   double marginBottom = naRound((viewSize.height - sizeA.height) / 2.);
-  double signMarginBottom = marginBottom + naRound((sizeA.height - MAT_MATRIX_LABEL_HEIGHT) / 2.); 
+  double signMarginBottom = marginBottom + naRound((sizeA.height - MAT_MATRIX_LABEL_HEIGHT) / 2. + MAT_SIGN_LABEL_SHIFT_Y); 
   
   naAddSpaceChild(con->base.space, spaceA, naMakePos(marginLeft, marginBottom));
   naAddSpaceChild(con->base.space, spaceS, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, marginBottom));
