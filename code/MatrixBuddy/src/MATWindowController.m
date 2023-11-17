@@ -23,13 +23,6 @@
 #import "MATOrthogonalizeV.h"
 #import "MATMirrorV.h"
 
-#import "MATMMulS.h"
-#import "MATMDivS.h"
-#import "MATMMulCompV.h"
-#import "MATMDivCompV.h"
-#import "MATMMulCompM.h"
-#import "MATMDivCompM.h"
-
 #import "MATNegM.h"
 #import "MATMAddM.h"
 #import "MATMSubM.h"

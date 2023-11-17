@@ -1,8 +1,9 @@
-#include "MATMDivS.h"
+#include "MATBaseController.h"
 #include "MATTranslations.h"
 #include "NAMath/NAVectorAlgebra.h"
 
 
+typedef struct MATMDivSController MATMDivSController;
 struct MATMDivSController{
   MATBaseController base;
   MATView* viewA;
@@ -11,6 +12,27 @@ struct MATMDivSController{
   NALabel* equalSignLabel;
   MATView* viewB;
 };
+
+
+
+void matUpdateMDivSController(MATBaseController* controller){
+  MATMDivSController* con = (MATMDivSController*)controller;
+
+  matSetViewPasteEnabled(con->viewB, NA_FALSE);
+
+  matUpdateView(con->viewA);
+  matUpdateView(con->viewS);
+  matUpdateView(con->viewB);
+}
+
+
+
+void matUpdateMDivSControllerTabOrder(MATBaseController* controller){
+  MATMDivSController* con = (MATMDivSController*)controller;
+  matUpdateViewTabOrder(con->viewA);
+  matUpdateViewTabOrder(con->viewS);
+  matUpdateViewTabOrder(con->viewB);
+}
 
 
 
@@ -42,27 +64,6 @@ void matMDivSValueChanged(MATBaseController* controller, MATView* view){
   matSetViewValues(con->viewB, result);
   matUpdateMDivSController(&con->base);
   naFree(result);
-}
-
-
-
-void matUpdateMDivSController(MATBaseController* controller){
-  MATMDivSController* con = (MATMDivSController*)controller;
-
-  matSetViewPasteEnabled(con->viewB, NA_FALSE);
-
-  matUpdateView(con->viewA);
-  matUpdateView(con->viewS);
-  matUpdateView(con->viewB);
-}
-
-
-
-void matUpdateMDivSControllerTabOrder(MATBaseController* controller){
-  MATMDivSController* con = (MATMDivSController*)controller;
-  matUpdateViewTabOrder(con->viewA);
-  matUpdateViewTabOrder(con->viewS);
-  matUpdateViewTabOrder(con->viewB);
 }
 
 
