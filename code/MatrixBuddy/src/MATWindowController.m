@@ -23,7 +23,6 @@
 #import "MATOrthogonalizeV.h"
 #import "MATMirrorV.h"
 
-#import "MATNegM.h"
 #import "MATMAddM.h"
 #import "MATMSubM.h"
 #import "MATMMulV.h"
@@ -128,7 +127,7 @@
   buttons[MAT_COMPUTATION_MMULCOMPM]      = buttonMMulCompM;
   buttons[MAT_COMPUTATION_MDIVCOMPM]      = buttonMDivCompM;
   
-  buttons[MAT_COMPUTATION_NEGM]           = buttonNegM;
+  buttons[MAT_COMPUTATION_MNEG]           = buttonMNeg;
   buttons[MAT_COMPUTATION_MADDM]          = buttonMAddM;
   buttons[MAT_COMPUTATION_MSUBM]          = buttonMSubM;
   buttons[MAT_COMPUTATION_MMULV]          = buttonMMulv;
@@ -200,9 +199,9 @@
   controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 1] = matAllocMDivCompMController(3);
   controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 2] = matAllocMDivCompMController(4);
   
-  views[MAT_COMPUTATION_NEGM * 3 + 0]           = negM22;
-  views[MAT_COMPUTATION_NEGM * 3 + 1]           = negM33;
-  views[MAT_COMPUTATION_NEGM * 3 + 2]           = negM44;
+  controllers[MAT_COMPUTATION_MNEG * 3 + 0]      = matAllocMNegController(2);
+  controllers[MAT_COMPUTATION_MNEG * 3 + 1]      = matAllocMNegController(3);
+  controllers[MAT_COMPUTATION_MNEG * 3 + 2]      = matAllocMNegController(4);
   views[MAT_COMPUTATION_MADDM * 3 + 0]          = addM22M22;
   views[MAT_COMPUTATION_MADDM * 3 + 1]          = addM33M33;
   views[MAT_COMPUTATION_MADDM * 3 + 2]          = addM44M44;
@@ -271,7 +270,7 @@
   [buttons[MAT_COMPUTATION_MMULCOMPM]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulCompM)]];
   [buttons[MAT_COMPUTATION_MDIVCOMPM]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDivCompM)]];
 
-  [buttons[MAT_COMPUTATION_NEGM]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonNegM)]];
+  [buttons[MAT_COMPUTATION_MNEG]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMNeg)]];
   [buttons[MAT_COMPUTATION_MADDM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMAddM)]];
   [buttons[MAT_COMPUTATION_MSUBM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMSubM)]];
   [buttons[MAT_COMPUTATION_MMULV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulV)]];
@@ -314,7 +313,7 @@
       case MAT_COMPUTATION_MMULCOMPM:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulCompM)]; break;
       case MAT_COMPUTATION_MDIVCOMPM:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDivCompM)]; break;
       
-      case MAT_COMPUTATION_NEGM:            helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpNegM)]; break;
+      case MAT_COMPUTATION_MNEG:            helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMNeg)]; break;
       case MAT_COMPUTATION_MADDM:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMAddM)]; break;
       case MAT_COMPUTATION_MSUBM:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMSubM)]; break;
       case MAT_COMPUTATION_MMULV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulV)]; break;
@@ -397,7 +396,7 @@
   computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation >= MAT_COMPUTATION_MMULS && computation <= MAT_COMPUTATION_MDIVCOMPM){
+  if(computation >= MAT_COMPUTATION_MMULS && computation <= MAT_COMPUTATION_MNEG){
     computationController = controllers[computation * 3 + (dimensions - 2)];
     const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);

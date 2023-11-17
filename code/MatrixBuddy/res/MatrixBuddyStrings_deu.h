@@ -48,7 +48,7 @@ NA_LOC(MATButtonMMulCompV,      "M⊙v");
 NA_LOC(MATButtonMDivCompV,      "M⊘v");
 NA_LOC(MATButtonMMulCompM,      "M⊙M");
 NA_LOC(MATButtonMDivCompM,      "M⊘M");
-NA_LOC(MATButtonNegM,           "−M");
+NA_LOC(MATButtonMNeg,           "−M");
 NA_LOC(MATButtonMAddM,          "M+M");
 NA_LOC(MATButtonMSubM,          "M−M");
 NA_LOC(MATButtonMMulV,          "M×v");
@@ -81,7 +81,7 @@ NA_LOC(MATHelpMDivCompV,      "Dividiert die Spalten einer Matrix durch die Komp
 NA_LOC(MATHelpMMulCompM,      "Multipliziert die Komponenten einer Matrix mit den Komponenten einer anderen Matrix.");
 NA_LOC(MATHelpMDivCompM,      "Dividiert die Komponenten einer Matrix durch dien Komponenten einer anderen Matrix.");
 
-NA_LOC(MATHelpNegM,           "Negiert eine Matrix. Es können beide Seiten als Eingabe dienen.");
+NA_LOC(MATHelpMNeg,           "Negiert eine Matrix. Es können beide Seiten als Eingabe dienen.");
 NA_LOC(MATHelpMAddM,          "Addiert Matrix B zur Matrix A. Eingabe bei B ergibt Resultat C. Eingabe bei C löst nach B auf.");
 NA_LOC(MATHelpMSubM,          "Subtrahiert Matrix B von der Matrix A. Eingabe bei B ergibt Resultat C. Eingabe bei C löst nach B auf.");
 NA_LOC(MATHelpMMulV,          "Multipliziert eine Matrix mit einem Vektor. Eingabe bei x ergibt Resultat b. Eingabe bei b löst nach x auf.");

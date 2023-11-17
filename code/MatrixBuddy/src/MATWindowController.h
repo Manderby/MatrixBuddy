@@ -44,21 +44,6 @@
 @class MATMirrorV3;
 @class MATMirrorV4;
 
-typedef struct MATMMulSController MATMMulSController;
-typedef struct MATMDivSController MATMDivSController;
-@class MATMulCompM22V2;
-@class MATMulCompM33V3;
-@class MATMulCompM44V4;
-@class MATDivCompM22V2;
-@class MATDivCompM33V3;
-@class MATDivCompM44V4;
-@class MATMulCompM22M22;
-@class MATMulCompM33M33;
-@class MATMulCompM44M44;
-@class MATDivCompM22M22;
-@class MATDivCompM33M33;
-@class MATDivCompM44M44;
-
 @class MATNegM22;
 @class MATNegM33;
 @class MATNegM44;
@@ -152,7 +137,7 @@ typedef struct MATMDivSController MATMDivSController;
   IBOutlet NSButton* buttonMMulCompM;
   IBOutlet NSButton* buttonMDivCompM;
   
-  IBOutlet NSButton* buttonNegM;
+  IBOutlet NSButton* buttonMNeg;
   IBOutlet NSButton* buttonMAddM;
   IBOutlet NSButton* buttonMSubM;
   IBOutlet NSButton* buttonMMulv;
@@ -207,13 +192,6 @@ typedef struct MATMDivSController MATMDivSController;
   IBOutlet MATMirrorV3*         mirrorV3;
   IBOutlet MATMirrorV4*         mirrorV4;
 
-  IBOutlet MATMulCompM22M22*    mulCompM22M22;
-  IBOutlet MATMulCompM33M33*    mulCompM33M33;
-  IBOutlet MATMulCompM44M44*    mulCompM44M44;
-  IBOutlet MATDivCompM22M22*    divCompM22M22;
-  IBOutlet MATDivCompM33M33*    divCompM33M33;
-  IBOutlet MATDivCompM44M44*    divCompM44M44;
-  
   IBOutlet MATNegM22*           negM22;
   IBOutlet MATNegM33*           negM33;
   IBOutlet MATNegM44*           negM44;

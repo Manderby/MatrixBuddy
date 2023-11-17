@@ -48,7 +48,7 @@ NA_LOC(MATButtonMMulCompV,      "M⊙v");
 NA_LOC(MATButtonMDivCompV,      "M⊘v");
 NA_LOC(MATButtonMMulCompM,      "M⊙M");
 NA_LOC(MATButtonMDivCompM,      "M⊘M");
-NA_LOC(MATButtonNegM,           "−M");
+NA_LOC(MATButtonMNeg,           "−M");
 NA_LOC(MATButtonMAddM,          "M+M");
 NA_LOC(MATButtonMSubM,          "M−M");
 NA_LOC(MATButtonMMulV,          "M×v");
@@ -81,7 +81,7 @@ NA_LOC(MATHelpMDivCompV,      "Divides the columns of a matrix by the components
 NA_LOC(MATHelpMMulCompM,      "Multiplies the components of a matrix by the components of anoter matrix.");
 NA_LOC(MATHelpMDivCompM,      "Divides the components of a matrix by the components of anoter matrix.");
 
-NA_LOC(MATHelpNegM,           "Negates a matrix. You may fill in either side.");
+NA_LOC(MATHelpMNeg,           "Negates a matrix. You may fill in either side.");
 NA_LOC(MATHelpMAddM,          "Adds matrix B to matrix A. Fill in B to compute C. Fill in C to solve for B.");
 NA_LOC(MATHelpMSubM,          "Subtract matrix B from matrix A. Fill in B to compute C. Fill in C to solve for B.");
 NA_LOC(MATHelpMMulV,          "Multiplication of a matrix with a vector. Fill in x to compute b. Fill in b to solve for x.");
