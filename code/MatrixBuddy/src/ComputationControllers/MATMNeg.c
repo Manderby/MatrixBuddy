@@ -15,7 +15,6 @@ struct MATMNegController{
 
 void matUpdateMNegController(MATBaseController* controller){
   MATMNegController* con = (MATMNegController*)controller;
-
   matUpdateView(con->viewA);
   matUpdateView(con->viewN);
 }

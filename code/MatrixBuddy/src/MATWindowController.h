@@ -140,7 +140,7 @@
   IBOutlet NSButton* buttonMNeg;
   IBOutlet NSButton* buttonMAddM;
   IBOutlet NSButton* buttonMSubM;
-  IBOutlet NSButton* buttonMMulv;
+  IBOutlet NSButton* buttonMMulV;
   IBOutlet NSButton* buttonMMulM;
 
   IBOutlet NSButton* buttonDiagS;

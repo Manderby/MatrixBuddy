@@ -23,11 +23,6 @@
 #import "MATOrthogonalizeV.h"
 #import "MATMirrorV.h"
 
-#import "MATMAddM.h"
-#import "MATMSubM.h"
-#import "MATMMulV.h"
-#import "MATMMulM.h"
-
 #import "MATDiagS.h"
 #import "MATDiagV.h"
 #import "MATTransposeM.h"
@@ -130,7 +125,7 @@
   buttons[MAT_COMPUTATION_MNEG]           = buttonMNeg;
   buttons[MAT_COMPUTATION_MADDM]          = buttonMAddM;
   buttons[MAT_COMPUTATION_MSUBM]          = buttonMSubM;
-  buttons[MAT_COMPUTATION_MMULV]          = buttonMMulv;
+  buttons[MAT_COMPUTATION_MMULV]          = buttonMMulV;
   buttons[MAT_COMPUTATION_MMULM]          = buttonMMulM;
 
   buttons[MAT_COMPUTATION_DIAGS]          = buttonDiagS;
@@ -202,18 +197,18 @@
   controllers[MAT_COMPUTATION_MNEG * 3 + 0]      = matAllocMNegController(2);
   controllers[MAT_COMPUTATION_MNEG * 3 + 1]      = matAllocMNegController(3);
   controllers[MAT_COMPUTATION_MNEG * 3 + 2]      = matAllocMNegController(4);
-  views[MAT_COMPUTATION_MADDM * 3 + 0]          = addM22M22;
-  views[MAT_COMPUTATION_MADDM * 3 + 1]          = addM33M33;
-  views[MAT_COMPUTATION_MADDM * 3 + 2]          = addM44M44;
-  views[MAT_COMPUTATION_MSUBM * 3 + 0]          = subM22M22;
-  views[MAT_COMPUTATION_MSUBM * 3 + 1]          = subM33M33;
-  views[MAT_COMPUTATION_MSUBM * 3 + 2]          = subM44M44;
-  views[MAT_COMPUTATION_MMULV * 3 + 0]          = mulM22v2;
-  views[MAT_COMPUTATION_MMULV * 3 + 1]          = mulM33v3;
-  views[MAT_COMPUTATION_MMULV * 3 + 2]          = mulM44v4;
-  views[MAT_COMPUTATION_MMULM * 3 + 0]          = mulM22M22;
-  views[MAT_COMPUTATION_MMULM * 3 + 1]          = mulM33M33;
-  views[MAT_COMPUTATION_MMULM * 3 + 2]          = mulM44M44;
+  controllers[MAT_COMPUTATION_MADDM * 3 + 0]     = matAllocMAddMController(2);
+  controllers[MAT_COMPUTATION_MADDM * 3 + 1]     = matAllocMAddMController(3);
+  controllers[MAT_COMPUTATION_MADDM * 3 + 2]     = matAllocMAddMController(4);
+  controllers[MAT_COMPUTATION_MSUBM * 3 + 0]     = matAllocMSubMController(2);
+  controllers[MAT_COMPUTATION_MSUBM * 3 + 1]     = matAllocMSubMController(3);
+  controllers[MAT_COMPUTATION_MSUBM * 3 + 2]     = matAllocMSubMController(4);
+  controllers[MAT_COMPUTATION_MMULV * 3 + 0]     = matAllocMMulVController(2);
+  controllers[MAT_COMPUTATION_MMULV * 3 + 1]     = matAllocMMulVController(3);
+  controllers[MAT_COMPUTATION_MMULV * 3 + 2]     = matAllocMMulVController(4);
+  controllers[MAT_COMPUTATION_MMULM * 3 + 0]     = matAllocMMulMController(2);
+  controllers[MAT_COMPUTATION_MMULM * 3 + 1]     = matAllocMMulMController(3);
+  controllers[MAT_COMPUTATION_MMULM * 3 + 2]     = matAllocMMulMController(4);
 
   views[MAT_COMPUTATION_DIAGS * 3 + 0]          = diagSM22;
   views[MAT_COMPUTATION_DIAGS * 3 + 1]          = diagSM33;
@@ -244,8 +239,7 @@
 
 
 - (void)prepareFirstView{
-  //[self switchComputation:buttonMMulv];
-  [self switchComputation:buttonMMulS];
+  [self switchComputation:buttonMMulV];
   
   [buttons[MAT_COMPUTATION_VMULS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMulS)]];
   [buttons[MAT_COMPUTATION_VDIVS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDivS)]];
@@ -396,7 +390,7 @@
   computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation >= MAT_COMPUTATION_MMULS && computation <= MAT_COMPUTATION_MNEG){
+  if(computation >= MAT_COMPUTATION_MMULS && computation <= MAT_COMPUTATION_MMULM){
     computationController = controllers[computation * 3 + (dimensions - 2)];
     const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);

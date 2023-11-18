@@ -116,7 +116,7 @@ MATBaseController* matAllocMMulCompVController(size_t dimensions){
   naAddSpaceChild(con->base.space, spaceS, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, marginBottom));
   naAddSpaceChild(con->base.space, spaceB, naMakePos(marginLeft + sizeA.width + sizeS.width + 2 * MAT_SIGN_WIDTH, marginBottom));
 
-  con->mulSignLabel = naNewLabel(MA_MULTIPLICATION_CIRCLE_SIGN, MAT_SIGN_WIDTH);
+  con->mulSignLabel = naNewLabel(MA_MUL_CIRCLE_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->mulSignLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelFont(con->mulSignLabel, matGetMathFont());
   naSetLabelHeight(con->mulSignLabel, MAT_MATRIX_LABEL_HEIGHT);
