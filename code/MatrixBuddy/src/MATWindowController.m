@@ -25,8 +25,6 @@
 
 #import "MATDiagS.h"
 #import "MATDiagV.h"
-#import "MATTransposeM.h"
-#import "MATInvertM.h"
 
 #include "MATTranslations.h"
 #include "MATPreferences.h"
@@ -130,8 +128,8 @@
 
   buttons[MAT_COMPUTATION_DIAGS]          = buttonDiagS;
   buttons[MAT_COMPUTATION_DIAGV]          = buttonDiagV;
-  buttons[MAT_COMPUTATION_TRANSPOSEM]     = buttonTransposeM;
-  buttons[MAT_COMPUTATION_INVERTM]        = buttonInvertM;
+  buttons[MAT_COMPUTATION_MTRANSPOSE]     = buttonMTranspose;
+  buttons[MAT_COMPUTATION_MINVERT]        = buttonMInvert;
 
   views[MAT_COMPUTATION_VMULS * 3 + 0]          = mulV2S;
   views[MAT_COMPUTATION_VMULS * 3 + 1]          = mulV3S;
@@ -175,40 +173,40 @@
   views[MAT_COMPUTATION_MIRRORV * 3 + 1]        = mirrorV3;
   views[MAT_COMPUTATION_MIRRORV * 3 + 2]        = mirrorV4;
 
-  controllers[MAT_COMPUTATION_MMULS * 3 + 0]     = matAllocMMulSController(2);
-  controllers[MAT_COMPUTATION_MMULS * 3 + 1]     = matAllocMMulSController(3);
-  controllers[MAT_COMPUTATION_MMULS * 3 + 2]     = matAllocMMulSController(4);
-  controllers[MAT_COMPUTATION_MDIVS * 3 + 0]     = matAllocMDivSController(2);
-  controllers[MAT_COMPUTATION_MDIVS * 3 + 1]     = matAllocMDivSController(3);
-  controllers[MAT_COMPUTATION_MDIVS * 3 + 2]     = matAllocMDivSController(4);
-  controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 0] = matAllocMMulCompVController(2);
-  controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 1] = matAllocMMulCompVController(3);
-  controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 2] = matAllocMMulCompVController(4);
-  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 0] = matAllocMDivCompVController(2);
-  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 1] = matAllocMDivCompVController(3);
-  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 2] = matAllocMDivCompVController(4);
-  controllers[MAT_COMPUTATION_MMULCOMPM * 3 + 0] = matAllocMMulCompMController(2);
-  controllers[MAT_COMPUTATION_MMULCOMPM * 3 + 1] = matAllocMMulCompMController(3);
-  controllers[MAT_COMPUTATION_MMULCOMPM * 3 + 2] = matAllocMMulCompMController(4);
-  controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 0] = matAllocMDivCompMController(2);
-  controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 1] = matAllocMDivCompMController(3);
-  controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 2] = matAllocMDivCompMController(4);
+  controllers[MAT_COMPUTATION_MMULS * 3 + 0]      = matAllocMMulSController(2);
+  controllers[MAT_COMPUTATION_MMULS * 3 + 1]      = matAllocMMulSController(3);
+  controllers[MAT_COMPUTATION_MMULS * 3 + 2]      = matAllocMMulSController(4);
+  controllers[MAT_COMPUTATION_MDIVS * 3 + 0]      = matAllocMDivSController(2);
+  controllers[MAT_COMPUTATION_MDIVS * 3 + 1]      = matAllocMDivSController(3);
+  controllers[MAT_COMPUTATION_MDIVS * 3 + 2]      = matAllocMDivSController(4);
+  controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 0]  = matAllocMMulCompVController(2);
+  controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 1]  = matAllocMMulCompVController(3);
+  controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 2]  = matAllocMMulCompVController(4);
+  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 0]  = matAllocMDivCompVController(2);
+  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 1]  = matAllocMDivCompVController(3);
+  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 2]  = matAllocMDivCompVController(4);
+  controllers[MAT_COMPUTATION_MMULCOMPM * 3 + 0]  = matAllocMMulCompMController(2);
+  controllers[MAT_COMPUTATION_MMULCOMPM * 3 + 1]  = matAllocMMulCompMController(3);
+  controllers[MAT_COMPUTATION_MMULCOMPM * 3 + 2]  = matAllocMMulCompMController(4);
+  controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 0]  = matAllocMDivCompMController(2);
+  controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 1]  = matAllocMDivCompMController(3);
+  controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 2]  = matAllocMDivCompMController(4);
   
-  controllers[MAT_COMPUTATION_MNEG * 3 + 0]      = matAllocMNegController(2);
-  controllers[MAT_COMPUTATION_MNEG * 3 + 1]      = matAllocMNegController(3);
-  controllers[MAT_COMPUTATION_MNEG * 3 + 2]      = matAllocMNegController(4);
-  controllers[MAT_COMPUTATION_MADDM * 3 + 0]     = matAllocMAddMController(2);
-  controllers[MAT_COMPUTATION_MADDM * 3 + 1]     = matAllocMAddMController(3);
-  controllers[MAT_COMPUTATION_MADDM * 3 + 2]     = matAllocMAddMController(4);
-  controllers[MAT_COMPUTATION_MSUBM * 3 + 0]     = matAllocMSubMController(2);
-  controllers[MAT_COMPUTATION_MSUBM * 3 + 1]     = matAllocMSubMController(3);
-  controllers[MAT_COMPUTATION_MSUBM * 3 + 2]     = matAllocMSubMController(4);
-  controllers[MAT_COMPUTATION_MMULV * 3 + 0]     = matAllocMMulVController(2);
-  controllers[MAT_COMPUTATION_MMULV * 3 + 1]     = matAllocMMulVController(3);
-  controllers[MAT_COMPUTATION_MMULV * 3 + 2]     = matAllocMMulVController(4);
-  controllers[MAT_COMPUTATION_MMULM * 3 + 0]     = matAllocMMulMController(2);
-  controllers[MAT_COMPUTATION_MMULM * 3 + 1]     = matAllocMMulMController(3);
-  controllers[MAT_COMPUTATION_MMULM * 3 + 2]     = matAllocMMulMController(4);
+  controllers[MAT_COMPUTATION_MNEG * 3 + 0]       = matAllocMNegController(2);
+  controllers[MAT_COMPUTATION_MNEG * 3 + 1]       = matAllocMNegController(3);
+  controllers[MAT_COMPUTATION_MNEG * 3 + 2]       = matAllocMNegController(4);
+  controllers[MAT_COMPUTATION_MADDM * 3 + 0]      = matAllocMAddMController(2);
+  controllers[MAT_COMPUTATION_MADDM * 3 + 1]      = matAllocMAddMController(3);
+  controllers[MAT_COMPUTATION_MADDM * 3 + 2]      = matAllocMAddMController(4);
+  controllers[MAT_COMPUTATION_MSUBM * 3 + 0]      = matAllocMSubMController(2);
+  controllers[MAT_COMPUTATION_MSUBM * 3 + 1]      = matAllocMSubMController(3);
+  controllers[MAT_COMPUTATION_MSUBM * 3 + 2]      = matAllocMSubMController(4);
+  controllers[MAT_COMPUTATION_MMULV * 3 + 0]      = matAllocMMulVController(2);
+  controllers[MAT_COMPUTATION_MMULV * 3 + 1]      = matAllocMMulVController(3);
+  controllers[MAT_COMPUTATION_MMULV * 3 + 2]      = matAllocMMulVController(4);
+  controllers[MAT_COMPUTATION_MMULM * 3 + 0]      = matAllocMMulMController(2);
+  controllers[MAT_COMPUTATION_MMULM * 3 + 1]      = matAllocMMulMController(3);
+  controllers[MAT_COMPUTATION_MMULM * 3 + 2]      = matAllocMMulMController(4);
 
   views[MAT_COMPUTATION_DIAGS * 3 + 0]          = diagSM22;
   views[MAT_COMPUTATION_DIAGS * 3 + 1]          = diagSM33;
@@ -216,12 +214,12 @@
   views[MAT_COMPUTATION_DIAGV * 3 + 0]          = diagV2M22;
   views[MAT_COMPUTATION_DIAGV * 3 + 1]          = diagV3M33;
   views[MAT_COMPUTATION_DIAGV * 3 + 2]          = diagV4M44;
-  views[MAT_COMPUTATION_TRANSPOSEM * 3 + 0]     = transposeM22;
-  views[MAT_COMPUTATION_TRANSPOSEM * 3 + 1]     = transposeM33;
-  views[MAT_COMPUTATION_TRANSPOSEM * 3 + 2]     = transposeM44;
-  views[MAT_COMPUTATION_INVERTM * 3 + 0]        = invertM22;
-  views[MAT_COMPUTATION_INVERTM * 3 + 1]        = invertM33;
-  views[MAT_COMPUTATION_INVERTM * 3 + 2]        = invertM44;
+  controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 0] = matAllocMTransposeController(2);
+  controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 1] = matAllocMTransposeController(3);
+  controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 2] = matAllocMTransposeController(4);
+  controllers[MAT_COMPUTATION_MINVERT * 3 + 0]    = matAllocMInvertController(2);
+  controllers[MAT_COMPUTATION_MINVERT * 3 + 1]    = matAllocMInvertController(3);
+  controllers[MAT_COMPUTATION_MINVERT * 3 + 2]    = matAllocMInvertController(4);
 
   computation = MAT_COMPUTATION_MMULV;
   dimensions = 3;
@@ -272,8 +270,8 @@
 
   [buttons[MAT_COMPUTATION_DIAGS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonDiagS)]];
   [buttons[MAT_COMPUTATION_DIAGV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonDiagV)]];
-  [buttons[MAT_COMPUTATION_TRANSPOSEM]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonTransposeM)]];
-  [buttons[MAT_COMPUTATION_INVERTM]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonInvertM)]];
+  [buttons[MAT_COMPUTATION_MTRANSPOSE]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMTranspose)]];
+  [buttons[MAT_COMPUTATION_MINVERT]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMInvert)]];
 
 }
 
@@ -315,8 +313,8 @@
 
       case MAT_COMPUTATION_DIAGS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpDiagS)]; break;
       case MAT_COMPUTATION_DIAGV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpDiagV)]; break;
-      case MAT_COMPUTATION_TRANSPOSEM:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpTransposeM)]; break;
-      case MAT_COMPUTATION_INVERTM:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpInvertM)]; break;
+      case MAT_COMPUTATION_MTRANSPOSE:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMTranspose)]; break;
+      case MAT_COMPUTATION_MINVERT:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMInvert)]; break;
     default:
       helpstring = @"";
     }
@@ -390,7 +388,7 @@
   computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation >= MAT_COMPUTATION_MMULS && computation <= MAT_COMPUTATION_MMULM){
+  if(computation >= MAT_COMPUTATION_MMULS && computation <= MAT_COMPUTATION_MINVERT){
     computationController = controllers[computation * 3 + (dimensions - 2)];
     const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);

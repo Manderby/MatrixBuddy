@@ -55,8 +55,8 @@ NA_LOC(MATButtonMMulV,          "M×v");
 NA_LOC(MATButtonMMulM,          "M×M");
 NA_LOC(MATButtonDiagS,          "Diag(s)");
 NA_LOC(MATButtonDiagV,          "Diag(v)");
-NA_LOC(MATButtonTransposeM,     "Transponieren");
-NA_LOC(MATButtonInvertM,        "Invertieren");
+NA_LOC(MATButtonMTranspose,     "Transponieren");
+NA_LOC(MATButtonMInvert,        "Invertieren");
 
 NA_LOC(MATHelpVMulS,          "Multipliziert einen Vektor mit einem Skalar.");
 NA_LOC(MATHelpVDivS,          "Dividiert einen Vektor durch einen Skalar.");
@@ -89,8 +89,8 @@ NA_LOC(MATHelpMMulM,          "Multipliziert eine Matrix mit einer andern Matrix
 
 NA_LOC(MATHelpDiagS,          "Erstellt eine Diagonalmatrix aus einem Skalar.");
 NA_LOC(MATHelpDiagV,          "Erstellt eine Diagonalmatrix aus einem Vektor.");
-NA_LOC(MATHelpTransposeM,     "Transponiert eine Matrix.");
-NA_LOC(MATHelpInvertM,        "Invertiert eine Matrix. Es können beide Seiten als Eingabe dienen");
+NA_LOC(MATHelpMTranspose,     "Transponiert eine Matrix.");
+NA_LOC(MATHelpMInvert,        "Invertiert eine Matrix. Es können beide Seiten als Eingabe dienen");
 
 NA_LOC(MATErrorMatrixDeterminantZero,       "Nicht invertierbar");
 NA_LOC(MATErrorMatrixDeterminantAlmostZero, "Determinante beinahe 0");

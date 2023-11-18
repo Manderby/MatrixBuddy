@@ -494,12 +494,12 @@
                 <outlet property="addV4V4" destination="a1H-ca-Oyb" id="pG8-MC-3R6"/>
                 <outlet property="buttonDiagS" destination="pjL-aq-LbI" id="D0O-kt-Vle"/>
                 <outlet property="buttonDiagV" destination="6Ry-At-xD0" id="eXC-j7-YKf"/>
-                <outlet property="buttonInvertM" destination="FJk-Kc-xde" id="t1A-zb-zxM"/>
                 <outlet property="buttonLengthV" destination="Ih7-7B-qOm" id="bYp-NB-CEW"/>
                 <outlet property="buttonMAddM" destination="Ktj-Sp-LvB" id="Otf-id-AUb"/>
                 <outlet property="buttonMDivCompM" destination="Neh-CN-PW9" id="IBs-zw-uXO"/>
                 <outlet property="buttonMDivCompV" destination="9lC-lK-rp3" id="9bp-wF-ZLp"/>
                 <outlet property="buttonMDivS" destination="6fE-iV-u3H" id="wMY-9L-tx1"/>
+                <outlet property="buttonMInvert" destination="FJk-Kc-xde" id="fbM-q2-4AK"/>
                 <outlet property="buttonMMulCompM" destination="dBb-iC-cgb" id="tsh-sk-8NH"/>
                 <outlet property="buttonMMulCompV" destination="15G-Jx-hWA" id="3G7-LD-LCK"/>
                 <outlet property="buttonMMulM" destination="2xf-8K-n8E" id="xfy-BU-1lG"/>
@@ -507,11 +507,11 @@
                 <outlet property="buttonMMulV" destination="h6k-Pl-DFb" id="QIH-n0-wyA"/>
                 <outlet property="buttonMNeg" destination="4tb-Ek-Y7n" id="QBG-w3-O5E"/>
                 <outlet property="buttonMSubM" destination="Pp3-ky-QKt" id="feF-lh-2UV"/>
+                <outlet property="buttonMTranspose" destination="fDh-3O-VAj" id="V9b-xm-6O4"/>
                 <outlet property="buttonMirrorV" destination="RYT-MJ-8nV" id="iaY-aj-VNv"/>
                 <outlet property="buttonNegV" destination="0zj-v7-uMZ" id="h6H-aw-1zX"/>
                 <outlet property="buttonNormalizeV" destination="jyN-Gf-Wit" id="1da-qB-Cl4"/>
                 <outlet property="buttonOrthogonalizeV" destination="dD0-TA-DBF" id="JVj-hz-ydP"/>
-                <outlet property="buttonTransposeM" destination="fDh-3O-VAj" id="V9b-xm-6O4"/>
                 <outlet property="buttonVAddV" destination="zx5-bI-Hoa" id="TSz-J1-dME"/>
                 <outlet property="buttonVCrossV" destination="zmR-bM-33I" id="3yI-eg-uoz"/>
                 <outlet property="buttonVDivCompV" destination="ebi-Dh-gf8" id="H8E-n1-XcE"/>
@@ -549,9 +549,6 @@
                 <outlet property="dotV4V4" destination="CdE-gR-h6n" id="DAh-On-AGE"/>
                 <outlet property="gearButton" destination="B0j-ar-xP6" id="VG6-1q-T0q"/>
                 <outlet property="helpLine" destination="8r9-bc-tc4" id="9MB-EX-7ep"/>
-                <outlet property="invertM22" destination="DgD-58-swH" id="xO2-nO-bPV"/>
-                <outlet property="invertM33" destination="rGg-M6-gaa" id="73C-Y6-exI"/>
-                <outlet property="invertM44" destination="VPV-M5-awI" id="GyS-xK-2tM"/>
                 <outlet property="lengthV2" destination="7KR-iI-4Jv" id="Ikt-VR-vtw"/>
                 <outlet property="lengthV3" destination="jyJ-qX-zNA" id="PKr-gd-Uvg"/>
                 <outlet property="lengthV4" destination="Um1-WN-SGx" id="DJ9-gn-xqB"/>
@@ -580,9 +577,6 @@
                 <outlet property="subV2V2" destination="ofv-wN-vrF" id="hMi-tz-nCY"/>
                 <outlet property="subV3V3" destination="yUm-Th-VNW" id="hr7-7B-1Oq"/>
                 <outlet property="subV4V4" destination="t0H-nN-HPr" id="3Jh-M6-cUy"/>
-                <outlet property="transposeM22" destination="qmq-5u-kMd" id="BmZ-hr-lGA"/>
-                <outlet property="transposeM33" destination="fHH-RJ-Grh" id="F3J-MB-n4p"/>
-                <outlet property="transposeM44" destination="xOY-Hs-pkk" id="gRh-xe-ZbE"/>
                 <outlet property="valueAccuracyFloatItem" destination="6im-P3-q4K" id="dER-8U-3HD"/>
                 <outlet property="valueAccuracyNaturalItem" destination="AOl-jf-KW7" id="aRJ-fV-bwd"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="Utv-LE-3yb"/>
@@ -1380,174 +1374,6 @@
                 <outlet property="v" destination="5PE-HT-ufe" id="Le2-a0-jKg"/>
             </connections>
             <point key="canvasLocation" x="384.5" y="494.5"/>
-        </customView>
-        <customView id="qmq-5u-kMd" customClass="MATTransposeM22">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e28-GR-uUU" customClass="MATViewM22">
-                    <rect key="frame" x="526" y="27" width="145" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdw-b2-pGl" customClass="MATViewM22">
-                    <rect key="frame" x="319" y="27" width="145" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RIf-S7-SQi">
-                    <rect key="frame" x="470" y="85" width="50" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⟷" id="8dO-Tp-Nvw">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="A" destination="bdw-b2-pGl" id="YgH-tK-s9e"/>
-                <outlet property="B" destination="e28-GR-uUU" id="JXj-lc-heU"/>
-            </connections>
-            <point key="canvasLocation" x="308.5" y="734.5"/>
-        </customView>
-        <customView id="xOY-Hs-pkk" customClass="MATTransposeM44">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gzL-jp-3aD" customClass="MATViewM44">
-                    <rect key="frame" x="526" y="0.0" width="285" height="197"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0WC-3r-5iw" customClass="MATViewM44">
-                    <rect key="frame" x="179" y="0.0" width="285" height="197"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYm-gA-9uP">
-                    <rect key="frame" x="470" y="85" width="50" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⟷" id="K1W-Dr-UJA">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="A" destination="0WC-3r-5iw" id="cor-3C-yGM"/>
-                <outlet property="B" destination="gzL-jp-3aD" id="kqI-oZ-U7i"/>
-            </connections>
-            <point key="canvasLocation" x="255.5" y="218.5"/>
-        </customView>
-        <customView id="fHH-RJ-Grh" customClass="MATTransposeM33">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zv3-sj-OLE" customClass="MATViewM33">
-                    <rect key="frame" x="526" y="13" width="215" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="El3-bM-DnW" customClass="MATViewM33">
-                    <rect key="frame" x="249" y="13" width="215" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iP5-5l-gT1">
-                    <rect key="frame" x="470" y="85" width="50" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⟷" id="VGO-uI-rXb">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="A" destination="El3-bM-DnW" id="Qg5-0U-8nA"/>
-                <outlet property="B" destination="zv3-sj-OLE" id="nTR-h3-g9X"/>
-            </connections>
-            <point key="canvasLocation" x="384.5" y="494.5"/>
-        </customView>
-        <customView id="DgD-58-swH" customClass="MATInvertM22">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ex-z6-6fq" customClass="MATViewM22">
-                    <rect key="frame" x="526" y="27" width="145" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Gh-d2-vsa" customClass="MATViewM22">
-                    <rect key="frame" x="319" y="27" width="145" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="44x-xH-bso">
-                    <rect key="frame" x="470" y="85" width="50" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⟷" id="y3s-ae-xoY">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="A" destination="5Gh-d2-vsa" id="SW1-nc-1QM"/>
-                <outlet property="B" destination="8ex-z6-6fq" id="6Br-Rc-fMC"/>
-            </connections>
-            <point key="canvasLocation" x="308.5" y="734.5"/>
-        </customView>
-        <customView id="rGg-M6-gaa" customClass="MATInvertM33">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xkg-iq-kcp" customClass="MATViewM33">
-                    <rect key="frame" x="526" y="13" width="215" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-0s-1vU" customClass="MATViewM33">
-                    <rect key="frame" x="249" y="13" width="215" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1EE-g9-Tpa">
-                    <rect key="frame" x="470" y="85" width="50" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⟷" id="Vap-zJ-bZs">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="A" destination="NEg-0s-1vU" id="4vq-1R-a9h"/>
-                <outlet property="B" destination="xkg-iq-kcp" id="YfI-vW-GLZ"/>
-            </connections>
-            <point key="canvasLocation" x="384.5" y="494.5"/>
-        </customView>
-        <customView id="VPV-M5-awI" customClass="MATInvertM44">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6zA-gF-PsG" customClass="MATViewM44">
-                    <rect key="frame" x="526" y="0.0" width="285" height="197"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-ys-Lik" customClass="MATViewM44">
-                    <rect key="frame" x="179" y="0.0" width="285" height="197"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wpS-UN-KCj">
-                    <rect key="frame" x="470" y="85" width="50" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⟷" id="4D4-wu-XRs">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="A" destination="EcZ-ys-Lik" id="y9E-qJ-6Sm"/>
-                <outlet property="B" destination="6zA-gF-PsG" id="ax7-5u-fLf"/>
-            </connections>
-            <point key="canvasLocation" x="255.5" y="218.5"/>
         </customView>
         <customView id="IXL-9m-9KQ" customClass="MATMulV2S">
             <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>

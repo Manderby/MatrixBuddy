@@ -55,8 +55,8 @@ NA_LOC(MATButtonMMulV,          "M×v");
 NA_LOC(MATButtonMMulM,          "M×M");
 NA_LOC(MATButtonDiagS,          "Diag(s)");
 NA_LOC(MATButtonDiagV,          "Diag(v)");
-NA_LOC(MATButtonTransposeM,     "Transpose");
-NA_LOC(MATButtonInvertM,        "Invert");
+NA_LOC(MATButtonMTranspose,     "Transpose");
+NA_LOC(MATButtonMInvert,        "Invert");
 
 NA_LOC(MATHelpVMulS,          "Multiplies a vector by a scalar.");
 NA_LOC(MATHelpVDivS,          "Divides a vector by a scalar.");
@@ -89,8 +89,8 @@ NA_LOC(MATHelpMMulM,          "Multiplication of a matrix with a matrix. Fill in
 
 NA_LOC(MATHelpDiagS,          "Create a diagonal matrix out of a scalar.");
 NA_LOC(MATHelpDiagV,          "Create a diagonal matrix out of a vector.");
-NA_LOC(MATHelpTransposeM,     "Transposes a matrix.");
-NA_LOC(MATHelpInvertM,        "Inverts a matrix. You may fill in either side.");
+NA_LOC(MATHelpMTranspose,     "Transposes a matrix.");
+NA_LOC(MATHelpMInvert,        "Inverts a matrix. You may fill in either side.");
 
 NA_LOC(MATErrorMatrixDeterminantZero,       "Can't invert");
 NA_LOC(MATErrorMatrixDeterminantAlmostZero, "Determinant almost 0");

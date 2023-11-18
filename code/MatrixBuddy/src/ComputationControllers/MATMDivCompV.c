@@ -130,13 +130,13 @@ MATBaseController* matAllocMDivCompVController(size_t dimensions){
   naAddSpaceChild(con->base.space, spaceS, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, marginBottom));
   naAddSpaceChild(con->base.space, spaceB, naMakePos(marginLeft + sizeA.width + sizeS.width + 2 * MAT_SIGN_WIDTH, marginBottom));
 
-  con->divSignLabel = naNewLabel(MA_DIV_CIRCLE_SIGN, MAT_SIGN_WIDTH);
+  con->divSignLabel = naNewLabel(MAT_DIV_CIRCLE_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->divSignLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelFont(con->divSignLabel, matGetMathFont());
   naSetLabelHeight(con->divSignLabel, MAT_MATRIX_LABEL_HEIGHT);
   naAddSpaceChild(con->base.space, con->divSignLabel, naMakePos(marginLeft + sizeA.width, signMarginBottom));
 
-  con->equalSignLabel = naNewLabel(MA_EQUAL_SIGN, MAT_SIGN_WIDTH);
+  con->equalSignLabel = naNewLabel(MAT_EQUAL_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->equalSignLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelFont(con->equalSignLabel, matGetMathFont());
   naSetLabelHeight(con->equalSignLabel, MAT_MATRIX_LABEL_HEIGHT);

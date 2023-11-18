@@ -42,14 +42,17 @@
 #define MAT_VIEW_HEIGHT_3 (3 * MAT_TEXTFIELD_HEIGHT + 2 * MAT_TEXTFIELD_SPACE_V + MAT_VIEW_SURROUNDING_ELEMENTS_HEIGHT + 2 * MAT_VALUE_BORDER)
 #define MAT_VIEW_HEIGHT_4 (4 * MAT_TEXTFIELD_HEIGHT + 3 * MAT_TEXTFIELD_SPACE_V + MAT_VIEW_SURROUNDING_ELEMENTS_HEIGHT + 2 * MAT_VALUE_BORDER)
 
-#define MA_EQUAL_SIGN "="
-#define MA_ADD_SIGN "+"
-#define MA_SUB_SIGN "-"
-#define MA_MUL_SIGN "\u00d7"
-#define MA_DIV_SIGN "\u00f7"
-#define MA_MUL_CIRCLE_SIGN "\u2299"
-#define MA_DIV_CIRCLE_SIGN "\u2298"
-
+#define MAT_EQUAL_SIGN "="
+#define MAT_ADD_SIGN "+"
+#define MAT_SUB_SIGN "\u2013" // en Dash
+#define MAT_MUL_SIGN "\u00d7"
+#define MAT_DIV_SIGN "\u00f7"
+#define MAT_MUL_CIRCLE_SIGN "\u2299"
+#define MAT_DIV_CIRCLE_SIGN "\u2298"
+#define MAT_ARROW_SIGN "\u27f6"
+#define MAT_DOUBLE_ARROW_SIGN "\u27f7"
+#define MAT_SUPERSCRIPT_T "\u1d40"
+#define MAT_SUPERSCRIPT_MINUS_ONE "\u207b\u00b9"
 
 typedef struct MATBaseController MATBaseController;
 typedef struct MATView MATView;

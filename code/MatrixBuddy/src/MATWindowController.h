@@ -66,12 +66,12 @@
 @class MATDiagV2M22;
 @class MATDiagV3M33;
 @class MATDiagV4M44;
-@class MATTransposeM22;
-@class MATTransposeM33;
-@class MATTransposeM44;
-@class MATInvertM22;
-@class MATInvertM33;
-@class MATInvertM44;
+@class MATMTranspose22;
+@class MATMTranspose33;
+@class MATMTranspose44;
+@class MATMInvert22;
+@class MATMInvert33;
+@class MATMInvert44;
 
 
 
@@ -145,8 +145,8 @@
 
   IBOutlet NSButton* buttonDiagS;
   IBOutlet NSButton* buttonDiagV;
-  IBOutlet NSButton* buttonTransposeM;
-  IBOutlet NSButton* buttonInvertM;
+  IBOutlet NSButton* buttonMTranspose;
+  IBOutlet NSButton* buttonMInvert;
 
   NSButton* buttons[MAT_COMPUTATION_COUNT];
   
@@ -214,12 +214,12 @@
   IBOutlet MATDiagV2M22*        diagV2M22;
   IBOutlet MATDiagV3M33*        diagV3M33;
   IBOutlet MATDiagV4M44*        diagV4M44;
-  IBOutlet MATTransposeM22*     transposeM22;
-  IBOutlet MATTransposeM33*     transposeM33;
-  IBOutlet MATTransposeM44*     transposeM44;
-  IBOutlet MATInvertM22*        invertM22;
-  IBOutlet MATInvertM33*        invertM33;
-  IBOutlet MATInvertM44*        invertM44;
+  IBOutlet MATMTranspose22*     transposeM22;
+  IBOutlet MATMTranspose33*     transposeM33;
+  IBOutlet MATMTranspose44*     transposeM44;
+  IBOutlet MATMInvert22*        invertM22;
+  IBOutlet MATMInvert33*        invertM33;
+  IBOutlet MATMInvert44*        invertM44;
 
   MATComputationView* views[MAT_COMPUTATION_COUNT * 3];
   MATBaseController* controllers[MAT_COMPUTATION_COUNT * 3];

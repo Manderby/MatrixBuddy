@@ -82,7 +82,7 @@ MATBaseController* matAllocMNegController(size_t dimensions){
   naZeron(initMatrix, matrixElementCount * sizeof(double));
 
   con->viewA = matAllocView("A", dimensions, dimensions, con, initMatrix);
-  con->viewN = matAllocView("-A", dimensions, dimensions, con, initMatrix);
+  con->viewN = matAllocView(MAT_SUB_SIGN "A", dimensions, dimensions, con, initMatrix);
 
   naFree(initMatrix);
 
@@ -99,14 +99,14 @@ MATBaseController* matAllocMNegController(size_t dimensions){
   naAddSpaceChild(con->base.space, spaceA, naMakePos(marginLeft, marginBottom));
   naAddSpaceChild(con->base.space, spaceN, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, marginBottom));
 
-  con->equalSignLabel = naNewLabel(MA_EQUAL_SIGN, MAT_SIGN_WIDTH);
+  con->equalSignLabel = naNewLabel(MAT_EQUAL_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->equalSignLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelFont(con->equalSignLabel, matGetMathFont());
   naSetLabelHeight(con->equalSignLabel, MAT_MATRIX_LABEL_HEIGHT);
   naAddSpaceChild(con->base.space, con->equalSignLabel, naMakePos(marginLeft + sizeA.width, signMarginBottom));
 
   matSetViewStatus(con->viewA, MAT_STATUS_NORMAL);
-  matSetViewStatus(con->viewN, MAT_STATUS_NORMAL);
+  matSetViewStatus(con->viewN, MAT_STATUS_RESULT);
 
   matUpdateMNegController(&con->base);
 

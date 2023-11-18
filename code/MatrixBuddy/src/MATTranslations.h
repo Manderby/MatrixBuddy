@@ -58,8 +58,8 @@ typedef enum{
   MATButtonMMulM,
   MATButtonDiagS,
   MATButtonDiagV,
-  MATButtonTransposeM,
-  MATButtonInvertM,
+  MATButtonMTranspose,
+  MATButtonMInvert,
 
   MATHelpVMulS,
   MATHelpVDivS,
@@ -87,8 +87,8 @@ typedef enum{
   MATHelpMMulM,
   MATHelpDiagS,
   MATHelpDiagV,
-  MATHelpTransposeM,
-  MATHelpInvertM,
+  MATHelpMTranspose,
+  MATHelpMInvert,
 
   MATErrorMatrixDeterminantZero,
   MATErrorMatrixDeterminantAlmostZero,
