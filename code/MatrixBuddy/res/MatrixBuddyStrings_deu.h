@@ -87,8 +87,8 @@ NA_LOC(MATHelpMSubM,          "Subtrahiert Matrix B von der Matrix A. Eingabe be
 NA_LOC(MATHelpMMulV,          "Multipliziert eine Matrix mit einem Vektor. Eingabe bei x ergibt Resultat b. Eingabe bei b löst nach x auf.");
 NA_LOC(MATHelpMMulM,          "Multipliziert eine Matrix mit einer andern Matrix. Eingabe bei B ergibt Resultat C. Eingabe bei C löst nach B auf.");
 
-NA_LOC(MATHelpDiagS,          "Erstellt eine Diagonalmatrix aus einem Skalar.");
-NA_LOC(MATHelpDiagV,          "Erstellt eine Diagonalmatrix aus einem Vektor.");
+NA_LOC(MATHelpMDiagS,          "Erstellt eine Diagonalmatrix aus einem Skalar.");
+NA_LOC(MATHelpMDiagV,          "Erstellt eine Diagonalmatrix aus einem Vektor.");
 NA_LOC(MATHelpMTranspose,     "Transponiert eine Matrix.");
 NA_LOC(MATHelpMInvert,        "Invertiert eine Matrix. Es können beide Seiten als Eingabe dienen");
 

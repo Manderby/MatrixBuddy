@@ -85,8 +85,8 @@ typedef enum{
   MATHelpMSubM,
   MATHelpMMulV,
   MATHelpMMulM,
-  MATHelpDiagS,
-  MATHelpDiagV,
+  MATHelpMDiagS,
+  MATHelpMDiagV,
   MATHelpMTranspose,
   MATHelpMInvert,
 

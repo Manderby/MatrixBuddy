@@ -37,6 +37,8 @@ void matUpdateControllerTabOrder(MATBaseController* con);
 
 // Alloc functions of the specific controllers.
 MATBaseController* matAllocMAddMController(size_t dimensions);
+MATBaseController* matAllocMDiagSController(size_t dimensions);
+MATBaseController* matAllocMDiagVController(size_t dimensions);
 MATBaseController* matAllocMDivCompMController(size_t dimensions);
 MATBaseController* matAllocMDivCompVController(size_t dimensions);
 MATBaseController* matAllocMDivSController(size_t dimensions);
@@ -52,6 +54,8 @@ MATBaseController* matAllocMTransposeController(size_t dimensions);
 
 // Dealloc functions of the specific controllers.
 void matDeallocMAddMController(MATBaseController* con);
+void matDeallocMDiagSController(MATBaseController* con);
+void matDeallocMDiagVController(MATBaseController* con);
 void matDeallocMDivCompMController(MATBaseController* con);
 void matDeallocMDivCompVController(MATBaseController* con);
 void matDeallocMDivSController(MATBaseController* con);

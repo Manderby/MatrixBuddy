@@ -87,8 +87,8 @@ NA_LOC(MATHelpMSubM,          "Subtract matrix B from matrix A. Fill in B to com
 NA_LOC(MATHelpMMulV,          "Multiplication of a matrix with a vector. Fill in x to compute b. Fill in b to solve for x.");
 NA_LOC(MATHelpMMulM,          "Multiplication of a matrix with a matrix. Fill in B to compute C. Fill in C to solve for B.");
 
-NA_LOC(MATHelpDiagS,          "Create a diagonal matrix out of a scalar.");
-NA_LOC(MATHelpDiagV,          "Create a diagonal matrix out of a vector.");
+NA_LOC(MATHelpMDiagS,          "Create a diagonal matrix out of a scalar.");
+NA_LOC(MATHelpMDiagV,          "Create a diagonal matrix out of a vector.");
 NA_LOC(MATHelpMTranspose,     "Transposes a matrix.");
 NA_LOC(MATHelpMInvert,        "Inverts a matrix. You may fill in either side.");
 

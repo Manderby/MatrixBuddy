@@ -23,9 +23,6 @@
 #import "MATOrthogonalizeV.h"
 #import "MATMirrorV.h"
 
-#import "MATDiagS.h"
-#import "MATDiagV.h"
-
 #include "MATTranslations.h"
 #include "MATPreferences.h"
 
@@ -208,12 +205,12 @@
   controllers[MAT_COMPUTATION_MMULM * 3 + 1]      = matAllocMMulMController(3);
   controllers[MAT_COMPUTATION_MMULM * 3 + 2]      = matAllocMMulMController(4);
 
-  views[MAT_COMPUTATION_DIAGS * 3 + 0]          = diagSM22;
-  views[MAT_COMPUTATION_DIAGS * 3 + 1]          = diagSM33;
-  views[MAT_COMPUTATION_DIAGS * 3 + 2]          = diagSM44;
-  views[MAT_COMPUTATION_DIAGV * 3 + 0]          = diagV2M22;
-  views[MAT_COMPUTATION_DIAGV * 3 + 1]          = diagV3M33;
-  views[MAT_COMPUTATION_DIAGV * 3 + 2]          = diagV4M44;
+  controllers[MAT_COMPUTATION_DIAGS * 3 + 0]      = matAllocMDiagSController(2);
+  controllers[MAT_COMPUTATION_DIAGS * 3 + 1]      = matAllocMDiagSController(3);
+  controllers[MAT_COMPUTATION_DIAGS * 3 + 2]      = matAllocMDiagSController(4);
+  controllers[MAT_COMPUTATION_DIAGV * 3 + 0]      = matAllocMDiagVController(2);
+  controllers[MAT_COMPUTATION_DIAGV * 3 + 1]      = matAllocMDiagVController(3);
+  controllers[MAT_COMPUTATION_DIAGV * 3 + 2]      = matAllocMDiagVController(4);
   controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 0] = matAllocMTransposeController(2);
   controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 1] = matAllocMTransposeController(3);
   controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 2] = matAllocMTransposeController(4);
@@ -311,8 +308,8 @@
       case MAT_COMPUTATION_MMULV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulV)]; break;
       case MAT_COMPUTATION_MMULM:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulM)]; break;
 
-      case MAT_COMPUTATION_DIAGS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpDiagS)]; break;
-      case MAT_COMPUTATION_DIAGV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpDiagV)]; break;
+      case MAT_COMPUTATION_DIAGS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDiagS)]; break;
+      case MAT_COMPUTATION_DIAGV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDiagV)]; break;
       case MAT_COMPUTATION_MTRANSPOSE:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMTranspose)]; break;
       case MAT_COMPUTATION_MINVERT:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMInvert)]; break;
     default:
@@ -467,7 +464,7 @@
     showCopyPaste = !showCopyPaste;
     naSetPreferencesBool(MATPrefs[ShowCopyPaste], showCopyPaste);
     if(computationController)
-      matUpdateControllerTabOrder(computationController);
+      matUpdateController(computationController);
   }else if(sender == rowFirstTabOrderItem){
     hasRowFirstTabOrder = NA_TRUE;
     naSetPreferencesBool(MATPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
