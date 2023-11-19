@@ -3,7 +3,6 @@
 #import "MATCommonC.h"
 
 #import "MATWindowController.h"
-#import "MATComputationView.h"
 
 #include "MATBaseController.h"
 
@@ -18,7 +17,6 @@
 
 - (void)awakeFromNib{
 
-  computationView = placeholder;
   computationController = NA_NULL;
 
   showHelp = naGetPreferencesBool(MATPrefs[ShowHelp]);
@@ -356,34 +354,22 @@
   case MAT_VALUE_ACCURACY_FLOAT: [valueAccuracyFloatItem setState:NAStateOn]; break;
   }
 
-  NSRect frame;
-  if(computationView){
-    frame = [computationView frame];
-    [computationView removeFromSuperview];
-  }else{
+  NSRect frame = [placeholder frame];
+  if(computationController){
     NSView* nsView = naGetUIElementNativePtr(naGetControllerSpace(computationController));
     frame = [nsView frame];
     [nsView removeFromSuperview];
   }
   
-  computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation >= MAT_COMPUTATION_VMULS && computation <= MAT_COMPUTATION_MINVERT){
-    computationController = controllers[computation * 3 + (dimensions - 2)];
-    const NASpace* computationSpace = naGetControllerSpace(computationController);
-    NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
-    matUpdateController(computationController);
-    matUpdateControllerTabOrder(computationController);
-    [nativeView setFrame:frame];
-    [[[self window] contentView] addSubview:nativeView];
-  }else{
-    computationView = views[computation * 3 + (dimensions - 2)];
-    [computationView setFrame:frame];
-    [[[self window] contentView] addSubview:computationView];
-    [computationView valueChanged:self];
-    [computationView update];
-  }
+  computationController = controllers[computation * 3 + (dimensions - 2)];
+  const NASpace* computationSpace = naGetControllerSpace(computationController);
+  NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
+  matUpdateController(computationController);
+  matUpdateControllerTabOrder(computationController);
+  [nativeView setFrame:frame];
+  [[[self window] contentView] addSubview:nativeView];
 }
 
 

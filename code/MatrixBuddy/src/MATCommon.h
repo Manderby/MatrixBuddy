@@ -8,8 +8,6 @@
 
 #include "MATCommonC.h"
 
-#include "MATTextField.h"
-
 #include "MATTypes.h"
 
 #endif

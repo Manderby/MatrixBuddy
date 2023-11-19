@@ -2,8 +2,6 @@
 #include "MATCommon.h"
 #include "MATBaseController.h"
 
-@class MATComputationView;
-
 @class MATMulV2S;
 @class MATMulV3S;
 @class MATMulV4S;
@@ -105,7 +103,6 @@
   
   IBOutlet NSTextField* helpLine;
 
-  MATComputationView* computationView;
   MATBaseController* computationController;
   MATComputation computation;
   size_t dimensions;
@@ -150,7 +147,7 @@
 
   NSButton* buttons[MAT_COMPUTATION_COUNT];
   
-  IBOutlet MATComputationView* placeholder;
+  IBOutlet NSView* placeholder;
 
   IBOutlet MATMulV2S*           mulV2S;
   IBOutlet MATMulV3S*           mulV3S;
@@ -221,7 +218,6 @@
   IBOutlet MATMInvert33*        invertM33;
   IBOutlet MATMInvert44*        invertM44;
 
-  MATComputationView* views[MAT_COMPUTATION_COUNT * 3];
   MATBaseController* controllers[MAT_COMPUTATION_COUNT * 3];
 }
 
