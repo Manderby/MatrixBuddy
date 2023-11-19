@@ -101,8 +101,6 @@
   MATCodeStyle codeStyle;
   MATValueAccuracy valueAccuracy;
   
-  IBOutlet NSTextField* helpLine;
-
   MATBaseController* computationController;
   MATComputation computation;
   size_t dimensions;

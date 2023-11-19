@@ -12,8 +12,8 @@ void matInitBaseController(
 {
   con->dimensions = dimensions;
 
-  double viewWidth = 991;
-  double viewHeight = 197;
+  double viewWidth = 1105;
+  double viewHeight = 231;
   con->space = naNewSpace(naMakeSize(viewWidth, viewHeight));
   con->helpLine = naNewLabel(matTranslate(helpLineId), viewWidth);
   naSetLabelTextAlignment(con->helpLine, NA_TEXT_ALIGNMENT_CENTER);

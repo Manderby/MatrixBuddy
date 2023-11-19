@@ -341,7 +341,7 @@ MATView* matAllocView(
   naSetLabelFont(view->label, matGetMathFont());
   naSetLabelTextAlignment(view->label, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelHeight(view->label, MAT_MATRIX_LABEL_HEIGHT);
-  naAddSpaceChild(view->space, view->label, naMakePos(0, viewSize.height - MAT_MATRIX_LABEL_HEIGHT - MAT_VIEW_MARGIN_V));
+  naAddSpaceChild(view->space, view->label, naMakePos(0, viewSize.height - MAT_MATRIX_LABEL_HEIGHT - MAT_VIEW_MARGIN_V - MAT_ERROR_LABEL_SHIFT_Y));
     
   view->matrixSpace = naNewSpace(naMakeSize(
     matrixSize[0] + MAT_MATRIX_MARGIN_LEFT + MAT_MATRIX_MARGIN_RIGHT,

@@ -257,51 +257,6 @@
 
 
 - (void)update{
-  if([self hasShowHelp]){
-    [helpLine setHidden:NO];
-    NSString* helpstring;
-    switch(computation){
-      case MAT_COMPUTATION_VMULS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVMulS)]; break;
-      case MAT_COMPUTATION_VDIVS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDivS)]; break;
-      case MAT_COMPUTATION_VMULCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVMulCompV)]; break;
-      case MAT_COMPUTATION_VDIVCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDivCompV)]; break;
-
-      case MAT_COMPUTATION_VNEG:            helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVNeg)]; break;
-      case MAT_COMPUTATION_VADDV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVAddV)]; break;
-      case MAT_COMPUTATION_VSUBV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVSubV)]; break;
-      case MAT_COMPUTATION_VDOTV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDotV)]; break;
-      case MAT_COMPUTATION_VCROSSV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVCrossV)]; break;
-      case MAT_COMPUTATION_VLENGTH:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVLength)]; break;
-
-      case MAT_COMPUTATION_VNORMALIZE:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVNormalize)]; break;
-      case MAT_COMPUTATION_VORTHO:  helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVOrtho)]; break;
-      case MAT_COMPUTATION_VMIRROR:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVMirror)]; break;
-
-      case MAT_COMPUTATION_MMULS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulS)]; break;
-      case MAT_COMPUTATION_MDIVS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDivS)]; break;
-      case MAT_COMPUTATION_MMULCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulCompV)]; break;
-      case MAT_COMPUTATION_MDIVCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDivCompV)]; break;
-      case MAT_COMPUTATION_MMULCOMPM:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulCompM)]; break;
-      case MAT_COMPUTATION_MDIVCOMPM:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDivCompM)]; break;
-      
-      case MAT_COMPUTATION_MNEG:            helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMNeg)]; break;
-      case MAT_COMPUTATION_MADDM:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMAddM)]; break;
-      case MAT_COMPUTATION_MSUBM:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMSubM)]; break;
-      case MAT_COMPUTATION_MMULV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulV)]; break;
-      case MAT_COMPUTATION_MMULM:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulM)]; break;
-
-      case MAT_COMPUTATION_DIAGS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDiagS)]; break;
-      case MAT_COMPUTATION_DIAGV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDiagV)]; break;
-      case MAT_COMPUTATION_MTRANSPOSE:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMTranspose)]; break;
-      case MAT_COMPUTATION_MINVERT:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMInvert)]; break;
-    default:
-      helpstring = @"";
-    }
-    [helpLine setStringValue:helpstring];
-  }else{
-    [helpLine setHidden:YES];
-  }
-
   for(MATComputation m=0; m<MAT_COMPUTATION_COUNT; m++){
     [buttons[m] setState:NAStateOff];
   }

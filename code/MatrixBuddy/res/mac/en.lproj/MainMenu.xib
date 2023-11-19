@@ -11,12 +11,10 @@
         <window title="Matrix Buddy" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="233" y="278" width="991" height="357"/>
+            <rect key="contentRect" x="233" y="278" width="1105" height="357"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
-            <value key="minSize" type="size" width="991" height="357"/>
-            <value key="maxSize" type="size" width="991" height="357"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="991" height="357"/>
+                <rect key="frame" x="0.0" y="0.0" width="1105" height="357"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h6k-Pl-DFb">
@@ -228,17 +226,8 @@
                             <action selector="switchComputation:" target="l5U-vZ-NRL" id="XwY-XP-iHS"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8r9-bc-tc4">
-                        <rect key="frame" x="18" y="225" width="955" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Multiplication of Matrix with Vector. Filling in x will compute result. Filling in b will solve linear equation system." id="OvO-WO-slB">
-                            <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1r-9p-aLR">
-                        <rect key="frame" x="0.0" y="20" width="991" height="197"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1105" height="231"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ry-At-xD0">
@@ -480,7 +469,7 @@
             <connections>
                 <outlet property="delegate" destination="l5U-vZ-NRL" id="JHM-04-eMA"/>
             </connections>
-            <point key="canvasLocation" x="217.5" y="-270.5"/>
+            <point key="canvasLocation" x="274.5" y="-270.5"/>
         </window>
         <customObject id="-3" userLabel="Application" customClass="MATApplication">
             <connections>
@@ -529,7 +518,6 @@
                 <outlet property="dimension3Radio" destination="rKv-Ag-tsh" id="k0e-eA-v6s"/>
                 <outlet property="dimension4Radio" destination="Mmq-bn-F7C" id="OVV-UO-1QV"/>
                 <outlet property="gearButton" destination="B0j-ar-xP6" id="VG6-1q-T0q"/>
-                <outlet property="helpLine" destination="8r9-bc-tc4" id="9MB-EX-7ep"/>
                 <outlet property="placeholder" destination="f1r-9p-aLR" id="Hxe-2S-X2H"/>
                 <outlet property="rowFirstTabOrderItem" destination="o4z-QJ-S5n" id="rup-To-XTY"/>
                 <outlet property="showHelpItem" destination="vhM-fV-AsZ" id="eYm-NJ-cTt"/>
