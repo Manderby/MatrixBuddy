@@ -528,7 +528,6 @@
                 <outlet property="codeMathematicaItem" destination="3JN-SY-s7H" id="ZHG-kp-CdO"/>
                 <outlet property="codeMatlabItem" destination="djR-Xt-sQS" id="uxT-24-ohr"/>
                 <outlet property="columnFirstTabOrderItem" destination="mKq-ef-LYS" id="SRK-PS-HGR"/>
-                <outlet property="crossV3V3" destination="q3L-eB-HDl" id="pLX-Ve-FdB"/>
                 <outlet property="dimension2Radio" destination="IKg-FC-o8Q" id="g6G-Ow-Uo1"/>
                 <outlet property="dimension3Radio" destination="rKv-Ag-tsh" id="k0e-eA-v6s"/>
                 <outlet property="dimension4Radio" destination="Mmq-bn-F7C" id="OVV-UO-1QV"/>
@@ -543,9 +542,6 @@
                 <outlet property="dotV4V4" destination="CdE-gR-h6n" id="DAh-On-AGE"/>
                 <outlet property="gearButton" destination="B0j-ar-xP6" id="VG6-1q-T0q"/>
                 <outlet property="helpLine" destination="8r9-bc-tc4" id="9MB-EX-7ep"/>
-                <outlet property="lengthV2" destination="7KR-iI-4Jv" id="Ikt-VR-vtw"/>
-                <outlet property="lengthV3" destination="jyJ-qX-zNA" id="PKr-gd-Uvg"/>
-                <outlet property="lengthV4" destination="Um1-WN-SGx" id="DJ9-gn-xqB"/>
                 <outlet property="mulCompV2V2" destination="IyX-6j-J4d" id="wym-wY-RmK"/>
                 <outlet property="mulCompV3V3" destination="P1G-ZK-z7t" id="PE5-Lk-Xgp"/>
                 <outlet property="mulCompV4V4" destination="2fd-cu-9Pf" id="itD-xF-bk7"/>
@@ -1570,90 +1566,6 @@
             </connections>
             <point key="canvasLocation" x="308.5" y="734.5"/>
         </customView>
-        <customView id="Um1-WN-SGx" customClass="MATLengthV4">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zEi-tm-KOU" customClass="MATViewS">
-                    <rect key="frame" x="526" y="40" width="75" height="116"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmW-rg-oKk" customClass="MATViewV4">
-                    <rect key="frame" x="389" y="0.0" width="75" height="197"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cl4-2u-bKa">
-                    <rect key="frame" x="470" y="85" width="50" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⟶" id="mFn-bg-Ml6">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="l" destination="zEi-tm-KOU" id="4qb-rf-9yr"/>
-                <outlet property="v" destination="hmW-rg-oKk" id="jo9-7g-qN6"/>
-            </connections>
-            <point key="canvasLocation" x="255.5" y="218.5"/>
-        </customView>
-        <customView id="jyJ-qX-zNA" customClass="MATLengthV3">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GWw-Zd-YUz" customClass="MATViewS">
-                    <rect key="frame" x="526" y="40" width="75" height="116"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffZ-pY-1QE" customClass="MATViewV3">
-                    <rect key="frame" x="389" y="13" width="75" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v8E-Mf-a3Y">
-                    <rect key="frame" x="470" y="85" width="50" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⟶" id="A6j-o9-wsa">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="l" destination="GWw-Zd-YUz" id="v4W-dK-7Fp"/>
-                <outlet property="v" destination="ffZ-pY-1QE" id="wcC-jQ-KQA"/>
-            </connections>
-            <point key="canvasLocation" x="384.5" y="494.5"/>
-        </customView>
-        <customView id="7KR-iI-4Jv" customClass="MATLengthV2">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDY-3w-QQ5" customClass="MATViewS">
-                    <rect key="frame" x="526" y="40" width="75" height="116"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YYQ-2e-K22" customClass="MATViewV2">
-                    <rect key="frame" x="389" y="27" width="75" height="143"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ypi-1Y-3aY">
-                    <rect key="frame" x="470" y="85" width="50" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⟶" id="z8i-wN-7sW">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="l" destination="ZDY-3w-QQ5" id="fyb-5T-ZCt"/>
-                <outlet property="v" destination="YYQ-2e-K22" id="52T-hB-iqD"/>
-            </connections>
-            <point key="canvasLocation" x="308.5" y="734.5"/>
-        </customView>
         <customView id="JHr-lf-ivh" customClass="MATNegV4">
             <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -2241,48 +2153,6 @@
                 <outlet property="s" destination="qJC-Ez-tSU" id="37M-dg-ZEV"/>
             </connections>
             <point key="canvasLocation" x="255.5" y="218.5"/>
-        </customView>
-        <customView id="q3L-eB-HDl" customClass="MATCrossV3V3">
-            <rect key="frame" x="0.0" y="0.0" width="991" height="197"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdU-hj-Woj">
-                    <rect key="frame" x="539" y="85" width="36" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="=" id="NdN-KW-vDg">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F1e-IH-5xb" customClass="MATViewV3">
-                    <rect key="frame" x="335" y="13" width="75" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vnl-qm-NlO" customClass="MATViewV3">
-                    <rect key="frame" x="581" y="13" width="75" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c8B-cy-SzT" customClass="MATViewV3">
-                    <rect key="frame" x="458" y="13" width="75" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xgQ-JU-nAs">
-                    <rect key="frame" x="416" y="85" width="36" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="×" id="Rjw-kp-MxK">
-                        <font key="font" size="24" name="TimesNewRomanPSMT"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <connections>
-                <outlet property="a" destination="F1e-IH-5xb" id="LF2-Y0-hCj"/>
-                <outlet property="b" destination="c8B-cy-SzT" id="UUr-Wq-EBR"/>
-                <outlet property="c" destination="Vnl-qm-NlO" id="LUe-2X-max"/>
-            </connections>
-            <point key="canvasLocation" x="384.5" y="494.5"/>
         </customView>
     </objects>
     <resources>

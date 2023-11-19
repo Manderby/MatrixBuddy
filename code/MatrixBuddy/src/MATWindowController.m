@@ -16,8 +16,6 @@
 #import "MATVAddV.h"
 #import "MATVSubV.h"
 #import "MATVDotV.h"
-#import "MATVCrossV.h"
-#import "MATLengthV.h"
 
 #include "MATTranslations.h"
 #include "MATPreferences.h"
@@ -100,10 +98,10 @@
   buttons[MAT_COMPUTATION_VSUBV]          = buttonVSubV;
   buttons[MAT_COMPUTATION_VDOTV]          = buttonVDotV;
   buttons[MAT_COMPUTATION_VCROSSV]        = buttonVCrossV;
-  buttons[MAT_COMPUTATION_LENGTHV]        = buttonLengthV;
+  buttons[MAT_COMPUTATION_VLENGTH]        = buttonLengthV;
 
   buttons[MAT_COMPUTATION_VNORMALIZE]     = buttonNormalizeV;
-  buttons[MAT_COMPUTATION_VORTHO] = buttonVOrtho;
+  buttons[MAT_COMPUTATION_VORTHO]         = buttonVOrtho;
   buttons[MAT_COMPUTATION_VMIRROR]        = buttonVMirror;
 
   buttons[MAT_COMPUTATION_MMULS]          = buttonMMulS;
@@ -149,12 +147,12 @@
   views[MAT_COMPUTATION_VDOTV * 3 + 0]          = dotV2V2;
   views[MAT_COMPUTATION_VDOTV * 3 + 1]          = dotV3V3;
   views[MAT_COMPUTATION_VDOTV * 3 + 2]          = dotV4V4;
-  views[MAT_COMPUTATION_VCROSSV * 3 + 0]        = crossV3V3;
-  views[MAT_COMPUTATION_VCROSSV * 3 + 1]        = crossV3V3;
-  views[MAT_COMPUTATION_VCROSSV * 3 + 2]        = crossV3V3;
-  views[MAT_COMPUTATION_LENGTHV * 3 + 0]        = lengthV2;
-  views[MAT_COMPUTATION_LENGTHV * 3 + 1]        = lengthV3;
-  views[MAT_COMPUTATION_LENGTHV * 3 + 2]        = lengthV4;
+  controllers[MAT_COMPUTATION_VCROSSV * 3 + 0]    = matAllocVCrossVController(3);
+  controllers[MAT_COMPUTATION_VCROSSV * 3 + 1]    = matAllocVCrossVController(3);
+  controllers[MAT_COMPUTATION_VCROSSV * 3 + 2]    = matAllocVCrossVController(3);
+  controllers[MAT_COMPUTATION_VLENGTH * 3 + 0]    = matAllocVLengthController(2);
+  controllers[MAT_COMPUTATION_VLENGTH * 3 + 1]    = matAllocVLengthController(3);
+  controllers[MAT_COMPUTATION_VLENGTH * 3 + 2]    = matAllocVLengthController(4);
 
   controllers[MAT_COMPUTATION_VNORMALIZE * 3 + 0] = matAllocVNormalizeController(2);
   controllers[MAT_COMPUTATION_VNORMALIZE * 3 + 1] = matAllocVNormalizeController(3);
@@ -242,7 +240,7 @@
   [buttons[MAT_COMPUTATION_VSUBV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVSubV)]];
   [buttons[MAT_COMPUTATION_VDOTV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDotV)]];
   [buttons[MAT_COMPUTATION_VCROSSV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVCrossV)]];
-  [buttons[MAT_COMPUTATION_LENGTHV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVLength)]];
+  [buttons[MAT_COMPUTATION_VLENGTH]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVLength)]];
 
   [buttons[MAT_COMPUTATION_VNORMALIZE]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVNormalize)]];
   [buttons[MAT_COMPUTATION_VORTHO] setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVOrtho)]];
@@ -285,7 +283,7 @@
       case MAT_COMPUTATION_VSUBV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVSubV)]; break;
       case MAT_COMPUTATION_VDOTV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDotV)]; break;
       case MAT_COMPUTATION_VCROSSV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVCrossV)]; break;
-      case MAT_COMPUTATION_LENGTHV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVLength)]; break;
+      case MAT_COMPUTATION_VLENGTH:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVLength)]; break;
 
       case MAT_COMPUTATION_VNORMALIZE:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVNormalize)]; break;
       case MAT_COMPUTATION_VORTHO:  helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVOrtho)]; break;
@@ -381,7 +379,7 @@
   computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation >= MAT_COMPUTATION_VNORMALIZE && computation <= MAT_COMPUTATION_MINVERT){
+  if(computation >= MAT_COMPUTATION_VCROSSV && computation <= MAT_COMPUTATION_MINVERT){
     computationController = controllers[computation * 3 + (dimensions - 2)];
     const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
