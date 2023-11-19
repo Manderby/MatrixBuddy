@@ -7,7 +7,7 @@ typedef struct MATMNegController MATMNegController;
 struct MATMNegController{
   MATBaseController base;
   MATView* viewA;
-  NALabel* equalSignLabel;
+  NALabel* arrowSignLabel;
   MATView* viewN;
 };
 
@@ -99,11 +99,11 @@ MATBaseController* matAllocMNegController(size_t dimensions){
   naAddSpaceChild(con->base.space, spaceA, naMakePos(marginLeft, marginBottom));
   naAddSpaceChild(con->base.space, spaceN, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, marginBottom));
 
-  con->equalSignLabel = naNewLabel(MAT_EQUAL_SIGN, MAT_SIGN_WIDTH);
-  naSetLabelTextAlignment(con->equalSignLabel, NA_TEXT_ALIGNMENT_CENTER);
-  naSetLabelFont(con->equalSignLabel, matGetMathFont());
-  naSetLabelHeight(con->equalSignLabel, MAT_MATRIX_LABEL_HEIGHT);
-  naAddSpaceChild(con->base.space, con->equalSignLabel, naMakePos(marginLeft + sizeA.width, signMarginBottom));
+  con->arrowSignLabel = naNewLabel(MAT_ARROW_SIGN, MAT_SIGN_WIDTH);
+  naSetLabelTextAlignment(con->arrowSignLabel, NA_TEXT_ALIGNMENT_CENTER);
+  naSetLabelFont(con->arrowSignLabel, matGetMathFont());
+  naSetLabelHeight(con->arrowSignLabel, MAT_MATRIX_LABEL_HEIGHT);
+  naAddSpaceChild(con->base.space, con->arrowSignLabel, naMakePos(marginLeft + sizeA.width, signMarginBottom));
 
   matSetViewStatus(con->viewA, MAT_STATUS_NORMAL);
   matSetViewStatus(con->viewN, MAT_STATUS_RESULT);

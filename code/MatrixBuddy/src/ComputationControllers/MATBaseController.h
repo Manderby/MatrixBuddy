@@ -51,6 +51,9 @@ MATBaseController* matAllocMMulVController(size_t dimensions);
 MATBaseController* matAllocMNegController(size_t dimensions);
 MATBaseController* matAllocMSubMController(size_t dimensions);
 MATBaseController* matAllocMTransposeController(size_t dimensions);
+MATBaseController* matAllocVMirrorController(size_t dimensions);
+MATBaseController* matAllocVNormalizeController(size_t dimensions);
+MATBaseController* matAllocVOrthoController(size_t dimensions);
 
 // Dealloc functions of the specific controllers.
 void matDeallocMAddMController(MATBaseController* con);
@@ -68,6 +71,9 @@ void matDeallocMMulVController(MATBaseController* con);
 void matDeallocMNegController(MATBaseController* con);
 void matDeallocMSubMController(MATBaseController* con);
 void matDeallocMTransposeController(MATBaseController* con);
+void matDeallocVMirrorController(MATBaseController* con);
+void matDeallocVNormalizeController(MATBaseController* con);
+void matDeallocVOrthoController(MATBaseController* con);
 
 
 

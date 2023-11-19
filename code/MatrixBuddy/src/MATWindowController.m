@@ -19,10 +19,6 @@
 #import "MATVCrossV.h"
 #import "MATLengthV.h"
 
-#import "MATNormalizeV.h"
-#import "MATOrthogonalizeV.h"
-#import "MATMirrorV.h"
-
 #include "MATTranslations.h"
 #include "MATPreferences.h"
 
@@ -106,9 +102,9 @@
   buttons[MAT_COMPUTATION_VCROSSV]        = buttonVCrossV;
   buttons[MAT_COMPUTATION_LENGTHV]        = buttonLengthV;
 
-  buttons[MAT_COMPUTATION_NORMALIZEV]     = buttonNormalizeV;
-  buttons[MAT_COMPUTATION_ORTHOGONALIZEV] = buttonOrthogonalizeV;
-  buttons[MAT_COMPUTATION_MIRRORV]        = buttonMirrorV;
+  buttons[MAT_COMPUTATION_VNORMALIZE]     = buttonNormalizeV;
+  buttons[MAT_COMPUTATION_VORTHO] = buttonVOrtho;
+  buttons[MAT_COMPUTATION_VMIRROR]        = buttonVMirror;
 
   buttons[MAT_COMPUTATION_MMULS]          = buttonMMulS;
   buttons[MAT_COMPUTATION_MDIVS]          = buttonMDivS;
@@ -160,15 +156,15 @@
   views[MAT_COMPUTATION_LENGTHV * 3 + 1]        = lengthV3;
   views[MAT_COMPUTATION_LENGTHV * 3 + 2]        = lengthV4;
 
-  views[MAT_COMPUTATION_NORMALIZEV * 3 + 0]     = normalizeV2;
-  views[MAT_COMPUTATION_NORMALIZEV * 3 + 1]     = normalizeV3;
-  views[MAT_COMPUTATION_NORMALIZEV * 3 + 2]     = normalizeV4;
-  views[MAT_COMPUTATION_ORTHOGONALIZEV * 3 + 0] = orthogonalizeV2;
-  views[MAT_COMPUTATION_ORTHOGONALIZEV * 3 + 1] = orthogonalizeV3;
-  views[MAT_COMPUTATION_ORTHOGONALIZEV * 3 + 2] = orthogonalizeV4;
-  views[MAT_COMPUTATION_MIRRORV * 3 + 0]        = mirrorV2;
-  views[MAT_COMPUTATION_MIRRORV * 3 + 1]        = mirrorV3;
-  views[MAT_COMPUTATION_MIRRORV * 3 + 2]        = mirrorV4;
+  controllers[MAT_COMPUTATION_VNORMALIZE * 3 + 0] = matAllocVNormalizeController(2);
+  controllers[MAT_COMPUTATION_VNORMALIZE * 3 + 1] = matAllocVNormalizeController(3);
+  controllers[MAT_COMPUTATION_VNORMALIZE * 3 + 2] = matAllocVNormalizeController(4);
+  controllers[MAT_COMPUTATION_VORTHO * 3 + 0]     = matAllocVOrthoController(2);
+  controllers[MAT_COMPUTATION_VORTHO * 3 + 1]     = matAllocVOrthoController(3);
+  controllers[MAT_COMPUTATION_VORTHO * 3 + 2]     = matAllocVOrthoController(4);
+  controllers[MAT_COMPUTATION_VMIRROR * 3 + 0]    = matAllocVMirrorController(2);
+  controllers[MAT_COMPUTATION_VMIRROR * 3 + 1]    = matAllocVMirrorController(3);
+  controllers[MAT_COMPUTATION_VMIRROR * 3 + 2]    = matAllocVMirrorController(4);
 
   controllers[MAT_COMPUTATION_MMULS * 3 + 0]      = matAllocMMulSController(2);
   controllers[MAT_COMPUTATION_MMULS * 3 + 1]      = matAllocMMulSController(3);
@@ -246,11 +242,11 @@
   [buttons[MAT_COMPUTATION_VSUBV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVSubV)]];
   [buttons[MAT_COMPUTATION_VDOTV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDotV)]];
   [buttons[MAT_COMPUTATION_VCROSSV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVCrossV)]];
-  [buttons[MAT_COMPUTATION_LENGTHV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonLengthV)]];
+  [buttons[MAT_COMPUTATION_LENGTHV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVLength)]];
 
-  [buttons[MAT_COMPUTATION_NORMALIZEV]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonNormalizeV)]];
-  [buttons[MAT_COMPUTATION_ORTHOGONALIZEV] setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonOrthogonalizeV)]];
-  [buttons[MAT_COMPUTATION_MIRRORV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMirrorV)]];
+  [buttons[MAT_COMPUTATION_VNORMALIZE]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVNormalize)]];
+  [buttons[MAT_COMPUTATION_VORTHO] setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVOrtho)]];
+  [buttons[MAT_COMPUTATION_VMIRROR]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMirror)]];
 
   [buttons[MAT_COMPUTATION_MMULS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulS)]];
   [buttons[MAT_COMPUTATION_MDIVS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDivS)]];
@@ -265,8 +261,8 @@
   [buttons[MAT_COMPUTATION_MMULV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulV)]];
   [buttons[MAT_COMPUTATION_MMULM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulM)]];
 
-  [buttons[MAT_COMPUTATION_DIAGS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonDiagS)]];
-  [buttons[MAT_COMPUTATION_DIAGV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonDiagV)]];
+  [buttons[MAT_COMPUTATION_DIAGS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDiagS)]];
+  [buttons[MAT_COMPUTATION_DIAGV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDiagV)]];
   [buttons[MAT_COMPUTATION_MTRANSPOSE]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMTranspose)]];
   [buttons[MAT_COMPUTATION_MINVERT]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMInvert)]];
 
@@ -289,11 +285,11 @@
       case MAT_COMPUTATION_VSUBV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVSubV)]; break;
       case MAT_COMPUTATION_VDOTV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDotV)]; break;
       case MAT_COMPUTATION_VCROSSV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVCrossV)]; break;
-      case MAT_COMPUTATION_LENGTHV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpLengthV)]; break;
+      case MAT_COMPUTATION_LENGTHV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVLength)]; break;
 
-      case MAT_COMPUTATION_NORMALIZEV:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpNormalizeV)]; break;
-      case MAT_COMPUTATION_ORTHOGONALIZEV:  helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpOrthogonalizeV)]; break;
-      case MAT_COMPUTATION_MIRRORV:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMirrorV)]; break;
+      case MAT_COMPUTATION_VNORMALIZE:      helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVNormalize)]; break;
+      case MAT_COMPUTATION_VORTHO:  helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVOrtho)]; break;
+      case MAT_COMPUTATION_VMIRROR:         helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVMirror)]; break;
 
       case MAT_COMPUTATION_MMULS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMMulS)]; break;
       case MAT_COMPUTATION_MDIVS:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpMDivS)]; break;
@@ -385,10 +381,11 @@
   computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation >= MAT_COMPUTATION_MMULS && computation <= MAT_COMPUTATION_MINVERT){
+  if(computation >= MAT_COMPUTATION_VNORMALIZE && computation <= MAT_COMPUTATION_MINVERT){
     computationController = controllers[computation * 3 + (dimensions - 2)];
     const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
+    matUpdateController(computationController);
     matUpdateControllerTabOrder(computationController);
     [nativeView setFrame:frame];
     [[[self window] contentView] addSubview:nativeView];

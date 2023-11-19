@@ -31,8 +31,6 @@ void postStartup(void* arg){
   
   naLoadNib("MainMenu", NA_NULL);
   matPrepareFirstView();
-
-  //mandAlertNewVersion(matTranslate(MATNewVersionDescription));
 }
 
 void stopApplication(void* arg){

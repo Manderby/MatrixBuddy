@@ -37,12 +37,12 @@
 @class MATNormalizeV2;
 @class MATNormalizeV3;
 @class MATNormalizeV4;
-@class MATOrthogonalizeV2;
-@class MATOrthogonalizeV3;
-@class MATOrthogonalizeV4;
-@class MATMirrorV2;
-@class MATMirrorV3;
-@class MATMirrorV4;
+@class MATVOrtho2;
+@class MATVOrtho3;
+@class MATVOrtho4;
+@class MATVMirror2;
+@class MATVMirror3;
+@class MATVMirror4;
 
 @class MATNegM22;
 @class MATNegM33;
@@ -127,8 +127,8 @@
   IBOutlet NSButton* buttonLengthV;
 
   IBOutlet NSButton* buttonNormalizeV;
-  IBOutlet NSButton* buttonOrthogonalizeV;
-  IBOutlet NSButton* buttonMirrorV;
+  IBOutlet NSButton* buttonVOrtho;
+  IBOutlet NSButton* buttonVMirror;
 
   IBOutlet NSButton* buttonMMulS;
   IBOutlet NSButton* buttonMDivS;
@@ -185,12 +185,12 @@
   IBOutlet MATNormalizeV2*      normalizeV2;
   IBOutlet MATNormalizeV3*      normalizeV3;
   IBOutlet MATNormalizeV4*      normalizeV4;
-  IBOutlet MATOrthogonalizeV2*  orthogonalizeV2;
-  IBOutlet MATOrthogonalizeV3*  orthogonalizeV3;
-  IBOutlet MATOrthogonalizeV4*  orthogonalizeV4;
-  IBOutlet MATMirrorV2*         mirrorV2;
-  IBOutlet MATMirrorV3*         mirrorV3;
-  IBOutlet MATMirrorV4*         mirrorV4;
+  IBOutlet MATVOrtho2*  orthogonalizeV2;
+  IBOutlet MATVOrtho3*  orthogonalizeV3;
+  IBOutlet MATVOrtho4*  orthogonalizeV4;
+  IBOutlet MATVMirror2*         mirrorV2;
+  IBOutlet MATVMirror3*         mirrorV3;
+  IBOutlet MATVMirror4*         mirrorV4;
 
   IBOutlet MATNegM22*           negM22;
   IBOutlet MATNegM33*           negM33;

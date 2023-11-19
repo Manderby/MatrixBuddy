@@ -10,7 +10,6 @@ NA_LOC(MATVersionBuild,   "Version %s (Build %s)");
 NA_LOC(MATOnlineHelp,     "Online Help");
 NA_LOC(MATApplicationDescription, "Simple linear algebra. Matrix and Vector.");
 NA_LOC(MATApplicationHelpURL, "http://manderc.com/apps/matrixbuddy/help/index_en.php");
-NA_LOC(MATNewVersionDescription, "Matrix Buddy is now running universally on both Intel and Apple Silicon.\n\nRedesigned User Interface\nAdded Copy and Paste buttons\nAdded German translation");
 
 NA_LOC(MATMenuItemShowHelp,               "Quick Help Line");
 NA_LOC(MATMenuItemShowIdentifiers,        "Identifiers");
@@ -38,10 +37,10 @@ NA_LOC(MATButtonVAddV,          "v+v");
 NA_LOC(MATButtonVSubV,          "v−v");
 NA_LOC(MATButtonVDotV,          "v·v");
 NA_LOC(MATButtonVCrossV,        "v×v");
-NA_LOC(MATButtonLengthV,        "|v|");
-NA_LOC(MATButtonNormalizeV,     "Normalize");
-NA_LOC(MATButtonOrthogonalizeV, "Orthogonalize");
-NA_LOC(MATButtonMirrorV,        "Mirror");
+NA_LOC(MATButtonVLength,        "|v|");
+NA_LOC(MATButtonVNormalize,     "Normalize");
+NA_LOC(MATButtonVOrtho,         "Orthogonalize");
+NA_LOC(MATButtonVMirror,        "Mirror");
 NA_LOC(MATButtonMMulS,          "M×s");
 NA_LOC(MATButtonMDivS,          "M÷s");
 NA_LOC(MATButtonMMulCompV,      "M⊙v");
@@ -53,8 +52,8 @@ NA_LOC(MATButtonMAddM,          "M+M");
 NA_LOC(MATButtonMSubM,          "M−M");
 NA_LOC(MATButtonMMulV,          "M×v");
 NA_LOC(MATButtonMMulM,          "M×M");
-NA_LOC(MATButtonDiagS,          "Diag(s)");
-NA_LOC(MATButtonDiagV,          "Diag(v)");
+NA_LOC(MATButtonMDiagS,         "Diag(s)");
+NA_LOC(MATButtonMDiagV,         "Diag(v)");
 NA_LOC(MATButtonMTranspose,     "Transpose");
 NA_LOC(MATButtonMInvert,        "Invert");
 
@@ -68,11 +67,11 @@ NA_LOC(MATHelpVAddV,          "Adds vector b to vector a. Fill in b to compute c
 NA_LOC(MATHelpVSubV,          "Subtracts vector b from vector a. Fill in b to compute c. Fill in c to solve for b.");
 NA_LOC(MATHelpVDotV,          "Computes the dot product of a and b.");
 NA_LOC(MATHelpVCrossV,        "Computes the cross product of a and b. Only available for 3D.");
-NA_LOC(MATHelpLengthV,        "Computes the euclidian length of a vector.");
+NA_LOC(MATHelpVLength,        "Computes the euclidian length of a vector.");
 
-NA_LOC(MATHelpNormalizeV,     "Normalizes the vector.");
-NA_LOC(MATHelpOrthogonalizeV, "Computes a vector out of a which is orthogonal to b.");
-NA_LOC(MATHelpMirrorV,        "Mirrors vector a along a surface with normal n.");
+NA_LOC(MATHelpVNormalize,     "Normalizes the vector.");
+NA_LOC(MATHelpVOrtho,         "Computes a vector out of a which is orthogonal to b.");
+NA_LOC(MATHelpVMirror,        "Mirrors vector a along a surface with normal n.");
 
 NA_LOC(MATHelpMMulS,          "Multiplies a matrix by a scalar.");
 NA_LOC(MATHelpMDivS,          "Divides a matrix by a scalar.");
