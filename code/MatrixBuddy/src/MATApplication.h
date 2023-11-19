@@ -4,7 +4,7 @@
 #include "MATWindowController.h"
 #include "NAApp/NAApp.h"
 #include "MATAboutController.h"
-
+#include "MATWindowControllerASDF.h"
 
 NSString* formatValue(float value);
 
@@ -15,6 +15,7 @@ void matPrepareFirstView(void);
 
 @interface MATApplication : NSApplication <NSApplicationDelegate>{
   IBOutlet MATWindowController* windowController;
+  MATWindowControllerASDF* windowControllerASDF;
   
 @public
   NAFont* mathFont;

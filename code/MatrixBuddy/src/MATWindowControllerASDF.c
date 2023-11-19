@@ -1,0 +1,97 @@
+
+#include "MATWindowControllerASDF.h"
+#include "MATBaseController.h"
+#include "NAApp/NAApp.h"
+
+struct MATWindowControllerASDF{
+  NAWindow* window;
+  
+  NASpace* radioSpace;
+  NARadio* radio2;
+  NARadio* radio3;
+  NARadio* radio4;
+  
+  NAButton* buttonVMulS;
+  
+  MATBaseController* controllers[MAT_COMPUTATION_COUNT * 3];
+  MATBaseController* currentController;
+  size_t dimensions;
+  MATComputation computation;
+};
+
+
+
+NABool matDimensionsChanged(NAReaction reaction){
+  MATWindowControllerASDF* con = (MATWindowControllerASDF*)reaction.controller;
+  
+  if(reaction.uiElement == con->radio2){
+    con->dimensions = 2;
+  }else if(reaction.uiElement == con->radio3){
+    con->dimensions = 3;
+  }else if(reaction.uiElement == con->radio4){
+    con->dimensions = 4;
+  }
+  
+  matUpdateWindowController(con);
+  
+  return NA_TRUE;
+}
+
+
+
+MATWindowControllerASDF* matAllocWindowController(){
+  MATWindowControllerASDF* con = naAlloc(MATWindowControllerASDF);
+  
+  con->window = naNewWindow("Matrix Buddy", naMakeRectS(100, 100, 1075, 500), 0, 0);
+  NASpace* space = naGetWindowContentSpace(con->window);
+  
+  con->radio2 = naNewRadio("2D", 50);
+  con->radio3 = naNewRadio("3D", 50);
+  con->radio4 = naNewRadio("4D", 50);
+  naAddUIReaction(con->radio2, NA_UI_COMMAND_PRESSED, matDimensionsChanged, con);
+  naAddUIReaction(con->radio3, NA_UI_COMMAND_PRESSED, matDimensionsChanged, con);
+  naAddUIReaction(con->radio4, NA_UI_COMMAND_PRESSED, matDimensionsChanged, con);
+  con->radioSpace = naNewSpace(naMakeSize(100, 75));
+  naAddSpaceChild(con->radioSpace, con->radio2, naMakePos(0, 50));
+  naAddSpaceChild(con->radioSpace, con->radio3, naMakePos(0, 25));
+  naAddSpaceChild(con->radioSpace, con->radio4, naMakePos(0, 0));
+  naAddSpaceChild(space, con->radioSpace, naMakePos(10, 250));
+  
+  con->buttonVMulS = naNewTextStateButton("VMulS", NA_NULL, 80);
+  naAddSpaceChild(space, con->buttonVMulS, naMakePos(100, 300));
+  
+  naZeron(con->controllers, MAT_COMPUTATION_COUNT * 3 * sizeof(MATBaseController*));
+  con->currentController = NA_NULL;
+  con->dimensions = 3;
+  con->computation = MAT_COMPUTATION_VMULS;
+  
+  matUpdateWindowController(con);
+  naShowWindow(con->window);
+  return con;
+}
+
+
+
+void matUpdateWindowController(MATWindowControllerASDF* con){
+  NASpace* space = naGetWindowContentSpace(con->window);
+
+  naSetRadioState(con->radio2, con->dimensions == 2);
+  naSetRadioState(con->radio3, con->dimensions == 3);
+  naSetRadioState(con->radio4, con->dimensions == 4);
+  
+  if(con->currentController){
+    naRemoveSpaceChild(space, naGetControllerSpace(con->currentController));
+  }
+  
+  size_t index = con->computation * 3 + (con->dimensions - 2);
+  if(!con->controllers[index]){
+    switch(con->computation){
+    case MAT_COMPUTATION_VMULS:
+      con->controllers[index] = matAllocVMulSController(con->dimensions);
+      break;
+    }
+  }
+  con->currentController = con->controllers[index];
+  NASpace* controllerSpace = naGetControllerSpace(con->currentController);
+  naAddSpaceChild(space, controllerSpace, naMakePos(0, 0));
+}

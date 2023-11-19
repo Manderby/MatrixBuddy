@@ -320,11 +320,11 @@ MATView* matAllocView(
   view->status = MAT_STATUS_NORMAL;
 
   size_t maxDimensions = matGetControllerDimensions(view->con);
-  double maxMatrixHeight = maxDimensions * MAT_TEXTFIELD_HEIGHT + (maxDimensions - 1) * MAT_TEXTFIELD_SPACE_VASDF;
+  double maxMatrixHeight = maxDimensions * MAT_TEXTFIELD_HEIGHT + (maxDimensions - 1) * MAT_TEXTFIELD_SPACE_V;
 
   double matrixSize[2] = {
-    view->dimensions[0] * MAT_TEXTFIELD_WIDTHASDF + (view->dimensions[0] - 1) * MAT_TEXTFIELD_SPACE_HASDF,
-    view->dimensions[1] * MAT_TEXTFIELD_HEIGHT + (view->dimensions[1] - 1) * MAT_TEXTFIELD_SPACE_VASDF};
+    view->dimensions[0] * MAT_TEXTFIELD_WIDTH + (view->dimensions[0] - 1) * MAT_TEXTFIELD_SPACE_H,
+    view->dimensions[1] * MAT_TEXTFIELD_HEIGHT + (view->dimensions[1] - 1) * MAT_TEXTFIELD_SPACE_V};
 
   NASize viewSize = {
     matrixSize[0] + MAT_MATRIX_MARGIN_LEFT + MAT_MATRIX_MARGIN_RIGHT,
@@ -352,14 +352,14 @@ MATView* matAllocView(
   for(size_t x = 0; x < view->dimensions[0]; ++x){
     for(size_t y = 0; y < view->dimensions[1]; ++y){
       size_t index = x * view->dimensions[1] + y;
-      view->textFields[index] = naNewTextField(MAT_TEXTFIELD_WIDTHASDF);
+      view->textFields[index] = naNewTextField(MAT_TEXTFIELD_WIDTH);
       matSetTextFieldCellProperties(view->textFields[index]);
       naAddSpaceChild(
         view->matrixSpace,
         view->textFields[index],
         naMakePos(
-          MAT_MATRIX_MARGIN_LEFT + x * (MAT_TEXTFIELD_WIDTHASDF + MAT_TEXTFIELD_SPACE_HASDF),
-          MAT_MATRIX_MARGIN_BOTTOM + matrixSize[1] - (y + 1) * (MAT_TEXTFIELD_HEIGHT + MAT_TEXTFIELD_SPACE_VASDF) + MAT_TEXTFIELD_SPACE_VASDF));
+          MAT_MATRIX_MARGIN_LEFT + x * (MAT_TEXTFIELD_WIDTH + MAT_TEXTFIELD_SPACE_H),
+          MAT_MATRIX_MARGIN_BOTTOM + matrixSize[1] - (y + 1) * (MAT_TEXTFIELD_HEIGHT + MAT_TEXTFIELD_SPACE_V) + MAT_TEXTFIELD_SPACE_V));
       naAddUIReaction(
         view->textFields[index],
         NA_UI_COMMAND_EDIT_FINISHED,

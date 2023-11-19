@@ -2,6 +2,7 @@
 #import "MATApplication.h"
 #include "MATTranslations.h"
 #include "MATCommonC.h"
+#include "MATWindowControllerASDF.h"
 
 
 NSString* formatValue(float value){
@@ -208,6 +209,8 @@ NABool matHasShowHelp(){
 
 - (void)prepareFirstView{
   aboutController = matAllocAboutController();
+  windowControllerASDF = matAllocWindowController();
+
   [windowController prepareFirstView];
 }
 

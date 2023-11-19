@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		900097F32B0A799D0086413A /* MATWindowControllerASDF.c in Sources */ = {isa = PBXBuildFile; fileRef = 900097F12B0A799D0086413A /* MATWindowControllerASDF.c */; };
 		90182B6E2AEE877700E37219 /* MATAboutController.c in Sources */ = {isa = PBXBuildFile; fileRef = 90182B6C2AEE877700E37219 /* MATAboutController.c */; };
 		90233A0D256ADE1D00E383A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90233A06256ADE1D00E383A6 /* InfoPlist.strings */; };
 		90233A0E256ADE1D00E383A6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90233A08256ADE1D00E383A6 /* MainMenu.xib */; };
@@ -308,6 +309,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		900097F12B0A799D0086413A /* MATWindowControllerASDF.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATWindowControllerASDF.c; sourceTree = "<group>"; };
+		900097F22B0A799D0086413A /* MATWindowControllerASDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATWindowControllerASDF.h; sourceTree = "<group>"; };
 		90182B6C2AEE877700E37219 /* MATAboutController.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATAboutController.c; sourceTree = "<group>"; };
 		90182B6D2AEE877700E37219 /* MATAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATAboutController.h; sourceTree = "<group>"; };
 		9019C9112AED1706003855CD /* Matrix Buddy.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Matrix Buddy.app"; sourceTree = "<group>"; };
@@ -759,10 +762,12 @@
 				90233A58256ADE2300E383A6 /* MATTranslations.c */,
 				90233A15256ADE2200E383A6 /* MATTranslations.h */,
 				90233A54256ADE2300E383A6 /* MATTypes.h */,
-				90233A5B256ADE2300E383A6 /* MATWindowController.h */,
-				90233A17256ADE2200E383A6 /* MATWindowController.m */,
 				90CB77032AFAB6F800EC8B82 /* MATView.c */,
 				90CB77022AFAB6F800EC8B82 /* MATView.h */,
+				90233A5B256ADE2300E383A6 /* MATWindowController.h */,
+				90233A17256ADE2200E383A6 /* MATWindowController.m */,
+				900097F12B0A799D0086413A /* MATWindowControllerASDF.c */,
+				900097F22B0A799D0086413A /* MATWindowControllerASDF.h */,
 			);
 			name = src;
 			path = ../code/MatrixBuddy/src;
@@ -1604,6 +1609,7 @@
 				90233A7B256ADE2300E383A6 /* MATMMulS.c in Sources */,
 				90233A8D256ADE2300E383A6 /* main.m in Sources */,
 				90233A84256ADE2300E383A6 /* MATVLength.c in Sources */,
+				900097F32B0A799D0086413A /* MATWindowControllerASDF.c in Sources */,
 				90233A7A256ADE2300E383A6 /* MATVOrtho.c in Sources */,
 				90233A8A256ADE2300E383A6 /* MATMDivS.c in Sources */,
 				90233A8E256ADE2300E383A6 /* MATTranslations.c in Sources */,
