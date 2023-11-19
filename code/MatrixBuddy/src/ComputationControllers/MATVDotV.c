@@ -3,96 +3,95 @@
 #include "NAMath/NAVectorAlgebra.h"
 
 
-typedef struct MATVCrossVController MATVCrossVController;
-struct MATVCrossVController{
+typedef struct MATVDotVController MATVDotVController;
+struct MATVDotVController{
   MATBaseController base;
   MATView* viewA;
-  NALabel* mulSignLabel;
+  NALabel* dotSignLabel;
   MATView* viewB;
   NALabel* equalSignLabel;
-  MATView* viewC;
+  MATView* viewS;
 };
 
 
 
-void matUpdateVCrossVController(MATBaseController* controller){
-  MATVCrossVController* con = (MATVCrossVController*)controller;
+void matUpdateVDotVController(MATBaseController* controller){
+  MATVDotVController* con = (MATVDotVController*)controller;
 
-  matSetViewPasteEnabled(con->viewC, NA_FALSE);
+  matSetViewPasteEnabled(con->viewS, NA_FALSE);
 
   matUpdateView(con->viewA);
   matUpdateView(con->viewB);
-  matUpdateView(con->viewC);
+  matUpdateView(con->viewS);
 }
 
 
 
-void matUpdateVCrossVControllerTabOrder(MATBaseController* controller){
-  MATVCrossVController* con = (MATVCrossVController*)controller;
+void matUpdateVDotVControllerTabOrder(MATBaseController* controller){
+  MATVDotVController* con = (MATVDotVController*)controller;
   matUpdateViewTabOrder(con->viewA);
   matUpdateViewTabOrder(con->viewB);
-  matUpdateViewTabOrder(con->viewC);
+  matUpdateViewTabOrder(con->viewS);
 }
 
 
 
-void matVCrossVValueChanged(MATBaseController* controller, MATView* view){
+void matVDotVValueChanged(MATBaseController* controller, MATView* view){
   NA_UNUSED(view);
-  MATVCrossVController* con = (MATVCrossVController*)controller;
+  MATVDotVController* con = (MATVDotVController*)controller;
 
   const double* valuesA = matGetViewValues(con->viewA);
   const double* valuesB = matGetViewValues(con->viewB);
 
-  NAVec3d result;
-  naCrossV3d(result, valuesA, valuesB);
+  double result = naDotV3d(valuesA, valuesB);
 
-  matSetViewValues(con->viewC, result);
-  matUpdateVCrossVController(&con->base);
+  matSetViewValues(con->viewS, &result);
+  matUpdateVDotVController(&con->base);
 }
 
 
 
-MATBaseController* matAllocVCrossVController(size_t dimensions){
-  MATVCrossVController* con = naAlloc(MATVCrossVController);
+MATBaseController* matAllocVDotVController(size_t dimensions){
+  MATVDotVController* con = naAlloc(MATVDotVController);
   
   matInitBaseController(
     &con->base,
     dimensions,
-    MATHelpVCrossV,
-    matVCrossVValueChanged,
-    matUpdateVCrossVController,
-    matUpdateVCrossVControllerTabOrder);
+    MATHelpVDotV,
+    matVDotVValueChanged,
+    matUpdateVDotVController,
+    matUpdateVDotVControllerTabOrder);
   
   double* initVector = naMalloc(dimensions * sizeof(double));
   naZeron(initVector, dimensions * sizeof(double));
 
   con->viewA = matAllocView("a", 1, dimensions, con, initVector);
   con->viewB = matAllocView("b", 1, dimensions, con, initVector);
-  con->viewC = matAllocView("c", 1, dimensions, con, initVector);
+  con->viewS = matAllocView("s", 1, 1, con, initVector);
 
   naFree(initVector);
 
   NASpace* spaceA = matGetViewSpace(con->viewA);
   NASpace* spaceB = matGetViewSpace(con->viewB);
-  NASpace* spaceC = matGetViewSpace(con->viewC);
+  NASpace* spaceS = matGetViewSpace(con->viewS);
   NASize sizeA = naGetUIElementRect(spaceA).size;
   NASize sizeB = naGetUIElementRect(spaceB).size;
-  NASize sizeC = naGetUIElementRect(spaceC).size;
+  NASize sizeS = naGetUIElementRect(spaceS).size;
   NASize viewSize = naGetUIElementRect(con->base.space).size;
   
-  double marginLeft = naRound((viewSize.width - (sizeA.width + MAT_SIGN_WIDTH + sizeB.width + MAT_SIGN_WIDTH + sizeC.width)) / 2.);
+  double marginLeft = naRound((viewSize.width - (sizeA.width + MAT_SIGN_WIDTH + sizeB.width + MAT_SIGN_WIDTH + sizeS.width)) / 2.);
   double marginBottom = naRound((viewSize.height - sizeA.height) / 2.);
   double signMarginBottom = marginBottom + naRound((sizeA.height - MAT_MATRIX_LABEL_HEIGHT) / 2. + MAT_SIGN_LABEL_SHIFT_Y); 
   
   naAddSpaceChild(con->base.space, spaceA, naMakePos(marginLeft, marginBottom));
   naAddSpaceChild(con->base.space, spaceB, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, marginBottom));
-  naAddSpaceChild(con->base.space, spaceC, naMakePos(marginLeft + sizeA.width + sizeB.width + 2 * MAT_SIGN_WIDTH, marginBottom));
+  naAddSpaceChild(con->base.space, spaceS, naMakePos(marginLeft + sizeA.width + sizeB.width + 2 * MAT_SIGN_WIDTH, marginBottom));
 
-  con->mulSignLabel = naNewLabel(MAT_MUL_SIGN, MAT_SIGN_WIDTH);
-  naSetLabelTextAlignment(con->mulSignLabel, NA_TEXT_ALIGNMENT_CENTER);
-  naSetLabelFont(con->mulSignLabel, matGetMathFont());
-  naSetLabelHeight(con->mulSignLabel, MAT_MATRIX_LABEL_HEIGHT);
-  naAddSpaceChild(con->base.space, con->mulSignLabel, naMakePos(marginLeft + sizeA.width, signMarginBottom));
+  con->dotSignLabel = naNewLabel(MAT_DOT_SIGN, MAT_SIGN_WIDTH);
+  naSetLabelTextAlignment(con->dotSignLabel, NA_TEXT_ALIGNMENT_CENTER);
+  naSetLabelFont(con->dotSignLabel, matGetMathFont());
+  naSetLabelHeight(con->dotSignLabel, MAT_MATRIX_LABEL_HEIGHT);
+  naAddSpaceChild(con->base.space, con->dotSignLabel, naMakePos(marginLeft + sizeA.width, signMarginBottom));
 
   con->equalSignLabel = naNewLabel(MAT_EQUAL_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->equalSignLabel, NA_TEXT_ALIGNMENT_CENTER);
@@ -102,17 +101,17 @@ MATBaseController* matAllocVCrossVController(size_t dimensions){
 
   matSetViewStatus(con->viewA, MAT_STATUS_NORMAL);
   matSetViewStatus(con->viewB, MAT_STATUS_NORMAL);
-  matSetViewStatus(con->viewC, MAT_STATUS_RESULT);
+  matSetViewStatus(con->viewS, MAT_STATUS_RESULT);
 
-  matUpdateVCrossVController(&con->base);
+  matUpdateVDotVController(&con->base);
 
   return &con->base;
 }
 
 
 
-void matDeallocVCrossVController(MATBaseController* controller){
-  MATVCrossVController* con = (MATVCrossVController*)controller;
+void matDeallocVDotVController(MATBaseController* controller){
+  MATVDotVController* con = (MATVDotVController*)controller;
   NA_UNUSED(con);
   naFree(controller);
 }

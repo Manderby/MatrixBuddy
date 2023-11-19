@@ -62,7 +62,7 @@ NA_LOC(MATHelpVDivS,          "Divides a vector by a scalar.");
 NA_LOC(MATHelpVMulCompV,      "Multiplies the components of a vector by the components of another vector.");
 NA_LOC(MATHelpVDivCompV,      "Divides the components of a vector by the components of another vector.");
 
-NA_LOC(MATHelpNegV,           "Negates a vector. You may fill in either side.");
+NA_LOC(MATHelpVNeg,           "Negates a vector. You may fill in either side.");
 NA_LOC(MATHelpVAddV,          "Adds vector b to vector a. Fill in b to compute c. Fill in c to solve for b.");
 NA_LOC(MATHelpVSubV,          "Subtracts vector b from vector a. Fill in b to compute c. Fill in c to solve for b.");
 NA_LOC(MATHelpVDotV,          "Computes the dot product of a and b.");

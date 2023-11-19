@@ -62,7 +62,7 @@ NA_LOC(MATHelpVDivS,          "Dividiert einen Vektor durch einen Skalar.");
 NA_LOC(MATHelpVMulCompV,      "Multipliziert die Komponenten eines Vektors mit den Komponenten eines anderen Vektors.");
 NA_LOC(MATHelpVDivCompV,      "Dividiert die Komponenten eines Vektors durch die Komponenten eines anderen Vektors.");
 
-NA_LOC(MATHelpNegV,           "Negiert einen Vektor. Es können beide Seiten als Eingabe dienen.");
+NA_LOC(MATHelpVNeg,           "Negiert einen Vektor. Es können beide Seiten als Eingabe dienen.");
 NA_LOC(MATHelpVAddV,          "Addiert Vektor b zum Vektor a. Eingabe bei b ergibt Resultat c. Eingabe bei c löst nach b auf.");
 NA_LOC(MATHelpVSubV,          "Subtrahiert Vektor b vom Vektor a. Eingabe bei b ergibt Resultat c. Eingabe bei c löst nach b auf.");
 NA_LOC(MATHelpVDotV,          "Berechnet das Skalarprodukt von a und b.");

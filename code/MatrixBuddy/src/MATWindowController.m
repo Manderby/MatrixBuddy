@@ -12,11 +12,6 @@
 #import "MATVMulCompV.h"
 #import "MATVDivCompV.h"
 
-#import "MATNegV.h"
-#import "MATVAddV.h"
-#import "MATVSubV.h"
-#import "MATVDotV.h"
-
 #include "MATTranslations.h"
 #include "MATPreferences.h"
 
@@ -93,7 +88,7 @@
   buttons[MAT_COMPUTATION_VMULCOMPV]      = buttonVMulCompV;
   buttons[MAT_COMPUTATION_VDIVCOMPV]      = buttonVDivCompV;
 
-  buttons[MAT_COMPUTATION_NEGV]           = buttonNegV;
+  buttons[MAT_COMPUTATION_VNEG]           = buttonNegV;
   buttons[MAT_COMPUTATION_VADDV]          = buttonVAddV;
   buttons[MAT_COMPUTATION_VSUBV]          = buttonVSubV;
   buttons[MAT_COMPUTATION_VDOTV]          = buttonVDotV;
@@ -135,18 +130,18 @@
   views[MAT_COMPUTATION_VDIVCOMPV * 3 + 1]      = divCompV3V3;
   views[MAT_COMPUTATION_VDIVCOMPV * 3 + 2]      = divCompV4V4;
 
-  views[MAT_COMPUTATION_NEGV * 3 + 0]           = negV2;
-  views[MAT_COMPUTATION_NEGV * 3 + 1]           = negV3;
-  views[MAT_COMPUTATION_NEGV * 3 + 2]           = negV4;
-  views[MAT_COMPUTATION_VADDV * 3 + 0]          = addV2V2;
-  views[MAT_COMPUTATION_VADDV * 3 + 1]          = addV3V3;
-  views[MAT_COMPUTATION_VADDV * 3 + 2]          = addV4V4;
-  views[MAT_COMPUTATION_VSUBV * 3 + 0]          = subV2V2;
-  views[MAT_COMPUTATION_VSUBV * 3 + 1]          = subV3V3;
-  views[MAT_COMPUTATION_VSUBV * 3 + 2]          = subV4V4;
-  views[MAT_COMPUTATION_VDOTV * 3 + 0]          = dotV2V2;
-  views[MAT_COMPUTATION_VDOTV * 3 + 1]          = dotV3V3;
-  views[MAT_COMPUTATION_VDOTV * 3 + 2]          = dotV4V4;
+  controllers[MAT_COMPUTATION_VNEG * 3 + 0]       = matAllocVNegController(2);
+  controllers[MAT_COMPUTATION_VNEG * 3 + 1]       = matAllocVNegController(3);
+  controllers[MAT_COMPUTATION_VNEG * 3 + 2]       = matAllocVNegController(4);
+  controllers[MAT_COMPUTATION_VADDV * 3 + 0]      = matAllocVAddVController(2);
+  controllers[MAT_COMPUTATION_VADDV * 3 + 1]      = matAllocVAddVController(3);
+  controllers[MAT_COMPUTATION_VADDV * 3 + 2]      = matAllocVAddVController(4);
+  controllers[MAT_COMPUTATION_VSUBV * 3 + 0]      = matAllocVSubVController(2);
+  controllers[MAT_COMPUTATION_VSUBV * 3 + 1]      = matAllocVSubVController(3);
+  controllers[MAT_COMPUTATION_VSUBV * 3 + 2]      = matAllocVSubVController(4);
+  controllers[MAT_COMPUTATION_VDOTV * 3 + 0]      = matAllocVDotVController(2);
+  controllers[MAT_COMPUTATION_VDOTV * 3 + 1]      = matAllocVDotVController(3);
+  controllers[MAT_COMPUTATION_VDOTV * 3 + 2]      = matAllocVDotVController(4);
   controllers[MAT_COMPUTATION_VCROSSV * 3 + 0]    = matAllocVCrossVController(3);
   controllers[MAT_COMPUTATION_VCROSSV * 3 + 1]    = matAllocVCrossVController(3);
   controllers[MAT_COMPUTATION_VCROSSV * 3 + 2]    = matAllocVCrossVController(3);
@@ -235,7 +230,7 @@
   [buttons[MAT_COMPUTATION_VMULCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMulCompV)]];
   [buttons[MAT_COMPUTATION_VDIVCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDivCompV)]];
      
-  [buttons[MAT_COMPUTATION_NEGV]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonNegV)]];
+  [buttons[MAT_COMPUTATION_VNEG]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonNegV)]];
   [buttons[MAT_COMPUTATION_VADDV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVAddV)]];
   [buttons[MAT_COMPUTATION_VSUBV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVSubV)]];
   [buttons[MAT_COMPUTATION_VDOTV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDotV)]];
@@ -278,7 +273,7 @@
       case MAT_COMPUTATION_VMULCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVMulCompV)]; break;
       case MAT_COMPUTATION_VDIVCOMPV:       helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDivCompV)]; break;
 
-      case MAT_COMPUTATION_NEGV:            helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpNegV)]; break;
+      case MAT_COMPUTATION_VNEG:            helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVNeg)]; break;
       case MAT_COMPUTATION_VADDV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVAddV)]; break;
       case MAT_COMPUTATION_VSUBV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVSubV)]; break;
       case MAT_COMPUTATION_VDOTV:           helpstring  = [NSString stringWithUTF8String:matTranslate(MATHelpVDotV)]; break;
@@ -379,7 +374,7 @@
   computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation >= MAT_COMPUTATION_VCROSSV && computation <= MAT_COMPUTATION_MINVERT){
+  if(computation >= MAT_COMPUTATION_VNEG && computation <= MAT_COMPUTATION_MINVERT){
     computationController = controllers[computation * 3 + (dimensions - 2)];
     const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);

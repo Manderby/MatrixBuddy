@@ -99,7 +99,7 @@ MATBaseController* matAllocMNegController(size_t dimensions){
   naAddSpaceChild(con->base.space, spaceA, naMakePos(marginLeft, marginBottom));
   naAddSpaceChild(con->base.space, spaceN, naMakePos(marginLeft + sizeA.width + MAT_SIGN_WIDTH, marginBottom));
 
-  con->arrowSignLabel = naNewLabel(MAT_ARROW_SIGN, MAT_SIGN_WIDTH);
+  con->arrowSignLabel = naNewLabel(MAT_DOUBLE_ARROW_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->arrowSignLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelFont(con->arrowSignLabel, matGetMathFont());
   naSetLabelHeight(con->arrowSignLabel, MAT_MATRIX_LABEL_HEIGHT);

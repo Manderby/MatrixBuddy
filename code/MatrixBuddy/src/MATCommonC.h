@@ -55,6 +55,7 @@
 #define MAT_SUPERSCRIPT_MINUS_ONE "\u207b\u00b9"
 #define MAT_MIRROR_SIGN "\u21a5"
 #define MAT_ORTHO_SIGN "\u22a5"
+#define MAT_DOT_SIGN "\u00b7"
 
 typedef struct MATBaseController MATBaseController;
 typedef struct MATView MATView;

@@ -64,7 +64,7 @@ typedef enum{
   MATHelpVDivS,
   MATHelpVMulCompV,
   MATHelpVDivCompV,
-  MATHelpNegV,
+  MATHelpVNeg,
   MATHelpVAddV,
   MATHelpVSubV,
   MATHelpVDotV,

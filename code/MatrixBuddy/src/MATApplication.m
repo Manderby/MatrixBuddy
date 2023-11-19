@@ -5,6 +5,7 @@
 
 
 NSString* formatValue(float value){
+  if(naAlmostZerof(value)){value = 0.;}
   MATValueAccuracy valueAccuracy = [(MATApplication*)NSApp valueAccuracy];
   if(valueAccuracy == MAT_VALUE_ACCURACY_NATURAL){
     for(int digit = 0; digit < 10; digit++){
