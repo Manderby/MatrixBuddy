@@ -7,11 +7,6 @@
 
 #include "MATBaseController.h"
 
-#import "MATVMulS.h"
-#import "MATVDivS.h"
-#import "MATVMulCompV.h"
-#import "MATVDivCompV.h"
-
 #include "MATTranslations.h"
 #include "MATPreferences.h"
 
@@ -117,18 +112,18 @@
   buttons[MAT_COMPUTATION_MTRANSPOSE]     = buttonMTranspose;
   buttons[MAT_COMPUTATION_MINVERT]        = buttonMInvert;
 
-  views[MAT_COMPUTATION_VMULS * 3 + 0]          = mulV2S;
-  views[MAT_COMPUTATION_VMULS * 3 + 1]          = mulV3S;
-  views[MAT_COMPUTATION_VMULS * 3 + 2]          = mulV4S;
-  views[MAT_COMPUTATION_VDIVS * 3 + 0]          = divV2S;
-  views[MAT_COMPUTATION_VDIVS * 3 + 1]          = divV3S;
-  views[MAT_COMPUTATION_VDIVS * 3 + 2]          = divV4S;
-  views[MAT_COMPUTATION_VMULCOMPV * 3 + 0]      = mulCompV2V2;
-  views[MAT_COMPUTATION_VMULCOMPV * 3 + 1]      = mulCompV3V3;
-  views[MAT_COMPUTATION_VMULCOMPV * 3 + 2]      = mulCompV4V4;
-  views[MAT_COMPUTATION_VDIVCOMPV * 3 + 0]      = divCompV2V2;
-  views[MAT_COMPUTATION_VDIVCOMPV * 3 + 1]      = divCompV3V3;
-  views[MAT_COMPUTATION_VDIVCOMPV * 3 + 2]      = divCompV4V4;
+  controllers[MAT_COMPUTATION_VMULS * 3 + 0]      = matAllocVMulSController(2);
+  controllers[MAT_COMPUTATION_VMULS * 3 + 1]      = matAllocVMulSController(3);
+  controllers[MAT_COMPUTATION_VMULS * 3 + 2]      = matAllocVMulSController(4);
+  controllers[MAT_COMPUTATION_VDIVS * 3 + 0]      = matAllocVDivSController(2);
+  controllers[MAT_COMPUTATION_VDIVS * 3 + 1]      = matAllocVDivSController(3);
+  controllers[MAT_COMPUTATION_VDIVS * 3 + 2]      = matAllocVDivSController(4);
+  controllers[MAT_COMPUTATION_VMULCOMPV * 3 + 0]  = matAllocVMulCompVController(2);
+  controllers[MAT_COMPUTATION_VMULCOMPV * 3 + 1]  = matAllocVMulCompVController(3);
+  controllers[MAT_COMPUTATION_VMULCOMPV * 3 + 2]  = matAllocVMulCompVController(4);
+  controllers[MAT_COMPUTATION_VDIVCOMPV * 3 + 0]  = matAllocVDivCompVController(2);
+  controllers[MAT_COMPUTATION_VDIVCOMPV * 3 + 1]  = matAllocVDivCompVController(3);
+  controllers[MAT_COMPUTATION_VDIVCOMPV * 3 + 2]  = matAllocVDivCompVController(4);
 
   controllers[MAT_COMPUTATION_VNEG * 3 + 0]       = matAllocVNegController(2);
   controllers[MAT_COMPUTATION_VNEG * 3 + 1]       = matAllocVNegController(3);
@@ -374,7 +369,7 @@
   computationView = NA_NULL;
   computationController = NA_NULL;
   
-  if(computation >= MAT_COMPUTATION_VNEG && computation <= MAT_COMPUTATION_MINVERT){
+  if(computation >= MAT_COMPUTATION_VMULS && computation <= MAT_COMPUTATION_MINVERT){
     computationController = controllers[computation * 3 + (dimensions - 2)];
     const NASpace* computationSpace = naGetControllerSpace(computationController);
     NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
