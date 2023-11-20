@@ -50,7 +50,7 @@ NABool mat_ViewChanged(NAReaction reaction){
 
 // Returns a temporary (automatically freed) utf8 string pointer.
 NAUTF8Char* matFormatValue(float value){
-  if(naAlmostZerof(value)){value = 0.;}
+  if(value > -1e-7 && value < 1e-7){value = 0.;}
   MATValueAccuracy valueAccuracy = matGetValueAccuracy();
   if(valueAccuracy == MAT_VALUE_ACCURACY_NATURAL){
     for(int digit = 0; digit < 10; digit++){
