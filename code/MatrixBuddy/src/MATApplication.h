@@ -6,12 +6,7 @@
 #include "MATAboutController.h"
 #include "MATWindowControllerASDF.h"
 
-NSString* formatValue(float value);
-
-
 void matPrepareFirstView(void);
-
-
 
 @interface MATApplication : NSApplication <NSApplicationDelegate>{
   IBOutlet MATWindowController* windowController;
@@ -36,12 +31,6 @@ void matPrepareFirstView(void);
 - (NABool)hasRowFirstTabOrder;
 - (MATCodeStyle)codeStyle;
 - (MATValueAccuracy)valueAccuracy;
-- (NSString*)statusString:(MATStatus)statusnum retColor:(MATColor*)retcolor;
-- (NSColor*)color:(MATColor)colornum;
-
-- (void)applicationWillFinishLaunching:(NSNotification *)notification;
-
-- (MATWindowController*)getWindowController;
 
 @end
 

@@ -75,196 +75,13 @@
   [gearButton setMenu:gearMenu];
   NA_COCOA_RELEASE(gearMenu);
 
-
-  buttons[MAT_COMPUTATION_VMULS]          = buttonVMulS;
-  buttons[MAT_COMPUTATION_VDIVS]          = buttonVDivS;
-  buttons[MAT_COMPUTATION_VMULCOMPV]      = buttonVMulCompV;
-  buttons[MAT_COMPUTATION_VDIVCOMPV]      = buttonVDivCompV;
-
-  buttons[MAT_COMPUTATION_VNEG]           = buttonNegV;
-  buttons[MAT_COMPUTATION_VADDV]          = buttonVAddV;
-  buttons[MAT_COMPUTATION_VSUBV]          = buttonVSubV;
-  buttons[MAT_COMPUTATION_VDOTV]          = buttonVDotV;
-  buttons[MAT_COMPUTATION_VCROSSV]        = buttonVCrossV;
-  buttons[MAT_COMPUTATION_VLENGTH]        = buttonLengthV;
-
-  buttons[MAT_COMPUTATION_VNORMALIZE]     = buttonNormalizeV;
-  buttons[MAT_COMPUTATION_VORTHO]         = buttonVOrtho;
-  buttons[MAT_COMPUTATION_VMIRROR]        = buttonVMirror;
-
-  buttons[MAT_COMPUTATION_MMULS]          = buttonMMulS;
-  buttons[MAT_COMPUTATION_MDIVS]          = buttonMDivS;
-  buttons[MAT_COMPUTATION_MMULCOMPV]      = buttonMMulCompV;
-  buttons[MAT_COMPUTATION_MDIVCOMPV]      = buttonMDivCompV;
-  buttons[MAT_COMPUTATION_MMULCOMPM]      = buttonMMulCompM;
-  buttons[MAT_COMPUTATION_MDIVCOMPM]      = buttonMDivCompM;
-  
-  buttons[MAT_COMPUTATION_MNEG]           = buttonMNeg;
-  buttons[MAT_COMPUTATION_MADDM]          = buttonMAddM;
-  buttons[MAT_COMPUTATION_MSUBM]          = buttonMSubM;
-  buttons[MAT_COMPUTATION_MMULV]          = buttonMMulV;
-  buttons[MAT_COMPUTATION_MMULM]          = buttonMMulM;
-
-  buttons[MAT_COMPUTATION_MDIAGS]          = buttonDiagS;
-  buttons[MAT_COMPUTATION_MDIAGV]          = buttonDiagV;
-  buttons[MAT_COMPUTATION_MTRANSPOSE]     = buttonMTranspose;
-  buttons[MAT_COMPUTATION_MINVERT]        = buttonMInvert;
-
-  controllers[MAT_COMPUTATION_VMULS * 3 + 0]      = matAllocVMulSController(2);
-  controllers[MAT_COMPUTATION_VMULS * 3 + 1]      = matAllocVMulSController(3);
-  controllers[MAT_COMPUTATION_VMULS * 3 + 2]      = matAllocVMulSController(4);
-  controllers[MAT_COMPUTATION_VDIVS * 3 + 0]      = matAllocVDivSController(2);
-  controllers[MAT_COMPUTATION_VDIVS * 3 + 1]      = matAllocVDivSController(3);
-  controllers[MAT_COMPUTATION_VDIVS * 3 + 2]      = matAllocVDivSController(4);
-  controllers[MAT_COMPUTATION_VMULCOMPV * 3 + 0]  = matAllocVMulCompVController(2);
-  controllers[MAT_COMPUTATION_VMULCOMPV * 3 + 1]  = matAllocVMulCompVController(3);
-  controllers[MAT_COMPUTATION_VMULCOMPV * 3 + 2]  = matAllocVMulCompVController(4);
-  controllers[MAT_COMPUTATION_VDIVCOMPV * 3 + 0]  = matAllocVDivCompVController(2);
-  controllers[MAT_COMPUTATION_VDIVCOMPV * 3 + 1]  = matAllocVDivCompVController(3);
-  controllers[MAT_COMPUTATION_VDIVCOMPV * 3 + 2]  = matAllocVDivCompVController(4);
-
-  controllers[MAT_COMPUTATION_VNEG * 3 + 0]       = matAllocVNegController(2);
-  controllers[MAT_COMPUTATION_VNEG * 3 + 1]       = matAllocVNegController(3);
-  controllers[MAT_COMPUTATION_VNEG * 3 + 2]       = matAllocVNegController(4);
-  controllers[MAT_COMPUTATION_VADDV * 3 + 0]      = matAllocVAddVController(2);
-  controllers[MAT_COMPUTATION_VADDV * 3 + 1]      = matAllocVAddVController(3);
-  controllers[MAT_COMPUTATION_VADDV * 3 + 2]      = matAllocVAddVController(4);
-  controllers[MAT_COMPUTATION_VSUBV * 3 + 0]      = matAllocVSubVController(2);
-  controllers[MAT_COMPUTATION_VSUBV * 3 + 1]      = matAllocVSubVController(3);
-  controllers[MAT_COMPUTATION_VSUBV * 3 + 2]      = matAllocVSubVController(4);
-  controllers[MAT_COMPUTATION_VDOTV * 3 + 0]      = matAllocVDotVController(2);
-  controllers[MAT_COMPUTATION_VDOTV * 3 + 1]      = matAllocVDotVController(3);
-  controllers[MAT_COMPUTATION_VDOTV * 3 + 2]      = matAllocVDotVController(4);
-  controllers[MAT_COMPUTATION_VCROSSV * 3 + 0]    = matAllocVCrossVController(3);
-  controllers[MAT_COMPUTATION_VCROSSV * 3 + 1]    = matAllocVCrossVController(3);
-  controllers[MAT_COMPUTATION_VCROSSV * 3 + 2]    = matAllocVCrossVController(3);
-  controllers[MAT_COMPUTATION_VLENGTH * 3 + 0]    = matAllocVLengthController(2);
-  controllers[MAT_COMPUTATION_VLENGTH * 3 + 1]    = matAllocVLengthController(3);
-  controllers[MAT_COMPUTATION_VLENGTH * 3 + 2]    = matAllocVLengthController(4);
-
-  controllers[MAT_COMPUTATION_VNORMALIZE * 3 + 0] = matAllocVNormalizeController(2);
-  controllers[MAT_COMPUTATION_VNORMALIZE * 3 + 1] = matAllocVNormalizeController(3);
-  controllers[MAT_COMPUTATION_VNORMALIZE * 3 + 2] = matAllocVNormalizeController(4);
-  controllers[MAT_COMPUTATION_VORTHO * 3 + 0]     = matAllocVOrthoController(2);
-  controllers[MAT_COMPUTATION_VORTHO * 3 + 1]     = matAllocVOrthoController(3);
-  controllers[MAT_COMPUTATION_VORTHO * 3 + 2]     = matAllocVOrthoController(4);
-  controllers[MAT_COMPUTATION_VMIRROR * 3 + 0]    = matAllocVMirrorController(2);
-  controllers[MAT_COMPUTATION_VMIRROR * 3 + 1]    = matAllocVMirrorController(3);
-  controllers[MAT_COMPUTATION_VMIRROR * 3 + 2]    = matAllocVMirrorController(4);
-
-  controllers[MAT_COMPUTATION_MMULS * 3 + 0]      = matAllocMMulSController(2);
-  controllers[MAT_COMPUTATION_MMULS * 3 + 1]      = matAllocMMulSController(3);
-  controllers[MAT_COMPUTATION_MMULS * 3 + 2]      = matAllocMMulSController(4);
-  controllers[MAT_COMPUTATION_MDIVS * 3 + 0]      = matAllocMDivSController(2);
-  controllers[MAT_COMPUTATION_MDIVS * 3 + 1]      = matAllocMDivSController(3);
-  controllers[MAT_COMPUTATION_MDIVS * 3 + 2]      = matAllocMDivSController(4);
-  controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 0]  = matAllocMMulCompVController(2);
-  controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 1]  = matAllocMMulCompVController(3);
-  controllers[MAT_COMPUTATION_MMULCOMPV * 3 + 2]  = matAllocMMulCompVController(4);
-  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 0]  = matAllocMDivCompVController(2);
-  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 1]  = matAllocMDivCompVController(3);
-  controllers[MAT_COMPUTATION_MDIVCOMPV * 3 + 2]  = matAllocMDivCompVController(4);
-  controllers[MAT_COMPUTATION_MMULCOMPM * 3 + 0]  = matAllocMMulCompMController(2);
-  controllers[MAT_COMPUTATION_MMULCOMPM * 3 + 1]  = matAllocMMulCompMController(3);
-  controllers[MAT_COMPUTATION_MMULCOMPM * 3 + 2]  = matAllocMMulCompMController(4);
-  controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 0]  = matAllocMDivCompMController(2);
-  controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 1]  = matAllocMDivCompMController(3);
-  controllers[MAT_COMPUTATION_MDIVCOMPM * 3 + 2]  = matAllocMDivCompMController(4);
-  
-  controllers[MAT_COMPUTATION_MNEG * 3 + 0]       = matAllocMNegController(2);
-  controllers[MAT_COMPUTATION_MNEG * 3 + 1]       = matAllocMNegController(3);
-  controllers[MAT_COMPUTATION_MNEG * 3 + 2]       = matAllocMNegController(4);
-  controllers[MAT_COMPUTATION_MADDM * 3 + 0]      = matAllocMAddMController(2);
-  controllers[MAT_COMPUTATION_MADDM * 3 + 1]      = matAllocMAddMController(3);
-  controllers[MAT_COMPUTATION_MADDM * 3 + 2]      = matAllocMAddMController(4);
-  controllers[MAT_COMPUTATION_MSUBM * 3 + 0]      = matAllocMSubMController(2);
-  controllers[MAT_COMPUTATION_MSUBM * 3 + 1]      = matAllocMSubMController(3);
-  controllers[MAT_COMPUTATION_MSUBM * 3 + 2]      = matAllocMSubMController(4);
-  controllers[MAT_COMPUTATION_MMULV * 3 + 0]      = matAllocMMulVController(2);
-  controllers[MAT_COMPUTATION_MMULV * 3 + 1]      = matAllocMMulVController(3);
-  controllers[MAT_COMPUTATION_MMULV * 3 + 2]      = matAllocMMulVController(4);
-  controllers[MAT_COMPUTATION_MMULM * 3 + 0]      = matAllocMMulMController(2);
-  controllers[MAT_COMPUTATION_MMULM * 3 + 1]      = matAllocMMulMController(3);
-  controllers[MAT_COMPUTATION_MMULM * 3 + 2]      = matAllocMMulMController(4);
-
-  controllers[MAT_COMPUTATION_MDIAGS * 3 + 0]      = matAllocMDiagSController(2);
-  controllers[MAT_COMPUTATION_MDIAGS * 3 + 1]      = matAllocMDiagSController(3);
-  controllers[MAT_COMPUTATION_MDIAGS * 3 + 2]      = matAllocMDiagSController(4);
-  controllers[MAT_COMPUTATION_MDIAGV * 3 + 0]      = matAllocMDiagVController(2);
-  controllers[MAT_COMPUTATION_MDIAGV * 3 + 1]      = matAllocMDiagVController(3);
-  controllers[MAT_COMPUTATION_MDIAGV * 3 + 2]      = matAllocMDiagVController(4);
-  controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 0] = matAllocMTransposeController(2);
-  controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 1] = matAllocMTransposeController(3);
-  controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 2] = matAllocMTransposeController(4);
-  controllers[MAT_COMPUTATION_MINVERT * 3 + 0]    = matAllocMInvertController(2);
-  controllers[MAT_COMPUTATION_MINVERT * 3 + 1]    = matAllocMInvertController(3);
-  controllers[MAT_COMPUTATION_MINVERT * 3 + 2]    = matAllocMInvertController(4);
-
   computation = MAT_COMPUTATION_MMULV;
   dimensions = 3;
-}
-
-- (void)cleanCStructures{
-  matDeallocMMulSController(controllers[MAT_COMPUTATION_MMULS * 3 + 0]);
-  matDeallocMMulSController(controllers[MAT_COMPUTATION_MMULS * 3 + 1]);
-  matDeallocMMulSController(controllers[MAT_COMPUTATION_MMULS * 3 + 2]);
-  matDeallocMDivSController(controllers[MAT_COMPUTATION_MDIVS * 3 + 0]);
-  matDeallocMDivSController(controllers[MAT_COMPUTATION_MDIVS * 3 + 1]);
-  matDeallocMDivSController(controllers[MAT_COMPUTATION_MDIVS * 3 + 2]);
-}
-
-
-
-- (void)prepareFirstView{
-  [self switchComputation:buttonMMulV];
-  
-  [buttons[MAT_COMPUTATION_VMULS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMulS)]];
-  [buttons[MAT_COMPUTATION_VDIVS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDivS)]];
-  [buttons[MAT_COMPUTATION_VMULCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMulCompV)]];
-  [buttons[MAT_COMPUTATION_VDIVCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDivCompV)]];
-     
-  [buttons[MAT_COMPUTATION_VNEG]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVNeg)]];
-  [buttons[MAT_COMPUTATION_VADDV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVAddV)]];
-  [buttons[MAT_COMPUTATION_VSUBV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVSubV)]];
-  [buttons[MAT_COMPUTATION_VDOTV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDotV)]];
-  [buttons[MAT_COMPUTATION_VCROSSV]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVCrossV)]];
-  [buttons[MAT_COMPUTATION_VLENGTH]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVLength)]];
-
-  [buttons[MAT_COMPUTATION_VNORMALIZE]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVNormalize)]];
-  [buttons[MAT_COMPUTATION_VORTHO] setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVOrtho)]];
-  [buttons[MAT_COMPUTATION_VMIRROR]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMirror)]];
-
-  [buttons[MAT_COMPUTATION_MMULS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulS)]];
-  [buttons[MAT_COMPUTATION_MDIVS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDivS)]];
-  [buttons[MAT_COMPUTATION_MMULCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulCompV)]];
-  [buttons[MAT_COMPUTATION_MDIVCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDivCompV)]];
-  [buttons[MAT_COMPUTATION_MMULCOMPM]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulCompM)]];
-  [buttons[MAT_COMPUTATION_MDIVCOMPM]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDivCompM)]];
-
-  [buttons[MAT_COMPUTATION_MNEG]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMNeg)]];
-  [buttons[MAT_COMPUTATION_MADDM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMAddM)]];
-  [buttons[MAT_COMPUTATION_MSUBM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMSubM)]];
-  [buttons[MAT_COMPUTATION_MMULV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulV)]];
-  [buttons[MAT_COMPUTATION_MMULM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulM)]];
-
-  [buttons[MAT_COMPUTATION_MDIAGS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDiagS)]];
-  [buttons[MAT_COMPUTATION_MDIAGV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDiagV)]];
-  [buttons[MAT_COMPUTATION_MTRANSPOSE]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMTranspose)]];
-  [buttons[MAT_COMPUTATION_MINVERT]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMInvert)]];
-
 }
 
 
 
 - (void)update{
-  for(MATComputation m=0; m<MAT_COMPUTATION_COUNT; m++){
-    [buttons[m] setState:NAStateOff];
-  }
-  [buttons[computation] setState:NAStateOn];
-  [dimension2Radio setState:dimensions == 2 ? NAStateOn : NAStateOff];
-  [dimension3Radio setState:dimensions == 3 ? NAStateOn : NAStateOff];
-  [dimension4Radio setState:dimensions == 4 ? NAStateOn : NAStateOff];
-
   [showHelpItem setState:(showHelp?NAStateOn:NAStateOff)];
   [showIdentifiersItem setState:(showIdentifiers?NAStateOn:NAStateOff)];
   [showCopyPasteItem setState:(showCopyPaste?NAStateOn:NAStateOff)];
@@ -308,23 +125,6 @@
   case MAT_VALUE_ACCURACY_NATURAL: [valueAccuracyNaturalItem setState:NAStateOn]; break;
   case MAT_VALUE_ACCURACY_FLOAT: [valueAccuracyFloatItem setState:NAStateOn]; break;
   }
-
-  NSRect frame = [placeholder frame];
-  if(computationController){
-    NSView* nsView = naGetUIElementNativePtr(naGetControllerSpace(computationController));
-    frame = [nsView frame];
-    [nsView removeFromSuperview];
-  }
-  
-  computationController = NA_NULL;
-  
-  computationController = controllers[computation * 3 + (dimensions - 2)];
-  const NASpace* computationSpace = naGetControllerSpace(computationController);
-  NSView* nativeView = naGetUIElementNativePtrConst(computationSpace);
-  matUpdateController(computationController);
-  matUpdateControllerTabOrder(computationController);
-  [nativeView setFrame:frame];
-  [[[self window] contentView] addSubview:nativeView];
 }
 
 
@@ -355,22 +155,6 @@
   return YES;
 }
 
-
-
-- (IBAction)switchComputation:(id)sender{
-  [buttons[computation] setState:NAStateOff];
-
-  for(MATComputation m=0; m<MAT_COMPUTATION_COUNT; m++){
-    if(sender == buttons[m]){
-      computation = m;
-      break;
-    }
-  }
-  
-  [buttons[computation] setState:NAStateOn];
-
-  [self update];
-}
 
 
 - (IBAction)changeSetting:(id)sender{
@@ -431,15 +215,6 @@
     if(computationController)
       matUpdateController(computationController);
   }else{}
-  [self update];
-}
-
-
-- (IBAction)changeDimensions:(id)sender{
-  NA_UNUSED(sender);
-  if(sender == dimension2Radio){dimensions = 2;}
-  if(sender == dimension3Radio){dimensions = 3;}
-  if(sender == dimension4Radio){dimensions = 4;}
   [self update];
 }
 
