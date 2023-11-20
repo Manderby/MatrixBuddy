@@ -109,6 +109,18 @@ MATBaseController* matAllocMInvertController(size_t dimensions){
   double* initMatrix = naMalloc(matrixElementCount * sizeof(double));
   naZeron(initMatrix, matrixElementCount * sizeof(double));
 
+  switch(con->base.dimensions){
+  case 2:
+    naFillM22dWithDiag(initMatrix, 1);
+    break;
+  case 3:
+    naFillM33dWithDiag(initMatrix, 1);
+    break;
+  case 4:
+    naFillM44dWithDiag(initMatrix, 1);
+    break;
+  }
+
   con->viewA = matAllocView("A", dimensions, dimensions, con, initMatrix);
   con->viewI = matAllocView("A" MAT_SUPERSCRIPT_MINUS_ONE, dimensions, dimensions, con, initMatrix);
 

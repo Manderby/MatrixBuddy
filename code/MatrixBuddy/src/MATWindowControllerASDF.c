@@ -60,11 +60,11 @@ NABool matComputationChanged(NAReaction reaction){
 void matAddComputationButton(
   MATWindowControllerASDF* con,
   MATComputation computation,
-  MATTranslation translation,
   NAPos pos,
   double width)
 {
-  con->buttons[computation] = naNewTextStateButton(matTranslate(translation), NA_NULL, width);
+  MATTranslation translationIndex = MATButtonVMulS + computation;
+  con->buttons[computation] = naNewTextStateButton(matTranslate(translationIndex), NA_NULL, width);
   naAddUIReaction(con->buttons[computation], NA_UI_COMMAND_PRESSED, matComputationChanged, con);
   naAddSpaceChild(con->buttonsSpace, con->buttons[computation], pos);
 }
@@ -73,7 +73,7 @@ void matAddComputationButton(
 MATWindowControllerASDF* matAllocWindowController(){
   MATWindowControllerASDF* con = naAlloc(MATWindowControllerASDF);
   
-  con->window = naNewWindow("Matrix Buddy", naMakeRectS(100, 100, 1075, 340), 0, 0);
+  con->window = naNewWindow("Matrix Buddy", naMakeRectS(100, 100, 1105, 340), 0, 0);
   NASpace* space = naGetWindowContentSpace(con->window);
   
   con->radio2 = naNewRadio("2D", 50);
@@ -88,21 +88,36 @@ MATWindowControllerASDF* matAllocWindowController(){
   naAddSpaceChild(con->radioSpace, con->radio4, naMakePos(0, 0));
   naAddSpaceChild(space, con->radioSpace, naMakePos(10, 250));
   
-  con->buttonsSpace = naNewSpace(naMakeSize(700, 75));
+  con->buttonsSpace = naNewSpace(naMakeSize(850, 75));
   naZeron(con->buttons, MAT_COMPUTATION_COUNT * sizeof(NAButton*));
-  matAddComputationButton(con, MAT_COMPUTATION_VMULS, MATButtonVMulS, naMakePos(0, 50), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VDIVS, MATButtonVDivS, naMakePos(60, 50), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VMULCOMPV, MATButtonVMulCompV, naMakePos(120, 50), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VDIVCOMPV, MATButtonVDivCompV, naMakePos(180, 50), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VNEG, MATButtonVNeg, naMakePos(0, 25), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VADDV, MATButtonVAddV, naMakePos(60, 25), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VSUBV, MATButtonVSubV, naMakePos(120, 25), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VDOTV, MATButtonVDotV, naMakePos(180, 25), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VCROSSV, MATButtonVCrossV, naMakePos(240, 25), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VLENGTH, MATButtonVLength, naMakePos(300, 25), 50);
-  matAddComputationButton(con, MAT_COMPUTATION_VNORMALIZE, MATButtonVNormalize, naMakePos(0, 0), 110);
-  matAddComputationButton(con, MAT_COMPUTATION_VORTHO, MATButtonVOrtho, naMakePos(120, 0), 140);
-  matAddComputationButton(con, MAT_COMPUTATION_VMIRROR, MATButtonVMirror, naMakePos(270, 0), 80);
+  matAddComputationButton(con, MAT_COMPUTATION_VMULS,      naMakePos(0, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VDIVS,      naMakePos(60, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VMULCOMPV,  naMakePos(120, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VDIVCOMPV,  naMakePos(180, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VNEG,       naMakePos(0, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VADDV,      naMakePos(60, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VSUBV,      naMakePos(120, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VDOTV,      naMakePos(180, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VCROSSV,    naMakePos(240, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VLENGTH,    naMakePos(300, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_VNORMALIZE, naMakePos(0, 0), 110);
+  matAddComputationButton(con, MAT_COMPUTATION_VORTHO,     naMakePos(120, 0), 140);
+  matAddComputationButton(con, MAT_COMPUTATION_VMIRROR,    naMakePos(270, 0), 80);
+  matAddComputationButton(con, MAT_COMPUTATION_MMULS,      naMakePos(400, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MDIVS,      naMakePos(460, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MMULCOMPV,  naMakePos(520, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MDIVCOMPV,  naMakePos(580, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MMULCOMPM,  naMakePos(640, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MDIVCOMPM,  naMakePos(700, 50), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MNEG,       naMakePos(400, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MADDM,      naMakePos(460, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MSUBM,      naMakePos(520, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MMULV,      naMakePos(580, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MMULM,      naMakePos(640, 25), 50);
+  matAddComputationButton(con, MAT_COMPUTATION_MDIAGS,     naMakePos(400, 0), 80);
+  matAddComputationButton(con, MAT_COMPUTATION_MDIAGV,     naMakePos(490, 0), 80);
+  matAddComputationButton(con, MAT_COMPUTATION_MTRANSPOSE, naMakePos(580, 0), 110);
+  matAddComputationButton(con, MAT_COMPUTATION_MINVERT,    naMakePos(700, 0), 110);
   naAddSpaceChild(space, con->buttonsSpace, naMakePos(120, 250));
 
   naZeron(con->controllers, MAT_COMPUTATION_COUNT * 3 * sizeof(MATBaseController*));
@@ -138,19 +153,35 @@ void matUpdateWindowController(MATWindowControllerASDF* con){
   if(!con->controllers[index]){
     MATBaseController* newCon = NA_NULL;
     switch(con->computation){
-    case MAT_COMPUTATION_VMULS: newCon = matAllocVMulSController(con->dimensions); break;
-    case MAT_COMPUTATION_VDIVS: newCon = matAllocVDivSController(con->dimensions); break;
-    case MAT_COMPUTATION_VMULCOMPV: newCon = matAllocVMulCompVController(con->dimensions); break;
-    case MAT_COMPUTATION_VDIVCOMPV: newCon = matAllocVDivCompVController(con->dimensions); break;
-    case MAT_COMPUTATION_VNEG: newCon = matAllocVNegController(con->dimensions); break;
-    case MAT_COMPUTATION_VADDV: newCon = matAllocVAddVController(con->dimensions); break;
-    case MAT_COMPUTATION_VSUBV: newCon = matAllocVSubVController(con->dimensions); break;
-    case MAT_COMPUTATION_VDOTV: newCon = matAllocVDotVController(con->dimensions); break;
-    case MAT_COMPUTATION_VCROSSV: newCon = matAllocVCrossVController(3); break;
-    case MAT_COMPUTATION_VLENGTH: newCon = matAllocVLengthController(con->dimensions); break;
+    case MAT_COMPUTATION_VMULS:      newCon = matAllocVMulSController(con->dimensions); break;
+    case MAT_COMPUTATION_VDIVS:      newCon = matAllocVDivSController(con->dimensions); break;
+    case MAT_COMPUTATION_VMULCOMPV:  newCon = matAllocVMulCompVController(con->dimensions); break;
+    case MAT_COMPUTATION_VDIVCOMPV:  newCon = matAllocVDivCompVController(con->dimensions); break;
+    case MAT_COMPUTATION_VNEG:       newCon = matAllocVNegController(con->dimensions); break;
+    case MAT_COMPUTATION_VADDV:      newCon = matAllocVAddVController(con->dimensions); break;
+    case MAT_COMPUTATION_VSUBV:      newCon = matAllocVSubVController(con->dimensions); break;
+    case MAT_COMPUTATION_VDOTV:      newCon = matAllocVDotVController(con->dimensions); break;
+    case MAT_COMPUTATION_VCROSSV:    newCon = matAllocVCrossVController(3); break;
+    case MAT_COMPUTATION_VLENGTH:    newCon = matAllocVLengthController(con->dimensions); break;
     case MAT_COMPUTATION_VNORMALIZE: newCon = matAllocVNormalizeController(con->dimensions); break;
-    case MAT_COMPUTATION_VORTHO: newCon = matAllocVOrthoController(con->dimensions); break;
-    case MAT_COMPUTATION_VMIRROR: newCon = matAllocVMirrorController(con->dimensions); break;
+    case MAT_COMPUTATION_VORTHO:     newCon = matAllocVOrthoController(con->dimensions); break;
+    case MAT_COMPUTATION_VMIRROR:    newCon = matAllocVMirrorController(con->dimensions); break;
+    case MAT_COMPUTATION_MMULS:      newCon = matAllocMMulSController(con->dimensions); break;
+    case MAT_COMPUTATION_MDIVS:      newCon = matAllocMDivSController(con->dimensions); break;
+    case MAT_COMPUTATION_MMULCOMPV:  newCon = matAllocMMulCompVController(con->dimensions); break;
+    case MAT_COMPUTATION_MDIVCOMPV:  newCon = matAllocMDivCompVController(con->dimensions); break;
+    case MAT_COMPUTATION_MMULCOMPM:  newCon = matAllocMMulCompMController(con->dimensions); break;
+    case MAT_COMPUTATION_MDIVCOMPM:  newCon = matAllocMDivCompMController(con->dimensions); break;
+    case MAT_COMPUTATION_MNEG:       newCon = matAllocMNegController(con->dimensions); break;
+    case MAT_COMPUTATION_MADDM:      newCon = matAllocMAddMController(con->dimensions); break;
+    case MAT_COMPUTATION_MSUBM:      newCon = matAllocMSubMController(con->dimensions); break;
+    case MAT_COMPUTATION_MMULV:      newCon = matAllocMMulVController(con->dimensions); break;
+    case MAT_COMPUTATION_MMULM:      newCon = matAllocMMulMController(con->dimensions); break;
+    case MAT_COMPUTATION_MDIAGS:     newCon = matAllocMDiagSController(con->dimensions); break;
+    case MAT_COMPUTATION_MDIAGV:     newCon = matAllocMDiagVController(con->dimensions); break;
+    case MAT_COMPUTATION_MTRANSPOSE: newCon = matAllocMTransposeController(con->dimensions); break;
+    case MAT_COMPUTATION_MINVERT:    newCon = matAllocMInvertController(con->dimensions); break;
+    default: break;
     }
     con->controllers[index] = newCon;
   }

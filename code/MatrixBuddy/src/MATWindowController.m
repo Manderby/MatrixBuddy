@@ -105,8 +105,8 @@
   buttons[MAT_COMPUTATION_MMULV]          = buttonMMulV;
   buttons[MAT_COMPUTATION_MMULM]          = buttonMMulM;
 
-  buttons[MAT_COMPUTATION_DIAGS]          = buttonDiagS;
-  buttons[MAT_COMPUTATION_DIAGV]          = buttonDiagV;
+  buttons[MAT_COMPUTATION_MDIAGS]          = buttonDiagS;
+  buttons[MAT_COMPUTATION_MDIAGV]          = buttonDiagV;
   buttons[MAT_COMPUTATION_MTRANSPOSE]     = buttonMTranspose;
   buttons[MAT_COMPUTATION_MINVERT]        = buttonMInvert;
 
@@ -187,12 +187,12 @@
   controllers[MAT_COMPUTATION_MMULM * 3 + 1]      = matAllocMMulMController(3);
   controllers[MAT_COMPUTATION_MMULM * 3 + 2]      = matAllocMMulMController(4);
 
-  controllers[MAT_COMPUTATION_DIAGS * 3 + 0]      = matAllocMDiagSController(2);
-  controllers[MAT_COMPUTATION_DIAGS * 3 + 1]      = matAllocMDiagSController(3);
-  controllers[MAT_COMPUTATION_DIAGS * 3 + 2]      = matAllocMDiagSController(4);
-  controllers[MAT_COMPUTATION_DIAGV * 3 + 0]      = matAllocMDiagVController(2);
-  controllers[MAT_COMPUTATION_DIAGV * 3 + 1]      = matAllocMDiagVController(3);
-  controllers[MAT_COMPUTATION_DIAGV * 3 + 2]      = matAllocMDiagVController(4);
+  controllers[MAT_COMPUTATION_MDIAGS * 3 + 0]      = matAllocMDiagSController(2);
+  controllers[MAT_COMPUTATION_MDIAGS * 3 + 1]      = matAllocMDiagSController(3);
+  controllers[MAT_COMPUTATION_MDIAGS * 3 + 2]      = matAllocMDiagSController(4);
+  controllers[MAT_COMPUTATION_MDIAGV * 3 + 0]      = matAllocMDiagVController(2);
+  controllers[MAT_COMPUTATION_MDIAGV * 3 + 1]      = matAllocMDiagVController(3);
+  controllers[MAT_COMPUTATION_MDIAGV * 3 + 2]      = matAllocMDiagVController(4);
   controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 0] = matAllocMTransposeController(2);
   controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 1] = matAllocMTransposeController(3);
   controllers[MAT_COMPUTATION_MTRANSPOSE * 3 + 2] = matAllocMTransposeController(4);
@@ -247,8 +247,8 @@
   [buttons[MAT_COMPUTATION_MMULV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulV)]];
   [buttons[MAT_COMPUTATION_MMULM]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMMulM)]];
 
-  [buttons[MAT_COMPUTATION_DIAGS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDiagS)]];
-  [buttons[MAT_COMPUTATION_DIAGV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDiagV)]];
+  [buttons[MAT_COMPUTATION_MDIAGS]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDiagS)]];
+  [buttons[MAT_COMPUTATION_MDIAGV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMDiagV)]];
   [buttons[MAT_COMPUTATION_MTRANSPOSE]     setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMTranspose)]];
   [buttons[MAT_COMPUTATION_MINVERT]        setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonMInvert)]];
 
