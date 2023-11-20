@@ -223,7 +223,7 @@
   [buttons[MAT_COMPUTATION_VMULCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVMulCompV)]];
   [buttons[MAT_COMPUTATION_VDIVCOMPV]      setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDivCompV)]];
      
-  [buttons[MAT_COMPUTATION_VNEG]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonNegV)]];
+  [buttons[MAT_COMPUTATION_VNEG]           setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVNeg)]];
   [buttons[MAT_COMPUTATION_VADDV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVAddV)]];
   [buttons[MAT_COMPUTATION_VSUBV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVSubV)]];
   [buttons[MAT_COMPUTATION_VDOTV]          setTitle:[NSString stringWithUTF8String:matTranslate(MATButtonVDotV)]];

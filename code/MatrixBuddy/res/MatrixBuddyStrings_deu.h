@@ -32,7 +32,7 @@ NA_LOC(MATButtonVMulS,          "v×s");
 NA_LOC(MATButtonVDivS,          "v÷s");
 NA_LOC(MATButtonVMulCompV,      "v⊙v");
 NA_LOC(MATButtonVDivCompV,      "v⊘v");
-NA_LOC(MATButtonNegV,           "−v");
+NA_LOC(MATButtonVNeg,           "−v");
 NA_LOC(MATButtonVAddV,          "v+v");
 NA_LOC(MATButtonVSubV,          "v−v");
 NA_LOC(MATButtonVDotV,          "v·v");

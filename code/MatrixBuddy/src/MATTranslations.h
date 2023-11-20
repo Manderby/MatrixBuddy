@@ -35,7 +35,7 @@ typedef enum{
   MATButtonVDivS,
   MATButtonVMulCompV,
   MATButtonVDivCompV,
-  MATButtonNegV,
+  MATButtonVNeg,
   MATButtonVAddV,
   MATButtonVSubV,
   MATButtonVDotV,
