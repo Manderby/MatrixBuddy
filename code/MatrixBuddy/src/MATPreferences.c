@@ -2,7 +2,7 @@
 #include "MATPreferences.h"
 #include "MATTypes.h"
 
-const char* MATPrefs[MATPrefCount] = {
+const char* matPrefs[MATPrefCount] = {
   "showHelp",
   "showIdentifiers",
   "showCopyPaste",
@@ -12,15 +12,15 @@ const char* MATPrefs[MATPrefCount] = {
 };
 
 void initPreferences(){
-  naInitPreferencesBool(MATPrefs[ShowHelp], NA_FALSE);
-  naInitPreferencesBool(MATPrefs[ShowIdentifiers], NA_TRUE);
-  naInitPreferencesBool(MATPrefs[ShowCopyPaste], NA_TRUE);
-  naInitPreferencesBool(MATPrefs[UseRowFirstTabOrder], NA_TRUE);
-  naInitPreferencesEnum(MATPrefs[CodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
-  naInitPreferencesEnum(MATPrefs[ValueAccuracy], MAT_VALUE_ACCURACY_NATURAL);
+  naInitPreferencesBool(matPrefs[ShowHelp], NA_FALSE);
+  naInitPreferencesBool(matPrefs[ShowIdentifiers], NA_TRUE);
+  naInitPreferencesBool(matPrefs[ShowCopyPaste], NA_TRUE);
+  naInitPreferencesBool(matPrefs[UseRowFirstTabOrder], NA_TRUE);
+  naInitPreferencesEnum(matPrefs[CodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
+  naInitPreferencesEnum(matPrefs[ValueAccuracy], MAT_VALUE_ACCURACY_NATURAL);
   
   // Legacy:
-  if(naGetPreferencesEnum(MATPrefs[CodeStyle]) == MAT_CODE_STYLE_LEGACY_NONE){
-    naSetPreferencesEnum(MATPrefs[CodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
+  if(naGetPreferencesEnum(matPrefs[CodeStyle]) == MAT_CODE_STYLE_LEGACY_NONE){
+    naSetPreferencesEnum(matPrefs[CodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
   }
 }

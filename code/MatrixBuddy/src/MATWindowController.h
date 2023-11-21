@@ -24,7 +24,7 @@
   IBOutlet NSMenuItem* aboutItem;
   IBOutlet NSMenuItem* helpItem;
   
-  NABool showHelp;
+//  NABool showHelp;
   NABool showIdentifiers;
   NABool showCopyPaste;
   NABool hasRowFirstTabOrder;
@@ -38,7 +38,7 @@
 }
 
 - (void)update;
-- (NABool)hasShowHelp;
+//- (NABool)hasShowHelp;
 - (NABool)hasShowIdentifiers;
 - (NABool)hasShowCopyPaste;
 - (NABool)hasRowFirstTabOrder;

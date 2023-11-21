@@ -1,6 +1,7 @@
 
 #include "MATWindowControllerASDF.h"
 #include "MATBaseController.h"
+#include "MATPreferences.h"
 #include "NAApp/NAApp.h"
 
 struct MATWindowControllerASDF{
@@ -12,12 +13,30 @@ struct MATWindowControllerASDF{
   NARadio* radio4;
   
   NASpace* buttonsSpace;
-
   NAButton* buttons[MAT_COMPUTATION_COUNT];
   MATBaseController* controllers[MAT_COMPUTATION_COUNT * 3];
   MATBaseController* currentController;
   size_t dimensions;
   MATComputation computation;
+  
+  NAButton* settingsButton;
+  NAMenu* settingsMenu;
+  NAMenuItem* showHelpItem;
+  NAMenuItem* showIdentifiersItem;
+  NAMenuItem* showCopyPasteItem;
+  NAMenuItem* codeCRowFirst1DItem;
+  NAMenuItem* codeCRowFirst2DItem;
+  NAMenuItem* codeCColumnFirst1DItem;
+  NAMenuItem* codeCColumnFirst2DItem;
+  NAMenuItem* codeMathematicaItem;
+  NAMenuItem* codeMatlabItem;
+  NAMenuItem* codeMapleItem;
+  NAMenuItem* rowFirstTabOrderItem;
+  NAMenuItem* columnFirstTablOrderItem;
+  NAMenuItem* valueAccuracyNaturalItem;
+  NAMenuItem* valueAccurayFloatItem;
+  NAMenuItem* aboutItem;
+  NAMenuItem* helpItem;
 };
 
 
@@ -57,6 +76,49 @@ NABool matComputationChanged(NAReaction reaction){
 
 
 
+NABool matOpenSettings(NAReaction reaction){
+  MATWindowControllerASDF* con = (MATWindowControllerASDF*)reaction.controller;
+
+  NASpace* space = naGetWindowContentSpace(con->window);
+  NARect rect = naGetUIElementRectAbsolute(con->settingsButton);
+  NAPos menuPos = rect.pos;
+  menuPos.x += rect.size.width;
+  menuPos.y += rect.size.height;
+  naPresentMenu(con->settingsMenu, menuPos, space);
+  
+  return NA_TRUE;
+}
+
+
+
+NABool matSettingsMenuItemSelected(NAReaction reaction){
+  MATWindowControllerASDF* con = (MATWindowControllerASDF*)reaction.controller;
+
+  if(reaction.uiElement == con->showHelpItem){
+    NABool showHelp = naGetPreferencesBool(matPrefs[ShowHelp]);
+    naSetPreferencesBool(matPrefs[ShowHelp], !showHelp);
+  }else if(reaction.uiElement == con->showIdentifiersItem){
+  }else if(reaction.uiElement == con->showCopyPasteItem){
+  }else if(reaction.uiElement == con->codeCRowFirst1DItem){
+  }else if(reaction.uiElement == con->codeCRowFirst2DItem){
+  }else if(reaction.uiElement == con->codeCColumnFirst1DItem){
+  }else if(reaction.uiElement == con->codeCColumnFirst2DItem){
+  }else if(reaction.uiElement == con->codeMathematicaItem){
+  }else if(reaction.uiElement == con->codeMatlabItem){
+  }else if(reaction.uiElement == con->codeMapleItem){
+  }else if(reaction.uiElement == con->rowFirstTabOrderItem){
+  }else if(reaction.uiElement == con->columnFirstTablOrderItem){
+  }else if(reaction.uiElement == con->valueAccuracyNaturalItem){
+  }else if(reaction.uiElement == con->valueAccurayFloatItem){
+  }else if(reaction.uiElement == con->aboutItem){
+  }else if(reaction.uiElement == con->helpItem){
+  }
+  matUpdateWindowController(con);
+
+  return NA_TRUE;
+}
+
+
 void matAddComputationButton(
   MATWindowControllerASDF* con,
   MATComputation computation,
@@ -68,6 +130,19 @@ void matAddComputationButton(
   naAddUIReaction(con->buttons[computation], NA_UI_COMMAND_PRESSED, matComputationChanged, con);
   naAddSpaceChild(con->buttonsSpace, con->buttons[computation], pos);
 }
+
+
+
+void matAddSettingsMenuItem(
+  MATWindowControllerASDF* con,
+  NAMenuItem** menuItem,
+  MATTranslation translation)
+{
+  *menuItem = naNewMenuItem(matTranslate(translation));
+  naAddUIReaction(*menuItem, NA_UI_COMMAND_PRESSED, matSettingsMenuItemSelected, con);
+  naAddMenuItem(con->settingsMenu, *menuItem, NA_NULL);
+}
+
 
 
 MATWindowControllerASDF* matAllocWindowController(){
@@ -125,6 +200,31 @@ MATWindowControllerASDF* matAllocWindowController(){
   con->dimensions = 3;
   con->computation = MAT_COMPUTATION_VMULS;
   
+  con->settingsButton = naNewTextPushButton("S", 30);
+  naAddUIReaction(con->settingsButton, NA_UI_COMMAND_PRESSED, matOpenSettings, con);
+  naAddSpaceChild(space, con->settingsButton, naMakePos(950, 300));
+  con->settingsMenu = naNewMenu();
+  matAddSettingsMenuItem(con, &con->showHelpItem, MATMenuItemShowHelp);
+  matAddSettingsMenuItem(con, &con->showIdentifiersItem, MATMenuItemShowIdentifiers);
+  naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
+  matAddSettingsMenuItem(con, &con->showCopyPasteItem, MATMenuItemShowCopyPaste);
+  matAddSettingsMenuItem(con, &con->codeCRowFirst1DItem, MATMenuItemCodeCRowFirstItem1D);
+  matAddSettingsMenuItem(con, &con->codeCRowFirst2DItem, MATMenuItemCodeCRowFirstItem2D);
+  matAddSettingsMenuItem(con, &con->codeCColumnFirst1DItem, MATMenuItemCodeCColumnFirstItem1D);
+  matAddSettingsMenuItem(con, &con->codeCColumnFirst2DItem, MATMenuItemCodeCColumnFirstItem2D);
+  matAddSettingsMenuItem(con, &con->codeMathematicaItem, MATMenuItemCodeMathematica);
+  matAddSettingsMenuItem(con, &con->codeMatlabItem, MATMenuItemCodeMatlab);
+  matAddSettingsMenuItem(con, &con->codeMapleItem, MATMenuItemCodeMaple);
+  naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
+  matAddSettingsMenuItem(con, &con->rowFirstTabOrderItem, MATMenuItemRowFirstTabOrder);
+  matAddSettingsMenuItem(con, &con->columnFirstTablOrderItem, MATMenuItemColumnFirstTabOrder);
+  naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
+  matAddSettingsMenuItem(con, &con->valueAccuracyNaturalItem, MATMenuItemValueAccuracyNatural);
+  matAddSettingsMenuItem(con, &con->valueAccurayFloatItem, MATMenuItemValueAccuracyFloat);
+  naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
+  matAddSettingsMenuItem(con, &con->aboutItem, MATMenuItemAbout);
+  matAddSettingsMenuItem(con, &con->helpItem, MATMenuItemHelp);
+  naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
   matUpdateWindowController(con);
   naShowWindow(con->window);
   return con;
@@ -188,4 +288,8 @@ void matUpdateWindowController(MATWindowControllerASDF* con){
   con->currentController = con->controllers[index];
   NASpace* controllerSpace = naGetControllerSpace(con->currentController);
   naAddSpaceChild(space, controllerSpace, naMakePos(0, 0));
+
+  naSetMenuItemState(con->showHelpItem, naGetPreferencesBool(matPrefs[ShowHelp]));
+
+  matUpdateController(con->currentController);
 }

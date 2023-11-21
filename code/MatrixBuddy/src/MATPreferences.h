@@ -12,6 +12,6 @@ enum{
   MATPrefCount
 };
 
-extern const char* MATPrefs[MATPrefCount];
+extern const char* matPrefs[MATPrefCount];
 
 void initPreferences(void);

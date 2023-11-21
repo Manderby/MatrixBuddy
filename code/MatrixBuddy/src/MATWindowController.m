@@ -19,12 +19,12 @@
 
   computationController = NA_NULL;
 
-  showHelp = naGetPreferencesBool(MATPrefs[ShowHelp]);
-  showIdentifiers = naGetPreferencesBool(MATPrefs[ShowIdentifiers]);
-  showCopyPaste = naGetPreferencesBool(MATPrefs[ShowCopyPaste]);
-  hasRowFirstTabOrder = naGetPreferencesBool(MATPrefs[UseRowFirstTabOrder]);
-  codeStyle = (MATCodeStyle)naGetPreferencesEnum(MATPrefs[CodeStyle]);
-  valueAccuracy = (MATValueAccuracy)naGetPreferencesEnum(MATPrefs[ValueAccuracy]);
+//  showHelp = naGetPreferencesBool(matPrefs[ShowHelp]);
+  showIdentifiers = naGetPreferencesBool(matPrefs[ShowIdentifiers]);
+  showCopyPaste = naGetPreferencesBool(matPrefs[ShowCopyPaste]);
+  hasRowFirstTabOrder = naGetPreferencesBool(matPrefs[UseRowFirstTabOrder]);
+  codeStyle = (MATCodeStyle)naGetPreferencesEnum(matPrefs[CodeStyle]);
+  valueAccuracy = (MATValueAccuracy)naGetPreferencesEnum(matPrefs[ValueAccuracy]);
   
   gearItem = [[NSMenuItem alloc] initWithTitle:@"M" action:@selector(changeSetting:) keyEquivalent:@""];
   [gearItem setImage:[NSImage imageNamed:NSImageNameSmartBadgeTemplate]];
@@ -82,7 +82,7 @@
 
 
 - (void)update{
-  [showHelpItem setState:(showHelp?NAStateOn:NAStateOff)];
+//  [showHelpItem setState:(showHelp?NAStateOn:NAStateOff)];
   [showIdentifiersItem setState:(showIdentifiers?NAStateOn:NAStateOff)];
   [showCopyPasteItem setState:(showCopyPaste?NAStateOn:NAStateOff)];
 
@@ -129,9 +129,9 @@
 
 
 
-- (NABool)hasShowHelp{
-  return showHelp;
-}
+//- (NABool)hasShowHelp{
+//  return showHelp;
+//}
 - (NABool)hasShowIdentifiers{
   return showIdentifiers;
 }
@@ -161,57 +161,57 @@
   NA_UNUSED(sender);
 
   if(sender == showHelpItem){
-    showHelp = !showHelp;
-    naSetPreferencesBool(MATPrefs[ShowHelp], showHelp);
-    if(computationController)
-      matUpdateController(computationController);
+//    showHelp = !showHelp;
+//    naSetPreferencesBool(matPrefs[ShowHelp], showHelp);
+//    if(computationController)
+//      matUpdateController(computationController);
   }else if(sender == showIdentifiersItem){
     showIdentifiers = !showIdentifiers;
-    naSetPreferencesBool(MATPrefs[ShowIdentifiers], showIdentifiers);
+    naSetPreferencesBool(matPrefs[ShowIdentifiers], showIdentifiers);
     if(computationController)
       matUpdateController(computationController);
   }else if(sender == showCopyPasteItem){
     showCopyPaste = !showCopyPaste;
-    naSetPreferencesBool(MATPrefs[ShowCopyPaste], showCopyPaste);
+    naSetPreferencesBool(matPrefs[ShowCopyPaste], showCopyPaste);
     if(computationController)
       matUpdateController(computationController);
   }else if(sender == rowFirstTabOrderItem){
     hasRowFirstTabOrder = NA_TRUE;
-    naSetPreferencesBool(MATPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
+    naSetPreferencesBool(matPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
     if(computationController)
       matUpdateControllerTabOrder(computationController);
   }else if(sender == columnFirstTabOrderItem){
     hasRowFirstTabOrder = NA_FALSE;
-    naSetPreferencesBool(MATPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
+    naSetPreferencesBool(matPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
   }else if(sender == codeCRowFirstItem1D){
     codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;
-    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
+    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
   }else if(sender == codeCRowFirstItem2D){
     codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_2D;
-    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
+    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
   }else if(sender == codeCColumnFirstItem1D){
     codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_1D;
-    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
+    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
   }else if(sender == codeCColumnFirstItem2D){
     codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_2D;
-    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
+    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
   }else if(sender == codeMathematicaItem){
     codeStyle = MAT_CODE_STYLE_MATHEMATICA;
-    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
+    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
   }else if(sender == codeMatlabItem){
     codeStyle = MAT_CODE_STYLE_MATLAB;
-    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
+    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
   }else if(sender == codeMapleItem){
     codeStyle = MAT_CODE_STYLE_MAPLE;
-    naSetPreferencesEnum(MATPrefs[CodeStyle], codeStyle);
+    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
   }else if(sender == valueAccuracyNaturalItem){
     valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;
-    naSetPreferencesEnum(MATPrefs[ValueAccuracy], valueAccuracy);
+    naSetPreferencesEnum(matPrefs[ValueAccuracy], valueAccuracy);
     if(computationController)
       matUpdateController(computationController);
   }else if(sender == valueAccuracyFloatItem){
     valueAccuracy = MAT_VALUE_ACCURACY_FLOAT;
-    naSetPreferencesEnum(MATPrefs[ValueAccuracy], valueAccuracy);
+    naSetPreferencesEnum(matPrefs[ValueAccuracy], valueAccuracy);
     if(computationController)
       matUpdateController(computationController);
   }else{}

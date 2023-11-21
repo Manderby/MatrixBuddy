@@ -1,6 +1,7 @@
 
 #import "MATApplication.h"
 #include "MATTranslations.h"
+#include "MATPreferences.h"
 #include "MATCommonC.h"
 #include "MATWindowControllerASDF.h"
 
@@ -163,7 +164,9 @@ NABool matHasShowCopyPaste(){
 
 
 NABool matHasShowHelp(){
-  return [(MATApplication*)NSApp hasShowHelp];
+  return naGetPreferencesBool(matPrefs[ShowHelp]);
+//
+//  return [(MATApplication*)NSApp hasShowHelp];
 }
 
 
@@ -227,9 +230,10 @@ NABool matHasShowHelp(){
 
 
 
-- (NABool)hasShowHelp{
-  return [windowController hasShowHelp];
-}
+//- (NABool)hasShowHelp{
+//  return matGetWindowControllerShowHelp(windowControllerASDF);
+////  return [windowController hasShowHelp];
+//}
 - (NABool)hasShowIdentifier{
   return [windowController hasShowIdentifiers];
 }
