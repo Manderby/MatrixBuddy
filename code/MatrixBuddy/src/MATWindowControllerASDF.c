@@ -32,9 +32,9 @@ struct MATWindowControllerASDF{
   NAMenuItem* codeMatlabItem;
   NAMenuItem* codeMapleItem;
   NAMenuItem* rowFirstTabOrderItem;
-  NAMenuItem* columnFirstTablOrderItem;
+  NAMenuItem* columnFirstTabOrderItem;
   NAMenuItem* valueAccuracyNaturalItem;
-  NAMenuItem* valueAccurayFloatItem;
+  NAMenuItem* valueAccuracyFloatItem;
   NAMenuItem* aboutItem;
   NAMenuItem* helpItem;
 };
@@ -95,26 +95,42 @@ NABool matSettingsMenuItemSelected(NAReaction reaction){
   MATWindowControllerASDF* con = (MATWindowControllerASDF*)reaction.controller;
 
   if(reaction.uiElement == con->showHelpItem){
-    NABool showHelp = naGetPreferencesBool(matPrefs[ShowHelp]);
-    naSetPreferencesBool(matPrefs[ShowHelp], !showHelp);
+    NABool showHelp = naGetPreferencesBool(matPrefs[MATPrefShowHelp]);
+    naSetPreferencesBool(matPrefs[MATPrefShowHelp], !showHelp);
   }else if(reaction.uiElement == con->showIdentifiersItem){
+    NABool showIdentifiers = naGetPreferencesBool(matPrefs[MATPrefShowIdentifiers]);
+    naSetPreferencesBool(matPrefs[MATPrefShowIdentifiers], !showIdentifiers);
   }else if(reaction.uiElement == con->showCopyPasteItem){
+    NABool showCopyPaste = naGetPreferencesBool(matPrefs[MATPrefShowCopyPaste]);
+    naSetPreferencesBool(matPrefs[MATPrefShowCopyPaste], !showCopyPaste);
   }else if(reaction.uiElement == con->codeCRowFirst1DItem){
+    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
   }else if(reaction.uiElement == con->codeCRowFirst2DItem){
+    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_2D);
   }else if(reaction.uiElement == con->codeCColumnFirst1DItem){
+    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_C_COLUMN_FIRST_1D);
   }else if(reaction.uiElement == con->codeCColumnFirst2DItem){
+    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_C_COLUMN_FIRST_2D);
   }else if(reaction.uiElement == con->codeMathematicaItem){
+    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_MATHEMATICA);
   }else if(reaction.uiElement == con->codeMatlabItem){
+    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_MATLAB);
   }else if(reaction.uiElement == con->codeMapleItem){
+    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_MAPLE);
   }else if(reaction.uiElement == con->rowFirstTabOrderItem){
-  }else if(reaction.uiElement == con->columnFirstTablOrderItem){
+    naSetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder], NA_TRUE);
+  }else if(reaction.uiElement == con->columnFirstTabOrderItem){
+    naSetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder], NA_FALSE);
   }else if(reaction.uiElement == con->valueAccuracyNaturalItem){
-  }else if(reaction.uiElement == con->valueAccurayFloatItem){
+    naSetPreferencesEnum(matPrefs[MATPrefValueAccuracy], MAT_VALUE_ACCURACY_NATURAL);
+  }else if(reaction.uiElement == con->valueAccuracyFloatItem){
+    naSetPreferencesEnum(matPrefs[MATPrefValueAccuracy], MAT_VALUE_ACCURACY_FLOAT);
   }else if(reaction.uiElement == con->aboutItem){
+    matShowApplicationAboutController();
   }else if(reaction.uiElement == con->helpItem){
+    naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
   }
   matUpdateWindowController(con);
-
   return NA_TRUE;
 }
 
@@ -217,10 +233,10 @@ MATWindowControllerASDF* matAllocWindowController(){
   matAddSettingsMenuItem(con, &con->codeMapleItem, MATMenuItemCodeMaple);
   naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
   matAddSettingsMenuItem(con, &con->rowFirstTabOrderItem, MATMenuItemRowFirstTabOrder);
-  matAddSettingsMenuItem(con, &con->columnFirstTablOrderItem, MATMenuItemColumnFirstTabOrder);
+  matAddSettingsMenuItem(con, &con->columnFirstTabOrderItem, MATMenuItemColumnFirstTabOrder);
   naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
   matAddSettingsMenuItem(con, &con->valueAccuracyNaturalItem, MATMenuItemValueAccuracyNatural);
-  matAddSettingsMenuItem(con, &con->valueAccurayFloatItem, MATMenuItemValueAccuracyFloat);
+  matAddSettingsMenuItem(con, &con->valueAccuracyFloatItem, MATMenuItemValueAccuracyFloat);
   naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
   matAddSettingsMenuItem(con, &con->aboutItem, MATMenuItemAbout);
   matAddSettingsMenuItem(con, &con->helpItem, MATMenuItemHelp);
@@ -289,7 +305,26 @@ void matUpdateWindowController(MATWindowControllerASDF* con){
   NASpace* controllerSpace = naGetControllerSpace(con->currentController);
   naAddSpaceChild(space, controllerSpace, naMakePos(0, 0));
 
-  naSetMenuItemState(con->showHelpItem, naGetPreferencesBool(matPrefs[ShowHelp]));
-
   matUpdateController(con->currentController);
+  matUpdateControllerTabOrder(con->currentController);
+
+  naSetMenuItemState(con->showHelpItem, naGetPreferencesBool(matPrefs[MATPrefShowHelp]));
+  naSetMenuItemState(con->showIdentifiersItem, naGetPreferencesBool(matPrefs[MATPrefShowIdentifiers]));
+  naSetMenuItemState(con->showCopyPasteItem, naGetPreferencesBool(matPrefs[MATPrefShowCopyPaste]));
+  MATCodeStyle codeStyle = (MATCodeStyle)naGetPreferencesEnum(matPrefs[MATPrefCodeStyle]);
+  naSetMenuItemState(con->codeCRowFirst1DItem, codeStyle == MAT_CODE_STYLE_C_ROW_FIRST_1D);
+  naSetMenuItemState(con->codeCRowFirst2DItem, codeStyle == MAT_CODE_STYLE_C_ROW_FIRST_2D);
+  naSetMenuItemState(con->codeCColumnFirst1DItem, codeStyle == MAT_CODE_STYLE_C_COLUMN_FIRST_1D);
+  naSetMenuItemState(con->codeCColumnFirst2DItem, codeStyle == MAT_CODE_STYLE_C_COLUMN_FIRST_2D);
+  naSetMenuItemState(con->codeMathematicaItem, codeStyle == MAT_CODE_STYLE_MATHEMATICA);
+  naSetMenuItemState(con->codeMatlabItem, codeStyle == MAT_CODE_STYLE_MATLAB);
+  naSetMenuItemState(con->codeMapleItem, codeStyle == MAT_CODE_STYLE_MAPLE);
+  naSetMenuItemState(con->rowFirstTabOrderItem, naGetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder]));
+  naSetMenuItemState(con->columnFirstTabOrderItem, !naGetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder]));
+  MATValueAccuracy accuray = (MATValueAccuracy)naGetPreferencesEnum(matPrefs[MATPrefValueAccuracy]);
+  naSetMenuItemState(con->valueAccuracyNaturalItem, accuray == MAT_VALUE_ACCURACY_NATURAL);
+  naSetMenuItemState(con->valueAccuracyFloatItem, accuray == MAT_VALUE_ACCURACY_FLOAT);
+
+//  NAMenuItem* aboutItem;
+//  NAMenuItem* helpItem;
 }

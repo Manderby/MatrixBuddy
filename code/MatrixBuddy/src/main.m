@@ -6,13 +6,6 @@
 #include "NAApp.h"
 
 
-const char* MATPrefShowHelp = "showHelp";
-const char* MATPrefShowIdentifiers = "showIdentifiers";
-const char* MATPrefUseRowFirstTabOrder = "useRowFirstTabOrder";
-const char* MATPrefCodeStyle = "codeStyle";
-const char* MATPrefValueAccuracy = "valueAccuracy";
-
-
 void preStartup(void* arg){
   NA_UNUSED(arg);
   

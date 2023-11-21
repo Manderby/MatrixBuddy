@@ -133,42 +133,30 @@ void matFillBabyColor(NABabyColor* babyColor, MATColor color){
 
 
 
-NABool matHasRowFirstOrder(){
-  return [(MATApplication*)NSApp hasRowFirstTabOrder];
-}
-
-
-
-MATCodeStyle matGetCodeStyle(){
-  return [(MATApplication*)NSApp codeStyle];
-}
-
-
-
-MATValueAccuracy matGetValueAccuracy(){
-  return [(MATApplication*)NSApp valueAccuracy];
-}
-
-
-
-NABool matHasShowIdentifier(){
-  return [(MATApplication*)NSApp hasShowIdentifier];
-}
-
-
-
-NABool matHasShowCopyPaste(){
-  return [(MATApplication*)NSApp hasShowCopyPaste];
-}
-
-
-
 NABool matHasShowHelp(){
-  return naGetPreferencesBool(matPrefs[ShowHelp]);
-//
-//  return [(MATApplication*)NSApp hasShowHelp];
+  return naGetPreferencesBool(matPrefs[MATPrefShowHelp]);
+}
+NABool matHasShowIdentifier(){
+  return naGetPreferencesBool(matPrefs[MATPrefShowIdentifiers]);
+}
+NABool matHasShowCopyPaste(){
+  return naGetPreferencesBool(matPrefs[MATPrefShowCopyPaste]);
+}
+MATCodeStyle matGetCodeStyle(){
+  return (MATCodeStyle)naGetPreferencesEnum(matPrefs[MATPrefCodeStyle]);
+}
+NABool matHasRowFirstOrder(){
+  return naGetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder]);
+}
+MATValueAccuracy matGetValueAccuracy(){
+  return (MATValueAccuracy)naGetPreferencesEnum(matPrefs[MATPrefValueAccuracy]);
 }
 
+
+
+void matShowApplicationAboutController(){
+  [NSApp openAbout:nil];
+}
 
 
 
@@ -229,25 +217,5 @@ NABool matHasShowHelp(){
 }
 
 
-
-//- (NABool)hasShowHelp{
-//  return matGetWindowControllerShowHelp(windowControllerASDF);
-////  return [windowController hasShowHelp];
-//}
-- (NABool)hasShowIdentifier{
-  return [windowController hasShowIdentifiers];
-}
-- (NABool)hasShowCopyPaste{
-  return [windowController hasShowCopyPaste];
-}
-- (NABool)hasRowFirstTabOrder{
-  return [windowController hasRowFirstTabOrder];
-}
-- (MATCodeStyle)codeStyle{
-  return [windowController codeStyle];
-}
-- (MATValueAccuracy)valueAccuracy{
-  return [windowController valueAccuracy];
-}
 
 @end

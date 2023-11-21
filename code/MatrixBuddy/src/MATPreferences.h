@@ -2,12 +2,12 @@
 #include "NAPreferences.h"
 
 enum{
-  ShowHelp,
-  ShowIdentifiers,
-  ShowCopyPaste,
-  UseRowFirstTabOrder,
-  CodeStyle,
-  ValueAccuracy,
+  MATPrefShowHelp,
+  MATPrefShowIdentifiers,
+  MATPrefShowCopyPaste,
+  MATPrefUseRowFirstTabOrder,
+  MATPrefCodeStyle,
+  MATPrefValueAccuracy,
   
   MATPrefCount
 };

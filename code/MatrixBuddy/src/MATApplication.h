@@ -25,12 +25,5 @@ void matPrepareFirstView(void);
 - (IBAction)openAbout:(NSMenuItem*)sender;
 - (IBAction)openHelp:(NSMenuItem*)sender;
 
-//- (NABool)hasShowHelp;
-- (NABool)hasShowIdentifier;
-- (NABool)hasShowCopyPaste;
-- (NABool)hasRowFirstTabOrder;
-- (MATCodeStyle)codeStyle;
-- (MATValueAccuracy)valueAccuracy;
-
 @end
 

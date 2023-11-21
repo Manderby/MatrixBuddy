@@ -12,15 +12,15 @@ const char* matPrefs[MATPrefCount] = {
 };
 
 void initPreferences(){
-  naInitPreferencesBool(matPrefs[ShowHelp], NA_FALSE);
-  naInitPreferencesBool(matPrefs[ShowIdentifiers], NA_TRUE);
-  naInitPreferencesBool(matPrefs[ShowCopyPaste], NA_TRUE);
-  naInitPreferencesBool(matPrefs[UseRowFirstTabOrder], NA_TRUE);
-  naInitPreferencesEnum(matPrefs[CodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
-  naInitPreferencesEnum(matPrefs[ValueAccuracy], MAT_VALUE_ACCURACY_NATURAL);
+  naInitPreferencesBool(matPrefs[MATPrefShowHelp], NA_FALSE);
+  naInitPreferencesBool(matPrefs[MATPrefShowIdentifiers], NA_TRUE);
+  naInitPreferencesBool(matPrefs[MATPrefShowCopyPaste], NA_TRUE);
+  naInitPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder], NA_TRUE);
+  naInitPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
+  naInitPreferencesEnum(matPrefs[MATPrefValueAccuracy], MAT_VALUE_ACCURACY_NATURAL);
   
   // Legacy:
-  if(naGetPreferencesEnum(matPrefs[CodeStyle]) == MAT_CODE_STYLE_LEGACY_NONE){
-    naSetPreferencesEnum(matPrefs[CodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
+  if(naGetPreferencesEnum(matPrefs[MATPrefCodeStyle]) == MAT_CODE_STYLE_LEGACY_NONE){
+    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
   }
 }

@@ -18,14 +18,7 @@
 - (void)awakeFromNib{
 
   computationController = NA_NULL;
-
-//  showHelp = naGetPreferencesBool(matPrefs[ShowHelp]);
-  showIdentifiers = naGetPreferencesBool(matPrefs[ShowIdentifiers]);
-  showCopyPaste = naGetPreferencesBool(matPrefs[ShowCopyPaste]);
-  hasRowFirstTabOrder = naGetPreferencesBool(matPrefs[UseRowFirstTabOrder]);
-  codeStyle = (MATCodeStyle)naGetPreferencesEnum(matPrefs[CodeStyle]);
-  valueAccuracy = (MATValueAccuracy)naGetPreferencesEnum(matPrefs[ValueAccuracy]);
-  
+ 
   gearItem = [[NSMenuItem alloc] initWithTitle:@"M" action:@selector(changeSetting:) keyEquivalent:@""];
   [gearItem setImage:[NSImage imageNamed:NSImageNameSmartBadgeTemplate]];
   
@@ -82,71 +75,9 @@
 
 
 - (void)update{
-//  [showHelpItem setState:(showHelp?NAStateOn:NAStateOff)];
-  [showIdentifiersItem setState:(showIdentifiers?NAStateOn:NAStateOff)];
-  [showCopyPasteItem setState:(showCopyPaste?NAStateOn:NAStateOff)];
-
-  if(hasRowFirstTabOrder){
-    [rowFirstTabOrderItem setState:NAStateOn];
-    [columnFirstTabOrderItem setState:NAStateOff];
-  }else{
-    [rowFirstTabOrderItem setState:NAStateOff];
-    [columnFirstTabOrderItem setState:NAStateOn];
-  }
-  
-  [codeCRowFirstItem1D setState:NAStateOff];
-  [codeCRowFirstItem2D setState:NAStateOff];
-  [codeCColumnFirstItem1D setState:NAStateOff];
-  [codeCColumnFirstItem2D setState:NAStateOff];
-  [codeMathematicaItem setState:NAStateOff];
-  [codeMatlabItem setState:NAStateOff];
-  [codeMapleItem setState:NAStateOff];
-  switch(codeStyle){
-  case MAT_CODE_STYLE_C_ROW_FIRST_1D: [codeCRowFirstItem1D setState:NAStateOn]; break;
-  case MAT_CODE_STYLE_C_ROW_FIRST_2D: [codeCRowFirstItem2D setState:NAStateOn]; break;
-  case MAT_CODE_STYLE_C_COLUMN_FIRST_1D: [codeCColumnFirstItem1D setState:NAStateOn]; break;
-  case MAT_CODE_STYLE_C_COLUMN_FIRST_2D: [codeCColumnFirstItem2D setState:NAStateOn]; break;
-  case MAT_CODE_STYLE_MATHEMATICA: [codeMathematicaItem setState:NAStateOn]; break;
-  case MAT_CODE_STYLE_MATLAB: [codeMatlabItem setState:NAStateOn]; break;
-  case MAT_CODE_STYLE_MAPLE: [codeMapleItem setState:NAStateOn]; break;
-  }
-  
-  [codeCRowFirstItem1D setAction:showCopyPaste ? @selector(changeSetting:) : nil];
-  [codeCRowFirstItem2D setAction:showCopyPaste ? @selector(changeSetting:) : nil];
-  [codeCColumnFirstItem1D setAction:showCopyPaste ? @selector(changeSetting:) : nil];
-  [codeCColumnFirstItem2D setAction:showCopyPaste ? @selector(changeSetting:) : nil];
-  [codeMathematicaItem setAction:showCopyPaste ? @selector(changeSetting:) : nil];
-  [codeMatlabItem setAction:showCopyPaste ? @selector(changeSetting:) : nil];
-  [codeMapleItem setAction:showCopyPaste ? @selector(changeSetting:) : nil];
-
-  [valueAccuracyNaturalItem setState:NAStateOff];
-  [valueAccuracyFloatItem setState:NAStateOff];
-  switch(valueAccuracy){
-  case MAT_VALUE_ACCURACY_NATURAL: [valueAccuracyNaturalItem setState:NAStateOn]; break;
-  case MAT_VALUE_ACCURACY_FLOAT: [valueAccuracyFloatItem setState:NAStateOn]; break;
-  }
+ 
 }
 
-
-
-//- (NABool)hasShowHelp{
-//  return showHelp;
-//}
-- (NABool)hasShowIdentifiers{
-  return showIdentifiers;
-}
-- (NABool)hasShowCopyPaste{
-  return showCopyPaste;
-}
-- (NABool)hasRowFirstTabOrder{
-  return hasRowFirstTabOrder;
-}
-- (MATCodeStyle)codeStyle{
-  return codeStyle;
-}
-- (MATValueAccuracy)valueAccuracy{
-  return valueAccuracy;
-}
 
 
 
@@ -165,56 +96,58 @@
 //    naSetPreferencesBool(matPrefs[ShowHelp], showHelp);
 //    if(computationController)
 //      matUpdateController(computationController);
-  }else if(sender == showIdentifiersItem){
-    showIdentifiers = !showIdentifiers;
-    naSetPreferencesBool(matPrefs[ShowIdentifiers], showIdentifiers);
-    if(computationController)
-      matUpdateController(computationController);
-  }else if(sender == showCopyPasteItem){
-    showCopyPaste = !showCopyPaste;
-    naSetPreferencesBool(matPrefs[ShowCopyPaste], showCopyPaste);
-    if(computationController)
-      matUpdateController(computationController);
-  }else if(sender == rowFirstTabOrderItem){
-    hasRowFirstTabOrder = NA_TRUE;
-    naSetPreferencesBool(matPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
-    if(computationController)
-      matUpdateControllerTabOrder(computationController);
-  }else if(sender == columnFirstTabOrderItem){
-    hasRowFirstTabOrder = NA_FALSE;
-    naSetPreferencesBool(matPrefs[UseRowFirstTabOrder], hasRowFirstTabOrder);
-  }else if(sender == codeCRowFirstItem1D){
-    codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;
-    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
-  }else if(sender == codeCRowFirstItem2D){
-    codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_2D;
-    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
-  }else if(sender == codeCColumnFirstItem1D){
-    codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_1D;
-    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
-  }else if(sender == codeCColumnFirstItem2D){
-    codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_2D;
-    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
-  }else if(sender == codeMathematicaItem){
-    codeStyle = MAT_CODE_STYLE_MATHEMATICA;
-    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
-  }else if(sender == codeMatlabItem){
-    codeStyle = MAT_CODE_STYLE_MATLAB;
-    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
-  }else if(sender == codeMapleItem){
-    codeStyle = MAT_CODE_STYLE_MAPLE;
-    naSetPreferencesEnum(matPrefs[CodeStyle], codeStyle);
-  }else if(sender == valueAccuracyNaturalItem){
-    valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;
-    naSetPreferencesEnum(matPrefs[ValueAccuracy], valueAccuracy);
-    if(computationController)
-      matUpdateController(computationController);
-  }else if(sender == valueAccuracyFloatItem){
-    valueAccuracy = MAT_VALUE_ACCURACY_FLOAT;
-    naSetPreferencesEnum(matPrefs[ValueAccuracy], valueAccuracy);
-    if(computationController)
-      matUpdateController(computationController);
-  }else{}
+//  }else if(sender == showIdentifiersItem){
+//    showIdentifiers = !showIdentifiers;
+//    naSetPreferencesBool(matPrefs[ShowIdentifiers], showIdentifiers);
+//    if(computationController)
+//      matUpdateController(computationController);
+//  }else if(sender == showCopyPasteItem){
+//    showCopyPaste = !showCopyPaste;
+//    naSetPreferencesBool(matPrefs[MATPrefShowCopyPaste], showCopyPaste);
+//    if(computationController)
+//      matUpdateController(computationController);
+//  }else if(sender == rowFirstTabOrderItem){
+//    hasRowFirstTabOrder = NA_TRUE;
+//    naSetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder], hasRowFirstTabOrder);
+//    if(computationController)
+//      matUpdateControllerTabOrder(computationController);
+//  }else if(sender == columnFirstTabOrderItem){
+//    hasRowFirstTabOrder = NA_FALSE;
+//    naSetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder], hasRowFirstTabOrder);
+//  }else if(sender == codeCRowFirstItem1D){
+//    codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_1D;
+//    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], codeStyle);
+//  }else if(sender == codeCRowFirstItem2D){
+//    codeStyle = MAT_CODE_STYLE_C_ROW_FIRST_2D;
+//    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], codeStyle);
+//  }else if(sender == codeCColumnFirstItem1D){
+//    codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_1D;
+//    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], codeStyle);
+//  }else if(sender == codeCColumnFirstItem2D){
+//    codeStyle = MAT_CODE_STYLE_C_COLUMN_FIRST_2D;
+//    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], codeStyle);
+//  }else if(sender == codeMathematicaItem){
+//    codeStyle = MAT_CODE_STYLE_MATHEMATICA;
+//    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], codeStyle);
+//  }else if(sender == codeMatlabItem){
+//    codeStyle = MAT_CODE_STYLE_MATLAB;
+//    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], codeStyle);
+//  }else if(sender == codeMapleItem){
+//    codeStyle = MAT_CODE_STYLE_MAPLE;
+//    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], codeStyle);
+//  }else if(sender == valueAccuracyNaturalItem){
+//    valueAccuracy = MAT_VALUE_ACCURACY_NATURAL;
+//    naSetPreferencesEnum(matPrefs[MATPrefValueAccuracy], valueAccuracy);
+//    if(computationController)
+//      matUpdateController(computationController);
+//  }else if(sender == valueAccuracyFloatItem){
+//    valueAccuracy = MAT_VALUE_ACCURACY_FLOAT;
+//    naSetPreferencesEnum(matPrefs[MATPrefValueAccuracy], valueAccuracy);
+//    if(computationController)
+//      matUpdateController(computationController);
+//  }else{
+
+  }
   [self update];
 }
 

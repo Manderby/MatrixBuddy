@@ -24,13 +24,6 @@
   IBOutlet NSMenuItem* aboutItem;
   IBOutlet NSMenuItem* helpItem;
   
-//  NABool showHelp;
-  NABool showIdentifiers;
-  NABool showCopyPaste;
-  NABool hasRowFirstTabOrder;
-  MATCodeStyle codeStyle;
-  MATValueAccuracy valueAccuracy;
-  
   MATBaseController* computationController;
   MATComputation computation;
   size_t dimensions;
@@ -38,12 +31,6 @@
 }
 
 - (void)update;
-//- (NABool)hasShowHelp;
-- (NABool)hasShowIdentifiers;
-- (NABool)hasShowCopyPaste;
-- (NABool)hasRowFirstTabOrder;
-- (MATCodeStyle)codeStyle;
-- (MATValueAccuracy)valueAccuracy;
 - (IBAction)changeSetting:(id)sender;
 
 @end

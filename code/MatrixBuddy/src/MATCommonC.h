@@ -37,6 +37,7 @@
 #define MAT_ORTHO_SIGN "\u22a5"
 #define MAT_DOT_SIGN "\u00b7"
 
+typedef struct MATAboutController MATAboutController;
 typedef struct MATBaseController MATBaseController;
 typedef struct MATView MATView;
 
@@ -63,3 +64,5 @@ MATValueAccuracy matGetValueAccuracy(void);
 NABool matHasShowIdentifier(void);
 NABool matHasShowCopyPaste(void);
 NABool matHasShowHelp(void);
+
+void matShowApplicationAboutController(void);
