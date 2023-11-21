@@ -1,16 +1,14 @@
 
 
 #include "MATCommon.h"
-#include "MATWindowController.h"
 #include "NAApp/NAApp.h"
 #include "MATAboutController.h"
-#include "MATWindowControllerASDF.h"
+#include "MATWindowController.h"
 
 void matPrepareFirstView(void);
 
 @interface MATApplication : NSApplication <NSApplicationDelegate>{
-  IBOutlet MATWindowController* windowController;
-  MATWindowControllerASDF* windowControllerASDF;
+  MATWindowController* windowController;
   
 @public
   NAFont* mathFont;

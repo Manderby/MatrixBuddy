@@ -1,10 +1,10 @@
 
-#include "MATWindowControllerASDF.h"
+#include "MATWindowController.h"
 #include "MATBaseController.h"
 #include "MATPreferences.h"
 #include "NAApp/NAApp.h"
 
-struct MATWindowControllerASDF{
+struct MATWindowController{
   NAWindow* window;
   
   NASpace* radioSpace;
@@ -42,7 +42,7 @@ struct MATWindowControllerASDF{
 
 
 NABool matDimensionsChanged(NAReaction reaction){
-  MATWindowControllerASDF* con = (MATWindowControllerASDF*)reaction.controller;
+  MATWindowController* con = (MATWindowController*)reaction.controller;
   
   if(reaction.uiElement == con->radio2){
     con->dimensions = 2;
@@ -60,7 +60,7 @@ NABool matDimensionsChanged(NAReaction reaction){
 
 
 NABool matComputationChanged(NAReaction reaction){
-  MATWindowControllerASDF* con = (MATWindowControllerASDF*)reaction.controller;
+  MATWindowController* con = (MATWindowController*)reaction.controller;
 
   for(int computation = 0; computation < MAT_COMPUTATION_COUNT; ++computation){
     if(reaction.uiElement == con->buttons[computation]){
@@ -77,7 +77,7 @@ NABool matComputationChanged(NAReaction reaction){
 
 
 NABool matOpenSettings(NAReaction reaction){
-  MATWindowControllerASDF* con = (MATWindowControllerASDF*)reaction.controller;
+  MATWindowController* con = (MATWindowController*)reaction.controller;
 
   NASpace* space = naGetWindowContentSpace(con->window);
   NARect rect = naGetUIElementRectAbsolute(con->settingsButton);
@@ -92,7 +92,7 @@ NABool matOpenSettings(NAReaction reaction){
 
 
 NABool matSettingsMenuItemSelected(NAReaction reaction){
-  MATWindowControllerASDF* con = (MATWindowControllerASDF*)reaction.controller;
+  MATWindowController* con = (MATWindowController*)reaction.controller;
 
   if(reaction.uiElement == con->showHelpItem){
     NABool showHelp = naGetPreferencesBool(matPrefs[MATPrefShowHelp]);
@@ -136,7 +136,7 @@ NABool matSettingsMenuItemSelected(NAReaction reaction){
 
 
 void matAddComputationButton(
-  MATWindowControllerASDF* con,
+  MATWindowController* con,
   MATComputation computation,
   NAPos pos,
   double width)
@@ -150,7 +150,7 @@ void matAddComputationButton(
 
 
 void matAddSettingsMenuItem(
-  MATWindowControllerASDF* con,
+  MATWindowController* con,
   NAMenuItem** menuItem,
   MATTranslation translation)
 {
@@ -161,8 +161,8 @@ void matAddSettingsMenuItem(
 
 
 
-MATWindowControllerASDF* matAllocWindowController(){
-  MATWindowControllerASDF* con = naAlloc(MATWindowControllerASDF);
+MATWindowController* matAllocWindowController(){
+  MATWindowController* con = naAlloc(MATWindowController);
   
   con->window = naNewWindow("Matrix Buddy", naMakeRectS(100, 100, 1105, 340), 0, 0);
   NASpace* space = naGetWindowContentSpace(con->window);
@@ -248,7 +248,7 @@ MATWindowControllerASDF* matAllocWindowController(){
 
 
 
-void matUpdateWindowController(MATWindowControllerASDF* con){
+void matUpdateWindowController(MATWindowController* con){
   NASpace* space = naGetWindowContentSpace(con->window);
 
   naSetRadioState(con->radio2, con->dimensions == 2);
@@ -311,6 +311,7 @@ void matUpdateWindowController(MATWindowControllerASDF* con){
   naSetMenuItemState(con->showHelpItem, naGetPreferencesBool(matPrefs[MATPrefShowHelp]));
   naSetMenuItemState(con->showIdentifiersItem, naGetPreferencesBool(matPrefs[MATPrefShowIdentifiers]));
   naSetMenuItemState(con->showCopyPasteItem, naGetPreferencesBool(matPrefs[MATPrefShowCopyPaste]));
+  
   MATCodeStyle codeStyle = (MATCodeStyle)naGetPreferencesEnum(matPrefs[MATPrefCodeStyle]);
   naSetMenuItemState(con->codeCRowFirst1DItem, codeStyle == MAT_CODE_STYLE_C_ROW_FIRST_1D);
   naSetMenuItemState(con->codeCRowFirst2DItem, codeStyle == MAT_CODE_STYLE_C_ROW_FIRST_2D);
@@ -319,12 +320,11 @@ void matUpdateWindowController(MATWindowControllerASDF* con){
   naSetMenuItemState(con->codeMathematicaItem, codeStyle == MAT_CODE_STYLE_MATHEMATICA);
   naSetMenuItemState(con->codeMatlabItem, codeStyle == MAT_CODE_STYLE_MATLAB);
   naSetMenuItemState(con->codeMapleItem, codeStyle == MAT_CODE_STYLE_MAPLE);
+  
   naSetMenuItemState(con->rowFirstTabOrderItem, naGetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder]));
   naSetMenuItemState(con->columnFirstTabOrderItem, !naGetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder]));
+  
   MATValueAccuracy accuray = (MATValueAccuracy)naGetPreferencesEnum(matPrefs[MATPrefValueAccuracy]);
   naSetMenuItemState(con->valueAccuracyNaturalItem, accuray == MAT_VALUE_ACCURACY_NATURAL);
   naSetMenuItemState(con->valueAccuracyFloatItem, accuray == MAT_VALUE_ACCURACY_FLOAT);
-
-//  NAMenuItem* aboutItem;
-//  NAMenuItem* helpItem;
 }

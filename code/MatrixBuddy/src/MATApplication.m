@@ -3,7 +3,7 @@
 #include "MATTranslations.h"
 #include "MATPreferences.h"
 #include "MATCommonC.h"
-#include "MATWindowControllerASDF.h"
+#include "MATWindowController.h"
 
 
 void matPrepareFirstView(){
@@ -183,7 +183,7 @@ void matShowApplicationAboutController(){
 
 - (void)prepareFirstView{
   aboutController = matAllocAboutController();
-  windowControllerASDF = matAllocWindowController();
+  windowController = matAllocWindowController();
 }
 
 - (void)applicationWillTerminate:(NSNotification*)notification{

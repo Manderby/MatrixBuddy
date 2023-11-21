@@ -3,153 +3,11 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MATApplication"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <window title="Matrix Buddy" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="233" y="278" width="1105" height="357"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="1105" height="357"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0j-ar-xP6">
-                        <rect key="frame" x="954" y="311" width="25" height="26"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="noArrow" preferredEdge="minX" id="eqL-fk-kGX">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
-                            <menu key="menu" id="CJR-77-9Fq">
-                                <items>
-                                    <menuItem state="on" image="gearshape.fill" catalog="system" hidden="YES" id="eqy-fV-OeU"/>
-                                    <menuItem title="Quick Help Line" state="on" id="vhM-fV-AsZ">
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="VHn-dL-onh"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="Identifiers" state="on" id="lMg-f6-4xn">
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="gT2-ej-Gnn"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem isSeparatorItem="YES" id="YVF-bt-VAQ"/>
-                                    <menuItem title="Tab row first" state="on" id="o4z-QJ-S5n">
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="1wS-ft-b4r"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="Tab column first" id="mKq-ef-LYS">
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="eO8-OM-yL5"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem isSeparatorItem="YES" id="gbx-q3-vg3"/>
-                                    <menuItem title="No code" state="on" id="dvN-ML-siQ">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="GrZ-6b-Jh7"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="C row first 1D" id="tgL-Km-TGO">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="OWb-Jh-9Ia"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="C row first 2D" id="Xwj-iz-D30">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="QHI-Mj-cVJ"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="C column first 1D" id="zFb-1f-tp5">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="pRX-co-jXX"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="C column first 2D" id="80a-mh-pbt">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="L2a-oU-dwD"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="Mathematica" id="3JN-SY-s7H">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="R9Y-7L-LHe"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="Matlab" id="djR-Xt-sQS">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="yfy-Hb-eQx"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="Maple" id="WKK-Vt-EzL">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="2Gq-2A-JSj"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem isSeparatorItem="YES" id="OJ7-It-g6q"/>
-                                    <menuItem title="Accuracy: Natural" id="AOl-jf-KW7">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="Nr5-EO-EGB"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem title="Accuracy: float" id="6im-P3-q4K">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                        <connections>
-                                            <action selector="changeSetting:" target="l5U-vZ-NRL" id="jpy-UG-r0y"/>
-                                        </connections>
-                                    </menuItem>
-                                    <menuItem isSeparatorItem="YES" id="D9f-r5-dS8"/>
-                                    <menuItem title="Help" id="1Js-dk-hXd">
-                                        <connections>
-                                            <action selector="openHelp:" target="-2" id="AYJ-WZ-uQR"/>
-                                        </connections>
-                                    </menuItem>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                    </popUpButton>
-                </subviews>
-            </view>
-            <connections>
-                <outlet property="delegate" destination="l5U-vZ-NRL" id="JHM-04-eMA"/>
-            </connections>
-            <point key="canvasLocation" x="274.5" y="-270.5"/>
-        </window>
-        <customObject id="-3" userLabel="Application" customClass="MATApplication">
-            <connections>
-                <outlet property="windowController" destination="l5U-vZ-NRL" id="g0H-V1-LeH"/>
-            </connections>
-        </customObject>
-        <customObject id="l5U-vZ-NRL" customClass="MATWindowController">
-            <connections>
-                <outlet property="codeCColumnFirstItem1D" destination="zFb-1f-tp5" id="0CK-a3-J0W"/>
-                <outlet property="codeCColumnFirstItem2D" destination="80a-mh-pbt" id="LPW-QK-ewA"/>
-                <outlet property="codeCRowFirstItem1D" destination="tgL-Km-TGO" id="95Q-fA-lHP"/>
-                <outlet property="codeCRowFirstItem2D" destination="Xwj-iz-D30" id="OL0-1Q-DjC"/>
-                <outlet property="codeMapleItem" destination="WKK-Vt-EzL" id="g0h-R9-NsS"/>
-                <outlet property="codeMathematicaItem" destination="3JN-SY-s7H" id="ZHG-kp-CdO"/>
-                <outlet property="codeMatlabItem" destination="djR-Xt-sQS" id="uxT-24-ohr"/>
-                <outlet property="columnFirstTabOrderItem" destination="mKq-ef-LYS" id="SRK-PS-HGR"/>
-                <outlet property="gearButton" destination="B0j-ar-xP6" id="VG6-1q-T0q"/>
-                <outlet property="rowFirstTabOrderItem" destination="o4z-QJ-S5n" id="rup-To-XTY"/>
-                <outlet property="showHelpItem" destination="vhM-fV-AsZ" id="eYm-NJ-cTt"/>
-                <outlet property="showIdentifiersItem" destination="lMg-f6-4xn" id="WC4-4C-6sd"/>
-                <outlet property="valueAccuracyFloatItem" destination="6im-P3-q4K" id="dER-8U-3HD"/>
-                <outlet property="valueAccuracyNaturalItem" destination="AOl-jf-KW7" id="aRJ-fV-bwd"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="Utv-LE-3yb"/>
-            </connections>
-        </customObject>
+        <customObject id="-3" userLabel="Application" customClass="MATApplication"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
@@ -776,7 +634,4 @@
             <point key="canvasLocation" x="-100" y="117"/>
         </menu>
     </objects>
-    <resources>
-        <image name="gearshape.fill" catalog="system" width="16" height="16"/>
-    </resources>
 </document>
