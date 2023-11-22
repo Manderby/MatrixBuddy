@@ -45,6 +45,7 @@
 		90233A8E256ADE2300E383A6 /* MATTranslations.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A58256ADE2300E383A6 /* MATTranslations.c */; };
 		90233A8F256ADE2300E383A6 /* MATPreferences.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A5A256ADE2300E383A6 /* MATPreferences.c */; };
 		902536EF2B0E9B17003C02BE /* MATNSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 902536ED2B0E9B17003C02BE /* MATNSApplication.m */; };
+		902536F12B0EB0A6003C02BE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 902536F02B0EB0A6003C02BE /* settings.png */; };
 		902C11C82AEDAA5A0069382F /* NABuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C10B72AEDAA590069382F /* NABuffer.h */; };
 		902C11C92AEDAA5A0069382F /* NAHeapII.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C10BA2AEDAA590069382F /* NAHeapII.h */; };
 		902C11CA2AEDAA5A0069382F /* NAHeapT.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C10BB2AEDAA590069382F /* NAHeapT.h */; };
@@ -362,6 +363,7 @@
 		90233A5A256ADE2300E383A6 /* MATPreferences.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATPreferences.c; sourceTree = "<group>"; };
 		902536ED2B0E9B17003C02BE /* MATNSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATNSApplication.m; sourceTree = "<group>"; };
 		902536EE2B0E9B17003C02BE /* MATNSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATNSApplication.h; sourceTree = "<group>"; };
+		902536F02B0EB0A6003C02BE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		902C10AE2AEDAA370069382F /* libNALib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNALib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		902C10B32AEDAA590069382F /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		902C10B62AEDAA590069382F /* CMakeSrcList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeSrcList.txt; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				9038ECEF256DA48000A95A36 /* paste.png */,
+				902536F02B0EB0A6003C02BE /* settings.png */,
 				9038ECEB256DA07300A95A36 /* copy.png */,
 				90233A05256ADE1D00E383A6 /* mac */,
 				9038ECC3256AE1E200A95A36 /* MatrixBuddyStrings_deu.h */,
@@ -1578,6 +1581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9038ECF0256DA48000A95A36 /* paste.png in Resources */,
+				902536F12B0EB0A6003C02BE /* settings.png in Resources */,
 				9038ECEC256DA07300A95A36 /* copy.png in Resources */,
 				9038ECC0256AE05300A95A36 /* MatrixBuddyChangelog.txt in Resources */,
 				90233A10256ADE1D00E383A6 /* MatrixBuddy.icns in Resources */,

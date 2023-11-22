@@ -83,6 +83,7 @@ struct MATApplication{
   NAFont* helpLineFont;
   NAUIImage* copyImage;
   NAUIImage* pasteImage;
+  NAUIImage* settingsImage;
   MATAboutController* aboutController;
   MATWindowController* windowController;
 };
@@ -112,6 +113,10 @@ void preStartup(void* arg){
   NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
   NABabyImage* mainPasteImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(pasteImagePath));
   mat_App->pasteImage = naCreateUIImage(mainPasteImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
+
+  NAString* settingsImagePath = naNewApplicationResourcePath(NA_NULL, "settings", "png");
+  NABabyImage* mainSettingsImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(settingsImagePath));
+  mat_App->settingsImage = naCreateUIImage(mainSettingsImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
 }
 
 
@@ -163,10 +168,11 @@ NAFont* matGetHelpLineFont(){
 NAUIImage* matGetCopyImage(){
   return mat_App->copyImage;
 }
-
-
 NAUIImage* matGetPasteImage(){
   return mat_App->pasteImage;
+}
+NAUIImage* matGetSettingsImage(){
+  return mat_App->settingsImage;
 }
 
 

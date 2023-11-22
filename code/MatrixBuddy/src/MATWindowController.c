@@ -224,7 +224,8 @@ MATWindowController* matAllocWindowController(){
   con->dimensions = 3;
   con->computation = MAT_COMPUTATION_VMULS;
   
-  con->settingsButton = naNewTextPushButton("S", 30);
+//  con->settingsButton = naNewTextPushButton("S", 30);
+  con->settingsButton = naNewIconPushButton(matGetSettingsImage(), 30);
   naAddUIReaction(con->settingsButton, NA_UI_COMMAND_PRESSED, matOpenSettings, con);
   naAddSpaceChild(space, con->settingsButton, naMakePos(950, 300));
   con->settingsMenu = naNewMenu();
