@@ -1,18 +1,5 @@
 Matrix Buddy Changelog
 
-
-Planned things:
-- determinant, condition number, distance to point
-- Keep key responder
-- Make multiple windows
-- Click on label to make it the result
-- Storing Matrices and vectors and organizing them.
-- Remember last computation after programm restart
-- Multiply and Divide matrix and vector row-wise
-- Invert more operations
-
-
-
 Upcoming version:
 -----------------
 - Complete reprogramming in C
