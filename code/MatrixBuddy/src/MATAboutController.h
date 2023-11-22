@@ -1,5 +1,4 @@
 
-#include "NAApp/NAApp.h"
 
 typedef struct MATAboutController MATAboutController;
 

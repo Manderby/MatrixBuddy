@@ -1,6 +1,5 @@
 
 #import <Cocoa/Cocoa.h>
-#import "MATNSApplication.h"
 
 @interface MATNSApplication : NSApplication <NSApplicationDelegate>{
 }

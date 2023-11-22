@@ -1,6 +1,6 @@
 
+#include "NAApp/NAApp.h"
 #include "MATAboutController.h"
-//#include "MATApplication.h"
 #include "MATTranslations.h"
 
 

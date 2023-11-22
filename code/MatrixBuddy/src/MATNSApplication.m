@@ -1,7 +1,6 @@
 
 #import "MATNSApplication.h"
 #include "MATApplication.h"
-#include "NAApp/NAApp.h"
 #include "MATCommonC.h"
 
 

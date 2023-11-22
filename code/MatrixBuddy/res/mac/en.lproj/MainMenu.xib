@@ -18,7 +18,7 @@
                             <menuItem title="About Matrix Buddy" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="openAbout:" target="-2" id="7gn-8S-hck"/>
+                                    <action selector="openAbout:" target="-3" id="KPz-O8-qVE"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -624,7 +624,7 @@
                         <items>
                             <menuItem title="Matrix Buddy Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                 <connections>
-                                    <action selector="openHelp:" target="-2" id="W7v-Jc-bgE"/>
+                                    <action selector="openHelp:" target="-3" id="r0e-E2-I8N"/>
                                 </connections>
                             </menuItem>
                         </items>
