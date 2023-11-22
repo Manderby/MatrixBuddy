@@ -1,8 +1,10 @@
+#include "MATApplication.h"
 
 #include "MATView.h"
 #include "NAMath/NAVectorAlgebra.h"
 #include "MATBaseController.h"
 #include "NAStruct/NABuffer.h"
+#include "MATPreferences.h"
 
 struct MATView{
   void* con;
@@ -424,11 +426,12 @@ void matUpdateView(MATView* view){
   NABool isNormal = matColor == MAT_COLOR_NORMAL;
   NABool isError = !(isNormal || matColor == MAT_COLOR_RESULT);
 
-  naSetLabelVisible(view->label, !isError && matHasShowIdentifier());
+  naSetLabelVisible(view->label, !isError && matGetShowIdentifiers());
   naSetLabelVisible(view->errorLabel, isError);
 
-  naSetButtonVisible(view->copyButton, matHasShowCopyPaste());
-  naSetButtonVisible(view->pasteButton, matHasShowCopyPaste());
+  NABool showCopyPaste = matGetShowCopyPaste();
+  naSetButtonVisible(view->copyButton, showCopyPaste);
+  naSetButtonVisible(view->pasteButton, showCopyPaste);
 
   if(isNormal){
     naSetLabelTextColor(view->label, NA_NULL);
@@ -452,7 +455,7 @@ void matUpdateViewTabOrder(MATView* view){
       size_t index = x * view->dimensions[1] + y;
       size_t nextIndex;
       
-      if(matHasRowFirstOrder()){
+      if(matGetUseRowFirstTabOrder()){
         if(index == elementCount - 1){
           nextIndex = 0;
         }else{

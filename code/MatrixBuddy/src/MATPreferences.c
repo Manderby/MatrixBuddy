@@ -1,15 +1,30 @@
 
 #include "MATPreferences.h"
-#include "MATTypes.h"
+
+
+enum{
+  MATPrefShowHelp,
+  MATPrefShowIdentifiers,
+  MATPrefShowCopyPaste,
+  MATPrefUseRowFirstTabOrder,
+  MATPrefCodeStyle,
+  MATPrefValueAccuracy,
+  
+  MATPrefCount
+};
+
+
 
 const char* matPrefs[MATPrefCount] = {
-  "showHelp",
-  "showIdentifiers",
-  "showCopyPaste",
-  "useRowFirstTabOrder",
-  "codeStyle",
-  "valueAccuracy",
+  [MATPrefShowHelp] = "showHelp",
+  [MATPrefShowIdentifiers] = "showIdentifiers",
+  [MATPrefShowCopyPaste] = "showCopyPaste",
+  [MATPrefUseRowFirstTabOrder] = "useRowFirstTabOrder",
+  [MATPrefCodeStyle] = "codeStyle",
+  [MATPrefValueAccuracy] = "valueAccuracy",
 };
+
+
 
 void initPreferences(){
   naInitPreferencesBool(matPrefs[MATPrefShowHelp], NA_FALSE);
@@ -18,9 +33,58 @@ void initPreferences(){
   naInitPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder], NA_TRUE);
   naInitPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
   naInitPreferencesEnum(matPrefs[MATPrefValueAccuracy], MAT_VALUE_ACCURACY_NATURAL);
-  
-  // Legacy:
-  if(naGetPreferencesEnum(matPrefs[MATPrefCodeStyle]) == MAT_CODE_STYLE_LEGACY_NONE){
-    naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
-  }
+}
+
+
+
+NABool matGetShowHelp(){
+  return naGetPreferencesBool(matPrefs[MATPrefShowHelp]);
+}
+void matToggleShowHelp(){
+  naTogglePreferencesBool(matPrefs[MATPrefShowHelp]);
+}
+
+
+
+NABool matGetShowIdentifiers(){
+  return naGetPreferencesBool(matPrefs[MATPrefShowIdentifiers]);
+}
+void matToggleShowIdentifiers(){
+  naTogglePreferencesBool(matPrefs[MATPrefShowIdentifiers]);
+}
+
+
+
+NABool matGetShowCopyPaste(){
+  return naGetPreferencesBool(matPrefs[MATPrefShowCopyPaste]);
+}
+void matToggleShowCopyPaste(){
+  naTogglePreferencesBool(matPrefs[MATPrefShowCopyPaste]);
+}
+
+
+
+NABool matGetUseRowFirstTabOrder(){
+  return naGetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder]);
+}
+void matSetUseRowFirstTabOrder(NABool useRowFirst){
+  naSetPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder], useRowFirst);
+}
+
+
+
+MATCodeStyle matGetCodeStyle(){
+  return (MATCodeStyle)naGetPreferencesEnum(matPrefs[MATPrefCodeStyle]);
+}
+void matSetCodeStyle(MATCodeStyle codeStyle){
+  naSetPreferencesEnum(matPrefs[MATPrefCodeStyle], codeStyle);
+}
+
+
+
+MATValueAccuracy matGetValueAccuracy(){
+  return (MATValueAccuracy)naGetPreferencesEnum(matPrefs[MATPrefValueAccuracy]);
+}
+void matSetValueAccuracy(MATValueAccuracy valueAccuracy){
+  naSetPreferencesEnum(matPrefs[MATPrefValueAccuracy], valueAccuracy);
 }

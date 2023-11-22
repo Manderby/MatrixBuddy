@@ -45,8 +45,6 @@ typedef void(*MATValueChangedHandler)(MATBaseController* controller, MATView* vi
 typedef void(*MATUpdateHandler)(MATBaseController* controller);
 typedef void (*MATUpdateTabOrderHandler)(MATBaseController* controller);
 
-NAFont* matGetMathFont(void);
-NAFont* matGetHelpLineFont(void);
 NAUIImage* matGetCopyImage(void);
 NAUIImage* matGetPasteImage(void);
 
@@ -58,11 +56,3 @@ const NAUTF8Char* matGetUTF8StringWithStatus(MATStatus status);
 MATColor matGetColorWithStatus(MATStatus status);
 void matFillBabyColor(NABabyColor* babyColor, MATColor color);
 
-NABool matHasRowFirstOrder(void);
-MATCodeStyle matGetCodeStyle(void);
-MATValueAccuracy matGetValueAccuracy(void);
-NABool matHasShowIdentifier(void);
-NABool matHasShowCopyPaste(void);
-NABool matHasShowHelp(void);
-
-void matShowApplicationAboutController(void);

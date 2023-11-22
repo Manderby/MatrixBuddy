@@ -22,6 +22,7 @@ typedef enum{
 } MATStatus;
 
 
+
 typedef enum{
   MAT_COLOR_NORMAL,
   MAT_COLOR_RESULT,
@@ -30,7 +31,7 @@ typedef enum{
 } MATColor;
 
 
-#define MAT_CODE_STYLE_LEGACY_NONE 0
+
 typedef enum{
   MAT_CODE_STYLE_C_ROW_FIRST_1D = 1,
   MAT_CODE_STYLE_C_ROW_FIRST_2D,
@@ -42,10 +43,12 @@ typedef enum{
 } MATCodeStyle;
 
 
+
 typedef enum{
   MAT_VALUE_ACCURACY_NATURAL = 0,
   MAT_VALUE_ACCURACY_FLOAT,
 } MATValueAccuracy;
+
 
 
 typedef enum{

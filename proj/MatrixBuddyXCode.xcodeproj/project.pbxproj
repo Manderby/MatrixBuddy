@@ -12,7 +12,7 @@
 		90233A0D256ADE1D00E383A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90233A06256ADE1D00E383A6 /* InfoPlist.strings */; };
 		90233A0E256ADE1D00E383A6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90233A08256ADE1D00E383A6 /* MainMenu.xib */; };
 		90233A10256ADE1D00E383A6 /* MatrixBuddy.icns in Resources */ = {isa = PBXBuildFile; fileRef = 90233A0C256ADE1D00E383A6 /* MatrixBuddy.icns */; };
-		90233A6C256ADE2300E383A6 /* MATApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A13256ADE2200E383A6 /* MATApplication.m */; };
+		90233A6C256ADE2300E383A6 /* MATApplication.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A13256ADE2200E383A6 /* MATApplication.c */; };
 		90233A71256ADE2300E383A6 /* MATMDivCompV.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A1C256ADE2200E383A6 /* MATMDivCompV.c */; };
 		90233A72256ADE2300E383A6 /* MATVCrossV.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A1D256ADE2200E383A6 /* MATVCrossV.c */; };
 		90233A73256ADE2300E383A6 /* MATVAddV.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A20256ADE2200E383A6 /* MATVAddV.c */; };
@@ -44,6 +44,7 @@
 		90233A8D256ADE2300E383A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90233A56256ADE2300E383A6 /* main.m */; };
 		90233A8E256ADE2300E383A6 /* MATTranslations.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A58256ADE2300E383A6 /* MATTranslations.c */; };
 		90233A8F256ADE2300E383A6 /* MATPreferences.c in Sources */ = {isa = PBXBuildFile; fileRef = 90233A5A256ADE2300E383A6 /* MATPreferences.c */; };
+		902536EF2B0E9B17003C02BE /* MATNSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 902536ED2B0E9B17003C02BE /* MATNSApplication.m */; };
 		902C11C82AEDAA5A0069382F /* NABuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C10B72AEDAA590069382F /* NABuffer.h */; };
 		902C11C92AEDAA5A0069382F /* NAHeapII.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C10BA2AEDAA590069382F /* NAHeapII.h */; };
 		902C11CA2AEDAA5A0069382F /* NAHeapT.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C10BB2AEDAA590069382F /* NAHeapT.h */; };
@@ -323,9 +324,8 @@
 		90233A0A256ADE1D00E383A6 /* Matrix Buddy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Matrix Buddy-Info.plist"; sourceTree = "<group>"; };
 		90233A0B256ADE1D00E383A6 /* Matrix Buddy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Matrix Buddy.entitlements"; sourceTree = "<group>"; };
 		90233A0C256ADE1D00E383A6 /* MatrixBuddy.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MatrixBuddy.icns; sourceTree = "<group>"; };
-		90233A13256ADE2200E383A6 /* MATApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATApplication.m; sourceTree = "<group>"; };
+		90233A13256ADE2200E383A6 /* MATApplication.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATApplication.c; sourceTree = "<group>"; };
 		90233A15256ADE2200E383A6 /* MATTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATTranslations.h; sourceTree = "<group>"; };
-		90233A18256ADE2200E383A6 /* MATCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATCommon.h; sourceTree = "<group>"; };
 		90233A19256ADE2200E383A6 /* MATPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATPreferences.h; sourceTree = "<group>"; };
 		90233A1C256ADE2200E383A6 /* MATMDivCompV.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATMDivCompV.c; sourceTree = "<group>"; };
 		90233A1D256ADE2200E383A6 /* MATVCrossV.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATVCrossV.c; sourceTree = "<group>"; };
@@ -360,6 +360,8 @@
 		90233A56256ADE2300E383A6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		90233A58256ADE2300E383A6 /* MATTranslations.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATTranslations.c; sourceTree = "<group>"; };
 		90233A5A256ADE2300E383A6 /* MATPreferences.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MATPreferences.c; sourceTree = "<group>"; };
+		902536ED2B0E9B17003C02BE /* MATNSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MATNSApplication.m; sourceTree = "<group>"; };
+		902536EE2B0E9B17003C02BE /* MATNSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATNSApplication.h; sourceTree = "<group>"; };
 		902C10AE2AEDAA370069382F /* libNALib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNALib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		902C10B32AEDAA590069382F /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		902C10B62AEDAA590069382F /* CMakeSrcList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeSrcList.txt; sourceTree = "<group>"; };
@@ -751,9 +753,10 @@
 				90182B6C2AEE877700E37219 /* MATAboutController.c */,
 				90182B6D2AEE877700E37219 /* MATAboutController.h */,
 				90233A55256ADE2300E383A6 /* MATApplication.h */,
-				90233A13256ADE2200E383A6 /* MATApplication.m */,
-				90233A18256ADE2200E383A6 /* MATCommon.h */,
+				90233A13256ADE2200E383A6 /* MATApplication.c */,
 				90C573352AED3EB3003BCA8B /* MATCommonC.h */,
+				902536EE2B0E9B17003C02BE /* MATNSApplication.h */,
+				902536ED2B0E9B17003C02BE /* MATNSApplication.m */,
 				90233A5A256ADE2300E383A6 /* MATPreferences.c */,
 				90233A19256ADE2200E383A6 /* MATPreferences.h */,
 				90233A58256ADE2300E383A6 /* MATTranslations.c */,
@@ -1590,7 +1593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90233A6C256ADE2300E383A6 /* MATApplication.m in Sources */,
+				90233A6C256ADE2300E383A6 /* MATApplication.c in Sources */,
 				90233A72256ADE2300E383A6 /* MATVCrossV.c in Sources */,
 				90233A81256ADE2300E383A6 /* MATVNeg.c in Sources */,
 				90233A8C256ADE2300E383A6 /* MATVDivS.c in Sources */,
@@ -1626,6 +1629,7 @@
 				90233A78256ADE2300E383A6 /* MATVMulCompV.c in Sources */,
 				90CB77042AFAB6F800EC8B82 /* MATView.c in Sources */,
 				90233A77256ADE2300E383A6 /* MATVNormalize.c in Sources */,
+				902536EF2B0E9B17003C02BE /* MATNSApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

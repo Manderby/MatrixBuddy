@@ -1,5 +1,7 @@
 
 #include "MATBaseController.h"
+#include "MATPreferences.h"
+#include "MATApplication.h"
 
 
 void matInitBaseController(
@@ -49,7 +51,7 @@ void matNotifyControllerValuesChanged(MATBaseController* con, MATView* view){
 
 
 void matUpdateController(MATBaseController* con){
-  naSetLabelVisible(con->helpLine, matHasShowHelp());
+  naSetLabelVisible(con->helpLine, matGetShowHelp());
 
   con->update(con);
 }

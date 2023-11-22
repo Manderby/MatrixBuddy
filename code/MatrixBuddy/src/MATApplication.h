@@ -1,27 +1,16 @@
-
-
-#include "MATCommon.h"
 #include "NAApp/NAApp.h"
-#include "MATAboutController.h"
-#include "MATWindowController.h"
 
-void matPrepareFirstView(void);
 
-@interface MATApplication : NSApplication <NSApplicationDelegate>{
-  MATWindowController* windowController;
-  
-@public
-  NAFont* mathFont;
-  NAFont* helpLineFont;
-  NAUIImage* copyImage;
-  NAUIImage* pasteImage;
-  MATAboutController* aboutController;
-}
 
-- (void)prepareFirstView;
+void preStartup(void* arg);
+void postStartup(void* arg);
+void stopApplication(void* arg);
 
-- (IBAction)openAbout:(NSMenuItem*)sender;
-- (IBAction)openHelp:(NSMenuItem*)sender;
+NAFont* matGetMathFont(void);
+NAFont* matGetHelpLineFont(void);
 
-@end
+NAUIImage* matGetCopyImage(void);
+NAUIImage* matGetPasteImage(void);
 
+void matShowApplicationAbout(void);
+void matShowApplicationHelp(void);
