@@ -12,6 +12,12 @@ Planned things:
 - Invert more operations
 
 
+
+Upcoming version:
+-----------------
+- Complete reprogramming in C
+
+
 Version 1.2.2
 -------------
 - Fix copy and paste not working on latest macOS
