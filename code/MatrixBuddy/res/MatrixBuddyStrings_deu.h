@@ -4,6 +4,8 @@
 //
 NA_LOC_LANG("deu");
 
+NA_LOC(MATDummyTranslation, "");
+
 NA_LOC(MATAbout,          "Über %s");
 NA_LOC(MATDone,           "Fertig");
 NA_LOC(MATVersionBuild,   "Version %s (Build %s)");
