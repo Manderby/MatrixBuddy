@@ -17,7 +17,7 @@ struct MATView{
   NAButton* copyButton;
   NAButton* pasteButton;
 
-  NAVec2i dimensions;
+  NAVec2s dimensions;
   NATextField** textFields;
   double* values;
 };
@@ -51,12 +51,12 @@ NABool mat_ViewChanged(NAReaction reaction){
 
 
 // Returns a temporary (automatically freed) utf8 string pointer.
-NAUTF8Char* matFormatValue(float value){
+NAUTF8Char* matFormatValue(double value){
   if(value > -1e-7 && value < 1e-7){value = 0.;}
   MATValueAccuracy valueAccuracy = matGetValueAccuracy();
   if(valueAccuracy == MAT_VALUE_ACCURACY_NATURAL){
     for(int digit = 0; digit < 10; digit++){
-      float testValue = value * naExp10(digit);
+      float testValue = (float)value * naExp10f((float)digit);
       if(naRoundf(testValue) == testValue){
         NAUTF8Char* formatString = naAllocSprintf(NA_TRUE, "%%.%df", digit);
         return naAllocSprintf(NA_TRUE, formatString, value);
@@ -455,7 +455,7 @@ void matUpdateView(MATView* view){
     matFillBabyColor(&color, matColor);
     naSetLabelTextColor(view->label, &color);
     naSetLabelTextColor(view->errorLabel, &color);
-    color[3] *= .1;
+    color[3] *= .1f;
     naSetSpaceBackgroundColor(view->matrixSpace, &color);
   }
 }

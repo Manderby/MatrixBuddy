@@ -99,6 +99,7 @@ MATBaseController* matAllocVMulSController(size_t dimensions){
   naAddSpaceChild(con->base.space, spaceB, naMakePos(marginLeft + sizeA.width + sizeS.width + 2 * MAT_SIGN_WIDTH, marginBottom));
 
   con->mulSignLabel = naNewLabel(MAT_MUL_SIGN, MAT_SIGN_WIDTH);
+  //con->mulSignLabel = naNewLabel(MAT_MUL_SIGN, MAT_SIGN_WIDTH);
   naSetLabelTextAlignment(con->mulSignLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelFont(con->mulSignLabel, matGetMathFont());
   naSetLabelHeight(con->mulSignLabel, MAT_MATRIX_LABEL_HEIGHT);

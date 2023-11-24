@@ -55,7 +55,7 @@ void matVMirrorValueChanged(MATBaseController* controller, MATView* view){
   case 4: length = naLengthV4d(valuesN); break;
   }
 
-  if(naAlmostOnef(length)){
+  if(naAlmostOnef((float)length)){
     matSetViewStatus(con->viewN, MAT_STATUS_NORMAL);
   }else{
     matSetViewStatus(con->viewN, MAT_STATUS_VECTOR_LENGTH_UNEQUAL_ONE);

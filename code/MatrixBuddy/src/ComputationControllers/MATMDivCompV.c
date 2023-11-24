@@ -52,7 +52,7 @@ void matMDivCompVValueChanged(MATBaseController* controller, MATView* view){
   for(int y = 0; y < con->base.dimensions; ++y){
     if(valuesV[y] == 0.){
       newStatus = MAT_STATUS_VECTOR_COMPONENT_ZERO;
-    }else if((newStatus != MAT_STATUS_VECTOR_COMPONENT_ZERO) && naAlmostZerof(valuesV[y])){
+    }else if((newStatus != MAT_STATUS_VECTOR_COMPONENT_ZERO) && naAlmostZerof((float)valuesV[y])){
       newStatus = MAT_STATUS_VECTOR_COMPONENT_ALMOST_ZERO;
     }else{
       // everything ok.

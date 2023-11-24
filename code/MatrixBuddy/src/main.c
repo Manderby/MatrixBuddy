@@ -12,7 +12,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
   NA_UNUSED(hPrevInstance);
   NA_UNUSED(lpCmdLine);
   NA_UNUSED(nShowCmd);
-  naOpenConsoleWindow();
+  //naOpenConsoleWindow();
 
   naStartRuntime();
   naStartApplication(preStartup, postStartup, stopApplication, NA_NULL);

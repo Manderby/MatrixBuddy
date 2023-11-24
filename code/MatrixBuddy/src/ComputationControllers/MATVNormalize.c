@@ -52,7 +52,7 @@ void matVNormalizeValueChanged(MATBaseController* controller, MATView* view){
   }
 
   if(len == 0.){newStatus = MAT_STATUS_VECTOR_LENGTH_ZERO;}
-  else if(naAlmostZerof(len)){newStatus = MAT_STATUS_VECTOR_LENGTH_ALMOST_ZERO;}
+  else if(naAlmostZerof((float)len)){newStatus = MAT_STATUS_VECTOR_LENGTH_ALMOST_ZERO;}
 
   if(newStatus == MAT_STATUS_VECTOR_LENGTH_ZERO){
     naFillV3d(result, 0., 0., 0.);

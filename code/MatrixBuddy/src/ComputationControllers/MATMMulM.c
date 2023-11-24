@@ -60,7 +60,7 @@ void matMMulMValueChanged(MATBaseController* controller, MATView* view){
     if(det == 0.){
       newStatusA = MAT_STATUS_MATRIX_DETERMINANT_ZERO;
     }else{
-      newStatusA = naAlmostZerof(det)
+      newStatusA = naAlmostZerof((float)det)
         ? MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO
         : MAT_STATUS_NORMAL;
       double* inverse = naMalloc(elementCount * sizeof(double));

@@ -67,10 +67,10 @@ void matVOrthoValueChanged(MATBaseController* controller, MATView* view){
 
   MATStatus newStatusA = MAT_STATUS_NORMAL;
   if(lengthA == 0.){newStatusA = MAT_STATUS_VECTOR_LENGTH_ZERO;}
-  else if(naAlmostZerof(lengthA)){newStatusA = MAT_STATUS_VECTOR_LENGTH_ALMOST_ZERO;}
+  else if(naAlmostZerof((float)lengthA)){newStatusA = MAT_STATUS_VECTOR_LENGTH_ALMOST_ZERO;}
   MATStatus newStatusB = MAT_STATUS_NORMAL;
   if(lengthB == 0.){newStatusB = MAT_STATUS_VECTOR_LENGTH_ZERO;}
-  else if(naAlmostZerof(lengthB)){newStatusB = MAT_STATUS_VECTOR_LENGTH_ALMOST_ZERO;}
+  else if(naAlmostZerof((float)lengthB)){newStatusB = MAT_STATUS_VECTOR_LENGTH_ALMOST_ZERO;}
 
   if((newStatusA != MAT_STATUS_VECTOR_LENGTH_ZERO) && (newStatusB != MAT_STATUS_VECTOR_LENGTH_ZERO)){
     NAVec4d normA;
@@ -98,7 +98,7 @@ void matVOrthoValueChanged(MATBaseController* controller, MATView* view){
       break;
     }
     if(diffLen == 0.){newStatusA = MAT_STATUS_VECTORS_COLINEAR;}
-    else if(naAlmostZerof(diffLen)){newStatusA = MAT_STATUS_VECTORS_ALMOST_COLINEAR;}
+    else if(naAlmostZerof((float)diffLen)){newStatusA = MAT_STATUS_VECTORS_ALMOST_COLINEAR;}
   }
 
   if(newStatusB == MAT_STATUS_VECTOR_LENGTH_ZERO){

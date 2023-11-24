@@ -54,7 +54,7 @@ void matMInvertValueChanged(MATBaseController* controller, MATView* view){
     if(det == 0.){
       newStatusA = MAT_STATUS_MATRIX_DETERMINANT_ZERO;
     }else{
-      newStatusA = naAlmostZerof(det)
+      newStatusA = naAlmostZerof((float)det)
         ? MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO
         : MAT_STATUS_NORMAL;
       switch(con->base.dimensions){
@@ -75,7 +75,7 @@ void matMInvertValueChanged(MATBaseController* controller, MATView* view){
     if(det == 0.){
       newStatusI = MAT_STATUS_MATRIX_DETERMINANT_ZERO;
     }else{
-      newStatusI = naAlmostZerof(det)
+      newStatusI = naAlmostZerof((float)det)
         ? MAT_STATUS_MATRIX_DETERMINANT_ALMOST_ZERO
         : MAT_STATUS_NORMAL;
       switch(con->base.dimensions){
@@ -123,7 +123,7 @@ MATBaseController* matAllocMInvertController(size_t dimensions){
   }
 
   con->viewA = matAllocView("A", dimensions, dimensions, con, initMatrix);
-  con->viewI = matAllocView("A" MAT_SUPERSCRIPT_MINUS_ONE, dimensions, dimensions, con, initMatrix);
+  con->viewI = matAllocView(u8"A" MAT_SUPERSCRIPT_MINUS_ONE, dimensions, dimensions, con, initMatrix);
 
   naFree(initMatrix);
 
