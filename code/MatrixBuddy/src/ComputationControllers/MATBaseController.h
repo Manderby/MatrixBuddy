@@ -2,8 +2,8 @@
 #ifndef MAT_BASE_CONTROLLER_INCLUDED
 #define MAT_BASE_CONTROLLER_INCLUDED
 
-#include "MATView.h"
-#include "MATTranslations.h"
+#include "../MATView.h"
+#include "../MATTranslations.h"
 
 
 struct MATBaseController{

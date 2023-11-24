@@ -60,10 +60,10 @@ MATColor matGetColorWithStatus(MATStatus status){
 
 void matFillBabyColor(NABabyColor* babyColor, MATColor color){
   static const NABabyColor matColors[] = {
-    [MAT_COLOR_NORMAL]  = {0., 0., 0., 0.,},
-    [MAT_COLOR_RESULT]  = {0., .4, .025, 1.,},
-    [MAT_COLOR_ERROR]   = {.7, .025, 0., 1.,},
-    [MAT_COLOR_WARNING] = {.4, .25, 0., 1.,},
+    [MAT_COLOR_NORMAL]  = {0.f, 0.f, 0.f, 0.f,},
+    [MAT_COLOR_RESULT]  = {0.f, .4f, .025f, 1.f,},
+    [MAT_COLOR_ERROR]   = {.7f, .025f, 0.f, 1.f,},
+    [MAT_COLOR_WARNING] = {.4f, .25f, 0.f, 1.f,},
   };
   naCopyn(*babyColor, &matColors[color], sizeof(NABabyColor));
 }
@@ -124,8 +124,10 @@ void preStartup(void* arg){
 void postStartup(void* arg){
   NA_UNUSED(arg);
   
-  naLoadNib("MainMenu", NA_NULL);
-  
+  #if NA_OS == NA_OS_MAC_OS_X
+    naLoadNib("MainMenu", NA_NULL);
+  #endif
+
   mat_App->mathFont = naCreateFontWithPreset(
     NA_FONT_KIND_MATH,
     NA_FONT_SIZE_HUGE);
@@ -181,7 +183,7 @@ void matShowApplicationAbout(){
   matShowAboutController(mat_App->aboutController);
 }
 void matShowApplicationHelp(){
-  naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
+  //naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
 }
 
 

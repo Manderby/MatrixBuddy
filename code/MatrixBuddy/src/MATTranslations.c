@@ -4,8 +4,8 @@ NAInt translatorGroup;
 
 void initTranslations(){
   translatorGroup = naRegisterTranslatorGroup();
-  #include "MatrixBuddyStrings_eng.h"
-  #include "MatrixBuddyStrings_deu.h"
+  #include "../res/MatrixBuddyStrings_eng.h"
+  #include "../res/MatrixBuddyStrings_deu.h"
 }
 
 const NAUTF8Char* matTranslate(NAInt id){

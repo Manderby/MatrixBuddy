@@ -2,7 +2,7 @@
 
 #include "MATView.h"
 #include "NAMath/NAVectorAlgebra.h"
-#include "MATBaseController.h"
+#include "ComputationCOntrollers/MATBaseController.h"
 #include "NAStruct/NABuffer.h"
 #include "MATPreferences.h"
 
@@ -232,7 +232,11 @@ NABool mat_ViewPressCopy(NAReaction reaction){
   NAString* pasteBoardString = naNewStringWithBufferExtraction(
     stringBuffer,
     naGetBufferRange(stringBuffer));
-  matPutStringToPasteboard(pasteBoardString);
+
+  #if NA_OS == NA_OS_MAC_OS_X
+    matPutStringToPasteboard(pasteBoardString);
+  #endif
+
   naDelete(pasteBoardString);
   
   naClearBufferIterator(&bufferIt);
@@ -246,7 +250,12 @@ NABool mat_ViewPressCopy(NAReaction reaction){
 NABool mat_ViewPressPaste(NAReaction reaction){
   MATView* view = (MATView*)reaction.controller;
 
-  NAString* string = matNewStringFromPasteboard();
+  #if NA_OS == NA_OS_MAC_OS_X
+    NAString* string = matNewStringFromPasteboard();
+  #else
+  NAString* string = naNewString();
+  #endif
+
   const char* codeStr = naGetStringUTF8Pointer(string);
 
   // Strip the first whitespaces and find out if there is a curly bracket. If
@@ -355,7 +364,11 @@ MATView* matAllocView(
     for(size_t y = 0; y < view->dimensions[1]; ++y){
       size_t index = x * view->dimensions[1] + y;
       view->textFields[index] = naNewTextField(MAT_TEXTFIELD_WIDTH);
-      matSetTextFieldCellProperties(view->textFields[index]);
+
+      #if NA_OS == NA_OS_MAC_OS_X
+        matSetTextFieldCellProperties(view->textFields[index]);
+      #endif
+
       naAddSpaceChild(
         view->matrixSpace,
         view->textFields[index],

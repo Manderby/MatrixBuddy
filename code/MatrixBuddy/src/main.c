@@ -1,17 +1,28 @@
 
-#include "MATCommonC.h"
+#include "MATNSApplication.h"
 
-#if NA_OS == NA_OS_MAC_OS_X
+#if NA_OS == NA_OS_WINDOWS
 
-#import <Cocoa/Cocoa.h>
+#include "MATApplication.h"
 
-@interface MATNSApplication : NSApplication <NSApplicationDelegate>{
+
+
+int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd){
+  NA_UNUSED(hInstance);
+  NA_UNUSED(hPrevInstance);
+  NA_UNUSED(lpCmdLine);
+  NA_UNUSED(nShowCmd);
+  naOpenConsoleWindow();
+
+  naStartRuntime();
+  naStartApplication(preStartup, postStartup, stopApplication, NA_NULL);
+  naStopRuntime();
+
+  return 0;
 }
-- (IBAction)openAbout:(NSMenuItem*)sender;
-- (IBAction)openHelp:(NSMenuItem*)sender;
-@end
 
-#endif // NA_OS == NA_OS_MAC_OS_X
+#endif // NA_OS == NA_OS_WINDOWS
+
 
 // This is free and unencumbered software released into the public domain.
 

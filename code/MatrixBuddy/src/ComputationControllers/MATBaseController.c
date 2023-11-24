@@ -1,7 +1,7 @@
 
 #include "MATBaseController.h"
-#include "MATPreferences.h"
-#include "MATApplication.h"
+#include "../MATPreferences.h"
+#include "../MATApplication.h"
 
 
 void matInitBaseController(

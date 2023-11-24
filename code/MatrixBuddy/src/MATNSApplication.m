@@ -1,5 +1,8 @@
 
-#import "MATNSApplication.h"
+#include "MATNSApplication.h"
+
+#if NA_OS == NA_OS_MAC_OS_X
+
 #include "MATApplication.h"
 #include "MATCommonC.h"
 
@@ -56,6 +59,10 @@ void matSetTextFieldCellProperties(NATextField* textField){
 }
 
 @end
+
+
+
+#endif // NA_OS == NA_OS_MAC_OS_X
 
 
 

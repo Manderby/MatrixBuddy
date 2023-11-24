@@ -1,6 +1,6 @@
-#include "MATApplication.h"
+#include "../MATApplication.h"
 #include "MATBaseController.h"
-#include "MATTranslations.h"
+#include "../MATTranslations.h"
 #include "NAMath/NAVectorAlgebra.h"
 
 

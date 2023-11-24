@@ -1,5 +1,8 @@
 
-#import "MATNSApplication.h"
+#include "MATNSApplication.h"
+
+#if NA_OS == NA_OS_MAC_OS_X
+
 #include "MATApplication.h"
 
 
@@ -13,6 +16,7 @@ int main(int argc, char *argv[]){
   return 0;
 }
 
+#endif // NA_OS == NA_OS_MAC_OS_X
 
 
 // This is free and unencumbered software released into the public domain.

@@ -1,6 +1,6 @@
 
 #include "MATWindowController.h"
-#include "MATBaseController.h"
+#include "ComputationControllers/MATBaseController.h"
 #include "MATPreferences.h"
 #include "MATApplication.h"
 #include "NAApp/NAApp.h"
