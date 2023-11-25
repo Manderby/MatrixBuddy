@@ -2,7 +2,7 @@
 
 #include "MATView.h"
 #include "NAMath/NAVectorAlgebra.h"
-#include "ComputationCOntrollers/MATBaseController.h"
+#include "ComputationControllers/MATBaseController.h"
 #include "NAStruct/NABuffer.h"
 #include "MATPreferences.h"
 

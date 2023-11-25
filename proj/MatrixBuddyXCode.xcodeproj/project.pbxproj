@@ -291,7 +291,6 @@
 		902C12BA2AEDAA5A0069382F /* NAMathOperators.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C11C62AEDAA5A0069382F /* NAMathOperators.h */; };
 		902C12BB2AEDAA5A0069382F /* NACoord.h in Headers */ = {isa = PBXBuildFile; fileRef = 902C11C72AEDAA5A0069382F /* NACoord.h */; };
 		902C12E12AEDAC0C0069382F /* libNALib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 902C10AE2AEDAA370069382F /* libNALib.a */; };
-		9038ECC0256AE05300A95A36 /* MatrixBuddyChangelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECBF256AE05300A95A36 /* MatrixBuddyChangelog.txt */; };
 		9038ECEC256DA07300A95A36 /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEB256DA07300A95A36 /* copy.png */; };
 		9038ECF0256DA48000A95A36 /* paste.png in Resources */ = {isa = PBXBuildFile; fileRef = 9038ECEF256DA48000A95A36 /* paste.png */; };
 		909E2B212B00E41B0076A06E /* MATBaseController.c in Sources */ = {isa = PBXBuildFile; fileRef = 909E2B1F2B00E41B0076A06E /* MATBaseController.c */; };
@@ -616,7 +615,6 @@
 		902C11C52AEDAA5A0069382F /* NAVectorAlgebra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAVectorAlgebra.h; sourceTree = "<group>"; };
 		902C11C62AEDAA5A0069382F /* NAMathOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMathOperators.h; sourceTree = "<group>"; };
 		902C11C72AEDAA5A0069382F /* NACoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NACoord.h; sourceTree = "<group>"; };
-		9038ECBF256AE05300A95A36 /* MatrixBuddyChangelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MatrixBuddyChangelog.txt; sourceTree = "<group>"; };
 		9038ECC3256AE1E200A95A36 /* MatrixBuddyStrings_deu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixBuddyStrings_deu.h; sourceTree = "<group>"; };
 		9038ECEB256DA07300A95A36 /* copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = copy.png; sourceTree = "<group>"; };
 		9038ECEF256DA48000A95A36 /* paste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paste.png; sourceTree = "<group>"; };
@@ -703,7 +701,6 @@
 		9020CF0A1BA6E26300E74965 = {
 			isa = PBXGroup;
 			children = (
-				9038ECBE256AE05300A95A36 /* doc */,
 				90BA03361BA96C8700A651E9 /* Frameworks */,
 				902C10B22AEDAA590069382F /* NALib */,
 				90233A03256ADE1D00E383A6 /* res */,
@@ -1278,15 +1275,6 @@
 			path = NAVectorAlgebra;
 			sourceTree = "<group>";
 		};
-		9038ECBE256AE05300A95A36 /* doc */ = {
-			isa = PBXGroup;
-			children = (
-				9038ECBF256AE05300A95A36 /* MatrixBuddyChangelog.txt */,
-			);
-			name = doc;
-			path = ../doc;
-			sourceTree = "<group>";
-		};
 		90BA03361BA96C8700A651E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1583,7 +1571,6 @@
 				9038ECF0256DA48000A95A36 /* paste.png in Resources */,
 				902536F12B0EB0A6003C02BE /* settings.png in Resources */,
 				9038ECEC256DA07300A95A36 /* copy.png in Resources */,
-				9038ECC0256AE05300A95A36 /* MatrixBuddyChangelog.txt in Resources */,
 				90233A10256ADE1D00E383A6 /* MatrixBuddy.icns in Resources */,
 				90233A0D256ADE1D00E383A6 /* InfoPlist.strings in Resources */,
 				90233A0E256ADE1D00E383A6 /* MainMenu.xib in Resources */,
@@ -1841,7 +1828,7 @@
 				DEVELOPMENT_TEAM = YH3QFD54JB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1888,7 +1875,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
