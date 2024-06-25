@@ -1,5 +1,5 @@
 
-#include "MATNSApplication.h"
+#include "MATCommonC.h"
 
 #if NA_OS == NA_OS_WINDOWS
 

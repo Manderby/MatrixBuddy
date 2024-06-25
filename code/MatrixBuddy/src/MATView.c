@@ -30,7 +30,7 @@ size_t matGetViewElementCount(const MATView* view){
 
 
 
-NABool mat_ViewChanged(NAReaction reaction){
+void mat_ViewChanged(NAReaction reaction){
   MATView* view = (MATView*)reaction.controller;
 
   NAString* text = naNewStringWithTextFieldText(reaction.uiElement);
@@ -45,7 +45,6 @@ NABool mat_ViewChanged(NAReaction reaction){
   }
   
   matNotifyControllerValuesChanged(view->con, view);
-  return NA_TRUE;
 }
 
 
@@ -68,7 +67,7 @@ NAUTF8Char* matFormatValue(double value){
 
 
 
-NABool mat_ViewPressCopy(NAReaction reaction){
+void mat_ViewPressCopy(NAReaction reaction){
   MATView* view = (MATView*)reaction.controller;
 
   NABuffer* stringBuffer = naCreateBuffer(NA_FALSE);
@@ -116,6 +115,8 @@ NABool mat_ViewPressCopy(NAReaction reaction){
         naWriteBufferStringWithFormat(&bufferIt, matFormatValue(view->values[y]));
       }
       naWriteBufferStringWithFormat(&bufferIt, "]");
+      break;
+    default:
       break;
     }
   }else{
@@ -226,6 +227,8 @@ NABool mat_ViewPressCopy(NAReaction reaction){
       }
       naWriteBufferStringWithFormat(&bufferIt, "]");
       break;
+    default:
+      break;
     }
   }
 
@@ -241,13 +244,11 @@ NABool mat_ViewPressCopy(NAReaction reaction){
   
   naClearBufferIterator(&bufferIt);
   naRelease(stringBuffer);
-  
-  return NA_TRUE;
 }
 
 
 
-NABool mat_ViewPressPaste(NAReaction reaction){
+void mat_ViewPressPaste(NAReaction reaction){
   MATView* view = (MATView*)reaction.controller;
 
   #if NA_OS == NA_OS_MAC_OS_X
@@ -309,8 +310,6 @@ NABool mat_ViewPressPaste(NAReaction reaction){
 
   naDelete(string);
   naFree(newValues);
-
-  return NA_TRUE;
 }
 
 
@@ -451,11 +450,11 @@ void matUpdateView(MATView* view){
     naSetLabelTextColor(view->errorLabel, NA_NULL);
     naSetSpaceBackgroundColor(view->matrixSpace, NA_NULL);
   }else{
-    NABabyColor color;
-    matFillBabyColor(&color, matColor);
+    NAColor color;
+    matFillColor(&color, matColor);
     naSetLabelTextColor(view->label, &color);
     naSetLabelTextColor(view->errorLabel, &color);
-    color[3] *= .1f;
+    color.alpha *= .1f;
     naSetSpaceBackgroundColor(view->matrixSpace, &color);
   }
 }

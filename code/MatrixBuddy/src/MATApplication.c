@@ -58,14 +58,23 @@ MATColor matGetColorWithStatus(MATStatus status){
 
 
 
-void matFillBabyColor(NABabyColor* babyColor, MATColor color){
-  static const NABabyColor matColors[] = {
-    [MAT_COLOR_NORMAL]  = {0.f, 0.f, 0.f, 0.f,},
-    [MAT_COLOR_RESULT]  = {0.f, .4f, .025f, 1.f,},
-    [MAT_COLOR_ERROR]   = {.7f, .025f, 0.f, 1.f,},
-    [MAT_COLOR_WARNING] = {.4f, .25f, 0.f, 1.f,},
-  };
-  naCopyn(*babyColor, &matColors[color], sizeof(NABabyColor));
+void matFillColor(NAColor* naColor, MATColor color){
+  switch(color) {
+  case MAT_COLOR_NORMAL:
+    naFillColorWithSRGB(naColor, 0.f, 0.f, 0.f, 0.f);
+    break;
+  case MAT_COLOR_RESULT:
+    naFillColorWithSRGB(naColor, 0.f, .4f, .025f, 1.f);
+    break;
+  case MAT_COLOR_ERROR:
+    naFillColorWithSRGB(naColor, .7f, .025f, 0.f, 1.f);
+    break;
+  case MAT_COLOR_WARNING:
+    naFillColorWithSRGB(naColor, .6f, .4f, 0.f, 1.f);
+    break;
+  default:
+    break;
+  }
 }
 
 
@@ -107,15 +116,15 @@ void preStartup(void* arg){
   initPreferences();
 
   NAString* copyImagePath = naNewApplicationResourcePath(NA_NULL, "copy", "png");
-  NABabyImage* mainCopyImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(copyImagePath));
+  NAImage* mainCopyImage = naCreateImageFromFilePath(naGetStringUTF8Pointer(copyImagePath));
   mat_App->copyImage = naCreateUIImage(mainCopyImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
 
   NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
-  NABabyImage* mainPasteImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(pasteImagePath));
+  NAImage* mainPasteImage = naCreateImageFromFilePath(naGetStringUTF8Pointer(pasteImagePath));
   mat_App->pasteImage = naCreateUIImage(mainPasteImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
 
   NAString* settingsImagePath = naNewApplicationResourcePath(NA_NULL, "settings", "png");
-  NABabyImage* mainSettingsImage = naCreateBabyImageFromFilePath(naGetStringUTF8Pointer(settingsImagePath));
+  NAImage* mainSettingsImage = naCreateImageFromFilePath(naGetStringUTF8Pointer(settingsImagePath));
   mat_App->settingsImage = naCreateUIImage(mainSettingsImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ERODE_LIGHT);
 }
 

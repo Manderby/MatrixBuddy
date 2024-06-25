@@ -42,7 +42,7 @@ struct MATWindowController{
 
 
 
-NABool matDimensionsChanged(NAReaction reaction){
+void matDimensionsChanged(NAReaction reaction){
   MATWindowController* con = (MATWindowController*)reaction.controller;
   
   if(reaction.uiElement == con->radio2){
@@ -54,13 +54,11 @@ NABool matDimensionsChanged(NAReaction reaction){
   }
   
   matUpdateWindowController(con);
-  
-  return NA_TRUE;
 }
 
 
 
-NABool matComputationChanged(NAReaction reaction){
+void matComputationChanged(NAReaction reaction){
   MATWindowController* con = (MATWindowController*)reaction.controller;
 
   for(int computation = 0; computation < MAT_COMPUTATION_COUNT; ++computation){
@@ -71,13 +69,11 @@ NABool matComputationChanged(NAReaction reaction){
   }
 
   matUpdateWindowController(con);
-
-  return NA_TRUE;
 }
 
 
 
-NABool matOpenSettings(NAReaction reaction){
+void matOpenSettings(NAReaction reaction){
   MATWindowController* con = (MATWindowController*)reaction.controller;
 
   NASpace* space = naGetWindowContentSpace(con->window);
@@ -86,13 +82,11 @@ NABool matOpenSettings(NAReaction reaction){
   menuPos.x += rect.size.width;
   menuPos.y += rect.size.height;
   naPresentMenu(con->settingsMenu, menuPos, space);
-  
-  return NA_TRUE;
 }
 
 
 
-NABool matSettingsMenuItemSelected(NAReaction reaction){
+void matSettingsMenuItemSelected(NAReaction reaction){
   MATWindowController* con = (MATWindowController*)reaction.controller;
 
   if(reaction.uiElement == con->showHelpItem){
@@ -129,15 +123,13 @@ NABool matSettingsMenuItemSelected(NAReaction reaction){
     matShowApplicationHelp();
   }
   matUpdateWindowController(con);
-  return NA_TRUE;
 }
 
 
-NABool matCloseWindow(NAReaction reaction){
+void matCloseWindow(NAReaction reaction){
   NA_UNUSED(reaction);
   
   naStopApplication();
-  return NA_TRUE;
 }
 
 
