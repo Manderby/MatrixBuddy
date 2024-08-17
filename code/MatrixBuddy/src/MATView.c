@@ -237,7 +237,7 @@ void mat_ViewPressCopy(NAReaction reaction){
     stringBuffer,
     naGetBufferRange(stringBuffer));
 
-  matPutStringToPasteboard(pasteBoardString);
+  naPutStringToClipboard(pasteBoardString);
 
   naDelete(pasteBoardString);
   
@@ -250,7 +250,7 @@ void mat_ViewPressCopy(NAReaction reaction){
 void mat_ViewPressPaste(NAReaction reaction){
   MATView* view = (MATView*)reaction.controller;
 
-  NAString* string = matNewStringFromPasteboard();
+  NAString* string = naNewStringFromClipboard();
   if(!string) { return; }
 
   const char* codeStr = naGetStringUTF8Pointer(string);

@@ -48,8 +48,6 @@ typedef void (*MATUpdateTabOrderHandler)(MATBaseController* controller);
 NAUIImage* matGetCopyImage(void);
 NAUIImage* matGetPasteImage(void);
 
-void matPutStringToPasteboard(const NAString* string);
-NAString* matNewStringFromPasteboard(void);
 void matSetTextFieldCellProperties(NATextField* textField);
 
 const NAUTF8Char* matGetUTF8StringWithStatus(MATStatus status);
