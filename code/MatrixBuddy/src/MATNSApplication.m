@@ -1,8 +1,10 @@
 
-#include "MATNSApplication.h"
+#include "NABase/NABase.h"
 
 #if NA_OS == NA_OS_MAC_OS_X
 
+#include <Cocoa/Cocoa.h>
+#include "MATNSApplication.h"
 #include "MATApplication.h"
 #include "MATCommonC.h"
 

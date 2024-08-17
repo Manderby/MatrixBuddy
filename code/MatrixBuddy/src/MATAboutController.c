@@ -20,10 +20,9 @@ struct MATAboutController{
 
 
 
-NABool mat_pressAboutDone(NAReaction reaction){
+void mat_pressAboutDone(NAReaction reaction){
   MATAboutController* con = (MATAboutController*)reaction.controller;
   naCloseWindow(con->window);
-  return NA_TRUE;
 }
 
 
