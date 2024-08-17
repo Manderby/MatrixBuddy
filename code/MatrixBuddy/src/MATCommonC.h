@@ -54,7 +54,7 @@ void matSetTextFieldCellProperties(NATextField* textField);
 
 const NAUTF8Char* matGetUTF8StringWithStatus(MATStatus status);
 MATColor matGetColorWithStatus(MATStatus status);
-void matFillBabyColor(NABabyColor* babyColor, MATColor color);
+void matFillColor(NAColor* naColor, MATColor matColor);
 
 
 

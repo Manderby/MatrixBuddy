@@ -8,6 +8,7 @@ if (MSVC)
 else()
   add_executable(${TARGET_NAME})
 endif()
+
 set_target_properties(${TARGET_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 
 set(CMAKE_CXX_STANDARD 99)
@@ -130,11 +131,9 @@ target_sources(${TARGET_NAME} PRIVATE ${sourceFiles})
 
 # ######### Linking to NALib ################
 
-# Define GUI and OpenGL to be in use and hide the CMake GUI options.
+# Define GUI to be in use and hide the CMake GUI options.
 add_definitions(-DNA_COMPILE_GUI=1)
-add_definitions(-DNA_COMPILE_OPENGL=0)
 set(COMPILE_NALIB_GUI 1 CACHE INTERNAL "GUI required")
-set(COMPILE_NALIB_OPENGL 0 CACHE INTERNAL "OpenGL required")
 
 set(NALIB_DIR "../../lib/NALib/code/NALib")
 target_include_directories(${TARGET_NAME} PRIVATE ${NALIB_DIR}/src)

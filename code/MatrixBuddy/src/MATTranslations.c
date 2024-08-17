@@ -1,6 +1,6 @@
 #include "MATTranslations.h"
 
-NAInt translatorGroup;
+uint32 translatorGroup;
 
 void initTranslations(){
   translatorGroup = naRegisterTranslatorGroup();
@@ -8,7 +8,7 @@ void initTranslations(){
   #include "../res/MatrixBuddyStrings_deu.h"
 }
 
-const NAUTF8Char* matTranslate(NAInt id){
+const NAUTF8Char* matTranslate(uint32 id){
   return naTranslate(translatorGroup, id);
 }
 

@@ -31,8 +31,14 @@ void initPreferences(){
   naInitPreferencesBool(matPrefs[MATPrefShowIdentifiers], NA_TRUE);
   naInitPreferencesBool(matPrefs[MATPrefShowCopyPaste], NA_TRUE);
   naInitPreferencesBool(matPrefs[MATPrefUseRowFirstTabOrder], NA_TRUE);
-  naInitPreferencesEnum(matPrefs[MATPrefCodeStyle], MAT_CODE_STYLE_C_ROW_FIRST_1D);
-  naInitPreferencesEnum(matPrefs[MATPrefValueAccuracy], MAT_VALUE_ACCURACY_NATURAL);
+  naInitPreferencesEnum(
+    matPrefs[MATPrefCodeStyle],
+    MAT_CODE_STYLE_C_ROW_FIRST_1D,
+    MAT_CODE_STYLE_COUNT);
+  naInitPreferencesEnum(
+    matPrefs[MATPrefValueAccuracy],
+    MAT_VALUE_ACCURACY_NATURAL,
+    MAT_VALUE_ACCURACY_COUNT);
 }
 
 

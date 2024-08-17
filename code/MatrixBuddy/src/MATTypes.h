@@ -40,6 +40,8 @@ typedef enum{
   MAT_CODE_STYLE_MATHEMATICA,
   MAT_CODE_STYLE_MATLAB,
   MAT_CODE_STYLE_MAPLE,
+
+  MAT_CODE_STYLE_COUNT
 } MATCodeStyle;
 
 
@@ -47,6 +49,8 @@ typedef enum{
 typedef enum{
   MAT_VALUE_ACCURACY_NATURAL = 0,
   MAT_VALUE_ACCURACY_FLOAT,
+
+  MAT_VALUE_ACCURACY_COUNT
 } MATValueAccuracy;
 
 

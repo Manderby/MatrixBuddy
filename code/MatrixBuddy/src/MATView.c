@@ -4,6 +4,7 @@
 #include "NAMath/NAVectorAlgebra.h"
 #include "ComputationCOntrollers/MATBaseController.h"
 #include "NAStruct/NABuffer.h"
+#include "NAVisual/NAColor.h"
 #include "MATPreferences.h"
 
 struct MATView{
@@ -451,12 +452,12 @@ void matUpdateView(MATView* view){
     naSetLabelTextColor(view->errorLabel, NA_NULL);
     naSetSpaceBackgroundColor(view->matrixSpace, NA_NULL);
   }else{
-    NABabyColor color;
-    matFillBabyColor(&color, matColor);
-    naSetLabelTextColor(view->label, &color);
-    naSetLabelTextColor(view->errorLabel, &color);
-    color[3] *= .1f;
-    naSetSpaceBackgroundColor(view->matrixSpace, &color);
+    NAColor naColor;
+    matFillColor(&naColor, matColor);
+    naSetLabelTextColor(view->label, &naColor);
+    naSetLabelTextColor(view->errorLabel, &naColor);
+    naColor.alpha *= .1f;
+    naSetSpaceBackgroundColor(view->matrixSpace, &naColor);
   }
 }
 

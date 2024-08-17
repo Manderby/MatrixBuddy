@@ -113,7 +113,7 @@ typedef enum{
 
 void initTranslations(void);
 
-const NAUTF8Char* matTranslate(NAInt id);
+const NAUTF8Char* matTranslate(uint32 id);
 
 
 
