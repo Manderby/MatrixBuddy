@@ -6,6 +6,7 @@
 #include "MATWindowController.h"
 #include "MATAboutController.h"
 #include "NAVisual/NAColor.h"
+#include "NAUtility/NAString.h"
 
 
 
@@ -130,7 +131,7 @@ void postStartup(void* arg){
 
   mat_App->mathFont = naCreateFontWithPreset(
     NA_FONT_KIND_MATH,
-    NA_FONT_SIZE_HUGE);
+    NA_FONT_SIZE_BIG);
   mat_App->helpLineFont = naCreateFontWithPreset(
     NA_FONT_KIND_SYSTEM,
     NA_FONT_SIZE_SMALL);
@@ -186,6 +187,55 @@ void matShowApplicationHelp(){
   //naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
 }
 
+
+
+
+#if NA_OS == NA_OS_WINDOWS
+
+void matPutStringToPasteboard(const NAString* string){
+  OpenClipboard(NA_NULL); // NA_NULL means: Current task becomes owner instead of a hWnd
+
+  size_t stringLength = naGetStringByteSize(string);
+  wchar_t* unicodeString = naAllocWideCharStringWithUTF8String(naGetStringUTF8Pointer(string));
+
+  HGLOBAL clipboardHandle = GlobalAlloc(GMEM_MOVEABLE, (stringLength + 1) * sizeof(wchar_t));
+  if(clipboardHandle) {
+    LPTSTR globalMemory = GlobalLock(clipboardHandle);
+    if(globalMemory) {
+      memcpy(globalMemory, unicodeString, stringLength * sizeof(wchar_t)); 
+      globalMemory[stringLength] = (wchar_t) 0;    // null character 
+      GlobalUnlock(clipboardHandle);
+      SetClipboardData(CF_UNICODETEXT, clipboardHandle);
+    }
+  }
+
+  naFree(unicodeString);
+
+  CloseClipboard();
+}
+
+NAString* matNewStringFromPasteboard(){
+  NAString* string = NA_NULL;
+  OpenClipboard(NA_NULL); // NA_NULL means: Current task becomes owner instead of a hWnd
+
+  HGLOBAL clipboardHandle = GetClipboardData(CF_UNICODETEXT);
+  if(clipboardHandle) {
+    LPTSTR globalMemory = GlobalLock(clipboardHandle);
+    if(globalMemory) {
+      size_t stringLength = wcslen(globalMemory);
+      wchar_t* unicodeString = naMalloc(stringLength * sizeof(wchar_t));
+      memcpy(unicodeString, globalMemory, stringLength * sizeof(wchar_t)); 
+      unicodeString[stringLength] = (wchar_t) 0;    // null character 
+      GlobalUnlock(clipboardHandle);
+      string = naNewStringWithWideCharString(unicodeString);
+    }
+  }
+
+  CloseClipboard();
+  return string;
+}
+
+#endif
 
 
 // This is free and unencumbered software released into the public domain.

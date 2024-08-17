@@ -237,9 +237,7 @@ void mat_ViewPressCopy(NAReaction reaction){
     stringBuffer,
     naGetBufferRange(stringBuffer));
 
-  #if NA_OS == NA_OS_MAC_OS_X
-    matPutStringToPasteboard(pasteBoardString);
-  #endif
+  matPutStringToPasteboard(pasteBoardString);
 
   naDelete(pasteBoardString);
   
@@ -252,11 +250,8 @@ void mat_ViewPressCopy(NAReaction reaction){
 void mat_ViewPressPaste(NAReaction reaction){
   MATView* view = (MATView*)reaction.controller;
 
-  #if NA_OS == NA_OS_MAC_OS_X
-    NAString* string = matNewStringFromPasteboard();
-  #else
-  NAString* string = naNewString();
-  #endif
+  NAString* string = matNewStringFromPasteboard();
+  if(!string) { return; }
 
   const char* codeStr = naGetStringUTF8Pointer(string);
 
@@ -347,7 +342,6 @@ MATView* matAllocView(
   naSetLabelTextAlignment(view->errorLabel, NA_TEXT_ALIGNMENT_CENTER);
   naAddSpaceChild(view->space, view->errorLabel, naMakePos(0, viewSize.height - MAT_MATRIX_LABEL_HEIGHT - MAT_VIEW_MARGIN_V));
 
-  // "s\u207b\u00b9\u1d40"
   view->label = naNewLabel(label, viewSize.width);
   naSetLabelFont(view->label, matGetMathFont());
   naSetLabelTextAlignment(view->label, NA_TEXT_ALIGNMENT_CENTER);
