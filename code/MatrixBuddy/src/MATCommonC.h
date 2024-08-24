@@ -45,8 +45,8 @@ typedef void(*MATValueChangedHandler)(MATBaseController* controller, MATView* vi
 typedef void(*MATUpdateHandler)(MATBaseController* controller);
 typedef void (*MATUpdateTabOrderHandler)(MATBaseController* controller);
 
-NAUIImage* matGetCopyImage(void);
-NAUIImage* matGetPasteImage(void);
+NAImageSet* matGetCopyImageSet(void);
+NAImageSet* matGetPasteImageSet(void);
 
 void matSetTextFieldCellProperties(NATextField* textField);
 

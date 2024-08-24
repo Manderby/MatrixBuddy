@@ -5,8 +5,11 @@
 #include "MATPreferences.h"
 #include "MATWindowController.h"
 #include "MATAboutController.h"
+
 #include "NAVisual/NAColor.h"
+#include "NAVisual/NAImage.h"
 #include "NAUtility/NAString.h"
+#include "NAApp/NAImageSet.h"
 
 
 
@@ -83,9 +86,9 @@ typedef struct MATApplication MATApplication;
 struct MATApplication{
   NAFont* mathFont;
   NAFont* helpLineFont;
-  NAUIImage* copyImage;
-  NAUIImage* pasteImage;
-  NAUIImage* settingsImage;
+  NAImageSet* copyImageSet;
+  NAImageSet* pasteImageSet;
+  NAImageSet* settingsImageSet;
   MATAboutController* aboutController;
   MATWindowController* windowController;
 };
@@ -110,15 +113,15 @@ void preStartup(void* arg){
 
   NAString* copyImagePath = naNewApplicationResourcePath(NA_NULL, "copy", "png");
   NAImage* mainCopyImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(copyImagePath));
-  mat_App->copyImage = naCreateUIImage(mainCopyImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
+  mat_App->copyImageSet = naCreateImageSet(mainCopyImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
 
   NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
   NAImage* mainPasteImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(pasteImagePath));
-  mat_App->pasteImage = naCreateUIImage(mainPasteImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
+  mat_App->pasteImageSet = naCreateImageSet(mainPasteImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
 
   NAString* settingsImagePath = naNewApplicationResourcePath(NA_NULL, "settings", "png");
   NAImage* mainSettingsImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(settingsImagePath));
-  mat_App->settingsImage = naCreateUIImage(mainSettingsImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
+  mat_App->settingsImageSet = naCreateImageSet(mainSettingsImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
 }
 
 
@@ -150,8 +153,8 @@ void stopApplication(void* arg){
   
   naRelease(mat_App->mathFont);
   naRelease(mat_App->helpLineFont);
-  naRelease(mat_App->copyImage);
-  naRelease(mat_App->pasteImage);
+  naRelease(mat_App->copyImageSet);
+  naRelease(mat_App->pasteImageSet);
 
   naFree(mat_App);
   naStopRuntime();
@@ -168,14 +171,14 @@ NAFont* matGetHelpLineFont(){
 
 
 
-NAUIImage* matGetCopyImage(){
-  return mat_App->copyImage;
+NAImageSet* matGetCopyImageSet(){
+  return mat_App->copyImageSet;
 }
-NAUIImage* matGetPasteImage(){
-  return mat_App->pasteImage;
+NAImageSet* matGetPasteImageSet(){
+  return mat_App->pasteImageSet;
 }
-NAUIImage* matGetSettingsImage(){
-  return mat_App->settingsImage;
+NAImageSet* matGetSettingsImageSet(){
+  return mat_App->settingsImageSet;
 }
 
 

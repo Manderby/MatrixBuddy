@@ -2,9 +2,13 @@
 #include "NAApp/NAApp.h"
 #include "MATAboutController.h"
 #include "MATTranslations.h"
+#include "NAUtility/NAMemory.h"
+#include "NAUtility/NAString.h"
+
 
 
 #define MAT_WINDOW_TAG_ABOUT 1
+
 
 
 struct MATAboutController{
@@ -43,12 +47,12 @@ MATAboutController* matAllocAboutController(void){
 
   //NAString* iconPath = naNewApplicationIconPath();
   //NAImage* iconImage = naCreateImageFromFilePath(naGetStringUTF8Pointer(iconPath));
-  //NAUIImage* iconCUIImage = naCreateUIImage(iconImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ZERO);
+  //NAImageSet* iconImageSet = naCreateUIImage(iconImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ZERO);
   //naRelease(iconImage);
   //naDelete(iconPath);
-  //con->iconSpace = naNewImageSpace(iconCUIImage, naMakeSize(128, 128));
+  //con->iconSpace = naNewImageSpace(iconImageSet, naMakeSize(128, 128));
   //naAddSpaceChild(space, con->iconSpace, naMakePos(106., 200.));
-  //naRelease(iconCUIImage);
+  //naRelease(iconImageSet);
 
   con->appNameLabel = naNewLabel(naGetStringUTF8Pointer(bundleApplicationName), 300);
   NAFont* titleFont = naCreateFontWithPreset(NA_FONT_KIND_TITLE, NA_FONT_SIZE_BIG);

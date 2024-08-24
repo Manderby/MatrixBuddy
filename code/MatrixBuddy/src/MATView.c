@@ -384,11 +384,11 @@ MATView* matAllocView(
 
   double buttonsCenterMarginLeft = naRound((viewSize.width - (2 * MAT_COPYPASTE_BUTTON_SIZE + MAT_COPYPASTE_BUTTON_DISTANCE)) / 2.);
   
-  view->copyButton = naNewImagePushButton(matGetCopyImage(), naMakeSize(MAT_COPYPASTE_BUTTON_SIZE, MAT_COPYPASTE_BUTTON_SIZE));
+  view->copyButton = naNewImagePushButton(matGetCopyImageSet(), naMakeSize(MAT_COPYPASTE_BUTTON_SIZE, MAT_COPYPASTE_BUTTON_SIZE));
   naAddUIReaction(view->copyButton, NA_UI_COMMAND_PRESSED, mat_ViewPressCopy, view);
   naAddSpaceChild(view->space, view->copyButton, naMakePos(buttonsCenterMarginLeft, MAT_VIEW_MARGIN_V));
 
-  view->pasteButton = naNewImagePushButton(matGetPasteImage(), naMakeSize(MAT_COPYPASTE_BUTTON_SIZE, MAT_COPYPASTE_BUTTON_SIZE));
+  view->pasteButton = naNewImagePushButton(matGetPasteImageSet(), naMakeSize(MAT_COPYPASTE_BUTTON_SIZE, MAT_COPYPASTE_BUTTON_SIZE));
   naAddUIReaction(view->pasteButton, NA_UI_COMMAND_PRESSED, mat_ViewPressPaste, view);
   naAddSpaceChild(view->space, view->pasteButton, naMakePos(buttonsCenterMarginLeft + MAT_COPYPASTE_BUTTON_SIZE + MAT_COPYPASTE_BUTTON_DISTANCE, MAT_VIEW_MARGIN_V));
 

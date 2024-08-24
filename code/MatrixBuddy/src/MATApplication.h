@@ -9,9 +9,9 @@ void stopApplication(void* arg);
 NAFont* matGetMathFont(void);
 NAFont* matGetHelpLineFont(void);
 
-NAUIImage* matGetCopyImage(void);
-NAUIImage* matGetPasteImage(void);
-NAUIImage* matGetSettingsImage(void);
+NAImageSet* matGetCopyImageSet(void);
+NAImageSet* matGetPasteImageSet(void);
+NAImageSet* matGetSettingsImageSet(void);
 
 void matShowApplicationAbout(void);
 void matShowApplicationHelp(void);

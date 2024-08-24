@@ -6,7 +6,7 @@
 #include <Cocoa/Cocoa.h>
 #include "MATNSApplication.h"
 #include "MATApplication.h"
-
+#include "NAUtility/NAMemory.h"
 
 
 int main(int argc, char *argv[]){
