@@ -3,6 +3,8 @@
 
 #if NA_OS == NA_OS_WINDOWS
 
+#include "NAUtility/NAMemory.h"
+#include <windows.h>
 #include "MATApplication.h"
 
 

@@ -1,20 +1,30 @@
 cmake_minimum_required(VERSION 3.13)
 project(MatrixBuddy)
 
+
+
+# ######### define target ################
+
 set(TARGET_NAME MatrixBuddy)
-set (MACOS APPLE)
-#set(MACOS (NOT MSVC))
 
 if (MSVC)
   add_executable(${TARGET_NAME} WIN32 src/main.c)
-else()
+elseif(APPLE)
   add_executable(${TARGET_NAME})
 endif()
+
+
+
+# ######### compiler settings ################
 
 set_target_properties(${TARGET_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 
 set(CMAKE_CXX_STANDARD 99)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+
+
+# ######### Define package settings ################
 
 if (MSVC)
   add_definitions(-DNA_USE_WINDOWS_COMMON_CONTROLS_6=1)
@@ -29,7 +39,7 @@ if (MSVC)
 
   set(OUTPUT_DIRECTORY $(OutDir))
 
-else()
+elseif(APPLE)
 
   set(OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/$CONFIGURATION/${TARGET_NAME}.app/Contents/Resources/)
 
@@ -37,7 +47,8 @@ endif()
 
 
 
-# copying resources
+# ######### Copying resources ################
+
 add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy
       ${CMAKE_CURRENT_SOURCE_DIR}/res/MatrixBuddyChangelog.txt
@@ -53,7 +64,7 @@ add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
       \"${OUTPUT_DIRECTORY}settings.png\"
 )
 
-if (MACOS)
+if (APPLE)
   add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy
         ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/MatrixBuddy.icns
@@ -65,10 +76,7 @@ if (MACOS)
         \"${OUTPUT_DIRECTORY}en.lproj/MainMenu.nib\"
         ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/en.lproj/MainMenu.xib
   )
-endif()
 
-
-if (MACOS)
   set_target_properties(${TARGET_NAME} PROPERTIES
     MACOSX_BUNDLE YES
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
@@ -80,6 +88,7 @@ if (MACOS)
     MACOSX_BUNDLE_ICON_FILE "MatrixBuddy.icns"
   )
 endif()
+
 
 
 # ######### Sources ################
@@ -155,10 +164,14 @@ set(computationControllersSourceFiles
   src/ComputationControllers/MATVSubV.c
 )
 
+
+
+# ######### Group sources in project browser ################
+
 source_group("res" FILES ${resourceFiles})
 target_sources(${TARGET_NAME} PRIVATE ${resourceFiles})
 
-if (MACOS)
+if (APPLE)
   source_group("res/mac" FILES ${macResourceFiles})
   target_sources(${TARGET_NAME} PRIVATE ${macResourceFiles})
 endif()
