@@ -10,6 +10,7 @@
 #include "NAVisual/NAImage.h"
 #include "NAUtility/NAString.h"
 #include "NAApp/NAImageSet.h"
+#include "NAApp/NAApp.h"
 
 
 
@@ -104,8 +105,8 @@ void preStartup(void* arg){
   
 //  naSetApplicationName("Matrix Buddy");
 //  //naSetApplicationCompanyName("ASuppaCombbany");
-//  naSetApplicationVersionString("1.1.1");
-//  naSetApplicationBuildString("1.1.4");
+  naSetApplicationVersionString(MAT_OFFICIAL_VERSION_STRING);
+  naSetApplicationBuildString(MAT_BUILD_NUMBER_VERSION_STRING);
 //  naSetApplicationIconPath("icon.png");
 
   initTranslations();

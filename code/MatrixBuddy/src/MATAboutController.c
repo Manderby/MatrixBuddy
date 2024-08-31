@@ -62,16 +62,16 @@ MATAboutController* matAllocAboutController(void){
   naRelease(titleFont);
   naAddSpaceChild(space, con->appNameLabel, naMakePos(20., 166.));
 
-  //NAString* bundleVersionString = naNewApplicationVersionString();
-  //NAString* bundleBuildString = naNewApplicationBuildString();
-  //const NAUTF8Char* aboutVersionFormatString = matTranslate(MATVersionBuild);
-  //NAString* aboutVersionString = naNewStringWithFormat(aboutVersionFormatString, naGetStringUTF8Pointer(bundleVersionString), naGetStringUTF8Pointer(bundleBuildString));
-  //con->appVersionLabel = naNewLabel(naGetStringUTF8Pointer(aboutVersionString), 300);
-  //naDelete(aboutVersionString);
-  //naDelete(bundleVersionString);
-  //naDelete(bundleBuildString);
-  //naSetLabelTextAlignment(con->appVersionLabel, NA_TEXT_ALIGNMENT_CENTER);
-  //naAddSpaceChild(space, con->appVersionLabel, naMakePos(20., 140.));
+  NAString* bundleVersionString = naNewApplicationVersionString();
+  NAString* bundleBuildString = naNewApplicationBuildString();
+  const NAUTF8Char* aboutVersionFormatString = matTranslate(MATVersionBuild);
+  NAString* aboutVersionString = naNewStringWithFormat(aboutVersionFormatString, naGetStringUTF8Pointer(bundleVersionString), naGetStringUTF8Pointer(bundleBuildString));
+  con->appVersionLabel = naNewLabel(naGetStringUTF8Pointer(aboutVersionString), 300);
+  naDelete(aboutVersionString);
+  naDelete(bundleVersionString);
+  naDelete(bundleBuildString);
+  naSetLabelTextAlignment(con->appVersionLabel, NA_TEXT_ALIGNMENT_CENTER);
+  naAddSpaceChild(space, con->appVersionLabel, naMakePos(20., 140.));
 
   con->appDescLabel = naNewLabel(matTranslate(MATApplicationDescription), 300);
   naSetLabelHeight(con->appDescLabel, 56);

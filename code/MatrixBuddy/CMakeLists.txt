@@ -7,6 +7,10 @@ project(MatrixBuddy)
 
 set(TARGET_NAME MatrixBuddy)
 
+set(BUNDLE_IDENTIFIER_PREFIX "ch.manderim.")
+set(OFFICIAL_VERSION_STRING 1.2.2)
+set(BUILD_NUMBER_VERSION_STRING 1.2.2)
+
 if (MSVC)
   add_executable(${TARGET_NAME} WIN32 src/main.c)
 elseif(APPLE)
@@ -77,11 +81,21 @@ if (APPLE)
         ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/en.lproj/MainMenu.xib
   )
 
+  set(BUNDLE_IDENTIFIER "${BUNDLE_IDENTIFIER_PREFIX}$(PRODUCT_NAME:rfc1034identifier)")
+
   set_target_properties(${TARGET_NAME} PROPERTIES
     MACOSX_BUNDLE YES
+    MACOSX_BUNDLE_BUNDLE_NAME $(PRODUCT_NAME)
+    #MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/Matrix Buddy-Info.plist
+
+    XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER ${BUNDLE_IDENTIFIER}
+
+    MACOSX_BUNDLE_GUI_IDENTIFIER ${BUNDLE_IDENTIFIER}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${OFFICIAL_VERSION_STRING}
+    MACOSX_BUNDLE_BUNDLE_VERSION ${BUILD_NUMBER_VERSION_STRING}
+    MACOSX_BUNDLE_ICON_FILE "MatrixBuddy.icns"
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
-    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/res/mac/Matrix Buddy-Info.plist"
-    XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "ch.manderim.$(PRODUCT_NAME:rfc1034identifier)"
+
   )
 endif()
 
@@ -180,6 +194,13 @@ target_sources(${TARGET_NAME} PRIVATE ${sourceFiles})
 
 
 
+# ######### Macro definitions ################
+
+add_definitions(-DMAT_OFFICIAL_VERSION_STRING=\"${OFFICIAL_VERSION_STRING}\")
+add_definitions(-DMAT_BUILD_NUMBER_VERSION_STRING=\"${BUILD_NUMBER_VERSION_STRING}\")
+
+
+
 # ######### Linking to NALib ################
 
 # Define GUI to be in use and hide the CMake GUI options.
@@ -206,3 +227,8 @@ else()
   target_link_libraries(${TARGET_NAME} PRIVATE ${UTYPE_FRAMEWORK})
   
 endif()
+
+
+
+# this hack removes the xxx-CMakeForceLinker.cxx dummy file
+set_target_properties(${TARGET_NAME} PROPERTIES LINKER_LANGUAGE C)
