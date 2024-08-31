@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.13)
 project(MatrixBuddy)
 
 set(TARGET_NAME MatrixBuddy)
+set (MACOS APPLE)
+#set(MACOS (NOT MSVC))
 
 if (MSVC)
   add_executable(${TARGET_NAME} WIN32 src/main.c)
@@ -29,7 +31,7 @@ if (MSVC)
 
 else()
 
-  set(OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/$CONFIGURATION/)
+  set(OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/$CONFIGURATION/${TARGET_NAME}.app/Contents/Resources/)
 
 endif()
 
@@ -51,6 +53,33 @@ add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
       \"${OUTPUT_DIRECTORY}settings.png\"
 )
 
+if (MACOS)
+  add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/MatrixBuddy.icns
+        \"${OUTPUT_DIRECTORY}MatrixBuddy.icns\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/en.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}en.lproj/InfoPlist.strings\"
+    COMMAND ibtool --compile
+        \"${OUTPUT_DIRECTORY}en.lproj/MainMenu.nib\"
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/en.lproj/MainMenu.xib
+  )
+endif()
+
+
+if (MACOS)
+  set_target_properties(${TARGET_NAME} PROPERTIES
+    MACOSX_BUNDLE YES
+    XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
+    MACOSX_BUNDLE_BUNDLE_NAME "$(PRODUCT_NAME)"
+    MACOSX_BUNDLE_BUNDLE_VERSION "1.2.3"
+    MACOSX_BUNDLE_SHORT_VERSION_STRING "1.2.3"
+    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/res/mac/Matrix Buddy-Info.plist"
+    XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "ch.manderim.$(PRODUCT_NAME:rfc1034identifier)"
+    MACOSX_BUNDLE_ICON_FILE "MatrixBuddy.icns"
+  )
+endif()
 
 
 # ######### Sources ################
@@ -62,6 +91,14 @@ set(resourceFiles
   res/copy.png
   res/paste.png
   res/settings.png
+)
+
+set(macResourceFiles
+  res/mac/MatrixBuddy.icns
+  res/mac/Matrix\ Buddy.entitlements
+  res/mac/Matrix\ Buddy-Info.plist
+  res/mac/en.lproj/InfoPlist.strings
+  res/mac/en.lproj/MainMenu.xib
 )
 
 set(sourceFiles
@@ -120,6 +157,11 @@ set(computationControllersSourceFiles
 
 source_group("res" FILES ${resourceFiles})
 target_sources(${TARGET_NAME} PRIVATE ${resourceFiles})
+
+if (MACOS)
+  source_group("res/mac" FILES ${macResourceFiles})
+  target_sources(${TARGET_NAME} PRIVATE ${macResourceFiles})
+endif()
 
 source_group("src/ComputationControllers" FILES ${computationControllersSourceFiles})
 target_sources(${TARGET_NAME} PRIVATE ${computationControllersSourceFiles})
