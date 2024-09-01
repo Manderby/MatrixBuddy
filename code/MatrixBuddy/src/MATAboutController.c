@@ -4,6 +4,7 @@
 #include "MATTranslations.h"
 #include "NAUtility/NAMemory.h"
 #include "NAUtility/NAString.h"
+#include "NAVisual/NAImage.h"
 
 
 
@@ -45,14 +46,14 @@ MATAboutController* matAllocAboutController(void){
   
   NASpace* space = naGetWindowContentSpace(con->window);
 
-  //NAString* iconPath = naNewApplicationIconPath();
-  //NAImage* iconImage = naCreateImageFromFilePath(naGetStringUTF8Pointer(iconPath));
-  //NAImageSet* iconImageSet = naCreateUIImage(iconImage, NA_UIIMAGE_RESOLUTION_SCREEN_2x, NA_BLEND_ZERO);
-  //naRelease(iconImage);
-  //naDelete(iconPath);
-  //con->iconSpace = naNewImageSpace(iconImageSet, naMakeSize(128, 128));
-  //naAddSpaceChild(space, con->iconSpace, naMakePos(106., 200.));
-  //naRelease(iconImageSet);
+  NAString* iconPath = naNewApplicationIconPath();
+  NAImage* iconImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(iconPath));
+  NAImageSet* iconImageSet = naCreateImageSet(iconImage, NA_UI_RESOLUTION_2x, NA_BLEND_ZERO);
+  naRelease(iconImage);
+  naDelete(iconPath);
+  con->iconSpace = naNewImageSpace(iconImageSet, naMakeSize(128, 128));
+  naAddSpaceChild(space, con->iconSpace, naMakePos(106., 200.));
+  naRelease(iconImageSet);
 
   con->appNameLabel = naNewLabel(naGetStringUTF8Pointer(bundleApplicationName), 300);
   NAFont* titleFont = naCreateFontWithPreset(NA_FONT_KIND_TITLE, NA_FONT_SIZE_BIG);

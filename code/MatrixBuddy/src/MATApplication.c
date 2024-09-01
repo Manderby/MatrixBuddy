@@ -104,7 +104,6 @@ void preStartup(void* arg){
   mat_App = naAlloc(MATApplication);
   
 //  naSetApplicationName("Matrix Buddy");
-//  //naSetApplicationCompanyName("ASuppaCombbany");
   naSetApplicationVersionString(MAT_OFFICIAL_VERSION_STRING);
   naSetApplicationBuildString(MAT_BUILD_NUMBER_VERSION_STRING);
 //  naSetApplicationIconPath("icon.png");
