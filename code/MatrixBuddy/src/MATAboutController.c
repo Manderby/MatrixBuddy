@@ -47,13 +47,15 @@ MATAboutController* matAllocAboutController(void){
   NASpace* space = naGetWindowContentSpace(con->window);
 
   NAString* iconPath = naNewApplicationIconPath();
-  NAImage* iconImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(iconPath));
-  NAImageSet* iconImageSet = naCreateImageSet(iconImage, NA_UI_RESOLUTION_2x, NA_BLEND_ZERO);
-  naRelease(iconImage);
-  naDelete(iconPath);
-  con->iconSpace = naNewImageSpace(iconImageSet, naMakeSize(128, 128));
-  naAddSpaceChild(space, con->iconSpace, naMakePos(106., 200.));
-  naRelease(iconImageSet);
+  if(iconPath) {
+    NAImage* iconImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(iconPath));
+    NAImageSet* iconImageSet = naCreateImageSet(iconImage, NA_UI_RESOLUTION_2x, NA_BLEND_ZERO);
+    naRelease(iconImage);
+    naDelete(iconPath);
+    con->iconSpace = naNewImageSpace(iconImageSet, naMakeSize(128, 128));
+    naAddSpaceChild(space, con->iconSpace, naMakePos(106., 200.));
+    naRelease(iconImageSet);
+  }
 
   con->appNameLabel = naNewLabel(naGetStringUTF8Pointer(bundleApplicationName), 300);
   NAFont* titleFont = naCreateFontWithPreset(NA_FONT_KIND_TITLE, NA_FONT_SIZE_BIG);
