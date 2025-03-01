@@ -212,7 +212,7 @@ MATWindowController* matAllocWindowController(){
   matAddComputationButton(con, MAT_COMPUTATION_MDIAGV,     naMakePos(490, 0), 80);
   matAddComputationButton(con, MAT_COMPUTATION_MTRANSPOSE, naMakePos(580, 0), 110);
   matAddComputationButton(con, MAT_COMPUTATION_MINVERT,    naMakePos(700, 0), 110);
-  naAddSpaceChild(space, con->buttonsSpace, naMakePos(120, 250));
+  naAddSpaceChild(space, con->buttonsSpace, naMakePos(170, 250));
 
   naZeron(con->controllers, MAT_COMPUTATION_COUNT * 3 * sizeof(MATBaseController*));
   con->currentController = NA_NULL;
@@ -221,7 +221,7 @@ MATWindowController* matAllocWindowController(){
   
   con->settingsButton = naNewIconPushButton(matGetSettingsImageSet(), 30);
   naAddUIReaction(con->settingsButton, NA_UI_COMMAND_PRESSED, matOpenSettings, con);
-  naAddSpaceChild(space, con->settingsButton, naMakePos(950, 300));
+  naAddSpaceChild(space, con->settingsButton, naMakePos(1050, 300));
   con->settingsMenu = naNewMenu();
   matAddSettingsMenuItem(con, &con->showHelpItem, MATMenuItemShowHelp);
   matAddSettingsMenuItem(con, &con->showIdentifiersItem, MATMenuItemShowIdentifiers);
