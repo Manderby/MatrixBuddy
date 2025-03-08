@@ -449,7 +449,7 @@ void matUpdateView(MATView* view){
     matFillColor(&naColor, matColor);
     naSetLabelTextColor(view->label, &naColor);
     naSetLabelTextColor(view->errorLabel, &naColor);
-    naColor.alpha *= .1f;
+    naColor.alpha *= .15f;
     naSetSpaceBackgroundColor(view->matrixSpace, &naColor);
   }
 }
