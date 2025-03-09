@@ -103,10 +103,10 @@ void preStartup(void* arg){
   
   mat_App = naAlloc(MATApplication);
   
-//  naSetApplicationName("Matrix Buddy");
+  naSetApplicationName("Matrix Buddy");
   naSetApplicationVersionString(MAT_VERSION_STRING);
   naSetApplicationBuildString(MAT_BUILD_NUMBER_STRING);
-//  naSetApplicationIconPath("icon.png");
+  naSetApplicationIconPath("icon.png");
 
   initTranslations();
   initPreferences();
