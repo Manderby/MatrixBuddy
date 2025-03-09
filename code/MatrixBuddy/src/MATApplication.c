@@ -134,7 +134,7 @@ void postStartup(void* arg){
 
   mat_App->mathFont = naCreateFontWithPreset(
     NA_FONT_KIND_MATH,
-    NA_FONT_SIZE_BIG);
+    NA_FONT_SIZE_HUGE);
   mat_App->helpLineFont = naCreateFontWithPreset(
     NA_FONT_KIND_SYSTEM,
     NA_FONT_SIZE_SMALL);
