@@ -106,7 +106,10 @@ void preStartup(void* arg){
   naSetApplicationName("Matrix Buddy");
   naSetApplicationVersionString(MAT_VERSION_STRING);
   naSetApplicationBuildString(MAT_BUILD_NUMBER_STRING);
-  naSetApplicationIconPath("icon.png");
+  
+  #if NA_OS == NA_OS_WINDOWS
+    naSetApplicationIconPath("icon.png");
+  #endif
 
   initTranslations();
   initPreferences();
