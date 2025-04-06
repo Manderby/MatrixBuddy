@@ -3,8 +3,8 @@
 
 MATView* matAllocView(
   const NAUTF8Char* label,
-  NAInt dimensionX,
-  NAInt dimensionY,
+  int64 dimensionX,
+  int64 dimensionY,
   void* con,
   const double* initValues);
 
