@@ -192,7 +192,7 @@ void matShowApplicationAbout(){
   matShowAboutController(mat_App->aboutController);
 }
 void matShowApplicationHelp(){
-  //naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
+  naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
 }
 
 

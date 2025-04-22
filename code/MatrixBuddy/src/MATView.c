@@ -319,8 +319,8 @@ MATView* matAllocView(
 {
   MATView* view = naAlloc(MATView);
 
-  view->dimensions[0] = dimensionX;
-  view->dimensions[1] = dimensionY;
+  view->dimensions[0] = naCasti64ToSize(dimensionX);
+  view->dimensions[1] = naCasti64ToSize(dimensionY);
 
   view->con = con;
   view->status = MAT_STATUS_NORMAL;
