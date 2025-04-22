@@ -1,6 +1,11 @@
 Matrix Buddy Changelog
 
-Upcoming version:
+Version 1.3:
+------------
+- Windows native application released
+
+
+Version 1.2.3:
 -----------------
 - Complete reprogramming in C
 

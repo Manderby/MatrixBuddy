@@ -8,8 +8,8 @@ project(MatrixBuddy)
 set(TARGET_NAME MatrixBuddy)
 
 set(BUNDLE_IDENTIFIER_PREFIX "ch.manderim.")
-set(VERSION_STRING 1.2.2)
-set(BUILD_NUMBER_STRING 1.2.2)
+set(VERSION_STRING 1.3)
+set(BUILD_NUMBER_STRING 1.3.0)
 
 if(MSVC)
   add_executable(${TARGET_NAME} WIN32 src/main.c)
