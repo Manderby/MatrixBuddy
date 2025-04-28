@@ -149,7 +149,6 @@ set(sourceFiles
   src/MATApplication.c
   src/MATApplication.h
   src/MATCommonC.h
-  src/MATNSApplication.h
   src/MATNSApplication.m
   src/MATPreferences.c
   src/MATPreferences.h
