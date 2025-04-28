@@ -11,7 +11,7 @@ set(BUNDLE_IDENTIFIER_PREFIX "ch.manderim.")
 set(BUNDLE_IDENTIFIER_MAC "Matrix-Buddy")
 
 set(VERSION_STRING 1.3.1)
-set(BUILD_NUMBER_STRING 1.3.1)
+set(BUILD_NUMBER_STRING 1.3.2)
 
 if(MSVC)
   add_executable(${TARGET_NAME} WIN32 src/main.c)
@@ -80,7 +80,7 @@ if(APPLE)
         \"${OUTPUT_DIRECTORY}en.lproj/InfoPlist.strings\"
     COMMAND ibtool --compile
         \"${OUTPUT_DIRECTORY}en.lproj/MainMenu.nib\"
-        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/en.lproj/MainMenu.xib
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/MainMenu.xib
   )
 
   set(BUNDLE_IDENTIFIER "${BUNDLE_IDENTIFIER_PREFIX}${BUNDLE_IDENTIFIER_MAC}")
@@ -137,9 +137,13 @@ set(resourceFiles
 
 set(macResourceFiles
   res/mac/MatrixBuddy.icns
-  res/mac/Matrix\ Buddy.entitlements
+  res/mac/MainMenu.xib
   res/mac/en.lproj/InfoPlist.strings
-  res/mac/en.lproj/MainMenu.xib
+  res/mac/de.lproj/InfoPlist.strings
+  res/mac/es.lproj/InfoPlist.strings
+  res/mac/fr.lproj/InfoPlist.strings
+  res/mac/ja.lproj/InfoPlist.strings
+  res/mac/zh.lproj/InfoPlist.strings
 )
 
 set(sourceFiles
