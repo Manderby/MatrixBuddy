@@ -122,14 +122,20 @@ void preStartup(void* arg){
   NAString* copyImagePath = naNewApplicationResourcePath(NA_NULL, "copy", "png");
   NAImage* mainCopyImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(copyImagePath));
   mat_App->copyImageSet = naCreateImageSet(mainCopyImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
+  naRelease(mainCopyImage);
+  naDelete(copyImagePath);
 
   NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
   NAImage* mainPasteImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(pasteImagePath));
   mat_App->pasteImageSet = naCreateImageSet(mainPasteImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
+  naRelease(mainPasteImage);
+  naDelete(pasteImagePath);
 
   NAString* settingsImagePath = naNewApplicationResourcePath(NA_NULL, "settings", "png");
   NAImage* mainSettingsImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(settingsImagePath));
   mat_App->settingsImageSet = naCreateImageSet(mainSettingsImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
+  naRelease(mainSettingsImage);
+  naDelete(settingsImagePath);
 }
 
 
@@ -163,6 +169,7 @@ void stopApplication(void* arg){
   naRelease(mat_App->helpLineFont);
   naRelease(mat_App->copyImageSet);
   naRelease(mat_App->pasteImageSet);
+  naRelease(mat_App->settingsImageSet);
 }
 
 

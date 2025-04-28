@@ -252,6 +252,7 @@ MATWindowController* matAllocWindowController(){
 
 
 void matDeallocWindowController(MATWindowController* con){
+  naDelete(con->settingsMenu);
   naFree(con);
 }
 

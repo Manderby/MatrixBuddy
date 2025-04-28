@@ -8,8 +8,10 @@ project(MatrixBuddy)
 set(TARGET_NAME MatrixBuddy)
 
 set(BUNDLE_IDENTIFIER_PREFIX "ch.manderim.")
-set(VERSION_STRING 1.3)
-set(BUILD_NUMBER_STRING 1.3.0)
+set(BUNDLE_IDENTIFIER_MAC "Matrix-Buddy")
+
+set(VERSION_STRING 1.3.1)
+set(BUILD_NUMBER_STRING 1.3.1)
 
 if(MSVC)
   add_executable(${TARGET_NAME} WIN32 src/main.c)
@@ -81,7 +83,7 @@ if(APPLE)
         ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/en.lproj/MainMenu.xib
   )
 
-  set(BUNDLE_IDENTIFIER "${BUNDLE_IDENTIFIER_PREFIX}$(PRODUCT_NAME:rfc1034identifier)")
+  set(BUNDLE_IDENTIFIER "${BUNDLE_IDENTIFIER_PREFIX}${BUNDLE_IDENTIFIER_MAC}")
 
   set_target_properties(${TARGET_NAME} PROPERTIES
     MACOSX_BUNDLE YES
@@ -92,7 +94,19 @@ if(APPLE)
     MACOSX_BUNDLE_BUNDLE_VERSION ${BUILD_NUMBER_STRING}
     MACOSX_BUNDLE_ICON_FILE "MatrixBuddy.icns"
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
+    XCODE_ATTRIBUTE_INSTALL_PATH "$(LOCAL_APPS_DIR)"
+    XCODE_ATTRIBUTE_DEBUG_INFORMATION_FORMAT "dwarf-with-dsym"
+    XCODE_ATTRIBUTE_GCC_GENERATE_DEBUGGING_SYMBOLS "YES"
+    XCODE_ATTRIBUTE_DEPLOYMENT_POSTPROCESSING "YES"
+    XCODE_ATTRIBUTE_SKIP_INSTALL "NO"
+
+    # Uncomment the following line when you are planning to archive and upload.
+    # Beware: The debug build will not have the proper resource folder copied
+    # but the archive will contain it.
+    # Note: Sometimes, it works without uncommenting it.
+    # XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "$(inherited)"
   )
+  
 endif()
 
 if(MSVC)
