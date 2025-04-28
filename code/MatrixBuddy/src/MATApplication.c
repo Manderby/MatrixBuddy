@@ -103,6 +103,11 @@ void preStartup(void* arg){
   
   mat_App = naAlloc(MATApplication);
   
+  NAString* appPath = naNewExecutablePath();
+  naSetApplicationResourceBasePath(naGetStringUTF8Pointer(appPath));
+  //naPresentAlertBox(NA_ALERT_BOX_INFO, "Resource directory", naGetStringUTF8Pointer(appPath));
+  naDelete(appPath);
+
   naSetApplicationName("Matrix Buddy");
   naSetApplicationVersionString(MAT_VERSION_STRING);
   naSetApplicationBuildString(MAT_BUILD_NUMBER_STRING);
@@ -158,9 +163,6 @@ void stopApplication(void* arg){
   naRelease(mat_App->helpLineFont);
   naRelease(mat_App->copyImageSet);
   naRelease(mat_App->pasteImageSet);
-
-  naFree(mat_App);
-  naStopRuntime();
 }
 
 
@@ -190,7 +192,7 @@ void matShowApplicationAbout(){
   matShowAboutController(mat_App->aboutController);
 }
 void matShowApplicationHelp(){
-  //naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
+  naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
 }
 
 
