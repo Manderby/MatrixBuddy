@@ -17,7 +17,6 @@ struct MATAboutController{
   NAImageSpace* iconSpace;
   NALabel* appNameLabel;
   NALabel* appVersionLabel;
-  NALabel* appDescLabel;
   NAImageSpace* manderCSpace;
   NALabel* helpLinkLabel;
   NAButton* doneButton;
@@ -37,7 +36,7 @@ MATAboutController* matAllocAboutController(void){
 
   NAString* bundleApplicationName = naNewApplicationName();
 
-  NARect windowrect = naMakeRectS(20, 300, 340, 348);
+  NARect windowrect = naMakeRectS(20, 300, 340, 308);
   const NAUTF8Char* aboutWindowTitleFormatString = matTranslate(MATAbout);
   NAString* aboutWindowTitleString = naNewStringWithFormat(aboutWindowTitleFormatString, naGetStringUTF8Pointer(bundleApplicationName));
   // We have no storage tag as the about window is not really part of the application
@@ -53,7 +52,7 @@ MATAboutController* matAllocAboutController(void){
     naRelease(iconImage);
     naDelete(iconPath);
     con->iconSpace = naNewImageSpace(iconImageSet, naMakeSize(128, 128));
-    naAddSpaceChild(space, con->iconSpace, naMakePos(106., 200.));
+    naAddSpaceChild(space, con->iconSpace, naMakePos(106., 160.));
     naRelease(iconImageSet);
   }
 
@@ -63,7 +62,7 @@ MATAboutController* matAllocAboutController(void){
   naSetLabelTextAlignment(con->appNameLabel, NA_TEXT_ALIGNMENT_CENTER);
   naSetLabelHeight(con->appNameLabel, 24);
   naRelease(titleFont);
-  naAddSpaceChild(space, con->appNameLabel, naMakePos(20., 166.));
+  naAddSpaceChild(space, con->appNameLabel, naMakePos(20., 126.));
 
   NAString* bundleVersionString = naNewApplicationVersionString();
   NAString* bundleBuildString = naNewApplicationBuildString();
@@ -74,12 +73,7 @@ MATAboutController* matAllocAboutController(void){
   naDelete(bundleVersionString);
   naDelete(bundleBuildString);
   naSetLabelTextAlignment(con->appVersionLabel, NA_TEXT_ALIGNMENT_CENTER);
-  naAddSpaceChild(space, con->appVersionLabel, naMakePos(20., 140.));
-
-  con->appDescLabel = naNewLabel(matTranslate(MATApplicationDescription), 300);
-  naSetLabelHeight(con->appDescLabel, 56);
-  naSetLabelTextAlignment(con->appDescLabel, NA_TEXT_ALIGNMENT_CENTER);
-  naAddSpaceChild(space, con->appDescLabel, naMakePos(20., 76.));
+  naAddSpaceChild(space, con->appVersionLabel, naMakePos(20., 100.));
 
   con->helpLinkLabel = naNewLabel(matTranslate(MATOnlineHelp), 300);
   naSetLabelTextAlignment(con->helpLinkLabel, NA_TEXT_ALIGNMENT_CENTER);

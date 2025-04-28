@@ -41,6 +41,7 @@ struct MATWindowController{
   NAMenuItem* valueAccuracyFloatItem;
   NAMenuItem* aboutItem;
   NAMenuItem* helpItem;
+  NAMenuItem* preferencesItem;
 };
 
 
@@ -124,6 +125,8 @@ void matSettingsMenuItemSelected(NAReaction reaction){
     matShowApplicationAbout();
   }else if(reaction.uiElement == con->helpItem){
     matShowApplicationHelp();
+  }else if(reaction.uiElement == con->preferencesItem){
+    matShowApplicationPreferences();
   }
   matUpdateWindowController(con);
 }
@@ -217,7 +220,7 @@ MATWindowController* matAllocWindowController(){
   naZeron(con->controllers, MAT_COMPUTATION_COUNT * 3 * sizeof(MATBaseController*));
   con->currentController = NA_NULL;
   con->dimensions = 3;
-  con->computation = MAT_COMPUTATION_VMULS;
+  con->computation = MAT_COMPUTATION_MMULV;
   
   con->settingsButton = naNewIconPushButton(matGetSettingsImageSet(), 30);
   naAddUIReaction(con->settingsButton, NA_UI_COMMAND_PRESSED, matOpenSettings, con);
@@ -243,6 +246,7 @@ MATWindowController* matAllocWindowController(){
   naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
   matAddSettingsMenuItem(con, &con->aboutItem, MATMenuItemAbout);
   matAddSettingsMenuItem(con, &con->helpItem, MATMenuItemHelp);
+  matAddSettingsMenuItem(con, &con->preferencesItem, MATMenuItemPreferences);
   naAddMenuItem(con->settingsMenu, naNewMenuSeparator(), NA_NULL);
   matUpdateWindowController(con);
   naShowWindow(con->window);
@@ -252,6 +256,53 @@ MATWindowController* matAllocWindowController(){
 
 
 void matDeallocWindowController(MATWindowController* con){
+  if(con->currentController){
+    // We remove the current controller in order to NOT automatically
+    // deallocate it when deleting this controller.
+    naRemoveSpaceChild(naGetWindowContentSpace(con->window), naGetControllerSpace(con->currentController));
+  }
+
+  // todo: This will only delete the structs, but not actually the UI elements.
+  // Need better NALib to do that.
+  for(size_t i = 0; i < MAT_COMPUTATION_COUNT; ++i) {
+    for(size_t d = 2; d <= 4; ++d) { // go through all dimensions 2D, 3D and 4D.
+      size_t index = i * 3 + (d - 2);
+      if(con->controllers[index]){
+        switch(i){
+        case MAT_COMPUTATION_VMULS:      matDeallocVMulSController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VDIVS:      matDeallocVDivSController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VMULCOMPV:  matDeallocVMulCompVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VDIVCOMPV:  matDeallocVDivCompVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VNEG:       matDeallocVNegController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VADDV:      matDeallocVAddVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VSUBV:      matDeallocVSubVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VDOTV:      matDeallocVDotVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VCROSSV:    matDeallocVCrossVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VLENGTH:    matDeallocVLengthController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VNORMALIZE: matDeallocVNormalizeController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VORTHO:     matDeallocVOrthoController(con->controllers[index]); break;
+        case MAT_COMPUTATION_VMIRROR:    matDeallocVMirrorController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MMULS:      matDeallocMMulSController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MDIVS:      matDeallocMDivSController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MMULCOMPV:  matDeallocMMulCompVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MDIVCOMPV:  matDeallocMDivCompVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MMULCOMPM:  matDeallocMMulCompMController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MDIVCOMPM:  matDeallocMDivCompMController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MNEG:       matDeallocMNegController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MADDM:      matDeallocMAddMController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MSUBM:      matDeallocMSubMController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MMULV:      matDeallocMMulVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MMULM:      matDeallocMMulMController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MDIAGS:     matDeallocMDiagSController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MDIAGV:     matDeallocMDiagVController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MTRANSPOSE: matDeallocMTransposeController(con->controllers[index]); break;
+        case MAT_COMPUTATION_MINVERT:    matDeallocMInvertController(con->controllers[index]); break;
+        default: break;
+        }
+      }
+    }
+  }
+
   naDelete(con->settingsMenu);
   naFree(con);
 }

@@ -1,5 +1,10 @@
 Matrix Buddy Changelog
 
+Version 1.3.1:
+--------------
+- Fixing memory leaks.
+- Adding French, Spanish, Japanese, Chinese and Klingon.
+
 Version 1.3:
 ------------
 - Windows native application released

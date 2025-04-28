@@ -5,6 +5,7 @@
 #include "MATPreferences.h"
 #include "MATWindowController.h"
 #include "MATAboutController.h"
+#include "MATPreferencesController.h"
 
 #include "NAVisual/NAColor.h"
 #include "NAVisual/NAImage.h"
@@ -92,6 +93,7 @@ struct MATApplication{
   NAImageSet* settingsImageSet;
   MATAboutController* aboutController;
   MATWindowController* windowController;
+  MATPreferencesController* preferencesController;
 };
 
 static MATApplication* mat_App = NA_NULL;
@@ -146,6 +148,11 @@ void postStartup(void* arg){
     naLoadNib("MainMenu", NA_NULL);
   #endif
 
+  NALanguageCode3 languageCode = matGetPrefsPreferredLanguage();
+  if(languageCode != 0){
+    naSetTranslatorLanguagePreference(languageCode);
+  }
+
   mat_App->mathFont = naCreateFontWithPreset(
     NA_FONT_KIND_MATH,
     NA_FONT_SIZE_HUGE);
@@ -155,6 +162,7 @@ void postStartup(void* arg){
 
   mat_App->aboutController = matAllocAboutController();
   mat_App->windowController = matAllocWindowController();
+  mat_App->preferencesController = NA_NULL;
 }
 
 
@@ -164,7 +172,10 @@ void stopApplication(void* arg){
   
   matDeallocAboutController(mat_App->aboutController);
   matDeallocWindowController(mat_App->windowController);
-  
+  if(mat_App->preferencesController) {
+    matDeallocPreferencesController(mat_App->preferencesController);
+  }
+
   naRelease(mat_App->mathFont);
   naRelease(mat_App->helpLineFont);
   naRelease(mat_App->copyImageSet);
@@ -200,6 +211,17 @@ void matShowApplicationAbout(){
 }
 void matShowApplicationHelp(){
   naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
+}
+void matShowApplicationPreferences(){
+  NABool newlyCreated = NA_FALSE;
+  if(!mat_App->preferencesController) {
+    mat_App->preferencesController = matAllocPreferencesController();
+    newlyCreated = NA_TRUE;
+  }
+  matShowPreferencesController(mat_App->preferencesController);
+  if(newlyCreated) {
+    matUpdatePreferencesController(mat_App->preferencesController);
+  }
 }
 
 

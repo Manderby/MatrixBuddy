@@ -123,8 +123,13 @@ endif()
 
 set(resourceFiles
   res/MatrixBuddyChangelog.txt
-  res/MatrixBuddyStrings_deu.h
   res/MatrixBuddyStrings_eng.h
+  res/MatrixBuddyStrings_deu.h
+  res/MatrixBuddyStrings_spa.h
+  res/MatrixBuddyStrings_fra.h
+  res/MatrixBuddyStrings_tlh.h
+  res/MatrixBuddyStrings_jpn.h
+  res/MatrixBuddyStrings_zho.h
   res/copy.png
   res/paste.png
   res/settings.png
@@ -139,7 +144,6 @@ set(macResourceFiles
 
 set(sourceFiles
   src/main.c
-  src/main.m
   src/MATAboutController.c
   src/MATAboutController.h
   src/MATApplication.c
@@ -149,6 +153,8 @@ set(sourceFiles
   src/MATNSApplication.m
   src/MATPreferences.c
   src/MATPreferences.h
+  src/MATPreferencesController.c
+  src/MATPreferencesController.h
   src/MATTranslations.c
   src/MATTranslations.h
   src/MATTypes.h

@@ -15,7 +15,7 @@ NAImageSet* matGetSettingsImageSet(void);
 
 void matShowApplicationAbout(void);
 void matShowApplicationHelp(void);
-
+void matShowApplicationPreferences(void);
 
 
 // This is free and unencumbered software released into the public domain.
