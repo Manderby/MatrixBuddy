@@ -138,12 +138,12 @@ set(resourceFiles
 set(macResourceFiles
   res/mac/MatrixBuddy.icns
   res/mac/MainMenu.xib
-  res/mac/en.lproj/InfoPlist.strings
-  res/mac/de.lproj/InfoPlist.strings
-  res/mac/es.lproj/InfoPlist.strings
-  res/mac/fr.lproj/InfoPlist.strings
-  res/mac/ja.lproj/InfoPlist.strings
-  res/mac/zh.lproj/InfoPlist.strings
+  #res/mac/en.lproj/InfoPlist.strings
+  #res/mac/de.lproj/InfoPlist.strings
+  #res/mac/es.lproj/InfoPlist.strings
+  #res/mac/fr.lproj/InfoPlist.strings
+  #res/mac/ja.lproj/InfoPlist.strings
+  #res/mac/zh.lproj/InfoPlist.strings
 )
 
 set(sourceFiles
