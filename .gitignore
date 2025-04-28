@@ -13,3 +13,9 @@
 CONERR*
 build/
 bin/
+obj/
+AppPackages/
+BundleArtifacts/
+*assets.cache
+*wapproj.user
+*.entitlements
