@@ -78,6 +78,21 @@ if(APPLE)
     COMMAND ${CMAKE_COMMAND} -E copy
         ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/en.lproj/InfoPlist.strings
         \"${OUTPUT_DIRECTORY}en.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/de.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}de.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/es.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}es.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/fr.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}fr.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/ja.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}ja.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/zh.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}zh.lproj/InfoPlist.strings\"
     COMMAND ibtool --compile
         \"${OUTPUT_DIRECTORY}en.lproj/MainMenu.nib\"
         ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/MainMenu.xib
