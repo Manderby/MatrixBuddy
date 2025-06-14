@@ -159,7 +159,7 @@ void matAddSettingsMenuItem(
   NAMenuItem** menuItem,
   MATTranslation translation)
 {
-  *menuItem = naNewMenuItem(matTranslate(translation));
+  *menuItem = naNewMenuItem(matTranslate(translation), NA_NULL);
   naAddUIReaction(*menuItem, NA_UI_COMMAND_PRESSED, matSettingsMenuItemSelected, con);
   naAddMenuItem(con->settingsMenu, *menuItem, NA_NULL);
 }
@@ -169,7 +169,7 @@ void matAddSettingsMenuItem(
 MATWindowController* matAllocWindowController(){
   MATWindowController* con = naAlloc(MATWindowController);
   
-  con->window = naNewWindow("Matrix Buddy", naMakeRectS(100, 100, 1105, 340), 0, 0);
+  con->window = naNewWindow("Matrix Buddy", naMakeRectS(100, 100, 1105, 340), 0);
   naAddUIReaction(con->window, NA_UI_COMMAND_CLOSES, matCloseWindow, con);
   NASpace* space = naGetWindowContentSpace(con->window);
   

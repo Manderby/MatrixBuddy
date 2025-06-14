@@ -40,7 +40,8 @@ MATAboutController* matAllocAboutController(void){
   const NAUTF8Char* aboutWindowTitleFormatString = matTranslate(MATAbout);
   NAString* aboutWindowTitleString = naNewStringWithFormat(aboutWindowTitleFormatString, naGetStringUTF8Pointer(bundleApplicationName));
   // We have no storage tag as the about window is not really part of the application
-  con->window = naNewWindow(naGetStringUTF8Pointer(aboutWindowTitleString), windowrect, NA_FALSE, MAT_WINDOW_TAG_ABOUT);
+  con->window = naNewWindow(naGetStringUTF8Pointer(aboutWindowTitleString), windowrect, NA_FALSE);
+  naSetWindowStorageTag(con->window, MAT_WINDOW_TAG_ABOUT);
   naDelete(aboutWindowTitleString);
   
   NASpace* space = naGetWindowContentSpace(con->window);

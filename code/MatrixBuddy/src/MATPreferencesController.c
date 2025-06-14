@@ -75,21 +75,21 @@ MATPreferencesController* matAllocPreferencesController(void) {
   MATPreferencesController* con = naAlloc(MATPreferencesController);
 
   NARect windowRect = naMakeRectS(20, 300, 440, 65);
-  con->window = naNewWindow(matTranslate(MATPreferences), windowRect, NA_FALSE, 0);
+  con->window = naNewWindow(matTranslate(MATPreferences), windowRect, NA_FALSE);
 
   NASpace* contentSpace = naGetWindowContentSpace(con->window);
 
   con->languageLabel = naNewLabel(matTranslate(MATPreferencesLanguage), 250);
   con->languageSelect = naNewSelect(150);
-  con->languageSystem = naNewMenuItem(matTranslate(MATPreferencesLanguageSameAsSystem));
-  con->languageDeutsch = naNewMenuItem(matTranslate(MATPreferencesLanguageDeutsch));
-  con->languageEnglish = naNewMenuItem(matTranslate(MATPreferencesLanguageEnglish));
-  con->languageEspanol = naNewMenuItem(matTranslate(MATPreferencesLanguageEspanol));
-  con->languageFrancais = naNewMenuItem(matTranslate(MATPreferencesLanguageFrancais));
-  con->languageKlingon = naNewMenuItem(matTranslate(MATPreferencesLanguageKlingon));
-  con->languageJapanese = naNewMenuItem(matTranslate(MATPreferencesLanguageJapanese));
-  con->languageChinese = naNewMenuItem(matTranslate(MATPreferencesLanguageChinese));
-  con->languageReport = naNewMenuItem(matTranslate(MATPreferencesLanguageReport));
+  con->languageSystem = naNewMenuItem(matTranslate(MATPreferencesLanguageSameAsSystem), NA_NULL);
+  con->languageDeutsch = naNewMenuItem(matTranslate(MATPreferencesLanguageDeutsch), NA_NULL);
+  con->languageEnglish = naNewMenuItem(matTranslate(MATPreferencesLanguageEnglish), NA_NULL);
+  con->languageEspanol = naNewMenuItem(matTranslate(MATPreferencesLanguageEspanol), NA_NULL);
+  con->languageFrancais = naNewMenuItem(matTranslate(MATPreferencesLanguageFrancais), NA_NULL);
+  con->languageKlingon = naNewMenuItem(matTranslate(MATPreferencesLanguageKlingon), NA_NULL);
+  con->languageJapanese = naNewMenuItem(matTranslate(MATPreferencesLanguageJapanese), NA_NULL);
+  con->languageChinese = naNewMenuItem(matTranslate(MATPreferencesLanguageChinese), NA_NULL);
+  con->languageReport = naNewMenuItem(matTranslate(MATPreferencesLanguageReport), NA_NULL);
   naAddSelectMenuItem(con->languageSelect, con->languageSystem, NA_NULL);
   naAddSelectMenuItem(con->languageSelect, naNewMenuSeparator(), NA_NULL);
   naAddSelectMenuItem(con->languageSelect, con->languageDeutsch, NA_NULL);
