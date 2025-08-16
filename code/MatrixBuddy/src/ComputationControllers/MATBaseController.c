@@ -32,6 +32,12 @@ void matInitBaseController(
 
 
 
+void matClearBaseController(MATBaseController* con) {
+  naDelete(con->space);
+}
+
+
+
 size_t matGetControllerDimensions(MATBaseController* con){
   return con->dimensions;
 }

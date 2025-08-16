@@ -157,8 +157,7 @@ MATBaseController* matAllocMInvertController(size_t dimensions){
 
 
 void matDeallocMInvertController(MATBaseController* controller){
-  MATMInvertController* con = (MATMInvertController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

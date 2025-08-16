@@ -114,8 +114,7 @@ MATBaseController* matAllocVLengthController(size_t dimensions){
 
 
 void matDeallocVLengthController(MATBaseController* controller){
-  MATVLengthController* con = (MATVLengthController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

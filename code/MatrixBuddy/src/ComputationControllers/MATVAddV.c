@@ -132,8 +132,7 @@ MATBaseController* matAllocVAddVController(size_t dimensions){
 
 
 void matDeallocVAddVController(MATBaseController* controller){
-  MATVAddVController* con = (MATVAddVController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

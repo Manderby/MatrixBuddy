@@ -117,8 +117,7 @@ MATBaseController* matAllocMTransposeController(size_t dimensions){
 
 
 void matDeallocMTransposeController(MATBaseController* controller){
-  MATMTransposeController* con = (MATMTransposeController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

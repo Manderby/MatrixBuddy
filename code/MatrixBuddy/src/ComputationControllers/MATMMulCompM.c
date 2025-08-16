@@ -140,8 +140,7 @@ MATBaseController* matAllocMMulCompMController(size_t dimensions){
 
 
 void matDeallocMMulCompMController(MATBaseController* controller){
-  MATMMulCompMController* con = (MATMMulCompMController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

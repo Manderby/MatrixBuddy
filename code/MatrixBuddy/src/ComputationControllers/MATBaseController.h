@@ -23,6 +23,8 @@ void matInitBaseController(
   MATUpdateHandler update,
   MATUpdateTabOrderHandler updateTabOrder);
 
+void matClearBaseController(MATBaseController* con);
+
 NASpace* naGetControllerSpace(MATBaseController* con);
 
 size_t matGetControllerDimensions(MATBaseController* con);

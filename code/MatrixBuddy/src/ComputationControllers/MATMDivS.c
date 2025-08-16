@@ -143,8 +143,7 @@ MATBaseController* matAllocMDivSController(size_t dimensions){
 
 
 void matDeallocMDivSController(MATBaseController* controller){
-  MATMDivSController* con = (MATMDivSController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 
