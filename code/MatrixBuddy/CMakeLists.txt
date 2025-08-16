@@ -94,7 +94,7 @@ if(APPLE)
         ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/zh.lproj/InfoPlist.strings
         \"${OUTPUT_DIRECTORY}zh.lproj/InfoPlist.strings\"
     COMMAND ibtool --compile
-        \"${OUTPUT_DIRECTORY}en.lproj/MainMenu.nib\"
+        \"${OUTPUT_DIRECTORY}MainMenu.nib\"
         ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/MainMenu.xib
   )
 
