@@ -6,10 +6,14 @@
 
 #include "NAApp/NAPreferences.h"
 #include "MATTypes.h"
+#include "NAUtility/NATranslator.h"
 
 
 
 void initPreferences(void);
+
+NALanguageCode3 matGetPrefsPreferredLanguage(void);
+void matSetPrefsPreferredLanguage(NALanguageCode3 languageCode);
 
 NABool matGetShowHelp(void);
 void matToggleShowHelp(void);

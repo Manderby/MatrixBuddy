@@ -150,8 +150,7 @@ MATBaseController* matAllocVMirrorController(size_t dimensions){
 
 
 void matDeallocVMirrorController(MATBaseController* controller){
-  MATVMirrorController* con = (MATVMirrorController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

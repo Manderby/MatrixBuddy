@@ -15,7 +15,6 @@ typedef enum{
   MATDone,
   MATVersionBuild,
   MATOnlineHelp,
-  MATApplicationDescription,
   MATApplicationHelpURL,
 
   MATMenuItemShowHelp,
@@ -34,6 +33,7 @@ typedef enum{
   MATMenuItemValueAccuracyFloat,
   MATMenuItemAbout,
   MATMenuItemHelp,
+  MATMenuItemPreferences,
 
   MATButtonVMulS,
   MATButtonVDivS,
@@ -107,6 +107,25 @@ typedef enum{
   MATErrorVectorsAlmostCollinear,
   MATErrorVectorLengthUnequalOne,
 
+  // Strings for the Preferences Wincdow
+  MATPreferences,
+
+  // Strings for Language preference
+  MATPreferencesLanguage,
+  MATPreferencesLanguageSameAsSystem,
+  MATPreferencesLanguageDeutsch,
+  MATPreferencesLanguageEnglish,
+  MATPreferencesLanguageEspanol,
+  MATPreferencesLanguageFrancais,
+  MATPreferencesLanguageKlingon,
+  MATPreferencesLanguageJapanese,
+  MATPreferencesLanguageChinese,
+  MATPreferencesLanguageReport,
+  MATPreferencesLanguageChangeAlertTitle,
+  MATPreferencesLanguageChangeAlertText,
+  MATPreferencesLanguageBadTranslationTitle,
+  MATPreferencesLanguageBadTranslationText,
+  
 } MATTranslation;
 
 

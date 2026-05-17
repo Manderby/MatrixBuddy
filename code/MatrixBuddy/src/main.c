@@ -1,15 +1,23 @@
 
 #include "MATCommonC.h"
 
-#if NA_OS == NA_OS_WINDOWS
-
 #include "NAUtility/NAMemory.h"
-#include <windows.h>
 #include "MATApplication.h"
 
 
 
-int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd){
+#if NA_OS == NA_OS_WINDOWS
+
+
+
+#include <windows.h>
+
+int WINAPI WinMain(
+  _In_ HINSTANCE hInstance,
+  _In_opt_ HINSTANCE hPrevInstance,
+  _In_ LPSTR lpCmdLine,
+  _In_ int nShowCmd)
+{
   NA_UNUSED(hInstance);
   NA_UNUSED(hPrevInstance);
   NA_UNUSED(lpCmdLine);
@@ -17,14 +25,39 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
   
   //naOpenConsoleWindow();
 
-  naStartRuntime();
-  naStartApplication(preStartup, postStartup, stopApplication, NA_NULL);
-  naStopRuntime();
+  naStartApplication(
+    preStartup,
+    postStartup,
+    stopApplication,
+    NA_NULL);
 
   return 0;
 }
 
-#endif // NA_OS == NA_OS_WINDOWS
+
+
+#elif NA_OS == NA_OS_MAC_OS_X
+
+
+
+int main(int argc, char *argv[]) {
+  NA_UNUSED(argc);
+  NA_UNUSED(argv);
+
+  naInstanciateNSApplication(MATNSApplication);
+
+  naStartApplication(
+    preStartup,
+    postStartup,
+    stopApplication,
+    NA_NULL);
+  
+  return 0;
+}
+
+
+
+#endif // NA_OS
 
 
 // This is free and unencumbered software released into the public domain.

@@ -116,8 +116,7 @@ MATBaseController* matAllocVNegController(size_t dimensions){
 
 
 void matDeallocVNegController(MATBaseController* controller){
-  MATVNegController* con = (MATVNegController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

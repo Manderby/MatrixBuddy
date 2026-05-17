@@ -6,6 +6,11 @@ void initTranslations(){
   translatorGroup = naRegisterTranslatorGroup();
   #include "../res/MatrixBuddyStrings_eng.h"
   #include "../res/MatrixBuddyStrings_deu.h"
+  #include "../res/MatrixBuddyStrings_spa.h"
+  #include "../res/MatrixBuddyStrings_fra.h"
+  #include "../res/MatrixBuddyStrings_tlh.h"
+  #include "../res/MatrixBuddyStrings_jpn.h"
+  #include "../res/MatrixBuddyStrings_zho.h"
 }
 
 const NAUTF8Char* matTranslate(uint32 id){

@@ -5,6 +5,7 @@
 #include "MATPreferences.h"
 #include "MATWindowController.h"
 #include "MATAboutController.h"
+#include "MATPreferencesController.h"
 
 #include "NAVisual/NAColor.h"
 #include "NAVisual/NAImage.h"
@@ -92,6 +93,7 @@ struct MATApplication{
   NAImageSet* settingsImageSet;
   MATAboutController* aboutController;
   MATWindowController* windowController;
+  MATPreferencesController* preferencesController;
 };
 
 static MATApplication* mat_App = NA_NULL;
@@ -103,28 +105,39 @@ void preStartup(void* arg){
   
   mat_App = naAlloc(MATApplication);
   
+  NAString* appUrl = naNewExecutableUrl();
+  naSetApplicationResourceBaseUrl(naGetStringUTF8Pointer(appUrl));
+  //naPresentAlertBox(NA_ALERT_BOX_INFO, "Resource directory", naGetStringUTF8Pointer(appUrl));
+  naDelete(appUrl);
+
   naSetApplicationName("Matrix Buddy");
   naSetApplicationVersionString(MAT_VERSION_STRING);
   naSetApplicationBuildString(MAT_BUILD_NUMBER_STRING);
   
   #if NA_OS == NA_OS_WINDOWS
-    naSetApplicationIconPath("icon.png");
+    naSetApplicationIconUrl("icon.png");
   #endif
 
   initTranslations();
   initPreferences();
 
-  NAString* copyImagePath = naNewApplicationResourcePath(NA_NULL, "copy", "png");
-  NAImage* mainCopyImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(copyImagePath));
+  NAString* copyImageUrl = naNewApplicationResourceUrl(NA_NULL, "copy", "png");
+  NAImage* mainCopyImage = naCreateImageWithFileUrl(naGetStringUTF8Pointer(copyImageUrl));
   mat_App->copyImageSet = naCreateImageSet(mainCopyImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
+  naRelease(mainCopyImage);
+  naDelete(copyImageUrl);
 
-  NAString* pasteImagePath = naNewApplicationResourcePath(NA_NULL, "paste", "png");
-  NAImage* mainPasteImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(pasteImagePath));
+  NAString* pasteImageUrl = naNewApplicationResourceUrl(NA_NULL, "paste", "png");
+  NAImage* mainPasteImage = naCreateImageWithFileUrl(naGetStringUTF8Pointer(pasteImageUrl));
   mat_App->pasteImageSet = naCreateImageSet(mainPasteImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
+  naRelease(mainPasteImage);
+  naDelete(pasteImageUrl);
 
-  NAString* settingsImagePath = naNewApplicationResourcePath(NA_NULL, "settings", "png");
-  NAImage* mainSettingsImage = naCreateImageWithFilePath(naGetStringUTF8Pointer(settingsImagePath));
+  NAString* settingsImageUrl = naNewApplicationResourceUrl(NA_NULL, "settings", "png");
+  NAImage* mainSettingsImage = naCreateImageWithFileUrl(naGetStringUTF8Pointer(settingsImageUrl));
   mat_App->settingsImageSet = naCreateImageSet(mainSettingsImage, NA_UI_RESOLUTION_2x, NA_BLEND_ERODE_LIGHT);
+  naRelease(mainSettingsImage);
+  naDelete(settingsImageUrl);
 }
 
 
@@ -135,6 +148,11 @@ void postStartup(void* arg){
     naLoadNib("MainMenu", NA_NULL);
   #endif
 
+  NALanguageCode3 languageCode = matGetPrefsPreferredLanguage();
+  if(languageCode != 0){
+    naSetTranslatorLanguagePreference(languageCode);
+  }
+
   mat_App->mathFont = naCreateFontWithPreset(
     NA_FONT_KIND_MATH,
     NA_FONT_SIZE_HUGE);
@@ -144,6 +162,7 @@ void postStartup(void* arg){
 
   mat_App->aboutController = matAllocAboutController();
   mat_App->windowController = matAllocWindowController();
+  mat_App->preferencesController = NA_NULL;
 }
 
 
@@ -153,14 +172,15 @@ void stopApplication(void* arg){
   
   matDeallocAboutController(mat_App->aboutController);
   matDeallocWindowController(mat_App->windowController);
-  
+  if(mat_App->preferencesController) {
+    matDeallocPreferencesController(mat_App->preferencesController);
+  }
+
   naRelease(mat_App->mathFont);
   naRelease(mat_App->helpLineFont);
   naRelease(mat_App->copyImageSet);
   naRelease(mat_App->pasteImageSet);
-
-  naFree(mat_App);
-  naStopRuntime();
+  naRelease(mat_App->settingsImageSet);
 }
 
 
@@ -190,7 +210,18 @@ void matShowApplicationAbout(){
   matShowAboutController(mat_App->aboutController);
 }
 void matShowApplicationHelp(){
-  //naOpenURLInBrowser(matTranslate(MATApplicationHelpURL));
+  naOpenUrlInBrowser(matTranslate(MATApplicationHelpURL));
+}
+void matShowApplicationPreferences(){
+  NABool newlyCreated = NA_FALSE;
+  if(!mat_App->preferencesController) {
+    mat_App->preferencesController = matAllocPreferencesController();
+    newlyCreated = NA_TRUE;
+  }
+  matShowPreferencesController(mat_App->preferencesController);
+  if(newlyCreated) {
+    matUpdatePreferencesController(mat_App->preferencesController);
+  }
 }
 
 

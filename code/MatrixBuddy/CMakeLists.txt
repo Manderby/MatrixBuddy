@@ -8,8 +8,10 @@ project(MatrixBuddy)
 set(TARGET_NAME MatrixBuddy)
 
 set(BUNDLE_IDENTIFIER_PREFIX "ch.manderim.")
-set(VERSION_STRING 1.2.2)
-set(BUILD_NUMBER_STRING 1.2.2)
+set(BUNDLE_IDENTIFIER_MAC "Matrix-Buddy")
+
+set(VERSION_STRING 1.3.1)
+set(BUILD_NUMBER_STRING 1.3.2)
 
 if(MSVC)
   add_executable(${TARGET_NAME} WIN32 src/main.c)
@@ -76,12 +78,27 @@ if(APPLE)
     COMMAND ${CMAKE_COMMAND} -E copy
         ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/en.lproj/InfoPlist.strings
         \"${OUTPUT_DIRECTORY}en.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/de.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}de.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/es.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}es.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/fr.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}fr.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/ja.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}ja.lproj/InfoPlist.strings\"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/zh.lproj/InfoPlist.strings
+        \"${OUTPUT_DIRECTORY}zh.lproj/InfoPlist.strings\"
     COMMAND ibtool --compile
-        \"${OUTPUT_DIRECTORY}en.lproj/MainMenu.nib\"
-        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/en.lproj/MainMenu.xib
+        \"${OUTPUT_DIRECTORY}MainMenu.nib\"
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/mac/MainMenu.xib
   )
 
-  set(BUNDLE_IDENTIFIER "${BUNDLE_IDENTIFIER_PREFIX}$(PRODUCT_NAME:rfc1034identifier)")
+  set(BUNDLE_IDENTIFIER "${BUNDLE_IDENTIFIER_PREFIX}${BUNDLE_IDENTIFIER_MAC}")
 
   set_target_properties(${TARGET_NAME} PROPERTIES
     MACOSX_BUNDLE YES
@@ -92,7 +109,19 @@ if(APPLE)
     MACOSX_BUNDLE_BUNDLE_VERSION ${BUILD_NUMBER_STRING}
     MACOSX_BUNDLE_ICON_FILE "MatrixBuddy.icns"
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
+    XCODE_ATTRIBUTE_INSTALL_PATH "$(LOCAL_APPS_DIR)"
+    XCODE_ATTRIBUTE_DEBUG_INFORMATION_FORMAT "dwarf-with-dsym"
+    XCODE_ATTRIBUTE_GCC_GENERATE_DEBUGGING_SYMBOLS "YES"
+    XCODE_ATTRIBUTE_DEPLOYMENT_POSTPROCESSING "YES"
+    XCODE_ATTRIBUTE_SKIP_INSTALL "NO"
+
+    # Uncomment the following line when you are planning to archive and upload.
+    # Beware: The debug build will not have the proper resource folder copied
+    # but the archive will contain it.
+    # Note: Sometimes, it works without uncommenting it.
+    # XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "$(inherited)"
   )
+  
 endif()
 
 if(MSVC)
@@ -109,8 +138,13 @@ endif()
 
 set(resourceFiles
   res/MatrixBuddyChangelog.txt
-  res/MatrixBuddyStrings_deu.h
   res/MatrixBuddyStrings_eng.h
+  res/MatrixBuddyStrings_deu.h
+  res/MatrixBuddyStrings_spa.h
+  res/MatrixBuddyStrings_fra.h
+  res/MatrixBuddyStrings_tlh.h
+  res/MatrixBuddyStrings_jpn.h
+  res/MatrixBuddyStrings_zho.h
   res/copy.png
   res/paste.png
   res/settings.png
@@ -118,23 +152,50 @@ set(resourceFiles
 
 set(macResourceFiles
   res/mac/MatrixBuddy.icns
-  res/mac/Matrix\ Buddy.entitlements
+  res/mac/MainMenu.xib
   res/mac/en.lproj/InfoPlist.strings
-  res/mac/en.lproj/MainMenu.xib
+  res/mac/de.lproj/InfoPlist.strings
+  res/mac/es.lproj/InfoPlist.strings
+  res/mac/fr.lproj/InfoPlist.strings
+  res/mac/ja.lproj/InfoPlist.strings
+  res/mac/zh.lproj/InfoPlist.strings
+)
+
+set(winResourceFiles
+  res/win/icon.png
+)
+
+set(winResourceStringEnFiles
+  res/win/Strings/en-US/Resources.resw
+)
+set(winResourceStringDeFiles
+  res/win/Strings/de-DE/Resources.resw
+)
+set(winResourceStringEsFiles
+  res/win/Strings/es-ES/Resources.resw
+)
+set(winResourceStringFrFiles
+  res/win/Strings/fr-FR/Resources.resw
+)
+set(winResourceStringJaFiles
+  res/win/Strings/ja-JP/Resources.resw
+)
+set(winResourceStringZhFiles
+  res/win/Strings/zh-cn/Resources.resw
 )
 
 set(sourceFiles
   src/main.c
-  src/main.m
   src/MATAboutController.c
   src/MATAboutController.h
   src/MATApplication.c
   src/MATApplication.h
   src/MATCommonC.h
-  src/MATNSApplication.h
   src/MATNSApplication.m
   src/MATPreferences.c
   src/MATPreferences.h
+  src/MATPreferencesController.c
+  src/MATPreferencesController.h
   src/MATTranslations.c
   src/MATTranslations.h
   src/MATTypes.h
@@ -184,10 +245,24 @@ set(computationControllersSourceFiles
 source_group("res" FILES ${resourceFiles})
 target_sources(${TARGET_NAME} PRIVATE ${resourceFiles})
 
-if(APPLE)
-  source_group("res/mac" FILES ${macResourceFiles})
-  target_sources(${TARGET_NAME} PRIVATE ${macResourceFiles})
-endif()
+source_group("res/mac" FILES ${macResourceFiles})
+target_sources(${TARGET_NAME} PRIVATE ${macResourceFiles})
+
+source_group("res/win" FILES ${winResourceFiles})
+target_sources(${TARGET_NAME} PRIVATE ${winResourceFiles})
+
+source_group("res/win/Strings/en-US" FILES ${winResourceStringEnFiles})
+target_sources(${TARGET_NAME} PRIVATE ${winResourceStringEnFiles})
+source_group("res/win/Strings/de-DE" FILES ${winResourceStringDeFiles})
+target_sources(${TARGET_NAME} PRIVATE ${winResourceStringDeFiles})
+source_group("res/win/Strings/es-ES" FILES ${winResourceStringEsFiles})
+target_sources(${TARGET_NAME} PRIVATE ${winResourceStringEsFiles})
+source_group("res/win/Strings/fr-FR" FILES ${winResourceStringFrFiles})
+target_sources(${TARGET_NAME} PRIVATE ${winResourceStringFrFiles})
+source_group("res/win/Strings/ja-JP" FILES ${winResourceStringJaFiles})
+target_sources(${TARGET_NAME} PRIVATE ${winResourceStringJaFiles})
+source_group("res/win/Strings/zh-CN" FILES ${winResourceStringZhFiles})
+target_sources(${TARGET_NAME} PRIVATE ${winResourceStringZhFiles})
 
 source_group("src/ComputationControllers" FILES ${computationControllersSourceFiles})
 target_sources(${TARGET_NAME} PRIVATE ${computationControllersSourceFiles})

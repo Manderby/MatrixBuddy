@@ -130,8 +130,7 @@ MATBaseController* matAllocVNormalizeController(size_t dimensions){
 
 
 void matDeallocVNormalizeController(MATBaseController* controller){
-  MATVNormalizeController* con = (MATVNormalizeController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

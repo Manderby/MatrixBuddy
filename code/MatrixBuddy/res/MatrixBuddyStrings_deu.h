@@ -10,8 +10,7 @@ NA_LOC(MATAbout,          "Über %s");
 NA_LOC(MATDone,           "Fertig");
 NA_LOC(MATVersionBuild,   "Version %s (Build %s)");
 NA_LOC(MATOnlineHelp,     "Online Hilfe");
-NA_LOC(MATApplicationDescription, "Einfache lineare Algebra. Matrix und Vektor.");
-NA_LOC(MATApplicationHelpURL, "http://manderc.com/apps/matrixbuddy/help/index.php");
+NA_LOC(MATApplicationHelpURL, "http://manderc.com/apps/matrixbuddy/help/index_eng.php");
 
 NA_LOC(MATMenuItemShowHelp,               "Schnellhilfe");
 NA_LOC(MATMenuItemShowIdentifiers,        "Bezeichner");
@@ -29,6 +28,7 @@ NA_LOC(MATMenuItemValueAccuracyNatural,   "Genauigkeit: Natürlich");
 NA_LOC(MATMenuItemValueAccuracyFloat,     "Genauigkeit: float");
 NA_LOC(MATMenuItemAbout,                  "Über Matrix Buddy");
 NA_LOC(MATMenuItemHelp,                   "Online Hilfe");
+NA_LOC(MATMenuItemPreferences,            "Einstellungen");
 
 NA_LOC(MATButtonVMulS,          "v×s");
 NA_LOC(MATButtonVDivS,          "v÷s");
@@ -107,3 +107,14 @@ NA_LOC(MATErrorVectorsCollinear,            "Kolinear");
 NA_LOC(MATErrorVectorsAlmostCollinear,      "~ Kolinear");
 NA_LOC(MATErrorVectorLengthUnequalOne,      "Un-Normal");
 
+// Translations for the Preferences Window
+NA_LOC(MATPreferences,          "Einstellungen");
+
+// Translations for language selection
+NA_LOC(MATPreferencesLanguage,               "Sprache / Language / Idioma / 言語");
+NA_LOC(MATPreferencesLanguageSameAsSystem,   "Wie System");
+NA_LOC(MATPreferencesLanguageReport,         "Schlechte Übersetzungen melden...");
+NA_LOC(MATPreferencesLanguageChangeAlertTitle, "Sprachänderung");
+NA_LOC(MATPreferencesLanguageChangeAlertText, "Die Sprache wurde geändert. Bitte beenden Sie die Anwendung und öffnen Sie sie erneut, damit die Änderungen wirksam werden.");
+NA_LOC(MATPreferencesLanguageBadTranslationTitle, "Schlechte Übersetzungen melden");
+NA_LOC(MATPreferencesLanguageBadTranslationText, "Einige Teile dieser Anwendung wurden von künstlicher Intelligenz übersetzt. Helfen Sie, die Übersetzung zu verbessern, indem Sie eine E-Mail an colorpresto@manderc.com senden (der Link dazu findet sich im Info-Fenster). Bitte geben Sie ausreichend Informationen an, um Ihren Vorschlag an der richtigen Stelle zu integrieren.\n\nIhre Hilfe wird sehr geschätzt!");

@@ -123,8 +123,7 @@ MATBaseController* matAllocVMulSController(size_t dimensions){
 
 
 void matDeallocVMulSController(MATBaseController* controller){
-  MATVMulSController* con = (MATVMulSController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

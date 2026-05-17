@@ -10,7 +10,6 @@ NA_LOC(MATAbout,          "About %s");
 NA_LOC(MATDone,           "Done");
 NA_LOC(MATVersionBuild,   "Version %s (Build %s)");
 NA_LOC(MATOnlineHelp,     "Online Help");
-NA_LOC(MATApplicationDescription, "Simple linear algebra. Matrix and Vector.");
 NA_LOC(MATApplicationHelpURL, "http://manderc.com/apps/matrixbuddy/help/index_en.php");
 
 NA_LOC(MATMenuItemShowHelp,               "Quick Help Line");
@@ -29,6 +28,7 @@ NA_LOC(MATMenuItemValueAccuracyNatural,   "Accuracy: Natural");
 NA_LOC(MATMenuItemValueAccuracyFloat,     "Accuracy: float");
 NA_LOC(MATMenuItemAbout,                  "About Matrix Buddy");
 NA_LOC(MATMenuItemHelp,                   "Online Help");
+NA_LOC(MATMenuItemPreferences,            "Preferences");
 
 NA_LOC(MATButtonVMulS,          "v×s");
 NA_LOC(MATButtonVDivS,          "v÷s");
@@ -107,3 +107,21 @@ NA_LOC(MATErrorVectorsCollinear,            "Collinear");
 NA_LOC(MATErrorVectorsAlmostCollinear,      "~ collinear");
 NA_LOC(MATErrorVectorLengthUnequalOne,      "Not Normal");
 
+// Translations for the Preferences Window
+NA_LOC(MATPreferences,          "Preferences");
+
+// Translations for language selection
+NA_LOC(MATPreferencesLanguage,               "Language / Idioma / 言語 / Sprache");
+NA_LOC(MATPreferencesLanguageSameAsSystem,   "Same as System");
+NA_LOC(MATPreferencesLanguageDeutsch,        "Deutsch");
+NA_LOC(MATPreferencesLanguageEnglish,        "English");
+NA_LOC(MATPreferencesLanguageEspanol,        "Español");
+NA_LOC(MATPreferencesLanguageFrancais,       "Français");
+NA_LOC(MATPreferencesLanguageKlingon,        "tlhIngan");
+NA_LOC(MATPreferencesLanguageJapanese,       "日本語");
+NA_LOC(MATPreferencesLanguageChinese,        "中文");
+NA_LOC(MATPreferencesLanguageReport,         "Report bad translations...");
+NA_LOC(MATPreferencesLanguageChangeAlertTitle, "Language Change");
+NA_LOC(MATPreferencesLanguageChangeAlertText, "The language has been changed. Please quit and reopen the application to take effect.");
+NA_LOC(MATPreferencesLanguageBadTranslationTitle, "Report bad translations");
+NA_LOC(MATPreferencesLanguageBadTranslationText, "Some parts of this application have been translated by artificial intelligence. Help improve the translation by sending an email to colorpresto@manderc.com (link is in the about window). Please provide sufficient information to incorporate your suggestion at the proper place.\n\nYour help is greatly appreciated!");

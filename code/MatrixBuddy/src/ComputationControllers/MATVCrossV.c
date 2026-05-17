@@ -113,8 +113,7 @@ MATBaseController* matAllocVCrossVController(size_t dimensions){
 
 
 void matDeallocVCrossVController(MATBaseController* controller){
-  MATVCrossVController* con = (MATVCrossVController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

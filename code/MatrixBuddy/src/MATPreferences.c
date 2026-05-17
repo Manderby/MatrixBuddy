@@ -3,6 +3,8 @@
 
 
 enum{
+  MATPreferredLanguage,
+  
   MATPrefShowHelp,
   MATPrefShowIdentifiers,
   MATPrefShowCopyPaste,
@@ -16,6 +18,8 @@ enum{
 
 
 const char* matPrefs[MATPrefCount] = {
+  [MATPreferredLanguage]  = "preferredLanguage",
+
   [MATPrefShowHelp] = "showHelp",
   [MATPrefShowIdentifiers] = "showIdentifiers",
   [MATPrefShowCopyPaste] = "showCopyPaste",
@@ -27,6 +31,11 @@ const char* matPrefs[MATPrefCount] = {
 
 
 void initPreferences(){
+  naInitPreferencesi64(
+    matPrefs[MATPreferredLanguage],
+    0,
+    0,
+    NA_MAX_i64);
   naInitPreferencesBool(matPrefs[MATPrefShowHelp], NA_FALSE);
   naInitPreferencesBool(matPrefs[MATPrefShowIdentifiers], NA_TRUE);
   naInitPreferencesBool(matPrefs[MATPrefShowCopyPaste], NA_TRUE);
@@ -39,6 +48,16 @@ void initPreferences(){
     matPrefs[MATPrefValueAccuracy],
     MAT_VALUE_ACCURACY_NATURAL,
     MAT_VALUE_ACCURACY_COUNT);
+}
+
+
+
+NALanguageCode3 matGetPrefsPreferredLanguage(){
+  return (NALanguageCode3)naGetPreferencesi64(matPrefs[MATPreferredLanguage]);
+}
+void matSetPrefsPreferredLanguage(NALanguageCode3 languageCode){
+  naSetPreferencesi64(matPrefs[MATPreferredLanguage], (int64)languageCode);
+  naSetTranslatorLanguagePreference(languageCode);
 }
 
 

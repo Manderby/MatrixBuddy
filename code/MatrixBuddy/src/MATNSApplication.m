@@ -4,7 +4,6 @@
 #if NA_OS == NA_OS_MAC_OS_X
 
 #include <Cocoa/Cocoa.h>
-#include "MATNSApplication.h"
 #include "MATApplication.h"
 #include "MATCommonC.h"
 
@@ -19,6 +18,14 @@ void matSetTextFieldCellProperties(NATextField* textField){
 }
 
 
+@interface MATNSApplication : NSApplication <NSApplicationDelegate>{
+}
+- (IBAction)openAbout:(NSMenuItem*)sender;
+- (IBAction)openHelp:(NSMenuItem*)sender;
+- (IBAction)openPreferences:(NSMenuItem*)sender;
+@end
+
+
 
 @implementation MATNSApplication
 
@@ -30,6 +37,11 @@ void matSetTextFieldCellProperties(NATextField* textField){
 - (IBAction)openHelp:(NSMenuItem*)sender{
   NA_UNUSED(sender);
   matShowApplicationHelp();
+}
+
+- (IBAction)openPreferences:(NSMenuItem*)sender{
+  NA_UNUSED(sender);
+  matShowApplicationPreferences();
 }
 
 @end

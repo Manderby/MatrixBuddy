@@ -200,8 +200,7 @@ MATBaseController* matAllocVOrthoController(size_t dimensions){
 
 
 void matDeallocVOrthoController(MATBaseController* controller){
-  MATVOrthoController* con = (MATVOrthoController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 

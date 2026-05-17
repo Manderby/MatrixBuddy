@@ -49,7 +49,7 @@ void matMDivCompMValueChanged(MATBaseController* controller, MATView* view){
   naZeron(result, elementCount * sizeof(double));
 
   MATStatus newStatus = MAT_STATUS_NORMAL;
-  for(int i = 0; i < con->base.dimensions * con->base.dimensions; ++i){
+  for(size_t i = 0; i < con->base.dimensions * con->base.dimensions; ++i){
     if(valuesB[i] == 0.){
       newStatus = MAT_STATUS_VECTOR_COMPONENT_ZERO;
     }else if((newStatus != MAT_STATUS_VECTOR_COMPONENT_ZERO) && naAlmostZerof((float)valuesB[i])){
@@ -154,8 +154,7 @@ MATBaseController* matAllocMDivCompMController(size_t dimensions){
 
 
 void matDeallocMDivCompMController(MATBaseController* controller){
-  MATMDivCompMController* con = (MATMDivCompMController*)controller;
-  NA_UNUSED(con);
+  matClearBaseController(controller);
   naFree(controller);
 }
 
